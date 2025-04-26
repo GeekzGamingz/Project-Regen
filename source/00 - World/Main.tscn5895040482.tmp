@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://djh4o8rsnf47g"]
+
+[ext_resource type="Script" uid="uid://ubot8vh8musm" path="res://source/00 - World/Main.gd" id="1_j4pr7"]
+[ext_resource type="PackedScene" uid="uid://c0f0uvs8gipny" path="res://source/02 - User Interface/UserInterface.tscn" id="2_6nprl"]
+[ext_resource type="PackedScene" uid="uid://c4vnsqevw5lyv" path="res://source/01 - Components/00 - Building/00 - Building Grid/BuildingGrid.tscn" id="3_ww14o"]
+[ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/00 - Templates/Button_Template.tscn" id="3_yvdsv"]
+[ext_resource type="PackedScene" uid="uid://cosmcsgdet10o" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/01 - Water Purifier/Button_H20Purifier.tscn" id="4_3g1sp"]
+[ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/00 - Buildings/Buildings.gd" id="6_yvdsv"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_j4pr7")
+
+[node name="UserInterface" parent="." instance=ExtResource("2_6nprl")]
+follow_viewport_enabled = false
+script = null
+
+[node name="Menu_Buildings" parent="UserInterface/UI_FullRect/Menu_Tools" index="2"]
+buildings = Array[PackedScene]([ExtResource("3_yvdsv"), ExtResource("4_3g1sp")])
+
+[node name="BuildingGrid" parent="." instance=ExtResource("3_ww14o")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Buildings" type="Node2D" parent="."]
+script = ExtResource("6_yvdsv")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[editable path="UserInterface"]
+[editable path="BuildingGrid"]

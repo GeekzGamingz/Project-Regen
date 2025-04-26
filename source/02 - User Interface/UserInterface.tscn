@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0f0uvs8gipny"]
+
+[ext_resource type="PackedScene" uid="uid://dpu7oxurknsi1" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/Button_Build.tscn" id="1_s1jx5"]
+[ext_resource type="PackedScene" uid="uid://cosmcsgdet10o" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/Button_WaterPurifier.tscn" id="4_45c2t"]
+[ext_resource type="Script" uid="uid://dk2uq2q3d57vf" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/Menu_Buildings.gd" id="4_rb18f"]
+[ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/Button_Template.tscn" id="5_45c2t"]
+
+[node name="UserInterface" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="UI_FullRect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu_Tools" type="HBoxContainer" parent="UI_FullRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="Margin1" type="MarginContainer" parent="UI_FullRect/Menu_Tools"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="Button_Build" parent="UI_FullRect/Menu_Tools" instance=ExtResource("1_s1jx5")]
+layout_mode = 2
+
+[node name="Menu_Buildings" type="VBoxContainer" parent="UI_FullRect/Menu_Tools"]
+visible = false
+layout_mode = 2
+alignment = 1
+script = ExtResource("4_rb18f")
+buildings = Array[PackedScene]([ExtResource("5_45c2t"), ExtResource("4_45c2t")])

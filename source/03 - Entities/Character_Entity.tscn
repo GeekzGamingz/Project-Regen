@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctnbblculty6f"]
+
+[ext_resource type="Texture2D" uid="uid://efpj3t8qlwb6" path="res://assets/03 - Entities/00 - Player/00 - Base/template.png" id="1_yu20t"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7yhcf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kik4i"]
+radius = 4.0
+height = 18.0
+
+[node name="Entity" type="CharacterBody2D"]
+
+[node name="Scripts" type="Node2D" parent="."]
+
+[node name="Facing" type="Node2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="Facing"]
+
+[node name="Sprite_Base" type="Sprite2D" parent="Facing/Sprites"]
+texture = ExtResource("1_yu20t")
+offset = Vector2(0, -16)
+
+[node name="AnimationPlayers" type="Node2D" parent="."]
+
+[node name="AnimPlayer_Sprite" type="AnimationPlayer" parent="AnimationPlayers"]
+
+[node name="AnimPlayer_Effects" type="AnimationPlayer" parent="AnimationPlayers"]
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationPlayers"]
+tree_root = SubResource("AnimationNodeStateMachine_7yhcf")
+anim_player = NodePath("../AnimPlayer_Sprite")
+
+[node name="Outputs" type="Node2D" parent="."]
+
+[node name="Output_State" type="Label" parent="Outputs"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kik4i")

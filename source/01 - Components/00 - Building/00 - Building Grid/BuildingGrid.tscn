@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4vnsqevw5lyv"]
+
+[ext_resource type="Script" uid="uid://bhdhcfbivtr6" path="res://source/01 - Components/00 - Building/00 - Building Grid/BuildingGrid.gd" id="1_h0nsw"]
+[ext_resource type="Texture2D" uid="uid://vvl7nxjnql4e" path="res://assets/00 - User Interface/00 - Selection/Select-Frame1.png" id="2_uf74p"]
+[ext_resource type="Texture2D" uid="uid://glituqejmimk" path="res://assets/00 - User Interface/00 - Selection/Select-Frame2.png" id="3_gy2hx"]
+[ext_resource type="Texture2D" uid="uid://bn635kn7h01ot" path="res://assets/00 - User Interface/00 - Selection/Select-Frame3.png" id="4_brbe0"]
+[ext_resource type="Texture2D" uid="uid://d3pxx4aq8rc06" path="res://assets/00 - User Interface/00 - Selection/Select-Frame4.png" id="5_ybemk"]
+[ext_resource type="Texture2D" uid="uid://byq8ay0260r2f" path="res://assets/00 - User Interface/00 - Selection/Select-Frame5.png" id="6_ywur5"]
+[ext_resource type="Texture2D" uid="uid://c5xcpjr8o7xu4" path="res://assets/00 - User Interface/00 - Selection/Select-Frame6.png" id="7_oqwag"]
+[ext_resource type="Texture2D" uid="uid://6fm6smrfqfpm" path="res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16.png" id="8_7b5y7"]
+[ext_resource type="Texture2D" uid="uid://bvppqnu84gwcm" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/16.png" id="8_urqfs"]
+
+[sub_resource type="TileSet" id="TileSet_urqfs"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_al2wb"]
+frames = 6
+frame_0/texture = ExtResource("2_uf74p")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("3_gy2hx")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("4_brbe0")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("5_ybemk")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("6_ywur5")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("7_oqwag")
+frame_5/duration = 0.1
+
+[node name="BuildingGrid" type="TileMapLayer"]
+tile_set = SubResource("TileSet_urqfs")
+script = ExtResource("1_h0nsw")
+
+[node name="Blueprint_Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Blueprint_Zone" type="TextureRect" parent="Blueprint_Control"]
+self_modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_7b5y7")
+
+[node name="Blueprint_Preview" type="TextureRect" parent="Blueprint_Control"]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_urqfs")
+
+[node name="Blueprint_Selection" type="NinePatchRect" parent="Blueprint_Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AnimatedTexture_al2wb")
+draw_center = false
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SafeBuild_1" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+position = Vector2(8, 8)
+rotation = 2.35619
+target_position = Vector2(0, 11.25)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SafeBuild_2" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+position = Vector2(8, 8)
+rotation = -2.35619
+target_position = Vector2(0, 13)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SafeBuild_3" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+position = Vector2(8, 8)
+rotation = -0.785398
+target_position = Vector2(0, 13)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SafeBuild_4" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+position = Vector2(8, 8)
+rotation = 0.785398
+target_position = Vector2(0, 13)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false

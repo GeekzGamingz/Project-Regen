@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpu7oxurknsi1"]
+
+[ext_resource type="Texture2D" uid="uid://cincd5dfxtyqc" path="res://assets/00 - User Interface/02 - Buttons/01 - Menu/build_icon.png" id="1_5a1be"]
+[ext_resource type="Script" uid="uid://b4kth3qm0envx" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/Button_Build.gd" id="2_yg7yw"]
+
+[node name="Button_Build" type="TextureButton"]
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("1_5a1be")
+script = ExtResource("2_yg7yw")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

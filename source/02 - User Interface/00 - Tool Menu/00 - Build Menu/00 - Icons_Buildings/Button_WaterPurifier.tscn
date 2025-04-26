@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cosmcsgdet10o"]
+
+[ext_resource type="Texture2D" uid="uid://df0dyu5soma2o" path="res://assets/00 - User Interface/02 - Buttons/01 - Menu/build_icon_water.png" id="1_dbakb"]
+[ext_resource type="Script" uid="uid://bixfu5mplw0xc" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/Button_BuildingIcon.gd" id="2_3481x"]
+[ext_resource type="PackedScene" uid="uid://dfq8vsxubmfhp" path="res://source/04 - Objects/00 - Buildings/01 - Water Purifier/Building_WaterPurifier.tscn" id="3_dbakb"]
+
+[node name="Button_WaterPurifier" type="TextureButton"]
+texture_normal = ExtResource("1_dbakb")
+script = ExtResource("2_3481x")
+building = ExtResource("3_dbakb")
+is_unlocked = true
+dimensions = {
+"16x16": false,
+"16x32": false,
+"16x48": false,
+"32x16": false,
+"32x32": false,
+"32x48": false,
+"48x16": false,
+"48x32": false,
+"48x48": true
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

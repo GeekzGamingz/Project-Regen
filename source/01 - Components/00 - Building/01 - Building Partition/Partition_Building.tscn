@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt5o6mrto0g6l"]
+
+[ext_resource type="Script" uid="uid://ctf1mqoi7k6lb" path="res://source/01 - Components/00 - Building/01 - Building Partition/Partition_Building.gd" id="1_uvqgc"]
+
+[node name="Partition_Building" type="Node2D"]
+script = ExtResource("1_uvqgc")
+
+[node name="Sprite_Building" type="Sprite2D" parent="."]
+
+[node name="Sprite_Zone" type="Sprite2D" parent="."]
