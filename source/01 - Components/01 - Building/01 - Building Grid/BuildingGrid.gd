@@ -6,8 +6,9 @@ extends TileMapLayer
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var MENU_BUILDINGS: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/Menu_Tools/Menu_Buildings")
-@onready var ORPHANAGE_BUILDINGS: Node2D = MAIN.get_node("Orphanage_Buildings")
+@onready var MENU_BUILDINGS: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings")
+@onready var MENU_FLORA: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora")
+@onready var ORPHANAGES: Node2D = MAIN.get_node("Orphanages")
 @onready var BLUEPRINT: Control = MAIN.get_node("BuildingGrid/Blueprint_Control")
 #Blueprint Nodes
 @onready var blueprint_zone = BLUEPRINT.get_node("Blueprint_Zone")
@@ -17,13 +18,13 @@ extends TileMapLayer
 #Ready Function
 func _ready() -> void:
 	MENU_BUILDINGS.connect("change_selection", change_selection)
-	ORPHANAGE_BUILDINGS.connect("exit_build_mode", exit_build_mode)
+	MENU_FLORA.connect("change_selection", change_selection)
+	ORPHANAGES.connect("exit_build_mode", exit_build_mode)
 #------------------------------------------------------------------------------#
 #Process Function
 func _process(_delta: float) -> void:
 	check_cell()
 	check_zone()#Update Cell
-
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Cell
@@ -41,10 +42,8 @@ func check_zone() -> void:
 #Blueprint Visibility
 func blueprint_visibility(toggle: bool):
 	BLUEPRINT.set_deferred("visible", toggle)
-	MENU_BUILDINGS.set_deferred("visible", toggle)
 	if toggle: Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Change Selection Dimensions
@@ -105,4 +104,8 @@ func change_selection(dimensions):
 		ray.target_position.y = (texture_size.x + texture_size.y) * 0.5
 		ray.position = Vector2(texture_size.x * 0.5, texture_size.y * 0.5)
 #Exit Build Mode
-func exit_build_mode(): blueprint_visibility(false)
+func exit_build_mode():
+	G.IS_BUILDING = false
+	blueprint_visibility(false)
+	MENU_BUILDINGS.set_deferred("visible", false)
+	MENU_FLORA.set_deferred("visible", false)

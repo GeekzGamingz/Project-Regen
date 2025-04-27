@@ -2,9 +2,10 @@ extends TextureButton
 #------------------------------------------------------------------------------#
 #Signals
 signal send_dimensions
-signal send_building
+signal send_object
 #------------------------------------------------------------------------------#
 #Variables
+var object: PackedScene
 #Exported Variables
 @export var building: PackedScene
 @export var is_unlocked: bool = false
@@ -33,7 +34,7 @@ signal send_building
 func _on_button_up() -> void:
 	G.IS_BUILDING = true
 	emit_signal("send_dimensions", dimensions)
-	emit_signal("send_building", building)
+	emit_signal("send_object", building)
 #Mouse Entered
 func _on_mouse_entered() -> void:
 	if G.CAN_BUILD: G.CAN_BUILD = false

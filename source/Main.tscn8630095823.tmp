@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://ccajok2nl5ohr" path="res://source/01 - Components/Camera_Main.gd" id="4_ww14o"]
 [ext_resource type="PackedScene" uid="uid://dfakdncbf8w6a" path="res://source/03 - Entities/00 - Player/Entity_Player.tscn" id="6_3g1sp"]
 [ext_resource type="PackedScene" uid="uid://b0af6y5i8dvl2" path="res://source/01 - Components/00 - Calendar/Calendar.tscn" id="6_td4sm"]
+[ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/00 - Buildings/Orphanage_Buildings.gd" id="6_yvdsv"]
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="7_6thqj"]
-[ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/Orphanages.gd" id="7_td4sm"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_j4pr7")
@@ -19,6 +19,7 @@ follow_viewport_enabled = false
 [node name="Map_World" parent="." instance=ExtResource("4_3g1sp")]
 
 [node name="BuildingGrid" parent="." instance=ExtResource("3_ww14o")]
+buildings = null
 
 [node name="Camera_Main" type="Camera2D" parent="."]
 position = Vector2(240, 135)
@@ -28,9 +29,9 @@ script = ExtResource("4_ww14o")
 [node name="Calendar" parent="." instance=ExtResource("6_td4sm")]
 
 [node name="Orphanages" type="Node2D" parent="."]
-script = ExtResource("7_td4sm")
 
 [node name="Orphanage_Buildings" type="Node2D" parent="Orphanages"]
+script = ExtResource("6_yvdsv")
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages"]
 
@@ -42,7 +43,7 @@ collision_mask = 1
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
 [node name="Entity_Player" parent="Orphanages/Orphanage_Entities" instance=ExtResource("6_3g1sp")]
-position = Vector2(240, 137)
+position = Vector2(205, 150)
 
 [editable path="UserInterface"]
 [editable path="UserInterface/UI_FullRect/Menu_Tools"]

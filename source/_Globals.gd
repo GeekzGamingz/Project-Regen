@@ -1,6 +1,9 @@
 extends Node
 #------------------------------------------------------------------------------#
 #Global Variables
+#Integers
+var CURRENT_TICK: int = 0
+#Vectors
 var TILE_SIZE: Vector2 = Vector2(16, 16)
 #Global Bool Variables
 var IS_BUILDING: bool = false
