@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://6daofborubcg"]
+
+[ext_resource type="PackedScene" uid="uid://cquhycjyevhwh" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/_Button_Build.tscn" id="1_24gxh"]
+[ext_resource type="Script" uid="uid://dk2uq2q3d57vf" path="res://source/02 - User Interface/00 - Tool Menu/Menu_Objects.gd" id="2_pr451"]
+[ext_resource type="PackedScene" uid="uid://bvvwnkrdamucb" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/00 - Icons_Buildings/Button_WaterPurifier.tscn" id="3_v3klt"]
+[ext_resource type="PackedScene" uid="uid://btwem7mk0hgb5" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/01 - Icons_Flora/_Button_Sow.tscn" id="5_24gxh"]
+[ext_resource type="PackedScene" uid="uid://13j540abk660" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/01 - Icons_Flora/Button_Tree.tscn" id="7_otuyk"]
+
+[node name="Menu_Tools" type="HBoxContainer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -18.0
+offset_right = 28.0
+offset_bottom = 18.0
+grow_vertical = 2
+
+[node name="Margin1" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Menu_Build" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button_Build" parent="VBoxContainer/Menu_Build" node_paths=PackedStringArray("menu") instance=ExtResource("1_24gxh")]
+layout_mode = 2
+menu = NodePath("../Menu_Buildings")
+
+[node name="Menu_Buildings" type="VBoxContainer" parent="VBoxContainer/Menu_Build"]
+visible = false
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_pr451")
+objects = Array[PackedScene]([ExtResource("3_v3klt")])
+
+[node name="Menu_Sow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button_Sow" parent="VBoxContainer/Menu_Sow" node_paths=PackedStringArray("menu") instance=ExtResource("5_24gxh")]
+layout_mode = 2
+menu = NodePath("../Menu_Flora")
+
+[node name="Menu_Flora" type="VBoxContainer" parent="VBoxContainer/Menu_Sow"]
+visible = false
+layout_mode = 2
+script = ExtResource("2_pr451")
+objects = Array[PackedScene]([ExtResource("7_otuyk")])

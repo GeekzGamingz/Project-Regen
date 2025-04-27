@@ -1,20 +1,28 @@
 [gd_scene load_steps=3 format=3 uid="uid://xxysto50vjtq"]
 
-[ext_resource type="Texture2D" uid="uid://6fm6smrfqfpm" path="res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16.png" id="1_p6eq0"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
-size = Vector2(16, 16)
+size = Vector2(64, 64)
 
-[node name="Building_Template" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
+radius = 4.0
+height = 18.0
+
+[node name="Object_Template" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_p6eq0")
 centered = false
 
 [node name="Area_Build" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Build"]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_p6eq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ukouj")

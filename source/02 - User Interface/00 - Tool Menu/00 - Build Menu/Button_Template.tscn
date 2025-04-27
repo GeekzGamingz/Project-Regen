@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqujrdkjjrbu6"]
+
+[ext_resource type="Texture2D" uid="uid://bvppqnu84gwcm" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/16.png" id="1_nfssq"]
+[ext_resource type="Script" uid="uid://bixfu5mplw0xc" path="res://source/02 - User Interface/00 - Tool Menu/Button_Icon.gd" id="2_fna6s"]
+
+[node name="Button_Template" type="TextureButton"]
+texture_normal = ExtResource("1_nfssq")
+script = ExtResource("2_fna6s")
+
+[node name="Node2D" type="Node2D" parent="."]

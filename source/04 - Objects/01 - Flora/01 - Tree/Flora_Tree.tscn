@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btme3ttlnntwp"]
+
+[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_rxgqk"]
+[ext_resource type="Texture2D" uid="uid://dbvgohhxjsg8v" path="res://assets/02 - Objects/01 - Flora/01 - Trees/gentree_growth4_bloom.png" id="2_r2lx4"]
+
+[node name="Flora_Tree" groups=["Flora"] instance=ExtResource("1_rxgqk")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_r2lx4")
+
+[node name="CollisionShape2D" parent="Area_Build" index="0"]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(32, 55)

@@ -1,14 +1,21 @@
 extends TextureButton
 #------------------------------------------------------------------------------#
 #Variables
+#Exported Variables
+@export var menu: VBoxContainer
 #OnReady Variables
+#Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var ORPHANAGES: Node2D = MAIN.get_node("Orphanages")
 #------------------------------------------------------------------------------#
+#Ready Function
+func _ready() -> void:
+	ORPHANAGES.connect("exit_build_mode", _on_button_up)
 #Signaled Functions
 #Button Up
 func _on_button_up() -> void:
 	#Visibility Toggles
-	MAIN.MENU_BUILDINGS.set_deferred("visible", !MAIN.MENU_BUILDINGS.visible)
+	menu.set_deferred("visible", !menu.visible)
 #Mouse Entered
 func _on_mouse_entered() -> void:
 	if G.CAN_BUILD: G.CAN_BUILD = false
