@@ -48,4 +48,4 @@ func send_object(object):
 	object_current = object
 	var object_scene = object_current.instantiate()
 	var blueprint_preview = MAIN.BLUEPRINT.get_node("Blueprint_Preview")
-	blueprint_preview.texture = object_scene.get_node("Sprite2D").texture
+	blueprint_preview.texture = object_scene.get_node("Sprite_Preview").texture

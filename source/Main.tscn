@@ -34,15 +34,13 @@ script = ExtResource("7_td4sm")
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages"]
 
-[node name="Flora_RegenTree" parent="Orphanages/Orphanage_Flora" instance=ExtResource("7_6thqj")]
-position = Vector2(176, 80)
-collision_layer = 1
-collision_mask = 1
-
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
 [node name="Entity_Player" parent="Orphanages/Orphanage_Entities" instance=ExtResource("6_3g1sp")]
 position = Vector2(240, 137)
+
+[node name="Flora_RegenTree" parent="." instance=ExtResource("7_6thqj")]
+position = Vector2(165, 82)
 
 [editable path="UserInterface"]
 [editable path="UserInterface/UI_FullRect/Menu_Tools"]

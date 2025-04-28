@@ -8,10 +8,14 @@ radius = 4.0
 height = 18.0
 
 [node name="Object_Template" type="StaticBody2D"]
-collision_layer = 2
+collision_layer = 16
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite_Object" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Sprite_Preview" type="Sprite2D" parent="."]
+visible = false
 centered = false
 
 [node name="Area_Build" type="Area2D" parent="."]
@@ -19,10 +23,10 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Build"]
-position = Vector2(8, 8)
+position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_p6eq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
+position = Vector2(32, 32)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ukouj")

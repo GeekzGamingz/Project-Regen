@@ -1,15 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://btme3ttlnntwp"]
+[gd_scene load_steps=5 format=3 uid="uid://btme3ttlnntwp"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_rxgqk"]
-[ext_resource type="Texture2D" uid="uid://dbvgohhxjsg8v" path="res://assets/02 - Objects/01 - Flora/01 - Trees/gentree_growth4_bloom.png" id="2_r2lx4"]
+[ext_resource type="Script" uid="uid://dw37ho2d3i0a4" path="res://source/04 - Objects/01 - Flora/01 - Tree/Flora_Tree.gd" id="2_enkg6"]
+[ext_resource type="Texture2D" uid="uid://dmwlyl6rgt1hh" path="res://assets/02 - Objects/01 - Flora/01 - Trees/trees.png" id="3_8w015"]
+[ext_resource type="Texture2D" uid="uid://ujbuwrl3ipnd" path="res://assets/02 - Objects/01 - Flora/01 - Trees/gentree_growth3_bloom.png" id="4_8w015"]
 
 [node name="Flora_Tree" groups=["Flora"] instance=ExtResource("1_rxgqk")]
+script = ExtResource("2_enkg6")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_r2lx4")
+[node name="Sprite_Object" parent="." index="0"]
+texture = ExtResource("3_8w015")
+hframes = 5
+vframes = 4
+frame = 5
 
-[node name="CollisionShape2D" parent="Area_Build" index="0"]
-position = Vector2(32, 32)
+[node name="Sprite_Preview" parent="." index="1"]
+texture = ExtResource("4_8w015")
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(32, 55)

@@ -1,20 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk6yobriqni2k"]
+[gd_scene load_steps=3 format=3 uid="uid://dk6yobriqni2k"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_cqd1s"]
-[ext_resource type="Texture2D" uid="uid://4a1p8jkpm3st" path="res://assets/02 - Objects/01 - Flora/00 - Regen Tree/regentree_growth0.png" id="2_o2m8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2m8g"]
 size = Vector2(64, 16)
 
 [node name="Flora_RegenTree" instance=ExtResource("1_cqd1s")]
 
-[node name="Sprite2D" parent="." index="0"]
-position = Vector2(-16, -80)
-texture = ExtResource("2_o2m8g")
-
 [node name="CollisionShape2D" parent="Area_Build" index="0"]
 position = Vector2(32, 8)
 shape = SubResource("RectangleShape2D_o2m8g")
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(32, 8)
