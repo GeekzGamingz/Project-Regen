@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://djh4o8rsnf47g"]
+[gd_scene load_steps=11 format=3 uid="uid://djh4o8rsnf47g"]
 
-[ext_resource type="Script" uid="uid://ubot8vh8musm" path="res://source/Main.gd" id="1_j4pr7"]
+[ext_resource type="Script" uid="uid://ubot8vh8musm" path="res://source/_Main.gd" id="1_j4pr7"]
 [ext_resource type="PackedScene" uid="uid://c0f0uvs8gipny" path="res://source/02 - User Interface/UserInterface.tscn" id="2_6nprl"]
 [ext_resource type="PackedScene" uid="uid://c4vnsqevw5lyv" path="res://source/01 - Components/01 - Building/01 - Building Grid/BuildingGrid.tscn" id="3_ww14o"]
 [ext_resource type="PackedScene" uid="uid://coqkg51u20leh" path="res://source/00 - World/Map_World.tscn" id="4_3g1sp"]
+[ext_resource type="PackedScene" uid="uid://mwnxm2c0dr5f" path="res://source/00 - World/Map_Grass.tscn" id="4_w8wt5"]
 [ext_resource type="Script" uid="uid://ccajok2nl5ohr" path="res://source/01 - Components/Camera_Main.gd" id="4_ww14o"]
 [ext_resource type="PackedScene" uid="uid://dfakdncbf8w6a" path="res://source/03 - Entities/00 - Player/Entity_Player.tscn" id="6_3g1sp"]
 [ext_resource type="PackedScene" uid="uid://b0af6y5i8dvl2" path="res://source/01 - Components/00 - Calendar/Calendar.tscn" id="6_td4sm"]
@@ -17,6 +18,8 @@ script = ExtResource("1_j4pr7")
 follow_viewport_enabled = false
 
 [node name="Map_World" parent="." instance=ExtResource("4_3g1sp")]
+
+[node name="Map_Grass" parent="." instance=ExtResource("4_w8wt5")]
 
 [node name="BuildingGrid" parent="." instance=ExtResource("3_ww14o")]
 
@@ -35,14 +38,9 @@ script = ExtResource("7_td4sm")
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages"]
 
 [node name="Flora_RegenTree" parent="Orphanages/Orphanage_Flora" instance=ExtResource("7_6thqj")]
-position = Vector2(176, 80)
-collision_layer = 1
-collision_mask = 1
+position = Vector2(165, 82)
 
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
 [node name="Entity_Player" parent="Orphanages/Orphanage_Entities" instance=ExtResource("6_3g1sp")]
 position = Vector2(240, 137)
-
-[editable path="UserInterface"]
-[editable path="UserInterface/UI_FullRect/Menu_Tools"]

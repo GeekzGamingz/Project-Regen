@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bno3qtm5pjbrn"
-path="res://.godot/imported/gentree_growth3_withered.png-e0071e6ab0d7d345ba782128e2f979fe.ctex"
+uid="uid://dmwlyl6rgt1hh"
+path="res://.godot/imported/trees.png-2cbbd8d9239d2caebc933f4473aad890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/02 - Objects/01 - Flora/01 - Trees/gentree_growth3_withered.png"
-dest_files=["res://.godot/imported/gentree_growth3_withered.png-e0071e6ab0d7d345ba782128e2f979fe.ctex"]
+source_file="res://assets/02 - Objects/01 - Flora/01 - Trees/trees.png"
+dest_files=["res://.godot/imported/trees.png-2cbbd8d9239d2caebc933f4473aad890.ctex"]
 
 [params]
 

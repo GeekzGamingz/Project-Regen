@@ -52,7 +52,7 @@ texture = ExtResource("3_bmxdq")
 
 [node name="Clock_Hand" type="Sprite2D" parent="HBoxContainer/UI_Clock"]
 position = Vector2(16, 16)
-rotation = 5.18363
+rotation = 5.65487
 texture = ExtResource("4_pbh2f")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]

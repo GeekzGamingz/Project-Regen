@@ -1,6 +1,9 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
+signal tick_elapsed
+signal month_elapsed
+signal season_elapsed
 signal update_calendar
 #------------------------------------------------------------------------------#
 #Constants
@@ -32,55 +35,67 @@ var season: int #Current Season
 @onready var week_length = day_length * DAYS_WEEKLY
 @onready var month_length = day_length * DAYS_MONTHLY
 @onready var season_length = day_length * DAYS_MONTHLY * MONTHS_SEASONLY
+@onready var year_length = day_length * DAYS_MONTHLY * MONTHS_ANNUALLY
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
 	check_cycles()
+	emit_signal(
+		"update_calendar",
+		weekdays[day], weeks[week], months[month], seasons[season]
+		)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 func _on_timer_ticks_timeout() -> void:
-	check_cycles()
-	var yesterday = day - 1
-	var tomorrow = day + 1
-	var elapsed = snapped((float(ticks) / day_length), 0.01)
-	if tomorrow == DAYS_WEEKLY: tomorrow = 0
-	#-----Print Block-----#
-	print("#---TICK!---#")
-	print("Current Tick: ", ticks)
-	print("Days Elapsed: ", int(elapsed))
-	print(
-		"Today: ", weekdays[day], " (", day, ") ",
-		"[Yesterday: ", weekdays[yesterday], " (", yesterday, ")] ",
-		"[Tomorrow: ", weekdays[tomorrow], " (", tomorrow, ")]"
-	)
-	print(
-		"Current Month: ", months[month], " (", month, ") ",
-		"[Current Week: ", weeks[week], " (", week, ")]")
-	print("Current Season: Season of ", seasons[season], " (", season, ")]")
+	#var yesterday = day - 1
+	#var tomorrow = day + 1
+	#var elapsed = snapped((float(ticks) / day_length), 0.01)
+	#if tomorrow == DAYS_WEEKLY: tomorrow = 0
+	##-----Print Block-----#
+	#print("#---TICK!---#")
+	#print("Current Tick: ", ticks)
+	#print("Days Elapsed: ", int(elapsed))
+	#print(
+		#"Today: ", weekdays[day], " (", day, ") ",
+		#"[Yesterday: ", weekdays[yesterday], " (", yesterday, ")] ",
+		#"[Tomorrow: ", weekdays[tomorrow], " (", tomorrow, ")]"
+	#)
+	#print(
+		#"Current Month: ", months[month], " (", month, ") ",
+		#"[Current Week: ", weeks[week], " (", week, ")]")
+	#print("Current Season: Season of ", seasons[season], " (", season, ")]")
 	#-----Print Block-----#
 	ticks += 1
-	if ticks % day_length == 0: 
-		day += 1
+	emit_signal("tick_elapsed", ticks)
+	if ticks % int(day_length * 0.5) == 0: check_cycles() #Bi-Daily Event
+	if ticks % day_length == 0:  #Daily Event
 		print("[DAILY EVENT -- !Random Timer Activated!]")
-	if ticks % week_length == 0:
-		week += 1
+		day += 1
+		check_cycles()
+	if ticks % week_length == 0: #Weekly Event
 		print("[WEEKLY EVENT  -- !Random Timer Activated!]")
-	if ticks % month_length == 0:
-		month += 1
+		week += 1
+		check_cycles()
+	if ticks % month_length == 0: #Monthly Event
 		print("[MONTHLY EVENT  -- !Random Timer Activated!]")
-	if ticks % season_length == 0:
-		season += 1
+		month += 1
+		check_cycles()
+		emit_signal("month_elapsed", months[month])
+	if ticks % season_length == 0: #Seasonly Event
 		print("[SEASONLY EVENT  -- !Random Timer Activated!]")
+		season += 1
+		check_cycles()
+		emit_signal("season_elapsed", seasons[season])
+	emit_signal(
+		"update_calendar",
+		weekdays[day], weeks[week], months[month], seasons[season]
+		)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Cycle
 func check_cycles():
 	G.CURRENT_TICK = ticks
 	if day == DAYS_WEEKLY: day = 0
-	if month == MONTHS_ANNUALLY: month = 0
 	if week == WEEKS_MONTHLY: week = 0
-	if season == MONTHS_SEASONLY: season = 0
-	emit_signal(
-		"update_calendar",
-		weekdays[day], weeks[week], months[month], seasons[season]
-		)
+	if month == MONTHS_ANNUALLY: month = 0
+	if season == SEASONS_ANNUALLY: season = 0

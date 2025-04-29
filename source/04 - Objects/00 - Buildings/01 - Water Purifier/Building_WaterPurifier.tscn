@@ -1,19 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfq8vsxubmfhp"]
+[gd_scene load_steps=6 format=3 uid="uid://dfq8vsxubmfhp"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_rx06g"]
-[ext_resource type="Texture2D" uid="uid://desli57gyj2m8" path="res://assets/02 - Objects/00 - Buildings/01 - Water Purifier/waterpurifier.png" id="2_u0gtc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx06g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrphl"]
+size = Vector2(48, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rx06g"]
+load_path = "res://.godot/imported/waterpurifier.png-6f151a069a13b7f9b5b3098a22a17adb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0gtc"]
+load_path = "res://.godot/imported/waterpurifier.png-6f151a069a13b7f9b5b3098a22a17adb.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7dv5"]
 size = Vector2(48, 48)
 
 [node name="Building_WaterPurifier" groups=["Buildings"] instance=ExtResource("1_rx06g")]
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_u0gtc")
-
-[node name="CollisionShape2D" parent="Area_Build" index="0"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(24, 24)
-shape = SubResource("RectangleShape2D_rx06g")
+shape = SubResource("RectangleShape2D_mrphl")
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="Sprite_Object" parent="Sprites" index="0"]
+texture = SubResource("CompressedTexture2D_rx06g")
+
+[node name="Sprite_Preview" parent="Sprites" index="1"]
+texture = SubResource("CompressedTexture2D_u0gtc")
+
+[node name="CollisionShape2D" parent="Areas/Area_Build" index="0"]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_y7dv5")
+
+[node name="Area_Interact" parent="Areas" index="1"]
 position = Vector2(24, 24)

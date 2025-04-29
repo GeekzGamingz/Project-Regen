@@ -24,7 +24,7 @@ func _ready() -> void:
 #Process Function
 func _process(_delta: float) -> void:
 	check_cell()
-	check_zone()#Update Cell
+	check_zone() #Update Cell
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Cell

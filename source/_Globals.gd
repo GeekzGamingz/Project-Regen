@@ -4,7 +4,8 @@ extends Node
 #Integers
 var CURRENT_TICK: int = 0
 #Vectors
-var TILE_SIZE: Vector2 = Vector2(16, 16)
+var TILE_SIZE: Vector2i = Vector2(16, 16)
+var GRASS_SIZE: Vector2i = Vector2(8, 8)
 #Global Bool Variables
 var IS_BUILDING: bool = false
 var CAN_BUILD: bool = false
