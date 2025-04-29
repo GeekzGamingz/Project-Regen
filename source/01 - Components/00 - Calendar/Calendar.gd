@@ -1,9 +1,10 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
-signal update_calendar
+signal tick_elapsed
 signal month_elapsed
 signal season_elapsed
+signal update_calendar
 #------------------------------------------------------------------------------#
 #Constants
 const DAYS_WEEKLY: int = 5 #Days Per Week
@@ -65,6 +66,7 @@ func _on_timer_ticks_timeout() -> void:
 	#print("Current Season: Season of ", seasons[season], " (", season, ")]")
 	#-----Print Block-----#
 	ticks += 1
+	emit_signal("tick_elapsed", ticks)
 	if ticks % int(day_length * 0.5) == 0: check_cycles() #Bi-Daily Event
 	if ticks % day_length == 0:  #Daily Event
 		print("[DAILY EVENT -- !Random Timer Activated!]")

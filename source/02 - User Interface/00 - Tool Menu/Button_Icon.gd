@@ -26,7 +26,8 @@ var object: PackedScene
 	"64x16": false,
 	"64x32": false,
 	"64x48": false,
-	"64x64": false
+	"64x64": false,
+	"98x98": false #Buildings/Special
 }
 #------------------------------------------------------------------------------#
 #Signaled Functions

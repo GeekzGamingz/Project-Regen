@@ -8,6 +8,9 @@ extends Node2D
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools
 @onready var MENU_BUILDINGS: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings
 @onready var MENU_FLORA: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora
+#Tile Sets
+@onready var MAP_WORLD: TileMapLayer = $Map_World
+@onready var MAP_GRASS: TileMapLayer = $Map_Grass
 #Building Grid
 @onready var BUILD_GRID: TileMapLayer = $BuildingGrid
 @onready var BLUEPRINT: Control = $BuildingGrid/Blueprint_Control

@@ -1,32 +1,83 @@
 [gd_scene load_steps=3 format=3 uid="uid://xxysto50vjtq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
-size = Vector2(64, 64)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
 radius = 4.0
 height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
+size = Vector2(64, 64)
 
 [node name="Object_Template" type="StaticBody2D"]
 collision_layer = 16
 collision_mask = 0
 
-[node name="Sprite_Object" type="Sprite2D" parent="."]
-centered = false
-
-[node name="Sprite_Preview" type="Sprite2D" parent="."]
-visible = false
-centered = false
-
-[node name="Area_Build" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Build"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_p6eq0")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ukouj")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite_Object" type="Sprite2D" parent="Sprites"]
+centered = false
+
+[node name="Sprite_Preview" type="Sprite2D" parent="Sprites"]
+visible = false
+centered = false
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Area_Build" type="Area2D" parent="Areas"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_p6eq0")
+
+[node name="Raycasts" type="Node2D" parent="."]
+position = Vector2(32, 32)
+
+[node name="Ray_PlayerDetection" type="Node2D" parent="Raycasts"]
+
+[node name="Ray_PlayerDetectionN" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(0, -16)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionNE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(12, -12)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(16, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionSE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(12, 12)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionS" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(0, 16)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionSW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(-12, 12)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(-16, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Ray_PlayerDetectionNW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
+target_position = Vector2(-12, -12)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Timers" type="Node2D" parent="."]

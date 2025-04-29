@@ -5,7 +5,7 @@ extends StaticBody2D
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var CALENDAR: Node2D = MAIN.get_node("Calendar")
 #Sprites
-@onready var sprite_object: Sprite2D = $Sprite_Object
+@onready var sprite_object: Sprite2D = $Sprites/Sprite_Object
 #------------------------------------------------------------------------------#
 #Ready
 func _ready() -> void:
