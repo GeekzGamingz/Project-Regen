@@ -1,6 +1,13 @@
 extends StaticBody2D
 #------------------------------------------------------------------------------#
 #Variables
+#Nodes
+var map_world: TileMapLayer
+var map_grass: TileMapLayer
+#Vectors
+var start_tile: Vector2i
+#Arrays
+var grass_array: Array = []
 #Exported Variables
 @export var is_active: bool = false
 #OnReady Variables
@@ -22,33 +29,47 @@ func _input(event: InputEvent) -> void:
 				if !is_active:
 					is_active = true
 					MAIN.CALENDAR.connect("tick_elapsed", tick_elapsed)
+					spawn_grass_initial()
 					print("[!Regen Activated!]")
 #Signaled Functions
-func _on_timer_growth_timeout() -> void:
-	var map_world = MAIN.MAP_WORLD
-	var map_grass = MAIN.MAP_GRASS
-	var regen_tile = global_position
-	
-	var world_position = map_world.local_to_map(regen_tile)
-	var world_cell = map_world.map_to_local(world_position)
-	var world_source = map_world.get_cell_source_id(world_position)
+func _on_timer_growth_timeout() -> void: spawn_grass()
+#------------------------------------------------------------------------------#
+#Custom Functions
+func spawn_grass_initial():
+	var regen_tile = Vector2i(global_position)
+	#World Tilemap Layer
+	map_world = MAIN.MAP_WORLD
+	var world_offset = Vector2i($CollisionShape2D.position) / Vector2i(G.TILE_SIZE)
+	var world_position = map_world.local_to_map(regen_tile) + world_offset
 	var world_data = map_world.get_cell_tile_data(world_position)
-	var world_tileset = map_world.tile_set
-	var world_neighbor = map_world.get_neighbor_cell(world_position, 0)
-	var world_neighbors = map_world.get_surrounding_cells(world_position)
-	var grass_position = map_grass.local_to_map(regen_tile)
-	var grass_neighbors = map_grass.get_surrounding_cells(world_position)
-	print("+-TILESET: ", world_tileset)
-	print("World Tile Data: ", world_data.get_custom_data("Water"))
-	print("World Tile Position: ", world_cell)
-	print("World Tile Source ID: ", world_source)
-	print("World Tile Right Neighbor: ", world_neighbor)
-	print("World Tile Neighbor Array: ", world_neighbors)
-	print("Grass Tile Neighbor Array: ", grass_neighbors)
+	#Grass Tilemap Layer
+	map_grass = MAIN.MAP_GRASS
+	var grass_offset = Vector2i($CollisionShape2D.position) / Vector2i(G.GRASS_SIZE)
+	var grass_position = map_grass.local_to_map(regen_tile) + grass_offset
+	#Check for Water
 	if !world_data.get_custom_data("Water"):
-		var regen_offset: Vector2i = Vector2i($CollisionShape2D.position) / Vector2i(G.GRASS_SIZE)
-		map_grass.set_cell(grass_position + regen_offset, 0, Vector2i(3, 3))
-		map_grass.set_cells_terrain_connect(map_grass.get_surrounding_cells(grass_position + regen_offset), 0, 0, true)
+		map_grass.set_cell(grass_position, 0, Vector2i(3, 3), false)
+		grass_array.append(grass_position)
+		start_tile = grass_position
+		timer_growth.start()
+		#var grass_neighbors = map_grass.get_surrounding_cells(grass_position + regen_offset)
+		#grass_array.append_array(grass_neighbors)
+		#print(grass_array)
+		#map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
+func spawn_grass():
+	randomize()
+	var neighbor_random = (randi() % 4)
+	match(neighbor_random):
+		0: neighbor_random = TileSet.CELL_NEIGHBOR_LEFT_SIDE
+		1: neighbor_random = TileSet.CELL_NEIGHBOR_RIGHT_SIDE
+		2: neighbor_random = TileSet.CELL_NEIGHBOR_TOP_SIDE
+		3: neighbor_random = TileSet.CELL_NEIGHBOR_BOTTOM_SIDE
+	print("Starting Growth Tile: ", start_tile)
+	var neighbor = map_grass.get_neighbor_cell(start_tile, neighbor_random)
+	grass_array.append(neighbor)
+	#if is not equal to get_used_cells
+	map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
+	start_tile = neighbor #CHANGE TO RANDOM IN GRASS ARRAY
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 func tick_elapsed(ticks):
