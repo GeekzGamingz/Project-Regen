@@ -11,11 +11,15 @@ extends StateMachine
 func _ready() -> void:
 	#Add States
 	state_add("idle")
-	state_add("walk")
+	state_add("walk_left")
+	state_add("walk_right")
+	state_add("walk_up")
+	state_add("walk_down")
 	call_deferred("state_set", states.idle)
 #------------------------------------------------------------------------------#
 #State Label
 func _process(_delta: float) -> void:
+	update_blending()
 	state_label.text = str(states.keys()[state])
 #------------------------------------------------------------------------------#
 #State Machine
@@ -30,21 +34,37 @@ func state_logic(_delta):
 func transitions(delta):
 	match(state):
 		#Idle
-		states.idle:
-			if !e.velocity.is_zero_approx():
-				if e.max_speed == e.walk_speed: return states.walk
+		states.idle: return directional_transitions()
+		
 		#Walk
-		states.walk:
-			if e.velocity.is_zero_approx(): return states.idle
+		states.walk_left: return directional_transitions()
+		states.walk_right: return directional_transitions()
+		states.walk_up: return directional_transitions()
+		states.walk_down: return directional_transitions()
 	return null
 #Enter State
 @warning_ignore("unused_parameter")
-func state_enter(new_state, old_state): pass
-	#match(new_state):
-		#states.idle: e.playback.travel("idle")
-		#states.walk: e.playback.travel("walk")
+func state_enter(new_state, old_state):
+	match(new_state):
+		states.idle: e.playback.travel("Idle")
+		states.walk_left: e.playback.travel("Walk")
+		states.walk_right: e.playback.travel("Walk")
+		states.walk_up: e.playback.travel("Walk")
+		states.walk_down: e.playback.travel("Walk")
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):
 	match(old_state):
 		states.idle: pass
+#------------------------------------------------------------------------------#
+#Custom Functions
+#Directional Transitions
+func directional_transitions():
+	if e.direction == Vector2.ZERO: return states.idle
+	elif e.direction == Vector2.LEFT: return states.walk_left
+	elif e.direction == Vector2.RIGHT: return states.walk_right
+	elif e.direction == Vector2.UP: return states.walk_up
+	elif e.direction == Vector2.DOWN: return states.walk_down
+#Update Animation Blending
+func update_blending():
+	e.anim_tree["parameters/Walk/blend_position"] = e.direction

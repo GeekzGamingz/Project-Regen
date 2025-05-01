@@ -29,6 +29,3 @@ texture = SubResource("CompressedTexture2D_u0gtc")
 [node name="CollisionShape2D" parent="Areas/Area_Build" index="0"]
 position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_y7dv5")
-
-[node name="Area_Interact" parent="Areas" index="1"]
-position = Vector2(24, 24)

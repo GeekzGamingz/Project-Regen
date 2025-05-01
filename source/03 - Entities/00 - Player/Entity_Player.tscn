@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfakdncbf8w6a"]
+[gd_scene load_steps=5 format=3 uid="uid://dfakdncbf8w6a"]
 
 [ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/Character_Entity.tscn" id="1_g6jbf"]
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity_Movement.gd" id="2_kodb8"]
 [ext_resource type="Script" uid="uid://bxcm8vntpy238" path="res://source/03 - Entities/00 - Player/00 - Scripts/Player_Movement.gd" id="2_x2jc6"]
-[ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/00 - Player/00 - Scripts/Player_FSM.gd" id="3_kodb8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g6jbf"]
 outline_size = 1
@@ -19,8 +18,8 @@ script = ExtResource("2_kodb8")
 [node name="Player_Movement" type="Node2D" parent="Scripts" index="0"]
 script = ExtResource("2_x2jc6")
 
-[node name="Player_StateMachine" type="Node2D" parent="Scripts" index="1"]
-script = ExtResource("3_kodb8")
+[node name="AnimationTree" parent="AnimationPlayers" index="2"]
+parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Output_State" parent="Outputs" index="0"]
 custom_minimum_size = Vector2(100, 0)

@@ -15,10 +15,10 @@ func control_speed(event):
 		timer.wait_time = 1.0
 	if event.is_action_pressed("speed_double"): #Double Speed
 		timer.wait_time = 0.5
-	if event.is_action_pressed("speed_triple"): #Triple Speed
+	if event.is_action_pressed("speed_triple"): #Quadruple Speed
 		timer.wait_time = 0.25
 	if event.is_action_pressed("speed_decuple"): #Decuple Speed
-		timer.wait_time = 0.1
+		timer.wait_time = 0.1 #DEBUG ONLY
 	#Decrease Speed
 	if event.is_action_pressed("speed_half"): #Half Speed
 		timer.wait_time = 2
