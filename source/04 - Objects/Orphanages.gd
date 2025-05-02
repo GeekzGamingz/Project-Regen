@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("action_confirm"):
 		if !buttons_connected: buttons_connect()
 		if G.IS_BUILDING: object_add()
-	if event.is_action_released("action_cancel"):
+	if event.is_action_released("action_context"):
 		object_current = null
 		emit_signal("exit_build_mode")
 #------------------------------------------------------------------------------#

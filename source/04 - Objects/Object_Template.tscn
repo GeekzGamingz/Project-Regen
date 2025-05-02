@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xxysto50vjtq"]
+[gd_scene load_steps=5 format=3 uid="uid://xxysto50vjtq"]
+
+[ext_resource type="Script" uid="uid://rnkyan66xlrm" path="res://source/04 - Objects/Object_Template.gd" id="1_ukouj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
 radius = 4.0
@@ -7,9 +9,12 @@ height = 18.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
 size = Vector2(64, 64)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_crrwx"]
+
 [node name="Object_Template" type="StaticBody2D"]
 collision_layer = 16
 collision_mask = 0
+script = ExtResource("1_ukouj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)
@@ -35,49 +40,10 @@ collision_mask = 0
 position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_p6eq0")
 
-[node name="Raycasts" type="Node2D" parent="."]
+[node name="Area_Detection" type="Area2D" parent="Areas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection"]
 position = Vector2(32, 32)
-
-[node name="Ray_PlayerDetection" type="Node2D" parent="Raycasts"]
-
-[node name="Ray_PlayerDetectionN" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(0, -16)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionNE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(12, -12)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(16, 0)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionSE" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(12, 12)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionS" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(0, 16)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionSW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(-12, 12)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(-16, 0)
-collision_mask = 2
-hit_from_inside = true
-
-[node name="Ray_PlayerDetectionNW" type="RayCast2D" parent="Raycasts/Ray_PlayerDetection"]
-target_position = Vector2(-12, -12)
-collision_mask = 2
-hit_from_inside = true
+shape = SubResource("CircleShape2D_crrwx")
 
 [node name="Timers" type="Node2D" parent="."]

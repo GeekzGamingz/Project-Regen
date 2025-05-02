@@ -14,6 +14,7 @@ var is_grounded: bool = false
 var facing: Vector2 = Vector2.ONE
 var inversion: Vector2 = Vector2.ONE
 var direction: Vector2 = Vector2.ZERO
+var direction_previous: Vector2 = Vector2.ZERO
 #Exported Variables
 #Floats
 @export var speed: float = 2.5
@@ -22,6 +23,8 @@ var direction: Vector2 = Vector2.ZERO
 @onready var walk_speed: float = speed * G.TILE_SIZE.x
 @onready var run_speed: float = walk_speed * 2
 @onready var max_speed: float = walk_speed
+#RayCasts
+@onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes
 @onready var sprite_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Sprite
 @onready var fx_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Effects
@@ -37,8 +40,8 @@ func _ready() -> void:
 #Movement
 func apply_movement() -> void:
 	velocity = lerp(velocity, direction * max_speed, weight())
-	if direction.x > 0: set_facing(FACING_RIGHT)
-	elif direction.x < 0: set_facing(FACING_LEFT)
+	#if direction.x > 0: set_facing(FACING_RIGHT)
+	#elif direction.x < 0: set_facing(FACING_LEFT)
 	move_and_slide()
 #------------------------------------------------------------------------------#
 #Facing Orientations

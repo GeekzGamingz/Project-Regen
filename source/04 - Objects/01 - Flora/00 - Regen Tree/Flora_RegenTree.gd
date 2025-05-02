@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Interactable
 #------------------------------------------------------------------------------#
 #Variables
 #Nodes
@@ -14,28 +14,21 @@ var water_array: Array = []
 @export var is_active: bool = false
 #OnReady Variables
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var ray_pdetect: Node2D = $Raycasts/Ray_PlayerDetection
 @onready var timer_growth: Timer = $Timers/Timer_Growth
 #Offsets
 @onready var world_offset = Vector2i($CollisionShape2D.position) / Vector2i(G.TILE_SIZE)
 @onready var grass_offset = Vector2i($CollisionShape2D.position) / Vector2i(G.GRASS_SIZE)
 #------------------------------------------------------------------------------#
-#Input Function
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_interact"):
-		if is_active: print("[!Already Active!]")
-		for ray in ray_pdetect.get_children():
-			if ray.is_colliding():
-				if !is_active:
-					is_active = true
-					MAIN.CALENDAR.connect("tick_elapsed", tick_elapsed)
-					spawn_grass_initial()
-					print("[!Regen Activated!]")
 #Signaled Functions
 func _on_timer_growth_timeout() -> void:
 	if grass_array.size() < 420: spawn_grass() #Size to Change as Regen Tree Grows
 #------------------------------------------------------------------------------#
 #Custom Functions
+func activate():
+	if !is_active:
+		is_active = true
+		MAIN.CALENDAR.connect("tick_elapsed", tick_elapsed)
+		spawn_grass_initial()
 #Spawn Initial Grass
 func spawn_grass_initial():
 	var regen_tile = Vector2i(global_position)

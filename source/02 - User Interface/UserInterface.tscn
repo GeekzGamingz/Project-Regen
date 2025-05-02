@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene load_steps=4 format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/00 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - User Interface/Base_Theme.tres" id="1_s1jx5"]
 [ext_resource type="PackedScene" uid="uid://hihmcyuyroma" path="res://source/02 - User Interface/01 - Calendar/UI_Calendar.tscn" id="2_s1jx5"]
 
 [node name="UserInterface" type="CanvasLayer"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_s1jx5")
 
 [node name="Menu_Tools" parent="UI_FullRect" instance=ExtResource("1_nbbpt")]
 layout_mode = 1
