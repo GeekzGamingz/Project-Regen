@@ -11,7 +11,9 @@ var chatter: String
 @onready var line_message: LineEdit = $HBoxContainer/VBoxContainer/HBoxContainer2/LineEdit_Message
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void: NETWORK.connect("server_found", server_found)
+func _ready() -> void:
+	NETWORK.connect("server_found", server_found)
+	NETWORK.connect("join_message", join_message)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Send Message with Send
@@ -22,11 +24,14 @@ func _on_line_message_text_submitted(_new_text: String) -> void: send_message()
 #Custom Functions
 func send_message():
 	if line_message.text != "":
-		message_rpc.rpc(chatter, line_message.text)
+		rpc("message_rpc", chatter, line_message.text)
+		#message_rpc.rpc(chatter, line_message.text)
 		line_message.text = ""
 #------------------------------------------------------------------------------#
 #Custom Signaled Function
 func server_found(username): chatter = username
+func join_message():
+	rpc("message_rpc", chatter, "I HAVE ARRIVED!")
 #------------------------------------------------------------------------------#
 #RPC Functions
 @rpc("any_peer", "call_local")

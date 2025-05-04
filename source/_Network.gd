@@ -2,6 +2,7 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
 signal server_found
+signal join_message
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables
@@ -22,6 +23,7 @@ func server_joined(username):
 	var peer_id = multiplayer.get_unique_id()
 	if peer_id == 1: print("Host Connected: ", username,  " [", peer_id, "]")
 	else: print("Client Connected: ", username, " [", peer_id, "]")
+	multiplayer.peer_connected.connect(connection_output)
 	emit_signal("server_found", username)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
@@ -40,3 +42,7 @@ func client_create(username, ip):
 	get_tree().set_multiplayer(SceneMultiplayer.new(), get_path())
 	multiplayer.multiplayer_peer = peer
 	server_joined(username)
+#Connection Output
+func connection_output(id: int):
+	emit_signal("join_message")
+	print("Peer Connected ", id)
