@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://r47eiw2k2umj"]
+
+[ext_resource type="Script" uid="uid://bnvfj5isvqmg" path="res://source/02 - User Interface/00 - Network/UI_Network.gd" id="1_tv7rn"]
+
+[node name="UI_Network" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tv7rn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="Button_Host" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Host"
+
+[node name="Button_Join" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Join
+"
+
+[node name="LineEdit_Username" type="LineEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+placeholder_text = "Username"
+caret_blink = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="LineEdit_IPAddress" type="LineEdit" parent="."]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+placeholder_text = "IP Address"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[connection signal="button_up" from="HBoxContainer/Button_Host" to="." method="_on_button_host_button_up"]
+[connection signal="button_up" from="HBoxContainer/Button_Join" to="." method="_on_button_join_button_up"]
+[connection signal="text_submitted" from="LineEdit_IPAddress" to="." method="_on_ip_text_submitted"]

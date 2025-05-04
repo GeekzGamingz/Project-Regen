@@ -8,8 +8,8 @@ extends TileMapLayer
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var MENU_BUILDINGS: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings")
 @onready var MENU_FLORA: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora")
-@onready var ORPHANAGES: Node2D = MAIN.get_node("Orphanages")
-@onready var BLUEPRINT: Control = MAIN.get_node("BuildingGrid/Blueprint_Control")
+@onready var ORPHANAGES: Node2D = MAIN.get_node("World/Orphanages")
+@onready var BLUEPRINT: Control = MAIN.get_node("World/Mapping/BuildingGrid/Blueprint_Control")
 #Blueprint Nodes
 @onready var blueprint_zone = BLUEPRINT.get_node("Blueprint_Zone")
 @onready var blueprint_selection = BLUEPRINT.get_node("Blueprint_Selection")

@@ -4,7 +4,7 @@ extends Node2D
 signal tick_elapsed
 signal month_elapsed
 signal season_elapsed
-signal update_calendar
+signal update_time
 #------------------------------------------------------------------------------#
 #Constants
 const DAYS_WEEKLY: int = 5 #Days Per Week
@@ -41,7 +41,7 @@ var season: int #Current Season
 func _ready() -> void:
 	check_cycles()
 	emit_signal(
-		"update_calendar",
+		"update_time",
 		weekdays[day], weeks[week], months[month], seasons[season]
 		)
 #------------------------------------------------------------------------------#
@@ -87,7 +87,7 @@ func _on_timer_ticks_timeout() -> void:
 		check_cycles()
 		emit_signal("season_elapsed", seasons[season])
 	emit_signal(
-		"update_calendar",
+		"update_time",
 		weekdays[day], weeks[week], months[month], seasons[season]
 		)
 #------------------------------------------------------------------------------#

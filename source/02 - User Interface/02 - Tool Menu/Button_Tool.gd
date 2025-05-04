@@ -6,7 +6,7 @@ extends TextureButton
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var ORPHANAGES: Node2D = MAIN.get_node("Orphanages")
+@onready var ORPHANAGES: Node2D = MAIN.get_node("World/Orphanages")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:

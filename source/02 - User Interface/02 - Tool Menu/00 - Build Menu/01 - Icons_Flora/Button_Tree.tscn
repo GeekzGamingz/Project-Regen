@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://13j540abk660"]
 
-[ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/00 - Tool Menu/00 - Build Menu/Button_Template.tscn" id="1_wwrsc"]
+[ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/02 - Tool Menu/00 - Build Menu/Button_Template.tscn" id="1_wwrsc"]
 [ext_resource type="PackedScene" uid="uid://btme3ttlnntwp" path="res://source/04 - Objects/01 - Flora/01 - Tree/Flora_Tree.tscn" id="2_id7l4"]
 [ext_resource type="Texture2D" uid="uid://b5h0rf4w4d32w" path="res://assets/00 - User Interface/02 - Buttons/01 - Menu/icon_tree.png" id="2_ns2f2"]
 

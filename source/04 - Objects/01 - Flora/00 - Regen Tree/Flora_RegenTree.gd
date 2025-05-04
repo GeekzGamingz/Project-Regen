@@ -27,7 +27,7 @@ func _on_timer_growth_timeout() -> void:
 func activate():
 	if !is_active:
 		is_active = true
-		MAIN.CALENDAR.connect("tick_elapsed", tick_elapsed)
+		MAIN.TIME.connect("tick_elapsed", tick_elapsed)
 		spawn_grass_initial()
 #Spawn Initial Grass
 func spawn_grass_initial():
@@ -45,8 +45,8 @@ func spawn_grass_initial():
 		grass_array.append(grass_position)
 		start_tile = grass_position
 		timer_growth.start()
-	#Get Calendar Timer
-	timer_ticks = MAIN.CALENDAR.get_node("Timer_Ticks")
+	#Get Time
+	timer_ticks = MAIN.TIME.get_node("Timer_Ticks")
 #Spawn Grass
 func spawn_grass():
 	randomize()
