@@ -25,13 +25,11 @@ func _on_line_message_text_submitted(_new_text: String) -> void: send_message()
 func send_message():
 	if line_message.text != "":
 		rpc("message_rpc", chatter, line_message.text)
-		#message_rpc.rpc(chatter, line_message.text)
 		line_message.text = ""
 #------------------------------------------------------------------------------#
 #Custom Signaled Function
 func server_found(username): chatter = username
-func join_message():
-	rpc("message_rpc", chatter, "I HAVE ARRIVED!")
+func join_message(): rpc("message_rpc", chatter, "I HAVE ARRIVED!")
 #------------------------------------------------------------------------------#
 #RPC Functions
 @rpc("any_peer", "call_local")

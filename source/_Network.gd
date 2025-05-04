@@ -31,16 +31,15 @@ func server_joined(username):
 func server_create(username):
 	var host = ENetMultiplayerPeer.new()
 	host.create_server(port, max_players)
-	get_tree().set_multiplayer(SceneMultiplayer.new(), get_path())
 	multiplayer.multiplayer_peer = host
-	print("[!SERVER CREATED!]")
+	print("[!HOST CLIENT CREATED!]")
 	server_joined(username)
 #Create Client Connection
 func client_create(username, ip):
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip, port)
-	get_tree().set_multiplayer(SceneMultiplayer.new(), get_path())
 	multiplayer.multiplayer_peer = peer
+	print("[!GUEST CLIENT CREATED!]")
 	server_joined(username)
 #Connection Output
 func connection_output(id: int):
