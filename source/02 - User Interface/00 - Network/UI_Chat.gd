@@ -29,7 +29,7 @@ func send_message():
 #------------------------------------------------------------------------------#
 #Custom Signaled Function
 func server_found(username): chatter = username
-func join_message(): rpc("message_rpc", chatter, "I HAVE ARRIVED!")
+func join_message(): rpc("message_rpc", "Narrating Voice", str(chatter, " has arrived..."))
 #------------------------------------------------------------------------------#
 #RPC Functions
 @rpc("any_peer", "call_local")

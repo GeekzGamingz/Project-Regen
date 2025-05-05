@@ -14,4 +14,4 @@ func handle_movement() -> void:
 	if entity.direction != Vector2.ZERO: MAIN.CAMERA_MAIN.position = entity.position
 #Activate Object
 func activate_object() -> void:
-	if object_detection.is_colliding(): object_detection.get_collider().activate()
+	if object_detection.is_colliding(): object_detection.get_collider().rpc("activate")

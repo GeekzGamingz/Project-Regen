@@ -23,7 +23,7 @@ func server_joined(username):
 	var peer_id = multiplayer.get_unique_id()
 	if peer_id == 1: print("Host Connected: ", username,  " [", peer_id, "]")
 	else: print("Client Connected: ", username, " [", peer_id, "]")
-	multiplayer.peer_connected.connect(connection_output)
+	multiplayer.connected_to_server.connect(connection_successful)
 	emit_signal("server_found", username)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
@@ -41,7 +41,5 @@ func client_create(username, ip):
 	multiplayer.multiplayer_peer = peer
 	print("[!GUEST CLIENT CREATED!]")
 	server_joined(username)
-#Connection Output
-func connection_output(id: int):
-	emit_signal("join_message")
-	print("Peer Connected ", id)
+#On Successful Connection
+func connection_successful(): emit_signal("join_message")

@@ -21,15 +21,17 @@ var water_array: Array = []
 #------------------------------------------------------------------------------#
 #Signaled Functions
 func _on_timer_growth_timeout() -> void:
-	if grass_array.size() < 420: spawn_grass() #Size to Change as Regen Tree Grows
+	if grass_array.size() < 420: rpc("spawn_grass") #Size to Change as Regen Tree Grows
 #------------------------------------------------------------------------------#
 #Custom Functions
+@rpc("any_peer", "call_local")
 func activate():
 	if !is_active:
 		is_active = true
 		MAIN.TIME.connect("tick_elapsed", tick_elapsed)
 		spawn_grass_initial()
 #Spawn Initial Grass
+@rpc("any_peer", "call_local")
 func spawn_grass_initial():
 	var regen_tile = Vector2i(global_position)
 	#World Tilemap Layer
@@ -48,6 +50,7 @@ func spawn_grass_initial():
 	#Get Time
 	timer_ticks = MAIN.TIME.get_node("Timer_Ticks")
 #Spawn Grass
+@rpc("any_peer", "call_local")
 func spawn_grass():
 	randomize()
 	var random_tile = grass_array.pick_random()

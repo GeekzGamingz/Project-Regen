@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk6yobriqni2k"]
+[gd_scene load_steps=8 format=3 uid="uid://dk6yobriqni2k"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_cqd1s"]
 [ext_resource type="Script" uid="uid://jk4oyh4lfhe5" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.gd" id="2_2ug13"]
@@ -13,6 +13,8 @@ load_path = "res://.godot/imported/regentree_growth0.png-f673470e2815565fb3bf061
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug13"]
 size = Vector2(96, 96)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2ug13"]
 
 [node name="Flora_RegenTree" instance=ExtResource("1_cqd1s")]
 script = ExtResource("2_2ug13")
@@ -41,5 +43,8 @@ position = Vector2(48, 88)
 
 [node name="Timer_Growth" type="Timer" parent="Timers" index="0"]
 one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4"]
+replication_config = SubResource("SceneReplicationConfig_2ug13")
 
 [connection signal="timeout" from="Timers/Timer_Growth" to="." method="_on_timer_growth_timeout"]
