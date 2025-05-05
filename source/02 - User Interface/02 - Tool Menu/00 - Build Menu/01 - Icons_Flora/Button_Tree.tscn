@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://13j540abk660"]
+
+[ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/02 - Tool Menu/00 - Build Menu/Button_Template.tscn" id="1_wwrsc"]
+[ext_resource type="PackedScene" uid="uid://btme3ttlnntwp" path="res://source/04 - Objects/01 - Flora/01 - Tree/Flora_Tree.tscn" id="2_id7l4"]
+[ext_resource type="Texture2D" uid="uid://b5h0rf4w4d32w" path="res://assets/00 - User Interface/02 - Buttons/01 - Menu/icon_tree.png" id="2_ns2f2"]
+
+[node name="Button_Tree" instance=ExtResource("1_wwrsc")]
+texture_normal = ExtResource("2_ns2f2")
+building = ExtResource("2_id7l4")
+is_unlocked = true
+dimensions = {
+"16x16": false,
+"16x32": false,
+"16x48": false,
+"16x64": false,
+"32x16": false,
+"32x32": false,
+"32x48": false,
+"32x64": false,
+"48x16": false,
+"48x32": false,
+"48x48": false,
+"48x64": false,
+"64x16": false,
+"64x32": false,
+"64x48": false,
+"64x64": true
+}
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

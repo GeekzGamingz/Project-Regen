@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk6yobriqni2k"]
+[gd_scene load_steps=8 format=3 uid="uid://dk6yobriqni2k"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_cqd1s"]
 [ext_resource type="Script" uid="uid://jk4oyh4lfhe5" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.gd" id="2_2ug13"]
 [ext_resource type="Texture2D" uid="uid://4a1p8jkpm3st" path="res://assets/02 - Objects/01 - Flora/00 - Regen Tree/regentree_growth0.png" id="2_o2m8g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ug13"]
-radius = 4.0
-height = 18.0
+radius = 5.0
+height = 14.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o2m8g"]
 load_path = "res://.godot/imported/regentree_growth0.png-f673470e2815565fb3bf06166ae4c4cd.ctex"
@@ -14,11 +14,19 @@ load_path = "res://.godot/imported/regentree_growth0.png-f673470e2815565fb3bf061
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ug13"]
 size = Vector2(96, 96)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2ug13"]
+properties/0/path = NodePath(".:grass_array")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
 [node name="Flora_RegenTree" instance=ExtResource("1_cqd1s")]
 script = ExtResource("2_2ug13")
+grass_array = []
+is_active = false
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(48, 88)
+rotation = 0.0
 shape = SubResource("CapsuleShape2D_2ug13")
 
 [node name="Sprite_Object" parent="Sprites" index="0"]
@@ -31,10 +39,16 @@ texture = ExtResource("2_o2m8g")
 position = Vector2(48, 48)
 shape = SubResource("RectangleShape2D_2ug13")
 
-[node name="Raycasts" parent="." index="3"]
+[node name="Area_Detection" parent="Areas" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="Areas/Area_Detection" index="0"]
 position = Vector2(48, 88)
 
 [node name="Timer_Growth" type="Timer" parent="Timers" index="0"]
 one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4"]
+replication_config = SubResource("SceneReplicationConfig_2ug13")
 
 [connection signal="timeout" from="Timers/Timer_Growth" to="." method="_on_timer_growth_timeout"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl5bh77msypdb"]
+
+[ext_resource type="Texture2D" uid="uid://bpa4lrej66jbx" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_face.png" id="1_yifu0"]
+[ext_resource type="Texture2D" uid="uid://b1lwnmrs3mi27" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_hand.png" id="2_c3uge"]
+[ext_resource type="Script" uid="uid://dokwfqfnapy1f" path="res://source/01 - Components/00 - Time/00 - Clock/UI_Clock.gd" id="2_lmvck"]
+[ext_resource type="Texture2D" uid="uid://dm8objsq610cg" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_daycycle.png" id="2_vudsx"]
+[ext_resource type="Texture2D" uid="uid://2c5bx1gntr62" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_face2.png" id="3_lmvck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmvck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmvck"]
+font_size = 7
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eejdj"]
+
+[node name="UI_Clock" type="TextureRect"]
+texture = ExtResource("1_yifu0")
+script = ExtResource("2_lmvck")
+
+[node name="Clock_DayNight" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+pivot_offset = Vector2(17.5, 17.5)
+texture = ExtResource("2_vudsx")
+
+[node name="Clock_Face" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("3_lmvck")
+
+[node name="Clock_Hand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+pivot_offset = Vector2(17.5, 17.5)
+texture = ExtResource("2_c3uge")
+
+[node name="Clock_Labels" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -20.0
+offset_right = 28.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label_Time" type="Label" parent="Clock_Labels"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lmvck")
+text = "13TH HOUR"
+label_settings = SubResource("LabelSettings_lmvck")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label_Meridiem" type="Label" parent="Clock_Labels"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eejdj")
+text = "BEFORE MIDDAY"
+label_settings = SubResource("LabelSettings_lmvck")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

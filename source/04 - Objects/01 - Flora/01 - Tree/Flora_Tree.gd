@@ -3,15 +3,15 @@ extends StaticBody2D
 #Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var CALENDAR: Node2D = MAIN.get_node("Calendar")
+@onready var TIME: Node2D = MAIN.get_node("World/Time")
 #Sprites
 @onready var sprite_object: Sprite2D = $Sprites/Sprite_Object
 #------------------------------------------------------------------------------#
 #Ready
 func _ready() -> void:
 	#Connections
-	CALENDAR.connect("month_elapsed", month_elapsed)
-	CALENDAR.connect("season_elapsed", season_elapsed)
+	TIME.connect("month_elapsed", month_elapsed)
+	TIME.connect("season_elapsed", season_elapsed)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Month Elapsed

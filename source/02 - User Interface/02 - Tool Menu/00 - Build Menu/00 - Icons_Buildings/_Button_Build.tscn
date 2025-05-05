@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cquhycjyevhwh"]
+
+[ext_resource type="PackedScene" uid="uid://dpu7oxurknsi1" path="res://source/02 - User Interface/02 - Tool Menu/Button_Tool.tscn" id="1_5lrbk"]
+
+[node name="Button_Build" instance=ExtResource("1_5lrbk")]
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
