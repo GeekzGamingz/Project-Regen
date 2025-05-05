@@ -15,41 +15,41 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("1_b3syu")
 
-[node name="Texture_Host" type="TextureRect" parent="."]
+[node name="Button_Host" type="TextureButton" parent="."]
 layout_mode = 2
-texture = ExtResource("2_wm71c")
+texture_normal = ExtResource("2_wm71c")
 
-[node name="Marker_HostSpawn" type="Marker2D" parent="Texture_Host"]
+[node name="Marker_HostSpawn" type="Marker2D" parent="Button_Host"]
 position = Vector2(24, 24)
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
 columns = 2
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+[node name="Button_Guest1" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_0diox")
+texture_normal = ExtResource("3_0diox")
 
-[node name="Marker_GuestSpawn1" type="Marker2D" parent="GridContainer/TextureRect2"]
+[node name="Marker_GuestSpawn" type="Marker2D" parent="GridContainer/Button_Guest1"]
 position = Vector2(24, 24)
 
-[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+[node name="Button_Guest2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_0diox")
+texture_normal = ExtResource("3_0diox")
 
-[node name="Marker_GuestSpawn2" type="Marker2D" parent="GridContainer/TextureRect3"]
+[node name="Marker_GuestSpawn" type="Marker2D" parent="GridContainer/Button_Guest2"]
 position = Vector2(24, 24)
 
-[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+[node name="Button_Guest3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_0diox")
+texture_normal = ExtResource("3_0diox")
 
-[node name="Marker_GuestSpawn3" type="Marker2D" parent="GridContainer/TextureRect4"]
+[node name="Marker_GuestSpawn" type="Marker2D" parent="GridContainer/Button_Guest3"]
 position = Vector2(24, 24)
 
-[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+[node name="Button_Guest4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-texture = ExtResource("3_0diox")
+texture_normal = ExtResource("3_0diox")
 
-[node name="Marker_GuestSpawn4" type="Marker2D" parent="GridContainer/TextureRect5"]
+[node name="Marker_GuestSpawn" type="Marker2D" parent="GridContainer/Button_Guest4"]
 position = Vector2(24, 24)

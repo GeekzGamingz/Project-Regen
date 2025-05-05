@@ -2,7 +2,7 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
 signal server_found
-signal join_message
+signal message_join
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables
@@ -11,10 +11,11 @@ signal join_message
 #Variables
 #Exported Variables
 @export var port: int = 60005
-@export var max_players: int = 4
+@export var max_players: int = 5
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
+	multiplayer.connected_to_server.connect(connection_successful)
 	UI_NETWORK.connect("server_create", server_create)
 	UI_NETWORK.connect("client_create", client_create)
 #------------------------------------------------------------------------------#
@@ -23,8 +24,8 @@ func server_joined(username):
 	var peer_id = multiplayer.get_unique_id()
 	if peer_id == 1: print("Host Connected: ", username,  " [", peer_id, "]")
 	else: print("Client Connected: ", username, " [", peer_id, "]")
-	multiplayer.connected_to_server.connect(connection_successful)
 	emit_signal("server_found", username)
+	UI_NETWORK.set_deferred("visible", false)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Create New Server
@@ -42,4 +43,4 @@ func client_create(username, ip):
 	print("[!GUEST CLIENT CREATED!]")
 	server_joined(username)
 #On Successful Connection
-func connection_successful(): emit_signal("join_message")
+func connection_successful(): emit_signal("message_join")

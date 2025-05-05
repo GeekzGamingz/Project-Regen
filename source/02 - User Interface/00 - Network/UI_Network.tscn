@@ -52,4 +52,5 @@ theme_override_constants/margin_top = 8
 
 [connection signal="button_up" from="HBoxContainer/Button_Host" to="." method="_on_button_host_button_up"]
 [connection signal="button_up" from="HBoxContainer/Button_Join" to="." method="_on_button_join_button_up"]
+[connection signal="text_submitted" from="HBoxContainer/LineEdit_Username" to="." method="_on_line_username_text_submitted"]
 [connection signal="text_submitted" from="LineEdit_IPAddress" to="." method="_on_ip_text_submitted"]

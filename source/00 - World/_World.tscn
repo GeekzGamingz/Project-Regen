@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bxsc5d7ck36le"]
+[gd_scene load_steps=7 format=4 uid="uid://bxsc5d7ck36le"]
 
 [ext_resource type="PackedScene" uid="uid://b0af6y5i8dvl2" path="res://source/01 - Components/00 - Time/Time.tscn" id="1_146u6"]
 [ext_resource type="PackedScene" uid="uid://coqkg51u20leh" path="res://source/00 - World/Map_World.tscn" id="2_020tg"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c4vnsqevw5lyv" path="res://source/01 - Components/01 - Building/01 - Building Grid/BuildingGrid.tscn" id="4_vbrh1"]
 [ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/Orphanages.gd" id="5_ylk6r"]
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
-[ext_resource type="PackedScene" uid="uid://dfakdncbf8w6a" path="res://source/03 - Entities/00 - Player/Entity_Player.tscn" id="7_ayj11"]
 
 [node name="World" type="Node2D"]
 
@@ -33,5 +32,5 @@ position = Vector2(236, 8)
 
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
-[node name="Entity_Player" parent="Orphanages/Orphanage_Entities" instance=ExtResource("7_ayj11")]
-position = Vector2(240, 137)
+[node name="Spawner_Entities" type="MultiplayerSpawner" parent="Orphanages/Orphanage_Entities"]
+spawn_path = NodePath("..")
