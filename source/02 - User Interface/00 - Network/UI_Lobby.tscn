@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqo8v7iiwgwfy"]
+
+[ext_resource type="Texture2D" uid="uid://cm282ipytgycs" path="res://assets/Dungeon.png" id="1_b3syu"]
+[ext_resource type="Texture2D" uid="uid://ch10pnnht7fr6" path="res://assets/02 - Objects/02 - Plinth/plint_host.png" id="2_wm71c"]
+[ext_resource type="Texture2D" uid="uid://c06qvfk2bnag8" path="res://assets/02 - Objects/02 - Plinth/plint_guest.png" id="3_0diox"]
+
+[node name="UI_Lobby" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture_Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_b3syu")
+
+[node name="Texture_Host" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_wm71c")
+
+[node name="Marker_HostSpawn" type="Marker2D" parent="Texture_Host"]
+position = Vector2(24, 24)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_0diox")
+
+[node name="Marker_GuestSpawn1" type="Marker2D" parent="GridContainer/TextureRect2"]
+position = Vector2(24, 24)
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_0diox")
+
+[node name="Marker_GuestSpawn2" type="Marker2D" parent="GridContainer/TextureRect3"]
+position = Vector2(24, 24)
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_0diox")
+
+[node name="Marker_GuestSpawn3" type="Marker2D" parent="GridContainer/TextureRect4"]
+position = Vector2(24, 24)
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_0diox")
+
+[node name="Marker_GuestSpawn4" type="Marker2D" parent="GridContainer/TextureRect5"]
+position = Vector2(24, 24)

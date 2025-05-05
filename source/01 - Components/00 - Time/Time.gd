@@ -2,6 +2,7 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
 signal tick_elapsed
+signal day_elapsed
 signal month_elapsed
 signal season_elapsed
 signal update_time
@@ -72,6 +73,7 @@ func _on_timer_ticks_timeout() -> void:
 		print("[DAILY EVENT -- !Random Timer Activated!]")
 		day += 1
 		check_cycles()
+		emit_signal("day_elapsed", weekdays[day])
 	if ticks % week_length == 0: #Weekly Event
 		print("[WEEKLY EVENT  -- !Random Timer Activated!]")
 		week += 1

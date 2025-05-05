@@ -15,9 +15,13 @@ load_path = "res://.godot/imported/regentree_growth0.png-f673470e2815565fb3bf061
 size = Vector2(96, 96)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2ug13"]
+properties/0/path = NodePath(".:grass_array")
+properties/0/spawn = true
+properties/0/replication_mode = 2
 
 [node name="Flora_RegenTree" instance=ExtResource("1_cqd1s")]
 script = ExtResource("2_2ug13")
+grass_array = []
 is_active = false
 
 [node name="CollisionShape2D" parent="." index="0"]
