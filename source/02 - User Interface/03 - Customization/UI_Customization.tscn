@@ -1,0 +1,290 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr2y6f6qexgxt"]
+
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - User Interface/Base_Theme.tres" id="1_dwcvp"]
+[ext_resource type="Texture2D" uid="uid://dnc3gtqt7hbsp" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png" id="1_nm3d6"]
+[ext_resource type="Texture2D" uid="uid://da5mctvc67nau" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Buttons-Arrow2.png" id="2_dwcvp"]
+[ext_resource type="Script" uid="uid://swu1kapl6nj3" path="res://source/02 - User Interface/03 - Customization/UI_Customization.gd" id="2_r8p2t"]
+[ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Palette.png" id="3_r8p2t"]
+[ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="4_j8vi3"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="5_oaxbq"]
+[ext_resource type="Script" uid="uid://b2ts8g2yukglw" path="res://source/02 - User Interface/03 - Customization/Button_Color.gd" id="8_fx7rp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oaxbq"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.466667, 0.313726, 0.27451, 1)
+shader_parameter/new_shadow1 = Color(0.611765, 0.521569, 0.45098, 1)
+shader_parameter/new_base1 = Color(0.733333, 0.666667, 0.603922, 1)
+shader_parameter/new_highlight1 = Color(0.839216, 0.768627, 0.717647, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[node name="UI_Customization" type="HBoxContainer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_dwcvp")
+alignment = 2
+script = ExtResource("2_r8p2t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Selection_Hair" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Selection_Hair"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Selection_Hair"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Hair"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/Selection_Hair"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_Ears" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Selection_Ears"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Selection_Ears"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Ears"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/Selection_Ears"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_Hair2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Selection_Hair2"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Selection_Hair2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Beard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/Selection_Hair2"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_Height" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_Height" type="TextureButton" parent="VBoxContainer/Selection_Height"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_Height" type="Label" parent="VBoxContainer/Selection_Height"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Height"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_Height" type="TextureButton" parent="VBoxContainer/Selection_Height"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_Chub" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_Chub" type="TextureButton" parent="VBoxContainer/Selection_Chub"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_Chub" type="Label" parent="VBoxContainer/Selection_Chub"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Chub"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_Chub" type="TextureButton" parent="VBoxContainer/Selection_Chub"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_Animation" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_Animation" type="TextureButton" parent="VBoxContainer/Selection_Animation"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_Animation" type="Label" parent="VBoxContainer/Selection_Animation"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Animation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_Animation" type="TextureButton" parent="VBoxContainer/Selection_Animation"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Color Selection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+current_tab = 0
+clip_tabs = false
+
+[node name="Skin" type="GridContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+metadata/_tab_index = 0
+
+[node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_oaxbq")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Hair" type="TabContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+tab_alignment = 1
+current_tab = 0
+metadata/_tab_index = 1
+
+[node name="Top" type="GridContainer" parent="VBoxContainer/TabContainer/Hair"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Hair/Top"]
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+
+[node name="Facial" type="GridContainer" parent="VBoxContainer/TabContainer/Hair"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Hair/Facial"]
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+
+[node name="Eyes" type="TabContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+tab_alignment = 1
+current_tab = 0
+metadata/_tab_index = 2
+
+[node name="Left" type="GridContainer" parent="VBoxContainer/TabContainer/Eyes"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Eyes/Left"]
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+
+[node name="Right" type="GridContainer" parent="VBoxContainer/TabContainer/Eyes"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Eyes/Right"]
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[connection signal="button_up" from="VBoxContainer/Selection_Height/Previous_Height" to="." method="_on_previous_height_button_up"]
+[connection signal="button_up" from="VBoxContainer/Selection_Height/Next_Height" to="." method="_on_next_height_button_up"]
+[connection signal="button_up" from="VBoxContainer/Selection_Chub/Previous_Chub" to="." method="_on_previous_chub_button_up"]
+[connection signal="button_up" from="VBoxContainer/Selection_Chub/Next_Chub" to="." method="_on_next_chub_button_up"]
+[connection signal="button_up" from="VBoxContainer/Selection_Animation/Previous_Animation" to="." method="_on_previous_animation_button_up"]
+[connection signal="button_up" from="VBoxContainer/Selection_Animation/Next_Animation" to="." method="_on_next_animation_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color1" to="VBoxContainer/TabContainer/Skin/Button_Color1" method="_on_button_up"]

@@ -1,11 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dtlsw7xa8huqy"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtlsw7xa8huqy"]
 
 [ext_resource type="FontFile" uid="uid://dwinnwj21t8wc" path="res://assets/00 - User Interface/03 - Fonts/CyborgSister.ttf" id="2_n4dpy"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_hcql0"]
-color = Color(0, 0, 0, 0.588235)
-thickness = 2
-vertical = true
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4dpy"]
 
@@ -20,5 +15,4 @@ Label/constants/shadow_offset_x = 2
 Label/constants/shadow_outline_size = 2
 Label/font_sizes/font_size = 12
 Label/fonts/font = ExtResource("2_n4dpy")
-Label/styles/normal = SubResource("StyleBoxLine_hcql0")
 Panel/styles/panel = SubResource("StyleBoxTexture_n4dpy")

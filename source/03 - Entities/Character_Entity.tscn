@@ -1,8 +1,37 @@
-[gd_scene load_steps=30 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=33 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="1_7i3x6"]
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_kjtp0"]
 [ext_resource type="Texture2D" uid="uid://btfpmpqqkkkq2" path="res://assets/03 - Entities/00 - Player/00 - Base/base_average_average.png" id="1_yu20t"]
+[ext_resource type="Script" uid="uid://dvw7w7se2pacu" path="res://source/03 - Entities/Entity_Customization.gd" id="3_so8uh"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_01a5d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ai6v3"]
+shader = ExtResource("4_01a5d")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_kjtp0"]
 length = 0.001
@@ -250,11 +279,15 @@ script = ExtResource("1_kjtp0")
 [node name="Entity_StateMachine" type="Node2D" parent="Scripts"]
 script = ExtResource("1_7i3x6")
 
+[node name="Entity_Customization" type="Node2D" parent="Scripts"]
+script = ExtResource("3_so8uh")
+
 [node name="Facing" type="Node2D" parent="."]
 
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Sprite_Base" type="Sprite2D" parent="Sprites"]
+material = SubResource("ShaderMaterial_ai6v3")
 texture = ExtResource("1_yu20t")
 offset = Vector2(0, -16)
 hframes = 4
@@ -274,6 +307,7 @@ hit_from_inside = true
 libraries = {
 &"": SubResource("AnimationLibrary_01a5d")
 }
+autoplay = "idle_down"
 
 [node name="AnimPlayer_Effects" type="AnimationPlayer" parent="AnimationPlayers"]
 
@@ -285,6 +319,7 @@ parameters/Idle/blend_position = Vector2(-0.00258398, -0.00223708)
 parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Outputs" type="Node2D" parent="."]
+visible = false
 
 [node name="Output_State" type="Label" parent="Outputs"]
 offset_right = 40.0

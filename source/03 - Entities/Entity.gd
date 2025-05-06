@@ -23,6 +23,10 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var walk_speed: float = speed * G.TILE_SIZE.x
 @onready var run_speed: float = walk_speed * 2
 @onready var max_speed: float = walk_speed
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+#Sprites
+@onready var sprite_base: Sprite2D = $Sprites/Sprite_Base
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes
@@ -33,8 +37,8 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var pb_state: String = playback.get_current_node()
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void:
-	anim_tree.active = true #Active Animation Tree
+#func _ready() -> void:
+	#anim_tree.active = true #Active Animation Tree
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Movement
