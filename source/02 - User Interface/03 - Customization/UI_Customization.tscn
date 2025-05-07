@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr2y6f6qexgxt"]
+[gd_scene load_steps=90 format=3 uid="uid://dr2y6f6qexgxt"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - User Interface/Base_Theme.tres" id="1_dwcvp"]
 [ext_resource type="Texture2D" uid="uid://dnc3gtqt7hbsp" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png" id="1_nm3d6"]
@@ -8,6 +8,1086 @@
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - User Interface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="4_j8vi3"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="5_oaxbq"]
 [ext_resource type="Script" uid="uid://b2ts8g2yukglw" path="res://source/02 - User Interface/03 - Customization/Button_Color.gd" id="8_fx7rp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rfwvk"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.14902, 0.0823529, 0.0941176, 1)
+shader_parameter/new_shadow1 = Color(0.231373, 0.133333, 0.145098, 1)
+shader_parameter/new_base1 = Color(0.290196, 0.180392, 0.184314, 1)
+shader_parameter/new_highlight1 = Color(0.388235, 0.258824, 0.254902, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5vyd"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0509804, 0.027451, 0.0235294, 1)
+shader_parameter/new_shadow1 = Color(0.109804, 0.0705882, 0.0627451, 1)
+shader_parameter/new_base1 = Color(0.188235, 0.129412, 0.117647, 1)
+shader_parameter/new_highlight1 = Color(0.34902, 0.278431, 0.25098, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gqvxv"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.101961, 0.0745098, 0.0588235, 1)
+shader_parameter/new_shadow1 = Color(0.184314, 0.129412, 0.109804, 1)
+shader_parameter/new_base1 = Color(0.278431, 0.211765, 0.172549, 1)
+shader_parameter/new_highlight1 = Color(0.462745, 0.384314, 0.32549, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_slh1w"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0941176, 0.0666667, 0.0470588, 1)
+shader_parameter/new_shadow1 = Color(0.192157, 0.133333, 0.0941176, 1)
+shader_parameter/new_base1 = Color(0.25098, 0.188235, 0.129412, 1)
+shader_parameter/new_highlight1 = Color(0.388235, 0.309804, 0.223529, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v36p2"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.109804, 0.0666667, 0.0431373, 1)
+shader_parameter/new_shadow1 = Color(0.156863, 0.0941176, 0.0588235, 1)
+shader_parameter/new_base1 = Color(0.239216, 0.160784, 0.105882, 1)
+shader_parameter/new_highlight1 = Color(0.372549, 0.290196, 0.196078, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynq4o"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.145098, 0.0627451, 0.054902, 1)
+shader_parameter/new_shadow1 = Color(0.231373, 0.113725, 0.109804, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.168627, 0.145098, 1)
+shader_parameter/new_highlight1 = Color(0.501961, 0.345098, 0.294118, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pt5p0"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.129412, 0.0588235, 0.0705882, 1)
+shader_parameter/new_shadow1 = Color(0.172549, 0.0901961, 0.101961, 1)
+shader_parameter/new_base1 = Color(0.223529, 0.117647, 0.117647, 1)
+shader_parameter/new_highlight1 = Color(0.329412, 0.223529, 0.211765, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwnmr"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0509804, 0.0470588, 0.0745098, 1)
+shader_parameter/new_shadow1 = Color(0.0745098, 0.0784314, 0.0980392, 1)
+shader_parameter/new_base1 = Color(0.105882, 0.117647, 0.141176, 1)
+shader_parameter/new_highlight1 = Color(0.160784, 0.180392, 0.2, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0bf12"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0901961, 0.105882, 0.0156863, 1)
+shader_parameter/new_shadow1 = Color(0.133333, 0.113725, 0.0392157, 1)
+shader_parameter/new_base1 = Color(0.180392, 0.14902, 0.0666667, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.176471, 0.113725, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wekb5"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0313726, 0.105882, 0.0156863, 1)
+shader_parameter/new_shadow1 = Color(0.0901961, 0.133333, 0.0392157, 1)
+shader_parameter/new_base1 = Color(0.137255, 0.180392, 0.0666667, 1)
+shader_parameter/new_highlight1 = Color(0.227451, 0.247059, 0.113725, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53fke"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0156863, 0.105882, 0.0627451, 1)
+shader_parameter/new_shadow1 = Color(0.0392157, 0.133333, 0.0509804, 1)
+shader_parameter/new_base1 = Color(0.0666667, 0.180392, 0.0745098, 1)
+shader_parameter/new_highlight1 = Color(0.141176, 0.247059, 0.113725, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_heag2"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0156863, 0.0901961, 0.105882, 1)
+shader_parameter/new_shadow1 = Color(0.0392157, 0.133333, 0.113725, 1)
+shader_parameter/new_base1 = Color(0.0666667, 0.180392, 0.14902, 1)
+shader_parameter/new_highlight1 = Color(0.113725, 0.247059, 0.176471, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7qf6"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0313726, 0.0156863, 0.105882, 1)
+shader_parameter/new_shadow1 = Color(0.0392157, 0.0588235, 0.133333, 1)
+shader_parameter/new_base1 = Color(0.0666667, 0.0980392, 0.180392, 1)
+shader_parameter/new_highlight1 = Color(0.113725, 0.184314, 0.247059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uhpr"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.105882, 0.0156863, 0.0901961, 1)
+shader_parameter/new_shadow1 = Color(0.113725, 0.0392157, 0.133333, 1)
+shader_parameter/new_base1 = Color(0.14902, 0.0666667, 0.180392, 1)
+shader_parameter/new_highlight1 = Color(0.176471, 0.113725, 0.247059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frwvf"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.105882, 0.0156863, 0.0313726, 1)
+shader_parameter/new_shadow1 = Color(0.133333, 0.0392157, 0.0901961, 1)
+shader_parameter/new_base1 = Color(0.180392, 0.0666667, 0.137255, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.113725, 0.227451, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8grg"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.105882, 0.0627451, 0.0156863, 1)
+shader_parameter/new_shadow1 = Color(0.133333, 0.0509804, 0.0392157, 1)
+shader_parameter/new_base1 = Color(0.180392, 0.0745098, 0.0666667, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.113725, 0.141176, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1jnc2"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.360784, 0.235294, 0.25098, 1)
+shader_parameter/new_shadow1 = Color(0.435294, 0.290196, 0.305882, 1)
+shader_parameter/new_base1 = Color(0.478431, 0.337255, 0.341176, 1)
+shader_parameter/new_highlight1 = Color(0.686275, 0.556863, 0.537255, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2i0x"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.219608, 0.137255, 0.133333, 1)
+shader_parameter/new_shadow1 = Color(0.301961, 0.196078, 0.188235, 1)
+shader_parameter/new_base1 = Color(0.376471, 0.270588, 0.247059, 1)
+shader_parameter/new_highlight1 = Color(0.639216, 0.513726, 0.478431, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2t17"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.290196, 0.2, 0.172549, 1)
+shader_parameter/new_shadow1 = Color(0.356863, 0.266667, 0.231373, 1)
+shader_parameter/new_base1 = Color(0.466667, 0.372549, 0.313726, 1)
+shader_parameter/new_highlight1 = Color(0.619608, 0.533333, 0.454902, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_db34j"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.364706, 0.262745, 0.196078, 1)
+shader_parameter/new_shadow1 = Color(0.427451, 0.313726, 0.227451, 1)
+shader_parameter/new_base1 = Color(0.482353, 0.372549, 0.270588, 1)
+shader_parameter/new_highlight1 = Color(0.580392, 0.47451, 0.34902, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xbai0"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.321569, 0.192157, 0.133333, 1)
+shader_parameter/new_shadow1 = Color(0.407843, 0.254902, 0.184314, 1)
+shader_parameter/new_base1 = Color(0.494118, 0.352941, 0.243137, 1)
+shader_parameter/new_highlight1 = Color(0.623529, 0.509804, 0.360784, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5acx8"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.376471, 0.192157, 0.172549, 1)
+shader_parameter/new_shadow1 = Color(0.580392, 0.321569, 0.286275, 1)
+shader_parameter/new_base1 = Color(0.623529, 0.376471, 0.321569, 1)
+shader_parameter/new_highlight1 = Color(0.780392, 0.541176, 0.462745, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gt1jb"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.270588, 0.141176, 0.156863, 1)
+shader_parameter/new_shadow1 = Color(0.313726, 0.164706, 0.180392, 1)
+shader_parameter/new_base1 = Color(0.396078, 0.223529, 0.227451, 1)
+shader_parameter/new_highlight1 = Color(0.509804, 0.329412, 0.321569, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anrd6"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0941176, 0.0941176, 0.113725, 1)
+shader_parameter/new_shadow1 = Color(0.12549, 0.121569, 0.145098, 1)
+shader_parameter/new_base1 = Color(0.164706, 0.164706, 0.184314, 1)
+shader_parameter/new_highlight1 = Color(0.278431, 0.286275, 0.301961, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sffm1"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.133333, 0.137255, 0.0705882, 1)
+shader_parameter/new_shadow1 = Color(0.156863, 0.168627, 0.0980392, 1)
+shader_parameter/new_base1 = Color(0.211765, 0.207843, 0.137255, 1)
+shader_parameter/new_highlight1 = Color(0.333333, 0.309804, 0.247059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogv3y"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0901961, 0.137255, 0.0705882, 1)
+shader_parameter/new_shadow1 = Color(0.109804, 0.168627, 0.0980392, 1)
+shader_parameter/new_base1 = Color(0.164706, 0.211765, 0.137255, 1)
+shader_parameter/new_highlight1 = Color(0.298039, 0.333333, 0.247059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghq5h"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0705882, 0.137255, 0.0980392, 1)
+shader_parameter/new_shadow1 = Color(0.0980392, 0.168627, 0.133333, 1)
+shader_parameter/new_base1 = Color(0.137255, 0.211765, 0.156863, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.333333, 0.25098, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7h0wp"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0705882, 0.133333, 0.137255, 1)
+shader_parameter/new_shadow1 = Color(0.0980392, 0.156863, 0.168627, 1)
+shader_parameter/new_base1 = Color(0.137255, 0.211765, 0.207843, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.333333, 0.309804, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_riw2b"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.0745098, 0.0705882, 0.137255, 1)
+shader_parameter/new_shadow1 = Color(0.109804, 0.0980392, 0.168627, 1)
+shader_parameter/new_base1 = Color(0.137255, 0.141176, 0.211765, 1)
+shader_parameter/new_highlight1 = Color(0.247059, 0.270588, 0.333333, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jnkg8"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.137255, 0.0705882, 0.133333, 1)
+shader_parameter/new_shadow1 = Color(0.168627, 0.0980392, 0.156863, 1)
+shader_parameter/new_base1 = Color(0.207843, 0.137255, 0.211765, 1)
+shader_parameter/new_highlight1 = Color(0.309804, 0.247059, 0.333333, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_huqjr"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.137255, 0.0705882, 0.0901961, 1)
+shader_parameter/new_shadow1 = Color(0.168627, 0.0980392, 0.109804, 1)
+shader_parameter/new_base1 = Color(0.211765, 0.137255, 0.164706, 1)
+shader_parameter/new_highlight1 = Color(0.333333, 0.247059, 0.298039, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndtb4"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.137255, 0.0980392, 0.0705882, 1)
+shader_parameter/new_shadow1 = Color(0.168627, 0.133333, 0.0980392, 1)
+shader_parameter/new_base1 = Color(0.211765, 0.156863, 0.137255, 1)
+shader_parameter/new_highlight1 = Color(0.333333, 0.25098, 0.247059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24gql"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.470588, 0.329412, 0.345098, 1)
+shader_parameter/new_shadow1 = Color(0.576471, 0.407843, 0.435294, 1)
+shader_parameter/new_base1 = Color(0.686275, 0.517647, 0.52549, 1)
+shader_parameter/new_highlight1 = Color(0.819608, 0.694118, 0.686275, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgwca"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.415686, 0.270588, 0.258824, 1)
+shader_parameter/new_shadow1 = Color(0.501961, 0.352941, 0.337255, 1)
+shader_parameter/new_base1 = Color(0.627451, 0.490196, 0.462745, 1)
+shader_parameter/new_highlight1 = Color(0.784314, 0.67451, 0.635294, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag6bb"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.517647, 0.388235, 0.333333, 1)
+shader_parameter/new_shadow1 = Color(0.588235, 0.458824, 0.407843, 1)
+shader_parameter/new_base1 = Color(0.666667, 0.541176, 0.462745, 1)
+shader_parameter/new_highlight1 = Color(0.796078, 0.690196, 0.592157, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qci61"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.596078, 0.431373, 0.329412, 1)
+shader_parameter/new_shadow1 = Color(0.67451, 0.529412, 0.427451, 1)
+shader_parameter/new_base1 = Color(0.752941, 0.623529, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.827451, 0.745098, 0.588235, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxm1v"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.647059, 0.439216, 0.321569, 1)
+shader_parameter/new_shadow1 = Color(0.784314, 0.580392, 0.45098, 1)
+shader_parameter/new_base1 = Color(0.796078, 0.611765, 0.458824, 1)
+shader_parameter/new_highlight1 = Color(0.870588, 0.760784, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r1sqx"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.662745, 0.396078, 0.360784, 1)
+shader_parameter/new_shadow1 = Color(0.780392, 0.52549, 0.482353, 1)
+shader_parameter/new_base1 = Color(0.811765, 0.564706, 0.509804, 1)
+shader_parameter/new_highlight1 = Color(0.909804, 0.772549, 0.717647, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_av8qf"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.454902, 0.254902, 0.278431, 1)
+shader_parameter/new_shadow1 = Color(0.533333, 0.329412, 0.341176, 1)
+shader_parameter/new_base1 = Color(0.6, 0.396078, 0.396078, 1)
+shader_parameter/new_highlight1 = Color(0.705882, 0.517647, 0.501961, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ruhfw"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.239216, 0.239216, 0.266667, 1)
+shader_parameter/new_shadow1 = Color(0.305882, 0.301961, 0.329412, 1)
+shader_parameter/new_base1 = Color(0.380392, 0.376471, 0.4, 1)
+shader_parameter/new_highlight1 = Color(0.505882, 0.494118, 0.521569, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oaxbq"]
 shader = ExtResource("5_oaxbq")
@@ -23,10 +1103,1161 @@ shader_parameter/old_outline3 = Color(0, 0, 0, 1)
 shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/old_base3 = Color(0, 0, 0, 1)
 shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.466667, 0.313726, 0.27451, 1)
-shader_parameter/new_shadow1 = Color(0.611765, 0.521569, 0.45098, 1)
-shader_parameter/new_base1 = Color(0.733333, 0.666667, 0.603922, 1)
-shader_parameter/new_highlight1 = Color(0.839216, 0.768627, 0.717647, 1)
+shader_parameter/new_outline1 = Color(0.301961, 0.301961, 0.203922, 1)
+shader_parameter/new_shadow1 = Color(0.356863, 0.368627, 0.262745, 1)
+shader_parameter/new_base1 = Color(0.411765, 0.431373, 0.345098, 1)
+shader_parameter/new_highlight1 = Color(0.521569, 0.552941, 0.462745, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f234q"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.235294, 0.301961, 0.203922, 1)
+shader_parameter/new_shadow1 = Color(0.286275, 0.368627, 0.262745, 1)
+shader_parameter/new_base1 = Color(0.352941, 0.431373, 0.345098, 1)
+shader_parameter/new_highlight1 = Color(0.462745, 0.552941, 0.462745, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkby4"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.203922, 0.301961, 0.235294, 1)
+shader_parameter/new_shadow1 = Color(0.262745, 0.368627, 0.309804, 1)
+shader_parameter/new_base1 = Color(0.345098, 0.431373, 0.392157, 1)
+shader_parameter/new_highlight1 = Color(0.462745, 0.552941, 0.52549, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qd1ci"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.203922, 0.301961, 0.301961, 1)
+shader_parameter/new_shadow1 = Color(0.262745, 0.356863, 0.368627, 1)
+shader_parameter/new_base1 = Color(0.345098, 0.411765, 0.431373, 1)
+shader_parameter/new_highlight1 = Color(0.462745, 0.521569, 0.552941, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_voduc"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.203922, 0.203922, 0.301961, 1)
+shader_parameter/new_shadow1 = Color(0.27451, 0.262745, 0.368627, 1)
+shader_parameter/new_base1 = Color(0.364706, 0.345098, 0.431373, 1)
+shader_parameter/new_highlight1 = Color(0.494118, 0.462745, 0.552941, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_oaxbq"]
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+	
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03tcd"]
+shader = SubResource("Shader_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.301961, 0.203922, 0.301961, 1)
+shader_parameter/new_shadow1 = Color(0.368627, 0.262745, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.431373, 0.345098, 0.411765, 1)
+shader_parameter/new_highlight1 = Color(0.552941, 0.462745, 0.521569, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx7rp"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.301961, 0.203922, 0.235294, 1)
+shader_parameter/new_shadow1 = Color(0.368627, 0.262745, 0.286275, 1)
+shader_parameter/new_base1 = Color(0.431373, 0.345098, 0.352941, 1)
+shader_parameter/new_highlight1 = Color(0.552941, 0.462745, 0.462745, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdu6r"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.301961, 0.235294, 0.203922, 1)
+shader_parameter/new_shadow1 = Color(0.368627, 0.309804, 0.262745, 1)
+shader_parameter/new_base1 = Color(0.431373, 0.392157, 0.345098, 1)
+shader_parameter/new_highlight1 = Color(0.552941, 0.52549, 0.462745, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4u36"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.694118, 0.537255, 0.552941, 1)
+shader_parameter/new_shadow1 = Color(0.784314, 0.635294, 0.65098, 1)
+shader_parameter/new_base1 = Color(0.839216, 0.713726, 0.717647, 1)
+shader_parameter/new_highlight1 = Color(0.905882, 0.815686, 0.807843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6l0u"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.72549, 0.54902, 0.533333, 1)
+shader_parameter/new_shadow1 = Color(0.784314, 0.627451, 0.619608, 1)
+shader_parameter/new_base1 = Color(0.909804, 0.788235, 0.764706, 1)
+shader_parameter/new_highlight1 = Color(0.94902, 0.878431, 0.847059, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3luta"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.686275, 0.541176, 0.486275, 1)
+shader_parameter/new_shadow1 = Color(0.764706, 0.654902, 0.611765, 1)
+shader_parameter/new_base1 = Color(0.898039, 0.811765, 0.764706, 1)
+shader_parameter/new_highlight1 = Color(0.956863, 0.905882, 0.866667, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftm7i"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.756863, 0.615686, 0.533333, 1)
+shader_parameter/new_shadow1 = Color(0.792157, 0.658824, 0.576471, 1)
+shader_parameter/new_base1 = Color(0.878431, 0.788235, 0.705882, 1)
+shader_parameter/new_highlight1 = Color(0.929412, 0.866667, 0.788235, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vioo1"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.843137, 0.670588, 0.572549, 1)
+shader_parameter/new_shadow1 = Color(0.866667, 0.72549, 0.658824, 1)
+shader_parameter/new_base1 = Color(0.921569, 0.831373, 0.756863, 1)
+shader_parameter/new_highlight1 = Color(0.945098, 0.905882, 0.831373, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqbrr"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.788235, 0.560784, 0.529412, 1)
+shader_parameter/new_shadow1 = Color(0.85098, 0.662745, 0.65098, 1)
+shader_parameter/new_base1 = Color(0.917647, 0.760784, 0.729412, 1)
+shader_parameter/new_highlight1 = Color(0.952941, 0.878431, 0.858824, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_din2y"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.654902, 0.45098, 0.458824, 1)
+shader_parameter/new_shadow1 = Color(0.698039, 0.490196, 0.505882, 1)
+shader_parameter/new_base1 = Color(0.792157, 0.615686, 0.619608, 1)
+shader_parameter/new_highlight1 = Color(0.894118, 0.74902, 0.741176, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7476"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.505882, 0.494118, 0.521569, 1)
+shader_parameter/new_shadow1 = Color(0.576471, 0.568627, 0.588235, 1)
+shader_parameter/new_base1 = Color(0.709804, 0.698039, 0.717647, 1)
+shader_parameter/new_highlight1 = Color(0.815686, 0.803922, 0.823529, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2o3mj"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.521569, 0.552941, 0.462745, 1)
+shader_parameter/new_shadow1 = Color(0.588235, 0.615686, 0.541176, 1)
+shader_parameter/new_base1 = Color(0.705882, 0.741176, 0.67451, 1)
+shader_parameter/new_highlight1 = Color(0.803922, 0.843137, 0.784314, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6l5sx"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.462745, 0.552941, 0.462745, 1)
+shader_parameter/new_shadow1 = Color(0.541176, 0.615686, 0.545098, 1)
+shader_parameter/new_base1 = Color(0.67451, 0.741176, 0.686275, 1)
+shader_parameter/new_highlight1 = Color(0.784314, 0.843137, 0.803922, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2pgn"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.462745, 0.552941, 0.52549, 1)
+shader_parameter/new_shadow1 = Color(0.541176, 0.615686, 0.592157, 1)
+shader_parameter/new_base1 = Color(0.67451, 0.741176, 0.733333, 1)
+shader_parameter/new_highlight1 = Color(0.784314, 0.843137, 0.843137, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahwuq"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.462745, 0.521569, 0.552941, 1)
+shader_parameter/new_shadow1 = Color(0.541176, 0.588235, 0.615686, 1)
+shader_parameter/new_base1 = Color(0.67451, 0.705882, 0.741176, 1)
+shader_parameter/new_highlight1 = Color(0.784314, 0.803922, 0.843137, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ynjt"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.494118, 0.462745, 0.552941, 1)
+shader_parameter/new_shadow1 = Color(0.568627, 0.541176, 0.615686, 1)
+shader_parameter/new_base1 = Color(0.709804, 0.67451, 0.741176, 1)
+shader_parameter/new_highlight1 = Color(0.823529, 0.784314, 0.843137, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k60io"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.552941, 0.462745, 0.521569, 1)
+shader_parameter/new_shadow1 = Color(0.615686, 0.541176, 0.588235, 1)
+shader_parameter/new_base1 = Color(0.741176, 0.67451, 0.705882, 1)
+shader_parameter/new_highlight1 = Color(0.843137, 0.784314, 0.803922, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anbx2"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.552941, 0.462745, 0.462745, 1)
+shader_parameter/new_shadow1 = Color(0.615686, 0.545098, 0.541176, 1)
+shader_parameter/new_base1 = Color(0.741176, 0.686275, 0.67451, 1)
+shader_parameter/new_highlight1 = Color(0.843137, 0.803922, 0.784314, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fu3tj"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.552941, 0.52549, 0.462745, 1)
+shader_parameter/new_shadow1 = Color(0.615686, 0.592157, 0.541176, 1)
+shader_parameter/new_base1 = Color(0.741176, 0.733333, 0.67451, 1)
+shader_parameter/new_highlight1 = Color(0.843137, 0.843137, 0.784314, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63gkm"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.85098, 0.745098, 0.752941, 1)
+shader_parameter/new_shadow1 = Color(0.917647, 0.839216, 0.847059, 1)
+shader_parameter/new_base1 = Color(0.952941, 0.905882, 0.909804, 1)
+shader_parameter/new_highlight1 = Color(0.984314, 0.952941, 0.94902, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sno4i"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.92549, 0.815686, 0.811765, 1)
+shader_parameter/new_shadow1 = Color(0.94902, 0.870588, 0.866667, 1)
+shader_parameter/new_base1 = Color(0.976471, 0.929412, 0.92549, 1)
+shader_parameter/new_highlight1 = Color(0.976471, 0.94902, 0.929412, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_deyhl"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.917647, 0.811765, 0.780392, 1)
+shader_parameter/new_shadow1 = Color(0.92549, 0.862745, 0.843137, 1)
+shader_parameter/new_base1 = Color(0.976471, 0.937255, 0.921569, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.956863, 0.941176, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbhpe"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.886275, 0.8, 0.745098, 1)
+shader_parameter/new_shadow1 = Color(0.945098, 0.886275, 0.847059, 1)
+shader_parameter/new_base1 = Color(0.976471, 0.952941, 0.929412, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.972549, 0.945098, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37rm2"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.901961, 0.796078, 0.752941, 1)
+shader_parameter/new_shadow1 = Color(0.941176, 0.85098, 0.811765, 1)
+shader_parameter/new_base1 = Color(0.964706, 0.92549, 0.894118, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.960784, 0.933333, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trbit"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.886275, 0.745098, 0.721569, 1)
+shader_parameter/new_shadow1 = Color(0.917647, 0.815686, 0.807843, 1)
+shader_parameter/new_base1 = Color(0.952941, 0.894118, 0.882353, 1)
+shader_parameter/new_highlight1 = Color(0.976471, 0.945098, 0.929412, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36egl"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.870588, 0.705882, 0.729412, 1)
+shader_parameter/new_shadow1 = Color(0.913725, 0.819608, 0.823529, 1)
+shader_parameter/new_base1 = Color(0.976471, 0.921569, 0.92549, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.94902, 0.94902, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr6fx"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.752941, 0.737255, 0.764706, 1)
+shader_parameter/new_shadow1 = Color(0.886275, 0.87451, 0.898039, 1)
+shader_parameter/new_base1 = Color(0.937255, 0.921569, 0.941176, 1)
+shader_parameter/new_highlight1 = Color(0.964706, 0.952941, 0.964706, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dno48"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.74902, 0.803922, 0.698039, 1)
+shader_parameter/new_shadow1 = Color(0.882353, 0.929412, 0.843137, 1)
+shader_parameter/new_base1 = Color(0.913725, 0.964706, 0.898039, 1)
+shader_parameter/new_highlight1 = Color(0.941176, 0.980392, 0.937255, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbtfj"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.698039, 0.803922, 0.717647, 1)
+shader_parameter/new_shadow1 = Color(0.843137, 0.929412, 0.862745, 1)
+shader_parameter/new_base1 = Color(0.898039, 0.956863, 0.964706, 1)
+shader_parameter/new_highlight1 = Color(0.937255, 0.968627, 0.980392, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irxfh"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.698039, 0.803922, 0.788235, 1)
+shader_parameter/new_shadow1 = Color(0.843137, 0.929412, 0.917647, 1)
+shader_parameter/new_base1 = Color(0.898039, 0.956863, 0.964706, 1)
+shader_parameter/new_highlight1 = Color(0.937255, 0.968627, 0.980392, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsarh"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.698039, 0.74902, 0.803922, 1)
+shader_parameter/new_shadow1 = Color(0.843137, 0.882353, 0.929412, 1)
+shader_parameter/new_base1 = Color(0.898039, 0.913725, 0.964706, 1)
+shader_parameter/new_highlight1 = Color(0.937255, 0.941176, 0.980392, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20pgk"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.752941, 0.698039, 0.803922, 1)
+shader_parameter/new_shadow1 = Color(0.890196, 0.843137, 0.929412, 1)
+shader_parameter/new_base1 = Color(0.94902, 0.898039, 0.964706, 1)
+shader_parameter/new_highlight1 = Color(0.976471, 0.937255, 0.980392, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdgse"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.803922, 0.698039, 0.74902, 1)
+shader_parameter/new_shadow1 = Color(0.929412, 0.843137, 0.882353, 1)
+shader_parameter/new_base1 = Color(0.964706, 0.898039, 0.913725, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.937255, 0.941176, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4tib"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.803922, 0.717647, 0.698039, 1)
+shader_parameter/new_shadow1 = Color(0.929412, 0.862745, 0.843137, 1)
+shader_parameter/new_base1 = Color(0.964706, 0.92549, 0.898039, 1)
+shader_parameter/new_highlight1 = Color(0.980392, 0.960784, 0.937255, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o47q8"]
+shader = ExtResource("5_oaxbq")
+shader_parameter/old_outline1 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow1 = Color(0.12549, 0, 0.698039, 1)
+shader_parameter/old_base1 = Color(0.254902, 0.380392, 0.984314, 1)
+shader_parameter/old_highlight1 = Color(0.380392, 0.635294, 1, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.803922, 0.788235, 0.698039, 1)
+shader_parameter/new_shadow1 = Color(0.929412, 0.917647, 0.843137, 1)
+shader_parameter/new_base1 = Color(0.956863, 0.964706, 0.898039, 1)
+shader_parameter/new_highlight1 = Color(0.968627, 0.980392, 0.937255, 1)
 shader_parameter/new_outline2 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
 shader_parameter/new_base2 = Color(0, 0, 0, 1)
@@ -205,18 +2436,651 @@ vertical_alignment = 1
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
+tab_alignment = 1
 current_tab = 0
 clip_tabs = false
 
 [node name="Skin" type="GridContainer" parent="VBoxContainer/TabContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 8
+theme_override_constants/h_separation = -5
+theme_override_constants/v_separation = -5
+columns = 16
 metadata/_tab_index = 0
 
 [node name="Button_Color1" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_rfwvk")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color2" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_k5vyd")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color3" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_gqvxv")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color4" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_slh1w")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color5" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_v36p2")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color6" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ynq4o")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color7" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_pt5p0")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color8" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_uwnmr")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color9" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_0bf12")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color10" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_wekb5")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color11" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_53fke")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color12" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_heag2")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color13" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_y7qf6")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color14" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_6uhpr")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color15" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_frwvf")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color16" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_v8grg")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color17" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_1jnc2")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color18" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_y2i0x")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color19" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_t2t17")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color20" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_db34j")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color21" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_xbai0")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color22" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_5acx8")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color23" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_gt1jb")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color24" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_anrd6")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color25" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_sffm1")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color26" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ogv3y")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color27" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ghq5h")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color28" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_7h0wp")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color29" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_riw2b")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color30" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_jnkg8")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color31" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_huqjr")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color32" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ndtb4")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color33" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_24gql")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color34" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_pgwca")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color35" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ag6bb")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color36" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_qci61")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color37" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_wxm1v")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color38" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_r1sqx")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color39" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_av8qf")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color40" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ruhfw")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color41" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
 material = SubResource("ShaderMaterial_oaxbq")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color42" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_f234q")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color43" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_mkby4")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color44" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_qd1ci")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color45" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_voduc")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color46" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_03tcd")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color47" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_fx7rp")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color48" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_xdu6r")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color49" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_u4u36")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color50" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_x6l0u")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color51" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_3luta")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color52" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ftm7i")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color53" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_vioo1")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color54" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_tqbrr")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color55" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_din2y")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color56" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_l7476")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color57" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_2o3mj")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color58" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_6l5sx")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color59" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_n2pgn")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color60" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_ahwuq")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color61" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_3ynjt")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color62" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_k60io")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color63" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_anbx2")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color64" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_fu3tj")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color65" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_63gkm")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color66" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_sno4i")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color67" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_deyhl")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color68" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_mbhpe")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color69" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_37rm2")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color70" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_trbit")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color71" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_36egl")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color72" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_sr6fx")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color73" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_dno48")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color74" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_tbtfj")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color75" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_irxfh")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color76" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_fsarh")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color77" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_20pgk")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color78" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_sdgse")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color79" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_c4tib")
+layout_mode = 2
+texture_normal = ExtResource("3_r8p2t")
+texture_pressed = ExtResource("4_j8vi3")
+script = ExtResource("8_fx7rp")
+sprite_to_color = "Skin"
+
+[node name="Button_Color80" type="TextureButton" parent="VBoxContainer/TabContainer/Skin"]
+material = SubResource("ShaderMaterial_o47q8")
 layout_mode = 2
 texture_normal = ExtResource("3_r8p2t")
 texture_pressed = ExtResource("4_j8vi3")
@@ -288,3 +3152,82 @@ theme_override_constants/margin_right = 8
 [connection signal="button_up" from="VBoxContainer/Selection_Animation/Previous_Animation" to="." method="_on_previous_animation_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Animation/Next_Animation" to="." method="_on_next_animation_button_up"]
 [connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color1" to="VBoxContainer/TabContainer/Skin/Button_Color1" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color2" to="VBoxContainer/TabContainer/Skin/Button_Color2" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color3" to="VBoxContainer/TabContainer/Skin/Button_Color3" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color4" to="VBoxContainer/TabContainer/Skin/Button_Color4" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color5" to="VBoxContainer/TabContainer/Skin/Button_Color5" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color6" to="VBoxContainer/TabContainer/Skin/Button_Color6" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color7" to="VBoxContainer/TabContainer/Skin/Button_Color7" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color8" to="VBoxContainer/TabContainer/Skin/Button_Color8" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color9" to="VBoxContainer/TabContainer/Skin/Button_Color9" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color10" to="VBoxContainer/TabContainer/Skin/Button_Color10" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color11" to="VBoxContainer/TabContainer/Skin/Button_Color11" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color12" to="VBoxContainer/TabContainer/Skin/Button_Color12" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color13" to="VBoxContainer/TabContainer/Skin/Button_Color13" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color14" to="VBoxContainer/TabContainer/Skin/Button_Color14" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color15" to="VBoxContainer/TabContainer/Skin/Button_Color15" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color16" to="VBoxContainer/TabContainer/Skin/Button_Color16" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color17" to="VBoxContainer/TabContainer/Skin/Button_Color17" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color18" to="VBoxContainer/TabContainer/Skin/Button_Color18" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color19" to="VBoxContainer/TabContainer/Skin/Button_Color19" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color20" to="VBoxContainer/TabContainer/Skin/Button_Color20" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color21" to="VBoxContainer/TabContainer/Skin/Button_Color21" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color22" to="VBoxContainer/TabContainer/Skin/Button_Color22" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color23" to="VBoxContainer/TabContainer/Skin/Button_Color23" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color24" to="VBoxContainer/TabContainer/Skin/Button_Color24" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color25" to="VBoxContainer/TabContainer/Skin/Button_Color25" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color26" to="VBoxContainer/TabContainer/Skin/Button_Color26" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color27" to="VBoxContainer/TabContainer/Skin/Button_Color27" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color28" to="VBoxContainer/TabContainer/Skin/Button_Color28" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color29" to="VBoxContainer/TabContainer/Skin/Button_Color29" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color30" to="VBoxContainer/TabContainer/Skin/Button_Color30" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color31" to="VBoxContainer/TabContainer/Skin/Button_Color31" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color32" to="VBoxContainer/TabContainer/Skin/Button_Color32" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color33" to="VBoxContainer/TabContainer/Skin/Button_Color33" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color34" to="VBoxContainer/TabContainer/Skin/Button_Color34" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color35" to="VBoxContainer/TabContainer/Skin/Button_Color35" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color36" to="VBoxContainer/TabContainer/Skin/Button_Color36" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color37" to="VBoxContainer/TabContainer/Skin/Button_Color37" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color38" to="VBoxContainer/TabContainer/Skin/Button_Color38" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color39" to="VBoxContainer/TabContainer/Skin/Button_Color39" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color40" to="VBoxContainer/TabContainer/Skin/Button_Color40" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color41" to="VBoxContainer/TabContainer/Skin/Button_Color41" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color42" to="VBoxContainer/TabContainer/Skin/Button_Color42" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color43" to="VBoxContainer/TabContainer/Skin/Button_Color43" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color44" to="VBoxContainer/TabContainer/Skin/Button_Color44" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color45" to="VBoxContainer/TabContainer/Skin/Button_Color45" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color46" to="VBoxContainer/TabContainer/Skin/Button_Color46" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color47" to="VBoxContainer/TabContainer/Skin/Button_Color47" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color48" to="VBoxContainer/TabContainer/Skin/Button_Color48" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color49" to="VBoxContainer/TabContainer/Skin/Button_Color49" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color50" to="VBoxContainer/TabContainer/Skin/Button_Color50" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color51" to="VBoxContainer/TabContainer/Skin/Button_Color51" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color52" to="VBoxContainer/TabContainer/Skin/Button_Color52" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color53" to="VBoxContainer/TabContainer/Skin/Button_Color53" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color54" to="VBoxContainer/TabContainer/Skin/Button_Color54" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color55" to="VBoxContainer/TabContainer/Skin/Button_Color55" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color56" to="VBoxContainer/TabContainer/Skin/Button_Color56" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color57" to="VBoxContainer/TabContainer/Skin/Button_Color57" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color58" to="VBoxContainer/TabContainer/Skin/Button_Color58" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color59" to="VBoxContainer/TabContainer/Skin/Button_Color59" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color60" to="VBoxContainer/TabContainer/Skin/Button_Color60" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color61" to="VBoxContainer/TabContainer/Skin/Button_Color61" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color62" to="VBoxContainer/TabContainer/Skin/Button_Color62" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color63" to="VBoxContainer/TabContainer/Skin/Button_Color63" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color64" to="VBoxContainer/TabContainer/Skin/Button_Color64" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color65" to="VBoxContainer/TabContainer/Skin/Button_Color65" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color66" to="VBoxContainer/TabContainer/Skin/Button_Color66" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color67" to="VBoxContainer/TabContainer/Skin/Button_Color67" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color68" to="VBoxContainer/TabContainer/Skin/Button_Color68" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color69" to="VBoxContainer/TabContainer/Skin/Button_Color69" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color70" to="VBoxContainer/TabContainer/Skin/Button_Color70" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color71" to="VBoxContainer/TabContainer/Skin/Button_Color71" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color72" to="VBoxContainer/TabContainer/Skin/Button_Color72" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color73" to="VBoxContainer/TabContainer/Skin/Button_Color73" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color74" to="VBoxContainer/TabContainer/Skin/Button_Color74" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color75" to="VBoxContainer/TabContainer/Skin/Button_Color75" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color76" to="VBoxContainer/TabContainer/Skin/Button_Color76" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color77" to="VBoxContainer/TabContainer/Skin/Button_Color77" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color78" to="VBoxContainer/TabContainer/Skin/Button_Color78" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color79" to="VBoxContainer/TabContainer/Skin/Button_Color79" method="_on_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Skin/Button_Color80" to="VBoxContainer/TabContainer/Skin/Button_Color80" method="_on_button_up"]

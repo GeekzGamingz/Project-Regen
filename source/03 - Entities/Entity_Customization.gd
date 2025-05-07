@@ -84,4 +84,3 @@ func send_colors(
 	sprite.material.set("shader_parameter/new_shadow1", new_shadow1)
 	sprite.material.set("shader_parameter/new_base1", new_base1)
 	sprite.material.set("shader_parameter/new_highlight1", new_highlight1)
-	print(sprite.material.get("shader_parameter/new_outline"))

@@ -293,6 +293,8 @@ offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 
+[node name="Sprite_Hair" type="Sprite2D" parent="Sprites"]
+
 [node name="Raycasts" type="Node2D" parent="."]
 position = Vector2(0, -8)
 
