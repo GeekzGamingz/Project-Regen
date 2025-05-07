@@ -29,6 +29,10 @@ func _ready() -> void:
 	UI_CUSTOMIZATION.connect("uic_animation_change", uic_animation_change)
 	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Skin").get_children():
 		button.connect("send_colors", send_colors)
+	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Eyes/Left/Grid_Left").get_children():
+		button.connect("send_colors", send_colors)
+	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Eyes/Right/Grid_Right").get_children():
+		button.connect("send_colors", send_colors)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Base Texture
@@ -72,15 +76,30 @@ func uic_animation_change(scroll):
 func anim_tree_toggle(): e.anim_tree.active = !e.anim_tree.active
 #Change Colors
 func send_colors(
-	sprite_to_color, # Sprite to Color
+	sprite_to_color, colors_linked, # Sprite to Color
 	new_outline1, new_shadow1, new_base1, new_highlight1, # Color One
-	_new_outline2, _new_shadow2, _new_base2, _new_highlight2, # Color Two
+	_new_outline2, new_shadow2, _new_base2, new_highlight2, # Color Two
 	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, # Color Two
 	):
 	var sprite = Sprite2D
 	match(sprite_to_color):
-		"Skin": sprite = sprite_base
-	sprite.material.set("shader_parameter/new_outline1", new_outline1)
-	sprite.material.set("shader_parameter/new_shadow1", new_shadow1)
-	sprite.material.set("shader_parameter/new_base1", new_base1)
-	sprite.material.set("shader_parameter/new_highlight1", new_highlight1)
+		"Skin":
+			sprite = sprite_base
+			sprite.material.set("shader_parameter/new_outline1", new_outline1)
+			sprite.material.set("shader_parameter/new_shadow1", new_shadow1)
+			sprite.material.set("shader_parameter/new_base1", new_base1)
+			sprite.material.set("shader_parameter/new_highlight1", new_highlight1)
+		"Eye1":
+			sprite = sprite_base
+			sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
+			sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
+			if colors_linked:
+				sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+				sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+		"Eye2":
+			sprite = sprite_base
+			sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+			sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+			if colors_linked:
+				sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
+				sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
