@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy7ntjvll0djw"
-path="res://.godot/imported/base_short_average.png-2bdc7b87a157f379940d88ad0e875d5b.ctex"
+uid="uid://3nutagt7vmnp"
+path="res://.godot/imported/base_average_chub.png-8436025b1285e1b1b77f2895ff133beb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/base_short_average.png"
-dest_files=["res://.godot/imported/base_short_average.png-2bdc7b87a157f379940d88ad0e875d5b.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/00 - Base/base_average_chub.png"
+dest_files=["res://.godot/imported/base_average_chub.png-8436025b1285e1b1b77f2895ff133beb.ctex"]
 
 [params]
 

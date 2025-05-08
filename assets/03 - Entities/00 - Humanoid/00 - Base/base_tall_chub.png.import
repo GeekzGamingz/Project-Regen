@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3nutagt7vmnp"
-path="res://.godot/imported/base_average_chub.png-3f6695c421922246e7b0be4467acfa93.ctex"
+uid="uid://cafix1b6k3m0"
+path="res://.godot/imported/base_tall_chub.png-743819cce387aa76b16d20c6c8ceb7bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/base_average_chub.png"
-dest_files=["res://.godot/imported/base_average_chub.png-3f6695c421922246e7b0be4467acfa93.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/00 - Base/base_tall_chub.png"
+dest_files=["res://.godot/imported/base_tall_chub.png-743819cce387aa76b16d20c6c8ceb7bd.ctex"]
 
 [params]
 

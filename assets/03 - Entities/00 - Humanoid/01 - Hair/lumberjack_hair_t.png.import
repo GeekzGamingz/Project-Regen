@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://efpj3t8qlwb6"
-path="res://.godot/imported/template.png-9b59dc4d27e05716b7c8da36ec6ba111.ctex"
+uid="uid://cvqi2q3e5st48"
+path="res://.godot/imported/lumberjack_hair_t.png-e17ad02cb8490549aee20cafbeea7a92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/template.png"
-dest_files=["res://.godot/imported/template.png-9b59dc4d27e05716b7c8da36ec6ba111.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/01 - Hair/lumberjack_hair_t.png"
+dest_files=["res://.godot/imported/lumberjack_hair_t.png-e17ad02cb8490549aee20cafbeea7a92.ctex"]
 
 [params]
 

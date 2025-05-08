@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mpil1s30pfb3"
-path="res://.godot/imported/walkcycle-Sheet.png-61a9bef661c63eec70875b9ae08a15b4.ctex"
+uid="uid://b0jc5wnup47py"
+path="res://.godot/imported/base_tall_average.png-ddc3b8333d03b89ea965246a116e9f3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/walkcycle-Sheet.png"
-dest_files=["res://.godot/imported/walkcycle-Sheet.png-61a9bef661c63eec70875b9ae08a15b4.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/00 - Base/base_tall_average.png"
+dest_files=["res://.godot/imported/base_tall_average.png-ddc3b8333d03b89ea965246a116e9f3d.ctex"]
 
 [params]
 

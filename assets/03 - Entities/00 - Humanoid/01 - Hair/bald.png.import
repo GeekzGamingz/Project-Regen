@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0ho51jo05jkm"
-path="res://.godot/imported/base_short_chub.png-a1a9d8b5ace99f6fa9da70f90a413db3.ctex"
+uid="uid://c231vxv1xwxuj"
+path="res://.godot/imported/bald.png-955b5ec52a5de25f89fb2958a52d19ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/base_short_chub.png"
-dest_files=["res://.godot/imported/base_short_chub.png-a1a9d8b5ace99f6fa9da70f90a413db3.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/01 - Hair/bald.png"
+dest_files=["res://.godot/imported/bald.png-955b5ec52a5de25f89fb2958a52d19ee.ctex"]
 
 [params]
 

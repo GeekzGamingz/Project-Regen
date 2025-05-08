@@ -1,15 +1,9 @@
 extends Node2D
 #------------------------------------------------------------------------------#
-#Constants
-const BASE_SHORT_AVERAGE = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_short_average.png")
-const BASE_SHORT_CHUB = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_short_chub.png")
-const BASE_AVERAGE_AVERAGE = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_average_average.png")
-const BASE_AVERAGE_CHUB = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_average_chub.png")
-const BASE_TALL_AVERAGE = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_tall_average.png")
-const BASE_TALL_CHUB = preload("res://assets/03 - Entities/00 - Player/00 - Base/base_tall_chub.png")
-#------------------------------------------------------------------------------#
 #Variables
 #Integers
+var hair_counter: int = 0
+var beard_counter: int = 0
 var anim_counter: int = 1
 var height_counter: int = 1
 #Bools
@@ -20,47 +14,64 @@ var is_chub: bool = false
 @onready var UI_CUSTOMIZATION: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization")
 #Entity Nodes
 @onready var e: Entity = get_parent().get_parent()
-@onready var sprite_base: Sprite2D = $"../../Sprites/Sprite_Base"
+@onready var sprite_base: Sprite2D = e.get_node("Sprites/Sprite_Base")
+@onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprite_Hair")
+@onready var sprite_beard: Sprite2D = e.get_node("Sprites/Sprite_Beard")
+#------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
+	#Connections
 	UI_CUSTOMIZATION.connect("visibility_changed", anim_tree_toggle)
+	UI_CUSTOMIZATION.connect("uic_hair_change", uic_hair_change)
+	UI_CUSTOMIZATION.connect("uic_beard_change", uic_beard_change)
 	UI_CUSTOMIZATION.connect("uic_height_change", uic_height_change)
 	UI_CUSTOMIZATION.connect("uic_chub_change", uic_chub_change)
 	UI_CUSTOMIZATION.connect("uic_animation_change", uic_animation_change)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Skin").get_children():
+	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Skin").get_children():
 		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Eyes/Left/Grid_Left").get_children():
+	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Eyes/Left/Grid_Left").get_children():
 		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/TabContainer/Eyes/Right/Grid_Right").get_children():
+	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Eyes/Right/Grid_Right").get_children():
 		button.connect("send_colors", send_colors)
+	#Initial Sprite Check
+	check_sprites()
 #------------------------------------------------------------------------------#
 #Custom Functions
-#Check Base Texture
-func check_base():
-	if is_chub == false:
-		match(height_counter):
-			0: e.sprite_base.texture = BASE_SHORT_AVERAGE
-			1: e.sprite_base.texture = BASE_AVERAGE_AVERAGE
-			2: e.sprite_base.texture = BASE_TALL_AVERAGE
-	if is_chub == true:
-		match(height_counter):
-			0: e.sprite_base.texture = BASE_SHORT_CHUB
-			1: e.sprite_base.texture = BASE_AVERAGE_CHUB
-			2: e.sprite_base.texture = BASE_TALL_CHUB
+func check_sprites() -> void:
+	await get_tree().create_timer(0.01).timeout #Awaiting Variables
+	sprite_base.check_base()
+	sprite_hair.check_hair()
+	sprite_beard.check_beard()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
+#Change Hair
+func uic_hair_change(scroll):
+	match(scroll):
+		"Previous": hair_counter -= 1
+		"Next": hair_counter += 1
+	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
+	elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
+	check_sprites()
+#Change Beard
+func uic_beard_change(scroll):
+	match(scroll):
+		"Previous": beard_counter -= 1
+		"Next": beard_counter += 1
+	if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
+	elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
+	check_sprites()
 #Change Height
 func uic_height_change(scroll):
 	match(scroll):
 		"Previous": height_counter -= 1
 		"Next": height_counter += 1
-	if height_counter == 3: height_counter = 0
-	elif height_counter == -1: height_counter = 2
-	check_base()
+	if height_counter == sprite_base.bases_average.size(): height_counter = 0
+	elif height_counter == -1: height_counter = sprite_base.bases_average.size() -1
+	check_sprites()
 #Change Chub
 func uic_chub_change():
 	is_chub = !is_chub
-	check_base()
+	check_sprites()
 #Change Animation
 func uic_animation_change(scroll):
 	var animation_list = e.sprite_player.get_animation_list()
@@ -76,10 +87,10 @@ func uic_animation_change(scroll):
 func anim_tree_toggle(): e.anim_tree.active = !e.anim_tree.active
 #Change Colors
 func send_colors(
-	sprite_to_color, colors_linked, # Sprite to Color
-	new_outline1, new_shadow1, new_base1, new_highlight1, # Color One
-	_new_outline2, new_shadow2, _new_base2, new_highlight2, # Color Two
-	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, # Color Two
+	sprite_to_color, colors_linked, #Sprite to Color
+	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
+	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
+	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
 	):
 	var sprite = Sprite2D
 	match(sprite_to_color):

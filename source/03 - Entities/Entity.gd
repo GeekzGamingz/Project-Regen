@@ -27,6 +27,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Sprites
 @onready var sprite_base: Sprite2D = $Sprites/Sprite_Base
+@onready var sprite_hair: Sprite2D = $Sprites/Sprite_Hair
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes
@@ -36,16 +37,10 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var playback: AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 @onready var pb_state: String = playback.get_current_node()
 #------------------------------------------------------------------------------#
-#Ready Function
-#func _ready() -> void:
-	#anim_tree.active = true #Active Animation Tree
-#------------------------------------------------------------------------------#
 #Custom Functions
 #Movement
 func apply_movement() -> void:
 	velocity = lerp(velocity, direction * max_speed, weight())
-	#if direction.x > 0: set_facing(FACING_RIGHT)
-	#elif direction.x < 0: set_facing(FACING_LEFT)
 	move_and_slide()
 #------------------------------------------------------------------------------#
 #Facing Orientations
@@ -75,4 +70,3 @@ func weight() -> float:
 		else: return 0.2 #Walking
 	#Air Weight
 	else: return 0.1
-#---------------------------------------------------------------------------

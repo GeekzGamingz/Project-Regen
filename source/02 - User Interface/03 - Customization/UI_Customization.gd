@@ -1,17 +1,25 @@
 extends HBoxContainer
 #------------------------------------------------------------------------------#
 #Signals
+signal uic_hair_change(scroll)
+signal uic_beard_change(scroll)
 signal uic_height_change(scroll)
 signal uic_chub_change(toggle)
 signal uic_animation_change(scroll)
 #------------------------------------------------------------------------------#
 #OnReady Variables
-@onready var checkbox_left: CheckBox = $VBoxContainer/TabContainer/Eyes/Left/HBoxContainer/CheckBox_Left
-@onready var checkbox_right: CheckBox = $VBoxContainer/TabContainer/Eyes/Right/HBoxContainer/CheckBox_Right
+@onready var checkbox_left: CheckBox = $VBoxContainer/Selection_Color/Eyes/Left/HBoxContainer/CheckBox_Left
+@onready var checkbox_right: CheckBox = $VBoxContainer/Selection_Color/Eyes/Right/HBoxContainer/CheckBox_Right
 #------------------------------------------------------------------------------#
 #Signaled Functions
+#Hair Buttons
+func _on_previous_hair_button_up() -> void: emit_signal("uic_hair_change", "Previous")
+func _on_next_hair_button_up() -> void: emit_signal("uic_hair_change", "Next")
+#Beard Buttons
+func _on_previous_beard_button_up() -> void: emit_signal("uic_beard_change", "Previous")
+func _on_next_beard_button_up() -> void: emit_signal("uic_beard_change", "Next")
 #Height Buttons
-func _on_previous_height_button_up() -> void:emit_signal("uic_height_change", "Previous")
+func _on_previous_height_button_up() -> void: emit_signal("uic_height_change", "Previous")
 func _on_next_height_button_up() -> void: emit_signal("uic_height_change", "Next")
 #Chub Buttons
 func _on_previous_chub_button_up() -> void: emit_signal("uic_chub_change")

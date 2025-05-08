@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0jc5wnup47py"
-path="res://.godot/imported/base_tall_average.png-c9fe7d723f0384fc60de59570a543461.ctex"
+uid="uid://c6g4e5ietrb4s"
+path="res://.godot/imported/lumberjack_hair_s.png-5817a787cb22365521d796518a07ee6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Player/00 - Base/base_tall_average.png"
-dest_files=["res://.godot/imported/base_tall_average.png-c9fe7d723f0384fc60de59570a543461.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/01 - Hair/lumberjack_hair_s.png"
+dest_files=["res://.godot/imported/lumberjack_hair_s.png-5817a787cb22365521d796518a07ee6c.ctex"]
 
 [params]
 
