@@ -112,13 +112,12 @@ func send_colors(
 	var sprite = Sprite2D
 	match(sprite_to_color):
 		"Skin":
-			if sprite_to_color == "Skin":
-				sprite = sprite_base
-				sprite_ears.material.set("shader_parameter/new_outline1", new_outline1)
-				sprite_ears.material.set("shader_parameter/new_shadow1", new_shadow1)
-				sprite_ears.material.set("shader_parameter/new_base1", new_base1)
-				sprite_ears.material.set("shader_parameter/new_highlight1", new_highlight1)
-				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+			sprite = sprite_base
+			sprite_ears.material.set("shader_parameter/new_outline1", new_outline1)
+			sprite_ears.material.set("shader_parameter/new_shadow1", new_shadow1)
+			sprite_ears.material.set("shader_parameter/new_base1", new_base1)
+			sprite_ears.material.set("shader_parameter/new_highlight1", new_highlight1)
+			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
 		"Hair":
 			sprite = sprite_hair
 			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)

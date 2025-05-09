@@ -10,7 +10,7 @@ signal uic_animation_change(scroll)
 #------------------------------------------------------------------------------#
 #OnReady Variables
 #Buttons
-@onready var skin: GridContainer = $VBoxContainer/Selection_Color/Skin/Grid_Skin
+@onready var skin: VBoxContainer = $VBoxContainer/Selection_Color/Skin
 @onready var hair: TabContainer = $VBoxContainer/Selection_Color/Hair
 @onready var top: VBoxContainer = $VBoxContainer/Selection_Color/Hair/Top
 @onready var facial: VBoxContainer = $VBoxContainer/Selection_Color/Hair/Facial
