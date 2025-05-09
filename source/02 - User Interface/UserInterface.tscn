@@ -48,9 +48,13 @@ offset_right = 145.0
 [node name="UI_Customization" parent="UI_FullRect" instance=ExtResource("7_dl5ef")]
 layout_mode = 1
 anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -208.0
 offset_top = -184.0
+offset_right = 0.0
 offset_bottom = 0.0
+grow_horizontal = 0
 grow_vertical = 0

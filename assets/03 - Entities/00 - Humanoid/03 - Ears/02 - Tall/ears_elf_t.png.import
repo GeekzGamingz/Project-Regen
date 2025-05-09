@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafix1b6k3m0"
-path="res://.godot/imported/base_tall_chub.png-743819cce387aa76b16d20c6c8ceb7bd.ctex"
+uid="uid://cn28m67wn8h8d"
+path="res://.godot/imported/ears_elf_t.png-88564f9750ad9fcc6c223b64202ff98c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Humanoid/00 - Base/base_tall_chub.png"
-dest_files=["res://.godot/imported/base_tall_chub.png-743819cce387aa76b16d20c6c8ceb7bd.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_elf_t.png"
+dest_files=["res://.godot/imported/ears_elf_t.png-88564f9750ad9fcc6c223b64202ff98c.ctex"]
 
 [params]
 

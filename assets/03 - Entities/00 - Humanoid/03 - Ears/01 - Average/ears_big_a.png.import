@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btfpmpqqkkkq2"
-path="res://.godot/imported/base_average_average.png-a86a2703f8bd80a9c41a63072a41f1f9.ctex"
+uid="uid://b8103mctns4fi"
+path="res://.godot/imported/ears_big_a.png-b4525f184a6dbadb0f98f6e43e4ff338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Humanoid/00 - Base/base_average_average.png"
-dest_files=["res://.godot/imported/base_average_average.png-a86a2703f8bd80a9c41a63072a41f1f9.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_big_a.png"
+dest_files=["res://.godot/imported/ears_big_a.png-b4525f184a6dbadb0f98f6e43e4ff338.ctex"]
 
 [params]
 

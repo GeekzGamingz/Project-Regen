@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfekti8aw5004"
-path="res://.godot/imported/lumberjack_beard_s.png-391a0051979b0d2bd009a75dfacd5c31.ctex"
+uid="uid://bsl1e47gsifq4"
+path="res://.godot/imported/ears_elf_a.png-b7f00efccb691a852dc92c7a3c2aede6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Humanoid/02 - Beard/lumberjack_beard_s.png"
-dest_files=["res://.godot/imported/lumberjack_beard_s.png-391a0051979b0d2bd009a75dfacd5c31.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_elf_a.png"
+dest_files=["res://.godot/imported/ears_elf_a.png-b7f00efccb691a852dc92c7a3c2aede6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2u2vwu1kxeqj"
-path="res://.godot/imported/lumberjack_hair_a.png-6165dc93e8330ad870b39875ce5f665a.ctex"
+uid="uid://bokhlx1tcy4kv"
+path="res://.godot/imported/ears_big_s.png-f095027b26dcaa39bfc6301b13f937d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Humanoid/01 - Hair/lumberjack_hair_a.png"
-dest_files=["res://.godot/imported/lumberjack_hair_a.png-6165dc93e8330ad870b39875ce5f665a.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/00 - Short/ears_big_s.png"
+dest_files=["res://.godot/imported/ears_big_s.png-f095027b26dcaa39bfc6301b13f937d1.ctex"]
 
 [params]
 

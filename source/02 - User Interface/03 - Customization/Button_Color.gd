@@ -25,10 +25,11 @@ signal send_colors
 #------------------------------------------------------------------------------#
 #On Button Up
 func _on_button_up() -> void:
-	var colors_linked = UI_CUSTOMIZATION.checkbox_right.button_pressed
+	var eyes_linked = UI_CUSTOMIZATION.checkbox_right.button_pressed
+	var hair_linked = UI_CUSTOMIZATION.checkbox_top.button_pressed
 	emit_signal("send_colors",
-	sprite_to_color, colors_linked, # Sprite to Color
-	new_outline, new_shadow, new_base, new_highlight, # Color One
-	new_outline2, new_shadow2, new_base2, new_highlight2, # Color Two
-	new_outline3, new_shadow3, new_base3, new_highlight3, # Color Two
+	sprite_to_color, eyes_linked, hair_linked, #Identifiers
+	new_outline, new_shadow, new_base, new_highlight, #Color One
+	new_outline2, new_shadow2, new_base2, new_highlight2, #Color Two
+	new_outline3, new_shadow3, new_base3, new_highlight3, #Color Two
 	)

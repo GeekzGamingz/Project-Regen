@@ -25,9 +25,6 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var max_speed: float = walk_speed
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-#Sprites
-@onready var sprite_base: Sprite2D = $Sprites/Sprite_Base
-@onready var sprite_hair: Sprite2D = $Sprites/Sprite_Hair
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes
