@@ -44,6 +44,7 @@ theme_override_constants/margin_left = 8
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
+text = "69.161.125.16"
 placeholder_text = "IP Address"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]

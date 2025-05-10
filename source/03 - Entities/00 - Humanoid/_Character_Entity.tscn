@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=69 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_3l1tq"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_ttrxs"]
@@ -33,8 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://bsl1e47gsifq4" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_elf_a.png" id="26_l423s"]
 [ext_resource type="Texture2D" uid="uid://3a1121omgu7e" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_small_t.png" id="27_t4sqk"]
 [ext_resource type="Texture2D" uid="uid://barhe0bengn07" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_big_t.png" id="28_34mx1"]
+[ext_resource type="Texture2D" uid="uid://c31vxvvy85xdr" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/00 - Short/ears_cat_s.png" id="29_ma7h3"]
 [ext_resource type="Texture2D" uid="uid://ee0p2mm8xe4i" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_halfelf_t.png" id="29_qvp6o"]
 [ext_resource type="Texture2D" uid="uid://cn28m67wn8h8d" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_elf_t.png" id="30_mr1dx"]
+[ext_resource type="Texture2D" uid="uid://cwuy7dc1ypmch" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_cat_a.png" id="33_iqx0f"]
+[ext_resource type="Texture2D" uid="uid://djo1vki1ae1na" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_cat_t.png" id="38_iqx0f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_br6q3"]
 shader = ExtResource("4_j7j7c")
@@ -123,26 +126,26 @@ shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
 shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
-shader_parameter/old_base2 = Color(1, 1, 1, 1)
-shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
 shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
-shader_parameter/old_base3 = Color(1, 1, 1, 1)
-shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
 shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
 shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
-shader_parameter/new_base2 = Color(1, 1, 1, 1)
-shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
 shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
-shader_parameter/new_base3 = Color(1, 1, 1, 1)
-shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_kjtp0"]
 length = 0.001
@@ -764,9 +767,9 @@ hframes = 4
 vframes = 4
 frame = 8
 script = ExtResource("17_ak2ai")
-ears_short = Array[Resource]([ExtResource("18_br6q3"), ExtResource("19_vv06u"), ExtResource("20_ma7h3"), ExtResource("21_iqx0f"), ExtResource("22_2f1s4")])
-ears_average = Array[Resource]([ExtResource("18_br6q3"), ExtResource("23_7svkk"), ExtResource("24_0iuld"), ExtResource("25_nu47q"), ExtResource("26_l423s")])
-ears_tall = Array[Resource]([ExtResource("18_br6q3"), ExtResource("27_t4sqk"), ExtResource("28_34mx1"), ExtResource("29_qvp6o"), ExtResource("30_mr1dx")])
+ears_short = Array[Resource]([ExtResource("18_br6q3"), ExtResource("19_vv06u"), ExtResource("20_ma7h3"), ExtResource("21_iqx0f"), ExtResource("22_2f1s4"), ExtResource("29_ma7h3")])
+ears_average = Array[Resource]([ExtResource("18_br6q3"), ExtResource("23_7svkk"), ExtResource("24_0iuld"), ExtResource("25_nu47q"), ExtResource("26_l423s"), ExtResource("33_iqx0f")])
+ears_tall = Array[Resource]([ExtResource("18_br6q3"), ExtResource("27_t4sqk"), ExtResource("28_34mx1"), ExtResource("29_qvp6o"), ExtResource("30_mr1dx"), ExtResource("38_iqx0f")])
 
 [node name="Sprite_HairFront" type="Sprite2D" parent="Sprites"]
 

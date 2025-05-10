@@ -120,6 +120,10 @@ func send_colors(
 			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
 		"Hair":
 			sprite = sprite_hair
+			sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
+			sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
+			sprite_ears.material.set("shader_parameter/new_base2", new_base1)
+			sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
 			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
 			if hair_linked:
 				sprite = sprite_beard
@@ -128,6 +132,10 @@ func send_colors(
 			sprite = sprite_beard
 			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
 			if hair_linked:
+				sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
+				sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
+				sprite_ears.material.set("shader_parameter/new_base2", new_base1)
+				sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
 				sprite = sprite_hair
 				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
 		"Eye1":
