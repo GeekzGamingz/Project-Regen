@@ -33,7 +33,7 @@ uniform vec4 new_highlight3 : source_color;
 
 void fragment() {
     vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
-	
+
 	// Checks Current Pixel Color to old_
 	// Swaps Current Pixel Color to new_
 	// Color One

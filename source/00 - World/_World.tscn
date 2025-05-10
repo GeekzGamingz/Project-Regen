@@ -32,5 +32,6 @@ position = Vector2(236, 8)
 
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
-[node name="Spawner_Entities" type="MultiplayerSpawner" parent="Orphanages/Orphanage_Entities"]
+[node name="Spawner_Players" type="MultiplayerSpawner" parent="Orphanages/Orphanage_Entities"]
+_spawnable_scenes = PackedStringArray("uid://dfakdncbf8w6a")
 spawn_path = NodePath("..")

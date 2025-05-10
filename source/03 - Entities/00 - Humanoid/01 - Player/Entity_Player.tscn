@@ -1,14 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfakdncbf8w6a"]
+[gd_scene load_steps=4 format=3 uid="uid://dfakdncbf8w6a"]
 
 [ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/00 - Humanoid/_Character_Entity.tscn" id="1_g6jbf"]
 [ext_resource type="Script" uid="uid://bhmlewdav633s" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.gd" id="2_g6jbf"]
 [ext_resource type="Script" uid="uid://bxcm8vntpy238" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Input.gd" id="2_x2jc6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_g6jbf"]
-outline_size = 1
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 0.392157)
 
 [node name="Entity_Player" instance=ExtResource("1_g6jbf")]
 collision_layer = 2
@@ -21,21 +15,5 @@ script = ExtResource("2_x2jc6")
 [node name="AnimationTree" parent="AnimationPlayers" index="2"]
 parameters/Idle/blend_position = Vector2(0, 0)
 
-[node name="Output_State" parent="Outputs" index="0"]
-custom_minimum_size = Vector2(100, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = -27.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "STATE"
-label_settings = SubResource("LabelSettings_g6jbf")
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="Output_Name" parent="Outputs" index="1"]
+visible = false

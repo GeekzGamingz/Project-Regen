@@ -40,24 +40,6 @@ func apply_movement() -> void:
 	velocity = lerp(velocity, direction * max_speed, weight())
 	move_and_slide()
 #------------------------------------------------------------------------------#
-#Facing Orientations
-#Horizontal Facing
-func set_facing(hor_facing: int) -> void:
-	if hor_facing == 0:
-		hor_facing = FACING_RIGHT
-	var hor_face_mod = hor_facing / abs(hor_facing)
-	$Facing.apply_scale(Vector2(hor_face_mod * facing.x, 1))
-	$CollisionShape2D.position.x *= -1
-	facing = Vector2(hor_face_mod, facing.y)
-#Vertical Facing
-func set_vert(vert_facing: int) -> void:
-	if vert_facing == 0:
-		vert_facing = RIGHT_SIDE_UP
-	var vert_face_mod = vert_facing / abs(vert_facing)
-	$Facing.apply_scale(Vector2(1, vert_face_mod * inversion.x))
-	$CollisionShape2D.position.y *= -1
-	inversion = Vector2(vert_face_mod, inversion.y)
-#------------------------------------------------------------------------------#
 #Entity Weight
 func weight() -> float:
 	#Ground Weight
