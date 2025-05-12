@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
 
 [node name="World" type="Node2D"]
+metadata/_edit_vertical_guides_ = [480.0, 940.0, -480.0]
+metadata/_edit_horizontal_guides_ = [270.0, 540.0, 556.0]
 
 [node name="Time" parent="." instance=ExtResource("1_146u6")]
 
