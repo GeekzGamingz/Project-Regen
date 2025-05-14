@@ -3,6 +3,8 @@ extends Node2D
 #Variables
 #OnReady Variables
 #Main Scenes
+#Network
+@onready var NETWORK: Node2D = $Network
 #User Interface
 @onready var UI: CanvasLayer = $UserInterface
 @onready var UI_NETWORK: VBoxContainer = $UserInterface/UI_FullRect/UI_Network
@@ -10,7 +12,8 @@ extends Node2D
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools
 @onready var MENU_BUILDINGS: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings
 @onready var MENU_FLORA: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora
-#Tile Sets
+#World Nodes
+@onready var WORLD: Node2D = $World
 @onready var MAP_WORLD: TileMapLayer = $World/Mapping/Map_World
 @onready var MAP_GRASS: TileMapLayer = $World/Mapping/Map_Grass
 #Building Grid

@@ -4,7 +4,9 @@ extends VBoxContainer
 var chatter: String
 var commands: Array = [
 	"/help",
-	"/players"
+	"/players",
+	"/playerids",
+	"/playerinfo"
 ]
 #OnReady Variables
 #Main Nodes
@@ -36,20 +38,35 @@ func send_message():
 		else: error_name()
 	chat_commands()
 	line_message.text = ""
+	text_messages.scroll_vertical = text_messages.get_line_height()
 #Chat Commands
 func chat_commands():
 	if line_message.text == "":
 		text_messages.text += str("Type \"/help\" for a List of Commands...")
-	if line_message.text == "/help":
+	elif line_message.text == "/help":
 		text_messages.text += str(
 			"List of Commands:\n",
-			"/players [List Current Active Players]"
+			"/players [List Current Active Players]\n",
+			"/playerids [List Current Player IDs]\n",
+			"/playerinfo [List Player Information Dictionary]\n"
 			)
-	if line_message.text == "/players":
+	elif line_message.text == "/players":
 		text_messages.text += str("There are [", NETWORK.players_online, "] Players Online: ")
 		for player in NETWORK.players.values():
 			text_messages.text += str("[", player["name"], "] ")
-	text_messages.text += str("\n")
+		text_messages.text += str("\n")
+	elif line_message.text == "/playerids":
+		text_messages.text += str("Player Unique IDs:\n")
+		text_messages.text += str("#----------#\n")
+		for player in NETWORK.players.values():
+			text_messages.text += str("[", player["name"], "] - ")
+			text_messages.text += str(player["id"], "\n")
+		text_messages.text += str("#----------#\n")
+	elif line_message.text == "/playerinfo":
+		text_messages.text += str("Player Information Dictionary:\n")
+		text_messages.text += str("#----------#\n")
+		text_messages.text += str(NETWORK.players)
+		text_messages.text += str("\n#----------#\n")
 #------------------------------------------------------------------------------#
 #Custom Signaled Function
 func server_found(username): chatter = username

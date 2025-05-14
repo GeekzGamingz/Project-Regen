@@ -1,12 +1,6 @@
 extends CharacterBody2D
 class_name Entity
 #------------------------------------------------------------------------------#
-#Constants
-const FACING_LEFT: int = -1
-const FACING_RIGHT: int = 1
-const UP_SIDE_DOWN: int = -1
-const RIGHT_SIDE_UP: int = 1
-#------------------------------------------------------------------------------#
 #Variables
 #Bools
 var is_grounded: bool = false
@@ -25,6 +19,8 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var max_speed: float = walk_speed
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
+@onready var UI_NETWORK: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes

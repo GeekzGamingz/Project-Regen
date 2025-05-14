@@ -6,6 +6,7 @@ signal server_create
 signal client_create
 signal error_name
 signal error_select_connection
+signal spawn_players
 #------------------------------------------------------------------------------#
 #Variables
 #Strings
@@ -22,7 +23,7 @@ var username: String
 func _on_button_host_button_up() -> void:
 	if line_username.text != "":
 		username = line_username.text
-		emit_signal("server_create", username)
+		emit_signal("server_create", username, "")
 	else: emit_signal("error_name")
 #Join Button Up
 func _on_button_join_button_up() -> void:
@@ -36,3 +37,6 @@ func _on_ip_text_submitted(new_text: String) -> void:
 	if line_username.text != "":
 		username = line_username.text
 		emit_signal("client_create", username, new_text)
+
+
+func _on_button_spawn_button_up() -> void: emit_signal("spawn_players")

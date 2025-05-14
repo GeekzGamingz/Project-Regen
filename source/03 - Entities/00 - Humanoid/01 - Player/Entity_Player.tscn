@@ -12,8 +12,25 @@ script = ExtResource("2_g6jbf")
 [node name="Player_Input" type="Node2D" parent="Scripts" index="0"]
 script = ExtResource("2_x2jc6")
 
+[node name="Sprite_Base" parent="Sprites" index="0"]
+offset = Vector2(-0.5, -15.5)
+
+[node name="Sprite_HairBack" parent="Sprites" index="1"]
+offset = Vector2(-0.5, -15.5)
+
+[node name="Sprite_Beard" parent="Sprites" index="2"]
+offset = Vector2(-0.5, -15.5)
+
+[node name="Sprite_Ears" parent="Sprites" index="3"]
+offset = Vector2(-0.5, -15.5)
+
+[node name="Sprite_HairFront" parent="Sprites" index="4"]
+offset = Vector2(-0.5, -15.5)
+
 [node name="AnimationTree" parent="AnimationPlayers" index="2"]
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

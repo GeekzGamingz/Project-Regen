@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://472gf7xmda12"]
+
+[ext_resource type="Texture2D" uid="uid://ch10pnnht7fr6" path="res://assets/02 - Objects/02 - Plinth/plint_host.png" id="1_vc0ri"]
+[ext_resource type="Texture2D" uid="uid://c06qvfk2bnag8" path="res://assets/02 - Objects/02 - Plinth/plint_guest.png" id="2_ax0ae"]
+
+[node name="Object_Plinths" type="Node2D"]
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Plinth_Host" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_vc0ri")
+offset = Vector2(-0.5, -0.5)
+
+[node name="Plinth_Guest1" type="Sprite2D" parent="Sprites"]
+position = Vector2(-48, -24)
+texture = ExtResource("2_ax0ae")
+offset = Vector2(-0.5, -0.5)
+
+[node name="Plinth_Guest2" type="Sprite2D" parent="Sprites"]
+position = Vector2(-48, 24)
+texture = ExtResource("2_ax0ae")
+offset = Vector2(-0.5, -0.5)
+
+[node name="Plinth_Guest3" type="Sprite2D" parent="Sprites"]
+position = Vector2(-96, -24)
+texture = ExtResource("2_ax0ae")
+offset = Vector2(-0.5, -0.5)
+
+[node name="Plinth_Guest4" type="Sprite2D" parent="Sprites"]
+position = Vector2(-96, 24)
+texture = ExtResource("2_ax0ae")
+offset = Vector2(-0.5, -0.5)
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker_Host" type="Marker2D" parent="Markers"]
+position = Vector2(0, 8)
