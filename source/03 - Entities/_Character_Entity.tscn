@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=70 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://cn28m67wn8h8d" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_elf_t.png" id="37_f1rp1"]
 [ext_resource type="Texture2D" uid="uid://djo1vki1ae1na" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_cat_t.png" id="38_l6j7k"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_br6q3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pcmld"]
 shader = ExtResource("4_dpogu")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
@@ -66,7 +66,7 @@ shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ma7h3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_itw66"]
 shader = ExtResource("4_dpogu")
 shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
 shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
@@ -93,7 +93,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqx0f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n86k3"]
 shader = ExtResource("4_dpogu")
 shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
 shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
@@ -119,9 +119,107 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_dpogu"]
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vv06u"]
-shader = ExtResource("4_dpogu")
+shader = SubResource("Shader_dpogu")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -723,7 +821,7 @@ script = ExtResource("3_n86k3")
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Sprite_Base" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_br6q3")
+material = SubResource("ShaderMaterial_pcmld")
 texture = ExtResource("5_qi55k")
 offset = Vector2(0, -16)
 hframes = 4
@@ -734,7 +832,7 @@ bases_average = Array[Resource]([ExtResource("7_rt581"), ExtResource("5_qi55k"),
 bases_chub = Array[Resource]([ExtResource("9_4s0wj"), ExtResource("10_k2nwu"), ExtResource("11_upalp")])
 
 [node name="Sprite_HairBack" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_ma7h3")
+material = SubResource("ShaderMaterial_itw66")
 texture = ExtResource("12_bbv4l")
 offset = Vector2(0, -16)
 hframes = 4
@@ -746,7 +844,7 @@ hairs_average = Array[Resource]([ExtResource("14_k60s3"), ExtResource("12_bbv4l"
 hairs_tall = Array[Resource]([ExtResource("14_k60s3"), ExtResource("16_f2ycm")])
 
 [node name="Sprite_Beard" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_iqx0f")
+material = SubResource("ShaderMaterial_n86k3")
 texture = ExtResource("17_fkh14")
 offset = Vector2(0, -16)
 hframes = 4

@@ -58,38 +58,47 @@ func check_sprites() -> void:
 func uic_hair_change(scroll):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
 		match(scroll):
-			"Previous": hair_counter -= 1
-			"Next": hair_counter += 1
-		if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
-		elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
-		check_sprites()
+			"Previous":
+				hair_counter -= 1
+				print("Previous Pressed")
+				print("Hair Counter: ", hair_counter)
+			"Next":
+				hair_counter += 1
+				print("Next Pressed")
+	print("Counter: ", hair_counter)
+	print("Size: ", sprite_hair.hairs_average.size())
+	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
+	if hair_counter < 0:
+		print("hair counter less than zero!!")
+		hair_counter = sprite_hair.hairs_average.size() - 1
+	check_sprites()
 #Change Ears
 func uic_ear_change(scroll):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
 		match(scroll):
 			"Previous": ear_counter -= 1
 			"Next": ear_counter += 1
-		if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
-		elif hair_counter == -1: ear_counter = sprite_ears.ears_average.size() - 1
-		check_sprites()
+	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
+	elif hair_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
+	check_sprites()
 #Change Beard
 func uic_beard_change(scroll):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
 		match(scroll):
 			"Previous": beard_counter -= 1
 			"Next": beard_counter += 1
-		if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
-		elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
-		check_sprites()
+	if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
+	elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
+	check_sprites()
 #Change Height
 func uic_height_change(scroll):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
 		match(scroll):
 			"Previous": height_counter -= 1
 			"Next": height_counter += 1
-		if height_counter == sprite_base.bases_average.size(): height_counter = 0
-		elif height_counter == -1: height_counter = sprite_base.bases_average.size() -1
-		check_sprites()
+	if height_counter == sprite_base.bases_average.size(): height_counter = 0
+	elif height_counter < 0: height_counter = sprite_base.bases_average.size() -1
+	check_sprites()
 #Change Chub
 func uic_chub_change(toggled_on):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
@@ -103,7 +112,7 @@ func uic_animation_change(scroll):
 		match(scroll):
 			"Previous": anim_counter -= 1
 			"Next": anim_counter += 1
-		if anim_counter == 0: anim_counter = animation_list.size() - 1
+		if anim_counter < 0: anim_counter = animation_list.size() - 1
 		elif anim_counter == animation_list.size(): anim_counter = 1
 		var anim_desired = (animation_list.get(anim_counter))
 		e.sprite_player.play(anim_desired)
@@ -116,49 +125,50 @@ func send_colors(
 	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
 	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
 	):
-	var sprite = Sprite2D
-	match(sprite_to_color):
-		"Skin":
-			sprite = sprite_base
-			sprite_ears.material.set("shader_parameter/new_outline1", new_outline1)
-			sprite_ears.material.set("shader_parameter/new_shadow1", new_shadow1)
-			sprite_ears.material.set("shader_parameter/new_base1", new_base1)
-			sprite_ears.material.set("shader_parameter/new_highlight1", new_highlight1)
-			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		"Hair":
-			sprite = sprite_hair
-			sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-			sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-			sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-			sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			if hair_linked:
-				sprite = sprite_beard
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		var sprite = Sprite2D
+		match(sprite_to_color):
+			"Skin":
+				sprite = sprite_base
+				sprite_ears.material.set("shader_parameter/new_outline1", new_outline1)
+				sprite_ears.material.set("shader_parameter/new_shadow1", new_shadow1)
+				sprite_ears.material.set("shader_parameter/new_base1", new_base1)
+				sprite_ears.material.set("shader_parameter/new_highlight1", new_highlight1)
 				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		"Beard":
-			sprite = sprite_beard
-			update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			if hair_linked:
+			"Hair":
+				sprite = sprite_hair
 				sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
 				sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
 				sprite_ears.material.set("shader_parameter/new_base2", new_base1)
 				sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-				sprite = sprite_hair
 				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		"Eye1":
-			sprite = sprite_base
-			sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
-			sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
-			if eyes_linked:
-				sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-				sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
-		"Eye2":
-			sprite = sprite_base
-			sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-			sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
-			if eyes_linked:
+				if hair_linked:
+					sprite = sprite_beard
+					update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+			"Beard":
+				sprite = sprite_beard
+				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+				if hair_linked:
+					sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
+					sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
+					sprite_ears.material.set("shader_parameter/new_base2", new_base1)
+					sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
+					sprite = sprite_hair
+					update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+			"Eye1":
+				sprite = sprite_base
 				sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
 				sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
+				if eyes_linked:
+					sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+					sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+			"Eye2":
+				sprite = sprite_base
+				sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+				sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+				if eyes_linked:
+					sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
+					sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
 #Update Colors
 func update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1):
 	sprite.material.set("shader_parameter/new_outline1", new_outline1)
