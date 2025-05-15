@@ -2,13 +2,13 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
 #Integers
-var hair_counter: int = 0
-var ear_counter: int = 0
-var beard_counter: int = 0
-var anim_counter: int = 1
-var height_counter: int = 1
+@export var hair_counter: int = 0
+@export var ear_counter: int = 0
+@export var beard_counter: int = 0
+@export var anim_counter: int = 1
+@export var height_counter: int = 1
 #Bools
-var is_chub: bool = false
+@export var is_chub: bool = false
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
@@ -45,6 +45,7 @@ func _ready() -> void:
 	check_sprites()
 #------------------------------------------------------------------------------#
 #Custom Functions
+@rpc("any_peer", "call_local")
 func check_sprites() -> void:
 	await get_tree().create_timer(0.01).timeout #Awaiting Variables
 	sprite_base.check_base()
@@ -55,51 +56,57 @@ func check_sprites() -> void:
 #Custom Signaled Functions
 #Change Hair
 func uic_hair_change(scroll):
-	match(scroll):
-		"Previous": hair_counter -= 1
-		"Next": hair_counter += 1
-	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
-	elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
-	check_sprites()
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		match(scroll):
+			"Previous": hair_counter -= 1
+			"Next": hair_counter += 1
+		if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
+		elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
+		check_sprites()
 #Change Ears
 func uic_ear_change(scroll):
-	match(scroll):
-		"Previous": ear_counter -= 1
-		"Next": ear_counter += 1
-	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
-	elif hair_counter == -1: ear_counter = sprite_ears.ears_average.size() - 1
-	check_sprites()
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		match(scroll):
+			"Previous": ear_counter -= 1
+			"Next": ear_counter += 1
+		if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
+		elif hair_counter == -1: ear_counter = sprite_ears.ears_average.size() - 1
+		check_sprites()
 #Change Beard
 func uic_beard_change(scroll):
-	match(scroll):
-		"Previous": beard_counter -= 1
-		"Next": beard_counter += 1
-	if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
-	elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
-	check_sprites()
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		match(scroll):
+			"Previous": beard_counter -= 1
+			"Next": beard_counter += 1
+		if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
+		elif hair_counter == -1: hair_counter = sprite_hair.hairs_average.size() - 1
+		check_sprites()
 #Change Height
 func uic_height_change(scroll):
-	match(scroll):
-		"Previous": height_counter -= 1
-		"Next": height_counter += 1
-	if height_counter == sprite_base.bases_average.size(): height_counter = 0
-	elif height_counter == -1: height_counter = sprite_base.bases_average.size() -1
-	check_sprites()
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		match(scroll):
+			"Previous": height_counter -= 1
+			"Next": height_counter += 1
+		if height_counter == sprite_base.bases_average.size(): height_counter = 0
+		elif height_counter == -1: height_counter = sprite_base.bases_average.size() -1
+		check_sprites()
 #Change Chub
 func uic_chub_change(toggled_on):
-	is_chub = toggled_on
-	check_sprites()
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		is_chub = toggled_on
+		check_sprites()
 #Change Animation
 func uic_animation_change(scroll):
-	var animation_list = e.sprite_player.get_animation_list()
-	e.anim_tree.active = false
-	match(scroll):
-		"Previous": anim_counter -= 1
-		"Next": anim_counter += 1
-	if anim_counter == 0: anim_counter = animation_list.size() - 1
-	elif anim_counter == animation_list.size(): anim_counter = 1
-	var anim_desired = (animation_list.get(anim_counter))
-	e.sprite_player.play(anim_desired)
+	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+		var animation_list = e.sprite_player.get_animation_list()
+		e.anim_tree.active = false
+		match(scroll):
+			"Previous": anim_counter -= 1
+			"Next": anim_counter += 1
+		if anim_counter == 0: anim_counter = animation_list.size() - 1
+		elif anim_counter == animation_list.size(): anim_counter = 1
+		var anim_desired = (animation_list.get(anim_counter))
+		e.sprite_player.play(anim_desired)
 #Animation Tree Toggle
 func anim_tree_toggle(): e.anim_tree.active = !e.anim_tree.active
 #Change Colors

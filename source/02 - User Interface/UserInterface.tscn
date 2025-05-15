@@ -74,6 +74,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button_Spawn" type="TextureButton" parent="UI_FullRect/CenterContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("8_wwe8j")
 texture_pressed = ExtResource("9_c7gxw")

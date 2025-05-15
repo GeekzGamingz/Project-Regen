@@ -31,6 +31,7 @@ func _on_button_send_button_up() -> void: send_message()
 func _on_line_message_text_submitted(_new_text: String) -> void: send_message()
 #------------------------------------------------------------------------------#
 #Custom Functions
+#Send Message
 func send_message():
 	var command_sent = commands.has(line_message.text)
 	if line_message.text != "" && !command_sent:
@@ -42,7 +43,7 @@ func send_message():
 #Chat Commands
 func chat_commands():
 	if line_message.text == "":
-		text_messages.text += str("Type \"/help\" for a List of Commands...")
+		text_messages.text += str("Type \"/help\" for a List of Commands...\n")
 	elif line_message.text == "/help":
 		text_messages.text += str(
 			"List of Commands:\n",
@@ -67,6 +68,7 @@ func chat_commands():
 		text_messages.text += str("#----------#\n")
 		text_messages.text += str(NETWORK.players)
 		text_messages.text += str("\n#----------#\n")
+	text_messages.scroll_vertical = text_messages.get_line_height()
 #------------------------------------------------------------------------------#
 #Custom Signaled Function
 func server_found(username): chatter = username
