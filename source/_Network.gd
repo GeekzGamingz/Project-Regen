@@ -40,7 +40,7 @@ func server_joined(username):
 	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
 	peer_connected.emit(multiplayer.get_unique_id(), player_info)
 	emit_signal("server_found", username)
-	#UI_NETWORK.set_deferred("visible", false)
+	UI_NETWORK.set_deferred("visible", false)
 #Register Player
 @rpc("any_peer", "reliable")
 func register_player(new_player_info):
@@ -56,9 +56,9 @@ func player_update(value): players_online += value
 #Player Connected/Disconnected
 func _on_peer_connected(id): register_player.rpc_id(id, player_info)
 func _on_peer_disconnected(id):
+	rpc("player_update", -1)
 	players.erase(id)
 	peer_disconnected.emit(id)
-	rpc("player_update", -1)
 #Connection Successful/Unsuccessful
 func _on_connection_successful(): emit_signal("message_join")
 func _on_connection_unsuccessful(): multiplayer.multiplayer_peer = null

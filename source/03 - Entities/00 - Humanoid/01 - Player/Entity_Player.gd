@@ -15,4 +15,5 @@ func update_name(username, _new_text):
 	output_name.set_deferred("visible", true)
 
 
-func _on_tree_entered() -> void: print(is_multiplayer_authority())
+func _on_tree_entered() -> void:
+	print(is_multiplayer_authority())

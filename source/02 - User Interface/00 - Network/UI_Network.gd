@@ -6,7 +6,6 @@ signal server_create
 signal client_create
 signal error_name
 signal error_select_connection
-signal spawn_players
 #------------------------------------------------------------------------------#
 #Variables
 #Strings
@@ -37,6 +36,3 @@ func _on_ip_text_submitted(new_text: String) -> void:
 	if line_username.text != "":
 		username = line_username.text
 		emit_signal("client_create", username, new_text)
-
-
-func _on_button_spawn_button_up() -> void: emit_signal("spawn_players")
