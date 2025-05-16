@@ -5,6 +5,7 @@ extends Entity
 #Main Nodes
 @onready var COLOR_SELECT: TabContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization/VBoxContainer/Selection_Color")
 #Local Nodes
+@onready var player_serverinfo: Node2D = $Scripts/Player_ServerInfo
 @onready var output_name: Label = $Outputs/Output_Name
 #------------------------------------------------------------------------------#
 #Ready Function
@@ -31,6 +32,3 @@ func start_color() -> void:
 func update_name(username, _new_text):
 	output_name.text = username
 	output_name.set_deferred("visible", true)
-
-
-	

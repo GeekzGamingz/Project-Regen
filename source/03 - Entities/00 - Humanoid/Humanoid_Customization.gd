@@ -51,6 +51,7 @@ func check_sprites() -> void:
 	sprite_hair.check_hair()
 	sprite_ears.check_ears()
 	sprite_beard.check_beard()
+	print(multiplayer.get_unique_id(), ": Sprite Check")
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Change Hair
@@ -89,6 +90,7 @@ func uic_height_change(scroll):
 	if height_counter == sprite_base.bases_average.size(): height_counter = 0
 	elif height_counter < 0: height_counter = sprite_base.bases_average.size() -1
 	check_sprites()
+	if e.is_multiplayer_authority(): e.player_serverinfo.rpc("update_players")
 #Change Chub
 func uic_chub_change(toggled_on):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():

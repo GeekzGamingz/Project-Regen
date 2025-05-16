@@ -6,6 +6,7 @@ extends Sprite2D
 @export var bases_average: Array[Resource] = []
 @export var bases_chub: Array[Resource] = []
 #OnReady Variables
+@onready var e: Entity = $"../.."
 @onready var e_customization: Node2D = $"../../Scripts/Entity_Customization"
 #------------------------------------------------------------------------------#
 #Check Base Texture

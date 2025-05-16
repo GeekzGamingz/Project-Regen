@@ -12,7 +12,9 @@ signal server_disconnected
 var players: Dictionary = {}
 var player_info: Dictionary = {
 	"name": "Name",
-	"id": "ID"
+	"id": "ID",
+	"animation": int(1),
+	"height": int(1)
 }
 var players_online: int = 0
 #Exported Variables

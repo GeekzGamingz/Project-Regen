@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=69 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
@@ -121,107 +121,8 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="Shader" id="Shader_dpogu"]
-resource_local_to_scene = true
-code = "shader_type canvas_item;
-const float EPSILON = 0.0001;
-// Old Color #1
-uniform vec4 old_outline1 : source_color;
-uniform vec4 old_shadow1 : source_color;
-uniform vec4 old_base1 : source_color;
-uniform vec4 old_highlight1 : source_color;
-// Old Color #2
-uniform vec4 old_outline2 : source_color;
-uniform vec4 old_shadow2 : source_color;
-uniform vec4 old_base2 : source_color;
-uniform vec4 old_highlight2 : source_color;
-// Old Eyes
-uniform vec4 old_outline3 : source_color;
-uniform vec4 old_shadow3 : source_color;
-uniform vec4 old_base3 : source_color;
-uniform vec4 old_highlight3 : source_color;
-// New Outline #1
-uniform vec4 new_outline1 : source_color;
-uniform vec4 new_shadow1 : source_color;
-uniform vec4 new_base1 : source_color;
-uniform vec4 new_highlight1 : source_color;
-// New Outline #2
-uniform vec4 new_outline2 : source_color;
-uniform vec4 new_shadow2 : source_color;
-uniform vec4 new_base2 : source_color;
-uniform vec4 new_highlight2 : source_color;
-// New Eyes
-uniform vec4 new_outline3 : source_color;
-uniform vec4 new_shadow3 : source_color;
-uniform vec4 new_base3 : source_color;
-uniform vec4 new_highlight3 : source_color;
-
-void fragment() {
-    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
-
-	// Checks Current Pixel Color to old_
-	// Swaps Current Pixel Color to new_
-	// Color One
-	if (length(curr_color - old_outline1) < EPSILON)
-	{
-		COLOR = new_outline1;
-	}
-	else if (length(curr_color - old_shadow1) < EPSILON)
-	{
-        COLOR = new_shadow1;
-    }
-    else if (length(curr_color - old_base1) < EPSILON)
-	{
-        COLOR = new_base1;
-    }
-	else if (length(curr_color - old_highlight1) < EPSILON)
-	{
-        COLOR = new_highlight1;
-    }
-	// Color Two
-	else if (length(curr_color - old_outline2) < EPSILON)
-	{
-		COLOR = new_outline2;
-	}
-	else if (length(curr_color - old_shadow2) < EPSILON)
-	{
-        COLOR = new_shadow2;
-    }
-	else if (length(curr_color - old_base2) < EPSILON)
-	{
-        COLOR = new_base2;
-    }
-	else if (length(curr_color - old_highlight2) < EPSILON)
-	{
-        COLOR = new_highlight2;
-    }
-	// Eye One
-	else if (length(curr_color - old_outline3) < EPSILON)
-	{
-        COLOR = new_outline1;
-    }
-	else if (length(curr_color - old_shadow3) < EPSILON)
-	{
-        COLOR = new_shadow3;
-    }
-	// Eye Two
-	else if (length(curr_color - old_base3) < EPSILON)
-	{
-        COLOR = new_base3;
-    }
-	else if (length(curr_color - old_highlight3) < EPSILON)
-	{
-        COLOR = new_highlight3;
-    }
-	else
-	{
-		// Keeps Original
-        COLOR = curr_color;
-    }
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dpogu"]
-shader = SubResource("Shader_dpogu")
+shader = ExtResource("4_dpogu")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -938,3 +839,5 @@ vertical_alignment = 1
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kik4i")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
