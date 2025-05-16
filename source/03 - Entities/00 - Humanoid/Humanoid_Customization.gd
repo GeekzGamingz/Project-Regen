@@ -42,12 +42,12 @@ func _ready() -> void:
 	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Hair/Facial/Grid_Facial").get_children():
 		button.connect("send_colors", send_colors)
 	#Initial Sprite Check
+	await get_tree().create_timer(0.01).timeout
 	check_sprites()
 #------------------------------------------------------------------------------#
 #Custom Functions
 @rpc("any_peer", "call_local")
 func check_sprites() -> void:
-	await get_tree().create_timer(0.01).timeout #Awaiting Variables
 	sprite_base.check_base()
 	sprite_hair.check_hair()
 	sprite_ears.check_ears()
@@ -58,19 +58,10 @@ func check_sprites() -> void:
 func uic_hair_change(scroll):
 	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
 		match(scroll):
-			"Previous":
-				hair_counter -= 1
-				print("Previous Pressed")
-				print("Hair Counter: ", hair_counter)
-			"Next":
-				hair_counter += 1
-				print("Next Pressed")
-	print("Counter: ", hair_counter)
-	print("Size: ", sprite_hair.hairs_average.size())
+			"Previous": hair_counter -= 1
+			"Next": hair_counter += 1
 	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
-	if hair_counter < 0:
-		print("hair counter less than zero!!")
-		hair_counter = sprite_hair.hairs_average.size() - 1
+	elif hair_counter <= -1: hair_counter = sprite_hair.hairs_average.size() - 1
 	check_sprites()
 #Change Ears
 func uic_ear_change(scroll):
@@ -79,7 +70,7 @@ func uic_ear_change(scroll):
 			"Previous": ear_counter -= 1
 			"Next": ear_counter += 1
 	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
-	elif hair_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
+	elif ear_counter <= -1: ear_counter = sprite_ears.ears_average.size() - 1
 	check_sprites()
 #Change Beard
 func uic_beard_change(scroll):
@@ -88,7 +79,7 @@ func uic_beard_change(scroll):
 			"Previous": beard_counter -= 1
 			"Next": beard_counter += 1
 	if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
-	elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
+	elif beard_counter < 0: beard_counter = sprite_beard.beards_average.size() - 1
 	check_sprites()
 #Change Height
 func uic_height_change(scroll):

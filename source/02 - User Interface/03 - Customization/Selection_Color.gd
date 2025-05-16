@@ -8,13 +8,6 @@ extends TabContainer
 @onready var eye_left: GridContainer = $Eyes/Left/Grid_Left
 @onready var eye_right: GridContainer = $Eyes/Right/Grid_Right
 #------------------------------------------------------------------------------#
-func _ready() -> void:
-	await get_tree().create_timer(0.01).timeout
-	random_color("Skin")
-	random_color("Hair")
-	random_color("Beard")
-	random_color("EyeL")
-	random_color("EyeR")
 #Custom Functions
 #Random Color
 func random_color(colorable):

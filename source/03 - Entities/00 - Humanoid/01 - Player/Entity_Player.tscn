@@ -243,3 +243,5 @@ parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
