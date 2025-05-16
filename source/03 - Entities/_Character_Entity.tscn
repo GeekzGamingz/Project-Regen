@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://djo1vki1ae1na" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_cat_t.png" id="38_l6j7k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pcmld"]
+resource_local_to_scene = true
 shader = ExtResource("4_dpogu")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
@@ -121,6 +122,7 @@ shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="Shader" id="Shader_dpogu"]
+resource_local_to_scene = true
 code = "shader_type canvas_item;
 const float EPSILON = 0.0001;
 // Old Color #1
@@ -218,7 +220,7 @@ void fragment() {
     }
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vv06u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dpogu"]
 shader = SubResource("Shader_dpogu")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
@@ -856,7 +858,7 @@ beards_average = Array[Resource]([ExtResource("19_prpqd"), ExtResource("17_fkh14
 beards_tall = Array[Resource]([ExtResource("19_prpqd"), ExtResource("21_s7rcf")])
 
 [node name="Sprite_Ears" type="Sprite2D" parent="Sprites"]
-material = SubResource("ShaderMaterial_vv06u")
+material = SubResource("ShaderMaterial_dpogu")
 texture = ExtResource("22_t8xge")
 offset = Vector2(0, -16)
 hframes = 4

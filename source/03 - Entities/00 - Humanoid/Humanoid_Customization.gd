@@ -46,7 +46,6 @@ func _ready() -> void:
 	check_sprites()
 #------------------------------------------------------------------------------#
 #Custom Functions
-@rpc("any_peer", "call_local")
 func check_sprites() -> void:
 	sprite_base.check_base()
 	sprite_hair.check_hair()
@@ -61,7 +60,7 @@ func uic_hair_change(scroll):
 			"Previous": hair_counter -= 1
 			"Next": hair_counter += 1
 	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
-	elif hair_counter <= -1: hair_counter = sprite_hair.hairs_average.size() - 1
+	elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
 	check_sprites()
 #Change Ears
 func uic_ear_change(scroll):
@@ -70,7 +69,7 @@ func uic_ear_change(scroll):
 			"Previous": ear_counter -= 1
 			"Next": ear_counter += 1
 	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
-	elif ear_counter <= -1: ear_counter = sprite_ears.ears_average.size() - 1
+	elif ear_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
 	check_sprites()
 #Change Beard
 func uic_beard_change(scroll):

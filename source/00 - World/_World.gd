@@ -19,7 +19,6 @@ func spawn_requested():
 	for id in NETWORK.players:
 		var player_scene = preload("res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.tscn")
 		var player = player_scene.instantiate()
-		player.set_multiplayer_authority(id)
 		player.name = str(id)
 		if id == 1: player.global_position = object_plinths.get_node("Markers/Marker_Host").global_position
 		else: player.global_position = object_plinths.get_node("Markers/Marker_Guest1").global_position
