@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://3nutagt7vmnp" path="res://assets/03 - Entities/00 - Humanoid/00 - Base/01 - Average/base_average_chub.png" id="10_k2nwu"]
 [ext_resource type="Texture2D" uid="uid://cafix1b6k3m0" path="res://assets/03 - Entities/00 - Humanoid/00 - Base/02 - Tall/base_tall_chub.png" id="11_upalp"]
 [ext_resource type="Texture2D" uid="uid://2u2vwu1kxeqj" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/00 - Back/01 - Average/lumberjack_hair_a.png" id="12_bbv4l"]
-[ext_resource type="Script" uid="uid://b6cmoq1mh7lho" path="res://source/03 - Entities/00 - Humanoid/Humanoid_Hairs.gd" id="13_jl27c"]
+[ext_resource type="Script" uid="uid://b6cmoq1mh7lho" path="res://source/03 - Entities/00 - Humanoid/Humanoid_Hair.gd" id="13_jl27c"]
 [ext_resource type="Texture2D" uid="uid://c231vxv1xwxuj" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/bald.png" id="14_k60s3"]
 [ext_resource type="Texture2D" uid="uid://c6g4e5ietrb4s" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/00 - Back/00 - Short/lumberjack_hair_s.png" id="15_xvmd0"]
 [ext_resource type="Texture2D" uid="uid://cvqi2q3e5st48" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/00 - Back/02 - Tall/lumberjack_hair_t.png" id="16_f2ycm"]
@@ -168,7 +168,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -221,7 +221,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -274,7 +274,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -327,7 +327,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -380,7 +380,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -434,7 +434,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -488,7 +488,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -542,7 +542,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -596,7 +596,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprite_HairBack:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -739,7 +739,7 @@ script = ExtResource("6_4h5xq")
 bases_average = Array[Resource]([ExtResource("7_rt581"), ExtResource("5_qi55k"), ExtResource("8_w414j")])
 bases_chub = Array[Resource]([ExtResource("9_4s0wj"), ExtResource("10_k2nwu"), ExtResource("11_upalp")])
 
-[node name="Sprite_HairBack" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Hair" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_itw66")
 texture = ExtResource("12_bbv4l")
 offset = Vector2(0, -16)
@@ -775,7 +775,7 @@ ears_short = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("25_72viy"), 
 ears_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("30_l6i5u"), ExtResource("22_t8xge"), ExtResource("31_spdcj"), ExtResource("32_mhb4s"), ExtResource("33_o6ssk")])
 ears_tall = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("34_op2by"), ExtResource("35_24lc3"), ExtResource("36_1m4lk"), ExtResource("37_f1rp1"), ExtResource("38_l6j7k")])
 
-[node name="Sprite_HairFront" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Bangs" type="Sprite2D" parent="Sprites"]
 
 [node name="Raycasts" type="Node2D" parent="."]
 position = Vector2(0, -8)

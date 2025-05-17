@@ -20,7 +20,7 @@ var old_info: Dictionary = {}
 @onready var e: Entity = get_parent().get_parent()
 #Sprites
 @onready var sprite_base: Sprite2D = e.get_node("Sprites/Sprite_Base")
-@onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprite_HairBack")
+@onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprite_Hair")
 @onready var sprite_ears: Sprite2D = e.get_node("Sprites/Sprite_Ears")
 @onready var sprite_beard: Sprite2D = e.get_node("Sprites/Sprite_Beard")
 #------------------------------------------------------------------------------#
@@ -60,12 +60,18 @@ func check_sprites() -> void:
 #Custom Signaled Functions
 #Change Hair
 func uic_hair_change(scroll):
+	customize_type = "Hair"
 	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": hair_counter -= 1
 			"Next": hair_counter += 1
 		if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
 		elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
+		e.player_serverinfo.update_info.rpc(
+			multiplayer.get_unique_id(),
+			customize_type,
+			hair_counter
+		)
 #Change Ears
 func uic_ear_change(scroll):
 	customize_type = "Ears"

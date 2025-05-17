@@ -24,8 +24,8 @@ var players: Dictionary = {}
 	"leg_left": int(0), #TO DEFINE
 	"leg_right": int(0), #TO DEFINE
 	"ears": int(0), 
-	"hair_back": int(0), #TO DEFINE
-	"hair_front": int(0), #TO DEFINE
+	"hair": int(0),
+	"bangs": int(0), #TO DEFINE
 	"beard": int(0)
 }
 var players_online: int = 0
