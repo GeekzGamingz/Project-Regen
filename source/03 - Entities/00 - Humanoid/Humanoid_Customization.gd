@@ -68,12 +68,18 @@ func uic_hair_change(scroll):
 		elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
 #Change Ears
 func uic_ear_change(scroll):
+	customize_type = "Ears"
 	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": ear_counter -= 1
 			"Next": ear_counter += 1
 		if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
 		elif ear_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
+		e.player_serverinfo.update_info.rpc(
+			multiplayer.get_unique_id(),
+			customize_type,
+			ear_counter
+		)
 #Change Beard
 func uic_beard_change(scroll):
 	customize_type = "Beard"
@@ -100,7 +106,8 @@ func uic_height_change(scroll):
 		e.player_serverinfo.update_info.rpc(
 			multiplayer.get_unique_id(),
 			customize_type,
-			height_counter)
+			height_counter
+		)
 #Change Chub
 func uic_chub_change(toggled_on):
 	customize_type = "Chub"

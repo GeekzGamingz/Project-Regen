@@ -23,7 +23,7 @@ var players: Dictionary = {}
 	"arm_right": int(0), #TO DEFINE
 	"leg_left": int(0), #TO DEFINE
 	"leg_right": int(0), #TO DEFINE
-	"ears": int(0), #TO DEFINE
+	"ears": int(0), 
 	"hair_back": int(0), #TO DEFINE
 	"hair_front": int(0), #TO DEFINE
 	"beard": int(0)
