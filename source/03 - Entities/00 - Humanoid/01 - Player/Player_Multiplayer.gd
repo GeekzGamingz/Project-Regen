@@ -8,8 +8,9 @@ extends Node2D
 @onready var e_customization: Node2D = $"../Entity_Customization"
 #------------------------------------------------------------------------------#
 @rpc("any_peer", "call_local", "reliable")
-func update_height(id, new_height): e.NETWORK.players[id].set("height", new_height)
-#func update_info(id, new_info): e.NETWORK.players[id].set("height", new_info)
-#CHANGE TO MATCH STATEMENT?
+func update_info(id, customize_type, new_info):
+	match(customize_type):
+		"Height": e.NETWORK.players[id].set("height", new_info)
+		"Chub": e.NETWORK.players[id].set("chub", new_info)
 	
 	

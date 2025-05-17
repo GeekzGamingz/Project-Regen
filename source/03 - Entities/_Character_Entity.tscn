@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=70 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
@@ -66,6 +66,9 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pcmld"]
+load_path = "res://.godot/imported/base_average_average.png-36cc404e5525b7e633177a7aa32d39fc.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itw66"]
 shader = ExtResource("4_dpogu")
@@ -725,7 +728,7 @@ script = ExtResource("3_n86k3")
 
 [node name="Sprite_Base" type="Sprite2D" parent="Sprites"]
 material = SubResource("ShaderMaterial_pcmld")
-texture = ExtResource("5_qi55k")
+texture = SubResource("CompressedTexture2D_pcmld")
 offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
@@ -837,14 +840,9 @@ vertical_alignment = 1
 
 [node name="Timers" type="Node2D" parent="."]
 
-[node name="Timer_SpriteCheck" type="Timer" parent="Timers"]
-wait_time = 0.1
-autostart = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kik4i")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
-[connection signal="timeout" from="Timers/Timer_SpriteCheck" to="Scripts/Entity_Customization" method="_on_timer_sprite_check_timeout"]

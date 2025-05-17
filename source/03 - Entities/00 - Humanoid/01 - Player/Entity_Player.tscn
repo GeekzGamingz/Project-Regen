@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfakdncbf8w6a"]
+[gd_scene load_steps=13 format=3 uid="uid://dfakdncbf8w6a"]
 
 [ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/_Character_Entity.tscn" id="1_g6jbf"]
 [ext_resource type="Script" uid="uid://bhmlewdav633s" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.gd" id="2_g6jbf"]
@@ -131,6 +131,9 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0p84g"]
+load_path = "res://.godot/imported/base_average_average.png-36cc404e5525b7e633177a7aa32d39fc.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rnwoa"]
 shader = ExtResource("4_4ncaf")
@@ -326,6 +329,7 @@ script = ExtResource("4_0p84g")
 
 [node name="Sprite_Base" parent="Sprites" index="0"]
 material = SubResource("ShaderMaterial_0p84g")
+texture = SubResource("CompressedTexture2D_0p84g")
 offset = Vector2(-0.5, -15.5)
 
 [node name="Sprite_HairBack" parent="Sprites" index="1"]

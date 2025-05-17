@@ -1,6 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
+var customize_type: String
 #Dictionaries
 var old_info: Dictionary = {}
 #Integers
@@ -43,11 +44,9 @@ func _ready() -> void:
 		button.connect("send_colors", send_colors)
 	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Hair/Facial/Grid_Facial").get_children():
 		button.connect("send_colors", send_colors)
-	#Initial Sprite Check
-	await get_tree().create_timer(0.01).timeout
 #------------------------------------------------------------------------------#
-#Signaled Functions
-func _on_timer_sprite_check_timeout() -> void: check_sprites() #Maybe Change?
+#Process Function
+func _process(_delta: float) -> void: check_sprites()
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_sprites() -> void:
@@ -84,19 +83,27 @@ func uic_beard_change(scroll):
 		elif beard_counter < 0: beard_counter = sprite_beard.beards_average.size() - 1
 #Change Height
 func uic_height_change(scroll):
+	customize_type = "Height"
 	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": height_counter -= 1
 			"Next": height_counter += 1
 		if height_counter == sprite_base.bases_average.size(): height_counter = 0
 		elif height_counter < 0: height_counter = sprite_base.bases_average.size() -1
-		e.player_serverinfo.update_height.rpc(
+		e.player_serverinfo.update_info.rpc(
 			multiplayer.get_unique_id(),
+			customize_type,
 			height_counter)
 #Change Chub
 func uic_chub_change(toggled_on):
+	customize_type = "Chub"
 	if e.is_multiplayer_authority():
 		is_chub = toggled_on
+		e.player_serverinfo.update_info.rpc(
+			multiplayer.get_unique_id(),
+			customize_type,
+			is_chub
+		)
 #Change Animation
 func uic_animation_change(scroll):
 	if e.is_multiplayer_authority():

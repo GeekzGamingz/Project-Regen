@@ -14,7 +14,8 @@ var players: Dictionary = {}
 	"name": "Name",
 	"id": "ID",
 	"animation": int(1),
-	"height": int(1)
+	"height": int(1),
+	"chub": bool(false)
 }
 var players_online: int = 0
 #Exported Variables
