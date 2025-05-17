@@ -7402,14 +7402,34 @@ sprite_to_color = "Skin"
 layout_mode = 2
 alignment = 1
 
-[node name="Label_Chub" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
+[node name="ChubContainer" type="HBoxContainer" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Label_Chub" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "Chub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckBox_Chub" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
+[node name="CheckBox_Chub" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
+layout_mode = 2
+theme_override_constants/icon_max_width = 10
+
+[node name="WheelsContainer" type="HBoxContainer" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="Label_Wheels" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Wheels?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox_Wheels" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
 layout_mode = 2
 theme_override_constants/icon_max_width = 10
 
@@ -10356,7 +10376,7 @@ theme_override_constants/margin_right = 8
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color78" to="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color78" method="_on_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color79" to="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color79" method="_on_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color80" to="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color80" method="_on_button_up"]
-[connection signal="toggled" from="VBoxContainer/Selection_Color/Skin/HBoxContainer/CheckBox_Chub" to="." method="_on_check_box_chub_toggled"]
+[connection signal="toggled" from="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer/CheckBox_Chub" to="." method="_on_check_box_chub_toggled"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color1" to="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color1" method="_on_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color2" to="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color2" method="_on_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color3" to="VBoxContainer/Selection_Color/Hair/Top/Grid_Top/Button_Color3" method="_on_button_up"]

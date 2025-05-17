@@ -13,9 +13,19 @@ var players: Dictionary = {}
 @export var player_info: Dictionary = {
 	"name": "Name",
 	"id": "ID",
+	"position": Vector2.ZERO, #TO DEFINE
 	"animation": int(1),
 	"height": int(1),
-	"chub": bool(false)
+	"chub": bool(false),
+	"head": int(0), #TO DEFINE
+	"torso": int(0), #TO DEFINE
+	"arm_left": int(0), #TO DEFINE
+	"arm_right": int(0), #TO DEFINE
+	"leg_left": int(0), #TO DEFINE
+	"leg_right": int(0), #TO DEFINE
+	"ears": int(0), #TO DEFINE
+	"hair_back": int(0), #TO DEFINE
+	"hair_front": int(0), #TO DEFINE
 }
 var players_online: int = 0
 #Exported Variables
@@ -26,8 +36,6 @@ var players_online: int = 0
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 @onready var UI_NETWORK: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
-#Local Nodes
-#@onready var multi_synch: MultiplayerSynchronizer = $MultiplayerSynchronizer
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
@@ -38,10 +46,6 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(_on_connection_successful)
 	multiplayer.connection_failed.connect(_on_connection_unsuccessful)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
-	#Multiplayer Synchronization
-	#multi_synch.set_multiplayer_authority(multiplayer.get_unique_id())
-	#for id in players:
-		#multi_synch.set_visibility_for(id, true)
 #------------------------------------------------------------------------------#
 #Custom Functions
 func server_joined(username):

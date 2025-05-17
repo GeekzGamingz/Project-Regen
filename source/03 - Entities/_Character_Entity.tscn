@@ -724,6 +724,8 @@ script = ExtResource("2_itw66")
 [node name="Entity_Customization" type="Node2D" parent="Scripts"]
 script = ExtResource("3_n86k3")
 
+[node name="Entity_Equipment" type="Node2D" parent="Scripts"]
+
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Sprite_Base" type="Sprite2D" parent="Sprites"]
