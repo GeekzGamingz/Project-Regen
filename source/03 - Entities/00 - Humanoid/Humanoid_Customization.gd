@@ -1,6 +1,8 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
+#Dictionaries
+var old_info: Dictionary = {}
 #Integers
 @export var hair_counter: int = 0
 @export var ear_counter: int = 0
@@ -43,62 +45,61 @@ func _ready() -> void:
 		button.connect("send_colors", send_colors)
 	#Initial Sprite Check
 	await get_tree().create_timer(0.01).timeout
-	check_sprites()
+#------------------------------------------------------------------------------#
+#Signaled Functions
+func _on_timer_sprite_check_timeout() -> void: check_sprites() #Maybe Change?
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_sprites() -> void:
-	sprite_base.check_base()
-	sprite_hair.check_hair()
-	sprite_ears.check_ears()
-	sprite_beard.check_beard()
-	print(multiplayer.get_unique_id(), ": Sprite Check")
+	if e.is_multiplayer_authority():
+		sprite_base.check_base()
+		sprite_hair.check_hair()
+		sprite_ears.check_ears()
+		sprite_beard.check_beard()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Change Hair
 func uic_hair_change(scroll):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": hair_counter -= 1
 			"Next": hair_counter += 1
-	if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
-	elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
-	check_sprites()
+		if hair_counter == sprite_hair.hairs_average.size(): hair_counter = 0
+		elif hair_counter < 0: hair_counter = sprite_hair.hairs_average.size() - 1
 #Change Ears
 func uic_ear_change(scroll):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": ear_counter -= 1
 			"Next": ear_counter += 1
-	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
-	elif ear_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
-	check_sprites()
+		if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
+		elif ear_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
 #Change Beard
 func uic_beard_change(scroll):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": beard_counter -= 1
 			"Next": beard_counter += 1
-	if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
-	elif beard_counter < 0: beard_counter = sprite_beard.beards_average.size() - 1
-	check_sprites()
+		if beard_counter == sprite_beard.beards_average.size(): beard_counter = 0
+		elif beard_counter < 0: beard_counter = sprite_beard.beards_average.size() - 1
 #Change Height
 func uic_height_change(scroll):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		match(scroll):
 			"Previous": height_counter -= 1
 			"Next": height_counter += 1
-	if height_counter == sprite_base.bases_average.size(): height_counter = 0
-	elif height_counter < 0: height_counter = sprite_base.bases_average.size() -1
-	check_sprites()
-	if e.is_multiplayer_authority(): e.player_serverinfo.rpc("update_players")
+		if height_counter == sprite_base.bases_average.size(): height_counter = 0
+		elif height_counter < 0: height_counter = sprite_base.bases_average.size() -1
+		e.player_serverinfo.update_height.rpc(
+			multiplayer.get_unique_id(),
+			height_counter)
 #Change Chub
 func uic_chub_change(toggled_on):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		is_chub = toggled_on
-		check_sprites()
 #Change Animation
 func uic_animation_change(scroll):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		var animation_list = e.sprite_player.get_animation_list()
 		e.anim_tree.active = false
 		match(scroll):
@@ -117,7 +118,7 @@ func send_colors(
 	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
 	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
 	):
-	if e.get_multiplayer_authority() == multiplayer.get_unique_id():
+	if e.is_multiplayer_authority():
 		var sprite = Sprite2D
 		match(sprite_to_color):
 			"Skin":

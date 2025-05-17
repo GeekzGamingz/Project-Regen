@@ -835,9 +835,16 @@ text = "NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="Timer_SpriteCheck" type="Timer" parent="Timers"]
+wait_time = 0.1
+autostart = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kik4i")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="timeout" from="Timers/Timer_SpriteCheck" to="Scripts/Entity_Customization" method="_on_timer_sprite_check_timeout"]

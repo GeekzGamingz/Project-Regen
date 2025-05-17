@@ -11,5 +11,12 @@ extends Sprite2D
 #------------------------------------------------------------------------------#
 #Check Base Texture
 func check_base():
-	if !e_customization.is_chub: texture = bases_average[e_customization.height_counter]
-	if e_customization.is_chub: texture = bases_chub[e_customization.height_counter]
+	for player in e.get_parent().get_children():
+		#If Player is Average
+		if !e_customization.is_chub:
+			var base = player.get_node("Sprites/Sprite_Base")
+			for id in e.NETWORK.players:
+				if player.name == str(id):
+					base.texture = bases_average[e.NETWORK.players[id].get("height")]
+		#If Player is Chubby
+		if e_customization.is_chub: texture = bases_chub[e_customization.height_counter]
