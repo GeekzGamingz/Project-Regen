@@ -52,6 +52,7 @@ func _process(_delta: float) -> void: check_sprites()
 func check_sprites() -> void:
 	if e.is_multiplayer_authority():
 		sprite_base.check_base()
+		sprite_base.check_animation()
 		sprite_hair.check_hair()
 		sprite_ears.check_ears()
 		sprite_beard.check_beard()
@@ -106,6 +107,7 @@ func uic_chub_change(toggled_on):
 		)
 #Change Animation
 func uic_animation_change(scroll):
+	customize_type = "Animation"
 	if e.is_multiplayer_authority():
 		var animation_list = e.sprite_player.get_animation_list()
 		e.anim_tree.active = false
@@ -114,8 +116,12 @@ func uic_animation_change(scroll):
 			"Next": anim_counter += 1
 		if anim_counter < 0: anim_counter = animation_list.size() - 1
 		elif anim_counter == animation_list.size(): anim_counter = 1
-		var anim_desired = (animation_list.get(anim_counter))
-		e.sprite_player.play(anim_desired)
+		e.player_serverinfo.update_info.rpc(
+			multiplayer.get_unique_id(),
+			customize_type,
+			anim_counter
+		)
+		sprite_base.check_animation()
 #Animation Tree Toggle
 func anim_tree_toggle(): e.anim_tree.active = !e.anim_tree.active
 #Change Colors
