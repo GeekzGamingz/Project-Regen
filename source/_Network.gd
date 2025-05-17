@@ -26,6 +26,7 @@ var players: Dictionary = {}
 	"ears": int(0), #TO DEFINE
 	"hair_back": int(0), #TO DEFINE
 	"hair_front": int(0), #TO DEFINE
+	"beard": int(0)
 }
 var players_online: int = 0
 #Exported Variables

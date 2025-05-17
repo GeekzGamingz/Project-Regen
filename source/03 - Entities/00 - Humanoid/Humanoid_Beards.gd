@@ -6,11 +6,15 @@ extends Sprite2D
 @export var beards_average: Array[Resource] = []
 @export var beards_tall: Array[Resource] = []
 #OnReady Variables
+@onready var e: Entity = $"../.."
 @onready var e_customization: Node2D = $"../../Scripts/Entity_Customization"
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_beard():
-	match(e_customization.height_counter):
-		0: texture = beards_short[e_customization.beard_counter]
-		1: texture = beards_average[e_customization.beard_counter]
-		2: texture = beards_tall[e_customization.beard_counter]
+	for player in e.get_parent().get_children():
+		var beard = player.get_node("Sprites/Sprite_Beard")
+		for id in e.NETWORK.players: if player.name == str(id):
+			match(e.NETWORK.players[id].get("height")):
+				0: beard.texture = beards_short[e.NETWORK.players[id].get("beard")]
+				1: beard.texture = beards_average[e.NETWORK.players[id].get("beard")]
+				2: beard.texture = beards_tall[e.NETWORK.players[id].get("beard")]

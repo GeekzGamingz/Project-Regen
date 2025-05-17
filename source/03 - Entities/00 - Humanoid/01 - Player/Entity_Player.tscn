@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/_Character_Entity.tscn" id="1_g6jbf"]
 [ext_resource type="Script" uid="uid://bhmlewdav633s" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.gd" id="2_g6jbf"]
 [ext_resource type="Script" uid="uid://bxcm8vntpy238" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Input.gd" id="2_x2jc6"]
-[ext_resource type="Script" uid="uid://3tcac5a1yosj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Player_Multiplayer.gd" id="4_0p84g"]
+[ext_resource type="Script" uid="uid://3tcac5a1yosj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Player_ServerInfo.gd" id="4_0p84g"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_4ncaf"]
 
 [sub_resource type="Shader" id="Shader_4ncaf"]
