@@ -19,15 +19,19 @@ func check_hair():
 				1: hair.texture = hairs_average[e.NETWORK.players[id].get("hair")]
 				2: hair.texture = hairs_tall[e.NETWORK.players[id].get("hair")]
 #Check Colors
-func color_hair(
-	color_id, sprite, hair_linked, #Identifiers
-	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-):
-		entity_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-		entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		if hair_linked:
-			sprite = entity_colors.sprite_beard
-			entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+func save_hair(color_id):
+	var customize_type = "HairColor"
+	if e.is_multiplayer_authority():
+		e.player_serverinfo.update_info.rpc(
+			multiplayer.get_unique_id(),
+			customize_type,
+			color_id
+		)
+		#entity_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
+		#entity_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
+		#entity_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
+		#entity_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
+		#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+		#if hair_linked:
+			#sprite = entity_colors.sprite_beard
+			#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)

@@ -38,20 +38,46 @@ func save_skin(color_id):
 			color_id
 		)
 #Color Eyes
-func color_eyes(
-	color_id, sprite, eyes_linked, lateral, #Identifiers
-	new_shadow2, new_highlight2, #Color Two
-):
+func save_eyes(color_id, eyes_linked, lateral):
 	match(lateral):
 		"Eye1":
-			sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
-			sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
-			if eyes_linked:
-				sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-				sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+			var customize_type = "EyeLeft"
+			if e.is_multiplayer_authority():
+				e.player_serverinfo.update_info.rpc(
+					multiplayer.get_unique_id(),
+					customize_type,
+					color_id
+				)
+			#sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
+			#sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
+				if eyes_linked:
+					customize_type = "EyeRight"
+					if e.is_multiplayer_authority():
+						e.player_serverinfo.update_info.rpc(
+							multiplayer.get_unique_id(),
+							customize_type,
+							color_id
+						)
+				#sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+				#sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
 		"Eye2":
-			sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-			sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
-			if eyes_linked:
-				sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
-				sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
+			var customize_type = "EyeRight"
+			if e.is_multiplayer_authority():
+				e.player_serverinfo.update_info.rpc(
+					multiplayer.get_unique_id(),
+					customize_type,
+					color_id
+				)
+				if eyes_linked:
+					customize_type = "EyeLeft"
+					if e.is_multiplayer_authority():
+						e.player_serverinfo.update_info.rpc(
+							multiplayer.get_unique_id(),
+							customize_type,
+							color_id
+						)
+			#sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
+			#sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
+			#if eyes_linked:
+				#sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
+				#sprite.material.set("shader_parameter/new_highlight2", new_highlight2)

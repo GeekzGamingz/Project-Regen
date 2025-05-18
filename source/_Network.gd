@@ -24,12 +24,14 @@ var players: Dictionary = {}
 	"leg_left": int(0), #TO DEFINE
 	"leg_right": int(0), #TO DEFINE
 	"ears": int(0),
+	"eyeL_color": String("Button_Color1"),
+	"eyeR_color": String("Button_Color1"),
 	"skin_color": String("Button_Color1"),
 	"hair": int(0),
-	"hair_color:": String(""), #TO DEFINE
+	"hair_color": String("Button_Color1"), #TO DEFINE
 	"bangs": int(0), #TO DEFINE
 	"beard": int(0),
-	"beard_color": String("") #TO DEFINE
+	"beard_color": String("Button_Color1") #TO DEFINE
 }
 var players_online: int = 0
 #Exported Variables

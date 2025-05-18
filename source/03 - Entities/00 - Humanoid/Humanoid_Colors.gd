@@ -37,12 +37,7 @@ func send_colors(
 		var sprite = Sprite2D
 		match(sprite_to_color):
 			"Skin": sprite_base.save_skin(color_id)
-			"Hair":
-				sprite = sprite_hair
-				sprite_hair.color_hair(
-					color_id, sprite, hair_linked, #Identifiers
-					new_outline1, new_shadow1, new_base1, new_highlight1 #Color One
-				)
+			"Hair": sprite_hair.save_hair(color_id)
 			"Beard":
 				sprite = sprite_beard
 				sprite_beard.color_beard(
@@ -52,10 +47,7 @@ func send_colors(
 			"Eye1", "Eye2":
 				sprite = sprite_base
 				var lateral = sprite_to_color
-				sprite_base.color_eyes(
-					color_id, sprite, eyes_linked, lateral, #Identifiers
-					new_shadow2, new_highlight2, #Color Two
-				)
+				sprite_base.save_eyes(color_id, eyes_linked, lateral)
 #Update Colors
 func update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1):
 	sprite.material.set("shader_parameter/new_outline1", new_outline1)
