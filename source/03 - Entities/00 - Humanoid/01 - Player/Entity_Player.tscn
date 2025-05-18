@@ -303,15 +303,12 @@ script = ExtResource("4_0p84g")
 [node name="Sprite_Base" parent="Sprites" index="0"]
 material = SubResource("ShaderMaterial_0p84g")
 texture = SubResource("CompressedTexture2D_0p84g")
-offset = Vector2(-0.5, -15.5)
 
 [node name="Sprite_Beard" parent="Sprites" index="2"]
 material = SubResource("ShaderMaterial_gl5bk")
-offset = Vector2(-0.5, -15.5)
 
 [node name="Sprite_Ears" parent="Sprites" index="3"]
 material = SubResource("ShaderMaterial_dbfy1")
-offset = Vector2(-0.5, -15.5)
 
 [node name="AnimationTree" parent="AnimationPlayers" index="2"]
 parameters/Idle/blend_position = Vector2(0, 0)

@@ -34,16 +34,6 @@ func _ready() -> void:
 	UI_CUSTOMIZATION.connect("uic_height_change", uic_height_change)
 	UI_CUSTOMIZATION.connect("uic_chub_change", uic_chub_change)
 	UI_CUSTOMIZATION.connect("uic_animation_change", uic_animation_change)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Skin/Grid_Skin").get_children():
-		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Eyes/Left/Grid_Left").get_children():
-		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Eyes/Right/Grid_Right").get_children():
-		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Hair/Top/Grid_Top").get_children():
-		button.connect("send_colors", send_colors)
-	for button in UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color/Hair/Facial/Grid_Facial").get_children():
-		button.connect("send_colors", send_colors)
 #------------------------------------------------------------------------------#
 #Process Function
 func _process(_delta: float) -> void: check_sprites()
@@ -143,60 +133,3 @@ func uic_animation_change(scroll):
 		sprite_base.check_animation()
 #Animation Tree Toggle
 func anim_tree_toggle(): e.anim_tree.active = !e.anim_tree.active
-#Change Colors
-func send_colors(
-	sprite_to_color, eyes_linked, hair_linked, #Identifiers
-	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
-	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
-	):
-	if e.is_multiplayer_authority():
-		var sprite = Sprite2D
-		match(sprite_to_color):
-			"Skin":
-				sprite = sprite_base
-				sprite_ears.material.set("shader_parameter/new_outline1", new_outline1)
-				sprite_ears.material.set("shader_parameter/new_shadow1", new_shadow1)
-				sprite_ears.material.set("shader_parameter/new_base1", new_base1)
-				sprite_ears.material.set("shader_parameter/new_highlight1", new_highlight1)
-				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			"Hair":
-				sprite = sprite_hair
-				sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-				sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-				sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-				sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-				if hair_linked:
-					sprite = sprite_beard
-					update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			"Beard":
-				sprite = sprite_beard
-				update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-				if hair_linked:
-					sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-					sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-					sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-					sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-					sprite = sprite_hair
-					update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			"Eye1":
-				sprite = sprite_base
-				sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
-				sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
-				if eyes_linked:
-					sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-					sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
-			"Eye2":
-				sprite = sprite_base
-				sprite.material.set("shader_parameter/new_shadow3", new_shadow2)
-				sprite.material.set("shader_parameter/new_highlight3", new_highlight2)
-				if eyes_linked:
-					sprite.material.set("shader_parameter/new_shadow2", new_shadow2)
-					sprite.material.set("shader_parameter/new_highlight2", new_highlight2)
-#Update Colors
-func update_colors(sprite, new_outline1, new_shadow1, new_base1, new_highlight1):
-	sprite.material.set("shader_parameter/new_outline1", new_outline1)
-	sprite.material.set("shader_parameter/new_shadow1", new_shadow1)
-	sprite.material.set("shader_parameter/new_base1", new_base1)
-	sprite.material.set("shader_parameter/new_highlight1", new_highlight1)

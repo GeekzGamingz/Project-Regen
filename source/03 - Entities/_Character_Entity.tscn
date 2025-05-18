@@ -1,9 +1,10 @@
-[gd_scene load_steps=70 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=71 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
 [ext_resource type="Script" uid="uid://dvw7w7se2pacu" path="res://source/03 - Entities/00 - Humanoid/Humanoid_Customization.gd" id="3_n86k3"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_dpogu"]
+[ext_resource type="Script" uid="uid://7dhs8mj23qr6" path="res://source/03 - Entities/00 - Humanoid/Humanoid_Colors.gd" id="4_itw66"]
 [ext_resource type="Texture2D" uid="uid://btfpmpqqkkkq2" path="res://assets/03 - Entities/00 - Humanoid/00 - Base/01 - Average/base_average_average.png" id="5_qi55k"]
 [ext_resource type="Script" uid="uid://ckyxbbepvxqt2" path="res://source/03 - Entities/00 - Humanoid/Humanoid_Bases.gd" id="6_4h5xq"]
 [ext_resource type="Texture2D" uid="uid://cy7ntjvll0djw" path="res://assets/03 - Entities/00 - Humanoid/00 - Base/00 - Short/base_short_average.png" id="7_rt581"]
@@ -724,7 +725,12 @@ script = ExtResource("2_itw66")
 [node name="Entity_Customization" type="Node2D" parent="Scripts"]
 script = ExtResource("3_n86k3")
 
+[node name="Entity_Colors" type="Node2D" parent="Scripts/Entity_Customization"]
+script = ExtResource("4_itw66")
+
 [node name="Entity_Equipment" type="Node2D" parent="Scripts"]
+
+[node name="Equipment_Colors" type="Node2D" parent="Scripts/Entity_Equipment"]
 
 [node name="Sprites" type="Node2D" parent="."]
 

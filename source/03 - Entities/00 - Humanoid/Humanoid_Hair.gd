@@ -7,7 +7,7 @@ extends Sprite2D
 @export var hairs_tall: Array[Resource] = []
 #OnReady Variables
 @onready var e: Entity = $"../.."
-@onready var e_customization: Node2D = $"../../Scripts/Entity_Customization"
+@onready var custom_colors: Node2D = $"../../Scripts/Entity_Customization/Entity_Colors"
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_hair():
@@ -18,3 +18,16 @@ func check_hair():
 				0: hair.texture = hairs_short[e.NETWORK.players[id].get("hair")]
 				1: hair.texture = hairs_average[e.NETWORK.players[id].get("hair")]
 				2: hair.texture = hairs_tall[e.NETWORK.players[id].get("hair")]
+#Check Colors
+func color_hair(
+	sprite, hair_linked, #Identifiers
+	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
+):
+		custom_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
+		custom_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
+		custom_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
+		custom_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
+		custom_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+		if hair_linked:
+			sprite = custom_colors.sprite_beard
+			custom_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
