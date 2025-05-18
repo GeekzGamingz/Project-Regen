@@ -16,6 +16,7 @@ var old_info: Dictionary = {}
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var UI_CUSTOMIZATION: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization")
+@onready var COLOR_SELECT: TabContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization/VBoxContainer/Selection_Color")
 #Entity Nodes
 @onready var e: Entity = get_parent().get_parent()
 #Sprites

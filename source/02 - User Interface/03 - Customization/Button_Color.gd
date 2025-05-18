@@ -10,10 +10,10 @@ signal send_colors
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var UI_CUSTOMIZATION: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization")
 #Shader Parameters
-@onready var new_outline = material.get("shader_parameter/new_outline1")
-@onready var new_shadow = material.get("shader_parameter/new_shadow1")
-@onready var new_base = material.get("shader_parameter/new_base1")
-@onready var new_highlight = material.get("shader_parameter/new_highlight1")
+@onready var new_outline1 = material.get("shader_parameter/new_outline1")
+@onready var new_shadow1 = material.get("shader_parameter/new_shadow1")
+@onready var new_base1 = material.get("shader_parameter/new_base1")
+@onready var new_highlight1 = material.get("shader_parameter/new_highlight1")
 @onready var new_outline2 = material.get("shader_parameter/new_outline2")
 @onready var new_shadow2 = material.get("shader_parameter/new_shadow2")
 @onready var new_base2 = material.get("shader_parameter/new_base2")
@@ -25,11 +25,12 @@ signal send_colors
 #------------------------------------------------------------------------------#
 #On Button Up
 func _on_button_up() -> void:
+	var color_id = str(name)
 	var eyes_linked = UI_CUSTOMIZATION.checkbox_right.button_pressed
 	var hair_linked = UI_CUSTOMIZATION.checkbox_top.button_pressed
 	emit_signal("send_colors",
-		sprite_to_color, eyes_linked, hair_linked, #Identifiers
-		new_outline, new_shadow, new_base, new_highlight, #Color One
+		color_id, sprite_to_color, eyes_linked, hair_linked, #Identifiers
+		new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
 		new_outline2, new_shadow2, new_base2, new_highlight2, #Color Two
 		new_outline3, new_shadow3, new_base3, new_highlight3, #Color Two
 	)

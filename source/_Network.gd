@@ -11,8 +11,8 @@ signal server_disconnected
 #Dictionaries
 var players: Dictionary = {}
 @export var player_info: Dictionary = {
-	"name": "Name",
-	"id": "ID",
+	"name": String("Name"),
+	"id": String("ID"),
 	"position": Vector2.ZERO, #TO DEFINE
 	"animation": int(1),
 	"height": int(1),
@@ -23,10 +23,13 @@ var players: Dictionary = {}
 	"arm_right": int(0), #TO DEFINE
 	"leg_left": int(0), #TO DEFINE
 	"leg_right": int(0), #TO DEFINE
-	"ears": int(0), 
+	"ears": int(0),
+	"skin_color": String("Button_Color1"),
 	"hair": int(0),
+	"hair_color:": String(""), #TO DEFINE
 	"bangs": int(0), #TO DEFINE
-	"beard": int(0)
+	"beard": int(0),
+	"beard_color": String("") #TO DEFINE
 }
 var players_online: int = 0
 #Exported Variables

@@ -10,8 +10,7 @@ extends Node2D
 @onready var object_plinths: Node2D = $Orphanages/Orphanage_Objects/Object_Plinths
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void:
-	BUTTON_SPAWN.connect("spawn_requested", spawn_requested.rpc)
+func _ready() -> void: BUTTON_SPAWN.connect("spawn_requested", spawn_requested.rpc)
 #------------------------------------------------------------------------------#
 #Custom Signaled Requests
 @rpc("any_peer", "call_local")

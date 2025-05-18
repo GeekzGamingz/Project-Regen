@@ -28,7 +28,7 @@ func _ready() -> void:
 #Custom Signaled Functions
 #Change Colors
 func send_colors(
-	sprite_to_color, eyes_linked, hair_linked, #Identifiers
+	color_id, sprite_to_color, eyes_linked, hair_linked, #Identifiers
 	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
 	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
 	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
@@ -36,29 +36,24 @@ func send_colors(
 	if e.is_multiplayer_authority():
 		var sprite = Sprite2D
 		match(sprite_to_color):
-			"Skin":
-				sprite = sprite_base
-				sprite_base.color_skin(
-					sprite, #Identifiers
-					new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-				)
+			"Skin": sprite_base.save_skin(color_id)
 			"Hair":
 				sprite = sprite_hair
 				sprite_hair.color_hair(
-					sprite, hair_linked, #Identifiers
+					color_id, sprite, hair_linked, #Identifiers
 					new_outline1, new_shadow1, new_base1, new_highlight1 #Color One
 				)
 			"Beard":
 				sprite = sprite_beard
 				sprite_beard.color_beard(
-					sprite, hair_linked, #Identifiers
+					color_id, sprite, hair_linked, #Identifiers
 					new_outline1, new_shadow1, new_base1, new_highlight1 #Color One
 				)
 			"Eye1", "Eye2":
 				sprite = sprite_base
 				var lateral = sprite_to_color
 				sprite_base.color_eyes(
-					sprite, eyes_linked, lateral, #Identifiers
+					color_id, sprite, eyes_linked, lateral, #Identifiers
 					new_shadow2, new_highlight2, #Color Two
 				)
 #Update Colors
