@@ -6,14 +6,14 @@ extends Sprite2D
 @export var bases_average: Array[Resource] = []
 @export var bases_chub: Array[Resource] = []
 #OnReady Variables
-@onready var e: Entity = $"../.."
-@onready var entity_colors: Node2D = $"../../Scripts/Entity_Customization/Entity_Colors"
+@onready var e: Entity = $"../../.."
+@onready var entity_colors: Node2D = e.get_node("Scripts/Entity_Customization/Entity_Colors")
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Base Texture
 func check_base():
 	for player in e.get_parent().get_children():
-		var base = player.get_node("Sprites/Sprite_Base")
+		var base = player.get_node("Sprites/Sprites_Body/Sprite_Base")
 		for id in e.NETWORK.players:
 			#If Player is Average
 			if !e.NETWORK.players[id].get("chub"): if player.name == str(id):

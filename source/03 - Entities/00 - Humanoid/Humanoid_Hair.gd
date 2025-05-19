@@ -6,13 +6,13 @@ extends Sprite2D
 @export var hairs_average: Array[Resource] = []
 @export var hairs_tall: Array[Resource] = []
 #OnReady Variables
-@onready var e: Entity = $"../.."
-@onready var entity_colors: Node2D = $"../../Scripts/Entity_Customization/Entity_Colors"
+@onready var e: Entity = $"../../.."
+@onready var entity_colors: Node2D = e.get_node("Scripts/Entity_Customization/Entity_Colors")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_hair():
 	for player in e.get_parent().get_children():
-		var hair = player.get_node("Sprites/Sprite_Hair")
+		var hair = player.get_node("Sprites/Sprites_Hair/Sprite_Hair")
 		for id in e.NETWORK.players: if player.name == str(id):
 			match(e.NETWORK.players[id].get("height")):
 				0: hair.texture = hairs_short[e.NETWORK.players[id].get("hair")]

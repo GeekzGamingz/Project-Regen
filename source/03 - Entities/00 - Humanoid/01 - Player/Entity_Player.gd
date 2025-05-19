@@ -12,8 +12,7 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #On Tree Entered
-func _on_tree_entered() -> void:
-	set_multiplayer_authority(name.to_int())
+func _on_tree_entered() -> void: set_multiplayer_authority(name.to_int())
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 func update_name(username, _new_text):

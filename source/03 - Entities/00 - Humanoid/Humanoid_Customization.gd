@@ -21,10 +21,10 @@ var old_info: Dictionary = {}
 #Entity Nodes
 @onready var e: Entity = get_parent().get_parent()
 #Sprites
-@onready var sprite_base: Sprite2D = e.get_node("Sprites/Sprite_Base")
-@onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprite_Hair")
-@onready var sprite_ears: Sprite2D = e.get_node("Sprites/Sprite_Ears")
-@onready var sprite_beard: Sprite2D = e.get_node("Sprites/Sprite_Beard")
+@onready var sprite_base: Sprite2D = e.get_node("Sprites/Sprites_Body/Sprite_Base")
+@onready var sprite_ears: Sprite2D = e.get_node("Sprites/Sprites_Body/Sprite_Ears")
+@onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprites_Hair/Sprite_Hair")
+@onready var sprite_beard: Sprite2D = e.get_node("Sprites/Sprites_Hair/Sprite_Beard")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
