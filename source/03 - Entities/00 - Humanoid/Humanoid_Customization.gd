@@ -46,7 +46,6 @@ func _process(_delta: float) -> void:
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_sprites() -> void:
-	#if e.is_multiplayer_authority():
 	sprite_base.check_base()
 	sprite_base.check_animation()
 	sprite_hair.check_hair()

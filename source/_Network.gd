@@ -18,8 +18,7 @@ var players: Dictionary = {}
 	"animation": int(1),
 	"height": int(1),
 	"chub": bool(false),
-	"head": int(0), #TO DEFINE
-	"torso": int(0), #TO DEFINE
+	"wheelchair": bool(false),
 	"arm_left": int(0), #TO DEFINE
 	"arm_right": int(0), #TO DEFINE
 	"leg_left": int(0), #TO DEFINE

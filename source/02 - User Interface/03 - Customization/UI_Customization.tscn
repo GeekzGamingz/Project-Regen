@@ -6658,6 +6658,52 @@ layout_mode = 2
 texture_normal = ExtResource("1_nm3d6")
 texture_pressed = ExtResource("2_dwcvp")
 
+[node name="Selection_ArmL" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_ArmL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_ArmL" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Left Arm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_ArmL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_LegL" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_LegL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_LegL" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Left Leg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_LegL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -6704,6 +6750,52 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Next_Beard" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_ArmR" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_ArmR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_ArmR" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Right Arm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_ArmR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+
+[node name="Selection_LegR" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_LegR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
+layout_mode = 2
+texture_normal = ExtResource("1_nm3d6")
+texture_pressed = ExtResource("2_dwcvp")
+flip_h = true
+
+[node name="Label_LegR" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Right Leg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_LegR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
 layout_mode = 2
 texture_normal = ExtResource("1_nm3d6")
 texture_pressed = ExtResource("2_dwcvp")
