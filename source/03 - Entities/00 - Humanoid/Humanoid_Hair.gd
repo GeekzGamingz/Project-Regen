@@ -18,20 +18,11 @@ func check_hair():
 				0: hair.texture = hairs_short[e.NETWORK.players[id].get("hair")]
 				1: hair.texture = hairs_average[e.NETWORK.players[id].get("hair")]
 				2: hair.texture = hairs_tall[e.NETWORK.players[id].get("hair")]
-#Check Colors
-func save_hair(color_id):
+#Save Hair Colors
+func save_hair(color_id, hair_linked):
+	var id = multiplayer.get_unique_id()
 	var customize_type = "HairColor"
-	if e.is_multiplayer_authority():
-		e.player_serverinfo.update_info.rpc(
-			multiplayer.get_unique_id(),
-			customize_type,
-			color_id
-		)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-		#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		#if hair_linked:
-			#sprite = entity_colors.sprite_beard
-			#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+	e.player_serverinfo.update_info.rpc(id, customize_type, color_id)
+	if hair_linked:
+		customize_type = "BeardColor"
+		e.player_serverinfo.update_info.rpc(id, customize_type, color_id)

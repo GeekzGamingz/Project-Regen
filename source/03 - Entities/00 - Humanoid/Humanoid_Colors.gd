@@ -27,30 +27,14 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Change Colors
-func send_colors(
-	color_id, sprite_to_color, eyes_linked, hair_linked, #Identifiers
-	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-	_new_outline2, new_shadow2, _new_base2, new_highlight2, #Color Two
-	_new_outline3, _new_shadow3, _new_base3, _new_highlight3, #Color Two
-	):
+func send_colors(color_id, sprite_to_color, eyes_linked, hair_linked):
 	if e.is_multiplayer_authority():
 		var sprite = Sprite2D
 		match(sprite_to_color):
 			"Skin": sprite_base.save_skin(color_id)
-			"Hair": sprite_hair.save_hair(color_id)
-			"Beard":
-				sprite = sprite_beard
-				sprite_beard.color_beard(
-					color_id, sprite, hair_linked, #Identifiers
-					new_outline1, new_shadow1, new_base1, new_highlight1 #Color One
-				)
+			"Hair": sprite_hair.save_hair(color_id, hair_linked)
+			"Beard": sprite_beard.save_beard(color_id, hair_linked)
 			"Eye1", "Eye2":
 				sprite = sprite_base
 				var lateral = sprite_to_color
 				sprite_base.save_eyes(color_id, eyes_linked, lateral)
-#Update Colors
-func update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1):
-	sprite.material.set("shader_parameter/new_outline1", new_outline1)
-	sprite.material.set("shader_parameter/new_shadow1", new_shadow1)
-	sprite.material.set("shader_parameter/new_base1", new_base1)
-	sprite.material.set("shader_parameter/new_highlight1", new_highlight1)

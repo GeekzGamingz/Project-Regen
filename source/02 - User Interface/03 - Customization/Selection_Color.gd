@@ -35,16 +35,7 @@ func assign_colors():
 #Random Color
 func random_colors():
 	randomize()
-	#var button_parent
-	#var button_array: Array = []
-	#match(colorable):
-		#"Skin": button_parent = skin
-		#"Hair": button_parent = hair
-		#"Beard": button_parent = beard
-		#"EyeL": button_parent = eye_left
-		#"EyeR": button_parent = eye_right
-	#for button in button_parent.get_children(): button_array.append(button)
-	#button_array.pick_random().emit_signal("button_up")
+	#Assign Random Dict Variables Here. But Fucking finish synching first.
 #Update Players
 func check_colors():
 	for player in ORPHANAGE_PLAYERS.get_children():
@@ -55,6 +46,9 @@ func check_colors():
 			for hair_color in colors_hair:
 				if hair_color.name == NETWORK.players[id].get("hair_color"):
 					update_colors(player, hair_color, id)
+			for beard_color in colors_beard:
+				if beard_color.name == NETWORK.players[id].get("beard_color"):
+					update_colors(player, beard_color, id)
 			for eye_color in colors_eyeL:
 				if eye_color.name == NETWORK.players[id].get("eyeL_color"):
 					update_colors(player, eye_color, id)
@@ -66,30 +60,12 @@ func update_colors(player, button_color, id):
 	match(button_color.sprite_to_color):
 		"Skin":
 			var sprite_material = player.entity_colors.sprite_base.material
-			sprite_material.set("shader_parameter/new_outline1", button_color.new_outline1)
-			sprite_material.set("shader_parameter/new_shadow1", button_color.new_shadow1)
-			sprite_material.set("shader_parameter/new_base1", button_color.new_base1)
-			sprite_material.set("shader_parameter/new_highlight1", button_color.new_highlight1)
+			update_primary(sprite_material, button_color)
+			sprite_material = player.entity_colors.sprite_ears.material
+			update_primary(sprite_material, button_color)
 		"Hair":
 			var sprite_material = player.entity_colors.sprite_hair.material
-			#sprite_material.set("shader_parameter/new_outline2", button.new_outline1)
-			#sprite_material.set("shader_parameter/new_shadow2", button.new_shadow1)
-			#sprite_material.set("shader_parameter/new_base2", button.new_base1)
-			#sprite_material.set("shader_parameter/new_highlight2", button.new_highlight1)
-			#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-			sprite_material.set("shader_parameter/new_outline1", button_color.new_outline1)
-			sprite_material.set("shader_parameter/new_shadow1", button_color.new_shadow1)
-			sprite_material.set("shader_parameter/new_base1", button_color.new_base1)
-			sprite_material.set("shader_parameter/new_highlight1", button_color.new_highlight1)
-			sprite_material = player.entity_colors.sprite_ears.material
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-		#entity_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-		#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
-		#if hair_linked:
-			#sprite = entity_colors.sprite_beard
-			#entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+			update_primary(sprite_material, button_color)
 		"Eye1":
 			var sprite_material = player.entity_colors.sprite_base.material
 			sprite_material.set("shader_parameter/new_shadow2", button_color.new_shadow2)
@@ -98,3 +74,12 @@ func update_colors(player, button_color, id):
 			var sprite_material = player.entity_colors.sprite_base.material
 			sprite_material.set("shader_parameter/new_shadow3", button_color.new_shadow2)
 			sprite_material.set("shader_parameter/new_highlight3", button_color.new_highlight2)
+		"Beard":
+			var sprite_material = player.entity_colors.sprite_beard.material
+			update_primary(sprite_material, button_color)
+#Update Primary Colors
+func update_primary(sprite_material, button_color):
+	sprite_material.set("shader_parameter/new_outline1", button_color.new_outline1)
+	sprite_material.set("shader_parameter/new_shadow1", button_color.new_shadow1)
+	sprite_material.set("shader_parameter/new_base1", button_color.new_base1)
+	sprite_material.set("shader_parameter/new_highlight1", button_color.new_highlight1)

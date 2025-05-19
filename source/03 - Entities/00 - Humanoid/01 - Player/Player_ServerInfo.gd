@@ -12,6 +12,7 @@ func update_info(id, customize_type, new_info):
 		"Chub": e.NETWORK.players[id].set("chub", new_info)
 		"Animation": e.NETWORK.players[id].set("animation", new_info)
 		"Beard": e.NETWORK.players[id].set("beard", new_info)
+		"BeardColor": e.NETWORK.players[id].set("beard_color", new_info)
 		"Ears": e.NETWORK.players[id].set("ears", new_info)
 		"Hair": e.NETWORK.players[id].set("hair", new_info)
 		"HairColor": e.NETWORK.players[id].set("hair_color", new_info)

@@ -28,10 +28,10 @@ var players: Dictionary = {}
 	"eyeR_color": String("Button_Color1"),
 	"skin_color": String("Button_Color1"),
 	"hair": int(0),
-	"hair_color": String("Button_Color1"), #TO DEFINE
+	"hair_color": String("Button_Color1"),
 	"bangs": int(0), #TO DEFINE
 	"beard": int(0),
-	"beard_color": String("Button_Color1") #TO DEFINE
+	"beard_color": String("Button_Color1")
 }
 var players_online: int = 0
 #Exported Variables

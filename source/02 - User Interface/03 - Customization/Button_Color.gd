@@ -28,9 +28,4 @@ func _on_button_up() -> void:
 	var color_id = str(name)
 	var eyes_linked = UI_CUSTOMIZATION.checkbox_right.button_pressed
 	var hair_linked = UI_CUSTOMIZATION.checkbox_top.button_pressed
-	emit_signal("send_colors",
-		color_id, sprite_to_color, eyes_linked, hair_linked, #Identifiers
-		new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-		new_outline2, new_shadow2, new_base2, new_highlight2, #Color Two
-		new_outline3, new_shadow3, new_base3, new_highlight3, #Color Two
-	)
+	emit_signal("send_colors", color_id, sprite_to_color, eyes_linked, hair_linked)

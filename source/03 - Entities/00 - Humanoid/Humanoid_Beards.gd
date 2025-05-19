@@ -18,15 +18,11 @@ func check_beard():
 				0: beard.texture = beards_short[e.NETWORK.players[id].get("beard")]
 				1: beard.texture = beards_average[e.NETWORK.players[id].get("beard")]
 				2: beard.texture = beards_tall[e.NETWORK.players[id].get("beard")]
-func color_beard(
-	color_id, sprite, hair_linked, #Identifiers
-	new_outline1, new_shadow1, new_base1, new_highlight1, #Color One
-):
-	entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+#Save Beard Colors
+func save_beard(color_id, hair_linked):
+	var id = multiplayer.get_unique_id()
+	var customize_type = "BeardColor"
+	e.player_serverinfo.update_info.rpc(id, customize_type, color_id)
 	if hair_linked:
-		entity_colors.sprite_ears.material.set("shader_parameter/new_outline2", new_outline1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_shadow2", new_shadow1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_base2", new_base1)
-		entity_colors.sprite_ears.material.set("shader_parameter/new_highlight2", new_highlight1)
-		sprite = entity_colors.sprite_hair
-		entity_colors.update_primary(sprite, new_outline1, new_shadow1, new_base1, new_highlight1)
+		customize_type = "HairColor"
+		e.player_serverinfo.update_info.rpc(id, customize_type, color_id)
