@@ -9,6 +9,7 @@ signal server_disconnected
 #------------------------------------------------------------------------------#
 #Variables
 #Dictionaries
+var old_players: Dictionary = {}
 var players: Dictionary = {}
 @export var player_info: Dictionary = {
 	"name": String("Name"),
@@ -102,3 +103,4 @@ func client_create(username, ip):
 	peer.create_client(ip, port)
 	multiplayer.multiplayer_peer = peer
 	server_joined(username)
+	

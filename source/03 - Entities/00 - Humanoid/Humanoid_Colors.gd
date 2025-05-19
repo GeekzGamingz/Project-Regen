@@ -29,12 +29,10 @@ func _ready() -> void:
 #Change Colors
 func send_colors(color_id, sprite_to_color, eyes_linked, hair_linked):
 	if e.is_multiplayer_authority():
-		var sprite = Sprite2D
 		match(sprite_to_color):
 			"Skin": sprite_base.save_skin(color_id)
 			"Hair": sprite_hair.save_hair(color_id, hair_linked)
 			"Beard": sprite_beard.save_beard(color_id, hair_linked)
 			"Eye1", "Eye2":
-				sprite = sprite_base
 				var lateral = sprite_to_color
 				sprite_base.save_eyes(color_id, eyes_linked, lateral)

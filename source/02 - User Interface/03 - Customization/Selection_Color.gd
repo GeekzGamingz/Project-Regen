@@ -21,9 +21,6 @@ var colors_eyeR: Array = []
 #Ready Function
 func _ready() -> void: assign_colors()
 #------------------------------------------------------------------------------#
-#Process Function
-func _process(_delta: float) -> void: check_colors()
-#------------------------------------------------------------------------------#
 #Custom Functions
 #Assign Colors
 func assign_colors():
@@ -35,28 +32,28 @@ func assign_colors():
 #Random Color
 func random_colors():
 	randomize()
-	#Assign Random Dict Variables Here. But Fucking finish synching first.
+	#Assign Random Dict Variables Here.
 #Update Players
 func check_colors():
 	for player in ORPHANAGE_PLAYERS.get_children():
 		for id in NETWORK.players: if player.name == str(id):
 			for skin_color in colors_skin:
 				if skin_color.name == NETWORK.players[id].get("skin_color"): 
-					update_colors(player, skin_color, id)
+					update_colors(player, skin_color)
 			for hair_color in colors_hair:
 				if hair_color.name == NETWORK.players[id].get("hair_color"):
-					update_colors(player, hair_color, id)
+					update_colors(player, hair_color)
 			for beard_color in colors_beard:
 				if beard_color.name == NETWORK.players[id].get("beard_color"):
-					update_colors(player, beard_color, id)
+					update_colors(player, beard_color)
 			for eye_color in colors_eyeL:
 				if eye_color.name == NETWORK.players[id].get("eyeL_color"):
-					update_colors(player, eye_color, id)
+					update_colors(player, eye_color)
 			for eye_color in colors_eyeR:
 				if eye_color.name == NETWORK.players[id].get("eyeR_color"):
-					update_colors(player, eye_color, id)
+					update_colors(player, eye_color)
 #Update Colors
-func update_colors(player, button_color, id):
+func update_colors(player, button_color):
 	match(button_color.sprite_to_color):
 		"Skin":
 			var sprite_material = player.entity_colors.sprite_base.material
@@ -77,6 +74,11 @@ func update_colors(player, button_color, id):
 		"Beard":
 			var sprite_material = player.entity_colors.sprite_beard.material
 			update_primary(sprite_material, button_color)
+			sprite_material = player.entity_colors.sprite_ears.material
+			sprite_material.set("shader_parameter/new_outline2", button_color.new_outline1)
+			sprite_material.set("shader_parameter/new_shadow2", button_color.new_shadow1)
+			sprite_material.set("shader_parameter/new_base2", button_color.new_shadow1)
+			sprite_material.set("shader_parameter/new_highlight2", button_color.new_highlight1)
 #Update Primary Colors
 func update_primary(sprite_material, button_color):
 	sprite_material.set("shader_parameter/new_outline1", button_color.new_outline1)
