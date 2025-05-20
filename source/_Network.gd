@@ -19,10 +19,10 @@ var players: Dictionary = {}
 	"height": int(1),
 	"chub": bool(false),
 	"wheelchair": bool(false),
-	"arm_left": int(0), #TO DEFINE
-	"arm_right": int(0), #TO DEFINE
-	"leg_left": int(0), #TO DEFINE
-	"leg_right": int(0), #TO DEFINE
+	"arm_left": int(1),
+	"arm_right": int(1), #TO DEFINE
+	"leg_left": int(1), #TO DEFINE
+	"leg_right": int(1), #TO DEFINE
 	"ears": int(0),
 	"eyeL_color": String("Button_Color1"),
 	"eyeR_color": String("Button_Color1"),

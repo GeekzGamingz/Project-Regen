@@ -5,6 +5,7 @@ signal uic_hair_change(scroll)
 signal uic_ear_change(scroll)
 signal uic_beard_change(scroll)
 signal uic_height_change(scroll)
+signal uic_arm_left_change(scroll)
 signal uic_chub_change(toggle)
 signal uic_animation_change(scroll)
 #------------------------------------------------------------------------------#
@@ -21,6 +22,20 @@ signal uic_animation_change(scroll)
 @onready var checkbox_facial: CheckBox = $VBoxContainer/Selection_Color/Hair/Facial/HBoxContainer/CheckBox_Facial
 #------------------------------------------------------------------------------#
 #Signaled Functions
+#Height Buttons
+func _on_previous_height_button_up() -> void:
+	emit_signal("uic_height_change", "Previous")
+	skin.set_deferred("visible", true)
+func _on_next_height_button_up() -> void:
+	emit_signal("uic_height_change", "Next")
+	skin.set_deferred("visible", true)
+#Ear Buttons
+func _on_previous_ears_button_up() -> void:
+	emit_signal("uic_ear_change", "Previous")
+	skin.set_deferred("visible", true)
+func _on_next_ears_button_up() -> void:
+	emit_signal("uic_ear_change", "Next")
+	skin.set_deferred("visible", true)
 #Hair Buttons
 func _on_previous_hair_button_up() -> void:
 	emit_signal("uic_hair_change", "Previous")
@@ -39,20 +54,22 @@ func _on_next_beard_button_up() -> void:
 	emit_signal("uic_beard_change", "Next")
 	hair.set_deferred("visible", true)
 	facial.set_deferred("visible", true)
-#Ear Buttons
-func _on_previous_ears_button_up() -> void:
-	emit_signal("uic_ear_change", "Previous")
+#Arms
+#Left Arm
+func _on_previous_arm_l_button_up() -> void:
+	emit_signal("uic_arm_left_change", "Previous")
 	skin.set_deferred("visible", true)
-func _on_next_ears_button_up() -> void:
-	emit_signal("uic_ear_change", "Next")
+func _on_next_arm_l_button_up() -> void:
+	emit_signal("uic_arm_left_change", "Next")
 	skin.set_deferred("visible", true)
-#Height Buttons
-func _on_previous_height_button_up() -> void:
-	emit_signal("uic_height_change", "Previous")
-	skin.set_deferred("visible", true)
-func _on_next_height_button_up() -> void:
-	emit_signal("uic_height_change", "Next")
-	skin.set_deferred("visible", true)
+	
+#Right Arm
+
+#Legs
+#Left Leg
+
+#Right Leg
+
 #ChubBox
 func _on_check_box_chub_toggled(toggled_on: bool) -> void: emit_signal("uic_chub_change", toggled_on)
 #Link Hair Colors

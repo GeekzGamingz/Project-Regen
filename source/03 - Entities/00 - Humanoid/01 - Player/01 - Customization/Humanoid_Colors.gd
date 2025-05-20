@@ -8,6 +8,7 @@ extends Node2D
 @onready var e: Entity = $"../../.."
 #Sprites
 @onready var sprite_base: Sprite2D = e.get_node("Sprites/Sprites_Body/Sprite_Base")
+@onready var sprite_arm_left: Sprite2D = e.get_node("Sprites/Sprites_Body/Sprite_ArmLeft")
 @onready var sprite_ears: Sprite2D = e.get_node("Sprites/Sprites_Body/Sprite_Ears")
 @onready var sprite_hair: Sprite2D = e.get_node("Sprites/Sprites_Hair/Sprite_Hair")
 @onready var sprite_beard: Sprite2D = e.get_node("Sprites/Sprites_Hair/Sprite_Beard")

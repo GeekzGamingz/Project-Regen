@@ -10382,6 +10382,8 @@ theme_override_constants/margin_right = 8
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Height/Next_Height" to="." method="_on_next_height_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears/Previous_Ears" to="." method="_on_previous_ears_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears/Next_Ears" to="." method="_on_next_ears_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL/Previous_ArmL" to="." method="_on_previous_arm_l_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL/Next_ArmL" to="." method="_on_next_arm_l_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair/Previous_Hair" to="." method="_on_previous_hair_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair/Next_Hair" to="." method="_on_next_hair_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard/Previous_Beard" to="." method="_on_previous_beard_button_up"]
