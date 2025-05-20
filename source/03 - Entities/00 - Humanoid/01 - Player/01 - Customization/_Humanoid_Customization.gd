@@ -6,6 +6,7 @@ var customize_type: String
 @export var height_counter: int = 1
 @export var ear_counter: int = 0
 @export var arm_left_counter: int = 1
+@export var arm_right_counter: int = 1
 @export var hair_counter: int = 0
 @export var beard_counter: int = 0
 @export var anim_counter: int = 1
@@ -36,6 +37,7 @@ func _ready() -> void:
 	UI_CUSTOMIZATION.connect("uic_height_change", uic_height_change)
 	UI_CUSTOMIZATION.connect("uic_ear_change", uic_ear_change)
 	UI_CUSTOMIZATION.connect("uic_arm_left_change", uic_arm_left_change)
+	UI_CUSTOMIZATION.connect("uic_arm_right_change", uic_arm_right_change)
 	UI_CUSTOMIZATION.connect("uic_chub_change", uic_chub_change)
 	UI_CUSTOMIZATION.connect("uic_beard_change", uic_beard_change)
 	UI_CUSTOMIZATION.connect("uic_hair_change", uic_hair_change)
@@ -53,6 +55,7 @@ func check_sprites() -> void:
 	sprite_base.check_base()
 	sprite_ears.check_ears()
 	sprite_arm_left.check_arm_left()
+	sprite_arm_right.check_arm_right()
 	sprite_hair.check_hair()
 	sprite_beard.check_beard()
 	sprite_base.check_animation()
@@ -78,7 +81,7 @@ func uic_ear_change(scroll):
 	if ear_counter == sprite_ears.ears_average.size(): ear_counter = 0
 	elif ear_counter < 0: ear_counter = sprite_ears.ears_average.size() - 1
 	e.player_serverinfo.update_info.rpc(id, customize_type, ear_counter)
-#Change Arms
+#Change Arm Left
 func uic_arm_left_change(scroll):
 	customize_type = "ArmLeft"
 	var id = multiplayer.get_unique_id()
@@ -88,6 +91,16 @@ func uic_arm_left_change(scroll):
 	if arm_left_counter == sprite_arm_left.arms_left_average_average.size(): arm_left_counter = 0
 	elif arm_left_counter < 0: arm_left_counter = sprite_arm_left.arms_left_average_average.size() - 1
 	e.player_serverinfo.update_info.rpc(id, customize_type, arm_left_counter)
+#Change Arm Right
+func uic_arm_right_change(scroll):
+	customize_type = "ArmRight"
+	var id = multiplayer.get_unique_id()
+	match(scroll):
+		"Previous": arm_right_counter -= 1
+		"Next": arm_right_counter += 1
+	if arm_right_counter == sprite_arm_right.arms_right_average_average.size(): arm_right_counter = 0
+	elif arm_right_counter < 0: arm_right_counter = sprite_arm_right.arms_right_average_average.size() - 1
+	e.player_serverinfo.update_info.rpc(id, customize_type, arm_right_counter)
 #Change Chub
 func uic_chub_change(toggled_on):
 	customize_type = "Chub"

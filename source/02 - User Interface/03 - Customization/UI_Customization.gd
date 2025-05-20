@@ -6,6 +6,7 @@ signal uic_ear_change(scroll)
 signal uic_beard_change(scroll)
 signal uic_height_change(scroll)
 signal uic_arm_left_change(scroll)
+signal uic_arm_right_change(scroll)
 signal uic_chub_change(toggle)
 signal uic_animation_change(scroll)
 #------------------------------------------------------------------------------#
@@ -62,9 +63,13 @@ func _on_previous_arm_l_button_up() -> void:
 func _on_next_arm_l_button_up() -> void:
 	emit_signal("uic_arm_left_change", "Next")
 	skin.set_deferred("visible", true)
-	
 #Right Arm
-
+func _on_previous_arm_r_button_up() -> void:
+	emit_signal("uic_arm_right_change", "Previous")
+	skin.set_deferred("visible", true)
+func _on_next_arm_r_button_up() -> void:
+	emit_signal("uic_arm_right_change", "Next")
+	skin.set_deferred("visible", true)
 #Legs
 #Left Leg
 

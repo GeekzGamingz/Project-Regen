@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=87 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c31vxvvy85xdr" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/00 - Short/ears_cat_s.png" id="29_v25io"]
 [ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average.png" id="30_dpogu"]
 [ext_resource type="Texture2D" uid="uid://bv1xcqcty1dtt" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_small_a.png" id="30_l6i5u"]
-[ext_resource type="Script" uid="uid://wags8epylluh" path="res://source/03 - Entities/Humanoid_ArmLeft.gd" id="31_4h5xq"]
+[ext_resource type="Script" uid="uid://wags8epylluh" path="res://source/03 - Entities/00 - Humanoid/01 - Player/01 - Customization/Humanoid_ArmLeft.gd" id="31_4h5xq"]
 [ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average.png" id="31_qi55k"]
 [ext_resource type="Texture2D" uid="uid://3wt3o4m2b1nd" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_halfelf_a.png" id="31_spdcj"]
 [ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average.png" id="32_4h5xq"]
@@ -47,6 +47,12 @@
 [ext_resource type="Texture2D" uid="uid://c1p33tekveo7p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/01 - Chub/arm_left_tall_chub.png" id="36_k60s3"]
 [ext_resource type="Texture2D" uid="uid://cn28m67wn8h8d" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_elf_t.png" id="37_f1rp1"]
 [ext_resource type="Texture2D" uid="uid://djo1vki1ae1na" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/02 - Tall/ears_cat_t.png" id="38_l6j7k"]
+[ext_resource type="Script" uid="uid://cjptqfoh7okne" path="res://source/03 - Entities/00 - Humanoid/01 - Player/01 - Customization/Humanoid_ArmRight.gd" id="38_upalp"]
+[ext_resource type="Texture2D" uid="uid://c3cjy6dp6uhbe" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/00 - Short/00 - Average/arm_right_short_average.png" id="39_f2ycm"]
+[ext_resource type="Texture2D" uid="uid://1msy3p1vsf3u" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/00 - Average/arm_right_tall_average.png" id="40_fkh14"]
+[ext_resource type="Texture2D" uid="uid://6gumpsrkll3u" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/00 - Short/01 - Chub/arm_right_short_chub.png" id="41_uv8vn"]
+[ext_resource type="Texture2D" uid="uid://b867wycyshuds" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/01 - Chub/arm_right_average_chub.png" id="42_prpqd"]
+[ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub.png" id="43_efa1j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_itw66"]
 resource_local_to_scene = true
@@ -108,6 +114,34 @@ shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k2nwu"]
 load_path = "res://.godot/imported/arm_left_average_average.png-16789d98abd9340c7dcd756f9151866a.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2ycm"]
+resource_local_to_scene = true
+shader = ExtResource("4_dpogu")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n86k3"]
 shader = ExtResource("4_dpogu")
@@ -225,6 +259,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [Vector2i(0, 3)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
 
 [sub_resource type="Animation" id="Animation_ai6v3"]
 resource_name = "idle_down"
@@ -285,6 +331,18 @@ tracks/4/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmLeft:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -355,6 +413,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [Vector2i(0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_x2cbb"]
 resource_name = "idle_right"
@@ -420,6 +490,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [Vector2i(0, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_k5llr"]
 resource_name = "idle_up"
@@ -480,6 +562,18 @@ tracks/4/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmLeft:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -551,6 +645,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
 
 [sub_resource type="Animation" id="Animation_so8uh"]
 resource_name = "walk_left"
@@ -612,6 +718,18 @@ tracks/4/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmLeft:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -683,6 +801,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_yu20t"]
 resource_name = "walk_up"
@@ -744,6 +874,18 @@ tracks/4/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmLeft:frame_coords")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprites/Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -896,12 +1038,19 @@ arms_left_average_chub = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("
 arms_left_tall_chub = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("36_k60s3")])
 
 [node name="Sprite_ArmRight" type="Sprite2D" parent="Sprites/Sprites_Body"]
-visible = false
+material = SubResource("ShaderMaterial_f2ycm")
 texture = ExtResource("31_qi55k")
 offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("38_upalp")
+arms_right_short_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("39_f2ycm")])
+arms_right_average_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("31_qi55k")])
+arms_right_tall_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("40_fkh14")])
+arms_right_short_chub = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("41_uv8vn")])
+arms_right_average_chub = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("42_prpqd")])
+arms_right_tall_chub = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("43_efa1j")])
 
 [node name="Sprite_LegLeft" type="Sprite2D" parent="Sprites/Sprites_Body"]
 visible = false
