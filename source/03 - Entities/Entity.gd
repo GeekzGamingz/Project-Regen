@@ -20,7 +20,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
-@onready var UI_NETWORK: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
+@onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #Local Nodes
 @onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
 #RayCasts

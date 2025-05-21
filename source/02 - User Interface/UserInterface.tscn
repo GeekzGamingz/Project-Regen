@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene load_steps=10 format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
 [ext_resource type="Texture2D" uid="uid://cm282ipytgycs" path="res://assets/Dungeon.png" id="2_a0e1u"]
 [ext_resource type="PackedScene" uid="uid://hihmcyuyroma" path="res://source/02 - User Interface/01 - Time/UI_Time.tscn" id="2_s1jx5"]
 [ext_resource type="PackedScene" uid="uid://r47eiw2k2umj" path="res://source/02 - User Interface/00 - Network/UI_Network.tscn" id="4_rb18f"]
-[ext_resource type="PackedScene" uid="uid://bdargq2fcsqjs" path="res://source/02 - User Interface/00 - Network/UI_Chat.tscn" id="5_45c2t"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/02 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="8_wwe8j"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="9_c7gxw"]
@@ -38,12 +37,14 @@ layout_mode = 1
 offset_left = -212.0
 
 [node name="UI_Network" parent="UI_FullRect" instance=ExtResource("4_rb18f")]
-layout_mode = 0
-
-[node name="UI_Chat" parent="UI_FullRect" instance=ExtResource("5_45c2t")]
 layout_mode = 1
-offset_top = -93.0
-offset_right = 145.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+offset_right = 202.0
+offset_bottom = 0.0
+grow_vertical = 0
 
 [node name="UI_Customization" parent="UI_FullRect" instance=ExtResource("7_dl5ef")]
 layout_mode = 1

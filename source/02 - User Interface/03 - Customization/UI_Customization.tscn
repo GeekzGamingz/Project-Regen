@@ -6833,7 +6833,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 10
 tab_alignment = 1
 current_tab = 0
 clip_tabs = false
@@ -7500,14 +7499,13 @@ layout_mode = 2
 
 [node name="Label_Chub" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Chub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CheckBox_Chub" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
 layout_mode = 2
-theme_override_constants/icon_max_width = 10
 
 [node name="WheelsContainer" type="HBoxContainer" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
@@ -7516,14 +7514,13 @@ alignment = 2
 
 [node name="Label_Wheels" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Wheels?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CheckBox_Wheels" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
 layout_mode = 2
-theme_override_constants/icon_max_width = 10
 
 [node name="Hair" type="TabContainer" parent="VBoxContainer/Selection_Color"]
 visible = false
@@ -10384,12 +10381,16 @@ theme_override_constants/margin_right = 8
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears/Next_Ears" to="." method="_on_next_ears_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL/Previous_ArmL" to="." method="_on_previous_arm_l_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL/Next_ArmL" to="." method="_on_next_arm_l_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL/Previous_LegL" to="." method="_on_previous_leg_l_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL/Next_LegL" to="." method="_on_next_leg_l_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair/Previous_Hair" to="." method="_on_previous_hair_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair/Next_Hair" to="." method="_on_next_hair_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard/Previous_Beard" to="." method="_on_previous_beard_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard/Next_Beard" to="." method="_on_next_beard_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR/Previous_ArmR" to="." method="_on_previous_arm_r_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR/Next_ArmR" to="." method="_on_next_arm_r_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR/Previous_LegR" to="." method="_on_previous_leg_r_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR/Next_LegR" to="." method="_on_next_leg_r_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Animation/Previous_Animation" to="." method="_on_previous_animation_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Animation/Next_Animation" to="." method="_on_next_animation_button_up"]
 [connection signal="button_up" from="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color1" to="VBoxContainer/Selection_Color/Skin/Grid_Skin/Button_Color1" method="_on_button_up"]

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dwinnwj21t8wc"
-path="res://.godot/imported/CyborgSister.ttf-5de29f06de64c6bd589abe6256d19a35.fontdata"
+uid="uid://dflxlvdvo4kwx"
+path="res://.godot/imported/zxSpectrumStrictCondensed.ttf-1c76d59dcef95f422c1569aebd38493e.fontdata"
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/03 - Fonts/CyborgSister.ttf"
-dest_files=["res://.godot/imported/CyborgSister.ttf-5de29f06de64c6bd589abe6256d19a35.fontdata"]
+source_file="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf"
+dest_files=["res://.godot/imported/zxSpectrumStrictCondensed.ttf-1c76d59dcef95f422c1569aebd38493e.fontdata"]
 
 [params]
 

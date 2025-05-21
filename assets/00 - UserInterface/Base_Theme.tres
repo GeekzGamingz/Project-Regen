@@ -1,18 +1,22 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtlsw7xa8huqy"]
 
+[ext_resource type="FontFile" uid="uid://dm5s8rduon2rw" path="res://assets/00 - UserInterface/03 - Fonts/m3x6.ttf" id="2_ll05a"]
 [ext_resource type="FontFile" uid="uid://dwinnwj21t8wc" path="res://assets/00 - UserInterface/03 - Fonts/CyborgSister.ttf" id="2_n4dpy"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4dpy"]
 
 [resource]
 default_font = ExtResource("2_n4dpy")
-default_font_size = 12
+Button/fonts/font = ExtResource("2_ll05a")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.392157)
 Label/constants/outline_size = 2
 Label/constants/shadow_offset_x = 2
 Label/constants/shadow_outline_size = 2
-Label/font_sizes/font_size = 12
+Label/font_sizes/font_size = 16
 Label/fonts/font = ExtResource("2_n4dpy")
-Panel/styles/panel = SubResource("StyleBoxTexture_n4dpy")
+LineEdit/fonts/font = ExtResource("2_ll05a")
+TabContainer/font_sizes/font_size = 16
+TabContainer/fonts/font = ExtResource("2_ll05a")
+TextEdit/constants/line_spacing = -4
+TextEdit/font_sizes/font_size = 16
+TextEdit/fonts/font = ExtResource("2_ll05a")

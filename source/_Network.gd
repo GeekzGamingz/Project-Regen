@@ -41,7 +41,7 @@ var players_online: int = 0
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
-@onready var UI_NETWORK: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
+@onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
@@ -60,7 +60,8 @@ func server_joined(username):
 	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
 	peer_connected.emit(multiplayer.get_unique_id(), player_info)
 	emit_signal("server_found", username)
-	UI_NETWORK.set_deferred("visible", false)
+	UI_NETWORK.get_node("VBoxContainer/LineEdit_IPAddress").set_deferred("visible", false)
+	UI_NETWORK.get_node("VBoxContainer/UI_Connections").set_deferred("visible", false)
 #Register Player
 @rpc("any_peer", "reliable")
 func register_player(new_player_info):

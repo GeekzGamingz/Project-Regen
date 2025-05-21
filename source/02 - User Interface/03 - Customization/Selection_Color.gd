@@ -64,6 +64,10 @@ func update_colors(player, button_color):
 			update_primary(sprite_material, button_color)
 			sprite_material = player.entity_colors.sprite_arm_right.material
 			update_primary(sprite_material, button_color)
+			sprite_material = player.entity_colors.sprite_leg_left.material
+			update_primary(sprite_material, button_color)
+			sprite_material = player.entity_colors.sprite_leg_right.material
+			update_primary(sprite_material, button_color)
 		"Hair":
 			var sprite_material = player.entity_colors.sprite_hair.material
 			update_primary(sprite_material, button_color)

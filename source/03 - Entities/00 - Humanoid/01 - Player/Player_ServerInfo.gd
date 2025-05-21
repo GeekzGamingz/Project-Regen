@@ -11,6 +11,8 @@ func update_info(id, customize_type, new_info):
 		"Height": e.NETWORK.players[id].set("height", new_info)
 		"ArmLeft": e.NETWORK.players[id].set("arm_left", new_info)
 		"ArmRight": e.NETWORK.players[id].set("arm_right", new_info)
+		"LegLeft": e.NETWORK.players[id].set("leg_left", new_info)
+		"LegRight": e.NETWORK.players[id].set("leg_right", new_info)
 		"Chub": e.NETWORK.players[id].set("chub", new_info)
 		"Animation": e.NETWORK.players[id].set("animation", new_info)
 		"Beard": e.NETWORK.players[id].set("beard", new_info)

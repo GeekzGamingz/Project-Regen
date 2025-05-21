@@ -12,7 +12,7 @@ var commands: Array = [
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
-@onready var UI_NETWORK: VBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
+@onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #Local Nodes
 @onready var text_messages: TextEdit = $HBoxContainer/VBoxContainer/Text_Messages
 @onready var line_message: LineEdit = $HBoxContainer/VBoxContainer/HBoxContainer2/LineEdit_Message
