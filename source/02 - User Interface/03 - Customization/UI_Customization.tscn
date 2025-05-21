@@ -1,4 +1,4 @@
-[gd_scene load_steps=251 format=3 uid="uid://dr2y6f6qexgxt"]
+[gd_scene load_steps=252 format=3 uid="uid://dr2y6f6qexgxt"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_dwcvp"]
 [ext_resource type="Texture2D" uid="uid://dnc3gtqt7hbsp" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png" id="1_nm3d6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b0k6lw8mqb7b7" path="res://source/02 - User Interface/03 - Customization/Selection_Color.gd" id="5_fx7rp"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="5_oaxbq"]
 [ext_resource type="Script" uid="uid://b2ts8g2yukglw" path="res://source/02 - User Interface/03 - Customization/Button_Color.gd" id="8_fx7rp"]
+[ext_resource type="FontFile" uid="uid://dm5s8rduon2rw" path="res://assets/00 - UserInterface/03 - Fonts/m3x6.ttf" id="10_xdu6r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rfwvk"]
 shader = ExtResource("5_oaxbq")
@@ -7499,13 +7500,14 @@ layout_mode = 2
 
 [node name="Label_Chub" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Chub?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CheckBox_Chub" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/ChubContainer"]
 layout_mode = 2
+theme_override_constants/icon_max_width = 10
 
 [node name="WheelsContainer" type="HBoxContainer" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
@@ -7514,23 +7516,24 @@ alignment = 2
 
 [node name="Label_Wheels" type="Label" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Wheels?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CheckBox_Wheels" type="CheckBox" parent="VBoxContainer/Selection_Color/Skin/HBoxContainer/WheelsContainer"]
 layout_mode = 2
+theme_override_constants/icon_max_width = 10
 
 [node name="Hair" type="TabContainer" parent="VBoxContainer/Selection_Color"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 metadata/_tab_index = 1
 
 [node name="Top" type="VBoxContainer" parent="VBoxContainer/Selection_Color/Hair"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -8266,7 +8269,7 @@ alignment = 1
 
 [node name="Label_Linked" type="Label" parent="VBoxContainer/Selection_Color/Hair/Top/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Linked"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -8277,7 +8280,6 @@ theme_override_constants/icon_max_width = 10
 button_pressed = true
 
 [node name="Facial" type="VBoxContainer" parent="VBoxContainer/Selection_Color/Hair"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -9013,7 +9015,7 @@ alignment = 1
 
 [node name="Label_Linked" type="Label" parent="VBoxContainer/Selection_Color/Hair/Facial/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Linked"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -9026,7 +9028,6 @@ button_pressed = true
 [node name="Eyes" type="TabContainer" parent="VBoxContainer/Selection_Color"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 tab_alignment = 1
 current_tab = 0
 metadata/_tab_index = 2
@@ -9690,7 +9691,7 @@ alignment = 1
 
 [node name="Label_Linked" type="Label" parent="VBoxContainer/Selection_Color/Eyes/Left/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Linked"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -10357,7 +10358,7 @@ alignment = 1
 
 [node name="Label_Linked" type="Label" parent="VBoxContainer/Selection_Color/Eyes/Right/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
+theme_override_fonts/font = ExtResource("10_xdu6r")
 text = "Linked"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -366,6 +366,7 @@ material = SubResource("ShaderMaterial_rnwoa")
 
 [node name="Sprite_LegRight" parent="Sprites/Sprites_Body" index="4"]
 material = SubResource("ShaderMaterial_dbfy1")
+frame = 12
 
 [node name="Sprite_LegLeft" parent="Sprites/Sprites_Body" index="5"]
 material = SubResource("ShaderMaterial_yccay")
