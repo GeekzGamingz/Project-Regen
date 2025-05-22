@@ -29,10 +29,6 @@ func assign_colors():
 	for color in beard.get_children(): colors_beard.append(color)
 	for color in eye_left.get_children(): colors_eyeL.append(color)
 	for color in eye_right.get_children(): colors_eyeR.append(color)
-#Random Color
-func random_colors():
-	randomize()
-	#Assign Random Dict Variables Here.
 #Update Players
 func check_colors():
 	for player in ORPHANAGE_PLAYERS.get_children():

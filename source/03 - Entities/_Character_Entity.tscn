@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://6gumpsrkll3u" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/00 - Short/01 - Chub/arm_right_short_chub.png" id="41_uv8vn"]
 [ext_resource type="Texture2D" uid="uid://b867wycyshuds" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/01 - Chub/arm_right_average_chub.png" id="42_prpqd"]
 [ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub.png" id="43_efa1j"]
-[ext_resource type="Script" uid="uid://bulyf6k0h8vm6" path="res://source/03 - Entities/Humanoid_LegL.gd" id="45_fkh14"]
+[ext_resource type="Script" uid="uid://bulyf6k0h8vm6" path="res://source/03 - Entities/Humanoid_LegLeft.gd" id="45_fkh14"]
 [ext_resource type="Texture2D" uid="uid://bcifoimpu5586" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/00 - Short/00 - Average/leg_left_short_average.png" id="46_v1m2d"]
 [ext_resource type="Script" uid="uid://bdyuf622h73yp" path="res://source/03 - Entities/Humanoid_LegRight.gd" id="47_uv8vn"]
 [ext_resource type="Texture2D" uid="uid://csq5k670jjy0x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/02 - Tall/00 - Average/leg_left_tall_average.png" id="47_v25io"]
@@ -856,7 +856,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -868,7 +868,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_so8uh"]
@@ -1372,7 +1372,7 @@ texture = ExtResource("33_rt581")
 offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
-frame = 4
+frame = 12
 script = ExtResource("47_uv8vn")
 legs_right_short_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("48_jvkwi")])
 legs_right_average_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("33_rt581")])
