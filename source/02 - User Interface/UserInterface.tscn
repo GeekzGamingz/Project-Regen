@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
-[ext_resource type="Texture2D" uid="uid://cm282ipytgycs" path="res://assets/Dungeon.png" id="2_a0e1u"]
+[ext_resource type="Texture2D" uid="uid://cm282ipytgycs" path="res://assets/05 - Backgrounds/Dungeon.png" id="2_a0e1u"]
 [ext_resource type="PackedScene" uid="uid://hihmcyuyroma" path="res://source/02 - User Interface/01 - Time/UI_Time.tscn" id="2_s1jx5"]
 [ext_resource type="PackedScene" uid="uid://r47eiw2k2umj" path="res://source/02 - User Interface/00 - Network/UI_Network.tscn" id="4_rb18f"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/02 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
