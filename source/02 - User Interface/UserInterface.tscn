@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene load_steps=11 format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="8_wwe8j"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="9_c7gxw"]
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="10_c7gxw"]
+[ext_resource type="PackedScene" uid="uid://dw72o8ebu5cjp" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.tscn" id="10_moohe"]
 
 [node name="UserInterface" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -80,5 +81,8 @@ layout_mode = 2
 texture_normal = ExtResource("8_wwe8j")
 texture_pressed = ExtResource("9_c7gxw")
 script = ExtResource("10_c7gxw")
+
+[node name="SplashScreen" parent="UI_FullRect" instance=ExtResource("10_moohe")]
+layout_mode = 1
 
 [connection signal="button_up" from="UI_FullRect/CenterContainer/Button_Spawn" to="UI_FullRect/CenterContainer/Button_Spawn" method="_on_button_up"]

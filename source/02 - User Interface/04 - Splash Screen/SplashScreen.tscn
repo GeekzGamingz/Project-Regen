@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw72o8ebu5cjp"]
+
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
+[ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
+[ext_resource type="Script" uid="uid://dpblgk58gasv6" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.gd" id="2_6u25l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k4l3q")
+script = ExtResource("2_6u25l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r0h6i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -95.5
+offset_right = 88.0
+offset_bottom = 95.5
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="MainMenu" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MainMenu"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Project: Regen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_SinglePlayer" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Single Player"
+
+[node name="Button_Multiplayer" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Multiplayer"
+
+[node name="Button3" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Character"
+
+[node name="Button4" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Encyclopedia"
+
+[node name="Button5" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Cheats"
+
+[node name="Button6" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Button_Quit" type="Button" parent="HBoxContainer/MainMenu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="SubMenus" type="TabContainer" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k4l3q")
+current_tab = 0
+tabs_visible = false
+
+[node name="SinglePlayer" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/SubMenus/SinglePlayer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Single Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/SubMenus/SinglePlayer"]
+layout_mode = 2
+text = "New Game"
+
+[node name="Button2" type="Button" parent="HBoxContainer/SubMenus/SinglePlayer"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="Multiplayer" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/SubMenus/Multiplayer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Multiplayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="Button2" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
+layout_mode = 2
+text = "Join Game"
+
+[node name="Character" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/SubMenus/Character"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/SubMenus/Character"]
+layout_mode = 2
+text = "New Character"
+
+[node name="Button2" type="Button" parent="HBoxContainer/SubMenus/Character"]
+layout_mode = 2
+text = "Select Character"
+
+[connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
+[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
+[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]

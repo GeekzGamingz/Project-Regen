@@ -8,6 +8,8 @@ signal peer_disconnected(id)
 signal server_disconnected
 #------------------------------------------------------------------------------#
 #Variables
+#Bools
+var single_player: bool = false
 #Dictionaries
 var old_players: Dictionary = {}
 var players: Dictionary = {}
@@ -97,6 +99,7 @@ func server_create(username, _ip):
 	peer.create_server(port, max_players)
 	multiplayer.multiplayer_peer = peer
 	server_joined(username)
+	if single_player: multiplayer.multiplayer_peer.set_refuse_new_connections(true)
 #Create Client Connection
 func client_create(username, ip):
 	var peer = ENetMultiplayerPeer.new()
