@@ -1,17 +1,32 @@
 extends Button
 #------------------------------------------------------------------------------#
-
-
-func _on_button_up() -> void:
-	pass # Replace with function body.
-	#Single Player to True
-	#Get Name - Make Name Field that Popsup
-	#Splash Screen Not Visible
-	#Spawn Character
-	
-#func _on_button_host_button_up() -> void:
-	#if line_username.text != "":
-		#username = line_username.text
-		#emit_signal("server_create", username, "")
-		#button_spawn.set_deferred("visible", true)
-	#else: emit_signal("error_name")
+#Signals
+signal server_create
+#------------------------------------------------------------------------------#
+#Variables
+#OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
+#Local Nodes
+@onready var splash_screen: Control = $"../../../.."
+@onready var username_container: VBoxContainer = splash_screen.get_node("CenterContainer/UsernameContainer")
+@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/UsernameContainer/LineEdit_Username")
+#------------------------------------------------------------------------------#
+#Signaled Functions
+#New Game Button Up
+func _on_button_up() -> void: username_container.set_deferred("visible", true)
+#Username Text Submitted
+func _on_line_username_text_submitted(new_text: String) -> void: send_single_player(new_text)
+#Send Button Up
+func _on_button_send_username_button_up() -> void:
+	if line_username.text != "": send_single_player(line_username.text)
+#------------------------------------------------------------------------------#
+#Custom Functions
+#Send Single Player Information
+func send_single_player(username):
+	if username != "":
+		emit_signal("server_create", username, "")
+		splash_screen.set_deferred("visible", false)
+		NETWORK.single_player = true
+	else: emit_signal("error_name")

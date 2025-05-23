@@ -2,6 +2,7 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Signals
 signal server_found
+signal spawn_requested
 signal message_join
 signal peer_connected(id, player_info)
 signal peer_disconnected(id)
@@ -44,10 +45,13 @@ var players_online: int = 0
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 @onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
+@onready var UI_SPLASH: Control = MAIN.get_node("UserInterface/UI_FullRect/SplashScreen")
+@onready var BUTTON_NEWGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/SinglePlayer/Button_NewGame")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
 	UI_NETWORK.connect("server_create", server_create)
+	BUTTON_NEWGAME.connect("server_create", server_create)
 	UI_NETWORK.connect("client_create", client_create)
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
@@ -64,6 +68,9 @@ func server_joined(username):
 	emit_signal("server_found", username)
 	UI_NETWORK.get_node("VBoxContainer/LineEdit_IPAddress").set_deferred("visible", false)
 	UI_NETWORK.get_node("VBoxContainer/UI_Connections").set_deferred("visible", false)
+	if single_player:
+		multiplayer.multiplayer_peer.set_refuse_new_connections(true)
+		emit_signal("spawn_requested")
 #Register Player
 @rpc("any_peer", "reliable")
 func register_player(new_player_info):
@@ -99,7 +106,6 @@ func server_create(username, _ip):
 	peer.create_server(port, max_players)
 	multiplayer.multiplayer_peer = peer
 	server_joined(username)
-	if single_player: multiplayer.multiplayer_peer.set_refuse_new_connections(true)
 #Create Client Connection
 func client_create(username, ip):
 	var peer = ENetMultiplayerPeer.new()
