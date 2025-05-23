@@ -4,7 +4,9 @@ extends Node2D
 #Exported Variables
 @export var is_controllable: bool = false
 #OnReady Variables
+#Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+#Local Nodes
 @onready var entity: Node2D = get_parent().get_parent()
 @onready var object_detection: Node2D = entity.get_node("Raycasts/Ray_ObjectDetection")
 #------------------------------------------------------------------------------#
