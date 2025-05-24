@@ -22,6 +22,7 @@ theme = ExtResource("1_k4l3q")
 script = ExtResource("2_6u25l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -257,6 +258,23 @@ alignment = 1
 layout_mode = 2
 text = "Send"
 metadata/_tab_index = 2
+
+[node name="WaitingContainer" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/WaitingContainer"]
+layout_mode = 2
+text = "Waiting for Players..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit_WaitingRoom" type="LineEdit" parent="CenterContainer/TabContainer/WaitingContainer"]
+layout_mode = 2
+placeholder_text = "Waiting..."
+alignment = 1
+editable = false
 
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]

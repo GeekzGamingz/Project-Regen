@@ -49,6 +49,7 @@ var players_online: int = 0
 @onready var BUTTON_NEWGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/SinglePlayer/Button_NewGame")
 @onready var BUTTON_HOSTGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_HostGame")
 @onready var BUTTON_JOINGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_JoinGame")
+@onready var WAITING_ROOM: LineEdit = UI_SPLASH.get_node("CenterContainer/TabContainer/WaitingContainer/LineEdit_WaitingRoom")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
