@@ -47,11 +47,15 @@ var players_online: int = 0
 @onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 @onready var UI_SPLASH: Control = MAIN.get_node("UserInterface/UI_FullRect/SplashScreen")
 @onready var BUTTON_NEWGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/SinglePlayer/Button_NewGame")
+@onready var BUTTON_HOSTGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_HostGame")
+@onready var BUTTON_JOINGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_JoinGame")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
 	UI_NETWORK.connect("server_create", server_create)
 	BUTTON_NEWGAME.connect("server_create", server_create)
+	BUTTON_HOSTGAME.connect("server_create", server_create)
+	BUTTON_JOINGAME.connect("client_create", client_create)
 	UI_NETWORK.connect("client_create", client_create)
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)

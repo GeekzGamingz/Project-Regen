@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=9 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
 [ext_resource type="Script" uid="uid://dpblgk58gasv6" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.gd" id="2_6u25l"]
 [ext_resource type="Script" uid="uid://decw3ajbc7vhy" path="res://source/02 - User Interface/04 - Splash Screen/Button_NewGame.gd" id="4_o3q5j"]
+[ext_resource type="Script" uid="uid://dkwi7cjx6mn8t" path="res://source/02 - User Interface/04 - Splash Screen/Button_HostGame.gd" id="5_65kkx"]
+[ext_resource type="Script" uid="uid://ds41uw7r1s4ag" path="res://source/02 - User Interface/04 - Splash Screen/Button_JoinGame.gd" id="6_hyep0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hyep0"]
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -79,10 +83,11 @@ text = "Quit"
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k4l3q")
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
 [node name="SinglePlayer" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -103,24 +108,25 @@ layout_mode = 2
 text = "Load Game"
 
 [node name="Multiplayer" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/SubMenus/Multiplayer"]
+[node name="Label_Multiplayer" type="Label" parent="HBoxContainer/SubMenus/Multiplayer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Multiplayer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
+[node name="Button_HostGame" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
 layout_mode = 2
 text = "Host Game"
+script = ExtResource("5_65kkx")
 
-[node name="Button2" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
+[node name="Button_JoinGame" type="Button" parent="HBoxContainer/SubMenus/Multiplayer"]
 layout_mode = 2
 text = "Join Game"
+script = ExtResource("6_hyep0")
 
 [node name="Character" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
 visible = false
@@ -151,33 +157,118 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="UsernameContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="TabContainer" type="TabContainer" parent="CenterContainer"]
 visible = false
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hyep0")
+current_tab = 0
+tabs_visible = false
 
-[node name="Label" type="Label" parent="CenterContainer/UsernameContainer"]
+[node name="UsernameContainer" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/UsernameContainer"]
 layout_mode = 2
 text = "What Shall We Call You?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit_Username" type="LineEdit" parent="CenterContainer/UsernameContainer"]
+[node name="LineEdit_Container" type="TabContainer" parent="CenterContainer/TabContainer/UsernameContainer"]
+layout_mode = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="LineEdit_SinglePlayerName" type="LineEdit" parent="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 placeholder_text = "Name"
 alignment = 1
+metadata/_tab_index = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/UsernameContainer"]
+[node name="LineEdit_HostName" type="LineEdit" parent="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "Name"
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="LineEdit_ClientName" type="LineEdit" parent="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container"]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+placeholder_text = "Name"
+alignment = 1
+metadata/_tab_index = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/UsernameContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button_SendUsername" type="Button" parent="CenterContainer/UsernameContainer/HBoxContainer"]
+[node name="ButtonContainer" type="TabContainer" parent="CenterContainer/TabContainer/UsernameContainer/HBoxContainer"]
+layout_mode = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="Button_SPName" type="Button" parent="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 text = "Send"
+metadata/_tab_index = 0
+
+[node name="Button_HostName" type="Button" parent="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer"]
+visible = false
+layout_mode = 2
+text = "Send"
+metadata/_tab_index = 1
+
+[node name="Button_ClientName" type="Button" parent="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer"]
+visible = false
+layout_mode = 2
+text = "Send"
+metadata/_tab_index = 2
+
+[node name="IPAddressContainer" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/IPAddressContainer"]
+layout_mode = 2
+text = "How Shall We Find Your Ally?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit_IPAddress" type="LineEdit" parent="CenterContainer/TabContainer/IPAddressContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "69.161.125.16"
+placeholder_text = "IP Address (xx.xxx.xxx.xx)"
+alignment = 1
+secret = true
+secret_character = "*"
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/IPAddressContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button_IPAddress" type="Button" parent="CenterContainer/TabContainer/IPAddressContainer/HBoxContainer"]
+layout_mode = 2
+text = "Send"
+metadata/_tab_index = 2
 
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]
 [connection signal="button_up" from="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_up"]
-[connection signal="text_submitted" from="CenterContainer/UsernameContainer/LineEdit_Username" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_line_username_text_submitted"]
-[connection signal="button_up" from="CenterContainer/UsernameContainer/HBoxContainer/Button_SendUsername" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_send_username_button_up"]
+[connection signal="button_up" from="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_up"]
+[connection signal="button_up" from="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_up"]
+[connection signal="text_submitted" from="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_line_username_text_submitted"]
+[connection signal="text_submitted" from="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_line_username_text_submitted"]
+[connection signal="text_submitted" from="CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_username_text_submitted"]
+[connection signal="button_up" from="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_send_singleplayer_name_button_up"]
+[connection signal="button_up" from="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_send_host_name_button_up"]
+[connection signal="button_up" from="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_send_client_name_button_up"]
+[connection signal="text_submitted" from="CenterContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
+[connection signal="button_up" from="CenterContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]

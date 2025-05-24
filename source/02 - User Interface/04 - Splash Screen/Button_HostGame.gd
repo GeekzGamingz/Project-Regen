@@ -5,33 +5,28 @@ signal server_create
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables
-#Main Nodes
-@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var NETWORK: Node2D = MAIN.get_node("Network")
-#Local Nodes
 @onready var splash_screen: Control = $"../../../.."
 @onready var tab_container: TabContainer = splash_screen.get_node("CenterContainer/TabContainer")
-@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName")
-@onready var button_send_username: Button = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName")
+@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName")
+@onready var button_send_username: Button = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName")
 #------------------------------------------------------------------------------#
 #Signaled Functions
-#New Game Button Up
+#Host Game Button Up
 func _on_button_up() -> void:
 	tab_container.set_deferred("visible", true)
 	line_username.set_deferred("visible", true)
 	button_send_username.set_deferred("visible", true)
 #Username Text Submitted
 func _on_line_username_text_submitted(new_text: String) -> void:
-	if new_text != "": send_single_player(new_text)
+	if new_text != "": send_host(new_text)
 #Send Button Up
-func _on_button_send_singleplayer_name_button_up() -> void:
-	if line_username.text != "": send_single_player(line_username.text)
+func _on_button_send_host_name_button_up() -> void:
+	if line_username.text != "": send_host(line_username.text)
 #------------------------------------------------------------------------------#
 #Custom Functions
-#Send Single Player Information
-func send_single_player(username):
+#Send Host Information
+func send_host(username):
 	if username != "":
 		emit_signal("server_create", username, "")
 		splash_screen.set_deferred("visible", false)
-		NETWORK.single_player = true
 	else: emit_signal("error_name")
