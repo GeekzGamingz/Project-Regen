@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=13 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://decw3ajbc7vhy" path="res://source/02 - User Interface/04 - Splash Screen/Button_NewGame.gd" id="4_o3q5j"]
 [ext_resource type="Script" uid="uid://dkwi7cjx6mn8t" path="res://source/02 - User Interface/04 - Splash Screen/Button_HostGame.gd" id="5_65kkx"]
 [ext_resource type="Script" uid="uid://ds41uw7r1s4ag" path="res://source/02 - User Interface/04 - Splash Screen/Button_JoinGame.gd" id="6_hyep0"]
+[ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="7_skjf1"]
+[ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="8_8kquk"]
+[ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -14,7 +17,7 @@
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hyep0"]
 properties/0/path = NodePath("TextEdit_WaitingRoom:text")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -284,6 +287,25 @@ scroll_fit_content_width = true
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="CenterContainer/TabContainer/WaitingContainer"]
 replication_config = SubResource("SceneReplicationConfig_hyep0")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/WaitingContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label_Spawn" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+layout_mode = 2
+text = "Spawn"
+horizontal_alignment = 2
+
+[node name="Button_Spawn" type="TextureButton" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_skjf1")
+texture_pressed = ExtResource("8_8kquk")
+script = ExtResource("9_bmipb")
+
+[node name="Label_Players" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+layout_mode = 2
+text = "Players"
+
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]
@@ -298,3 +320,4 @@ replication_config = SubResource("SceneReplicationConfig_hyep0")
 [connection signal="button_up" from="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_send_client_name_button_up"]
 [connection signal="text_submitted" from="CenterContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
 [connection signal="button_up" from="CenterContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
+[connection signal="button_up" from="CenterContainer/TabContainer/WaitingContainer/HBoxContainer/Button_Spawn" to="CenterContainer/TabContainer/WaitingContainer/HBoxContainer/Button_Spawn" method="_on_button_up"]

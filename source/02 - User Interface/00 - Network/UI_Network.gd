@@ -16,7 +16,7 @@ var username: String
 #Local Nodes
 @onready var line_username: LineEdit = $VBoxContainer/UI_Connections/LineEdit_Username
 @onready var line_ip: LineEdit = $VBoxContainer/LineEdit_IPAddress
-@onready var button_spawn: TextureButton = $"../CenterContainer/Button_Spawn"
+#@onready var button_spawn: TextureButton = $"../CenterContainer/Button_Spawn"
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Host Button Up
@@ -24,7 +24,7 @@ func _on_button_host_button_up() -> void:
 	if line_username.text != "":
 		username = line_username.text
 		emit_signal("server_create", username, "")
-		button_spawn.set_deferred("visible", true)
+		#button_spawn.set_deferred("visible", true)
 	else: emit_signal("error_name")
 #Join Button Up
 func _on_button_join_button_up() -> void:

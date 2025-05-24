@@ -5,7 +5,8 @@ extends Node2D
 @onready var WORLD: Node2D = MAIN.get_node("World")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 @onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
-@onready var BUTTON_SPAWN: TextureButton = MAIN.get_node("UserInterface/UI_FullRect/CenterContainer/Button_Spawn")
+@onready var UI_SPLASH: Control = MAIN.get_node("UserInterface/UI_FullRect/SplashScreen")
+@onready var BUTTON_SPAWN: TextureButton = UI_SPLASH.get_node("CenterContainer/TabContainer/WaitingContainer/HBoxContainer/Button_Spawn")
 #Local Nodes
 @onready var orphanage_players: Node2D = $Orphanages/Orphanage_Entities/Entities_Players
 @onready var object_plinths: Node2D = $Orphanages/Orphanage_Objects/Object_Plinths

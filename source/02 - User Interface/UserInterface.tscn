@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene load_steps=7 format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
 [ext_resource type="PackedScene" uid="uid://hihmcyuyroma" path="res://source/02 - User Interface/01 - Time/UI_Time.tscn" id="2_s1jx5"]
 [ext_resource type="PackedScene" uid="uid://r47eiw2k2umj" path="res://source/02 - User Interface/00 - Network/UI_Network.tscn" id="4_rb18f"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/02 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
-[ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="8_wwe8j"]
-[ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="9_c7gxw"]
-[ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="10_c7gxw"]
 [ext_resource type="PackedScene" uid="uid://dw72o8ebu5cjp" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.tscn" id="10_moohe"]
 
 [node name="UserInterface" type="CanvasLayer"]
@@ -55,27 +52,3 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
-
-[node name="CenterContainer" type="CenterContainer" parent="UI_FullRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Button_Spawn" type="TextureButton" parent="UI_FullRect/CenterContainer"]
-visible = false
-layout_mode = 2
-texture_normal = ExtResource("8_wwe8j")
-texture_pressed = ExtResource("9_c7gxw")
-script = ExtResource("10_c7gxw")
-
-[connection signal="button_up" from="UI_FullRect/CenterContainer/Button_Spawn" to="UI_FullRect/CenterContainer/Button_Spawn" method="_on_button_up"]
