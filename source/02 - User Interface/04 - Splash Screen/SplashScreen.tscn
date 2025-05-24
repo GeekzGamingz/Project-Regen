@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=10 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -11,6 +11,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hyep0"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hyep0"]
+properties/0/path = NodePath("TextEdit_WaitingRoom:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -22,7 +27,6 @@ theme = ExtResource("1_k4l3q")
 script = ExtResource("2_6u25l")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -270,11 +274,15 @@ text = "Waiting for Players..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LineEdit_WaitingRoom" type="LineEdit" parent="CenterContainer/TabContainer/WaitingContainer"]
+[node name="TextEdit_WaitingRoom" type="TextEdit" parent="CenterContainer/TabContainer/WaitingContainer"]
 layout_mode = 2
-placeholder_text = "Waiting..."
-alignment = 1
+text = "Waiting..."
 editable = false
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="CenterContainer/TabContainer/WaitingContainer"]
+replication_config = SubResource("SceneReplicationConfig_hyep0")
 
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]

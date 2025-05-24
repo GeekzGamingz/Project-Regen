@@ -8,7 +8,7 @@ var connected_peer: String
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 #Local Nodes
-@onready var line_waiting_room: LineEdit = $CenterContainer/TabContainer/WaitingContainer/LineEdit_WaitingRoom
+@onready var text_waiting_room: TextEdit = $CenterContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom
 #Tabs
 @onready var sub_menus: TabContainer = $HBoxContainer/SubMenus
 @onready var tab_singleplayer: VBoxContainer = $HBoxContainer/SubMenus/SinglePlayer
@@ -36,7 +36,7 @@ func _on_button_quit_button_up() -> void: get_tree().quit()
 #Custom Functions
 #Update Waiting Room
 @rpc("any_peer", "call_local")
-func update_waiting_room(username): line_waiting_room.text += str("[", username, "] has joined!")
+func update_waiting_room(username): text_waiting_room.text += str("\n[", username, "] has joined!")
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 func server_found(username): connected_peer = username
