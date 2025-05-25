@@ -4,6 +4,7 @@ extends Node2D
 signal server_found
 signal spawn_requested
 signal message_join
+signal message_leave
 signal peer_connected(id, player_info)
 signal peer_disconnected(id)
 signal server_disconnected
@@ -36,7 +37,7 @@ var players: Dictionary = {}
 	"beard": int(0),
 	"beard_color": String("Button_Color1")
 }
-var players_online: int = 0
+var players_online: int = 1
 #Exported Variables
 @export var port: int = 60005
 @export var max_players: int = 5
@@ -82,7 +83,7 @@ func register_player(new_player_info):
 	var new_player_id = multiplayer.get_remote_sender_id()
 	players[new_player_id] = new_player_info
 	peer_connected.emit(new_player_id, new_player_info)
-	rpc("player_update", +1)
+	rpc_id(new_player_id, "player_update", +1)
 #Update Players Online
 @rpc("any_peer", "call_local")
 func player_update(value): players_online += value
@@ -91,6 +92,7 @@ func player_update(value): players_online += value
 #Player Connected/Disconnected
 func _on_peer_connected(id): register_player.rpc_id(id, player_info)
 func _on_peer_disconnected(id):
+	emit_signal("message_leave", id)
 	rpc("player_update", -1)
 	players.erase(id)
 	peer_disconnected.emit(id)

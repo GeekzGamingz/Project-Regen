@@ -21,6 +21,7 @@ var commands: Array = [
 func _ready() -> void:
 	NETWORK.connect("server_found", server_found)
 	NETWORK.connect("message_join", message_join)
+	NETWORK.connect("message_leave", message_leave)
 	UI_NETWORK.connect("error_name", error_name)
 	UI_NETWORK.connect("error_select_connection", error_select_connection)
 #------------------------------------------------------------------------------#
@@ -74,6 +75,10 @@ func chat_commands():
 func server_found(username): chatter = username
 #Chat Prompts
 func message_join(): rpc("message_add", "Narrating Voice", str(chatter, " has arrived!"))
+func message_leave(id): rpc_id(
+	multiplayer.get_unique_id(),
+	"message_add", "Narrating Voice", str(NETWORK.players[id].get("name"), " has left!")
+	)
 #Error Messages
 func error_name(): message_add("Narrating Voice", str(chatter, " What should we call you...?"))
 func error_select_connection(): message_add("Narrating Voice", "Will you be Hosting or Joining a Server?")
