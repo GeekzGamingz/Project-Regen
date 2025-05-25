@@ -287,22 +287,23 @@ scroll_fit_content_width = true
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="CenterContainer/TabContainer/WaitingContainer"]
 replication_config = SubResource("SceneReplicationConfig_hyep0")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/WaitingContainer"]
+[node name="SpawnContainer" type="HBoxContainer" parent="CenterContainer/TabContainer/WaitingContainer"]
+visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Label_Spawn" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+[node name="Label_Spawn" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/SpawnContainer"]
 layout_mode = 2
 text = "Spawn"
 horizontal_alignment = 2
 
-[node name="Button_Spawn" type="TextureButton" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+[node name="Button_Spawn" type="TextureButton" parent="CenterContainer/TabContainer/WaitingContainer/SpawnContainer"]
 layout_mode = 2
 texture_normal = ExtResource("7_skjf1")
 texture_pressed = ExtResource("8_8kquk")
 script = ExtResource("9_bmipb")
 
-[node name="Label_Players" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/HBoxContainer"]
+[node name="Label_Players" type="Label" parent="CenterContainer/TabContainer/WaitingContainer/SpawnContainer"]
 layout_mode = 2
 text = "Players"
 
@@ -320,4 +321,4 @@ text = "Players"
 [connection signal="button_up" from="CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_send_client_name_button_up"]
 [connection signal="text_submitted" from="CenterContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
 [connection signal="button_up" from="CenterContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
-[connection signal="button_up" from="CenterContainer/TabContainer/WaitingContainer/HBoxContainer/Button_Spawn" to="CenterContainer/TabContainer/WaitingContainer/HBoxContainer/Button_Spawn" method="_on_button_up"]
+[connection signal="button_up" from="CenterContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" to="CenterContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" method="_on_button_up"]
