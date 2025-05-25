@@ -22,8 +22,6 @@ func _ready() -> void:
 	NETWORK.connect("server_found", server_found)
 	NETWORK.connect("message_join", message_join)
 	NETWORK.connect("message_leave", message_leave)
-	UI_NETWORK.connect("error_name", error_name)
-	UI_NETWORK.connect("error_select_connection", error_select_connection)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Send Message with Send
@@ -37,7 +35,6 @@ func send_message():
 	var command_sent = commands.has(line_message.text)
 	if line_message.text != "" && !command_sent:
 		if chatter != "": rpc("message_add", chatter, line_message.text)
-		else: error_name()
 	chat_commands()
 	line_message.text = ""
 	text_messages.scroll_vertical = text_messages.get_line_height()
@@ -79,9 +76,6 @@ func message_leave(id): rpc_id(
 	multiplayer.get_unique_id(),
 	"message_add", "Narrating Voice", str(NETWORK.players[id].get("name"), " has left!")
 	)
-#Error Messages
-func error_name(): message_add("Narrating Voice", str(chatter, " What should we call you...?"))
-func error_select_connection(): message_add("Narrating Voice", "Will you be Hosting or Joining a Server?")
 #------------------------------------------------------------------------------#
 #RPC Functions
 @rpc("any_peer", "call_local")

@@ -10,9 +10,9 @@ signal server_create
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 #Local Nodes
 @onready var splash_screen: Control = $"../../../.."
-@onready var tab_container: TabContainer = splash_screen.get_node("CenterContainer/TabContainer")
-@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName")
-@onready var button_send_username: Button = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName")
+@onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
+@onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName")
+@onready var button_send_username: Button = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName")
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #New Game Button Up

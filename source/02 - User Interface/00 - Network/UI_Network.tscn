@@ -1,12 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://r47eiw2k2umj"]
+[gd_scene load_steps=2 format=3 uid="uid://r47eiw2k2umj"]
 
-[ext_resource type="Script" uid="uid://bnvfj5isvqmg" path="res://source/02 - User Interface/00 - Network/UI_Network.gd" id="1_tv7rn"]
 [ext_resource type="PackedScene" uid="uid://bdargq2fcsqjs" path="res://source/02 - User Interface/00 - Network/UI_Chat.tscn" id="2_lj8sr"]
 
 [node name="UI_Network" type="HBoxContainer"]
 offset_right = 225.0
 offset_bottom = 147.0
-script = ExtResource("1_tv7rn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -20,34 +18,6 @@ alignment = 2
 layout_mode = 2
 theme_override_constants/margin_bottom = 8
 
-[node name="LineEdit_IPAddress" type="LineEdit" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "69.161.125.16"
-placeholder_text = "IP Address"
-secret = true
-secret_character = "*"
-
-[node name="UI_Connections" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Button_Host" type="Button" parent="VBoxContainer/UI_Connections"]
-layout_mode = 2
-text = "Host"
-
-[node name="Button_Join" type="Button" parent="VBoxContainer/UI_Connections"]
-layout_mode = 2
-text = "Join
-"
-
-[node name="LineEdit_Username" type="LineEdit" parent="VBoxContainer/UI_Connections"]
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Username"
-emoji_menu_enabled = false
-caret_blink = true
-
 [node name="UI_Chat" parent="VBoxContainer" instance=ExtResource("2_lj8sr")]
 layout_mode = 2
 
@@ -58,8 +28,3 @@ theme_override_constants/margin_top = 8
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 2
 theme_override_constants/margin_left = 8
-
-[connection signal="text_submitted" from="VBoxContainer/LineEdit_IPAddress" to="." method="_on_ip_text_submitted"]
-[connection signal="button_up" from="VBoxContainer/UI_Connections/Button_Host" to="." method="_on_button_host_button_up"]
-[connection signal="button_up" from="VBoxContainer/UI_Connections/Button_Join" to="." method="_on_button_join_button_up"]
-[connection signal="text_submitted" from="VBoxContainer/UI_Connections/LineEdit_Username" to="." method="_on_line_username_text_submitted"]

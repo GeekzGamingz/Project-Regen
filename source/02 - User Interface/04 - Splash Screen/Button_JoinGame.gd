@@ -13,15 +13,15 @@ var client_username
 @onready var splash_screen: Control = $"../../../.."
 #Tabs
 #Username Container
-@onready var tab_container: TabContainer = splash_screen.get_node("CenterContainer/TabContainer")
-@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_ClientName")
-@onready var button_send_username: Button = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName")
+@onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
+@onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_ClientName")
+@onready var button_send_username: Button = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName")
 #IP Address Container
-@onready var ip_address_container: VBoxContainer = splash_screen.get_node("CenterContainer/TabContainer/IPAddressContainer")
-@onready var line_ip_address: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress")
-@onready var button_ip_address: Button = splash_screen.get_node("CenterContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress")
+@onready var ip_address_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/IPAddressContainer")
+@onready var line_ip_address: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress")
+@onready var button_ip_address: Button = splash_screen.get_node("PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress")
 #Waiting Container
-@onready var waiting_container: VBoxContainer = splash_screen.get_node("CenterContainer/TabContainer/WaitingContainer")
+@onready var waiting_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/WaitingContainer")
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Join Game Button Up
@@ -50,5 +50,4 @@ func _on_button_ip_address_button_up() -> void:
 #Send Client Information
 func send_client(username, ip):
 	waiting_container.set_deferred("visible", true)
-	#splash_screen.set_deferred("visible", false)
 	emit_signal("client_create", username, ip)

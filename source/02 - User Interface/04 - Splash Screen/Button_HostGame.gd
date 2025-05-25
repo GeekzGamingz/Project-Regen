@@ -8,11 +8,11 @@ signal server_create
 @onready var splash_screen: Control = $"../../../.."
 #Tabs
 #Username Container
-@onready var tab_container: TabContainer = splash_screen.get_node("CenterContainer/TabContainer")
-@onready var line_username: LineEdit = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName")
-@onready var button_send_username: Button = splash_screen.get_node("CenterContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName")
+@onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
+@onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName")
+@onready var button_send_username: Button = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName")
 #Waiting Container
-@onready var waiting_container: VBoxContainer = splash_screen.get_node("CenterContainer/TabContainer/WaitingContainer")
+@onready var waiting_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/WaitingContainer")
 @onready var spawn_container: HBoxContainer = waiting_container.get_node("SpawnContainer")
 #------------------------------------------------------------------------------#
 #Signaled Functions

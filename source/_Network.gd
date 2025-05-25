@@ -50,15 +50,13 @@ var players_online: int = 1
 @onready var BUTTON_NEWGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/SinglePlayer/Button_NewGame")
 @onready var BUTTON_HOSTGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_HostGame")
 @onready var BUTTON_JOINGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_JoinGame")
-@onready var WAITING_ROOM: TextEdit = UI_SPLASH.get_node("CenterContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom")
+@onready var WAITING_ROOM: TextEdit = UI_SPLASH.get_node("PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
-	UI_NETWORK.connect("server_create", server_create)
 	BUTTON_NEWGAME.connect("server_create", server_create)
 	BUTTON_HOSTGAME.connect("server_create", server_create)
 	BUTTON_JOINGAME.connect("client_create", client_create)
-	UI_NETWORK.connect("client_create", client_create)
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	multiplayer.connected_to_server.connect(_on_connection_successful)
@@ -72,8 +70,6 @@ func server_joined(username):
 	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
 	peer_connected.emit(multiplayer.get_unique_id(), player_info)
 	emit_signal("server_found", username)
-	UI_NETWORK.get_node("VBoxContainer/LineEdit_IPAddress").set_deferred("visible", false)
-	UI_NETWORK.get_node("VBoxContainer/UI_Connections").set_deferred("visible", false)
 	if single_player:
 		multiplayer.multiplayer_peer.set_refuse_new_connections(true)
 		emit_signal("spawn_requested")

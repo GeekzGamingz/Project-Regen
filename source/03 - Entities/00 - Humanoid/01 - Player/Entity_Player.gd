@@ -6,9 +6,9 @@ extends Entity
 @onready var output_name: Label = $Outputs/Output_Name
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void:
-	UI_NETWORK.connect("server_create", update_name)
-	UI_NETWORK.connect("client_create", update_name)
+func _ready() -> void: pass
+	#UI_NETWORK.connect("server_create", update_name)
+	#UI_NETWORK.connect("client_create", update_name)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #On Tree Entered
