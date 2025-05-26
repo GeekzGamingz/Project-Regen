@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=36 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="7_skjf1"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="8_8kquk"]
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
+[ext_resource type="Texture2D" uid="uid://b8103mctns4fi" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_big_a.png" id="10_pebyl"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="11_1rbu0"]
+[ext_resource type="Texture2D" uid="uid://7mfo6e67k68q" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/00 - Average/torso_average_average.png" id="12_bux6d"]
+[ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average.png" id="13_jbo3k"]
+[ext_resource type="Texture2D" uid="uid://duq2a6ueymj4x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/00 - Average/leg_right_average_average.png" id="14_1d2am"]
+[ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average.png" id="15_ttxp8"]
+[ext_resource type="Texture2D" uid="uid://2u2vwu1kxeqj" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/00 - Back/01 - Average/lumberjack_hair_a.png" id="16_l5w5a"]
+[ext_resource type="Texture2D" uid="uid://b4juqwppff3w5" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/01 - Average/lumberjack_beard_a.png" id="17_i668s"]
+[ext_resource type="Texture2D" uid="uid://dnc3gtqt7hbsp" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png" id="18_bux6d"]
+[ext_resource type="Texture2D" uid="uid://da5mctvc67nau" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow2.png" id="19_jbo3k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -18,6 +28,629 @@
 properties/0/path = NodePath("TextEdit_WaitingRoom:text")
 properties/0/spawn = true
 properties/0/replication_mode = 2
+
+[sub_resource type="Shader" id="Shader_1d2am"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttxp8"]
+resource_local_to_scene = true
+shader = SubResource("Shader_1d2am")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l5w5a"]
+resource_local_to_scene = true
+shader = ExtResource("11_1rbu0")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/old_base2 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/old_base3 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/new_base2 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/new_base3 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i668s"]
+resource_local_to_scene = true
+shader = ExtResource("11_1rbu0")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_ql4uc"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7i5et"]
+resource_local_to_scene = true
+shader = SubResource("Shader_ql4uc")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4vk7"]
+load_path = "res://.godot/imported/arm_left_average_average.png-16789d98abd9340c7dcd756f9151866a.ctex"
+
+[sub_resource type="Shader" id="Shader_evdrp"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpnjh"]
+resource_local_to_scene = true
+shader = SubResource("Shader_evdrp")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyh4g"]
+resource_local_to_scene = true
+shader = SubResource("Shader_evdrp")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_5eudg"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7il1"]
+resource_local_to_scene = true
+shader = SubResource("Shader_5eudg")
+shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmovv"]
+resource_local_to_scene = true
+shader = SubResource("Shader_5eudg")
+shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -67,7 +700,7 @@ text = "Single Player"
 layout_mode = 2
 text = "Multiplayer"
 
-[node name="Button3" type="Button" parent="HBoxContainer/MainMenu"]
+[node name="Button_Character" type="Button" parent="HBoxContainer/MainMenu"]
 layout_mode = 2
 text = "Character"
 
@@ -135,26 +768,6 @@ script = ExtResource("5_65kkx")
 layout_mode = 2
 text = "Join Game"
 script = ExtResource("6_hyep0")
-
-[node name="Character" type="VBoxContainer" parent="HBoxContainer/SubMenus"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/SubMenus/Character"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "Character"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="HBoxContainer/SubMenus/Character"]
-layout_mode = 2
-text = "New Character"
-
-[node name="Button2" type="Button" parent="HBoxContainer/SubMenus/Character"]
-layout_mode = 2
-text = "Select Character"
 
 [node name="PopUpContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -319,8 +932,130 @@ alignment = 1
 editable = false
 expand_to_text_length = true
 
+[node name="CharacterContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="SubviewportContainer" type="SubViewportContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SubViewport" type="SubViewport" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 64)
+render_target_update_mode = 0
+
+[node name="Sprites" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport"]
+position = Vector2(32, 32)
+scale = Vector2(2, 2)
+
+[node name="Sprites_Wheels" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites"]
+
+[node name="Sprites_Body" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites"]
+
+[node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_ttxp8")
+texture = ExtResource("10_pebyl")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="Sprite_Base" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_l5w5a")
+texture = ExtResource("12_bux6d")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_ArmRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_i668s")
+texture = ExtResource("13_jbo3k")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_ArmLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_7i5et")
+texture = SubResource("CompressedTexture2D_s4vk7")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_LegRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_gpnjh")
+texture = ExtResource("14_1d2am")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_LegLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_yyh4g")
+texture = ExtResource("15_ttxp8")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprites_Hair" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites"]
+
+[node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Hair"]
+material = SubResource("ShaderMaterial_i7il1")
+texture = ExtResource("16_l5w5a")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Hair"]
+material = SubResource("ShaderMaterial_xmovv")
+texture = ExtResource("17_i668s")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/SubviewportContainer/SubViewport/Sprites/Sprites_Hair"]
+
+[node name="Selection_Character" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Previous_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+layout_mode = 2
+texture_normal = ExtResource("18_bux6d")
+texture_pressed = ExtResource("19_jbo3k")
+flip_h = true
+
+[node name="Label_Character" type="Label" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "[Character]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+layout_mode = 2
+texture_normal = ExtResource("18_bux6d")
+texture_pressed = ExtResource("19_jbo3k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button_Save" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="Button_Delete" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Delete"
+
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
+[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Character" to="." method="_on_button_character_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]
 [connection signal="button_up" from="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_up"]
 [connection signal="button_up" from="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_up"]
