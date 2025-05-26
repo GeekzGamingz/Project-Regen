@@ -39,8 +39,8 @@ var players: Dictionary = {}
 }
 var players_online: int = 1
 #Exported Variables
-@export var port: int = 60005
-@export var max_players: int = 5
+@export var port: int = 42069
+@export var max_players: int = 4
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
