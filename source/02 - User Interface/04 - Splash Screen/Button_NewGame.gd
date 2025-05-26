@@ -11,6 +11,7 @@ signal server_create
 #Local Nodes
 @onready var splash_screen: Control = $"../../../.."
 @onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
+@onready var username_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer")
 @onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName")
 @onready var button_send_username: Button = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName")
 #------------------------------------------------------------------------------#
@@ -18,6 +19,7 @@ signal server_create
 #New Game Button Up
 func _on_button_up() -> void:
 	tab_container.set_deferred("visible", true)
+	username_container.set_deferred("visible", true)
 	line_username.set_deferred("visible", true)
 	button_send_username.set_deferred("visible", true)
 #Username Text Submitted

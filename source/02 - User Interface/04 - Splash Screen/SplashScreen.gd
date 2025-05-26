@@ -13,6 +13,7 @@ var connected_peer: String
 @onready var sub_menus: TabContainer = $HBoxContainer/SubMenus
 @onready var tab_singleplayer: VBoxContainer = $HBoxContainer/SubMenus/SinglePlayer
 @onready var tab_multiplayer: VBoxContainer = $HBoxContainer/SubMenus/Multiplayer
+@onready var tab_container: TabContainer = $PopUpContainer/TabContainer
 @onready var error_container: VBoxContainer = $PopUpContainer/TabContainer/ErrorContainer
 #------------------------------------------------------------------------------#
 #Ready Function
@@ -26,11 +27,13 @@ func _ready() -> void:
 func _on_button_single_player_button_up() -> void:
 	sub_menus.set_deferred("visible", true)
 	tab_singleplayer.set_deferred("visible", true)
+	tab_container.set_deferred("visible", false)
 	NETWORK.single_player = true
 #Multiplayer
 func _on_button_multiplayer_button_up() -> void:
 	sub_menus.set_deferred("visible", true)
 	tab_multiplayer.set_deferred("visible", true)
+	tab_container.set_deferred("visible", false)
 	NETWORK.single_player = false
 #Quit
 func _on_button_quit_button_up() -> void: get_tree().quit()
@@ -43,6 +46,4 @@ func update_waiting_room(username): text_waiting_room.text += str("\n[", usernam
 #Custom Signaled Functions
 func server_found(username): connected_peer = username
 func message_join(): rpc("update_waiting_room", connected_peer)
-func message_error():
-	print("Connection Failed")
-	error_container.set_deferred("visible", true)
+func message_error(): error_container.set_deferred("visible", true)

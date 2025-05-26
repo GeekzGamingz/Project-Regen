@@ -9,6 +9,7 @@ signal server_create
 #Tabs
 #Username Container
 @onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
+@onready var username_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer")
 @onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName")
 @onready var button_send_username: Button = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName")
 #Waiting Container
@@ -19,6 +20,7 @@ signal server_create
 #Host Game Button Up
 func _on_button_up() -> void:
 	tab_container.set_deferred("visible", true)
+	username_container.set_deferred("visible", true)
 	line_username.set_deferred("visible", true)
 	button_send_username.set_deferred("visible", true)
 #Username Text Submitted

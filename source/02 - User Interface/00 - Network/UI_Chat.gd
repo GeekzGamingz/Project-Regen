@@ -72,7 +72,8 @@ func chat_commands():
 func server_found(username): chatter = username
 #Chat Prompts
 func message_join(): rpc("message_add", "Narrating Voice", str(chatter, " has arrived!"))
-func message_leave(id): rpc_id(
+func message_leave(id):
+	rpc_id(
 	multiplayer.get_unique_id(),
 	"message_add", "Narrating Voice", str(NETWORK.players[id].get("name"), " has left!")
 	)

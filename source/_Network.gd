@@ -51,6 +51,7 @@ var players_online: int = 1
 @onready var BUTTON_HOSTGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_HostGame")
 @onready var BUTTON_JOINGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_JoinGame")
 @onready var WAITING_ROOM: TextEdit = UI_SPLASH.get_node("PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom")
+@onready var ERROR_CONTAINER: VBoxContainer = UI_SPLASH.get_node("PopUpContainer/TabContainer/ErrorContainer")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
@@ -88,7 +89,7 @@ func player_update(value): players_online += value
 #Player Connected/Disconnected
 func _on_peer_connected(id): register_player.rpc_id(id, player_info)
 func _on_peer_disconnected(id):
-	emit_signal("message_leave", id)
+	if id != 1: emit_signal("message_leave", id)
 	rpc("player_update", -1)
 	players.erase(id)
 	peer_disconnected.emit(id)
@@ -100,7 +101,8 @@ func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	server_disconnected.emit()
-	get_tree().quit() #Temp Failsafe
+	UI_SPLASH.set_deferred("visible", true)
+	ERROR_CONTAINER.set_deferred("visible", true)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Create New Server

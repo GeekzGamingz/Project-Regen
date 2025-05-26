@@ -12,5 +12,4 @@ func _on_button_up() -> void:
 #------------------------------------------------------------------------------#
 #RPC Functions
 @rpc("any_peer", "call_local")
-func hide_splash():
-	splash_screen.set_deferred("visible", false)
+func hide_splash(): splash_screen.set_deferred("visible", false)
