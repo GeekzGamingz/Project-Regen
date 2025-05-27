@@ -67,34 +67,6 @@
 [ext_resource type="Texture2D" uid="uid://d0wiysp4bnn5p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/01 - Chub/leg_right_average_chub.png" id="51_da3to"]
 [ext_resource type="Texture2D" uid="uid://c0djubi4aj813" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/01 - Chub/leg_right_tall_chub.png" id="52_qnkdc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v25io"]
-resource_local_to_scene = true
-shader = ExtResource("4_dpogu")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/old_base3 = Color(0, 0, 0, 1)
-shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/new_base3 = Color(0, 0, 0, 1)
-shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l6i5u"]
 resource_local_to_scene = true
 shader = ExtResource("4_dpogu")
@@ -122,6 +94,34 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v25io"]
+resource_local_to_scene = true
+shader = ExtResource("4_dpogu")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f2ycm"]
 resource_local_to_scene = true
@@ -1341,6 +1341,17 @@ script = ExtResource("4_itw66")
 [node name="Sprites_Body" type="Node2D" parent="Sprites"]
 script = ExtResource("5_v25io")
 
+[node name="Sprite_Base" type="Sprite2D" parent="Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_l6i5u")
+texture = ExtResource("8_n86k3")
+offset = Vector2(0, -16)
+hframes = 4
+vframes = 4
+frame = 12
+script = ExtResource("6_4h5xq")
+bases_average = Array[Resource]([ExtResource("7_itw66"), ExtResource("8_n86k3"), ExtResource("9_dpogu")])
+bases_chub = Array[Resource]([ExtResource("10_qi55k"), ExtResource("11_4h5xq"), ExtResource("12_rt581")])
+
 [node name="Sprite_Ears" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_v25io")
 texture = ExtResource("22_t8xge")
@@ -1352,17 +1363,6 @@ script = ExtResource("23_jvkwi")
 ears_short = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("25_72viy"), ExtResource("26_da3to"), ExtResource("27_qnkdc"), ExtResource("28_v1m2d"), ExtResource("29_v25io")])
 ears_average = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("30_l6i5u"), ExtResource("22_t8xge"), ExtResource("31_spdcj"), ExtResource("32_mhb4s"), ExtResource("33_o6ssk")])
 ears_tall = Array[Resource]([ExtResource("24_3a4ei"), ExtResource("34_op2by"), ExtResource("35_24lc3"), ExtResource("36_1m4lk"), ExtResource("37_f1rp1"), ExtResource("38_l6j7k")])
-
-[node name="Sprite_Base" type="Sprite2D" parent="Sprites/Sprites_Body"]
-material = SubResource("ShaderMaterial_l6i5u")
-texture = ExtResource("8_n86k3")
-offset = Vector2(0, -16)
-hframes = 4
-vframes = 4
-frame = 12
-script = ExtResource("6_4h5xq")
-bases_average = Array[Resource]([ExtResource("7_itw66"), ExtResource("8_n86k3"), ExtResource("9_dpogu")])
-bases_chub = Array[Resource]([ExtResource("10_qi55k"), ExtResource("11_4h5xq"), ExtResource("12_rt581")])
 
 [node name="Sprite_ArmRight" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_f2ycm")

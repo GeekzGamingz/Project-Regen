@@ -662,6 +662,7 @@ material = SubResource("ShaderMaterial_j4c14")
 material = SubResource("ShaderMaterial_25kxp")
 
 [node name="AnimationTree" parent="AnimationPlayers" index="2"]
+active = true
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Output_Name" parent="Outputs" index="1"]

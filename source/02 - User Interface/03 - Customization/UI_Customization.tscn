@@ -1,10 +1,10 @@
 [gd_scene load_steps=252 format=3 uid="uid://dr2y6f6qexgxt"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_dwcvp"]
-[ext_resource type="Texture2D" uid="uid://dnc3gtqt7hbsp" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png" id="1_nm3d6"]
-[ext_resource type="Texture2D" uid="uid://da5mctvc67nau" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow2.png" id="2_dwcvp"]
 [ext_resource type="Script" uid="uid://swu1kapl6nj3" path="res://source/02 - User Interface/03 - Customization/UI_Customization.gd" id="2_r8p2t"]
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="3_r8p2t"]
+[ext_resource type="Texture2D" uid="uid://ppxjcuancwvd" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_unpressed.png" id="3_xdu6r"]
+[ext_resource type="Texture2D" uid="uid://cs37i2q38csqb" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_pressed.png" id="4_03tcd"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="4_j8vi3"]
 [ext_resource type="Script" uid="uid://b0k6lw8mqb7b7" path="res://source/02 - User Interface/03 - Customization/Selection_Color.gd" id="5_fx7rp"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="5_oaxbq"]
@@ -6620,8 +6620,8 @@ size_flags_vertical = 4
 
 [node name="Previous_Height" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Height"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_Height" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Height"]
@@ -6633,8 +6633,8 @@ vertical_alignment = 1
 
 [node name="Next_Height" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Height"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_Ears" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -6643,8 +6643,8 @@ size_flags_vertical = 4
 
 [node name="Previous_Ears" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_Ears" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears"]
@@ -6656,8 +6656,8 @@ vertical_alignment = 1
 
 [node name="Next_Ears" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_Ears"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_ArmL" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -6666,8 +6666,8 @@ size_flags_vertical = 4
 
 [node name="Previous_ArmL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_ArmL" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
@@ -6679,8 +6679,8 @@ vertical_alignment = 1
 
 [node name="Next_ArmL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_ArmL"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_LegL" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -6689,8 +6689,8 @@ size_flags_vertical = 4
 
 [node name="Previous_LegL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_LegL" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
@@ -6702,8 +6702,8 @@ vertical_alignment = 1
 
 [node name="Next_LegL" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer/Selection_LegL"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -6716,8 +6716,8 @@ size_flags_vertical = 4
 
 [node name="Previous_Hair" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_Hair" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair"]
@@ -6729,8 +6729,8 @@ vertical_alignment = 1
 
 [node name="Next_Hair" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Hair"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_Beard" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -6739,8 +6739,8 @@ size_flags_vertical = 4
 
 [node name="Previous_Beard" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_Beard" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard"]
@@ -6752,8 +6752,8 @@ vertical_alignment = 1
 
 [node name="Next_Beard" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_Beard"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_ArmR" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -6762,8 +6762,8 @@ size_flags_vertical = 4
 
 [node name="Previous_ArmR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_ArmR" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
@@ -6775,8 +6775,8 @@ vertical_alignment = 1
 
 [node name="Next_ArmR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_ArmR"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_LegR" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -6785,8 +6785,8 @@ size_flags_vertical = 4
 
 [node name="Previous_LegR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_LegR" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
@@ -6798,8 +6798,8 @@ vertical_alignment = 1
 
 [node name="Next_LegR" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2/Selection_LegR"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Selection_Animation" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -6808,8 +6808,8 @@ size_flags_vertical = 4
 
 [node name="Previous_Animation" type="TextureButton" parent="VBoxContainer/Selection_Animation"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 flip_h = true
 
 [node name="Label_Animation" type="Label" parent="VBoxContainer/Selection_Animation"]
@@ -6821,8 +6821,8 @@ vertical_alignment = 1
 
 [node name="Next_Animation" type="TextureButton" parent="VBoxContainer/Selection_Animation"]
 layout_mode = 2
-texture_normal = ExtResource("1_nm3d6")
-texture_pressed = ExtResource("2_dwcvp")
+texture_normal = ExtResource("3_xdu6r")
+texture_pressed = ExtResource("4_03tcd")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2

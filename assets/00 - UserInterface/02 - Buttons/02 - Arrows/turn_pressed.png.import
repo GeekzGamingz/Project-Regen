@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnc3gtqt7hbsp"
-path="res://.godot/imported/Buttons-Arrow1.png-9fbf9d41ff7a7f3a803f2a00abe8c039.ctex"
+uid="uid://c2egyts1431ev"
+path="res://.godot/imported/turn_pressed.png-7d8cac5811e0283907a29bc7ecbd3e16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Buttons-Arrow1.png"
-dest_files=["res://.godot/imported/Buttons-Arrow1.png-9fbf9d41ff7a7f3a803f2a00abe8c039.ctex"]
+source_file="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/turn_pressed.png"
+dest_files=["res://.godot/imported/turn_pressed.png-7d8cac5811e0283907a29bc7ecbd3e16.ctex"]
 
 [params]
 
