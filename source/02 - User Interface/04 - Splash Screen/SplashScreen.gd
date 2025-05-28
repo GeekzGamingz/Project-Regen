@@ -10,6 +10,7 @@ var connected_peer: String
 #Local Nodes
 @onready var customization: Control = $"../UI_Customization"
 @onready var text_waiting_room: TextEdit = $PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom
+@onready var sprites_colors: Node2D = $PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
 #Tabs
 @onready var sub_menus: TabContainer = $HBoxContainer/SubMenus
 @onready var tab_singleplayer: VBoxContainer = $HBoxContainer/SubMenus/SinglePlayer
@@ -43,6 +44,7 @@ func _on_button_character_button_up() -> void:
 	tab_container.set_deferred("visible", true)
 	character_container.set_deferred("visible", true)
 	customization.set_deferred("visible", true)
+	sprites_colors.check_colors()
 #Quit
 func _on_button_quit_button_up() -> void: get_tree().quit()
 #------------------------------------------------------------------------------#

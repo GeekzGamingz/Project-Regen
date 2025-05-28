@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=90 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -9,25 +9,60 @@
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="7_skjf1"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="8_8kquk"]
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
-[ext_resource type="Texture2D" uid="uid://b8103mctns4fi" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/01 - Average/ears_big_a.png" id="10_pebyl"]
 [ext_resource type="Texture2D" uid="uid://ppxjcuancwvd" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_unpressed.png" id="10_ttxp8"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="11_1rbu0"]
 [ext_resource type="Texture2D" uid="uid://cs37i2q38csqb" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_pressed.png" id="11_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://7mfo6e67k68q" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/00 - Average/torso_average_average.png" id="12_bux6d"]
 [ext_resource type="Script" uid="uid://ddn5c0m0q3cl4" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprites_Character.gd" id="12_jbo3k"]
 [ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average.png" id="13_jbo3k"]
+[ext_resource type="Script" uid="uid://ir1dlhar68ga" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprites_Colors.gd" id="13_vd0bi"]
 [ext_resource type="Texture2D" uid="uid://duq2a6ueymj4x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/00 - Average/leg_right_average_average.png" id="14_1d2am"]
+[ext_resource type="Script" uid="uid://16uqyg5m0m2k" path="res://source/02 - User Interface/04 - Splash Screen/Sprites_Body.gd" id="14_fmykm"]
 [ext_resource type="Script" uid="uid://bsqtittxy2e8f" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Base.gd" id="15_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average.png" id="15_ttxp8"]
 [ext_resource type="Texture2D" uid="uid://dcge35nolthxw" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/00 - Short/00 - Average/torso_short_average.png" id="16_evdrp"]
-[ext_resource type="Texture2D" uid="uid://2u2vwu1kxeqj" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/00 - Back/01 - Average/lumberjack_hair_a.png" id="16_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://ct8qt8cgqgrw6" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/02 - Tall/00 - Average/torso_tall_average.png" id="17_gpnjh"]
-[ext_resource type="Texture2D" uid="uid://b4juqwppff3w5" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/01 - Average/lumberjack_beard_a.png" id="17_i668s"]
 [ext_resource type="Texture2D" uid="uid://nsa71gahertx" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/00 - Short/01 - Chub/torso_short_chub.png" id="18_yyh4g"]
 [ext_resource type="Texture2D" uid="uid://dq52p5rsvhokn" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/01 - Chub/torso_average_chub.png" id="19_5eudg"]
 [ext_resource type="Texture2D" uid="uid://bvji36e44qksd" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/02 - Tall/01 - Chub/torso_tall_chub.png" id="20_i7il1"]
 [ext_resource type="Texture2D" uid="uid://d2c4uqgg0o6gr" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/turn_unpressed.png" id="21_i668s"]
+[ext_resource type="Script" uid="uid://f230do1oupeu" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Ears.gd" id="22_gpnjh"]
 [ext_resource type="Texture2D" uid="uid://c2egyts1431ev" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/turn_pressed.png" id="22_ql4uc"]
+[ext_resource type="Texture2D" uid="uid://dp1iiiwb5h5t1" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_small.png" id="23_02o5o"]
+[ext_resource type="Texture2D" uid="uid://bd5e6ihhw4rs2" path="res://assets/03 - Entities/00 - Humanoid/none.png" id="23_ictme"]
+[ext_resource type="Texture2D" uid="uid://bohaylberknkb" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_big.png" id="24_76nu5"]
+[ext_resource type="Texture2D" uid="uid://bgcd2au1psjf7" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_halfelf.png" id="25_bx8p5"]
+[ext_resource type="Texture2D" uid="uid://cq6qr6cug13db" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_elf.png" id="26_srcmj"]
+[ext_resource type="Texture2D" uid="uid://b80eykxpytnrc" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_cat.png" id="27_bf8bm"]
+[ext_resource type="Script" uid="uid://boni76rap4i6a" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_ArmRight.gd" id="29_rbq5p"]
+[ext_resource type="Texture2D" uid="uid://c3cjy6dp6uhbe" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/00 - Short/00 - Average/arm_right_short_average.png" id="30_ba7sv"]
+[ext_resource type="Texture2D" uid="uid://1msy3p1vsf3u" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/00 - Average/arm_right_tall_average.png" id="31_bwtgv"]
+[ext_resource type="Texture2D" uid="uid://6gumpsrkll3u" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/00 - Short/01 - Chub/arm_right_short_chub.png" id="32_cd5px"]
+[ext_resource type="Script" uid="uid://gnx2u2ywspfe" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Hair.gd" id="32_hj702"]
+[ext_resource type="Texture2D" uid="uid://b867wycyshuds" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/01 - Chub/arm_right_average_chub.png" id="33_msdjq"]
+[ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub.png" id="34_3leut"]
+[ext_resource type="Script" uid="uid://k1jbq4kxcgiu" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Beard.gd" id="34_lbb6o"]
+[ext_resource type="Script" uid="uid://dxlvormp5vh62" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_ArmLeft.gd" id="35_02o5o"]
+[ext_resource type="Texture2D" uid="uid://bgb7oqktsb45a" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/00 - Short/00 - Average/arm_left_short_average.png" id="36_76nu5"]
+[ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average.png" id="37_bx8p5"]
+[ext_resource type="Texture2D" uid="uid://b2d3yewrd3jb4" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/00 - Average/arm_left_tall_average.png" id="38_srcmj"]
+[ext_resource type="Texture2D" uid="uid://qrvfe7il0q5t" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/00 - Short/01 - Chub/arm_left_short_chub.png" id="39_bf8bm"]
+[ext_resource type="Texture2D" uid="uid://vlb05s5gg0s0" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/01 - Chub/arm_left_average_chub.png" id="40_6b28o"]
+[ext_resource type="Texture2D" uid="uid://c1p33tekveo7p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/01 - Chub/arm_left_tall_chub.png" id="41_g0xul"]
+[ext_resource type="Script" uid="uid://dmy1lpwatmwwa" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_LegLeft.gd" id="43_741ey"]
+[ext_resource type="Script" uid="uid://bj4sqvgpognpp" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_LegRight.gd" id="43_qnolk"]
+[ext_resource type="Texture2D" uid="uid://ctni6ayudkc50" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/00 - Short/00 - Average/leg_right_short_average.png" id="44_bf8bm"]
+[ext_resource type="Texture2D" uid="uid://bcifoimpu5586" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/00 - Short/00 - Average/leg_left_short_average.png" id="44_ec37u"]
+[ext_resource type="Texture2D" uid="uid://c1ru0iumk56s2" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/00 - Average/leg_right_tall_average.png" id="45_6b28o"]
+[ext_resource type="Texture2D" uid="uid://csq5k670jjy0x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/02 - Tall/00 - Average/leg_left_tall_average.png" id="45_tdta2"]
+[ext_resource type="Texture2D" uid="uid://db7bg3ivn6atj" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/00 - Short/01 - Chub/leg_right_short_chub.png" id="46_g0xul"]
+[ext_resource type="Texture2D" uid="uid://bs7yqelglor88" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/00 - Short/01 - Chub/leg_left_short_chub.png" id="46_vd0bi"]
+[ext_resource type="Texture2D" uid="uid://d0wiysp4bnn5p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/01 - Chub/leg_right_average_chub.png" id="47_72r7o"]
+[ext_resource type="Texture2D" uid="uid://ck3ou7egm1b3a" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/01 - Chub/leg_left_average_chub.png" id="47_fmykm"]
+[ext_resource type="Texture2D" uid="uid://d01v0xtgk2c2i" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/02 - Tall/01 - Chub/leg_left_tall_chub.png" id="48_kv564"]
+[ext_resource type="Texture2D" uid="uid://c0djubi4aj813" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/01 - Chub/leg_right_tall_chub.png" id="48_t82hm"]
+[ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack.png" id="57_tdta2"]
+[ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack.png" id="59_vd0bi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -193,34 +228,6 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i668s"]
-resource_local_to_scene = true
-shader = ExtResource("11_1rbu0")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/old_base3 = Color(0, 0, 0, 1)
-shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/new_base3 = Color(0, 0, 0, 1)
-shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
-
 [sub_resource type="Shader" id="Shader_ql4uc"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
@@ -351,6 +358,34 @@ shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4vk7"]
 load_path = "res://.godot/imported/arm_left_average_average.png-16789d98abd9340c7dcd756f9151866a.ctex"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i668s"]
+resource_local_to_scene = true
+shader = ExtResource("11_1rbu0")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
 [sub_resource type="Shader" id="Shader_evdrp"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
@@ -450,7 +485,7 @@ void fragment() {
     }
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpnjh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyh4g"]
 resource_local_to_scene = true
 shader = SubResource("Shader_evdrp")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
@@ -478,7 +513,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yyh4g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpnjh"]
 resource_local_to_scene = true
 shader = SubResource("Shader_evdrp")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
@@ -661,6 +696,922 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_vd0bi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_fmykm"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_kv564"]
+resource_name = "left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bukj7"]
+resource_name = "right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gvb8w"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_fy1yu"]
+resource_name = "walk_down"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_lg22v"]
+resource_name = "walk_left"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_br2aq"]
+resource_name = "walk_right"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8llvl"]
+resource_name = "walk_up"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites_Body/Sprite_Base:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites_Body/Sprite_Ears:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites_Body/Sprite_ArmLeft:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites_Body/Sprite_ArmRight:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites_Body/Sprite_LegLeft:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.301574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites_Body/Sprite_LegRight:frame_coords")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrw11"]
+_data = {
+&"RESET": SubResource("Animation_vd0bi"),
+&"still_down": SubResource("Animation_fmykm"),
+&"still_left": SubResource("Animation_kv564"),
+&"still_right": SubResource("Animation_bukj7"),
+&"still_up": SubResource("Animation_gvb8w"),
+&"walk_down": SubResource("Animation_fy1yu"),
+&"walk_left": SubResource("Animation_lg22v"),
+&"walk_right": SubResource("Animation_br2aq"),
+&"walk_up": SubResource("Animation_8llvl")
+}
+
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -788,6 +1739,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="TabContainer" type="TabContainer" parent="PopUpContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hyep0")
 current_tab = 4
@@ -973,16 +1925,18 @@ transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(64, 64)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Sprites_Character" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport"]
 position = Vector2(32, 32)
 scale = Vector2(2, 2)
 script = ExtResource("12_jbo3k")
 
-[node name="Sprites_Wheels" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+[node name="Sprites_Colors" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+script = ExtResource("13_vd0bi")
 
 [node name="Sprites_Body" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+script = ExtResource("14_fmykm")
 
 [node name="Sprite_Base" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_l5w5a")
@@ -996,17 +1950,12 @@ bases_chub = Array[Resource]([ExtResource("18_yyh4g"), ExtResource("19_5eudg"), 
 
 [node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_ttxp8")
-texture = ExtResource("10_pebyl")
+texture = ExtResource("23_ictme")
 hframes = 4
 vframes = 4
 frame = 8
-
-[node name="Sprite_ArmRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
-material = SubResource("ShaderMaterial_i668s")
-texture = ExtResource("13_jbo3k")
-hframes = 4
-vframes = 4
-frame = 12
+script = ExtResource("22_gpnjh")
+ears = Array[Resource]([ExtResource("23_ictme"), ExtResource("23_02o5o"), ExtResource("24_76nu5"), ExtResource("25_bx8p5"), ExtResource("26_srcmj"), ExtResource("27_bf8bm")])
 
 [node name="Sprite_ArmLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_7i5et")
@@ -1014,13 +1963,27 @@ texture = SubResource("CompressedTexture2D_s4vk7")
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("35_02o5o")
+arms_left_short_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("36_76nu5")])
+arms_left_average_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("37_bx8p5")])
+arms_left_tall_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("38_srcmj")])
+arms_left_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("39_bf8bm")])
+arms_left_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("40_6b28o")])
+arms_left_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("41_g0xul")])
 
-[node name="Sprite_LegRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
-material = SubResource("ShaderMaterial_gpnjh")
-texture = ExtResource("14_1d2am")
+[node name="Sprite_ArmRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+material = SubResource("ShaderMaterial_i668s")
+texture = ExtResource("13_jbo3k")
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("29_rbq5p")
+arms_right_short_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("30_ba7sv")])
+arms_right_average_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("13_jbo3k")])
+arms_right_tall_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("31_bwtgv")])
+arms_right_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("32_cd5px")])
+arms_right_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("33_msdjq")])
+arms_right_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("34_3leut")])
 
 [node name="Sprite_LegLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_yyh4g")
@@ -1028,24 +1991,55 @@ texture = ExtResource("15_ttxp8")
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("43_741ey")
+legs_left_short_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("44_ec37u")])
+legs_left_average_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("15_ttxp8")])
+legs_left_tall_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("45_tdta2")])
+legs_left_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("46_vd0bi")])
+legs_left_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("47_fmykm")])
+legs_left_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("48_kv564")])
+
+[node name="Sprite_LegRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+material = SubResource("ShaderMaterial_gpnjh")
+texture = ExtResource("14_1d2am")
+hframes = 4
+vframes = 4
+frame = 12
+script = ExtResource("43_qnolk")
+legs_right_short_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("44_bf8bm")])
+legs_right_average_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("14_1d2am")])
+legs_right_tall_average = Array[Resource]([ExtResource("23_ictme"), ExtResource("45_6b28o")])
+legs_right_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("46_g0xul")])
+legs_right_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("47_72r7o")])
+legs_right_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("48_t82hm")])
 
 [node name="Sprites_Hair" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 
 [node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
 material = SubResource("ShaderMaterial_i7il1")
-texture = ExtResource("16_l5w5a")
+texture = ExtResource("23_ictme")
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("32_hj702")
+hairs = Array[Resource]([ExtResource("23_ictme"), ExtResource("57_tdta2")])
 
 [node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
 material = SubResource("ShaderMaterial_xmovv")
-texture = ExtResource("17_i668s")
+texture = ExtResource("23_ictme")
 hframes = 4
 vframes = 4
 frame = 12
+script = ExtResource("34_lbb6o")
+beards = Array[Resource]([ExtResource("23_ictme"), ExtResource("59_vd0bi")])
 
 [node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+
+[node name="AnimPlayer_Sprites" type="AnimationPlayer" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+libraries = {
+&"": SubResource("AnimationLibrary_wrw11")
+}
+autoplay = "still_down"
 
 [node name="Next_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
 layout_mode = 2
@@ -1057,13 +2051,13 @@ texture_pressed = ExtResource("11_l5w5a")
 layout_mode = 2
 alignment = 1
 
-[node name="Rotate_Clockwise" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
+[node name="Rotate_Counter" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("21_i668s")
 texture_pressed = ExtResource("22_ql4uc")
 
-[node name="Rotate_Counter" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
+[node name="Rotate_Clockwise" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("21_i668s")
@@ -1098,3 +2092,5 @@ text = "Delete"
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" to="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" method="_on_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/RotationContainer/Rotate_Counter" to="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_counter_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/RotationContainer/Rotate_Clockwise" to="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_clockwise_button_up"]

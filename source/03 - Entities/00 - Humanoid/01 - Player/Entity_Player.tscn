@@ -6,6 +6,34 @@
 [ext_resource type="Script" uid="uid://3tcac5a1yosj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Player_ServerInfo.gd" id="4_0p84g"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_4ncaf"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0p84g"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ncaf")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/old_base2 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/old_base3 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/new_base2 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/new_base3 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
 [sub_resource type="Shader" id="Shader_0p84g"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
@@ -132,34 +160,6 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0p84g"]
-resource_local_to_scene = true
-shader = ExtResource("4_4ncaf")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
-shader_parameter/old_base2 = Color(1, 1, 1, 1)
-shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
-shader_parameter/old_base3 = Color(1, 1, 1, 1)
-shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
-shader_parameter/new_base2 = Color(1, 1, 1, 1)
-shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
-shader_parameter/new_base3 = Color(1, 1, 1, 1)
-shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gl5bk"]
 resource_local_to_scene = true
@@ -637,11 +637,11 @@ script = ExtResource("2_x2jc6")
 [node name="Player_ServerInfo" type="Node2D" parent="Scripts" index="1"]
 script = ExtResource("4_0p84g")
 
-[node name="Sprite_Ears" parent="Sprites/Sprites_Body" index="0"]
-material = SubResource("ShaderMaterial_0hlgo")
-
-[node name="Sprite_Base" parent="Sprites/Sprites_Body" index="1"]
+[node name="Sprite_Base" parent="Sprites/Sprites_Body" index="0"]
 material = SubResource("ShaderMaterial_0p84g")
+
+[node name="Sprite_Ears" parent="Sprites/Sprites_Body" index="1"]
+material = SubResource("ShaderMaterial_0hlgo")
 
 [node name="Sprite_ArmRight" parent="Sprites/Sprites_Body" index="2"]
 material = SubResource("ShaderMaterial_gl5bk")
