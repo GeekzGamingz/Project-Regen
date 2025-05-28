@@ -10,14 +10,14 @@ var connected_peer: String
 #Local Nodes
 @onready var customization: Control = $"../UI_Customization"
 @onready var text_waiting_room: TextEdit = $PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom
-@onready var sprites_colors: Node2D = $PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
+@onready var sprites_colors: Node2D = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
 #Tabs
 @onready var sub_menus: TabContainer = $HBoxContainer/SubMenus
 @onready var tab_singleplayer: VBoxContainer = $HBoxContainer/SubMenus/SinglePlayer
 @onready var tab_multiplayer: VBoxContainer = $HBoxContainer/SubMenus/Multiplayer
 @onready var tab_container: TabContainer = $PopUpContainer/TabContainer
 @onready var error_container: VBoxContainer = $PopUpContainer/TabContainer/ErrorContainer
-@onready var character_container: VBoxContainer = $PopUpContainer/TabContainer/CharacterContainer
+@onready var character_container: CenterContainer = $PopUpContainer/TabContainer/CharacterContainer
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:

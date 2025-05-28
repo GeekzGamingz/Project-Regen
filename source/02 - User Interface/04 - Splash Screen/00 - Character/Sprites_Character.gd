@@ -37,7 +37,7 @@ var customize_type: String
 }
 #OnReady Variables
 #Local Nodes
-@onready var splash_screen: Control = $"../../../../../../.."
+@onready var splash_screen: Control = $"../../../../../../../.."
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
 @onready var sprite_player: AnimationPlayer = $AnimPlayer_Sprites
 @onready var sprites_body: Node2D = $Sprites_Body

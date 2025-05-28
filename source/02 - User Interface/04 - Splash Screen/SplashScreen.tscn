@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=91 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average.png" id="13_jbo3k"]
 [ext_resource type="Script" uid="uid://ir1dlhar68ga" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprites_Colors.gd" id="13_vd0bi"]
 [ext_resource type="Texture2D" uid="uid://duq2a6ueymj4x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/00 - Average/leg_right_average_average.png" id="14_1d2am"]
-[ext_resource type="Script" uid="uid://16uqyg5m0m2k" path="res://source/02 - User Interface/04 - Splash Screen/Sprites_Body.gd" id="14_fmykm"]
+[ext_resource type="Script" uid="uid://16uqyg5m0m2k" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprites_Body.gd" id="14_fmykm"]
 [ext_resource type="Script" uid="uid://bsqtittxy2e8f" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Base.gd" id="15_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average.png" id="15_ttxp8"]
 [ext_resource type="Texture2D" uid="uid://dcge35nolthxw" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/00 - Short/00 - Average/torso_short_average.png" id="16_evdrp"]
@@ -42,15 +42,15 @@
 [ext_resource type="Texture2D" uid="uid://b867wycyshuds" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/01 - Chub/arm_right_average_chub.png" id="33_msdjq"]
 [ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub.png" id="34_3leut"]
 [ext_resource type="Script" uid="uid://k1jbq4kxcgiu" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_Beard.gd" id="34_lbb6o"]
-[ext_resource type="Script" uid="uid://dxlvormp5vh62" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_ArmLeft.gd" id="35_02o5o"]
+[ext_resource type="Script" uid="uid://dxlvormp5vh62" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_ArmLeft.gd" id="35_02o5o"]
 [ext_resource type="Texture2D" uid="uid://bgb7oqktsb45a" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/00 - Short/00 - Average/arm_left_short_average.png" id="36_76nu5"]
 [ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average.png" id="37_bx8p5"]
 [ext_resource type="Texture2D" uid="uid://b2d3yewrd3jb4" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/00 - Average/arm_left_tall_average.png" id="38_srcmj"]
 [ext_resource type="Texture2D" uid="uid://qrvfe7il0q5t" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/00 - Short/01 - Chub/arm_left_short_chub.png" id="39_bf8bm"]
 [ext_resource type="Texture2D" uid="uid://vlb05s5gg0s0" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/01 - Chub/arm_left_average_chub.png" id="40_6b28o"]
 [ext_resource type="Texture2D" uid="uid://c1p33tekveo7p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/01 - Chub/arm_left_tall_chub.png" id="41_g0xul"]
-[ext_resource type="Script" uid="uid://dmy1lpwatmwwa" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_LegLeft.gd" id="43_741ey"]
-[ext_resource type="Script" uid="uid://bj4sqvgpognpp" path="res://source/02 - User Interface/04 - Splash Screen/Sprite_LegRight.gd" id="43_qnolk"]
+[ext_resource type="Script" uid="uid://dmy1lpwatmwwa" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_LegLeft.gd" id="43_741ey"]
+[ext_resource type="Script" uid="uid://bj4sqvgpognpp" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprite_LegRight.gd" id="43_qnolk"]
 [ext_resource type="Texture2D" uid="uid://ctni6ayudkc50" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/00 - Short/00 - Average/leg_right_short_average.png" id="44_bf8bm"]
 [ext_resource type="Texture2D" uid="uid://bcifoimpu5586" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/00 - Short/00 - Average/leg_left_short_average.png" id="44_ec37u"]
 [ext_resource type="Texture2D" uid="uid://c1ru0iumk56s2" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/00 - Average/leg_right_tall_average.png" id="45_6b28o"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c0djubi4aj813" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/01 - Chub/leg_right_tall_chub.png" id="48_t82hm"]
 [ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack.png" id="57_tdta2"]
 [ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack.png" id="59_vd0bi"]
+[ext_resource type="Script" uid="uid://xwee2yl0wgdh" path="res://source/02 - User Interface/04 - Splash Screen/Button_Save.gd" id="64_kv564"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -1742,11 +1743,10 @@ mouse_filter = 2
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hyep0")
-current_tab = 4
+current_tab = 0
 tabs_visible = false
 
 [node name="UsernameContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1893,33 +1893,37 @@ alignment = 1
 editable = false
 expand_to_text_length = true
 
-[node name="CharacterContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer"]
+[node name="CharacterContainer" type="CenterContainer" parent="PopUpContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Label_Character" type="Label" parent="PopUpContainer/TabContainer/CharacterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+layout_mode = 2
+
+[node name="Label_Character" type="Label" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "[Character]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Selection_Character" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+[node name="Selection_Character" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Previous_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+[node name="Previous_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("10_ttxp8")
 texture_pressed = ExtResource("11_l5w5a")
 flip_h = true
 
-[node name="SubviewportContainer" type="SubViewportContainer" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+[node name="SubviewportContainer" type="SubViewportContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SubViewport" type="SubViewport" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer"]
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
@@ -1927,18 +1931,18 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(64, 64)
 render_target_update_mode = 0
 
-[node name="Sprites_Character" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport"]
+[node name="Sprites_Character" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport"]
 position = Vector2(32, 32)
 scale = Vector2(2, 2)
 script = ExtResource("12_jbo3k")
 
-[node name="Sprites_Colors" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+[node name="Sprites_Colors" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 script = ExtResource("13_vd0bi")
 
-[node name="Sprites_Body" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+[node name="Sprites_Body" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 script = ExtResource("14_fmykm")
 
-[node name="Sprite_Base" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_Base" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_l5w5a")
 texture = ExtResource("12_bux6d")
 hframes = 4
@@ -1948,7 +1952,7 @@ script = ExtResource("15_l5w5a")
 bases_average = Array[Resource]([ExtResource("16_evdrp"), ExtResource("12_bux6d"), ExtResource("17_gpnjh")])
 bases_chub = Array[Resource]([ExtResource("18_yyh4g"), ExtResource("19_5eudg"), ExtResource("20_i7il1")])
 
-[node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_ttxp8")
 texture = ExtResource("23_ictme")
 hframes = 4
@@ -1957,7 +1961,7 @@ frame = 8
 script = ExtResource("22_gpnjh")
 ears = Array[Resource]([ExtResource("23_ictme"), ExtResource("23_02o5o"), ExtResource("24_76nu5"), ExtResource("25_bx8p5"), ExtResource("26_srcmj"), ExtResource("27_bf8bm")])
 
-[node name="Sprite_ArmLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_ArmLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_7i5et")
 texture = SubResource("CompressedTexture2D_s4vk7")
 hframes = 4
@@ -1971,7 +1975,7 @@ arms_left_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("39
 arms_left_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("40_6b28o")])
 arms_left_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("41_g0xul")])
 
-[node name="Sprite_ArmRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_ArmRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_i668s")
 texture = ExtResource("13_jbo3k")
 hframes = 4
@@ -1985,7 +1989,7 @@ arms_right_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("3
 arms_right_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("33_msdjq")])
 arms_right_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("34_3leut")])
 
-[node name="Sprite_LegLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_LegLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_yyh4g")
 texture = ExtResource("15_ttxp8")
 hframes = 4
@@ -1999,7 +2003,7 @@ legs_left_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("46
 legs_left_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("47_fmykm")])
 legs_left_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("48_kv564")])
 
-[node name="Sprite_LegRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+[node name="Sprite_LegRight" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_gpnjh")
 texture = ExtResource("14_1d2am")
 hframes = 4
@@ -2013,9 +2017,9 @@ legs_right_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("4
 legs_right_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("47_72r7o")])
 legs_right_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("48_t82hm")])
 
-[node name="Sprites_Hair" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+[node name="Sprites_Hair" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 
-[node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
 material = SubResource("ShaderMaterial_i7il1")
 texture = ExtResource("23_ictme")
 hframes = 4
@@ -2024,7 +2028,7 @@ frame = 12
 script = ExtResource("32_hj702")
 hairs = Array[Resource]([ExtResource("23_ictme"), ExtResource("57_tdta2")])
 
-[node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
 material = SubResource("ShaderMaterial_xmovv")
 texture = ExtResource("23_ictme")
 hframes = 4
@@ -2033,48 +2037,60 @@ frame = 12
 script = ExtResource("34_lbb6o")
 beards = Array[Resource]([ExtResource("23_ictme"), ExtResource("59_vd0bi")])
 
-[node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
 
-[node name="AnimPlayer_Sprites" type="AnimationPlayer" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
+[node name="AnimPlayer_Sprites" type="AnimationPlayer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 libraries = {
 &"": SubResource("AnimationLibrary_wrw11")
 }
 autoplay = "still_down"
 
-[node name="Next_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/Selection_Character"]
+[node name="Next_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("10_ttxp8")
 texture_pressed = ExtResource("11_l5w5a")
 
-[node name="RotationContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+[node name="RotationContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Rotate_Counter" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
+[node name="Rotate_Counter" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("21_i668s")
 texture_pressed = ExtResource("22_ql4uc")
 
-[node name="Rotate_Clockwise" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/RotationContainer"]
+[node name="Rotate_Clockwise" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("21_i668s")
 texture_pressed = ExtResource("22_ql4uc")
 flip_h = true
 
-[node name="SaveContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+[node name="SaveContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Button_Save" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/SaveContainer"]
+[node name="Button_Save" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
 text = "Save"
+script = ExtResource("64_kv564")
 
-[node name="Button_Delete" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/SaveContainer"]
+[node name="Button_Delete" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
 text = "Delete"
+
+[node name="LineEdit_Profile" type="LineEdit" parent="PopUpContainer/TabContainer/CharacterContainer"]
+visible = false
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+mouse_filter = 2
+placeholder_text = "Profile Name"
+alignment = 1
+expand_to_text_length = true
+context_menu_enabled = false
+caret_blink = true
 
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
@@ -2092,5 +2108,7 @@ text = "Delete"
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" to="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" method="_on_button_up"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/RotationContainer/Rotate_Counter" to="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_counter_button_up"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/RotationContainer/Rotate_Clockwise" to="PopUpContainer/TabContainer/CharacterContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_clockwise_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Counter" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_counter_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Clockwise" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_clockwise_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_up"]
+[connection signal="text_submitted" from="PopUpContainer/TabContainer/CharacterContainer/LineEdit_Profile" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_line_profile_text_submitted"]

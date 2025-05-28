@@ -9,7 +9,7 @@ extends Sprite2D
 #OnReady Variables
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
-@onready var splash_screen: Control = $"../../../../../../../../.."
+@onready var splash_screen: Control = $"../../../../../../../../../.."
 @onready var sprite_base: Sprite2D = sprites_character.get_node("Sprites_Body/Sprite_Base")
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
 #------------------------------------------------------------------------------#
