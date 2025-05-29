@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=92 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="7_skjf1"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="8_8kquk"]
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
+[ext_resource type="Script" uid="uid://b268m2vf2s3g8" path="res://source/02 - User Interface/04 - Splash Screen/Selection_Character.gd" id="10_bukj7"]
 [ext_resource type="Texture2D" uid="uid://ppxjcuancwvd" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_unpressed.png" id="10_ttxp8"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="11_1rbu0"]
 [ext_resource type="Texture2D" uid="uid://cs37i2q38csqb" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_pressed.png" id="11_l5w5a"]
@@ -63,7 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://c0djubi4aj813" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/01 - Chub/leg_right_tall_chub.png" id="48_t82hm"]
 [ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack.png" id="57_tdta2"]
 [ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack.png" id="59_vd0bi"]
-[ext_resource type="Script" uid="uid://xwee2yl0wgdh" path="res://source/02 - User Interface/04 - Splash Screen/Button_Save.gd" id="64_kv564"]
+[ext_resource type="Script" uid="uid://xwee2yl0wgdh" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Button_Save.gd" id="64_kv564"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -1910,6 +1911,7 @@ vertical_alignment = 1
 
 [node name="Selection_Character" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
+script = ExtResource("10_bukj7")
 
 [node name="Previous_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character"]
 layout_mode = 2
@@ -2108,6 +2110,8 @@ caret_blink = true
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" to="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" method="_on_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Previous_Character" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character" method="_on_previous_character_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Next_Character" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character" method="_on_next_character_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Counter" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_counter_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Clockwise" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_clockwise_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_up"]

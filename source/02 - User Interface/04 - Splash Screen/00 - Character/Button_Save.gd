@@ -1,9 +1,16 @@
 extends Button
 #------------------------------------------------------------------------------#
 #Variables
+#Dictionaries
+var profiles = []
 #OnReady Variables
 #Local Nodes
 @onready var line_profile: LineEdit = $"../../../LineEdit_Profile"
+@onready var selection_character: HBoxContainer = $"../../Selection_Character"
+@onready var sprites_character: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"
+#------------------------------------------------------------------------------#
+#Ready Function
+func _ready() -> void: load_profiles(G.PATH_PROFILES)
 #------------------------------------------------------------------------------#
 #Input Functions
 func _input(event: InputEvent) -> void:
@@ -17,8 +24,13 @@ func _on_button_up() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 #Profile Text Submitted
 func _on_line_profile_text_submitted(new_text: String) -> void:
-	clear_line()
-	save_profile()
+	if new_text != "":
+		sprites_character.sprite_info.set("profile", new_text)
+		profiles.append(sprites_character.sprite_info.duplicate())
+		G.SAVE(G.PATH_PROFILES, profiles)
+		clear_line()
+		selection_character.character_counter = profiles.size() - 1
+		selection_character.check_character()
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Clear Profile Line
@@ -26,5 +38,6 @@ func clear_line():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	line_profile.set_deferred("visible", false)
 	line_profile.text = ""
-#Save Profile
-func save_profile(): pass
+#Load Profiles
+func load_profiles(path):
+	if FileAccess.file_exists(path): profiles = G.LOAD(path)

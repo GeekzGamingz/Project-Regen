@@ -18,6 +18,7 @@ var customize_type: String
 #Exported Variables
 #Dictionaries
 @export var sprite_info: Dictionary = {
+	"profile": String(""),
 	"height": int(1),
 	"chub": bool(false),
 	"wheelchair": bool(false),
