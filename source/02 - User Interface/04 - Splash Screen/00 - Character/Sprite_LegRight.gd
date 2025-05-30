@@ -16,6 +16,7 @@ extends Sprite2D
 #OnReady Variables
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
+@onready var selection_character: HBoxContainer = $"../../../../.."
 @onready var splash_screen: Control = $"../../../../../../../../../.."
 @onready var sprite_base: Sprite2D = sprites_character.get_node("Sprites_Body/Sprite_Base")
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
@@ -31,15 +32,29 @@ func uic_leg_right_change(scroll):
 		"Next": leg_right_counter += 1
 	if leg_right_counter == legs_right_average_average.size(): leg_right_counter = 0
 	elif leg_right_counter < 0: leg_right_counter = legs_right_average_average.size() - 1
+	sprites_character.sprite_info["leg_right"] = leg_right_counter
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_leg_right():
-	match(sprites_character.is_chub):
-		false: match(sprite_base.height_counter):
-			0: texture = legs_right_short_average[leg_right_counter]
-			1: texture = legs_right_average_average[leg_right_counter]
-			2: texture = legs_right_tall_average[leg_right_counter]
-		true: match(sprite_base.height_counter):
-			0: texture = legs_right_short_chub[leg_right_counter]
-			1: texture = legs_right_average_chub[leg_right_counter]
-			2: texture = legs_right_tall_chub[leg_right_counter]
+	if selection_character.is_new:
+		match(sprites_character.is_chub):
+			false: match(sprite_base.height_counter):
+				0: texture = legs_right_short_average[leg_right_counter]
+				1: texture = legs_right_average_average[leg_right_counter]
+				2: texture = legs_right_tall_average[leg_right_counter]
+			true: match(sprite_base.height_counter):
+				0: texture = legs_right_short_chub[leg_right_counter]
+				1: texture = legs_right_average_chub[leg_right_counter]
+				2: texture = legs_right_tall_chub[leg_right_counter]
+	else:
+		var counter = selection_character.character_counter
+		var profiles = selection_character.save_container.button_save.profiles
+		match(profiles[counter].get("chub")):
+			false: match(int(profiles[counter].get("height"))):
+				0: texture = legs_right_short_average[profiles[counter].get("leg_right")]
+				1: texture = legs_right_average_average[profiles[counter].get("leg_right")]
+				2: texture = legs_right_tall_average[profiles[counter].get("leg_right")]
+			true: match(int(profiles[counter].get("height"))):
+				0: texture = legs_right_short_chub[profiles[counter].get("leg_right")]
+				1: texture = legs_right_average_chub[profiles[counter].get("leg_right")]
+				2: texture = legs_right_tall_chub[profiles[counter].get("leg_right")]

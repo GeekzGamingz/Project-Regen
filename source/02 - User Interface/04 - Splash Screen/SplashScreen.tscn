@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=93 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack.png" id="57_tdta2"]
 [ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack.png" id="59_vd0bi"]
 [ext_resource type="Script" uid="uid://xwee2yl0wgdh" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Button_Save.gd" id="64_kv564"]
+[ext_resource type="Script" uid="uid://d2fyiq2ipog6i" path="res://source/02 - User Interface/04 - Splash Screen/Save_Container.gd" id="65_gvb8w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -1744,10 +1745,11 @@ mouse_filter = 2
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hyep0")
-current_tab = 0
+current_tab = 4
 tabs_visible = false
 
 [node name="UsernameContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1895,7 +1897,6 @@ editable = false
 expand_to_text_length = true
 
 [node name="CharacterContainer" type="CenterContainer" parent="PopUpContainer/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
@@ -1905,12 +1906,13 @@ layout_mode = 2
 [node name="Label_Character" type="Label" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-text = "[Character]"
+text = "[New Character]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Selection_Character" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
+alignment = 1
 script = ExtResource("10_bukj7")
 
 [node name="Previous_Character" type="TextureButton" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character"]
@@ -2073,13 +2075,25 @@ flip_h = true
 [node name="SaveContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
+script = ExtResource("65_gvb8w")
+
+[node name="Button_New" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
+visible = false
+layout_mode = 2
+text = "New"
 
 [node name="Button_Save" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
 text = "Save"
 script = ExtResource("64_kv564")
 
+[node name="Button_Edit" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
+visible = false
+layout_mode = 2
+text = "Edit"
+
 [node name="Button_Delete" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
+visible = false
 layout_mode = 2
 text = "Delete"
 

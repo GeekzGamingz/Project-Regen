@@ -17,6 +17,7 @@ var customize_type: String
 @export var is_wheels: bool = false
 #Exported Variables
 #Dictionaries
+var old_sprite_info: Dictionary = {}
 @export var sprite_info: Dictionary = {
 	"profile": String(""),
 	"height": int(1),
@@ -67,6 +68,12 @@ func _ready() -> void:
 	ui_customization.connect("uic_beard_change", check_sprites)
 	ui_customization.connect("uic_animation_change", uic_animation_change)
 #------------------------------------------------------------------------------#
+#Process Function
+func _process(_delta: float) -> void:
+	if old_sprite_info != sprite_info:
+		check_sprites("")
+	old_sprite_info = sprite_info
+#------------------------------------------------------------------------------#
 #Signaled Functions
 #Rotate Counter Clockwise
 func _on_rotate_counter_button_up() -> void:
@@ -95,6 +102,7 @@ func check_sprites(_scroll):
 #Change Chub
 func uic_chub_change(toggled_on):
 	is_chub = toggled_on
+	sprite_info["chub"] = toggled_on
 	check_sprites(is_chub)
 #Change Animation
 func uic_animation_change(scroll):
@@ -109,24 +117,22 @@ func uic_animation_change(scroll):
 #Check Animations
 func check_animation():
 	match(anim_counter):
-		0:
-			match(anim_direction):
-				0: sprite_player.play("still_down")
-				1:
-					sprites_body.switch_limbs("Left")
-					sprite_player.play("still_left")
-					
-				2: sprite_player.play("still_up")
-				3:
-					sprites_body.switch_limbs("Right")
-					sprite_player.play("still_right")
-		1:
-			match(anim_direction):
-				0: sprite_player.play("walk_down")
-				1:
-					sprites_body.switch_limbs("Left")
-					sprite_player.play("walk_left")
-				2: sprite_player.play("walk_up")
-				3:
-					sprites_body.switch_limbs("Right")
-					sprite_player.play("walk_right")
+		0: match(anim_direction):
+			0: sprite_player.play("still_down")
+			1:
+				sprites_body.switch_limbs("Left")
+				sprite_player.play("still_left")
+				
+			2: sprite_player.play("still_up")
+			3:
+				sprites_body.switch_limbs("Right")
+				sprite_player.play("still_right")
+		1: match(anim_direction):
+			0: sprite_player.play("walk_down")
+			1:
+				sprites_body.switch_limbs("Left")
+				sprite_player.play("walk_left")
+			2: sprite_player.play("walk_up")
+			3:
+				sprites_body.switch_limbs("Right")
+				sprite_player.play("walk_right")

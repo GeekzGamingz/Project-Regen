@@ -16,6 +16,7 @@ extends Sprite2D
 #OnReady Variables
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
+@onready var selection_character: HBoxContainer = $"../../../../.."
 @onready var splash_screen: Control = $"../../../../../../../../../.."
 @onready var sprite_base: Sprite2D = sprites_character.get_node("Sprites_Body/Sprite_Base")
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
@@ -31,15 +32,29 @@ func uic_leg_left_change(scroll):
 		"Next": leg_left_counter += 1
 	if leg_left_counter == legs_left_average_average.size(): leg_left_counter = 0
 	elif leg_left_counter < 0: leg_left_counter = legs_left_average_average.size() - 1
+	sprites_character.sprite_info["leg_left"] = leg_left_counter
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_leg_left():
-	match(sprites_character.is_chub):
-		false: match(sprite_base.height_counter):
-			0: texture = legs_left_short_average[leg_left_counter]
-			1: texture = legs_left_average_average[leg_left_counter]
-			2: texture = legs_left_tall_average[leg_left_counter]
-		true: match(sprite_base.height_counter):
-			0: texture = legs_left_short_chub[leg_left_counter]
-			1: texture = legs_left_average_chub[leg_left_counter]
-			2: texture = legs_left_tall_chub[leg_left_counter]
+	if selection_character.is_new:
+		match(sprites_character.is_chub):
+			false: match(sprite_base.height_counter):
+				0: texture = legs_left_short_average[leg_left_counter]
+				1: texture = legs_left_average_average[leg_left_counter]
+				2: texture = legs_left_tall_average[leg_left_counter]
+			true: match(sprite_base.height_counter):
+				0: texture = legs_left_short_chub[leg_left_counter]
+				1: texture = legs_left_average_chub[leg_left_counter]
+				2: texture = legs_left_tall_chub[leg_left_counter]
+	else:
+		var counter = selection_character.character_counter
+		var profiles = selection_character.save_container.button_save.profiles
+		match(profiles[counter].get("chub")):
+			false: match(int(profiles[counter].get("height"))):
+				0: texture = legs_left_short_average[profiles[counter].get("leg_left")]
+				1: texture = legs_left_average_average[profiles[counter].get("leg_left")]
+				2: texture = legs_left_tall_average[profiles[counter].get("leg_left")]
+			true: match(int(profiles[counter].get("height"))):
+				0: texture = legs_left_short_chub[profiles[counter].get("leg_left")]
+				1: texture = legs_left_average_chub[profiles[counter].get("leg_left")]
+				2: texture = legs_left_tall_chub[profiles[counter].get("leg_left")]
