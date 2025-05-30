@@ -15,34 +15,13 @@ var customize_type: String
 #Bools
 @export var is_chub: bool = false
 @export var is_wheels: bool = false
-#Exported Variables
-#Dictionaries
-var old_sprite_info: Dictionary = {}
-@export var sprite_info: Dictionary = {
-	"profile": String(""),
-	"height": int(1),
-	"chub": bool(false),
-	"wheelchair": bool(false),
-	"arm_left": int(1),
-	"arm_right": int(1),
-	"leg_left": int(1), 
-	"leg_right": int(1), 
-	"ears": int(0),
-	"eyeL_color": String("Button_Color1"),
-	"eyeR_color": String("Button_Color1"),
-	"skin_color": String("Button_Color1"),
-	"hair": int(0),
-	"hair_color": String("Button_Color1"),
-	"bangs": int(0),
-	"beard": int(0),
-	"beard_color": String("Button_Color1")
-}
 #OnReady Variables
 #Local Nodes
 @onready var splash_screen: Control = $"../../../../../../../.."
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
-@onready var sprite_player: AnimationPlayer = $AnimPlayer_Sprites
+@onready var sprites_dictionary: Node2D = $Sprites_Dictionary
 @onready var sprites_body: Node2D = $Sprites_Body
+@onready var sprite_player: AnimationPlayer = $AnimPlayer_Sprites
 #Sprites
 @onready var sprite_ears: Sprite2D = $Sprites_Body/Sprite_Ears
 @onready var sprite_base: Sprite2D = $Sprites_Body/Sprite_Base
@@ -70,9 +49,9 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Process Function
 func _process(_delta: float) -> void:
-	if old_sprite_info != sprite_info:
+	if sprites_dictionary.old_sprite_info != sprites_dictionary.sprite_info:
 		check_sprites("")
-	old_sprite_info = sprite_info
+	sprites_dictionary.old_sprite_info = sprites_dictionary.sprite_info
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Rotate Counter Clockwise
@@ -102,7 +81,7 @@ func check_sprites(_scroll):
 #Change Chub
 func uic_chub_change(toggled_on):
 	is_chub = toggled_on
-	sprite_info["chub"] = toggled_on
+	sprites_dictionary.sprite_info["chub"] = toggled_on
 	check_sprites(is_chub)
 #Change Animation
 func uic_animation_change(scroll):

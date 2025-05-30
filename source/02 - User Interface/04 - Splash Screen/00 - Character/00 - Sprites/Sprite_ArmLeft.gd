@@ -17,6 +17,7 @@ extends Sprite2D
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
 @onready var selection_character: HBoxContainer = $"../../../../.."
+@onready var sprites_dictionary: Node2D = $"../../Sprites_Dictionary"
 @onready var splash_screen: Control = $"../../../../../../../../../.."
 @onready var sprite_base: Sprite2D = sprites_character.get_node("Sprites_Body/Sprite_Base")
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
@@ -32,7 +33,7 @@ func uic_arm_left_change(scroll):
 		"Next": arm_left_counter += 1
 	if arm_left_counter == arms_left_average_average.size(): arm_left_counter = 0
 	elif arm_left_counter < 0: arm_left_counter = arms_left_average_average.size() - 1
-	sprites_character.sprite_info["arm_left"] = arm_left_counter
+	sprites_dictionary.sprite_info["arm_left"] = arm_left_counter
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_arm_left():

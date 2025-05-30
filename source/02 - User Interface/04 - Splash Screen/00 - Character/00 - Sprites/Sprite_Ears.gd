@@ -10,6 +10,7 @@ extends Sprite2D
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
 @onready var selection_character: HBoxContainer = $"../../../../.."
+@onready var sprites_dictionary: Node2D = $"../../Sprites_Dictionary"
 @onready var splash_screen: Control = $"../../../../../../../../../.."
 @onready var sprite_base: Sprite2D = sprites_character.get_node("Sprites_Body/Sprite_Base")
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
@@ -25,7 +26,7 @@ func uic_ear_change(scroll):
 		"Next": ear_counter += 1
 	if ear_counter == ears.size(): ear_counter = 0
 	elif ear_counter < 0: ear_counter = ears.size() -1
-	sprites_character.sprite_info["ears"] = ear_counter
+	sprites_dictionary.sprite_info["ears"] = ear_counter
 	sprites_character.check_sprites(scroll)
 #------------------------------------------------------------------------------#
 #Custom Functions

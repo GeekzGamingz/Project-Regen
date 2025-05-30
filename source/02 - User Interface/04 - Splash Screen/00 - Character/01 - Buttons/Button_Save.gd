@@ -7,6 +7,7 @@ var profiles = []
 #Local Nodes
 @onready var line_profile: LineEdit = $"../../../LineEdit_Profile"
 @onready var selection_character: HBoxContainer = $"../../Selection_Character"
+@onready var sprites_dictionary: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary"
 @onready var sprites_character: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"
 #------------------------------------------------------------------------------#
 #Ready Function
@@ -25,8 +26,8 @@ func _on_button_up() -> void:
 #Profile Text Submitted
 func _on_line_profile_text_submitted(new_text: String) -> void:
 	if new_text != "":
-		sprites_character.sprite_info.set("profile", new_text)
-		profiles.append(sprites_character.sprite_info.duplicate())
+		sprites_dictionary.sprite_info.set("profile", new_text)
+		profiles.append(sprites_dictionary.sprite_info.duplicate())
 		G.SAVE(G.PATH_PROFILES, profiles)
 		clear_line()
 		selection_character.character_counter = profiles.size() - 1

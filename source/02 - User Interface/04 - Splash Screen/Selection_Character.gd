@@ -14,7 +14,7 @@ var is_new: bool = false
 @onready var next_character: TextureButton = $Next_Character
 @onready var label_character: Label = $"../Label_Character"
 @onready var save_container: HBoxContainer = $"../SaveContainer"
-@onready var sprites_character: Node2D = $SubviewportContainer/SubViewport/Sprites_Character
+@onready var sprites_dictionary: Node2D = $SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary
 @onready var sprites_colors: Node2D = $SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
 #------------------------------------------------------------------------------#
 #Ready Function
@@ -40,7 +40,7 @@ func check_character():
 		if character_counter < 0: character_counter = save_container.button_save.profiles.size() - 1
 		elif character_counter >= save_container.button_save.profiles.size(): character_counter = 0
 		label_character.text = str("✰ ", save_container.button_save.profiles[character_counter].get("profile"), " ✰")
-		sprites_character.sprite_info = save_container.button_save.profiles[character_counter].duplicate()
+		sprites_dictionary.sprite_info = save_container.button_save.profiles[character_counter].duplicate()
 		sprites_colors.check_colors()
 	else:
 		loaded_buttons(false)

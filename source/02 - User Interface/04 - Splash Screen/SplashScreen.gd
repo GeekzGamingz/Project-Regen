@@ -11,6 +11,7 @@ var connected_peer: String
 @onready var customization: Control = $"../UI_Customization"
 @onready var text_waiting_room: TextEdit = $PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom
 @onready var sprites_colors: Node2D = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
+@onready var selection_character: HBoxContainer = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character
 @onready var previous_character: TextureButton = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Previous_Character
 @onready var next_character: TextureButton = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Next_Character
 #Tabs
@@ -31,18 +32,21 @@ func _ready() -> void:
 #Single Player
 func _on_button_single_player_button_up() -> void:
 	visibility_reset()
+	selection_character.check_character()
 	sub_menus.set_deferred("visible", true)
 	tab_singleplayer.set_deferred("visible", true)
 	NETWORK.single_player = true
 #Multiplayer
 func _on_button_multiplayer_button_up() -> void:
 	visibility_reset()
+	selection_character.check_character()
 	sub_menus.set_deferred("visible", true)
 	tab_multiplayer.set_deferred("visible", true)
 	NETWORK.single_player = false
 #Character
 func _on_button_character_button_up() -> void:
 	visibility_reset()
+	#selection_character.check_character()
 	tab_container.set_deferred("visible", true)
 	character_container.set_deferred("visible", true)
 	sprites_colors.check_colors()

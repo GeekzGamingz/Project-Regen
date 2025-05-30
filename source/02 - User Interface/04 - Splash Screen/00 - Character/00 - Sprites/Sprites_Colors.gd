@@ -19,7 +19,7 @@ var colors_eyeR: Array = []
 @onready var eye_left: GridContainer = COLOR_SELECT.get_node("Eyes/Left/Grid_Left")
 @onready var eye_right: GridContainer = COLOR_SELECT.get_node("Eyes/Right/Grid_Right")
 #Local Nodes
-@onready var sprites_character: Node2D = $".."
+@onready var sprites_dictionary: Node2D = $"../Sprites_Dictionary"
 #Sprites
 @onready var sprite_base: Sprite2D = $"../Sprites_Body/Sprite_Base"
 @onready var sprite_ears: Sprite2D = $"../Sprites_Body/Sprite_Ears"
@@ -48,19 +48,19 @@ func _ready() -> void:
 #Custom Signaled Functions
 func send_colors(color_id, sprite_to_color, eyes_linked, hair_linked):
 	match(sprite_to_color):
-		"Skin": sprites_character.sprite_info["skin_color"] = color_id
+		"Skin": sprites_dictionary.sprite_info["skin_color"] = color_id
 		"Hair":
-			sprites_character.sprite_info["hair_color"] = color_id
-			if hair_linked: sprites_character.sprite_info["beard_color"] = color_id
+			sprites_dictionary.sprite_info["hair_color"] = color_id
+			if hair_linked: sprites_dictionary.sprite_info["beard_color"] = color_id
 		"Beard":
-			sprites_character.sprite_info["beard_color"] = color_id
-			if hair_linked: sprites_character.sprite_info["hair_color"] = color_id
+			sprites_dictionary.sprite_info["beard_color"] = color_id
+			if hair_linked: sprites_dictionary.sprite_info["hair_color"] = color_id
 		"Eye1":
-			sprites_character.sprite_info["eyeL_color"] = color_id
-			if eyes_linked: sprites_character.sprite_info["eyeR_color"] = color_id
+			sprites_dictionary.sprite_info["eyeL_color"] = color_id
+			if eyes_linked: sprites_dictionary.sprite_info["eyeR_color"] = color_id
 		"Eye2":
-			sprites_character.sprite_info["eyeR_color"] = color_id
-			if eyes_linked: sprites_character.sprite_info["eyeL_color"] = color_id
+			sprites_dictionary.sprite_info["eyeR_color"] = color_id
+			if eyes_linked: sprites_dictionary.sprite_info["eyeL_color"] = color_id
 	check_colors()
 #------------------------------------------------------------------------------#
 #Custom Functions
@@ -74,19 +74,19 @@ func assign_colors():
 #Update Players
 func check_colors():
 	for skin_color in colors_skin:
-		if skin_color.name == sprites_character.sprite_info["skin_color"]: 
+		if skin_color.name == sprites_dictionary.sprite_info["skin_color"]: 
 			update_colors(skin_color)
 	for hair_color in colors_hair:
-		if hair_color.name == sprites_character.sprite_info["hair_color"]:
+		if hair_color.name == sprites_dictionary.sprite_info["hair_color"]:
 			update_colors(hair_color)
 	for beard_color in colors_beard:
-		if beard_color.name == sprites_character.sprite_info["beard_color"]:
+		if beard_color.name == sprites_dictionary.sprite_info["beard_color"]:
 			update_colors(beard_color)
 	for eye_color in colors_eyeL:
-		if eye_color.name == sprites_character.sprite_info["eyeL_color"]:
+		if eye_color.name == sprites_dictionary.sprite_info["eyeL_color"]:
 			update_colors(eye_color)
 	for eye_color in colors_eyeR:
-		if eye_color.name == sprites_character.sprite_info["eyeR_color"]:
+		if eye_color.name == sprites_dictionary.sprite_info["eyeR_color"]:
 			update_colors(eye_color)
 #Update Colors
 func update_colors(button_color):
