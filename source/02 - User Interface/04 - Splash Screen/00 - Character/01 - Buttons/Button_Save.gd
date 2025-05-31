@@ -27,11 +27,13 @@ func _on_button_up() -> void:
 func _on_line_profile_text_submitted(new_text: String) -> void:
 	if new_text != "":
 		sprites_dictionary.sprite_info.set("profile", new_text)
-		profiles.append(sprites_dictionary.sprite_info.duplicate())
+		for character in profiles:
+			if character.get("profile") == new_text: profiles.erase(character)
+		profiles.push_back(sprites_dictionary.sprite_info.duplicate())
 		G.SAVE(G.PATH_PROFILES, profiles)
-		clear_line()
 		selection_character.character_counter = profiles.size() - 1
 		selection_character.check_character()
+		clear_line()
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Clear Profile Line
