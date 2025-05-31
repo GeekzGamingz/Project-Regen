@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=96 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://86t6mv5ec0xj" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette.png" id="7_skjf1"]
 [ext_resource type="Texture2D" uid="uid://cnqw3kwmo6ql" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/Palette-Pressed.png" id="8_8kquk"]
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/02 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
-[ext_resource type="Script" uid="uid://b268m2vf2s3g8" path="res://source/02 - User Interface/04 - Splash Screen/Selection_Character.gd" id="10_bukj7"]
+[ext_resource type="Script" uid="uid://b268m2vf2s3g8" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Selection_Character.gd" id="10_bukj7"]
 [ext_resource type="Texture2D" uid="uid://ppxjcuancwvd" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_unpressed.png" id="10_ttxp8"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="11_1rbu0"]
 [ext_resource type="Texture2D" uid="uid://cs37i2q38csqb" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_pressed.png" id="11_l5w5a"]
@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://ir1dlhar68ga" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/00 - Sprites/Sprites_Colors.gd" id="13_vd0bi"]
 [ext_resource type="Texture2D" uid="uid://duq2a6ueymj4x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/00 - Average/leg_right_average_average.png" id="14_1d2am"]
 [ext_resource type="Script" uid="uid://16uqyg5m0m2k" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/00 - Sprites/Sprites_Body.gd" id="14_fmykm"]
-[ext_resource type="Script" uid="uid://de3i48qktfb4w" path="res://source/02 - User Interface/04 - Splash Screen/Sprites_Dictionary.gd" id="14_lg22v"]
+[ext_resource type="Script" uid="uid://de3i48qktfb4w" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Sprites_Dictionary.gd" id="14_lg22v"]
 [ext_resource type="Script" uid="uid://bsqtittxy2e8f" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/00 - Sprites/Sprite_Base.gd" id="15_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average.png" id="15_ttxp8"]
 [ext_resource type="Texture2D" uid="uid://dcge35nolthxw" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/00 - Short/00 - Average/torso_short_average.png" id="16_evdrp"]
@@ -66,7 +66,8 @@
 [ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack.png" id="57_tdta2"]
 [ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack.png" id="59_vd0bi"]
 [ext_resource type="Script" uid="uid://xwee2yl0wgdh" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_Save.gd" id="64_kv564"]
-[ext_resource type="Script" uid="uid://d2fyiq2ipog6i" path="res://source/02 - User Interface/04 - Splash Screen/Save_Container.gd" id="65_gvb8w"]
+[ext_resource type="Script" uid="uid://d2fyiq2ipog6i" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Save_Container.gd" id="65_gvb8w"]
+[ext_resource type="Script" uid="uid://b7g4mefeuafqx" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_New.gd" id="67_br2aq"]
 [ext_resource type="Script" uid="uid://ysp0vd4ryqr5" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_Edit.gd" id="67_fy1yu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
@@ -2086,6 +2087,7 @@ script = ExtResource("65_gvb8w")
 visible = false
 layout_mode = 2
 text = "New"
+script = ExtResource("67_br2aq")
 
 [node name="Button_Save" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
@@ -2134,6 +2136,7 @@ caret_blink = true
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Next_Character" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character" method="_on_next_character_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Counter" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_counter_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/RotationContainer/Rotate_Clockwise" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character" method="_on_rotate_clockwise_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_New" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_New" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" method="_on_button_up"]
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/CharacterContainer/LineEdit_Profile" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_line_profile_text_submitted"]
