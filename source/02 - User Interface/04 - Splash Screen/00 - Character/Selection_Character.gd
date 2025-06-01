@@ -14,8 +14,15 @@ var is_new: bool = false
 @onready var next_character: TextureButton = $Next_Character
 @onready var label_character: Label = $"../Label_Character"
 @onready var save_container: HBoxContainer = $"../SaveContainer"
+@onready var button_save: Button = $"../SaveContainer/Button_Save"
 @onready var sprites_dictionary: Node2D = $SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary
 @onready var sprites_colors: Node2D = $SubviewportContainer/SubViewport/Sprites_Character/Sprites_Colors
+#------------------------------------------------------------------------------#
+#Process Functions
+func _process(_delta: float) -> void:
+	if button_save.profiles.size() == 1:
+		previous_character.set_deferred("visible", false)
+		next_character.set_deferred("visible", false)
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:

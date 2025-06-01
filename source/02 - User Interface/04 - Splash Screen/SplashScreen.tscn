@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=97 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -69,6 +69,7 @@
 [ext_resource type="Script" uid="uid://d2fyiq2ipog6i" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/Save_Container.gd" id="65_gvb8w"]
 [ext_resource type="Script" uid="uid://b7g4mefeuafqx" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_New.gd" id="67_br2aq"]
 [ext_resource type="Script" uid="uid://ysp0vd4ryqr5" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_Edit.gd" id="67_fy1yu"]
+[ext_resource type="Script" uid="uid://t7qqhfbud4qo" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/01 - Buttons/Button_Delete.gd" id="70_8llvl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4l3q"]
 
@@ -2104,6 +2105,7 @@ script = ExtResource("67_fy1yu")
 visible = false
 layout_mode = 2
 text = "Delete"
+script = ExtResource("70_8llvl")
 
 [node name="LineEdit_Profile" type="LineEdit" parent="PopUpContainer/TabContainer/CharacterContainer"]
 visible = false
@@ -2139,4 +2141,5 @@ caret_blink = true
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_New" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_New" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" method="_on_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" method="_on_button_up"]
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/CharacterContainer/LineEdit_Profile" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_line_profile_text_submitted"]

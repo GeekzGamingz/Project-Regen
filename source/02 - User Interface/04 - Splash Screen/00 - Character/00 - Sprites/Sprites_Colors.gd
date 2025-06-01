@@ -56,11 +56,11 @@ func send_colors(color_id, sprite_to_color, eyes_linked, hair_linked):
 			sprites_dictionary.sprite_info["beard_color"] = color_id
 			if hair_linked: sprites_dictionary.sprite_info["hair_color"] = color_id
 		"Eye1":
-			sprites_dictionary.sprite_info["eyeL_color"] = color_id
-			if eyes_linked: sprites_dictionary.sprite_info["eyeR_color"] = color_id
-		"Eye2":
 			sprites_dictionary.sprite_info["eyeR_color"] = color_id
 			if eyes_linked: sprites_dictionary.sprite_info["eyeL_color"] = color_id
+		"Eye2":
+			sprites_dictionary.sprite_info["eyeL_color"] = color_id
+			if eyes_linked: sprites_dictionary.sprite_info["eyeR_color"] = color_id
 	check_colors()
 #------------------------------------------------------------------------------#
 #Custom Functions

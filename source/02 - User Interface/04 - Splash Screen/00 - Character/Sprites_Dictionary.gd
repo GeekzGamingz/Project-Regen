@@ -49,6 +49,7 @@ func update_dictionary(mode):
 			#Sprite Info
 			sprite_info = archived_sprite_info
 		"Edit":
+			#Counters
 			sprites_character.sprite_base.height_counter = int(profiles[counter].get("height"))
 			sprites_character.is_chub = profiles[counter].get("chub")
 			sprites_character.is_wheels = profiles[counter].get("wheelchair")
@@ -59,4 +60,4 @@ func update_dictionary(mode):
 			sprites_character.sprite_ears.ear_counter = int(profiles[counter].get("ears"))
 			sprites_character.sprite_hair.hair_counter = int(profiles[counter].get("hair"))
 			sprites_character.sprite_beard.beard_counter = int(profiles[counter].get("beard"))
-			
+		"Delete": profiles.remove_at(counter)

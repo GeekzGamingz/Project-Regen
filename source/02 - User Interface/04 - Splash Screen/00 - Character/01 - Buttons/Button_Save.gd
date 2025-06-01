@@ -42,5 +42,4 @@ func clear_line():
 	line_profile.set_deferred("visible", false)
 	line_profile.text = ""
 #Load Profiles
-func load_profiles(path):
-	if FileAccess.file_exists(path): profiles = G.LOAD(path)
+func load_profiles(path): if FileAccess.file_exists(path): profiles = G.LOAD(path)
