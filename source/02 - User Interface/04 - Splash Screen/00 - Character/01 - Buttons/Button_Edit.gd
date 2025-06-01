@@ -5,6 +5,7 @@ extends Button
 #Local Nodes
 @onready var save_container: HBoxContainer = $".."
 @onready var sprites_dictionary: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary"
+@onready var line_confirmation: LineEdit = $"../../../ConfirmationContainer/LineEdit_Confirmation"
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #On Button Up

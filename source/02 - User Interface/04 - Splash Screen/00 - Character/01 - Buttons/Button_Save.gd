@@ -9,6 +9,9 @@ var profiles = []
 @onready var selection_character: HBoxContainer = $"../../Selection_Character"
 @onready var sprites_dictionary: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary"
 @onready var sprites_character: Node2D = $"../../Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"
+@onready var confirmation_container: VBoxContainer = $"../../../ConfirmationContainer"
+@onready var line_confirmation: LineEdit = $"../../../ConfirmationContainer/LineEdit_Confirmation"
+@onready var overwrite_container: HBoxContainer = $"../../../ConfirmationContainer/TabContainer/OverwriteContainer"
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void: load_profiles(G.PATH_PROFILES)
@@ -25,6 +28,29 @@ func _on_button_up() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 #Profile Text Submitted
 func _on_line_profile_text_submitted(new_text: String) -> void:
+	var character_exists: bool = false
+	for character in profiles:
+		if character.get("profile") == new_text:
+			line_confirmation.text = str(
+				"Would you like to OVERWRITE Character: ",
+				profiles[selection_character.character_counter].get("profile")
+			)
+			confirmation_container.set_deferred("visible", true)
+			overwrite_container.set_deferred("visible", true)
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			line_profile.set_deferred("visible", false)
+			character_exists = true
+	if !character_exists: save_character(new_text)
+#Confirm Button Up
+func _on_button_confirm_button_up() -> void:
+	save_character(line_profile.text)
+	confirmation_container.set_deferred("visible", false)
+#Decline Button Up
+func _on_button_decline_button_up() -> void:
+	confirmation_container.set_deferred("visible", false)
+#------------------------------------------------------------------------------#
+#Custom Functions
+func save_character(new_text: String):
 	if new_text != "":
 		sprites_dictionary.sprite_info.set("profile", new_text)
 		for character in profiles:
@@ -34,8 +60,6 @@ func _on_line_profile_text_submitted(new_text: String) -> void:
 		selection_character.character_counter = profiles.size() - 1
 		selection_character.check_character()
 		clear_line()
-#------------------------------------------------------------------------------#
-#Custom Functions
 #Clear Profile Line
 func clear_line():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

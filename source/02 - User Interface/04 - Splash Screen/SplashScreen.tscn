@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=98 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -1619,6 +1619,8 @@ _data = {
 &"walk_up": SubResource("Animation_8llvl")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8llvl"]
+
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -2118,6 +2120,54 @@ expand_to_text_length = true
 context_menu_enabled = false
 caret_blink = true
 
+[node name="ConfirmationContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LineEdit_Confirmation" type="LineEdit" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer"]
+layout_mode = 2
+text = "Delete/Overwrite?"
+alignment = 1
+editable = false
+expand_to_text_length = true
+
+[node name="TabContainer" type="TabContainer" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8llvl")
+current_tab = 1
+tabs_visible = false
+
+[node name="DeleteContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="Button_Confirm" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/DeleteContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Confirm"
+
+[node name="Button_Decline" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/DeleteContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Decline"
+
+[node name="OverwriteContainer" type="HBoxContainer" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer"]
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="Button_Confirm" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/OverwriteContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Confirm"
+
+[node name="Button_Decline" type="Button" parent="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/OverwriteContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Decline"
+
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
 [connection signal="button_up" from="HBoxContainer/MainMenu/Button_Character" to="." method="_on_button_character_button_up"]
@@ -2143,3 +2193,7 @@ caret_blink = true
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Edit" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" method="_on_button_up"]
 [connection signal="text_submitted" from="PopUpContainer/TabContainer/CharacterContainer/LineEdit_Profile" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_line_profile_text_submitted"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/DeleteContainer/Button_Confirm" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" method="_on_button_confirm_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/DeleteContainer/Button_Decline" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Delete" method="_on_button_decline_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/OverwriteContainer/Button_Confirm" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_confirm_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/ConfirmationContainer/TabContainer/OverwriteContainer/Button_Decline" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/SaveContainer/Button_Save" method="_on_button_decline_button_up"]
