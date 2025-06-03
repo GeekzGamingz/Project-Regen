@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average_nw.png" id="30_dpogu"]
 [ext_resource type="Script" uid="uid://wags8epylluh" path="res://source/03 - Entities/00 - Humanoid/01 - Player/01 - Customization/Humanoid_ArmLeft.gd" id="31_4h5xq"]
 [ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average_nw.png" id="31_qi55k"]
-[ext_resource type="Texture2D" uid="uid://bgcd2au1psjf7" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_halfelf_nw.png" id="31_spdcj"]
+[ext_resource type="Texture2D" uid="uid://bgcd2au1psjf7" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_half-elf_nw.png" id="31_spdcj"]
 [ext_resource type="Texture2D" uid="uid://chux27wvcwncv" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/01 - Average/00 - Average/leg_left_average_average_nw.png" id="32_4h5xq"]
 [ext_resource type="Texture2D" uid="uid://bgb7oqktsb45a" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/00 - Short/00 - Average/arm_left_short_average_nw.png" id="32_k2nwu"]
 [ext_resource type="Texture2D" uid="uid://duq2a6ueymj4x" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/01 - Average/00 - Average/leg_right_average_average_nw.png" id="33_rt581"]

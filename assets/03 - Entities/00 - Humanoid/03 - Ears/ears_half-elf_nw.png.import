@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgcd2au1psjf7"
-path="res://.godot/imported/ears_halfelf_nw.png-5499d2c91339b374fe4fdc861049028e.ctex"
+path="res://.godot/imported/ears_half-elf_nw.png-edc1cb9bf4c25c279c0c4bc2d1856347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_halfelf_nw.png"
-dest_files=["res://.godot/imported/ears_halfelf_nw.png-5499d2c91339b374fe4fdc861049028e.ctex"]
+source_file="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_half-elf_nw.png"
+dest_files=["res://.godot/imported/ears_half-elf_nw.png-edc1cb9bf4c25c279c0c4bc2d1856347.ctex"]
 
 [params]
 

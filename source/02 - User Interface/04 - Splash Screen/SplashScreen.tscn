@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dp1iiiwb5h5t1" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_small_nw.png" id="23_02o5o"]
 [ext_resource type="Texture2D" uid="uid://bd5e6ihhw4rs2" path="res://assets/03 - Entities/00 - Humanoid/none.png" id="23_ictme"]
 [ext_resource type="Texture2D" uid="uid://bohaylberknkb" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_big_nw.png" id="24_76nu5"]
-[ext_resource type="Texture2D" uid="uid://bgcd2au1psjf7" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_halfelf_nw.png" id="25_bx8p5"]
+[ext_resource type="Texture2D" uid="uid://bgcd2au1psjf7" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_half-elf_nw.png" id="25_bx8p5"]
 [ext_resource type="Texture2D" uid="uid://cq6qr6cug13db" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_elf_nw.png" id="26_srcmj"]
 [ext_resource type="Texture2D" uid="uid://b80eykxpytnrc" path="res://assets/03 - Entities/00 - Humanoid/03 - Ears/ears_cat_nw.png" id="27_bf8bm"]
 [ext_resource type="Script" uid="uid://boni76rap4i6a" path="res://source/02 - User Interface/04 - Splash Screen/00 - Character/00 - Sprites/Sprite_ArmRight.gd" id="29_rbq5p"]
