@@ -42,3 +42,4 @@ func check_base():
 			texture = bases_average[int(profiles[counter].get("height"))]
 		elif profiles[counter].get("chub"):
 			texture = bases_chub[int(profiles[counter].get("height"))]
+	sprites_dictionary.sprite_paths.set("sprite_torso", texture.resource_path)

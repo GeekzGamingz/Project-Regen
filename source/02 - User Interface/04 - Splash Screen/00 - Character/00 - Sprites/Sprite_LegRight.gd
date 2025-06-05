@@ -59,3 +59,4 @@ func check_leg_right():
 				0: texture = legs_right_short_chub[profiles[counter].get("leg_right")]
 				1: texture = legs_right_average_chub[profiles[counter].get("leg_right")]
 				2: texture = legs_right_tall_chub[profiles[counter].get("leg_right")]
+	sprites_dictionary.sprite_paths.set("sprite_legR", texture.resource_path)

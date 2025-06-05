@@ -15,28 +15,28 @@ var single_player: bool = false
 #Dictionaries
 var old_players: Dictionary = {}
 var players: Dictionary = {}
-@export var player_info: Dictionary = {
-	"name": String("Name"),
-	"id": String("ID"),
-	"position": Vector2.ZERO, #TO DEFINE
-	"animation": int(1),
-	"height": int(1),
-	"chub": bool(false),
-	"wheelchair": bool(false),
-	"arm_left": int(1),
-	"arm_right": int(1),
-	"leg_left": int(1), 
-	"leg_right": int(1), 
-	"ears": int(0),
-	"eyeL_color": String("Button_Color1"),
-	"eyeR_color": String("Button_Color1"),
-	"skin_color": String("Button_Color1"),
-	"hair": int(0),
-	"hair_color": String("Button_Color1"),
-	"bangs": int(0), #TO DEFINE
-	"beard": int(0),
-	"beard_color": String("Button_Color1")
-}
+#@export var player_info: Dictionary = {
+	#"name": String("Name"),
+	#"id": String("ID"),
+	#"position": Vector2.ZERO, #TO DEFINE
+	#"animation": int(1),
+	#"height": int(1),
+	#"chub": bool(false),
+	#"wheelchair": bool(false),
+	#"arm_left": int(1),
+	#"arm_right": int(1),
+	#"leg_left": int(1), 
+	#"leg_right": int(1), 
+	#"ears": int(0),
+	#"eyeL_color": String("Button_Color1"),
+	#"eyeR_color": String("Button_Color1"),
+	#"skin_color": String("Button_Color1"),
+	#"hair": int(0),
+	#"hair_color": String("Button_Color1"),
+	#"bangs": int(0), #TO DEFINE
+	#"beard": int(0),
+	#"beard_color": String("Button_Color1")
+#}
 var players_online: int = 1
 #Exported Variables
 @export var port: int = 42069
@@ -52,6 +52,7 @@ var players_online: int = 1
 @onready var BUTTON_JOINGAME: Button = UI_SPLASH.get_node("HBoxContainer/SubMenus/Multiplayer/Button_JoinGame")
 @onready var WAITING_ROOM: TextEdit = UI_SPLASH.get_node("PopUpContainer/TabContainer/WaitingContainer/TextEdit_WaitingRoom")
 @onready var ERROR_CONTAINER: VBoxContainer = UI_SPLASH.get_node("PopUpContainer/TabContainer/ErrorContainer")
+@onready var SPRITES_DICTIONARY: Node2D = UI_SPLASH.get_node("PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Dictionary")
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
@@ -66,10 +67,10 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Custom Functions
 func server_joined(username):
-	players[multiplayer.get_unique_id()] = player_info
+	players[multiplayer.get_unique_id()] = SPRITES_DICTIONARY.sprite_paths
 	players[multiplayer.get_unique_id()].set("name", username)
 	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
-	peer_connected.emit(multiplayer.get_unique_id(), player_info)
+	peer_connected.emit(multiplayer.get_unique_id(), SPRITES_DICTIONARY.sprite_paths)
 	emit_signal("server_found", username)
 	if single_player:
 		multiplayer.multiplayer_peer.set_refuse_new_connections(true)
@@ -87,7 +88,7 @@ func player_update(value): players_online += value
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Player Connected/Disconnected
-func _on_peer_connected(id): register_player.rpc_id(id, player_info)
+func _on_peer_connected(id): register_player.rpc_id(id, SPRITES_DICTIONARY.sprite_paths)
 func _on_peer_disconnected(id):
 	if id != 1: emit_signal("message_leave", id)
 	rpc("player_update", -1)

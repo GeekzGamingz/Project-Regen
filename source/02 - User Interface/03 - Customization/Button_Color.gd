@@ -2,6 +2,7 @@ extends TextureButton
 #------------------------------------------------------------------------------#
 #Signals
 signal send_colors
+signal update_sprites
 #Variables
 #Exported Variables
 @export_enum("Skin", "Hair", "Beard", "Eye1", "Eye2") var sprite_to_color: String
@@ -29,3 +30,4 @@ func _on_button_up() -> void:
 	var eyes_linked = UI_CUSTOMIZATION.checkbox_right.button_pressed
 	var hair_linked = UI_CUSTOMIZATION.checkbox_top.button_pressed
 	emit_signal("send_colors", color_id, sprite_to_color, eyes_linked, hair_linked)
+	emit_signal("update_sprites")

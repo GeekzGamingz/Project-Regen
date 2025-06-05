@@ -28,6 +28,9 @@ func _ready() -> void:
 	NETWORK.connect("server_found", server_found)
 	multiplayer.connection_failed.connect(message_error)
 #------------------------------------------------------------------------------#
+#Input Function
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("menu_main"): set_deferred("visible", !visible)
 #Signaled Functions
 #Single Player
 func _on_button_single_player_button_up() -> void:

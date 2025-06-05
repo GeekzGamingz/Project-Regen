@@ -1,9 +1,14 @@
 extends Node2D
+
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
+
 @onready var sprites_character: Node2D = $".."
 @onready var selection_character: HBoxContainer = $"../../../.."
 #Dictionaries
 var archived_sprite_info: Dictionary = {}
 var old_sprite_info: Dictionary = {}
+var sprite_paths: Dictionary = {}
 @export var sprite_info: Dictionary = {
 	"profile": String(""),
 	"height": int(1),

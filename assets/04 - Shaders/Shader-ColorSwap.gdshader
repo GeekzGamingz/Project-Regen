@@ -73,7 +73,7 @@ void fragment() {
 	// Eye One
 	else if (length(curr_color - old_outline3) < EPSILON)
 	{
-        COLOR = new_outline1;
+        COLOR = new_outline3;
     }
 	else if (length(curr_color - old_shadow3) < EPSILON)
 	{

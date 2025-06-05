@@ -59,3 +59,4 @@ func check_arm_right():
 				0: texture = arms_right_short_chub[profiles[counter].get("arm_right")]
 				1: texture = arms_right_average_chub[profiles[counter].get("arm_right")]
 				2: texture = arms_right_tall_chub[profiles[counter].get("arm_right")]
+	sprites_dictionary.sprite_paths.set("sprite_armR", texture.resource_path)

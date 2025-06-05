@@ -45,3 +45,4 @@ func check_hair():
 			0: offset.y = 2.0
 			1: offset.y = 0
 			2: offset.y = -2.0
+	sprites_dictionary.sprite_paths.set("sprite_hair", texture.resource_path)
