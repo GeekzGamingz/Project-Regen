@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://hihmcyuyroma"]
 
-[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - User Interface/Base_Theme.tres" id="1_evdou"]
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_evdou"]
 [ext_resource type="Script" uid="uid://bdi3k420y6fsg" path="res://source/02 - User Interface/01 - Time/UI_Time.gd" id="2_uc4s4"]
 [ext_resource type="PackedScene" uid="uid://dl5bh77msypdb" path="res://source/01 - Components/00 - Time/00 - Clock/UI_Clock.tscn" id="3_orj4x"]
 

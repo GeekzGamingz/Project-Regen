@@ -3,14 +3,17 @@ extends Node2D
 #Variables
 #OnReady Variables
 #Main Scenes
+#Network
+@onready var NETWORK: Node2D = $Network
 #User Interface
 @onready var UI: CanvasLayer = $UserInterface
-@onready var UI_NETWORK: VBoxContainer = $UserInterface/UI_FullRect/UI_Network
-@onready var UI_CHAT: VBoxContainer = $UserInterface/UI_FullRect/UI_Chat
+@onready var UI_NETWORK: HBoxContainer = $UserInterface/UI_FullRect/UI_Network
+@onready var UI_CHAT: VBoxContainer = $UserInterface/UI_FullRect/UI_Network/VBoxContainer/UI_Chat
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools
 @onready var MENU_BUILDINGS: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings
 @onready var MENU_FLORA: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora
-#Tile Sets
+#World Nodes
+@onready var WORLD: Node2D = $World
 @onready var MAP_WORLD: TileMapLayer = $World/Mapping/Map_World
 @onready var MAP_GRASS: TileMapLayer = $World/Mapping/Map_Grass
 #Building Grid
@@ -24,4 +27,5 @@ extends Node2D
 @onready var ORPHANAGES: Node2D = $World/Orphanages
 @onready var ORPHANAGE_BUILDINGS: Node2D = $World/Orphanages/Orphanage_Buildings
 @onready var ORPHANAGE_FLORA: Node2D = $World/Orphanages/Orphanage_Flora
-@onready var ORPHANAGE_ENTITES: Node2D = $World/Orphanages/Orphanage_Entities
+@onready var ORPHANAGE_ENTITIES: Node2D = $World/Orphanages/Orphanage_Entities
+@onready var ENTITIES_PLAYERS: Node2D = $World/Orphanages/Orphanage_Entities/Entities_Players

@@ -1,12 +1,6 @@
 extends CharacterBody2D
 class_name Entity
 #------------------------------------------------------------------------------#
-#Constants
-const FACING_LEFT: int = -1
-const FACING_RIGHT: int = 1
-const UP_SIDE_DOWN: int = -1
-const RIGHT_SIDE_UP: int = 1
-#------------------------------------------------------------------------------#
 #Variables
 #Bools
 var is_grounded: bool = false
@@ -23,6 +17,12 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var walk_speed: float = speed * G.TILE_SIZE.x
 @onready var run_speed: float = walk_speed * 2
 @onready var max_speed: float = walk_speed
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
+@onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
+#Local Nodes
+@onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
 #Animation Nodes
@@ -32,35 +32,11 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var playback: AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 @onready var pb_state: String = playback.get_current_node()
 #------------------------------------------------------------------------------#
-#Ready Function
-func _ready() -> void:
-	anim_tree.active = true #Active Animation Tree
-#------------------------------------------------------------------------------#
 #Custom Functions
 #Movement
 func apply_movement() -> void:
 	velocity = lerp(velocity, direction * max_speed, weight())
-	#if direction.x > 0: set_facing(FACING_RIGHT)
-	#elif direction.x < 0: set_facing(FACING_LEFT)
 	move_and_slide()
-#------------------------------------------------------------------------------#
-#Facing Orientations
-#Horizontal Facing
-func set_facing(hor_facing: int) -> void:
-	if hor_facing == 0:
-		hor_facing = FACING_RIGHT
-	var hor_face_mod = hor_facing / abs(hor_facing)
-	$Facing.apply_scale(Vector2(hor_face_mod * facing.x, 1))
-	$CollisionShape2D.position.x *= -1
-	facing = Vector2(hor_face_mod, facing.y)
-#Vertical Facing
-func set_vert(vert_facing: int) -> void:
-	if vert_facing == 0:
-		vert_facing = RIGHT_SIDE_UP
-	var vert_face_mod = vert_facing / abs(vert_facing)
-	$Facing.apply_scale(Vector2(1, vert_face_mod * inversion.x))
-	$CollisionShape2D.position.y *= -1
-	inversion = Vector2(vert_face_mod, inversion.y)
 #------------------------------------------------------------------------------#
 #Entity Weight
 func weight() -> float:
@@ -71,4 +47,3 @@ func weight() -> float:
 		else: return 0.2 #Walking
 	#Air Weight
 	else: return 0.1
-#---------------------------------------------------------------------------

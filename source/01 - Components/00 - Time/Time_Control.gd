@@ -25,5 +25,5 @@ func control_speed(event):
 	if event.is_action_pressed("speed_fifth"): #Fifth Speed
 		timer.wait_time = 5
 	#Halt Speed
-	if event.is_action_pressed("speed_pause"):
-		get_tree().paused = !get_tree().paused
+	#if event.is_action_pressed("speed_pause"):
+		#get_tree().paused = !get_tree().paused

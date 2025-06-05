@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dl5bh77msypdb"]
 
-[ext_resource type="Texture2D" uid="uid://bpa4lrej66jbx" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_face.png" id="1_yifu0"]
-[ext_resource type="Texture2D" uid="uid://b1lwnmrs3mi27" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_hand.png" id="2_c3uge"]
+[ext_resource type="Texture2D" uid="uid://bpa4lrej66jbx" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_face.png" id="1_yifu0"]
+[ext_resource type="Texture2D" uid="uid://b1lwnmrs3mi27" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_hand.png" id="2_c3uge"]
 [ext_resource type="Script" uid="uid://dokwfqfnapy1f" path="res://source/01 - Components/00 - Time/00 - Clock/UI_Clock.gd" id="2_lmvck"]
-[ext_resource type="Texture2D" uid="uid://dm8objsq610cg" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_daycycle.png" id="2_vudsx"]
-[ext_resource type="Texture2D" uid="uid://2c5bx1gntr62" path="res://assets/00 - User Interface/01 - Icons/00 - Clock/clock_face2.png" id="3_lmvck"]
+[ext_resource type="Texture2D" uid="uid://dm8objsq610cg" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_daycycle.png" id="2_vudsx"]
+[ext_resource type="Texture2D" uid="uid://2c5bx1gntr62" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_face2.png" id="3_lmvck"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmvck"]
 

@@ -60,7 +60,8 @@ func transitions(delta):
 func state_enter(new_state, old_state):
 	match(new_state):
 		states.idle_right: e.playback.travel("Idle")
-		states.idle_left: e.playback.travel("Idle")
+		states.idle_left:
+			e.playback.travel("Idle")
 		states.idle_up: e.playback.travel("Idle")
 		states.idle_down: e.playback.travel("Idle")
 		states.walk_left:

@@ -3,57 +3,35 @@
 [ext_resource type="Script" uid="uid://db3wpwlnk5et" path="res://source/02 - User Interface/00 - Network/UI_Chat.gd" id="1_k1piq"]
 
 [node name="UI_Chat" type="VBoxContainer"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -69.0
-offset_right = 45.0
-grow_vertical = 0
+offset_right = 201.0
+offset_bottom = 159.0
 script = ExtResource("1_k1piq")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 8
+alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
 [node name="Text_Messages" type="TextEdit" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 6
 editable = false
+wrap_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
 [node name="LineEdit_Message" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 6
 placeholder_text = "Message"
 
 [node name="Button_Send" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 6
 text = "Send"
-
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_right = 8
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-layout_mode = 2
-theme_override_constants/margin_top = 8
 
 [connection signal="text_submitted" from="HBoxContainer/VBoxContainer/HBoxContainer2/LineEdit_Message" to="." method="_on_line_message_text_submitted"]
 [connection signal="button_up" from="HBoxContainer/VBoxContainer/HBoxContainer2/Button_Send" to="." method="_on_button_send_button_up"]
