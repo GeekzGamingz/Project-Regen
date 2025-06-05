@@ -54,7 +54,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if sprites_dictionary.old_sprite_info != sprites_dictionary.sprite_info:
 		check_sprites("")
-		print(sprites_dictionary.sprite_paths)
 	sprites_dictionary.old_sprite_info = sprites_dictionary.sprite_info
 #------------------------------------------------------------------------------#
 #Signaled Functions

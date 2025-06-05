@@ -5,11 +5,6 @@ extends Entity
 @onready var player_serverinfo: Node2D = $Scripts/Player_ServerInfo
 @onready var output_name: Label = $Outputs/Output_Name
 #------------------------------------------------------------------------------#
-#Ready Function
-func _ready() -> void: pass
-	#UI_NETWORK.connect("server_create", update_name)
-	#UI_NETWORK.connect("client_create", update_name)
-#------------------------------------------------------------------------------#
 #Signaled Functions
 #On Tree Entered
 func _on_tree_entered() -> void: set_multiplayer_authority(name.to_int())

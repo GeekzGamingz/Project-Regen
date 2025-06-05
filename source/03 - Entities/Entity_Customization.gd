@@ -4,6 +4,7 @@ extends Node2D
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
 @onready var UI_SPLASH: Control = MAIN.get_node("UserInterface/UI_FullRect/SplashScreen")
 @onready var CHARACTER: Node2D = UI_SPLASH.get_node("PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character")
 @onready var UI_CUSTOMIZATION: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization")
@@ -11,7 +12,7 @@ extends Node2D
 @onready var ORPHANAGE_PLAYERS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Entities/Entities_Players")
 
 #Local Nodes
-@onready var e: Entity = $"../.."
+#@onready var e: Entity = $"../.."
 #Sprites
 @onready var sprite_base: Sprite2D = $"../../Sprites/Sprites_Body/Sprite_Base"
 @onready var sprite_ears: Sprite2D = $"../../Sprites/Sprites_Body/Sprite_Ears"
@@ -40,6 +41,7 @@ func _ready() -> void:
 	update_sprites()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
+#Update Sprites
 func update_sprites(): update_players()
 #------------------------------------------------------------------------------#
 #Custom Functions
@@ -47,15 +49,15 @@ func update_sprites(): update_players()
 func update_players():
 	for player in ORPHANAGE_PLAYERS.get_children():
 		var custom = player.get_node("Scripts/Entity_Customization")
-		for id in e.NETWORK.players: if player.name == str(id):
-			custom.sprite_base.texture = load(e.NETWORK.players[id].get("sprite_torso"))
-			custom.sprite_ears.texture = load(e.NETWORK.players[id].get("sprite_ears"))
-			custom.sprite_arm_right.texture = load(e.NETWORK.players[id].get("sprite_armR"))
-			custom.sprite_arm_left.texture = load(e.NETWORK.players[id].get("sprite_armL"))
-			custom.sprite_leg_right.texture = load(e.NETWORK.players[id].get("sprite_legR"))
-			custom.sprite_leg_left.texture = load(e.NETWORK.players[id].get("sprite_legL"))
-			custom.sprite_hair.texture = load(e.NETWORK.players[id].get("sprite_hair"))
-			custom.sprite_beard.texture = load(e.NETWORK.players[id].get("sprite_beard"))
+		for id in NETWORK.players: if player.name == str(id):
+			custom.sprite_base.texture = load(NETWORK.players[id].get("sprite_torso"))
+			custom.sprite_ears.texture = load(NETWORK.players[id].get("sprite_ears"))
+			custom.sprite_arm_right.texture = load(NETWORK.players[id].get("sprite_armR"))
+			custom.sprite_arm_left.texture = load(NETWORK.players[id].get("sprite_armL"))
+			custom.sprite_leg_right.texture = load(NETWORK.players[id].get("sprite_legR"))
+			custom.sprite_leg_left.texture = load(NETWORK.players[id].get("sprite_legL"))
+			custom.sprite_hair.texture = load(NETWORK.players[id].get("sprite_hair"))
+			custom.sprite_beard.texture = load(NETWORK.players[id].get("sprite_beard"))
 			#sprite_bangs.texture = CHARACTER.sprite_bangs.texture
 			custom.sprite_base.material = CHARACTER.sprite_base.material.duplicate()
 			custom.sprite_ears.material = CHARACTER.sprite_ears.material.duplicate()

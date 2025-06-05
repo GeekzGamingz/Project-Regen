@@ -8,6 +8,9 @@ extends Sprite2D
 @export var bases_average: Array[Resource] = []
 @export var bases_chub: Array[Resource] = []
 #OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
 #Local Nodes
 @onready var sprites_character: Node2D = $"../.."
 @onready var sprites_dictionary: Node2D = $"../../Sprites_Dictionary"
@@ -43,3 +46,12 @@ func check_base():
 		elif profiles[counter].get("chub"):
 			texture = bases_chub[int(profiles[counter].get("height"))]
 	sprites_dictionary.sprite_paths.set("sprite_torso", texture.resource_path)
+	if sprites_character.server_started:
+		var id = multiplayer.get_unique_id()
+		var path = texture.resource_path
+		rpc("update_network_base", id, path)
+#Update Network Dictionary
+@rpc("any_peer", "call_local", "reliable")
+func update_network_base(id, path):
+	NETWORK.players[id].set("sprite_torso", path)
+	print("ID: ", id, " Torso: ", NETWORK.players[id].get("sprite_torso"))
