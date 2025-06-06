@@ -10,9 +10,6 @@ extends Node2D
 @onready var UI_CUSTOMIZATION: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Customization")
 @onready var SELECT_COLOR: TabContainer = UI_CUSTOMIZATION.get_node("VBoxContainer/Selection_Color")
 @onready var ORPHANAGE_PLAYERS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Entities/Entities_Players")
-
-#Local Nodes
-#@onready var e: Entity = $"../.."
 #Sprites
 @onready var sprite_base: Sprite2D = $"../../Sprites/Sprites_Body/Sprite_Base"
 @onready var sprite_ears: Sprite2D = $"../../Sprites/Sprites_Body/Sprite_Ears"
@@ -59,13 +56,4 @@ func update_players():
 			custom.sprite_leg_left.texture = load(NETWORK.players[id].get("sprite_legL"))
 			custom.sprite_hair.texture = load(NETWORK.players[id].get("sprite_hair"))
 			custom.sprite_beard.texture = load(NETWORK.players[id].get("sprite_beard"))
-			#sprite_bangs.texture = CHARACTER.sprite_bangs.texture
-			custom.sprite_base.material = CHARACTER.sprite_base.material.duplicate()
-			custom.sprite_ears.material = CHARACTER.sprite_ears.material.duplicate()
-			custom.sprite_arm_right.material = CHARACTER.sprite_arm_right.material.duplicate()
-			custom.sprite_arm_left.material = CHARACTER.sprite_arm_left.material.duplicate()
-			custom.sprite_leg_right.material = CHARACTER.sprite_leg_right.material.duplicate()
-			custom.sprite_leg_left.material = CHARACTER.sprite_leg_left.material.duplicate()
-			custom.sprite_hair.material = CHARACTER.sprite_hair.material.duplicate()
-			custom.sprite_beard.material = CHARACTER.sprite_beard.material.duplicate()
-			#sprite_bangs.material = CHARACTER.sprite_bangs.material.duplicate()
+			SELECT_COLOR.check_colors()
