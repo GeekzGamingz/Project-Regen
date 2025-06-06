@@ -60,3 +60,11 @@ func check_leg_left():
 				1: texture = legs_left_average_chub[profiles[counter].get("leg_left")]
 				2: texture = legs_left_tall_chub[profiles[counter].get("leg_left")]
 	sprites_dictionary.sprite_paths.set("sprite_legL", texture.resource_path)
+	if sprites_character.server_started:
+		var id = multiplayer.get_unique_id()
+		var path = texture.resource_path
+		rpc("update_network_legL", id, path)
+#Update Network Dictionary
+@rpc("any_peer", "call_local", "reliable")
+func update_network_legL(id, path):
+	sprites_dictionary.NETWORK.players[id].set("sprite_legL", path)

@@ -42,10 +42,11 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Update Sprites
-func update_sprites(): update_players()
+func update_sprites(): update_players.rpc()
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Update Players
+@rpc("any_peer", "call_local")
 func update_players():
 	for player in ORPHANAGE_PLAYERS.get_children():
 		var custom = player.get_node("Scripts/Entity_Customization")

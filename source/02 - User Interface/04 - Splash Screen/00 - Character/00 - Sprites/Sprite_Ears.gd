@@ -46,3 +46,11 @@ func check_ears():
 			1: offset.y = 0
 			2: offset.y = -2.0
 	sprites_dictionary.sprite_paths.set("sprite_ears", texture.resource_path)
+	if sprites_character.server_started:
+		var id = multiplayer.get_unique_id()
+		var path = texture.resource_path
+		rpc("update_network_ears", id, path)
+#Update Network Dictionary
+@rpc("any_peer", "call_local", "reliable")
+func update_network_ears(id, path):
+	sprites_dictionary.NETWORK.players[id].set("sprite_ears", path)

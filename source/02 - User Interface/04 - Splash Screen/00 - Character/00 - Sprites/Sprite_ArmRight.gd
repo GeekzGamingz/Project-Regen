@@ -60,3 +60,11 @@ func check_arm_right():
 				1: texture = arms_right_average_chub[profiles[counter].get("arm_right")]
 				2: texture = arms_right_tall_chub[profiles[counter].get("arm_right")]
 	sprites_dictionary.sprite_paths.set("sprite_armR", texture.resource_path)
+	if sprites_character.server_started:
+		var id = multiplayer.get_unique_id()
+		var path = texture.resource_path
+		rpc("update_network_armR", id, path)
+#Update Network Dictionary
+@rpc("any_peer", "call_local", "reliable")
+func update_network_armR(id, path):
+	sprites_dictionary.NETWORK.players[id].set("sprite_armR", path)

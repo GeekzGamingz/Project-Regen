@@ -19,6 +19,9 @@ var customize_type: String
 @export var is_chub: bool = false
 @export var is_wheels: bool = false
 #OnReady Variables
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var NETWORK: Node2D = MAIN.get_node("Network")
+@onready var ORPHANAGE_PLAYERS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Entities/Entities_Players")
 #Local Nodes
 @onready var splash_screen: Control = $"../../../../../../../.."
 @onready var ui_customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
@@ -54,6 +57,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if sprites_dictionary.old_sprite_info != sprites_dictionary.sprite_info:
 		check_sprites("")
+		for player in ORPHANAGE_PLAYERS.get_children():
+			player.get_node("Scripts/Entity_Customization").update_sprites()
 	sprites_dictionary.old_sprite_info = sprites_dictionary.sprite_info
 #------------------------------------------------------------------------------#
 #Signaled Functions
