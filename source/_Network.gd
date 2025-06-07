@@ -46,10 +46,12 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Custom Functions
 func server_joined(username):
-	players[multiplayer.get_unique_id()] = SPRITES_DICTIONARY.sprite_paths
+	players[multiplayer.get_unique_id()] =\
+		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true)
 	players[multiplayer.get_unique_id()].set("name", username)
 	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
-	peer_connected.emit(multiplayer.get_unique_id(), SPRITES_DICTIONARY.sprite_paths)
+	peer_connected.emit(multiplayer.get_unique_id(),
+		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true))
 	emit_signal("server_found", username)
 	if single_player:
 		multiplayer.multiplayer_peer.set_refuse_new_connections(true)
@@ -68,7 +70,9 @@ func player_update(value): players_online += value
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Player Connected/Disconnected
-func _on_peer_connected(id): register_player.rpc_id(id, SPRITES_DICTIONARY.sprite_paths)
+func _on_peer_connected(id):
+	register_player.rpc_id(id,
+		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true))
 func _on_peer_disconnected(id):
 	if id != 1: emit_signal("message_leave", id)
 	rpc("player_update", -1)
