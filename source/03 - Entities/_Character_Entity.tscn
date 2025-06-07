@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ctnbblculty6f"]
+[gd_scene load_steps=49 format=3 uid="uid://ctnbblculty6f"]
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
@@ -1261,6 +1261,14 @@ graph_offset = Vector2(-145, 4)
 radius = 2.0
 height = 6.0
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_riee2"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:direction")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="Entity" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 93
@@ -1427,5 +1435,8 @@ visible = false
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kik4i")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_riee2")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

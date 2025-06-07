@@ -7,7 +7,7 @@ var is_grounded: bool = false
 #Vectors
 var facing: Vector2 = Vector2.ONE
 var inversion: Vector2 = Vector2.ONE
-var direction: Vector2 = Vector2.ZERO
+@export var direction: Vector2 = Vector2.ZERO
 var direction_previous: Vector2 = Vector2.ZERO
 #Exported Variables
 #Floats
