@@ -32,22 +32,26 @@ func uic_height_change(scroll):
 #Custom Functions
 #Check Base Texture
 func check_base():
+	var height
 	if selection_character.is_new:
 		if !sprites_dictionary.sprite_info["chub"]: texture = bases_average[height_counter]
 		elif sprites_dictionary.sprite_info["chub"]: texture = bases_chub[height_counter]
+		height = height_counter
 	else:
 		var counter = selection_character.character_counter
 		var profiles = selection_character.save_container.button_save.profiles 
+		height = int(profiles[counter].get("height"))
 		if !profiles[counter].get("chub"):
-			texture = bases_average[int(profiles[counter].get("height"))]
+			texture = bases_average[height]
 		elif profiles[counter].get("chub"):
-			texture = bases_chub[int(profiles[counter].get("height"))]
+			texture = bases_chub[height]
 	sprites_dictionary.sprite_paths.set("sprite_torso", texture.resource_path)
 	if sprites_character.server_started:
 		var id = multiplayer.get_unique_id()
 		var path = texture.resource_path
-		rpc("update_network_base", id, path)
+		rpc("update_network_base", id, path, height)
 #Update Network Dictionary
 @rpc("any_peer", "call_local", "reliable")
-func update_network_base(id, path):
+func update_network_base(id, path, height):
 	sprites_dictionary.NETWORK.players[id].set("sprite_torso", path)
+	sprites_dictionary.NETWORK.players[id].set("height", height)

@@ -1,6 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
+var adjustables: Array = []
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
@@ -57,3 +58,25 @@ func update_players():
 			custom.sprite_hair.texture = load(NETWORK.players[id].get("sprite_hair"))
 			custom.sprite_beard.texture = load(NETWORK.players[id].get("sprite_beard"))
 			SELECT_COLOR.check_colors()
+			var height = int(NETWORK.players[id].get("height"))
+			check_heights(height, custom)
+#Check Sprite Heights
+func check_heights(height, custom):
+	custom.adjustables.append_array([
+		custom.sprite_ears,
+		custom.sprite_hair,
+		custom.sprite_bangs,
+		custom.sprite_beard
+	])
+	for sprite in custom.adjustables:
+		match(height):
+			0: sprite.offset.y = -14.0
+			1: sprite.offset.y = -16.0
+			2: sprite.offset.y = -18.0
+	#var counter = selection_character.character_counter
+	#var profiles = selection_character.save_container.button_save.profiles
+	#texture = hairs[profiles[counter].get("hair")]
+	#match(int(profiles[counter].get("height"))):
+		#0: offset.y = 2.0
+		#1: offset.y = 0
+		#2: offset.y = -2.0
