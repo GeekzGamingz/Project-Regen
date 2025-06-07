@@ -76,6 +76,8 @@ func _on_peer_connected(id):
 func _on_peer_disconnected(id):
 	if id != 1: emit_signal("message_leave", id)
 	rpc("player_update", -1)
+	for player in MAIN.ORPHANAGE_PLAYERS.get_children():
+		if player.name == str(id): player.queue_free()
 	players.erase(id)
 	peer_disconnected.emit(id)
 #Connection Successful/Unsuccessful

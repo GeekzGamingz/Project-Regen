@@ -28,4 +28,4 @@ extends Node2D
 @onready var ORPHANAGE_BUILDINGS: Node2D = $World/Orphanages/Orphanage_Buildings
 @onready var ORPHANAGE_FLORA: Node2D = $World/Orphanages/Orphanage_Flora
 @onready var ORPHANAGE_ENTITIES: Node2D = $World/Orphanages/Orphanage_Entities
-@onready var ENTITIES_PLAYERS: Node2D = $World/Orphanages/Orphanage_Entities/Entities_Players
+@onready var ORPHANAGE_PLAYERS: Node2D = $World/Orphanages/Orphanage_Entities/Entities_Players
