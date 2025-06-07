@@ -30,7 +30,9 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
-	if event.is_action_released("menu_main"): set_deferred("visible", !visible)
+	if event.is_action_released("menu_main"):
+		set_deferred("visible", !visible)
+		customization.set_deferred("visible", false)
 #Signaled Functions
 #Single Player
 func _on_button_single_player_button_up() -> void:

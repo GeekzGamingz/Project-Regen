@@ -48,7 +48,8 @@ func _ready() -> void:
 #Custom Signaled Functions
 func send_colors(color_id, sprite_to_color, eyes_linked, hair_linked):
 	match(sprite_to_color):
-		"Skin": sprites_dictionary.sprite_info["skin_color"] = color_id
+		"Skin":
+			sprites_dictionary.sprite_info["skin_color"] = color_id
 		"Hair":
 			sprites_dictionary.sprite_info["hair_color"] = color_id
 			if hair_linked: sprites_dictionary.sprite_info["beard_color"] = color_id
@@ -104,9 +105,6 @@ func update_colors(button_color):
 			update_primary(sprite_material, button_color)
 			sprite_material = sprite_leg_right.material
 			update_primary(sprite_material, button_color)
-		"Hair":
-			var sprite_material = sprite_hair.material
-			update_primary(sprite_material, button_color)
 		"Eye1":
 			var sprite_material = sprite_base.material
 			sprite_material.set("shader_parameter/new_shadow2", button_color.new_shadow2)
@@ -115,6 +113,9 @@ func update_colors(button_color):
 			var sprite_material = sprite_base.material
 			sprite_material.set("shader_parameter/new_shadow3", button_color.new_shadow2)
 			sprite_material.set("shader_parameter/new_highlight3", button_color.new_highlight2)
+		"Hair":
+			var sprite_material = sprite_hair.material
+			update_primary(sprite_material, button_color)
 		"Beard":
 			var sprite_material = sprite_beard.material
 			update_primary(sprite_material, button_color)

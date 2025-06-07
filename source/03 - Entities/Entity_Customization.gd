@@ -73,10 +73,3 @@ func check_heights(height, custom):
 			0: sprite.offset.y = -14.0
 			1: sprite.offset.y = -16.0
 			2: sprite.offset.y = -18.0
-	#var counter = selection_character.character_counter
-	#var profiles = selection_character.save_container.button_save.profiles
-	#texture = hairs[profiles[counter].get("hair")]
-	#match(int(profiles[counter].get("height"))):
-		#0: offset.y = 2.0
-		#1: offset.y = 0
-		#2: offset.y = -2.0
