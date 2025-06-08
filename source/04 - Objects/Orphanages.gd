@@ -36,12 +36,21 @@ func object_add():
 		if ray.is_colliding(): G.CAN_BUILD = false
 	if object_current != null && G.IS_BUILDING:
 		if G.CAN_BUILD:
-			var object_scene = object_current.instantiate()
-			object_scene.global_position = MAIN.BLUEPRINT.global_position
-			if object_scene.is_in_group("Buildings"):
-				MAIN.ORPHANAGE_BUILDINGS.add_child(object_scene)
-			elif object_scene.is_in_group("Flora"):
-				MAIN.ORPHANAGE_FLORA.add_child(object_scene)
+			var object_position = MAIN.BLUEPRINT.global_position
+			var object = object_current
+			rpc("object_spawn", object, object_position)
+#Multiplayer Spawning
+@rpc("any_peer", "call_local", "reliable")
+func object_spawn(object, object_position):
+	var object_scene
+	if multiplayer.get_remote_sender_id() == multiplayer.get_unique_id():
+		object_scene = object.instantiate()
+	else: object_scene = instance_from_id(object.object_id).instantiate()
+	object_scene.global_position = object_position
+	if object_scene.is_in_group("Buildings"):
+		MAIN.ORPHANAGE_BUILDINGS.add_child(object_scene)
+	elif object_scene.is_in_group("Flora"):
+		MAIN.ORPHANAGE_FLORA.add_child(object_scene)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 func send_object(object):

@@ -8,5 +8,3 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 texture_normal = ExtResource("1_ytdqt")
 script = ExtResource("2_ha1p0")
-
-[node name="Node2D" type="Node2D" parent="."]

@@ -6,5 +6,3 @@
 [node name="Button_Template" type="TextureButton"]
 texture_normal = ExtResource("1_nfssq")
 script = ExtResource("2_fna6s")
-
-[node name="Node2D" type="Node2D" parent="."]
