@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0af6y5i8dvl2"]
+[gd_scene load_steps=4 format=3 uid="uid://b0af6y5i8dvl2"]
 
 [ext_resource type="Script" uid="uid://buwc4wdp30o5t" path="res://source/01 - Components/00 - Time/Time.gd" id="1_phfu8"]
 [ext_resource type="Script" uid="uid://lf01dvu1600l" path="res://source/01 - Components/00 - Time/Time_Control.gd" id="2_6i057"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_e6vtq"]
+properties/0/path = NodePath(".:ticks")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Time" type="Node2D"]
 script = ExtResource("1_phfu8")
@@ -11,5 +16,8 @@ script = ExtResource("2_6i057")
 
 [node name="Timer_Ticks" type="Timer" parent="."]
 autostart = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_e6vtq")
 
 [connection signal="timeout" from="Timer_Ticks" to="." method="_on_timer_ticks_timeout"]

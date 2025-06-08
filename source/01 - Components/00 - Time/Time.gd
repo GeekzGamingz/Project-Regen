@@ -66,32 +66,33 @@ func _on_timer_ticks_timeout() -> void:
 		#"[Current Week: ", weeks[week], " (", week, ")]")
 	#print("Current Season: Season of ", seasons[season], " (", season, ")]")
 	#-----Print Block-----#
-	ticks += 1
-	emit_signal("tick_elapsed", ticks)
-	if ticks % int(day_length * 0.5) == 0: check_cycles() #Bi-Daily Event
-	if ticks % day_length == 0:  #Daily Event
-		print("[DAILY EVENT -- !Random Timer Activated!]")
-		day += 1
-		check_cycles()
-		emit_signal("day_elapsed", weekdays[day])
-	if ticks % week_length == 0: #Weekly Event
-		print("[WEEKLY EVENT  -- !Random Timer Activated!]")
-		week += 1
-		check_cycles()
-	if ticks % month_length == 0: #Monthly Event
-		print("[MONTHLY EVENT  -- !Random Timer Activated!]")
-		month += 1
-		check_cycles()
-		emit_signal("month_elapsed", months[month])
-	if ticks % season_length == 0: #Seasonly Event
-		print("[SEASONLY EVENT  -- !Random Timer Activated!]")
-		season += 1
-		check_cycles()
-		emit_signal("season_elapsed", seasons[season])
-	emit_signal(
-		"update_time",
-		weekdays[day], weeks[week], months[month], seasons[season]
-		)
+	if multiplayer.is_server():
+		ticks += 1
+		emit_signal("tick_elapsed", ticks)
+		if ticks % int(day_length * 0.5) == 0: check_cycles() #Bi-Daily Event
+		if ticks % day_length == 0:  #Daily Event
+			print("[DAILY EVENT -- !Random Timer Activated!]")
+			day += 1
+			check_cycles()
+			emit_signal("day_elapsed", weekdays[day])
+		if ticks % week_length == 0: #Weekly Event
+			print("[WEEKLY EVENT  -- !Random Timer Activated!]")
+			week += 1
+			check_cycles()
+		if ticks % month_length == 0: #Monthly Event
+			print("[MONTHLY EVENT  -- !Random Timer Activated!]")
+			month += 1
+			check_cycles()
+			emit_signal("month_elapsed", months[month])
+		if ticks % season_length == 0: #Seasonly Event
+			print("[SEASONLY EVENT  -- !Random Timer Activated!]")
+			season += 1
+			check_cycles()
+			emit_signal("season_elapsed", seasons[season])
+		emit_signal(
+			"update_time",
+			weekdays[day], weeks[week], months[month], seasons[season]
+			)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Check Cycle
