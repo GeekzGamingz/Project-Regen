@@ -6,6 +6,7 @@
 [node name="Object_Plinths" type="Node2D"]
 
 [node name="Sprites" type="Node2D" parent="."]
+visible = false
 
 [node name="Plinth_Host" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("1_vc0ri")

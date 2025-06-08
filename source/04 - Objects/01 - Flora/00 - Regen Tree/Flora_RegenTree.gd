@@ -28,10 +28,9 @@ func activate():
 	if !is_active:
 		is_active = true
 		MAIN.TIME.connect("tick_elapsed", tick_elapsed)
-		MAIN.TIME.connect("day_elapsed", day_elapsed)
+		MAIN.TIME.connect("day_elapsed", day_elapsed.rpc)
 		spawn_grass_initial()
 #Spawn Initial Grass
-@rpc("any_peer", "call_local")
 func spawn_grass_initial():
 	var regen_tile = Vector2i(global_position)
 	#World Tilemap Layer
@@ -52,22 +51,24 @@ func spawn_grass_initial():
 #Spawn Grass
 @rpc("any_peer", "call_local")
 func spawn_grass():
-	randomize()
-	var random_tile = grass_array.pick_random()
-	for cell in map_grass.get_surrounding_cells(random_tile):
-		var cell_position = map_grass.to_global(cell) * Vector2(G.GRASS_SIZE)
-		var world_position = map_world.local_to_map(cell_position)
-		var world_data = map_world.get_cell_tile_data(world_position)
-		if (map_grass.get_cell_atlas_coords(cell) != Vector2i(-1, -1) ||
-			world_data.get_custom_data("Water")):
-			timer_growth.wait_time = timer_ticks.wait_time
-			timer_growth.start()
-		else:
-			var temp_array = [random_tile, cell]
-			grass_array.append(cell)
-			map_grass.set_cells_terrain_connect(temp_array, 0, 0, true)
-			timer_growth.wait_time = timer_ticks.wait_time
-			break
+	if multiplayer.is_server():
+		randomize()
+		var random_tile = grass_array.pick_random()
+		for cell in map_grass.get_surrounding_cells(random_tile):
+			var cell_position = map_grass.to_global(cell) * Vector2(G.GRASS_SIZE)
+			var world_position = map_world.local_to_map(cell_position)
+			var world_data = map_world.get_cell_tile_data(world_position)
+			if (map_grass.get_cell_atlas_coords(cell) != Vector2i(-1, -1) ||
+				world_data.get_custom_data("Water")):
+				timer_growth.wait_time = timer_ticks.wait_time
+				timer_growth.start()
+			else:
+				var temp_array = [random_tile, cell]
+				grass_array.append(cell)
+				map_grass.set_cells_terrain_connect(temp_array, 0, 0, true)
+				timer_growth.wait_time = timer_ticks.wait_time
+				break
+	map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Tick Elapsed
@@ -78,4 +79,5 @@ func tick_elapsed(_ticks):
 		timer_growth.wait_time = time_random
 		timer_growth.start()
 #Day Elapsed
+@rpc("any_peer", "call_local")
 func day_elapsed(_day): map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
