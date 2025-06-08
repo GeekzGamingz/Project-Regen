@@ -22,14 +22,14 @@ var colors_eyeR: Array = []
 @onready var sprites_dictionary: Node2D = $"../Sprites_Dictionary"
 #Sprites
 @onready var sprite_base: Sprite2D = $"../Sprites_Body/Sprite_Base"
-@onready var sprite_ears: Sprite2D = $"../Sprites_Body/Sprite_Ears"
 @onready var sprite_arm_left: Sprite2D = $"../Sprites_Body/Sprite_ArmLeft"
 @onready var sprite_arm_right: Sprite2D = $"../Sprites_Body/Sprite_ArmRight"
 @onready var sprite_leg_left: Sprite2D = $"../Sprites_Body/Sprite_LegLeft"
 @onready var sprite_leg_right: Sprite2D = $"../Sprites_Body/Sprite_LegRight"
-@onready var sprite_hair: Sprite2D = $"../Sprites_Hair/Sprite_Hair"
-@onready var sprite_beard: Sprite2D = $"../Sprites_Hair/Sprite_Beard"
-@onready var sprite_bangs: Sprite2D = $"../Sprites_Hair/Sprite_Bangs"
+@onready var sprite_hair: Sprite2D = $"../Sprites_Body/Sprite_Hair"
+@onready var sprite_ears: Sprite2D = $"../Sprites_Body/Sprite_Ears"
+@onready var sprite_beard: Sprite2D = $"../Sprites_Body/Sprite_Beard"
+@onready var sprite_bangs: Sprite2D = $"../Sprites_Body/Sprite_Bangs"
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:

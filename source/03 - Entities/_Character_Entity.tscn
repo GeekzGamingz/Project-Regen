@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://mjfu2tdf2wfj" path="res://source/03 - Entities/Entity_Colors.gd" id="4_riee2"]
 [ext_resource type="Script" uid="uid://cielb144eexqu" path="res://source/03 - Entities/Sprites_Body.gd" id="5_v25io"]
 [ext_resource type="Texture2D" uid="uid://7mfo6e67k68q" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/00 - Average/torso_average_average_nw.png" id="8_n86k3"]
+[ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average_nw.png" id="10_kevt7"]
 [ext_resource type="Texture2D" uid="uid://kmxpw81thcbu" path="res://assets/03 - Entities/00 - Humanoid/01 - Hair/hair_lumberjack_nw.png" id="16_f2ycm"]
 [ext_resource type="Texture2D" uid="uid://gey1pwm58u8" path="res://assets/03 - Entities/00 - Humanoid/02 - Beard/beard_lumberjack_nw.png" id="21_s7rcf"]
 [ext_resource type="Texture2D" uid="uid://duntx2cv2hcg5" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/01 - Average/00 - Average/arm_right_average_average_nw.png" id="31_qi55k"]
@@ -41,34 +42,6 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v25io"]
-resource_local_to_scene = true
-shader = ExtResource("4_dpogu")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/old_base3 = Color(0, 0, 0, 1)
-shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/new_base3 = Color(0, 0, 0, 1)
-shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f2ycm"]
 resource_local_to_scene = true
@@ -126,9 +99,6 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k2nwu"]
-load_path = "res://.godot/imported/arm_left_average_average.png-16789d98abd9340c7dcd756f9151866a.ctex"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uv8vn"]
 resource_local_to_scene = true
 shader = ExtResource("4_dpogu")
@@ -185,6 +155,34 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v25io"]
+resource_local_to_scene = true
+shader = ExtResource("4_dpogu")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dpogu"]
 resource_local_to_scene = true
 shader = ExtResource("4_dpogu")
@@ -230,7 +228,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -242,7 +240,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -331,7 +329,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -343,7 +341,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -432,7 +430,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -444,7 +442,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -547,7 +545,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -559,7 +557,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -662,7 +660,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -674,7 +672,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -764,7 +762,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -776,7 +774,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -866,7 +864,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -878,7 +876,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -982,7 +980,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -994,7 +992,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1098,7 +1096,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Sprites/Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/1/path = NodePath("../Sprites/Sprites_Body/Sprite_Hair:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1110,7 +1108,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../Sprites/Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/2/path = NodePath("../Sprites/Sprites_Body/Sprite_Beard:frame_coords")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1291,8 +1289,6 @@ script = ExtResource("4_riee2")
 
 [node name="Sprites" type="Node2D" parent="."]
 
-[node name="Sprites_Wheels" type="Node2D" parent="Sprites"]
-
 [node name="Sprites_Body" type="Node2D" parent="Sprites"]
 script = ExtResource("5_v25io")
 
@@ -1304,14 +1300,6 @@ hframes = 4
 vframes = 4
 frame = 12
 
-[node name="Sprite_Ears" type="Sprite2D" parent="Sprites/Sprites_Body"]
-material = SubResource("ShaderMaterial_v25io")
-texture = ExtResource("35_24lc3")
-offset = Vector2(0, -16)
-hframes = 4
-vframes = 4
-frame = 8
-
 [node name="Sprite_ArmRight" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_f2ycm")
 texture = ExtResource("31_qi55k")
@@ -1322,7 +1310,7 @@ frame = 12
 
 [node name="Sprite_ArmLeft" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_k2nwu")
-texture = SubResource("CompressedTexture2D_k2nwu")
+texture = ExtResource("10_kevt7")
 offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
@@ -1344,9 +1332,7 @@ hframes = 4
 vframes = 4
 frame = 12
 
-[node name="Sprites_Hair" type="Node2D" parent="Sprites"]
-
-[node name="Sprite_Hair" type="Sprite2D" parent="Sprites/Sprites_Hair"]
+[node name="Sprite_Hair" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_n86k3")
 texture = ExtResource("16_f2ycm")
 offset = Vector2(0, -16)
@@ -1354,7 +1340,15 @@ hframes = 4
 vframes = 4
 frame = 12
 
-[node name="Sprite_Beard" type="Sprite2D" parent="Sprites/Sprites_Hair"]
+[node name="Sprite_Ears" type="Sprite2D" parent="Sprites/Sprites_Body"]
+material = SubResource("ShaderMaterial_v25io")
+texture = ExtResource("35_24lc3")
+offset = Vector2(0, -16)
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="Sprite_Beard" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_dpogu")
 texture = ExtResource("21_s7rcf")
 offset = Vector2(0, -16)
@@ -1362,7 +1356,7 @@ hframes = 4
 vframes = 4
 frame = 12
 
-[node name="Sprite_Bangs" type="Sprite2D" parent="Sprites/Sprites_Hair"]
+[node name="Sprite_Bangs" type="Sprite2D" parent="Sprites/Sprites_Body"]
 
 [node name="Raycasts" type="Node2D" parent="."]
 visible = false

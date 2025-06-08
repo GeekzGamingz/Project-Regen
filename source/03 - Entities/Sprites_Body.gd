@@ -12,12 +12,12 @@ extends Node2D
 func switch_limbs(facing):
 	match(facing):
 		"Left": 
-			move_child(sprite_arm_right, 3)
-			move_child(sprite_arm_left, 4)
-			move_child(sprite_leg_right, 5)
-			move_child(sprite_leg_left, 6)
-		"Right":
+			move_child(sprite_arm_right, 2)
 			move_child(sprite_arm_left, 3)
-			move_child(sprite_arm_right, 4)
+			move_child(sprite_leg_right, 4)
 			move_child(sprite_leg_left, 5)
-			move_child(sprite_leg_right, 6)
+		"Right":
+			move_child(sprite_arm_left, 2)
+			move_child(sprite_arm_right, 3)
+			move_child(sprite_leg_left, 4)
+			move_child(sprite_leg_right, 5)

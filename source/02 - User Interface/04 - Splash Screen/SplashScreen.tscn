@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://dw72o8ebu5cjp"]
+[gd_scene load_steps=97 format=3 uid="uid://dw72o8ebu5cjp"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
@@ -107,133 +107,6 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
-
-[sub_resource type="Shader" id="Shader_1d2am"]
-resource_local_to_scene = true
-code = "shader_type canvas_item;
-const float EPSILON = 0.0001;
-// Old Color #1
-uniform vec4 old_outline1 : source_color;
-uniform vec4 old_shadow1 : source_color;
-uniform vec4 old_base1 : source_color;
-uniform vec4 old_highlight1 : source_color;
-// Old Color #2
-uniform vec4 old_outline2 : source_color;
-uniform vec4 old_shadow2 : source_color;
-uniform vec4 old_base2 : source_color;
-uniform vec4 old_highlight2 : source_color;
-// Old Eyes
-uniform vec4 old_outline3 : source_color;
-uniform vec4 old_shadow3 : source_color;
-uniform vec4 old_base3 : source_color;
-uniform vec4 old_highlight3 : source_color;
-// New Outline #1
-uniform vec4 new_outline1 : source_color;
-uniform vec4 new_shadow1 : source_color;
-uniform vec4 new_base1 : source_color;
-uniform vec4 new_highlight1 : source_color;
-// New Outline #2
-uniform vec4 new_outline2 : source_color;
-uniform vec4 new_shadow2 : source_color;
-uniform vec4 new_base2 : source_color;
-uniform vec4 new_highlight2 : source_color;
-// New Eyes
-uniform vec4 new_outline3 : source_color;
-uniform vec4 new_shadow3 : source_color;
-uniform vec4 new_base3 : source_color;
-uniform vec4 new_highlight3 : source_color;
-
-void fragment() {
-    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
-
-	// Checks Current Pixel Color to old_
-	// Swaps Current Pixel Color to new_
-	// Color One
-	if (length(curr_color - old_outline1) < EPSILON)
-	{
-		COLOR = new_outline1;
-	}
-	else if (length(curr_color - old_shadow1) < EPSILON)
-	{
-        COLOR = new_shadow1;
-    }
-    else if (length(curr_color - old_base1) < EPSILON)
-	{
-        COLOR = new_base1;
-    }
-	else if (length(curr_color - old_highlight1) < EPSILON)
-	{
-        COLOR = new_highlight1;
-    }
-	// Color Two
-	else if (length(curr_color - old_outline2) < EPSILON)
-	{
-		COLOR = new_outline2;
-	}
-	else if (length(curr_color - old_shadow2) < EPSILON)
-	{
-        COLOR = new_shadow2;
-    }
-	else if (length(curr_color - old_base2) < EPSILON)
-	{
-        COLOR = new_base2;
-    }
-	else if (length(curr_color - old_highlight2) < EPSILON)
-	{
-        COLOR = new_highlight2;
-    }
-	// Eye One
-	else if (length(curr_color - old_outline3) < EPSILON)
-	{
-        COLOR = new_outline1;
-    }
-	else if (length(curr_color - old_shadow3) < EPSILON)
-	{
-        COLOR = new_shadow3;
-    }
-	// Eye Two
-	else if (length(curr_color - old_base3) < EPSILON)
-	{
-        COLOR = new_base3;
-    }
-	else if (length(curr_color - old_highlight3) < EPSILON)
-	{
-        COLOR = new_highlight3;
-    }
-	else
-	{
-		// Keeps Original
-        COLOR = curr_color;
-    }
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttxp8"]
-resource_local_to_scene = true
-shader = SubResource("Shader_1d2am")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/old_base3 = Color(0, 0, 0, 1)
-shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/new_base3 = Color(0, 0, 0, 1)
-shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="Shader" id="Shader_ql4uc"]
 resource_local_to_scene = true
@@ -361,9 +234,6 @@ shader_parameter/new_outline3 = Color(0, 0, 0, 1)
 shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4vk7"]
-load_path = "res://.godot/imported/arm_left_average_average.png-16789d98abd9340c7dcd756f9151866a.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i668s"]
 resource_local_to_scene = true
@@ -675,6 +545,133 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
+[sub_resource type="Shader" id="Shader_1d2am"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+const float EPSILON = 0.0001;
+// Old Color #1
+uniform vec4 old_outline1 : source_color;
+uniform vec4 old_shadow1 : source_color;
+uniform vec4 old_base1 : source_color;
+uniform vec4 old_highlight1 : source_color;
+// Old Color #2
+uniform vec4 old_outline2 : source_color;
+uniform vec4 old_shadow2 : source_color;
+uniform vec4 old_base2 : source_color;
+uniform vec4 old_highlight2 : source_color;
+// Old Eyes
+uniform vec4 old_outline3 : source_color;
+uniform vec4 old_shadow3 : source_color;
+uniform vec4 old_base3 : source_color;
+uniform vec4 old_highlight3 : source_color;
+// New Outline #1
+uniform vec4 new_outline1 : source_color;
+uniform vec4 new_shadow1 : source_color;
+uniform vec4 new_base1 : source_color;
+uniform vec4 new_highlight1 : source_color;
+// New Outline #2
+uniform vec4 new_outline2 : source_color;
+uniform vec4 new_shadow2 : source_color;
+uniform vec4 new_base2 : source_color;
+uniform vec4 new_highlight2 : source_color;
+// New Eyes
+uniform vec4 new_outline3 : source_color;
+uniform vec4 new_shadow3 : source_color;
+uniform vec4 new_base3 : source_color;
+uniform vec4 new_highlight3 : source_color;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE,UV); // Get Current Color
+
+	// Checks Current Pixel Color to old_
+	// Swaps Current Pixel Color to new_
+	// Color One
+	if (length(curr_color - old_outline1) < EPSILON)
+	{
+		COLOR = new_outline1;
+	}
+	else if (length(curr_color - old_shadow1) < EPSILON)
+	{
+        COLOR = new_shadow1;
+    }
+    else if (length(curr_color - old_base1) < EPSILON)
+	{
+        COLOR = new_base1;
+    }
+	else if (length(curr_color - old_highlight1) < EPSILON)
+	{
+        COLOR = new_highlight1;
+    }
+	// Color Two
+	else if (length(curr_color - old_outline2) < EPSILON)
+	{
+		COLOR = new_outline2;
+	}
+	else if (length(curr_color - old_shadow2) < EPSILON)
+	{
+        COLOR = new_shadow2;
+    }
+	else if (length(curr_color - old_base2) < EPSILON)
+	{
+        COLOR = new_base2;
+    }
+	else if (length(curr_color - old_highlight2) < EPSILON)
+	{
+        COLOR = new_highlight2;
+    }
+	// Eye One
+	else if (length(curr_color - old_outline3) < EPSILON)
+	{
+        COLOR = new_outline1;
+    }
+	else if (length(curr_color - old_shadow3) < EPSILON)
+	{
+        COLOR = new_shadow3;
+    }
+	// Eye Two
+	else if (length(curr_color - old_base3) < EPSILON)
+	{
+        COLOR = new_base3;
+    }
+	else if (length(curr_color - old_highlight3) < EPSILON)
+	{
+        COLOR = new_highlight3;
+    }
+	else
+	{
+		// Keeps Original
+        COLOR = curr_color;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttxp8"]
+resource_local_to_scene = true
+shader = SubResource("Shader_1d2am")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xmovv"]
 resource_local_to_scene = true
 shader = SubResource("Shader_5eudg")
@@ -780,7 +777,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -792,7 +789,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -879,7 +876,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -891,7 +888,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -978,7 +975,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -990,7 +987,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1077,7 +1074,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1089,7 +1086,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1176,7 +1173,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1188,7 +1185,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1278,7 +1275,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1290,7 +1287,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1380,7 +1377,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1392,7 +1389,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1482,7 +1479,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1494,7 +1491,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1584,7 +1581,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Sprites_Hair/Sprite_Hair:frame_coords")
+tracks/6/path = NodePath("Sprites_Body/Sprite_Hair:frame_coords")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1596,7 +1593,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprites_Hair/Sprite_Beard:frame_coords")
+tracks/7/path = NodePath("Sprites_Body/Sprite_Beard:frame_coords")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -1965,18 +1962,9 @@ script = ExtResource("15_l5w5a")
 bases_average = Array[Resource]([ExtResource("16_evdrp"), ExtResource("12_bux6d"), ExtResource("17_gpnjh")])
 bases_chub = Array[Resource]([ExtResource("18_yyh4g"), ExtResource("19_5eudg"), ExtResource("20_i7il1")])
 
-[node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
-material = SubResource("ShaderMaterial_ttxp8")
-texture = ExtResource("23_ictme")
-hframes = 4
-vframes = 4
-frame = 8
-script = ExtResource("22_gpnjh")
-ears = Array[Resource]([ExtResource("23_ictme"), ExtResource("23_02o5o"), ExtResource("24_76nu5"), ExtResource("25_bx8p5"), ExtResource("26_srcmj"), ExtResource("27_bf8bm")])
-
 [node name="Sprite_ArmLeft" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_7i5et")
-texture = SubResource("CompressedTexture2D_s4vk7")
+texture = ExtResource("37_bx8p5")
 hframes = 4
 vframes = 4
 frame = 12
@@ -2030,9 +2018,7 @@ legs_right_short_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("4
 legs_right_average_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("47_72r7o")])
 legs_right_tall_chub = Array[Resource]([ExtResource("23_ictme"), ExtResource("48_t82hm")])
 
-[node name="Sprites_Hair" type="Node2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
-
-[node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Hair" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_i7il1")
 texture = ExtResource("23_ictme")
 hframes = 4
@@ -2041,7 +2027,16 @@ frame = 12
 script = ExtResource("32_hj702")
 hairs = Array[Resource]([ExtResource("23_ictme"), ExtResource("57_tdta2")])
 
-[node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Ears" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
+material = SubResource("ShaderMaterial_ttxp8")
+texture = ExtResource("23_ictme")
+hframes = 4
+vframes = 4
+frame = 8
+script = ExtResource("22_gpnjh")
+ears = Array[Resource]([ExtResource("23_ictme"), ExtResource("23_02o5o"), ExtResource("24_76nu5"), ExtResource("25_bx8p5"), ExtResource("26_srcmj"), ExtResource("27_bf8bm")])
+
+[node name="Sprite_Beard" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 material = SubResource("ShaderMaterial_xmovv")
 texture = ExtResource("23_ictme")
 hframes = 4
@@ -2050,7 +2045,7 @@ frame = 12
 script = ExtResource("34_lbb6o")
 beards = Array[Resource]([ExtResource("23_ictme"), ExtResource("59_vd0bi")])
 
-[node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Hair"]
+[node name="Sprite_Bangs" type="Sprite2D" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character/Sprites_Body"]
 
 [node name="AnimPlayer_Sprites" type="AnimationPlayer" parent="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/SubviewportContainer/SubViewport/Sprites_Character"]
 libraries = {
