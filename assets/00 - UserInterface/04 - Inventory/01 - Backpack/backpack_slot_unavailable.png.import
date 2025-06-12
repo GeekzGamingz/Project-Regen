@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i6hbcxxslamy"
-path="res://.godot/imported/icon_grow.png-073ed637db975973a69af6304d25d8f7.ctex"
+uid="uid://xqyo216vh7vb"
+path="res://.godot/imported/backpack_slot_unavailable.png-ed0806804fb12fb54e325101c6e4d1de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/icon_grow.png"
-dest_files=["res://.godot/imported/icon_grow.png-073ed637db975973a69af6304d25d8f7.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_unavailable.png"
+dest_files=["res://.godot/imported/backpack_slot_unavailable.png-ed0806804fb12fb54e325101c6e4d1de.ctex"]
 
 [params]
 

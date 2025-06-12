@@ -23,7 +23,7 @@ var season: int #Current Season
 #Exported Variables
 @export var ticks: int = 0
 @export var day_length: int = 26
-#Exported Enumerations
+#Exported Arrays
 #Weekdays
 @export var weekdays: Array[String] = ["New", "Waxing", "Half", "Waning", "Full"]
 @export var weeks: Array[String] = ["Crescent", "Blood", "Gibbous"]

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Interactable
 #------------------------------------------------------------------------------#
 #Variables
 #Main Nodes

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvvwnkrdamucb"]
 
-[ext_resource type="Texture2D" uid="uid://df0dyu5soma2o" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/build_icon_water.png" id="1_dbakb"]
+[ext_resource type="Texture2D" uid="uid://df0dyu5soma2o" path="res://assets/00 - UserInterface/02 - Buttons/03 - Build/build_icon_water.png" id="1_dbakb"]
 [ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/02 - User Interface/02 - Tool Menu/00 - Build Menu/Button_Template.tscn" id="1_vc53g"]
 [ext_resource type="PackedScene" uid="uid://dfq8vsxubmfhp" path="res://source/04 - Objects/00 - Buildings/01 - Water Purifier/Building_WaterPurifier.tscn" id="3_dbakb"]
 

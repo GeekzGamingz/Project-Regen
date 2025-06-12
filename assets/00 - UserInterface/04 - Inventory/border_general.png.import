@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0dyu5soma2o"
-path="res://.godot/imported/build_icon_water.png-f5b5df436d0e4b97e51a8c5095785e5e.ctex"
+uid="uid://cmnixr1i1jaqb"
+path="res://.godot/imported/border_general.png-8e8dc59fb4efb59bd07bc66dd12aae8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/build_icon_water.png"
-dest_files=["res://.godot/imported/build_icon_water.png-f5b5df436d0e4b97e51a8c5095785e5e.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/border_general.png"
+dest_files=["res://.godot/imported/border_general.png-8e8dc59fb4efb59bd07bc66dd12aae8b.ctex"]
 
 [params]
 

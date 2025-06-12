@@ -2,24 +2,40 @@
 
 [ext_resource type="Script" uid="uid://rnkyan66xlrm" path="res://source/04 - Objects/Object_Template.gd" id="1_ukouj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
-radius = 4.0
-height = 18.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
-size = Vector2(64, 64)
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_crrwx"]
+radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
+radius = 4.0
+height = 9.99999
 
 [node name="Object_Template" type="StaticBody2D"]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_ukouj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 32)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ukouj")
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Area_Build" type="Area2D" parent="Areas"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_p6eq0")
+
+[node name="Area_Detection" type="Area2D" parent="Areas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection"]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_crrwx")
+
+[node name="Area_Hotbar" type="Area2D" parent="Areas"]
+
+[node name="Area_Pack" type="Area2D" parent="Areas"]
 
 [node name="Sprites" type="Node2D" parent="."]
 
@@ -30,20 +46,15 @@ centered = false
 visible = false
 centered = false
 
-[node name="Areas" type="Node2D" parent="."]
+[node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites"]
+visible = false
 
-[node name="Area_Build" type="Area2D" parent="Areas"]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build"]
-position = Vector2(32, 32)
-shape = SubResource("RectangleShape2D_p6eq0")
-
-[node name="Area_Detection" type="Area2D" parent="Areas"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection"]
-position = Vector2(32, 32)
-shape = SubResource("CircleShape2D_crrwx")
+[node name="Sprite_Pack" type="Sprite2D" parent="Sprites"]
+visible = false
 
 [node name="Timers" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ukouj")

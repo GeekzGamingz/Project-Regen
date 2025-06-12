@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bxsc5d7ck36le"]
+[gd_scene load_steps=10 format=4 uid="uid://bxsc5d7ck36le"]
 
 [ext_resource type="Script" uid="uid://bdbk2xrvpdua" path="res://source/00 - World/_World.gd" id="1_020tg"]
 [ext_resource type="PackedScene" uid="uid://b0af6y5i8dvl2" path="res://source/01 - Components/00 - Time/Time.tscn" id="1_146u6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/Orphanages.gd" id="5_ylk6r"]
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
 [ext_resource type="PackedScene" uid="uid://472gf7xmda12" path="res://source/04 - Objects/02 - Objects/00 - Plinths/Object_Plinths.tscn" id="8_020tg"]
+[ext_resource type="PackedScene" uid="uid://dh6gewsgyclei" path="res://source/04 - Objects/02 - Objects/02 - Stone/00 - Rock/Object_Rock.tscn" id="8_d03ws"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_020tg")
@@ -34,6 +35,9 @@ script = ExtResource("5_ylk6r")
 
 [node name="Object_Plinths" parent="Orphanages/Orphanage_Objects" instance=ExtResource("8_020tg")]
 position = Vector2(320, 180)
+
+[node name="Object_Rock" parent="Orphanages/Orphanage_Objects" instance=ExtResource("8_d03ws")]
+position = Vector2(193, 250)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages"]
 

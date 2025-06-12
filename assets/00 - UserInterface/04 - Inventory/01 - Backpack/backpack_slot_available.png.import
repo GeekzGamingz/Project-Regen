@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cincd5dfxtyqc"
-path="res://.godot/imported/build_icon.png-59e61c9499104a8ef534956f222690ab.ctex"
+uid="uid://dmhtgtbval8te"
+path="res://.godot/imported/backpack_slot_available.png-8b7ba1b04f2f39cf6980cf420fce462d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/build_icon.png"
-dest_files=["res://.godot/imported/build_icon.png-59e61c9499104a8ef534956f222690ab.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png"
+dest_files=["res://.godot/imported/backpack_slot_available.png-8b7ba1b04f2f39cf6980cf420fce462d.ctex"]
 
 [params]
 
