@@ -20,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_t2jr1")
 
 [node name="Hotbar" type="PanelContainer" parent="."]
@@ -89,6 +90,7 @@ drag_and_drop_selection_enabled = false
 flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot1"]
+visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0

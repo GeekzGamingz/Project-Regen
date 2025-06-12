@@ -1387,7 +1387,6 @@ parameters/Walk/blend_position = Vector2(0, 0)
 [node name="Outputs" type="Node2D" parent="."]
 
 [node name="Output_State" type="Label" parent="Outputs"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1432,5 +1431,7 @@ shape = SubResource("CapsuleShape2D_kik4i")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_riee2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

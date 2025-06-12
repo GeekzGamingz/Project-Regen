@@ -6,6 +6,7 @@ class_name Interactable
 #Exported Bools
 @export var obtainable: bool = false
 #Exported Enumerations
+#Item Type
 @export_enum(
 	"Building",
 	"Consumable",
@@ -15,20 +16,23 @@ class_name Interactable
 	"Junk",
 	"Material"
 ) var item_type: String
+#Item Material
 @export_enum(
 	"Fabric",
 	"Metal",
+	"Organic",
 	"Plastic",
 	"Stone",
 	"Wood"
 ) var item_material: String
 #Exported Dictionaries
 @export var item_components: Dictionary = {
-	"Fabric": 0,
-	"Metal": 0,
-	"Plastic": 0,
-	"Stone": 0,
-	"Wood": 0
+	"Bone": int(0),
+	"Fabric": int(0),
+	"Metal": int(0),
+	"Plastic":int(0),
+	"Stone": int(0),
+	"Wood": int(0)
 }
 #------------------------------------------------------------------------------#
 #Custom Functions

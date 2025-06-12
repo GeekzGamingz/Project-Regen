@@ -566,5 +566,15 @@ material = SubResource("ShaderMaterial_j4c14")
 active = true
 parameters/Idle/blend_position = Vector2(0, 0)
 
+[node name="Output_State" parent="Outputs" index="0"]
+theme_override_font_sizes/font_size = 8
+
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
+
+[node name="NavigationAgent2D" parent="." index="8"]
+avoidance_enabled = true
+debug_enabled = true
+debug_use_custom = true
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_velocity_computed"]

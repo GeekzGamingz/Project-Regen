@@ -22,6 +22,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 @onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #Local Nodes
+@onready var entity_fsm: Node2D = $Scripts/Entity_StateMachine
 @onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
 #RayCasts
 @onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
