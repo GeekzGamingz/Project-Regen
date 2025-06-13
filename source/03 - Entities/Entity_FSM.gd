@@ -18,11 +18,6 @@ func _ready() -> void:
 	state_add("walk_right")
 	state_add("walk_up")
 	state_add("walk_down")
-	state_add("walk_pathing")
-	state_add("pathing_left")
-	state_add("pathing_right")
-	state_add("pathing_up")
-	state_add("pathing_down")
 	call_deferred("state_set", states.idle_down)
 #------------------------------------------------------------------------------#
 #State Label
@@ -33,7 +28,7 @@ func _process(_delta: float) -> void:
 #State Machine
 #State Logistics
 func state_logic(_delta):
-	if state != states.walk_pathing: p_input.handle_movement()
+	if !p_input.is_pathing: p_input.handle_movement()
 	else: p_input.handle_pathing()
 	e.apply_movement()
 	match(state):
@@ -60,7 +55,6 @@ func transitions(delta):
 		states.walk_down:
 			if e.direction == Vector2.ZERO: return states.idle_down
 			return directional_transitions()
-		states.walk_pathing: return pathing_transitions()
 	return null
 #Enter State
 @warning_ignore("unused_parameter")
@@ -82,7 +76,6 @@ func state_enter(new_state, old_state):
 		states.walk_down:
 			e.playback.travel("Walk")
 			e.object_detection.target_position = Vector2(0, G.TILE_SIZE.x)
-		states.walk_pathing: print("Began Pathing")
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):
@@ -104,10 +97,6 @@ func directional_transitions():
 	elif e.direction == Vector2.DOWN:
 		e.direction_previous = e.direction
 		return states.walk_down
-	elif p_input.is_pathing: return states.walk_pathing
-#Pathing Transitions
-func pathing_transitions():
-	if e.velocity.x > 0: pass
 #Update Animation Blending
 func update_blending():
 	e.anim_tree["parameters/Idle/blend_position"] = e.direction_previous

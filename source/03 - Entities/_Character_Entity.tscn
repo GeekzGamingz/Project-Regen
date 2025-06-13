@@ -1433,5 +1433,10 @@ shape = SubResource("CapsuleShape2D_kik4i")
 replication_config = SubResource("SceneReplicationConfig_riee2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 16.0
+path_postprocessing = 1
+simplify_path = true
+avoidance_enabled = true
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
