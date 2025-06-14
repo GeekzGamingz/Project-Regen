@@ -2,6 +2,9 @@ extends TextureButton
 #------------------------------------------------------------------------------#
 #Signals
 signal spawn_requested
+#------------------------------------------------------------------------------#
+#Variables
+#OnReady Variables
 @onready var splash_screen: Control = $"../../../../.."
 @onready var customization: HBoxContainer = splash_screen.get_parent().get_node("UI_Customization")
 #------------------------------------------------------------------------------#

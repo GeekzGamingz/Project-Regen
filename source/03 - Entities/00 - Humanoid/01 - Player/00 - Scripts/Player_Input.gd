@@ -5,16 +5,13 @@ extends Node2D
 #Exported Bools
 @export var is_controllable: bool = true
 @export var is_pathing: bool = false
-#Exported Integers
-@export var melee_range: int = 3
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var NETWORK: Node2D = MAIN.get_node("Network")
 #Local Nodes
 @onready var e: Node2D = get_parent().get_parent()
 @onready var object_detection: Node2D = e.get_node("Raycasts/Ray_ObjectDetection")
-@onready var navi: NavigationAgent2D = $"../../NavigationAgent2D"
+@onready var navi: NavigationAgent2D = e.get_node("NavigationAgent2D")
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:

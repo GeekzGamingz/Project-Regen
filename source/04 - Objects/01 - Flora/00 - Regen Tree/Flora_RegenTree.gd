@@ -12,7 +12,9 @@ var start_tile: Vector2i
 #Exported Variables
 @export var is_active: bool = false
 #OnReady Variables
+#Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+#Local Nodes
 @onready var timer_growth: Timer = $Timers/Timer_Growth
 #Offsets
 @onready var world_offset = Vector2i($CollisionShape2D.position) / Vector2i(G.TILE_SIZE)

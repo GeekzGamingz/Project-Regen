@@ -572,8 +572,4 @@ theme_override_font_sizes/font_size = 8
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
 
-[node name="NavigationAgent2D" parent="." index="8"]
-debug_enabled = false
-debug_use_custom = false
-
 [connection signal="velocity_computed" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_velocity_computed"]

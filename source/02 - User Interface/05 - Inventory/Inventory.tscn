@@ -107,6 +107,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot2"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -114,6 +115,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot2"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -126,6 +128,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot2"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -148,6 +151,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot2"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -163,6 +167,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot3"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -170,6 +175,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot3"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -182,6 +188,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot3"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -204,6 +211,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot3"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -219,6 +227,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot4"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -226,6 +235,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot4"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -238,6 +248,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot4"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -260,6 +271,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot4"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -275,6 +287,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot5"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -282,6 +295,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot5"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -294,6 +308,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot5"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -316,6 +331,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot5"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -331,6 +347,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot6"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -338,6 +355,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot6"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -350,6 +368,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot6"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -372,6 +391,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot6"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -387,6 +407,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot7"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -394,6 +415,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot7"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -406,6 +428,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot7"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -428,6 +451,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot7"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -443,6 +467,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot8"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -450,6 +475,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot8"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -462,6 +488,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot8"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -484,6 +511,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot8"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -499,6 +527,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot9"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -506,6 +535,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot9"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -518,6 +548,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot9"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -540,6 +571,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot9"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -555,6 +587,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot10"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -562,6 +595,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot10"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -574,6 +608,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot10"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -596,6 +631,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot10"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -611,6 +647,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot11"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -618,6 +655,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot11"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -630,6 +668,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot11"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -652,6 +691,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot11"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
@@ -667,6 +707,7 @@ texture = ExtResource("1_tvb03")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/HBoxContainer/HotbarSlot12"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("3_h3qip")
@@ -674,6 +715,7 @@ stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot12"]
 visible = false
+layout_mode = 0
 offset_right = 24.0
 offset_bottom = 22.0
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
@@ -686,6 +728,7 @@ selecting_enabled = false
 flat = true
 
 [node name="Label_Hotkey" type="LineEdit" parent="Hotbar/HBoxContainer/HotbarSlot12"]
+layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
 offset_bottom = 9.0
@@ -708,6 +751,7 @@ flat = true
 
 [node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/HBoxContainer/HotbarSlot12"]
 visible = false
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
