@@ -1359,13 +1359,14 @@ frame = 12
 [node name="Sprite_Bangs" type="Sprite2D" parent="Sprites/Sprites_Body"]
 
 [node name="Raycasts" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -8)
 
 [node name="Ray_ObjectDetection" type="RayCast2D" parent="Raycasts"]
 target_position = Vector2(0, 16)
 collision_mask = 80
 hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="AnimationPlayers" type="Node2D" parent="."]
 

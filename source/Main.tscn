@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ubot8vh8musm" path="res://source/_Main.gd" id="1_j4pr7"]
 [ext_resource type="PackedScene" uid="uid://c0f0uvs8gipny" path="res://source/02 - User Interface/UserInterface.tscn" id="2_6nprl"]
 [ext_resource type="PackedScene" uid="uid://bxsc5d7ck36le" path="res://source/00 - World/_World.tscn" id="2_wfvlg"]
-[ext_resource type="Script" uid="uid://dgq3gbafemdmc" path="res://source/_Network.gd" id="3_pd3me"]
+[ext_resource type="PackedScene" uid="uid://btto731rkiedr" path="res://source/05 - Network/Network.tscn" id="3_pd3me"]
 [ext_resource type="Script" uid="uid://ccajok2nl5ohr" path="res://source/01 - Components/Camera_Main.gd" id="4_ww14o"]
 
 [node name="Main" type="Node2D"]
@@ -12,8 +12,7 @@ script = ExtResource("1_j4pr7")
 [node name="UserInterface" parent="." instance=ExtResource("2_6nprl")]
 follow_viewport_enabled = false
 
-[node name="Network" type="Node2D" parent="."]
-script = ExtResource("3_pd3me")
+[node name="Network" parent="." instance=ExtResource("3_pd3me")]
 
 [node name="World" parent="." instance=ExtResource("2_wfvlg")]
 

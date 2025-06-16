@@ -50,4 +50,5 @@ func make_path() -> void:
 	is_pathing = true
 #Activate Object
 func activate_object() -> void:
-	if object_detection.is_colliding(): object_detection.get_collider().rpc("activate")
+	if object_detection.is_colliding():
+		object_detection.get_collider().get_node("../..").rpc("activate")
