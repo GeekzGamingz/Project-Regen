@@ -24,7 +24,22 @@ var start_tile: Vector2i
 func _on_timer_growth_timeout() -> void:
 	if grass_array.size() < 420: rpc("spawn_grass") #Size to Change as Regen Tree Grows
 #------------------------------------------------------------------------------#
+#Custom Signaled Functions
+#Tick Elapsed
+func tick_elapsed(_ticks):
+	if timer_growth.is_stopped():
+		randomize()
+		var time_random = randf_range(timer_growth.wait_time, timer_growth.wait_time * 2.5)
+		timer_growth.wait_time = time_random
+		timer_growth.start()
+#Day Elapsed
+@rpc("any_peer", "call_local")
+func day_elapsed(_day): map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
+#------------------------------------------------------------------------------#
 #Custom Functions
+#Interact
+func interact(): pass
+#Activate
 @rpc("any_peer", "call_local")
 func activate():
 	if !is_active:
@@ -72,14 +87,3 @@ func spawn_grass():
 				break
 	map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
 #------------------------------------------------------------------------------#
-#Custom Signaled Functions
-#Tick Elapsed
-func tick_elapsed(_ticks):
-	if timer_growth.is_stopped():
-		randomize()
-		var time_random = randf_range(timer_growth.wait_time, timer_growth.wait_time * 2.5)
-		timer_growth.wait_time = time_random
-		timer_growth.start()
-#Day Elapsed
-@rpc("any_peer", "call_local")
-func day_elapsed(_day): map_grass.set_cells_terrain_connect(grass_array, 0, 0, true)
