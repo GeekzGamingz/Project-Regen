@@ -9,6 +9,7 @@ extends Node2D
 @onready var UI: CanvasLayer = $UserInterface
 @onready var UI_NETWORK: HBoxContainer = $UserInterface/UI_FullRect/UI_Network
 @onready var UI_CHAT: VBoxContainer = $UserInterface/UI_FullRect/UI_Network/VBoxContainer/UI_Chat
+@onready var UI_CURSOR: TextureRect = $UserInterface/Cursor
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools
 @onready var MENU_BUILDINGS: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings
 @onready var MENU_FLORA: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora

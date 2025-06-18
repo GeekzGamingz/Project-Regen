@@ -28,32 +28,34 @@ var cursor_size_base: Vector2 = Vector2(16, 16)
 	"HandGrab"
 ) var CURSOR_STATE: String = "Default"
 #OnReady Variables
+@onready var current_cursor = CURSOR_DEFAULT
 #OnReady Vectors
 @onready var window_size_base: Vector2 = get_window().size
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
 	$"/root".set_script(load("res://source/00 - Globals/_CursorsNotifier.gd"))
-	resize_cursor()
+	resize_cursor(current_cursor)
 #------------------------------------------------------------------------------#
 #Process Function
 func _process(_delta: float) -> void:
 	if old_state != CURSOR_STATE:
 		match(CURSOR_STATE):
-			"Default": Input.set_custom_mouse_cursor(CURSOR_DEFAULT)
-			"HandOpen": Input.set_custom_mouse_cursor(CURSOR_HAND_OPEN_LEFT)
-			"HandGrab": Input.set_custom_mouse_cursor(CURSOR_HAND_GRAB_LEFT)
+			"Default": current_cursor = CURSOR_DEFAULT
+		resize_cursor(current_cursor)
 	old_state = CURSOR_STATE
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Resize Cursor
-func resize_cursor():
+func resize_cursor(cursor):
 	var window_size = get_window().size
 	var scale = min(
 		snapped(window_size.x / window_size_base.x, 0.01),
 		snapped(window_size.y / window_size_base.y, 0.01)
 	)
-	var image = CURSOR_DEFAULT.get_image()
-	image.resize(cursor_size_base.x * scale, cursor_size_base.y * scale, Image.INTERPOLATE_NEAREST)
+	var image = cursor.get_image()
+	image.resize(
+		cursor_size_base.x * scale, cursor_size_base.y * scale, Image.INTERPOLATE_NEAREST
+	)
 	ImageTexture.create_from_image(image)
 	Input.set_custom_mouse_cursor(image)

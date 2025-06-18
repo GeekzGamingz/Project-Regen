@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene load_steps=12 format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/02 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
@@ -6,7 +6,38 @@
 [ext_resource type="PackedScene" uid="uid://r47eiw2k2umj" path="res://source/02 - User Interface/00 - Network/UI_Network.tscn" id="4_rb18f"]
 [ext_resource type="PackedScene" uid="uid://b2b6a8vu2yf8k" path="res://source/02 - User Interface/05 - Inventory/Inventory.tscn" id="7_a0e1u"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/02 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
+[ext_resource type="Texture2D" uid="uid://cpwjet11md283" path="res://assets/00 - UserInterface/05 - Cursors/cursor_hand_open_right.png" id="8_a0e1u"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="8_c7gxw"]
+[ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/02 - User Interface/Cursor.gd" id="9_wwe8j"]
 [ext_resource type="PackedScene" uid="uid://dw72o8ebu5cjp" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.tscn" id="10_moohe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_moohe"]
+resource_local_to_scene = true
+shader = ExtResource("8_c7gxw")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/old_base2 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/old_base3 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/new_base2 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/new_base3 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
 
 [node name="UserInterface" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -18,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_s1jx5")
 
 [node name="Menu_Tools" parent="UI_FullRect" instance=ExtResource("1_nbbpt")]
@@ -57,3 +89,13 @@ grow_vertical = 2
 
 [node name="Inventory" parent="UI_FullRect" instance=ExtResource("7_a0e1u")]
 layout_mode = 1
+
+[node name="Cursor" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_moohe")
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2
+texture = ExtResource("8_a0e1u")
+stretch_mode = 2
+script = ExtResource("9_wwe8j")

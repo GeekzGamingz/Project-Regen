@@ -34,6 +34,22 @@ class_name Interactable
 	"Stone": int(0),
 	"Wood": int(0)
 }
+#OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+#------------------------------------------------------------------------------#
+#Signaled Functions
+#Mouse Entered
+func _on_mouse_entered() -> void:
+	if obtainable == true:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		MAIN.UI_CURSOR.set_deferred("visible", true)
+		C.CURSOR_STATE = "HandOpen"
+#Mouse Exited
+func _on_mouse_exited() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	MAIN.UI_CURSOR.set_deferred("visible", false)
+	C.CURSOR_STATE = "Default"
 #------------------------------------------------------------------------------#
 #Custom Functions
 func interact(): pass
