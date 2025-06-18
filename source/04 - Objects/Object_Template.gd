@@ -41,15 +41,9 @@ class_name Interactable
 #Signaled Functions
 #Mouse Entered
 func _on_mouse_entered() -> void:
-	if obtainable == true:
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		MAIN.UI_CURSOR.set_deferred("visible", true)
-		C.CURSOR_STATE = "HandOpen"
+	if obtainable == true: print("Switch Cursor")
 #Mouse Exited
-func _on_mouse_exited() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	MAIN.UI_CURSOR.set_deferred("visible", false)
-	C.CURSOR_STATE = "Default"
+func _on_mouse_exited() -> void: print("Return Cursor")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func interact(): pass

@@ -19,7 +19,7 @@ config/icon="uid://lwvyjwug45qo"
 
 G="*res://source/00 - Globals/_Globals.gd"
 T="*res://source/00 - Globals/_Textures.gd"
-C="*res://source/00 - Globals/_Cursors.gd"
+C="*res://source/02 - User Interface/06 - Cursors/_Cursor.gd"
 
 [display]
 
