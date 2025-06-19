@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bamerqjjismb1"]
+[gd_scene load_steps=10 format=3 uid="uid://bamerqjjismb1"]
 
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="1_qiaai"]
-[ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_ixgao"]
-[ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/02 - User Interface/06 - Cursors/CursorIcons.gd" id="3_d5a8x"]
-[ext_resource type="Texture2D" uid="uid://d3pgk3j8dtuat" path="res://assets/00 - UserInterface/05 - Cursors/cursor_qwest.png" id="4_rq7a7"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="1_ic7qn"]
+[ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_uofne"]
+[ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/02 - User Interface/06 - Cursors/SoftwareCursor.gd" id="3_88ndb"]
+[ext_resource type="Texture2D" uid="uid://d3pgk3j8dtuat" path="res://assets/00 - UserInterface/05 - Cursors/cursor_qwest.png" id="4_o8jqr"]
+[ext_resource type="Script" uid="uid://ctgrxk17kldnl" path="res://source/02 - User Interface/06 - Cursors/CursorIcon.gd" id="5_uofne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_moohe"]
 resource_local_to_scene = true
-shader = ExtResource("1_qiaai")
+shader = ExtResource("1_ic7qn")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -50,7 +51,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Icon:frame_coords")
+tracks/1/path = NodePath("../CursorIcon:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -80,7 +81,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Icon:frame_coords")
+tracks/1/path = NodePath("../CursorIcon:frame_coords")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -96,22 +97,25 @@ _data = {
 &"idle": SubResource("Animation_tuwh3")
 }
 
-[node name="Cursor" type="Sprite2D"]
+[node name="SoftwareCursor" type="Node2D"]
+script = ExtResource("3_88ndb")
+
+[node name="Cursor" type="Sprite2D" parent="."]
 visible = false
 top_level = true
-material = SubResource("ShaderMaterial_moohe")
-texture = ExtResource("2_ixgao")
+texture = ExtResource("2_uofne")
 centered = false
 hframes = 4
-script = ExtResource("3_d5a8x")
 
-[node name="Icon" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("4_rq7a7")
+[node name="CursorIcon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_moohe")
+texture = ExtResource("4_o8jqr")
 centered = false
 hframes = 4
+script = ExtResource("5_uofne")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cursor")
 libraries = {
 &"": SubResource("AnimationLibrary_qkhsk")
 }

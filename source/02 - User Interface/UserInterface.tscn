@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b2b6a8vu2yf8k" path="res://source/02 - User Interface/05 - Inventory/Inventory.tscn" id="7_a0e1u"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/02 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="8_c7gxw"]
-[ext_resource type="PackedScene" uid="uid://bamerqjjismb1" path="res://source/02 - User Interface/06 - Cursors/CursorIcons.tscn" id="8_wwe8j"]
+[ext_resource type="PackedScene" uid="uid://bamerqjjismb1" path="res://source/02 - User Interface/06 - Cursors/SoftwareCursor.tscn" id="8_wwe8j"]
 [ext_resource type="PackedScene" uid="uid://dw72o8ebu5cjp" path="res://source/02 - User Interface/04 - Splash Screen/SplashScreen.tscn" id="10_moohe"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c7gxw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwe8j"]
 resource_local_to_scene = true
 shader = ExtResource("8_c7gxw")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
@@ -89,5 +89,5 @@ grow_vertical = 2
 [node name="Inventory" parent="UI_FullRect" instance=ExtResource("7_a0e1u")]
 layout_mode = 1
 
-[node name="Cursor" parent="." instance=ExtResource("8_wwe8j")]
-material = SubResource("ShaderMaterial_c7gxw")
+[node name="SoftwareCursor" parent="." instance=ExtResource("8_wwe8j")]
+material = SubResource("ShaderMaterial_wwe8j")

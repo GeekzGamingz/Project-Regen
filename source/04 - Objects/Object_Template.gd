@@ -41,9 +41,9 @@ class_name Interactable
 #Signaled Functions
 #Mouse Entered
 func _on_mouse_entered() -> void:
-	if obtainable == true: print("Switch Cursor")
+	if obtainable == true: MAIN.UI_CURSOR.icon_state = "HandOpen"
 #Mouse Exited
-func _on_mouse_exited() -> void: print("Return Cursor")
+func _on_mouse_exited() -> void: MAIN.UI_CURSOR.icon_state = "Default"
 #------------------------------------------------------------------------------#
 #Custom Functions
 func interact(): pass

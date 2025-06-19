@@ -105,7 +105,7 @@ func update_colors(button_color):
 			update_primary(sprite_material, button_color)
 			sprite_material = sprite_leg_right.material
 			update_primary(sprite_material, button_color)
-			sprite_material = MAIN.UI_CURSOR.material
+			sprite_material = MAIN.UI_CURSOR_ICON.material
 			update_primary(sprite_material, button_color)
 		"Eye1":
 			var sprite_material = sprite_base.material

@@ -12,14 +12,11 @@ const CURSOR_FRAMES: Array = [
 #Variables
 #Integers
 var current_frame: int = 0
-#Strings
-var old_state: String
 #Vectors
 var cursor_size_base: Vector2 = Vector2(16, 16)
 #OnReady Variables
 @onready var current_cursor = CURSOR_FRAMES[0]
 @onready var timer: Timer = Timer.new()
-#OnReady Vectors
 @onready var window_size_base: Vector2 = get_window().size
 #------------------------------------------------------------------------------#
 #Ready Function
