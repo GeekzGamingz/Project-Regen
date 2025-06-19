@@ -10,7 +10,7 @@ signal peer_disconnected(id)
 signal server_disconnected
 #------------------------------------------------------------------------------#
 #Variables
-#Bools
+#Booleans
 var single_player: bool = false
 #Dictionaries
 var old_players: Dictionary = {}

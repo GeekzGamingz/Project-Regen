@@ -1,7 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
-#Bools
+#Booleans
 var server_started: bool = false
 #Strings
 var customize_type: String
@@ -15,7 +15,7 @@ var customize_type: String
 @export var beard_counter: int = 0
 @export var anim_counter: int = 0
 @export var anim_direction: int = 0
-#Bools
+#Booleans
 @export var is_chub: bool = false
 @export var is_wheels: bool = false
 #OnReady Variables

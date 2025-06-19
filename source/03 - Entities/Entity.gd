@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Entity
 #------------------------------------------------------------------------------#
 #Variables
-#Bools
+#Booleans
 var is_grounded: bool = false
 #Vectors
 var facing: Vector2 = Vector2.ONE

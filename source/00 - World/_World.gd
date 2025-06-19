@@ -1,5 +1,9 @@
 extends Node2D
 #------------------------------------------------------------------------------#
+#Variables
+#Exported Variables
+@export var starting_position: Vector2 = Vector2(320, 180)
+#OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
@@ -8,7 +12,6 @@ extends Node2D
 @onready var BUTTON_SPAWN: TextureButton = UI_SPLASH.get_node("PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn")
 #Local Nodes
 @onready var orphanage_players: Node2D = $Orphanages/Orphanage_Entities/Entities_Players
-@onready var object_plinths: Node2D = $Orphanages/Orphanage_Objects/Object_Plinths
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
@@ -22,6 +25,6 @@ func spawn_requested():
 		var player_scene = preload("res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.tscn")
 		var player = player_scene.instantiate()
 		player.name = str(id)
-		if id == 1: player.global_position = object_plinths.get_node("Markers/Marker_Host").global_position
-		else: player.global_position = object_plinths.get_node("Markers/Marker_Guest1").global_position
+		if id == 1: player.global_position = starting_position
+		else: player.global_position = starting_position #Change to Different Spawn Locations
 		orphanage_players.call_deferred("add_child", player)

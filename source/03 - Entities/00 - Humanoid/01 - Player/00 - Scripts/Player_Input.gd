@@ -2,16 +2,22 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
 #Exported Variables
-#Exported Bools
+#Exported Booleans
 @export var is_controllable: bool = true
 @export var is_pathing: bool = false
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var ORPHANAGE_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
 #Local Nodes
 @onready var e: Node2D = get_parent().get_parent()
 @onready var object_detection: Node2D = e.get_node("Raycasts/Ray_ObjectDetection")
 @onready var navi: NavigationAgent2D = e.get_node("NavigationAgent2D")
+#------------------------------------------------------------------------------#
+#Ready Function
+func _ready() -> void:
+	for object in ORPHANAGE_OBJECTS.get_children():
+		object.connect("object_clicked", make_path)
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
@@ -24,6 +30,12 @@ func _input(event: InputEvent) -> void:
 #Signaled Functions
 func _on_navi_velocity_computed(safe_velocity: Vector2) -> void:
 	if is_pathing: e.velocity = safe_velocity
+#------------------------------------------------------------------------------#
+#Custom Signaled Functions
+#Make Path
+func make_path() -> void:
+	navi.target_position = get_global_mouse_position()
+	is_pathing = true
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Handle Movement Provided By Player
@@ -44,10 +56,6 @@ func handle_pathing() -> void:
 		if navi.avoidance_enabled: navi.set_velocity(new_velocity)
 		else: _on_navi_velocity_computed(new_velocity)
 		e.direction = round(to_local(navi.get_next_path_position()).normalized())
-#Make Path
-func make_path() -> void:
-	navi.target_position = get_global_mouse_position()
-	is_pathing = true
 #Activate Object
 func activate_object() -> void:
 	if object_detection.is_colliding():

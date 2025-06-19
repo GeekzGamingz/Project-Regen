@@ -11,7 +11,6 @@ size = Vector2(16, 16)
 
 [node name="Object_Rock" instance=ExtResource("1_jf7w0")]
 script = ExtResource("2_u3oro")
-obtainable = true
 item_type = "Material"
 item_material = "Stone"
 item_components = {

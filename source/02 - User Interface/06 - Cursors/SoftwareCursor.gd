@@ -27,4 +27,7 @@ func _process(_delta: float) -> void:
 			"HandOpen":
 				icon.texture = icon.CURSOR_HAND_OPEN_RIGHT
 				icon.visible = true
+			"HandGrab":
+				icon.texture = icon.CURSOR_HAND_GRAB_RIGHT
+				icon.visible = true
 	old_state = icon_state

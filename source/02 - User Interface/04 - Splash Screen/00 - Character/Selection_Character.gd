@@ -3,7 +3,7 @@ extends HBoxContainer
 #Variables
 #Integers
 var character_counter: int = 0
-#Bools
+#Booleans
 var is_new: bool = false
 #OnReady Variables
 #Main Nodes
