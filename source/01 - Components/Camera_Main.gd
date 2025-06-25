@@ -1,7 +1,7 @@
 extends Camera2D
 #------------------------------------------------------------------------------#
 #Variables
-#Bool Variables
+#Boolean Variables
 var is_panning: bool = false
 #OnReady Variables
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")

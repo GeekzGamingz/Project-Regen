@@ -4,7 +4,7 @@ extends Node2D
 signal exit_build_mode
 #Variables
 var object_current: PackedScene
-#Bool Variables
+#Boolean Variables
 var buttons_connected: bool = false
 #OnReady Variables
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")

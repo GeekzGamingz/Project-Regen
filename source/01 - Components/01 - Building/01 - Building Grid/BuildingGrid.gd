@@ -53,52 +53,52 @@ func change_selection(dimensions):
 	match(dimensions.find_key(true)):
 		"16x16":
 			texture_size = Vector2(16, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x16"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_16x16"]
 		"16x32":
 			texture_size = Vector2(16, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x32"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_16x32"]
 		"16x48":
 			texture_size = Vector2(16, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x48"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_16x48"]
 		"16x64":
 			texture_size = Vector2(16, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x64"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_16x64"]
 		"32x16":
 			texture_size = Vector2(32, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x16"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_32x16"]
 		"32x32":
 			texture_size = Vector2(32, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x32"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_32x32"]
 		"32x48":
 			texture_size = Vector2(32, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x48"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_32x48"]
 		"32x64":
 			texture_size = Vector2(32, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x64"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_32x64"]
 		"48x16":
 			texture_size = Vector2(48, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x16"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_48x16"]
 		"48x32":
 			texture_size = Vector2(48, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x32"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_48x32"]
 		"48x48":
 			texture_size = Vector2(48, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x48"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_48x48"]
 		"48x64":
 			texture_size = Vector2(48, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x64"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_48x64"]
 		"64x16":
 			texture_size = Vector2(64, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x16"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_64x16"]
 		"64x32":
 			texture_size = Vector2(64, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x32"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_64x32"]
 		"64x48":
 			texture_size = Vector2(64, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x48"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_64x48"]
 		"64x64":
 			texture_size = Vector2(64, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x64"]
+			blueprint_zone.texture = T.ZONE_TEXTURES["ZONE_64x64"]
 	blueprint_selection.size = texture_size
 	for ray in blueprint_selection.get_children():
 		ray.target_position.y = (texture_size.x + texture_size.y) * 0.5
