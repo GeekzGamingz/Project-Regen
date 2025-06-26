@@ -9,6 +9,7 @@ extends Node2D
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var ORPHANAGE_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
+@onready var ORPHANAGE_FLORA: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Flora")
 #Local Nodes
 @onready var e: Node2D = get_parent().get_parent()
 @onready var object_detection: Node2D = e.get_node("Raycasts/Ray_ObjectDetection")
@@ -18,10 +19,12 @@ extends Node2D
 func _ready() -> void:
 	for object in ORPHANAGE_OBJECTS.get_children():
 		object.connect("object_clicked", make_path)
+	for flora in ORPHANAGE_FLORA.get_children():
+		flora.connect("object_clicked", make_path)
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_interact"): activate_object()
+	if event.is_action_pressed("action_interact"): interact_object()
 	if event.is_action_pressed("move_click"): make_path()
 	if Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
@@ -32,7 +35,7 @@ func _input(event: InputEvent) -> void:
 func _on_navi_velocity_computed(safe_velocity: Vector2) -> void:
 	if is_pathing: e.velocity = safe_velocity
 #Destination Reached
-func _on_navi_navigation_finished() -> void: activate_object()
+func _on_navi_navigation_finished() -> void: interact_object()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Make Path
@@ -59,7 +62,7 @@ func handle_pathing() -> void:
 		if navi.avoidance_enabled: navi.set_velocity(new_velocity)
 		else: _on_navi_velocity_computed(new_velocity)
 		e.direction = round(to_local(navi.get_next_path_position()).normalized())
-#Activate Object
-func activate_object() -> void:
+#Object Interaction
+func interact_object() -> void:
 	if object_detection.is_colliding():
-		object_detection.get_collider().get_node("../..").rpc("activate")
+		object_detection.get_collider().get_node("../..").rpc("interact")

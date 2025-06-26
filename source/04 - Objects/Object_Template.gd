@@ -63,4 +63,5 @@ func _on_mouse_exited() -> void:
 	MAIN.UI_CURSOR.icon_state = "Default"
 #------------------------------------------------------------------------------#
 #Custom Functions
+@rpc("any_peer", "call_local")
 func interact(): pass

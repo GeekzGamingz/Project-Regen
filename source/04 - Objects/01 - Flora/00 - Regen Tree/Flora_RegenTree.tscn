@@ -23,14 +23,12 @@ properties/0/replication_mode = 2
 script = ExtResource("2_2ug13")
 grass_array = []
 is_active = false
+item_type = "Flora"
+item_material = "Organic"
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" index="0"]
 position = Vector2(48, 48)
 shape = SubResource("RectangleShape2D_2ug13")
-
-[node name="Area_Detection" parent="Areas" index="1"]
-collision_layer = 16
-collision_mask = 0
 
 [node name="CollisionShape2D" parent="Areas/Area_Detection" index="0"]
 position = Vector2(48, 88)

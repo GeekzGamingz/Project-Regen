@@ -36,15 +36,13 @@ func day_elapsed(_day): map_grass.set_cells_terrain_connect(grass_array, 0, 0, t
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Interact
-func interact(): pass
-#Activate
-@rpc("any_peer", "call_local")
-func activate():
+func interact():
 	if !is_active:
 		is_active = true
 		MAIN.TIME.connect("tick_elapsed", tick_elapsed)
 		MAIN.TIME.connect("day_elapsed", day_elapsed.rpc)
 		spawn_grass_initial()
+	else: print(name, " Interaction")
 #Spawn Initial Grass
 func spawn_grass_initial():
 	var regen_tile = Vector2i(global_position)
