@@ -572,4 +572,5 @@ theme_override_font_sizes/font_size = 8
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
 
+[connection signal="navigation_finished" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_velocity_computed"]

@@ -28,8 +28,11 @@ func _input(event: InputEvent) -> void:
 	) != Vector2.ZERO: is_pathing = false
 #------------------------------------------------------------------------------#
 #Signaled Functions
+#Pathing Velocity
 func _on_navi_velocity_computed(safe_velocity: Vector2) -> void:
 	if is_pathing: e.velocity = safe_velocity
+#Destination Reached
+func _on_navi_navigation_finished() -> void: activate_object()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Make Path
