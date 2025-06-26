@@ -42,6 +42,7 @@ var mouse_is_hovering: bool = false
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
