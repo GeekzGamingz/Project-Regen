@@ -71,7 +71,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -131,7 +131,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -192,7 +192,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -253,7 +253,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -314,7 +314,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -375,7 +375,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -436,7 +436,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -497,7 +497,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -558,7 +558,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -619,7 +619,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -680,7 +680,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -741,7 +741,7 @@ editable = false
 selecting_enabled = false
 flat = true
 
-[node name="Label_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0

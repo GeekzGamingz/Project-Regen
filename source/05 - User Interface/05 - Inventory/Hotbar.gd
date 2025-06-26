@@ -22,7 +22,6 @@ func generate_hotbar():
 	for slot in slots_hotbar.get_children(): hotbar_array.append(slot)
 #Scroll Hotbar Slot
 func scroll_hotbar(scroll):
-	check_hotbar()
 	match(scroll):
 		"Next": hotbar_selection += 1
 		"Previous": hotbar_selection -= 1
