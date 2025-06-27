@@ -8,6 +8,7 @@ extends Node2D
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
 @onready var ORPHANAGE_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
 @onready var ORPHANAGE_FLORA: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Flora")
 #Local Nodes
@@ -65,4 +66,12 @@ func handle_pathing() -> void:
 #Object Interaction
 func interact_object() -> void:
 	if object_detection.is_colliding():
-		object_detection.get_collider().get_node("../..").rpc("interact")
+		var object = object_detection.get_collider().get_node("../..")
+		var hotbar_selection = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
+		object.rpc("interact")
+		if object.is_obtainable && hotbar_selection.is_empty:
+			hotbar_selection.is_empty = false
+			hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
+			var object_scene = object.duplicate()
+			hotbar_selection.held_item = object_scene
+			object.queue_free()

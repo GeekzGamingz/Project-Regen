@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2b6a8vu2yf8k"]
+[gd_scene load_steps=14 format=3 uid="uid://b2b6a8vu2yf8k"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="2_t2jr1"]
 [ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/Hotbar.gd" id="2_tqc1x"]
-[ext_resource type="Texture2D" uid="uid://dr865k6msqf2c" path="res://assets/02 - Objects/04 - Stone/icon_rock.png" id="3_h3qip"]
 [ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="3_xvjuj"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_1y7b7"]
 [ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/HotbarSlot.gd" id="4_b7gmf"]
@@ -50,11 +49,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
@@ -110,11 +107,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
@@ -171,11 +166,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
@@ -232,11 +225,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
@@ -293,11 +284,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
@@ -354,11 +343,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
@@ -415,11 +402,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
@@ -476,11 +461,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
@@ -537,11 +520,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
@@ -598,11 +579,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
@@ -659,11 +638,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
@@ -720,11 +697,9 @@ texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
 [node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
-visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_h3qip")
 stretch_mode = 2
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]

@@ -42,9 +42,11 @@ texture = ExtResource("2_p2flx")
 
 [node name="Sprite_Hotbar" parent="Sprites" index="2"]
 texture = ExtResource("2_p2flx")
+centered = false
 
 [node name="Sprite_Pack" parent="Sprites" index="3"]
 texture = ExtResource("2_p2flx")
+centered = false
 
 [node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(8, 9)
