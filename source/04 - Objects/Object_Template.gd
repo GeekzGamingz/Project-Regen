@@ -10,6 +10,7 @@ var mouse_is_hovering: bool = false
 #Exported Variables
 #Exported Booleans
 @export var is_obtainable: bool = false
+@export var is_stackable: bool = false
 #Exported Enumerations
 #Item Type
 @export_enum(

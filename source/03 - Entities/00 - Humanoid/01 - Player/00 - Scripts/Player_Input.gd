@@ -69,9 +69,17 @@ func interact_object() -> void:
 		var object = object_detection.get_collider().get_node("../..")
 		var hotbar_selection = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
 		object.rpc("interact")
-		if object.is_obtainable && hotbar_selection.is_empty:
-			hotbar_selection.is_empty = false
-			hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
-			var object_scene = object.duplicate()
-			hotbar_selection.held_item = object_scene
-			object.queue_free()
+		if object.is_obtainable:
+			if hotbar_selection.is_empty:
+				hotbar_selection.is_empty = false
+				hotbar_selection.quantity += 1
+				hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
+				var object_scene = object.duplicate()
+				hotbar_selection.held_item = object_scene
+				object.queue_free()
+			else:
+				var group = object.get_groups()
+				print(group[0])
+				if hotbar_selection.held_item.is_in_group(group[0]):
+					if object.is_stackable: hotbar_selection.quantity += 1
+				object.queue_free()

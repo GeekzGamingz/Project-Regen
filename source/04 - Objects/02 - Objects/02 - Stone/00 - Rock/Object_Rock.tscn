@@ -9,9 +9,10 @@ size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pu1d6"]
 
-[node name="Object_Rock" instance=ExtResource("1_jf7w0")]
+[node name="Object_Rock" groups=["Rock"] instance=ExtResource("1_jf7w0")]
 script = ExtResource("2_u3oro")
 is_obtainable = true
+is_stackable = true
 item_type = "Material"
 item_material = "Stone"
 item_components = {
