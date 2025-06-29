@@ -1,6 +1,7 @@
 extends Node
 #------------------------------------------------------------------------------#
 #Global Dictionaries
+#Zone Textures
 var ZONE_TEXTURES: Dictionary = {
 	"ZONE_16x16": preload("res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16.png"),
 	"ZONE_16x32": preload("res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16x32.png"),
