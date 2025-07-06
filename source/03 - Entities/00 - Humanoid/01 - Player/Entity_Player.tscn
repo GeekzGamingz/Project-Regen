@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_4ncaf"]
 [ext_resource type="Script" uid="uid://dcvsjya3qorb6" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Customization.gd" id="5_gl5bk"]
 [ext_resource type="Script" uid="uid://mjfu2tdf2wfj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Colors.gd" id="6_dbfy1"]
-[ext_resource type="Script" uid="uid://c6y5sx7imntcr" path="res://source/03 - Entities/00 - Humanoid/01 - Player/path_2d.gd" id="8_dbfy1"]
+[ext_resource type="Script" uid="uid://c6y5sx7imntcr" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_HuckArc.gd" id="8_dbfy1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0p84g"]
 resource_local_to_scene = true
@@ -587,12 +587,12 @@ theme_override_font_sizes/font_size = 8
 [node name="Output_Name" parent="Outputs" index="1"]
 visible = false
 
-[node name="Path_RangeArc" type="Path2D" parent="." index="9"]
+[node name="Path_HuckArc" type="Path2D" parent="." index="9"]
 position = Vector2(0, -35)
 curve = SubResource("Curve2D_gl5bk")
 script = ExtResource("8_dbfy1")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path_RangeArc" index="0"]
+[node name="PathFollow2D" type="PathFollow2D" parent="Path_HuckArc" index="0"]
 rotation = -0.380506
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_navigation_finished"]
