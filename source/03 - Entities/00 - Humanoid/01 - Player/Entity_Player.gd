@@ -4,6 +4,7 @@ extends Entity
 #OnReady Variables
 @onready var player_serverinfo: Node2D = $Scripts/Player_ServerInfo
 @onready var output_name: Label = $Outputs/Output_Name
+@onready var collision: CollisionShape2D = $CollisionShape2D
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #On Tree Entered
