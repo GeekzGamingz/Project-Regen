@@ -7,6 +7,7 @@ extends Node2D
 @onready var sprite_leg_left: Sprite2D = $Sprite_LegLeft
 @onready var sprite_leg_right: Sprite2D = $Sprite_LegRight
 #------------------------------------------------------------------------------#
+#Functions
 #Custom Functions
 #Switch Limbs
 func switch_limbs(facing):
