@@ -13,7 +13,7 @@ extends Node2D
 @onready var ORPHANAGE_FLORA: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Flora")
 #Local Nodes
 @onready var e: Node2D = get_parent().get_parent()
-@onready var object_detection: Node2D = e.get_node("Raycasts/Ray_ObjectDetection")
+@onready var object_detection: Node2D = e.get_node("Raycasts/Rays_ObjectDetection")
 @onready var navi: NavigationAgent2D = e.get_node("NavigationAgent2D")
 #------------------------------------------------------------------------------#
 #Ready Function
@@ -65,21 +65,23 @@ func handle_pathing() -> void:
 		e.direction = round(to_local(navi.get_next_path_position()).normalized())
 #Object Interaction
 func interact_object() -> void:
-	if object_detection.is_colliding():
-		var object = object_detection.get_collider().get_node("../..")
-		var hotbar_selection = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
-		object.rpc("interact")
-		if object.is_obtainable:
-			if hotbar_selection.is_empty:
-				hotbar_selection.is_empty = false
-				hotbar_selection.quantity += 1
-				hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
-				var object_scene = object.duplicate()
-				hotbar_selection.held_item = object_scene
-				object.queue_free()
-			else:
-				var group = object.get_groups()
-				print(group[0])
-				if hotbar_selection.held_item.is_in_group(group[0]):
-					if object.is_stackable: hotbar_selection.quantity += 1
-				object.queue_free()
+	for o in object_detection.get_children():
+		if o.is_colliding():
+			var object = o.get_collider().get_node("../..")
+			var hotbar_selection = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
+			object.rpc("interact")
+			if object.is_obtainable:
+				if hotbar_selection.is_empty:
+					hotbar_selection.is_empty = false
+					hotbar_selection.quantity += 1
+					hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
+					var object_scene = object.duplicate()
+					hotbar_selection.held_item = object_scene
+					object.queue_free()
+				else:
+					var group = object.get_groups()
+					print(group[0])
+					if hotbar_selection.held_item.is_in_group(group[0]):
+						if object.is_stackable: hotbar_selection.quantity += 1
+					object.queue_free()
+			break

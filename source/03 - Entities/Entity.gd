@@ -21,7 +21,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 @onready var entity_fsm: Node2D = $Scripts/Entity_StateMachine
 @onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
 #RayCasts
-@onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
+@onready var object_detection: Node2D = $Raycasts/Rays_ObjectDetection
 #Animation Nodes
 @onready var sprite_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Sprite
 @onready var fx_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Effects

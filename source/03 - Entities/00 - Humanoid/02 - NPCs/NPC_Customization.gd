@@ -33,23 +33,23 @@ func update_sprites():
 	match(is_chub):
 		false: match(height):
 			"Short":
-				sprite_string = "S_A_NW"
+				sprite_string = "S_A_NW" #Short Average No Wheelchair
 				offset = -14.0
 			"Average":
-				sprite_string = "A_A_NW"
+				sprite_string = "A_A_NW" #Average Average No Wheelchair
 				offset = -16.0
 			"Tall":
-				sprite_string = "T_A_NW"
+				sprite_string = "T_A_NW" #Tall Average No Wheelchair
 				offset = -18.0
 		true: match(height):
 			"Short":
-				sprite_string = "S_C_NW"
+				sprite_string = "S_C_NW" #Short Chubby No Wheelchair
 				offset = -14.0
 			"Average":
-				sprite_string = "A_C_NW"
+				sprite_string = "A_C_NW" #Average Chubby No Wheelchair
 				offset = -16.0
 			"Tall":
-				sprite_string = "T_C_NW"
+				sprite_string = "T_C_NW" #Tall Chubby No Wheelchair
 				offset = -18.0
 	body.get_node("Sprite_Base").texture = TORSO[sprite_string]
 	body.get_node("Sprite_ArmLeft").texture = ARM_L[sprite_string]

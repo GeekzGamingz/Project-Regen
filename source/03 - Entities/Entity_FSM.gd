@@ -64,18 +64,10 @@ func state_enter(new_state, old_state):
 		states.idle_left: e.playback.travel("Idle")
 		states.idle_up: e.playback.travel("Idle")
 		states.idle_down: e.playback.travel("Idle")
-		states.walk_left:
-			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(-G.TILE_SIZE.x, 0)
-		states.walk_right:
-			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(G.TILE_SIZE.x, 0)
-		states.walk_up:
-			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(0, -G.TILE_SIZE.x)
-		states.walk_down:
-			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(0, G.TILE_SIZE.x)
+		states.walk_left: e.playback.travel("Walk")
+		states.walk_right: e.playback.travel("Walk")
+		states.walk_up: e.playback.travel("Walk")
+		states.walk_down: e.playback.travel("Walk")
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):

@@ -13,6 +13,7 @@ config_version=5
 config/name="Project: Regen"
 run/main_scene="uid://djh4o8rsnf47g"
 config/features=PackedStringArray("4.4", "Forward Plus")
+run/max_fps=240
 config/icon="uid://lwvyjwug45qo"
 
 [autoload]

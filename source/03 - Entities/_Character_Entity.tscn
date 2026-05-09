@@ -1387,7 +1387,7 @@ texture = ExtResource("33_rt581")
 offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
-frame = 8
+frame = 12
 
 [node name="Sprite_LegLeft" type="Sprite2D" parent="Sprites/Sprites_Body"]
 material = SubResource("ShaderMaterial_uv8vn")
@@ -1426,8 +1426,59 @@ frame = 12
 [node name="Raycasts" type="Node2D" parent="."]
 position = Vector2(0, -8)
 
-[node name="Ray_ObjectDetection" type="RayCast2D" parent="Raycasts"]
-target_position = Vector2(0, 16)
+[node name="Rays_ObjectDetection" type="Node2D" parent="Raycasts"]
+
+[node name="Detection_North" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(0, -18)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_NE" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(12, -12)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_East" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(18, 0)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_SE" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(12, 12)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_South" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(0, 18)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_SW" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(-12, 12)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_West" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(-18, 0)
+collision_mask = 80
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Detection_NW" type="RayCast2D" parent="Raycasts/Rays_ObjectDetection"]
+target_position = Vector2(-12, -12)
 collision_mask = 80
 hit_from_inside = true
 collide_with_areas = true
