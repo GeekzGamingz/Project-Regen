@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2b6a8vu2yf8k"]
+[gd_scene load_steps=15 format=3 uid="uid://b2b6a8vu2yf8k"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://0kprb55ltq84" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_unpressed.png" id="6_3c4lk"]
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="6_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="7_tqc1x"]
+[ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack.gd" id="8_b7gmf"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -764,6 +765,7 @@ offset_right = 7.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_b7gmf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Backpack"]
 layout_mode = 2
@@ -1097,9 +1099,11 @@ texture = ExtResource("4_h3qip")
 stretch_mode = 2
 flip_h = true
 
-[node name="TextureButton" type="TextureButton" parent="Backpack"]
+[node name="CloseButton" type="TextureButton" parent="Backpack"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("6_3c4lk")
 texture_pressed = ExtResource("7_tqc1x")
+
+[connection signal="button_up" from="Backpack/CloseButton" to="Backpack" method="_on_close_button_up"]

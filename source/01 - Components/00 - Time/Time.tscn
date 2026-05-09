@@ -15,6 +15,7 @@ script = ExtResource("1_phfu8")
 script = ExtResource("2_6i057")
 
 [node name="Timer_Ticks" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
