@@ -765,7 +765,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_b7gmf")
-designation = 3
+designation = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Backpack"]
 layout_mode = 2
@@ -773,6 +773,7 @@ theme_override_constants/separation = -17
 alignment = 1
 
 [node name="Backpack_Front" type="TextureRect" parent="Backpack/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_t2jr1")
@@ -881,6 +882,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="ContainerBase" type="HBoxContainer" parent="Backpack/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = -16
 alignment = 1

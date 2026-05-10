@@ -5,9 +5,10 @@ const BACKPACK_SLOT_AVAILABLE = preload("res://assets/00 - UserInterface/04 - In
 #------------------------------------------------------------------------------#
 #Variables
 #Enumerations
-@export_enum("Mark I", "Mark II", "Mark III", "Mark IV") var designation
+@export_enum("Mark I", "Mark II", "Mark III", "Mark IV", "Mark V") var designation
 #OnReady Variables
 @onready var backpack: PanelContainer = $"."
+@onready var backpack_front: TextureRect = $VBoxContainer/Backpack_Front
 @onready var container_base: HBoxContainer = $VBoxContainer/ContainerBase
 @onready var container_left: VBoxContainer = $VBoxContainer/ContainerBase/ContainerLeft
 @onready var container_right: VBoxContainer = $VBoxContainer/ContainerBase/ContainerRight
@@ -17,7 +18,6 @@ const BACKPACK_SLOT_AVAILABLE = preload("res://assets/00 - UserInterface/04 - In
 @onready var slot_b2: TextureRect = $VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2
 @onready var slot_a3: TextureRect = $VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3
 @onready var slot_b3: TextureRect = $VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3
-
 #------------------------------------------------------------------------------#
 #Functions
 #Ready
@@ -37,14 +37,21 @@ func _on_close_button_up() -> void: backpack.set_deferred("visible", false)
 func check_designation():
 	match(designation):
 		null: backpack.set_deferred("visible", false)
-		0: container_base.set_deferred("visible", false)
-		1: container_base.set_deferred("visible", true)
-		2:
+		0: 
+			backpack_front.set_deferred("visible", true)
+			container_base.set_deferred("visible", false)
+		1: 
+			backpack_front.set_deferred("visible", false)
+			container_base.set_deferred("visible", true)
+		2: 
+			container_base.set_deferred("visible", true)
+			backpack_front.set_deferred("visible", true)
+		3:
 			container_left.set_deferred("visible", true)
 			slot_a1.texture = BACKPACK_SLOT_AVAILABLE
 			slot_a2.texture = BACKPACK_SLOT_AVAILABLE
 			slot_a3.texture = BACKPACK_SLOT_AVAILABLE
-		3:
+		4:
 			container_right.set_deferred("visible", true)
 			slot_b1.texture = BACKPACK_SLOT_AVAILABLE
 			slot_b2.texture = BACKPACK_SLOT_AVAILABLE
