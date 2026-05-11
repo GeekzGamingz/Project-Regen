@@ -23,6 +23,18 @@ func generate_hotbar():
 #Scroll Hotbar Slot
 func scroll_hotbar(scroll):
 	match(scroll):
+		"HotbarSlot1": hotbar_selection = 0
+		"HotbarSlot2": hotbar_selection = 1
+		"HotbarSlot3": hotbar_selection = 2
+		"HotbarSlot4": hotbar_selection = 3
+		"HotbarSlot5": hotbar_selection = 4
+		"HotbarSlot6": hotbar_selection = 5
+		"HotbarSlot7": hotbar_selection = 6
+		"HotbarSlot8": hotbar_selection = 7
+		"HotbarSlot9": hotbar_selection = 8
+		"HotbarSlot10": hotbar_selection = 9
+		"HotbarSlot11": hotbar_selection = 10
+		"HotbarSlot12": hotbar_selection = 11
 		"Next": hotbar_selection += 1
 		"Previous": hotbar_selection -= 1
 	check_hotbar()

@@ -68,20 +68,23 @@ func interact_object() -> void:
 	for o in object_detection.get_children():
 		if o.is_colliding():
 			var object = o.get_collider().get_node("../..")
-			var hotbar_selection = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
+			check_duplicates(object)
 			object.rpc("interact")
 			if object.is_obtainable:
-				if hotbar_selection.is_empty:
-					hotbar_selection.is_empty = false
-					hotbar_selection.quantity += 1
-					hotbar_selection.texture_object.texture = object.sprite_hotbar.texture
+				var hotbar_selected = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
+				if hotbar_selected.is_empty:
+					hotbar_selected.is_empty = false
+					hotbar_selected.quantity += 1
+					hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 					var object_scene = object.duplicate()
-					hotbar_selection.held_item = object_scene
-					object.queue_free()
+					hotbar_selected.held_item = object_scene
 				else:
 					var group = object.get_groups()
-					print(group[0])
-					if hotbar_selection.held_item.is_in_group(group[0]):
-						if object.is_stackable: hotbar_selection.quantity += 1
-					object.queue_free()
+					if hotbar_selected.held_item.is_in_group(group[0]):
+						if object.is_stackable: hotbar_selected.quantity += 1
+				object.queue_free()
 			break
+#Check Duplicate Item
+func check_duplicates(object):
+	for slot in HOTBAR.hotbar_array: if slot.contents != "Empty":
+		if slot.contents.contains(object.get_groups()[0]): HOTBAR.scroll_hotbar(slot.name)

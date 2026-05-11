@@ -35,24 +35,38 @@ func _on_close_button_up() -> void: backpack.set_deferred("visible", false)
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_designation():
+	backpack_front.set_deferred("visible", false)
+	container_base.set_deferred("visible", false)
+	container_left.set_deferred("visible", false)
+	container_right.set_deferred("visible", false)
+	slot_a1.texture = null
+	slot_a2.texture = null
+	slot_a3.texture = null
+	slot_b1.texture = null
+	slot_b2.texture = null
+	slot_b3.texture = null
 	match(designation):
 		null: backpack.set_deferred("visible", false)
-		0: 
-			backpack_front.set_deferred("visible", true)
-			container_base.set_deferred("visible", false)
-		1: 
-			backpack_front.set_deferred("visible", false)
-			container_base.set_deferred("visible", true)
+		0: backpack_front.set_deferred("visible", true)
+		1:  container_base.set_deferred("visible", true)
 		2: 
 			container_base.set_deferred("visible", true)
 			backpack_front.set_deferred("visible", true)
 		3:
+			backpack_front.set_deferred("visible", true)
+			container_base.set_deferred("visible", true)
 			container_left.set_deferred("visible", true)
 			slot_a1.texture = BACKPACK_SLOT_AVAILABLE
 			slot_a2.texture = BACKPACK_SLOT_AVAILABLE
 			slot_a3.texture = BACKPACK_SLOT_AVAILABLE
 		4:
+			backpack_front.set_deferred("visible", true)
+			container_base.set_deferred("visible", true)
+			container_left.set_deferred("visible", true)
 			container_right.set_deferred("visible", true)
+			slot_a1.texture = BACKPACK_SLOT_AVAILABLE
+			slot_a2.texture = BACKPACK_SLOT_AVAILABLE
+			slot_a3.texture = BACKPACK_SLOT_AVAILABLE
 			slot_b1.texture = BACKPACK_SLOT_AVAILABLE
 			slot_b2.texture = BACKPACK_SLOT_AVAILABLE
 			slot_b3.texture = BACKPACK_SLOT_AVAILABLE
