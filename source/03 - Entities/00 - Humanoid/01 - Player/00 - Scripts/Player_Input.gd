@@ -80,12 +80,16 @@ func check_slots(object):
 		if slot.contents != "Empty":
 			if slot.contents.contains(object.get_groups()[0]):
 				HOTBAR.scroll_hotbar(slot.name)
+				break #Break Slot Check
 			else: find_slot()
 func find_slot():
 	for slot in HOTBAR.hotbar_array:
-		if slot.contents == "Empty":
-			HOTBAR.scroll_hotbar(slot.name)
-			break
+		if slot.name != HOTBAR.hotbar_array[HOTBAR.hotbar_selection].name: continue
+		else:
+			if slot.contents == "Empty":
+				HOTBAR.scroll_hotbar(slot.name)
+				break #Break Find Slot
+			else: HOTBAR.scroll_hotbar("Next")
 #Obtain Object
 func obtain_object(object, hotbar_selected):
 	if hotbar_selected.is_empty: addto_hotbar(object, hotbar_selected)
