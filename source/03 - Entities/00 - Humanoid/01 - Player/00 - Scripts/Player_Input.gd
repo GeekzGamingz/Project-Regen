@@ -13,6 +13,7 @@ extends Node2D
 @onready var ORPHANAGE_FLORA: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Flora")
 #Local Nodes
 @onready var e: Node2D = get_parent().get_parent()
+@onready var object_interaction: Node2D = $"../Player_Interaction/Interaction_Objects"
 @onready var object_detection: Node2D = e.get_node("Raycasts/Rays_ObjectDetection")
 @onready var navi: NavigationAgent2D = e.get_node("NavigationAgent2D")
 #------------------------------------------------------------------------------#
@@ -25,7 +26,7 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_interact"): interact_object()
+	if event.is_action_pressed("action_interact"): object_interaction.interact_object()
 	if event.is_action_pressed("move_click"): make_path()
 	if Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
@@ -36,7 +37,7 @@ func _input(event: InputEvent) -> void:
 func _on_navi_velocity_computed(safe_velocity: Vector2) -> void:
 	if is_pathing: e.velocity = safe_velocity
 #Destination Reached
-func _on_navi_navigation_finished() -> void: interact_object()
+func _on_navi_navigation_finished() -> void: object_interaction.interact_object()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Make Path
@@ -63,46 +64,5 @@ func handle_pathing() -> void:
 		if navi.avoidance_enabled: navi.set_velocity(new_velocity)
 		else: _on_navi_velocity_computed(new_velocity)
 		e.direction = round(to_local(navi.get_next_path_position()).normalized())
-#------------------------------------------------------------------------------#
-#Object Interaction
-func interact_object() -> void:
-	for o in object_detection.get_children(): #Detect Raycasts
-		if o.is_colliding():
-			var object = o.get_collider().get_node("../..")
-			check_slots(object)
-			var hotbar_selected = HOTBAR.hotbar_array[HOTBAR.hotbar_selection]
-			object.rpc("interact")
-			if object.is_obtainable: obtain_object(object, hotbar_selected)
-			break #Break Raycast Loop
-#Check Duplicate Item
-func check_slots(object):
-	for slot in HOTBAR.hotbar_array:
-		if slot.contents != "Empty":
-			if slot.contents.contains(object.get_groups()[0]):
-				HOTBAR.scroll_hotbar(slot.name)
-				break #Break Slot Check
-			else: find_slot()
-func find_slot():
-	for slot in HOTBAR.hotbar_array:
-		if slot.name != HOTBAR.hotbar_array[HOTBAR.hotbar_selection].name: continue
-		else:
-			if slot.contents == "Empty":
-				HOTBAR.scroll_hotbar(slot.name)
-				break #Break Find Slot
-			else: HOTBAR.scroll_hotbar("Next")
-#Obtain Object
-func obtain_object(object, hotbar_selected):
-	if hotbar_selected.is_empty: addto_hotbar(object, hotbar_selected)
-	else:
-		var group = object.get_groups()
-		if hotbar_selected.held_item.is_in_group(group[0]):
-			if object.is_stackable: hotbar_selected.quantity += 1
-	object.queue_free()
-#Add to Hotbar
-func addto_hotbar(object, hotbar_selected):
-	hotbar_selected.is_empty = false
-	hotbar_selected.quantity += 1
-	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
-	var object_scene = object.duplicate()
-	hotbar_selected.held_item = object_scene
+
 	
