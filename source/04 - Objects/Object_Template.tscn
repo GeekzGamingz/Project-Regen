@@ -8,9 +8,8 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_crrwx"]
 radius = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
-radius = 4.0
-height = 9.99999
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukouj"]
+size = Vector2(16, 16)
 
 [node name="Object_Template" type="StaticBody2D"]
 collision_layer = 16
@@ -38,6 +37,10 @@ shape = SubResource("CircleShape2D_crrwx")
 
 [node name="Area_Hotbar" type="Area2D" parent="Areas"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Hotbar"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ukouj")
+
 [node name="Area_Pack" type="Area2D" parent="Areas"]
 
 [node name="Sprites" type="Node2D" parent="."]
@@ -51,16 +54,16 @@ centered = false
 
 [node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites"]
 visible = false
+centered = false
 
 [node name="Sprite_Pack" type="Sprite2D" parent="Sprites"]
 visible = false
+centered = false
 
 [node name="Timers" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ukouj")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

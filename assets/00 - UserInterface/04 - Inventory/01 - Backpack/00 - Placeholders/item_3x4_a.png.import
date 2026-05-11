@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbrv66223dhag"
-path="res://.godot/imported/item_3x4_b.png-c54056b52c44c47593c52abc892638f7.ctex"
+uid="uid://dw5py7cwjv2b"
+path="res://.godot/imported/item_3x4_a.png-6a63850ec77adb8a3582945a9888cfff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/01 - Placeholders/item_3x4_b.png"
-dest_files=["res://.godot/imported/item_3x4_b.png-c54056b52c44c47593c52abc892638f7.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/00 - Placeholders/item_3x4_a.png"
+dest_files=["res://.godot/imported/item_3x4_a.png-6a63850ec77adb8a3582945a9888cfff.ctex"]
 
 [params]
 

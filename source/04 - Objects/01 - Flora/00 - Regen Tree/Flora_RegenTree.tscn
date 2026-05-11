@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk6yobriqni2k"]
+[gd_scene load_steps=7 format=3 uid="uid://dk6yobriqni2k"]
 
 [ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_cqd1s"]
 [ext_resource type="Script" uid="uid://jk4oyh4lfhe5" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.gd" id="2_2ug13"]
@@ -9,10 +9,6 @@ size = Vector2(96, 96)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o2m8g"]
 load_path = "res://.godot/imported/regentree_growth0.png-f673470e2815565fb3bf06166ae4c4cd.ctex"
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ug13"]
-radius = 5.0
-height = 14.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2ug13"]
 properties/0/path = NodePath(".:grass_array")
@@ -42,10 +38,8 @@ texture = ExtResource("2_o2m8g")
 [node name="Timer_Growth" type="Timer" parent="Timers" index="0"]
 one_shot = true
 
-[node name="CollisionShape2D" parent="." index="3"]
-position = Vector2(48, 88)
-rotation = 0.0
-shape = SubResource("CapsuleShape2D_2ug13")
+[node name="CollisionPolygon2D" parent="." index="3"]
+position = Vector2(40, 77)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4"]
 replication_config = SubResource("SceneReplicationConfig_2ug13")

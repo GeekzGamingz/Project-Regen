@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://bxsc5d7ck36le"]
+[gd_scene load_steps=60 format=4 uid="uid://bxsc5d7ck36le"]
 
 [ext_resource type="Script" uid="uid://bdbk2xrvpdua" path="res://source/02 - World/_World.gd" id="1_020tg"]
 [ext_resource type="PackedScene" uid="uid://b0af6y5i8dvl2" path="res://source/01 - Components/00 - Time/Time.tscn" id="1_146u6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/Orphanages.gd" id="5_ylk6r"]
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
 [ext_resource type="PackedScene" uid="uid://dh6gewsgyclei" path="res://source/04 - Objects/02 - Objects/02 - Stone/00 - Rock/Object_Rock.tscn" id="8_d03ws"]
+[ext_resource type="PackedScene" uid="uid://cqx4jwt27rt6m" path="res://source/04 - Objects/02 - Objects/Object_LPiece.tscn" id="10_g0q3n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vbrh1"]
 vertices = PackedVector2Array(8, 8, -4, 8, -4, -4, 8, -4)
@@ -794,19 +795,28 @@ script = ExtResource("5_ylk6r")
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages"]
 
+[node name="Object_LPiece" parent="Orphanages/Orphanage_Objects" instance=ExtResource("10_g0q3n")]
+position = Vector2(218, 181)
+
+[node name="Object_LPiece2" parent="Orphanages/Orphanage_Objects" instance=ExtResource("10_g0q3n")]
+position = Vector2(29, 116)
+
+[node name="Object_LPiece3" parent="Orphanages/Orphanage_Objects" instance=ExtResource("10_g0q3n")]
+position = Vector2(171, 65)
+
 [node name="Object_Rock" parent="Orphanages/Orphanage_Objects" instance=ExtResource("8_d03ws")]
-position = Vector2(193, 250)
+position = Vector2(115, 91)
 
 [node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" instance=ExtResource("8_d03ws")]
-position = Vector2(163, 203)
+position = Vector2(99, 190)
 
 [node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" instance=ExtResource("8_d03ws")]
-position = Vector2(247, 225)
+position = Vector2(158, 149)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages"]
 
 [node name="Flora_RegenTree" parent="Orphanages/Orphanage_Flora" instance=ExtResource("6_m43ww")]
-position = Vector2(236, 8)
+position = Vector2(236, 11)
 
 [node name="Orphanage_Entities" type="Node2D" parent="Orphanages"]
 
