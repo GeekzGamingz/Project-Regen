@@ -15,13 +15,15 @@ var held_item: Object = null
 @onready var texture_object: TextureRect = $Texture_Object
 @onready var line_quantity: LineEdit = $LineEdit_Quantity
 #------------------------------------------------------------------------------#
+#Functions
+#Process
 func _process(_delta: float) -> void:
 	if is_empty == true: contents = "Empty"
 	else:
 		contents = held_item.name
 		line_quantity.set_deferred("visible", held_item.is_stackable)
 		line_quantity.text = str(quantity)
-
-
-func _on_mouse_entered() -> void:
-	hotbar.scroll_hotbar(name)
+#------------------------------------------------------------------------------#
+#Signaled Functions
+#Mouse Entered
+func _on_mouse_entered() -> void: hotbar.scroll_hotbar(name)
