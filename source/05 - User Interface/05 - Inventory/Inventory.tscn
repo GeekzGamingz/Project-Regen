@@ -1128,4 +1128,16 @@ size_flags_vertical = 0
 texture_normal = ExtResource("6_3c4lk")
 texture_pressed = ExtResource("7_tqc1x")
 
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot1" to="Hotbar/SlotContainer_Hotbar/HotbarSlot1" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot2" to="Hotbar/SlotContainer_Hotbar/HotbarSlot2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot3" to="Hotbar/SlotContainer_Hotbar/HotbarSlot3" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot4" to="Hotbar/SlotContainer_Hotbar/HotbarSlot4" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot5" to="Hotbar/SlotContainer_Hotbar/HotbarSlot5" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot6" to="Hotbar/SlotContainer_Hotbar/HotbarSlot6" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot7" to="Hotbar/SlotContainer_Hotbar/HotbarSlot7" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot8" to="Hotbar/SlotContainer_Hotbar/HotbarSlot8" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot9" to="Hotbar/SlotContainer_Hotbar/HotbarSlot9" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot10" to="Hotbar/SlotContainer_Hotbar/HotbarSlot10" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot11" to="Hotbar/SlotContainer_Hotbar/HotbarSlot11" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot12" to="Hotbar/SlotContainer_Hotbar/HotbarSlot12" method="_on_mouse_entered"]
 [connection signal="button_up" from="Backpack/CloseButton" to="Backpack" method="_on_close_button_up"]
