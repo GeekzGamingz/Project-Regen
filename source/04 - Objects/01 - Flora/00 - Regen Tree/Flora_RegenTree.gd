@@ -15,7 +15,9 @@ var start_tile: Vector2i
 #Local Nodes
 @onready var timer_growth: Timer = $Timers/Timer_Growth
 #Offsets
+@warning_ignore("integer_division")
 @onready var world_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(G.TILE_SIZE)
+@warning_ignore("integer_division")
 @onready var grass_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(G.GRASS_SIZE)
 #------------------------------------------------------------------------------#
 #Signaled Functions

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2b6a8vu2yf8k"]
+[gd_scene format=3 uid="uid://b2b6a8vu2yf8k"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack.gd" id="8_b7gmf"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="9_gr4rj"]
 
-[node name="Inventory" type="Control"]
+[node name="Inventory" type="Control" unique_id=1594867749]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_t2jr1")
 
-[node name="Hotbar" type="PanelContainer" parent="."]
+[node name="Hotbar" type="PanelContainer" parent="." unique_id=451470003]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -40,23 +40,23 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_tqc1x")
 
-[node name="SlotContainer_Hotbar" type="HBoxContainer" parent="Hotbar"]
+[node name="SlotContainer_Hotbar" type="HBoxContainer" parent="Hotbar" unique_id=1703796692]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="HotbarSlot1" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot1" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1685942362]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1" unique_id=407770126]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1" unique_id=664331065]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -72,14 +72,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1" unique_id=1148411772]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -87,8 +87,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -96,15 +96,15 @@ text = "1"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1" unique_id=1270835203]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
@@ -115,18 +115,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot2" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot2" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1652203090]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2" unique_id=1996665980]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2" unique_id=537302012]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -142,14 +142,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2" unique_id=653467766]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -157,8 +157,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -166,15 +166,15 @@ text = "2"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2" unique_id=1518257736]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -186,18 +186,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot3" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot3" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=648733946]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3" unique_id=2057216809]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3" unique_id=1745545312]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -213,14 +213,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3" unique_id=1662946972]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -228,8 +228,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -237,15 +237,15 @@ text = "3"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3" unique_id=1958240742]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -257,18 +257,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot4" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot4" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1792667430]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4" unique_id=773161218]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4" unique_id=1882323106]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -284,14 +284,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4" unique_id=1328149292]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -299,8 +299,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -308,15 +308,15 @@ text = "4"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4" unique_id=1037527868]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -328,18 +328,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot5" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot5" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=420262133]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5" unique_id=265276791]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5" unique_id=1553255078]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -355,14 +355,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5" unique_id=28915965]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -370,8 +370,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -379,15 +379,15 @@ text = "5"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5" unique_id=291823980]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -399,18 +399,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot6" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot6" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1984656973]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6" unique_id=2146416579]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6" unique_id=860377636]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -426,14 +426,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6" unique_id=255330311]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -441,8 +441,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -450,15 +450,15 @@ text = "6"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6" unique_id=89613695]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -470,18 +470,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot7" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot7" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1547360709]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7" unique_id=1965813742]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7" unique_id=626468776]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -497,14 +497,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7" unique_id=538229421]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -512,8 +512,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -521,15 +521,15 @@ text = "7"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7" unique_id=875718592]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -541,18 +541,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot8" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot8" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1008276117]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8" unique_id=866086105]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8" unique_id=1380872933]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -568,14 +568,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8" unique_id=148930235]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -583,8 +583,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -592,15 +592,15 @@ text = "8"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8" unique_id=20454644]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -612,18 +612,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot9" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot9" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=482535395]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9" unique_id=1891299905]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9" unique_id=1947043193]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -639,14 +639,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9" unique_id=754041899]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -654,8 +654,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -663,15 +663,15 @@ text = "9"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9" unique_id=1400350266]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -683,18 +683,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot10" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot10" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=2107401541]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10" unique_id=596046830]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10" unique_id=1333168197]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -710,14 +710,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10" unique_id=1851779838]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -725,8 +725,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -734,15 +734,15 @@ text = "0"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10" unique_id=1865627792]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -754,18 +754,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot11" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot11" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=276158936]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11" unique_id=1567540554]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11" unique_id=1452883231]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -781,14 +781,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11" unique_id=1091687025]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -796,8 +796,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -805,15 +805,15 @@ text = "-"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11" unique_id=209579814]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -825,18 +825,18 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="HotbarSlot12" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar"]
+[node name="HotbarSlot12" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=864984265]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
 script = ExtResource("4_b7gmf")
 
-[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
+[node name="Texture_Object" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12" unique_id=2049373063]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 stretch_mode = 2
 
-[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
+[node name="LineEdit_Quantity" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12" unique_id=1946813229]
 visible = false
 layout_mode = 0
 offset_right = 24.0
@@ -852,14 +852,14 @@ alignment = 1
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
+[node name="LineEdit_Hotkey" type="LineEdit" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12" unique_id=57491511]
 layout_mode = 0
 offset_top = -12.0
 offset_right = 32.0
@@ -867,8 +867,8 @@ offset_bottom = 9.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.490196)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("5_3c4lk")
 theme_override_font_sizes/font_size = 16
@@ -876,15 +876,15 @@ text = "="
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 flat = true
+virtual_keyboard_enabled = false
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12"]
+[node name="NPR_Selection" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12" unique_id=518971170]
 visible = false
 layout_mode = 0
 offset_right = 16.0
@@ -896,7 +896,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Backpack" type="PanelContainer" parent="."]
+[node name="Backpack" type="PanelContainer" parent="." unique_id=1391082331]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -911,24 +911,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("8_b7gmf")
-designation = 4
 
-[node name="Dragging" type="Control" parent="Backpack"]
+[node name="Dragging" type="Control" parent="Backpack" unique_id=481074463]
 layout_mode = 2
 script = ExtResource("9_gr4rj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Backpack"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Backpack" unique_id=1859955870]
 layout_mode = 2
 theme_override_constants/separation = -17
 alignment = 1
 
-[node name="Backpack_Front" type="TextureRect" parent="Backpack/VBoxContainer"]
+[node name="Backpack_Front" type="TextureRect" parent="Backpack/VBoxContainer" unique_id=79286899]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_t2jr1")
 stretch_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Backpack/VBoxContainer/Backpack_Front"]
+[node name="GridContainer" type="GridContainer" parent="Backpack/VBoxContainer/Backpack_Front" unique_id=1151811687]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -936,123 +935,123 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="MarginContainer1" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer1" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1805683246]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer2" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1159674742]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer3" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=977200940]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer4" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1692209111]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer5" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=96886560]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=150445767]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2008764338]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2000146156]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer11" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer11" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=187934622]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1229555929]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1343000569]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=799155998]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer10" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer10" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=303481378]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1542707645]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1569794202]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer"]
+[node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=359384007]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ContainerBase" type="HBoxContainer" parent="Backpack/VBoxContainer"]
+[node name="ContainerBase" type="HBoxContainer" parent="Backpack/VBoxContainer" unique_id=1689023496]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = -16
 alignment = 1
 
-[node name="ContainerLeft" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase"]
+[node name="ContainerLeft" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase" unique_id=153676761]
 visible = false
 layout_mode = 2
 alignment = 2
 
-[node name="Backpack_SideA" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/ContainerLeft"]
+[node name="Backpack_SideA" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/ContainerLeft" unique_id=1376008861]
 z_index = 1
 layout_mode = 2
 texture = ExtResource("4_h3qip")
 stretch_mode = 2
 
-[node name="Backpack_Base" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase"]
+[node name="Backpack_Base" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase" unique_id=968794283]
 layout_mode = 2
 texture = ExtResource("5_1y7b7")
 stretch_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base"]
+[node name="GridContainer" type="GridContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base" unique_id=680980705]
 z_index = 1
 layout_mode = 0
 offset_right = 96.0
@@ -1061,192 +1060,192 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
 
-[node name="MarginContainer1" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer1" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=629838867]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer2" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1141846259]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer3" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=833577812]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer4" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1864776641]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer5" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=303485536]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1733816538]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1210162965]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1359083763]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1226404095]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=167722725]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="MarginContainer9" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer9" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1532829636]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer10" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer10" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1929031292]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer11" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer11" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1983617162]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=238446146]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1417805900]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=390663840]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1704505475]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="MarginContainer12" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="MarginContainer12" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=273000214]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SlotA1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="SlotA1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=789571387]
 layout_mode = 2
 
-[node name="Slot7" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
-layout_mode = 2
-texture = ExtResource("3_xvjuj")
-
-[node name="Slot8" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot7" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=400797936]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot9" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot8" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=360361786]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot10" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot9" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=505175886]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="SlotB1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
-layout_mode = 2
-
-[node name="SlotA2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
-layout_mode = 2
-
-[node name="Slot11" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot10" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=846981574]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot12" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="SlotB1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=289966963]
+layout_mode = 2
+
+[node name="SlotA2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1085169243]
+layout_mode = 2
+
+[node name="Slot11" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=946572032]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot13" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot12" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1700965888]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot14" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot13" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1623960048]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="SlotB2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
-layout_mode = 2
-
-[node name="SlotA3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
-layout_mode = 2
-
-[node name="Slot15" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot14" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1830851695]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot16" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="SlotB2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1287315658]
+layout_mode = 2
+
+[node name="SlotA3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1642067627]
+layout_mode = 2
+
+[node name="Slot15" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=54841819]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot17" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot16" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=487239785]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="Slot18" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot17" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2027001045]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 
-[node name="SlotB3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer"]
+[node name="Slot18" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1799232470]
+layout_mode = 2
+texture = ExtResource("3_xvjuj")
+
+[node name="SlotB3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=916921027]
 layout_mode = 2
 
-[node name="ContainerRight" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase"]
+[node name="ContainerRight" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase" unique_id=1087687372]
 visible = false
 layout_mode = 2
 alignment = 2
 
-[node name="Backpack_SideB" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/ContainerRight"]
+[node name="Backpack_SideB" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/ContainerRight" unique_id=335720747]
 layout_mode = 2
 texture = ExtResource("4_h3qip")
 stretch_mode = 2
 flip_h = true
 
-[node name="CloseButton" type="TextureButton" parent="Backpack"]
+[node name="CloseButton" type="TextureButton" parent="Backpack" unique_id=2131810103]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
