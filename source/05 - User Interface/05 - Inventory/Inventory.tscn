@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2b6a8vu2yf8k"]
+[gd_scene load_steps=16 format=3 uid="uid://b2b6a8vu2yf8k"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="6_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="7_tqc1x"]
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack.gd" id="8_b7gmf"]
+[ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="9_gr4rj"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -896,20 +897,25 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="Backpack" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.0
-offset_top = -10.0
-offset_right = 7.0
-offset_bottom = 10.0
+offset_left = -39.0
+offset_top = -50.0
+offset_right = 39.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("8_b7gmf")
+designation = 4
+
+[node name="Dragging" type="Control" parent="Backpack"]
+layout_mode = 2
+script = ExtResource("9_gr4rj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Backpack"]
 layout_mode = 2
@@ -917,7 +923,6 @@ theme_override_constants/separation = -17
 alignment = 1
 
 [node name="Backpack_Front" type="TextureRect" parent="Backpack/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_t2jr1")
@@ -1260,4 +1265,5 @@ texture_pressed = ExtResource("7_tqc1x")
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot10" to="Hotbar/SlotContainer_Hotbar/HotbarSlot10" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot11" to="Hotbar/SlotContainer_Hotbar/HotbarSlot11" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot12" to="Hotbar/SlotContainer_Hotbar/HotbarSlot12" method="_on_mouse_entered"]
+[connection signal="gui_input" from="Backpack" to="Backpack/Dragging" method="_on_gui_input"]
 [connection signal="button_up" from="Backpack/CloseButton" to="Backpack" method="_on_close_button_up"]
