@@ -48,7 +48,7 @@ func check_designation():
 	match(designation):
 		null: backpack.set_deferred("visible", false)
 		0: backpack_front.set_deferred("visible", true)
-		1:  container_base.set_deferred("visible", true)
+		1: container_base.set_deferred("visible", true)
 		2: 
 			container_base.set_deferred("visible", true)
 			backpack_front.set_deferred("visible", true)

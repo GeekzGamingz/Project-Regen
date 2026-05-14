@@ -13,8 +13,10 @@ func _ready() -> void: generate_hotbar()
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("hotbar_next"): scroll_hotbar("Next")
-	if event.is_action_pressed("hotbar_previous"): scroll_hotbar("Previous")
+	if event.is_action_pressed("hotbar_next"):
+		if !event.is_action_pressed("zoom_out"): scroll_hotbar("Next")
+	if event.is_action_pressed("hotbar_previous"): 
+		if !event.is_action_pressed("zoom_in"): scroll_hotbar("Previous")
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Generate Hotbar
