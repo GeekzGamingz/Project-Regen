@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bamerqjjismb1"]
+[gd_scene format=3 uid="uid://bamerqjjismb1"]
 
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="1_ic7qn"]
 [ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_uofne"]
@@ -97,26 +97,24 @@ _data = {
 &"idle": SubResource("Animation_tuwh3")
 }
 
-[node name="SoftwareCursor" type="Node2D"]
+[node name="SoftwareCursor" type="Node2D" unique_id=1447515074]
 script = ExtResource("3_88ndb")
 
-[node name="Cursor" type="Sprite2D" parent="."]
+[node name="Cursor" type="Sprite2D" parent="." unique_id=1551634240]
 visible = false
 top_level = true
 texture = ExtResource("2_uofne")
 centered = false
 hframes = 4
 
-[node name="CursorIcon" type="Sprite2D" parent="."]
+[node name="CursorIcon" type="Sprite2D" parent="." unique_id=420863471]
 material = SubResource("ShaderMaterial_moohe")
 texture = ExtResource("4_o8jqr")
 centered = false
 hframes = 4
 script = ExtResource("5_uofne")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014713854]
 root_node = NodePath("../Cursor")
-libraries = {
-&"": SubResource("AnimationLibrary_qkhsk")
-}
-autoplay = "idle"
+libraries/ = SubResource("AnimationLibrary_qkhsk")
+autoplay = &"idle"

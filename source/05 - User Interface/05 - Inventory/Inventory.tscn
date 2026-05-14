@@ -897,6 +897,7 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="Backpack" type="PanelContainer" parent="." unique_id=1391082331]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

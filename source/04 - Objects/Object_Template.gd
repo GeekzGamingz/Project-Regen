@@ -46,6 +46,7 @@ var mouse_is_hovering: bool = false
 @onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
 #Local Nodes
 @onready var sprite_hotbar: Sprite2D = $Sprites/Sprite_Hotbar
+@onready var sprite_preview: Sprite2D = $Sprites/Sprite_Preview
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:

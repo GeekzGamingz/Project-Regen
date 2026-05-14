@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://xxysto50vjtq"]
+[gd_scene format=3 uid="uid://xxysto50vjtq"]
 
 [ext_resource type="Script" uid="uid://rnkyan66xlrm" path="res://source/04 - Objects/Object_Template.gd" id="1_ukouj"]
 
@@ -11,58 +11,58 @@ radius = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukouj"]
 size = Vector2(16, 16)
 
-[node name="Object_Template" type="StaticBody2D"]
+[node name="Object_Template" type="StaticBody2D" unique_id=969433499]
 collision_layer = 16
 collision_mask = 0
 input_pickable = true
 script = ExtResource("1_ukouj")
 
-[node name="Areas" type="Node2D" parent="."]
+[node name="Areas" type="Node2D" parent="." unique_id=2071631996]
 
-[node name="Area_Build" type="Area2D" parent="Areas"]
+[node name="Area_Build" type="Area2D" parent="Areas" unique_id=340049298]
 collision_layer = 128
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build" unique_id=379011557]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_p6eq0")
 
-[node name="Area_Detection" type="Area2D" parent="Areas"]
+[node name="Area_Detection" type="Area2D" parent="Areas" unique_id=1198460473]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection" unique_id=1935672935]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_crrwx")
 
-[node name="Area_Hotbar" type="Area2D" parent="Areas"]
+[node name="Area_Hotbar" type="Area2D" parent="Areas" unique_id=2038350193]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Hotbar"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Hotbar" unique_id=402751471]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_ukouj")
 
-[node name="Area_Pack" type="Area2D" parent="Areas"]
+[node name="Area_Pack" type="Area2D" parent="Areas" unique_id=2009702789]
 
-[node name="Sprites" type="Node2D" parent="."]
+[node name="Sprites" type="Node2D" parent="." unique_id=695416246]
 
-[node name="Sprite_Object" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Object" type="Sprite2D" parent="Sprites" unique_id=1671756147]
 centered = false
 
-[node name="Sprite_Preview" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Preview" type="Sprite2D" parent="Sprites" unique_id=980131381]
 visible = false
 centered = false
 
-[node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites" unique_id=1288548770]
 visible = false
 centered = false
 
-[node name="Sprite_Pack" type="Sprite2D" parent="Sprites"]
+[node name="Sprite_Pack" type="Sprite2D" parent="Sprites" unique_id=1472507649]
 visible = false
 centered = false
 
-[node name="Timers" type="Node2D" parent="."]
+[node name="Timers" type="Node2D" parent="." unique_id=121542081]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=853829453]
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

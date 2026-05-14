@@ -1,9 +1,15 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
-@onready var input: Node2D = $"../../Player_Input"
+var full_hotbar: bool = false
+var full_hands: bool = false
+#OnReady Variables
+#Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var ORPHANAGES_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
 @onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
+#Local Nodes
+@onready var input: Node2D = $"../../Player_Input"
 #------------------------------------------------------------------------------#
 #Functions
 #Custom Functions
@@ -19,12 +25,16 @@ func interact_object() -> void:
 			break #Break Raycast Loop
 #Check Duplicate Item
 func check_slots(object):
+	var slots_filled = 0
 	for slot in HOTBAR.hotbar_array:
 		if slot.contents != "Empty":
+			slots_filled += 1
 			if slot.contents.contains(object.get_groups()[0]):
 				HOTBAR.scroll_hotbar(slot.name)
 				break #Break Slot Check
 			else: find_slot()
+	full_hotbar = true if slots_filled == 12 else false
+	if full_hotbar: print("FULL HOTBAR")
 #Search for Empty Slot
 func find_slot():
 	for slot in HOTBAR.hotbar_array:
@@ -36,12 +46,13 @@ func find_slot():
 			else: HOTBAR.scroll_hotbar("Next")
 #Obtain Object
 func obtain_object(object, hotbar_selected):
-	if hotbar_selected.is_empty: addto_hotbar(object, hotbar_selected)
-	else:
-		var group = object.get_groups()
+	var group = object.get_groups()
+	if full_hands == false:
+		if hotbar_selected.is_empty: addto_hotbar(object, hotbar_selected)
 		if hotbar_selected.held_item.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
-	object.queue_free()
+		if full_hotbar: addto_hand(object)
+		ORPHANAGES_OBJECTS.remove_child(object)
 #Add to Hotbar
 func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.is_empty = false
@@ -49,3 +60,17 @@ func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
 	hotbar_selected.held_item = object_scene
+#Add to Hand
+func addto_hand(object):
+	full_hands = true
+	MAIN.UI_CURSOR.icon_state = "HoldObject"
+	MAIN.UI_CURSOR.object_held = object
+	print("Added ", object, " to Hand")
+#Add to Backpack
+func addto_backpack(object):
+	full_hands = true
+	print("Added ", object, " to Backpack")
+#Drop
+func drop(object):
+	full_hands = false
+	print("Dropped ", object, "at ", object.global_position)

@@ -43,7 +43,6 @@ func scroll_hotbar(scroll):
 	for slot in hotbar_array: slot.get_node("NPR_Selection").hide()
 	var selection = hotbar_array[hotbar_selection]
 	selection.get_node("NPR_Selection").show()
-	print(selection.name, ": ", selection.contents)
 #Check Hotbar Selection
 func check_hotbar():
 	if hotbar_selection == hotbar_array.size(): hotbar_selection = 0

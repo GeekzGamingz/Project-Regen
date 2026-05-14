@@ -20,6 +20,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 #Local Nodes
 @onready var entity_fsm: Node2D = $Scripts/Entity_StateMachine
 @onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
+@onready var object_interaction: Node2D = $Scripts/Player_Interaction/Interaction_Objects
 #RayCasts
 @onready var object_detection: Node2D = $Raycasts/Rays_ObjectDetection
 #Animation Nodes
