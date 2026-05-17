@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 				icon.texture = icon.CURSOR_HAND_GRAB_RIGHT
 				icon.visible = true
 			"HoldObject":
+				add_child(object_held)
 				icon.texture = object_held.sprite_preview.texture
 				icon.visible = true
+				remove_child(object_held)
 	old_state = icon_state

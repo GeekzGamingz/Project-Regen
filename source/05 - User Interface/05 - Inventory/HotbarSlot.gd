@@ -10,6 +10,9 @@ var contents: String
 #Resources
 var held_item: Object = null
 #OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+#Local Nodes
 @onready var hotbar: PanelContainer = $"../.."
 #Slot Nodes
 @onready var texture_object: TextureRect = $Texture_Object
@@ -18,12 +21,17 @@ var held_item: Object = null
 #Functions
 #Process
 func _process(_delta: float) -> void:
-	if is_empty == true: contents = "Empty"
+	if is_empty == true: contents = "Empty" #Change to GUI Input?
 	else:
 		contents = held_item.name
 		line_quantity.set_deferred("visible", held_item.is_stackable)
 		line_quantity.text = str(quantity)
+#GUI Input
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion: hotbar.scroll_hotbar(name)
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+			if is_empty == false:
+				var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).object_interaction
+				interaction.addto_hand(held_item)
 #------------------------------------------------------------------------------#
-#Signaled Functions
-#Mouse Entered
-func _on_mouse_entered() -> void: hotbar.scroll_hotbar(name)
