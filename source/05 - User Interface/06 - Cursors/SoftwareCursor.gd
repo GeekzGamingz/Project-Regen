@@ -14,10 +14,10 @@ var object_held: StaticBody2D = null
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
-@onready var cursor: Sprite2D = $Cursor
-@onready var icon: Sprite2D = $CursorIcon
-@onready var item: Sprite2D = $CursorObject
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var cursor: Sprite2D = $Cursor_Textures/Cursor
+@onready var icon: Sprite2D = $Cursor_Textures/CursorIcon
+@onready var item: Sprite2D = $Cursor_Textures/CursorObject
+@onready var animation_player: AnimationPlayer = $AnimationPlayers/AnimationPlayer
 #------------------------------------------------------------------------------#
 #Process Functions
 func _process(_delta: float) -> void:
