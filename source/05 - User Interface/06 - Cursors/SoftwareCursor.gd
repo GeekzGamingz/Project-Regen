@@ -17,7 +17,7 @@ var object_held: StaticBody2D = null
 @onready var cursor: Sprite2D = $Cursor
 @onready var icon: Sprite2D = $CursorIcon
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-#------------------------------------------------------------------------------#---------------------------------------------#
+#------------------------------------------------------------------------------#
 #Process Functions
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()

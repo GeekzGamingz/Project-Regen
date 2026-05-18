@@ -108,6 +108,7 @@ centered = false
 hframes = 4
 
 [node name="CursorIcon" type="Sprite2D" parent="." unique_id=420863471]
+visible = false
 material = SubResource("ShaderMaterial_moohe")
 texture = ExtResource("4_o8jqr")
 centered = false

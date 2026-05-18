@@ -795,42 +795,6 @@ script = ExtResource("5_ylk6r")
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 
-[node name="Object_LPiece" parent="Orphanages/Orphanage_Objects" unique_id=1397368130 instance=ExtResource("10_g0q3n")]
-position = Vector2(218, 181)
-
-[node name="Object_LPiece4" parent="Orphanages/Orphanage_Objects" unique_id=1441465613 instance=ExtResource("10_g0q3n")]
-position = Vector2(360, 226)
-
-[node name="Object_LPiece13" parent="Orphanages/Orphanage_Objects" unique_id=110525887 instance=ExtResource("10_g0q3n")]
-position = Vector2(513, 115)
-
-[node name="Object_LPiece14" parent="Orphanages/Orphanage_Objects" unique_id=458661037 instance=ExtResource("10_g0q3n")]
-position = Vector2(190, 126)
-
-[node name="Object_LPiece5" parent="Orphanages/Orphanage_Objects" unique_id=958274830 instance=ExtResource("10_g0q3n")]
-position = Vector2(278, 229)
-
-[node name="Object_LPiece6" parent="Orphanages/Orphanage_Objects" unique_id=274329898 instance=ExtResource("10_g0q3n")]
-position = Vector2(316, 165)
-
-[node name="Object_LPiece7" parent="Orphanages/Orphanage_Objects" unique_id=411426048 instance=ExtResource("10_g0q3n")]
-position = Vector2(193, 256)
-
-[node name="Object_LPiece8" parent="Orphanages/Orphanage_Objects" unique_id=629162778 instance=ExtResource("10_g0q3n")]
-position = Vector2(145, 220)
-
-[node name="Object_LPiece9" parent="Orphanages/Orphanage_Objects" unique_id=957620669 instance=ExtResource("10_g0q3n")]
-position = Vector2(63, 43)
-
-[node name="Object_LPiece10" parent="Orphanages/Orphanage_Objects" unique_id=160053086 instance=ExtResource("10_g0q3n")]
-position = Vector2(425, 199)
-
-[node name="Object_LPiece11" parent="Orphanages/Orphanage_Objects" unique_id=1017521874 instance=ExtResource("10_g0q3n")]
-position = Vector2(456, 109)
-
-[node name="Object_LPiece12" parent="Orphanages/Orphanage_Objects" unique_id=1213060307 instance=ExtResource("10_g0q3n")]
-position = Vector2(512, 185)
-
 [node name="Object_LPiece2" parent="Orphanages/Orphanage_Objects" unique_id=228062888 instance=ExtResource("10_g0q3n")]
 position = Vector2(29, 116)
 
