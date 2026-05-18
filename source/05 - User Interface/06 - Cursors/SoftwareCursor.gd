@@ -16,6 +16,7 @@ var object_held: StaticBody2D = null
 #Local Nodes
 @onready var cursor: Sprite2D = $Cursor
 @onready var icon: Sprite2D = $CursorIcon
+@onready var item: Sprite2D = $CursorObject
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 #------------------------------------------------------------------------------#
 #Process Functions
@@ -27,6 +28,7 @@ func _process(_delta: float) -> void:
 			"Default":
 				cursor.visible = false
 				icon.visible = false
+				item.visible = false
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			"HandOpen":
 				icon.texture = icon.CURSOR_HAND_OPEN_RIGHT
@@ -35,8 +37,10 @@ func _process(_delta: float) -> void:
 				icon.texture = icon.CURSOR_HAND_GRAB_RIGHT
 				icon.visible = true
 			"HoldObject":
-				add_child(object_held)
-				icon.texture = object_held.sprite_preview.texture
+				icon.texture = icon.CURSOR_HAND_GRAB_RIGHT
 				icon.visible = true
+				add_child(object_held)
+				item.texture = object_held.sprite_preview.texture
+				item.visible = true
 				remove_child(object_held)
 	old_state = icon_state
