@@ -1,5 +1,7 @@
 extends TextureRect
 #------------------------------------------------------------------------------#
+const HOTBAR_SLOT = preload("res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png")
+#------------------------------------------------------------------------------#
 #Variables
 #Integers
 var quantity: int = 0
@@ -21,7 +23,9 @@ var held_item: Object = null
 #Functions
 #Process
 func _process(_delta: float) -> void:
-	if is_empty == true: contents = "Empty" #Change to GUI Input?
+	if is_empty == true:
+		contents = "Empty"
+		texture_object.texture = HOTBAR_SLOT
 	else:
 		contents = held_item.name
 		line_quantity.set_deferred("visible", held_item.is_stackable)
@@ -33,5 +37,5 @@ func _gui_input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			if is_empty == false:
 				var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).object_interaction
-				interaction.addto_hand(held_item)
+				interaction.addto_hand(held_item, name)
 #------------------------------------------------------------------------------#
