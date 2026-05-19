@@ -14,6 +14,8 @@ var full_hands: bool = false
 #------------------------------------------------------------------------------#
 #Functions
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("action_confirm"):
+		if current_object != null: drop(current_object)
 	if event.is_action_pressed("action_context"): cancel(current_object)
 #------------------------------------------------------------------------------#
 #Custom Functions
@@ -77,11 +79,14 @@ func addto_backpack(object):
 	print("Added ", object, " to Backpack")
 #Drop
 func drop(object):
+	ORPHANAGES_OBJECTS.add_child(object)
+	object.global_position = get_global_mouse_position()
 	full_hands = false
+	current_object = null
 	print("Dropped [", object, "] at ", object.global_position)
 #Cancel
 func cancel(object):
-	full_hands = false
 	MAIN.UI_CURSOR.icon_state = "Default"
 	print("Canceled Holding [", object, "]")
-	object = null
+	full_hands = false
+	current_object = null
