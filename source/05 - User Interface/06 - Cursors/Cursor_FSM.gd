@@ -32,15 +32,22 @@ func transitions(delta):
 			match(cursor.icon_state):
 				"HandOpen": return states.hand_open
 				"HoldObject": return states.hold_object
+		#Hand Open
 		states.hand_open:
 			match(cursor.icon_state):
 				"Default": return states.default
 				"HandGrab": return states.hand_grab
 				"HoldObject": return states.hold_object
+		#Hand Grab
 		states.hand_grab:
 			match(cursor.icon_state):
+				"Default": return states.default
 				"HandOpen": return states.hand_open
 				"HoldObject": return states.hold_object
+		#Hold Object
+		states.hold_object:
+			match(cursor.icon_state):
+				"Default": return states.default
 	return null
 #Enter State
 @warning_ignore("unused_parameter")

@@ -1,6 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
+var current_object: Node2D = null
 var full_hotbar: bool = false
 var full_hands: bool = false
 #OnReady Variables
@@ -12,6 +13,9 @@ var full_hands: bool = false
 @onready var input: Node2D = $"../../Player_Input"
 #------------------------------------------------------------------------------#
 #Functions
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("action_context"): cancel(current_object)
+#------------------------------------------------------------------------------#
 #Custom Functions
 #Object Interaction
 func interact_object() -> void:
@@ -66,6 +70,7 @@ func addto_hand(object):
 	MAIN.UI_CURSOR.icon_state = "HoldObject"
 	MAIN.UI_CURSOR.object_held = object
 	print("Added [", object, "]" , " to Hand")
+	current_object = object
 #Add to Backpack
 func addto_backpack(object):
 	full_hands = true
@@ -73,4 +78,10 @@ func addto_backpack(object):
 #Drop
 func drop(object):
 	full_hands = false
-	print("Dropped ", object, "at ", object.global_position)
+	print("Dropped [", object, "] at ", object.global_position)
+#Cancel
+func cancel(object):
+	full_hands = false
+	MAIN.UI_CURSOR.icon_state = "Default"
+	print("Canceled Holding [", object, "]")
+	object = null
