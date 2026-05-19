@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bamerqjjismb1"]
 
 [ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="1_ic7qn"]
+[ext_resource type="Script" uid="uid://b1pyspx73bd3x" path="res://source/05 - User Interface/06 - Cursors/Cursor_FSM.gd" id="2_to82i"]
 [ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_uofne"]
 [ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/05 - User Interface/06 - Cursors/SoftwareCursor.gd" id="3_88ndb"]
 [ext_resource type="Texture2D" uid="uid://d3pgk3j8dtuat" path="res://assets/00 - UserInterface/05 - Cursors/cursor_qwest.png" id="4_o8jqr"]
@@ -101,6 +102,7 @@ _data = {
 script = ExtResource("3_88ndb")
 
 [node name="Cursor_StateMachine" type="Node2D" parent="." unique_id=146726932]
+script = ExtResource("2_to82i")
 
 [node name="Cursor_Textures" type="Node2D" parent="." unique_id=907076404]
 
@@ -120,6 +122,7 @@ hframes = 4
 script = ExtResource("5_uofne")
 
 [node name="CursorObject" type="Sprite2D" parent="Cursor_Textures" unique_id=65542564]
+visible = false
 hframes = 4
 
 [node name="AnimationPlayers" type="Node2D" parent="." unique_id=1305518761]
@@ -128,3 +131,15 @@ hframes = 4
 root_node = NodePath("../../Cursor_Textures/Cursor")
 libraries/ = SubResource("AnimationLibrary_qkhsk")
 autoplay = &"idle"
+
+[node name="Outputs" type="Node2D" parent="." unique_id=50428879]
+
+[node name="Output_State" type="Label" parent="Outputs" unique_id=321839487]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 8
+text = "State"
+horizontal_alignment = 1
+uppercase = true

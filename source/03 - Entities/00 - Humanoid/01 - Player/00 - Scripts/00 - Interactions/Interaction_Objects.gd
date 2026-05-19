@@ -65,7 +65,7 @@ func addto_hand(object):
 	full_hands = true
 	MAIN.UI_CURSOR.icon_state = "HoldObject"
 	MAIN.UI_CURSOR.object_held = object
-	print("Added ", object, ": [" , object.name, "] to Hand")
+	print("Added [", object, "]" , " to Hand")
 #Add to Backpack
 func addto_backpack(object):
 	full_hands = true
