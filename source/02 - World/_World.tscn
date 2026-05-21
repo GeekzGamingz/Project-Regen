@@ -801,14 +801,23 @@ position = Vector2(29, 116)
 [node name="Object_LPiece3" parent="Orphanages/Orphanage_Objects" unique_id=108251030 instance=ExtResource("10_g0q3n")]
 position = Vector2(171, 65)
 
-[node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1466496544 instance=ExtResource("8_d03ws")]
-position = Vector2(115, 91)
+[node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
+position = Vector2(194, 188)
 
-[node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" unique_id=186542565 instance=ExtResource("8_d03ws")]
-position = Vector2(99, 190)
+[node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" unique_id=1890428332 instance=ExtResource("8_d03ws")]
+position = Vector2(156, 184)
 
-[node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" unique_id=1339760306 instance=ExtResource("8_d03ws")]
-position = Vector2(158, 149)
+[node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" unique_id=1748508467 instance=ExtResource("8_d03ws")]
+position = Vector2(165, 230)
+
+[node name="Object_Rock4" parent="Orphanages/Orphanage_Objects" unique_id=1619642892 instance=ExtResource("8_d03ws")]
+position = Vector2(231, 246)
+
+[node name="Object_Rock5" parent="Orphanages/Orphanage_Objects" unique_id=481822888 instance=ExtResource("8_d03ws")]
+position = Vector2(223, 149)
+
+[node name="Object_Rock6" parent="Orphanages/Orphanage_Objects" unique_id=1658508795 instance=ExtResource("8_d03ws")]
+position = Vector2(277, 264)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 
