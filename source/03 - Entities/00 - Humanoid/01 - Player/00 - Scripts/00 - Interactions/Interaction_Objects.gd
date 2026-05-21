@@ -80,12 +80,18 @@ func addto_backpack(object):
 	print("Added ", object, " to Backpack")
 #Drop
 func drop(object, hotbar_origin):
-	ORPHANAGES_OBJECTS.add_child(object)
-	object.global_position = get_global_mouse_position()
-	full_hands = false
-	current_object = null
+	var dupe = object.duplicate()
+	if object.is_stackable && hotbar_origin.quantity > 1:
+		hotbar_origin.quantity -= 1
+		
+	else:
+		full_hands = false
+		current_object = null
+		hotbar_origin.is_empty = true
+	ORPHANAGES_OBJECTS.add_child(dupe)
+	dupe.global_position = get_global_mouse_position()
+	
 	print("Dropped [", object, "] at ", object.global_position)
-	hotbar_origin.is_empty = true
 #Cancel
 func cancel(object):
 	MAIN.UI_CURSOR.icon_state = "Default"

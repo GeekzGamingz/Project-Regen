@@ -25,7 +25,9 @@ var held_item: Object = null
 func _process(_delta: float) -> void:
 	if is_empty == true:
 		contents = "Empty"
+		quantity = 0
 		texture_object.texture = HOTBAR_SLOT
+		line_quantity.set_deferred("visible", false)
 	else:
 		contents = held_item.name
 		line_quantity.set_deferred("visible", held_item.is_stackable)
@@ -38,4 +40,6 @@ func _gui_input(event: InputEvent) -> void:
 			if is_empty == false:
 				var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).object_interaction
 				interaction.addto_hand(held_item, self)
+			print(contents)
+			print(quantity)
 #------------------------------------------------------------------------------#
