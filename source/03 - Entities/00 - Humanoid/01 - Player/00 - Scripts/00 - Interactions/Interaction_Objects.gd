@@ -18,7 +18,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"):
 		if current_object != null:
 			if !HOTBAR.mouse_hovering: drop(current_object, hands_origin)
-	if event.is_action_pressed("action_context"): cancel(current_object, hands_origin)
+	if event.is_action_pressed("action_context"):
+		if current_object != null: cancel(current_object, hands_origin)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Object Interaction
@@ -59,7 +60,7 @@ func obtain_object(object, hotbar_selected):
 		if hotbar_selected.is_empty: addto_hotbar(object, hotbar_selected)
 		if hotbar_selected.held_item.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
-		if full_hotbar: addto_hand(object, "Ground")
+		if full_hotbar: addto_hand(object, null)
 		ORPHANAGES_OBJECTS.remove_child(object)
 #Add to Hotbar
 func addto_hotbar(object, hotbar_selected):
@@ -72,10 +73,13 @@ func addto_hand(object, hotbar_origin):
 	full_hands = true
 	MAIN.UI_CURSOR.icon_state = "HoldObject"
 	MAIN.UI_CURSOR.object_held = object
-	print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
+	if hotbar_origin != null:
+		hotbar_origin.slot_held.set_deferred("visible", true)
+		hands_origin = hotbar_origin
+		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
+	else:
+		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin)
 	current_object = object
-	hotbar_origin.slot_held.set_deferred("visible", true)
-	hands_origin = hotbar_origin
 #Add to Backpack
 func addto_backpack(object):
 	full_hands = true
@@ -83,11 +87,13 @@ func addto_backpack(object):
 #Drop
 func drop(object, hotbar_origin):
 	var dupe = object.duplicate()
-	if object.is_stackable && hotbar_origin.quantity > 1:
-		hotbar_origin.quantity -= 1
-	else: hotbar_origin.is_empty = true
-	dupe.global_position = get_global_mouse_position()
-	ORPHANAGES_OBJECTS.add_child(dupe)
+	if hotbar_origin != null:
+		if object.is_stackable && hotbar_origin.quantity > 1:
+			hotbar_origin.quantity -= 1
+		else:
+			hotbar_origin.is_empty = true
+		ORPHANAGES_OBJECTS.add_child(dupe)
+		dupe.global_position = get_global_mouse_position()
 	cancel(dupe, hotbar_origin)
 	print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
@@ -96,5 +102,9 @@ func cancel(object, hotbar_origin):
 	MAIN.UI_CURSOR.object_held = null
 	full_hands = false
 	current_object = null
-	hotbar_origin.slot_held.set_deferred("visible", false)
+	if hotbar_origin != null:
+		hotbar_origin.slot_held.set_deferred("visible", false)
+	else:
+		object.global_position = get_global_mouse_position()
+		ORPHANAGES_OBJECTS.add_child(object)
 	print("Canceled Holding [", object.name, "]")
