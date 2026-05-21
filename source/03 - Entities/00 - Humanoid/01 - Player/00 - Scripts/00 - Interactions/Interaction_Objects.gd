@@ -88,23 +88,28 @@ func addto_backpack(object):
 func drop(object, hotbar_origin):
 	var dupe = object.duplicate()
 	if hotbar_origin != null:
+		hotbar_origin.slot_held.set_deferred("visible", false)
 		if object.is_stackable && hotbar_origin.quantity > 1:
 			hotbar_origin.quantity -= 1
-		else:
-			hotbar_origin.is_empty = true
-		ORPHANAGES_OBJECTS.add_child(dupe)
-		dupe.global_position = get_global_mouse_position()
-	cancel(dupe, hotbar_origin)
+		else: hotbar_origin.is_empty = true
+	ORPHANAGES_OBJECTS.add_child(dupe)
+	dupe.global_position = get_global_mouse_position()
+	revert()
 	print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
 func cancel(object, hotbar_origin):
+	if hotbar_origin != null:
+		hotbar_origin.slot_held.set_deferred("visible", false)
+	else:
+		ORPHANAGES_OBJECTS.add_child(object)
+		object.global_position = get_global_mouse_position()
+	revert()
+	print("Canceled Holding [", object.name, "]")
+#Revert Hotbar
+func revert():
 	MAIN.UI_CURSOR.icon_state = "Default"
 	MAIN.UI_CURSOR.object_held = null
 	full_hands = false
 	current_object = null
-	if hotbar_origin != null:
-		hotbar_origin.slot_held.set_deferred("visible", false)
-	else:
-		object.global_position = get_global_mouse_position()
-		ORPHANAGES_OBJECTS.add_child(object)
-	print("Canceled Holding [", object.name, "]")
+	hands_origin = null
+	
