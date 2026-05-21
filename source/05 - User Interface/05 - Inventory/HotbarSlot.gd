@@ -37,5 +37,5 @@ func _gui_input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			if is_empty == false:
 				var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).object_interaction
-				interaction.addto_hand(held_item, name)
+				interaction.addto_hand(held_item, self)
 #------------------------------------------------------------------------------#

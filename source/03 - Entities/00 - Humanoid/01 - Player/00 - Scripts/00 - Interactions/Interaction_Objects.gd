@@ -67,7 +67,7 @@ func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
 	hotbar_selected.held_item = object_scene
-	hands_origin = hotbar_selected
+	#hands_origin = hotbar_selected #Move Code; Creating Conflicts
 #Add to Hand
 func addto_hand(object, hotbar_origin):
 	full_hands = true
@@ -75,6 +75,8 @@ func addto_hand(object, hotbar_origin):
 	MAIN.UI_CURSOR.object_held = object
 	print("Added [", object, "]" , " to Hand from ", hotbar_origin)
 	current_object = object
+	print(hotbar_origin)
+	hands_origin = hotbar_origin
 #Add to Backpack
 func addto_backpack(object):
 	full_hands = true
@@ -87,7 +89,6 @@ func drop(object, hotbar_origin):
 	current_object = null
 	print("Dropped [", object, "] at ", object.global_position)
 	hotbar_origin.is_empty = true
-	
 #Cancel
 func cancel(object):
 	MAIN.UI_CURSOR.icon_state = "Default"
