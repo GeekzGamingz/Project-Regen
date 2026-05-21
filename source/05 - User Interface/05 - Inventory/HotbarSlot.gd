@@ -40,6 +40,5 @@ func _gui_input(event: InputEvent) -> void:
 			if is_empty == false:
 				var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).object_interaction
 				interaction.addto_hand(held_item, self)
-			print(contents)
-			print(quantity)
+			print(name, " Contains: ", contents, "(", quantity,")")
 #------------------------------------------------------------------------------#

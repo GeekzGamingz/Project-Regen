@@ -16,7 +16,8 @@ var full_hands: bool = false
 #Functions
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"):
-		if current_object != null: drop(current_object, hands_origin)
+		if current_object != null:
+			if !HOTBAR.mouse_hovering: drop(current_object, hands_origin)
 	if event.is_action_pressed("action_context"): cancel(current_object)
 #------------------------------------------------------------------------------#
 #Custom Functions
@@ -83,15 +84,13 @@ func drop(object, hotbar_origin):
 	var dupe = object.duplicate()
 	if object.is_stackable && hotbar_origin.quantity > 1:
 		hotbar_origin.quantity -= 1
-		
 	else:
 		full_hands = false
 		current_object = null
 		hotbar_origin.is_empty = true
-	ORPHANAGES_OBJECTS.add_child(dupe)
 	dupe.global_position = get_global_mouse_position()
-	
-	print("Dropped [", object, "] at ", object.global_position)
+	ORPHANAGES_OBJECTS.add_child(dupe)
+	print("Dropped [", dupe, "] at ", dupe.global_position)
 #Cancel
 func cancel(object):
 	MAIN.UI_CURSOR.icon_state = "Default"

@@ -1253,6 +1253,8 @@ size_flags_vertical = 0
 texture_normal = ExtResource("6_3c4lk")
 texture_pressed = ExtResource("7_tqc1x")
 
+[connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_entered"]
+[connection signal="mouse_exited" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_exited"]
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot1" to="Hotbar/SlotContainer_Hotbar/HotbarSlot1" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot2" to="Hotbar/SlotContainer_Hotbar/HotbarSlot2" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar/HotbarSlot3" to="Hotbar/SlotContainer_Hotbar/HotbarSlot3" method="_on_mouse_entered"]
