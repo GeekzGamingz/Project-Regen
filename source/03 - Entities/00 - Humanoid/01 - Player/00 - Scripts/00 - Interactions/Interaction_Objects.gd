@@ -84,16 +84,18 @@ func drop(object, hotbar_origin):
 	var dupe = object.duplicate()
 	if object.is_stackable && hotbar_origin.quantity > 1:
 		hotbar_origin.quantity -= 1
-	else:
-		full_hands = false
-		current_object = null
-		hotbar_origin.is_empty = true
+	else: hotbar_origin.is_empty = true
 	dupe.global_position = get_global_mouse_position()
 	ORPHANAGES_OBJECTS.add_child(dupe)
+	MAIN.UI_CURSOR.icon_state = "Default"
+	MAIN.UI_CURSOR.object_held = null
+	full_hands = false
+	current_object = null
 	print("Dropped [", dupe, "] at ", dupe.global_position)
 #Cancel
 func cancel(object):
 	MAIN.UI_CURSOR.icon_state = "Default"
-	print("Canceled Holding [", object, "]")
+	MAIN.UI_CURSOR.object_held = null
 	full_hands = false
 	current_object = null
+	print("Canceled Holding [", object, "]")

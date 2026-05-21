@@ -46,8 +46,7 @@ func transitions(delta):
 				"HoldObject": return states.hold_object
 		#Hold Object
 		states.hold_object:
-			match(cursor.icon_state):
-				"Default": return states.default
+			if cursor.object_held == null: return states.default
 	return null
 #Enter State
 @warning_ignore("unused_parameter")
