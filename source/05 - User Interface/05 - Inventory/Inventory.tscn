@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://0kprb55ltq84" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_unpressed.png" id="6_3c4lk"]
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="6_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="7_tqc1x"]
+[ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="8_56x63"]
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack.gd" id="8_b7gmf"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="9_gr4rj"]
 
@@ -115,6 +116,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot1" unique_id=748026908]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot2" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1652203090]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -180,6 +194,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot2" unique_id=986933628]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -257,6 +284,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot3" unique_id=2134230157]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot4" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1792667430]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -322,6 +362,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot4" unique_id=860527358]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -399,6 +452,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot5" unique_id=94253846]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot6" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1984656973]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -464,6 +530,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot6" unique_id=1121901976]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -541,6 +620,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot7" unique_id=1537165596]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot8" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=1008276117]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -606,6 +698,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot8" unique_id=1352691014]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -683,6 +788,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot9" unique_id=496678200]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot10" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=2107401541]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -748,6 +866,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot10" unique_id=762624982]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6
@@ -825,6 +956,19 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot11" unique_id=969531846]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="HotbarSlot12" type="TextureRect" parent="Hotbar/SlotContainer_Hotbar" unique_id=864984265]
 layout_mode = 2
 texture = ExtResource("1_tvb03")
@@ -890,6 +1034,19 @@ layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("6_tqc1x")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NPR_Held" type="NinePatchRect" parent="Hotbar/SlotContainer_Hotbar/HotbarSlot12" unique_id=676287816]
+visible = false
+modulate = Color(0.7254902, 0, 0, 1)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6

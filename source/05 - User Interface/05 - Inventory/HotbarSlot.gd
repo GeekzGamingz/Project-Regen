@@ -19,6 +19,7 @@ var held_item: Object = null
 #Slot Nodes
 @onready var texture_object: TextureRect = $Texture_Object
 @onready var line_quantity: LineEdit = $LineEdit_Quantity
+@onready var slot_held: NinePatchRect = $NPR_Held
 #------------------------------------------------------------------------------#
 #Functions
 #Process
