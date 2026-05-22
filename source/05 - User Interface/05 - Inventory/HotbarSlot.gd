@@ -37,7 +37,7 @@ func _gui_input(event: InputEvent) -> void:
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand(slotted_item, self)
 			elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
-			print(name, " Contains: ", contents, "(", quantity,")")
+			print(name, " Contains: ", slotted_item.name, "(", quantity,")")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func update_slot():
