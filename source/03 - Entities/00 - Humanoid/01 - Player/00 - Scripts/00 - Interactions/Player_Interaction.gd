@@ -1,0 +1,35 @@
+extends Node2D
+#------------------------------------------------------------------------------#
+#Variables
+var current_object: Node2D = null
+var hands_origin: TextureRect = null
+var full_hotbar: bool = false
+var full_hands: bool = false
+#OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var ORPHANAGES_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
+@onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
+#Local Nodes
+@onready var input: Node2D = $"../Player_Input"
+@onready var interaction_objects: Node2D = $Interaction_Objects
+@onready var interaction_hotbar: Node2D = $Interaction_Hotbar
+@onready var interaction_backpack: Node2D = $Interaction_Backpack
+#------------------------------------------------------------------------------#
+#Functions
+#Input
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("action_confirm"):
+		if current_object != null:
+			if !HOTBAR.mouse_hovering: interaction_objects.drop(current_object, hands_origin)
+	if event.is_action_pressed("action_context"):
+		if current_object != null: interaction_objects.cancel(current_object, hands_origin)
+#------------------------------------------------------------------------------#
+#Custom Functions
+#Revert Hotbar
+func revert():
+	MAIN.UI_CURSOR.icon_state = "Default"
+	MAIN.UI_CURSOR.object_held = null
+	full_hands = false
+	current_object = null
+	hands_origin = null
