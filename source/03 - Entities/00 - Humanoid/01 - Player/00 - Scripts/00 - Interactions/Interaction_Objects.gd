@@ -37,7 +37,7 @@ func addto_hand(object, hotbar_origin):
 		#print("Added [", object.name, "]" , " to Hand from ", hotbar_origin)
 	interaction.current_object = object
 #Drop
-func drop(object, hotbar_origin):
+func place(object, hotbar_origin, new_position):
 	var dupe = object.duplicate()
 	if hotbar_origin != null:
 		hotbar_origin.slot_held.set_deferred("visible", false)
@@ -45,7 +45,7 @@ func drop(object, hotbar_origin):
 			hotbar_origin.quantity -= 1
 		else: hotbar_origin.is_empty = true
 	interaction.ORPHANAGES_OBJECTS.add_child(dupe)
-	dupe.global_position = get_global_mouse_position()
+	dupe.global_position = new_position
 	interaction.revert()
 	#print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel

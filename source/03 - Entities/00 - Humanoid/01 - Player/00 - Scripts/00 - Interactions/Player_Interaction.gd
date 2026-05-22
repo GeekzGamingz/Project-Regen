@@ -21,9 +21,21 @@ var full_hands: bool = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"):
 		if current_object != null:
-			if !HOTBAR.mouse_hovering: interaction_objects.drop(current_object, hands_origin)
+			if !HOTBAR.mouse_hovering: interaction_objects.place(
+				current_object,
+				hands_origin,
+				get_global_mouse_position()
+			)
 	if event.is_action_pressed("action_context"):
 		if current_object != null: interaction_objects.cancel(current_object, hands_origin)
+	if event.is_action_pressed("hotbar_drop"):
+		var selected_slot = interaction_hotbar.check_selection()
+		if selected_slot.slotted_item != null:
+			interaction_objects.place(
+				selected_slot.slotted_item,
+				selected_slot,
+				get_node("../..").marker_drop.global_position
+			)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Revert Hotbar
