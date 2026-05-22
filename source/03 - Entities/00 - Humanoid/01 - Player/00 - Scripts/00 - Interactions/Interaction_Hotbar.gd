@@ -70,7 +70,16 @@ func trade_slots(contents):
 					check_held().quantity = trading_quantity
 					check_held().slot_held.set_deferred("visible", false)
 					interaction.revert()
-			else: print("Full Hotbar Swap From Ground")
+			else:
+				interaction.interaction_objects.addto_hand(
+					check_selection().slotted_item,
+					null
+				)
+				#interaction.interaction_objects.place(
+					#check_selection().slotted_item,
+					#null,
+					#interaction.get_node("../..").marker_drop.global_position
+				#)
 	print("#---Finished Trading---#")
 #Check for Selection
 func check_selection():
