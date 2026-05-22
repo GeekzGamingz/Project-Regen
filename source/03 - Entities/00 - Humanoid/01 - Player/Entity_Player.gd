@@ -10,6 +10,7 @@ extends Entity
 @onready var output_name: Label = $Outputs/Output_Name
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var interaction: Node2D = $Scripts/Player_Interaction
+@onready var marker_drop: Marker2D = $Marker_Drop
 #------------------------------------------------------------------------------#
 #Functions
 #Ready

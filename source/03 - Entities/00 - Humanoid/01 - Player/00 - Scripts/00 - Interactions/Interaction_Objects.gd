@@ -53,8 +53,9 @@ func cancel(object, hotbar_origin):
 	if hotbar_origin != null:
 		hotbar_origin.slot_held.set_deferred("visible", false)
 	else:
+		var player = interaction.get_node("../..")
 		interaction.ORPHANAGES_OBJECTS.add_child(object)
-		object.global_position = get_global_mouse_position()
+		object.global_position = player.marker_drop.global_position
 	interaction.revert()
 	#print("Canceled Holding [", object.name, "]")
 	

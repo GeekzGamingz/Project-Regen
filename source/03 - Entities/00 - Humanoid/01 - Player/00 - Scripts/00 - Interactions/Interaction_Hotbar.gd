@@ -47,28 +47,30 @@ func trade_slots(contents):
 			check_held().is_empty = true
 			interaction.revert()
 		"Full":
-			print("#---Trading Executed - Slot Occupied---#")
-			print("Held Object: ", interaction.current_object.name)
-			print("Slot Origin: ", check_held().name)
-			print("Slot Destination: ", check_selection().name)
-			print("Object Replacing: ", check_selection().slotted_item.name)
-			if check_held() == check_selection():
-				interaction.interaction_objects.cancel(
-					interaction.current_object,
-					check_held()
-				) #Cancel if Selections Match
-			else:
-				var trading_object = check_selection().slotted_item
-				var trading_texture = check_selection().texture_object.texture
-				var trading_quantity = check_selection().quantity
-				check_selection().slotted_item = check_held().slotted_item
-				check_selection().texture_object.texture = check_held().texture_object.texture
-				check_selection().quantity = check_held().quantity
-				check_held().slotted_item = trading_object
-				check_held().texture_object.texture = trading_texture
-				check_held().quantity = trading_quantity
-				check_held().slot_held.set_deferred("visible", false)
-				interaction.revert()
+			if check_held() != null:
+				print("#---Trading Executed - Slot Occupied---#")
+				print("Held Object: ", interaction.current_object.name)
+				print("Slot Origin: ", check_held().name)
+				print("Slot Destination: ", check_selection().name)
+				print("Object Replacing: ", check_selection().slotted_item.name)
+				if check_held() == check_selection():
+					interaction.interaction_objects.cancel(
+						interaction.current_object,
+						check_held()
+					) #Cancel if Selections Match
+				else:
+					var trading_object = check_selection().slotted_item
+					var trading_texture = check_selection().texture_object.texture
+					var trading_quantity = check_selection().quantity
+					check_selection().slotted_item = check_held().slotted_item
+					check_selection().texture_object.texture = check_held().texture_object.texture
+					check_selection().quantity = check_held().quantity
+					check_held().slotted_item = trading_object
+					check_held().texture_object.texture = trading_texture
+					check_held().quantity = trading_quantity
+					check_held().slot_held.set_deferred("visible", false)
+					interaction.revert()
+			else: print("Full Hotbar Swap From Ground")
 	print("#---Finished Trading---#")
 #Check for Selection
 func check_selection():
