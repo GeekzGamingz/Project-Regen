@@ -20,7 +20,7 @@ func obtain_object(object, hotbar_selected):
 	var group = object.get_groups()
 	if interaction.full_hands == false:
 		if hotbar_selected.is_empty: interaction.interaction_hotbar.addto_hotbar(object, hotbar_selected)
-		if hotbar_selected.held_item.is_in_group(group[0]):
+		if hotbar_selected.slotted_item.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
 		if interaction.full_hotbar: addto_hand(object, null)
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)

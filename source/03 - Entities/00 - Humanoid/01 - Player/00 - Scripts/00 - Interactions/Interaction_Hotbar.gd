@@ -32,4 +32,9 @@ func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.is_empty = false
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
-	hotbar_selected.held_item = object_scene
+	hotbar_selected.slotted_item = object_scene
+#Trade Slots
+func trade_slots(contents):
+	match(contents):
+		"Empty": print("Trading Executed - Slot Empty")
+		"Full": print("Trading Executed - Slot Occupied")
