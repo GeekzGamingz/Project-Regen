@@ -16,7 +16,7 @@ func check_slots(object):
 				break #Break Slot Check
 			else: find_slot()
 	interaction.full_hotbar = true if slots_filled == 12 else false
-	if interaction.full_hotbar: print("FULL HOTBAR")
+	#if interaction.full_hotbar: print("#-----FULL HOTBAR-----#")
 #Search for Empty Slot
 func find_slot():
 	var hotbar = interaction.HOTBAR
@@ -33,8 +33,36 @@ func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
 	hotbar_selected.slotted_item = object_scene
+	#object.queue_free()
 #Trade Slots
 func trade_slots(contents):
 	match(contents):
-		"Empty": print("Trading Executed - Slot Empty")
-		"Full": print("Trading Executed - Slot Occupied")
+		"Empty":
+			print("#---Trading Executed - Slot Empty---#")
+			print("Held Object: ", interaction.current_object.name)
+			print("Slot Origin: ", check_held())
+			print("Slot Destination: ", check_selection())
+			check_selection().quantity = check_held().quantity
+			addto_hotbar(interaction.current_object, check_selection())
+			check_held().is_empty = true
+			interaction.revert()
+		"Full":
+			print("#---Trading Executed - Slot Occupied---#")
+			print("Held Object: ", interaction.current_object.name)
+			print("Slot Origin: ", check_held())
+			print("Slot Destination: ", check_selection())
+			print("Object Replacing: ", check_selection().slotted_item)
+			if check_held() == check_selection():
+				interaction.interaction_objects.cancel(
+					interaction.current_object,
+					check_held()
+				) #Cancel if Selections Match
+	print("#---Finished Trading---#")
+#Check for Selection
+func check_selection():
+	for slot in interaction.HOTBAR.get_node("SlotContainer_Hotbar").get_children():
+		if slot.slot_selected.visible == true: return slot
+#Check for Held Item
+func check_held(): 
+	for slot in interaction.HOTBAR.get_node("SlotContainer_Hotbar").get_children():
+		if slot.slot_held.visible == true: return slot

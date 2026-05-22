@@ -32,9 +32,9 @@ func addto_hand(object, hotbar_origin):
 	if hotbar_origin != null:
 		hotbar_origin.slot_held.set_deferred("visible", true)
 		interaction.hands_origin = hotbar_origin
-		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
-	else:
-		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin)
+		#print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
+	#else:
+		#print("Added [", object.name, "]" , " to Hand from ", hotbar_origin)
 	interaction.current_object = object
 #Drop
 func drop(object, hotbar_origin):
@@ -47,7 +47,7 @@ func drop(object, hotbar_origin):
 	interaction.ORPHANAGES_OBJECTS.add_child(dupe)
 	dupe.global_position = get_global_mouse_position()
 	interaction.revert()
-	print("Dropped [", dupe.name, "] at ", dupe.global_position)
+	#print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
 func cancel(object, hotbar_origin):
 	if hotbar_origin != null:
@@ -56,5 +56,5 @@ func cancel(object, hotbar_origin):
 		interaction.ORPHANAGES_OBJECTS.add_child(object)
 		object.global_position = get_global_mouse_position()
 	interaction.revert()
-	print("Canceled Holding [", object.name, "]")
+	#print("Canceled Holding [", object.name, "]")
 	

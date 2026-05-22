@@ -20,6 +20,7 @@ var slotted_item: Object = null
 #Slot Nodes
 @onready var texture_object: TextureRect = $Texture_Object
 @onready var line_quantity: LineEdit = $LineEdit_Quantity
+@onready var slot_selected: NinePatchRect = $NPR_Selection
 @onready var slot_held: NinePatchRect = $NPR_Held
 #------------------------------------------------------------------------------#
 #Functions
@@ -38,11 +39,6 @@ func _gui_input(event: InputEvent) -> void:
 			elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
 			print(name, " Contains: ", contents, "(", quantity,")")
 #------------------------------------------------------------------------------#
-#Signaled Functions
-#Mouse Hovering
-func _on_slot_entered() -> void: mouse_hovering = true
-func _on_slot_exited() -> void: mouse_hovering = false
-#------------------------------------------------------------------------------#
 #Custom Functions
 func update_slot():
 	if is_empty == true:
@@ -50,6 +46,7 @@ func update_slot():
 		slotted_item = null
 		quantity = 0
 		texture_object.texture = HOTBAR_SLOT
+		slot_held.set_deferred("visible", false)
 		line_quantity.set_deferred("visible", false)
 	else:
 		contents = slotted_item.name
