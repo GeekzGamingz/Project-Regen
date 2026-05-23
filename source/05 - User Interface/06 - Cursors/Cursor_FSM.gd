@@ -2,6 +2,7 @@
 extends StateMachine
 #------------------------------------------------------------------------------#
 #Variables
+var object_switch: bool = false
 #OnReady Variables
 @onready var cursor: Node2D = $".."
 @onready var state_label: Label = $"../Outputs/Output_State"
@@ -13,6 +14,7 @@ func _ready() -> void:
 	state_add("hand_open")
 	state_add("hand_grab")
 	state_add("hold_object")
+	state_add("new_object")
 	call_deferred("state_set", states.default)
 #------------------------------------------------------------------------------#
 #State Label
@@ -47,6 +49,8 @@ func transitions(delta):
 		#Hold Object
 		states.hold_object:
 			if cursor.object_held == null: return states.default
+			if object_switch == true: return states.new_object
+		states.new_object: return states.hold_object
 	return null
 #Enter State
 @warning_ignore("unused_parameter")
@@ -70,6 +74,8 @@ func state_enter(new_state, old_state):
 			cursor.item.texture = cursor.object_held.sprite_preview.texture
 			cursor.item.visible = true
 			cursor.remove_child(cursor.object_held)
+		states.new_object:
+			object_switch = false
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):
