@@ -24,7 +24,6 @@ func obtain_object(object, hotbar_selected):
 			if object.is_stackable: hotbar_selected.quantity += 1
 		if interaction.full_hotbar: addto_hand(object, null)
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)
-		interaction.revert()
 #Add to Hand
 func addto_hand(object, hotbar_origin):
 	var cursor = interaction.MAIN.UI_CURSOR
