@@ -30,6 +30,7 @@ func addto_hand(object, hotbar_origin):
 	interaction.full_hands = true
 	cursor.icon_state = "HoldObject"
 	cursor.object_held = object
+	interaction.current_object = object
 	if hotbar_origin != null:
 		if hotbar_origin.quantity > 0:
 			cursor.quantity = hotbar_origin.quantity
@@ -39,7 +40,11 @@ func addto_hand(object, hotbar_origin):
 		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
 	else:
 		print("Added [", object.name, "]" , " to Hand from Ground")
-	interaction.current_object = object
+		for slot in interaction.HOTBAR.hotbar_array:
+			if slot.contents.contains(object.get_groups()[0]):
+				interaction.revert()
+				break
+	
 #Drop
 func place(object, hotbar_origin, new_position):
 	var dupe = object.duplicate()
