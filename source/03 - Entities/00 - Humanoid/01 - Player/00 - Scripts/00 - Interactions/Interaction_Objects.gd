@@ -52,6 +52,7 @@ func place(object, hotbar_origin, new_position):
 		else: hotbar_origin.is_empty = true
 	interaction.ORPHANAGES_OBJECTS.add_child(dupe)
 	dupe.global_position = new_position
+	dupe.name = object.name
 	interaction.revert()
 	print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
