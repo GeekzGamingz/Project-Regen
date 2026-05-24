@@ -799,43 +799,43 @@ script = ExtResource("5_ylk6r")
 position = Vector2(29, 116)
 
 [node name="Object_LPiece3" parent="Orphanages/Orphanage_Objects" unique_id=108251030 instance=ExtResource("10_g0q3n")]
-position = Vector2(171, 65)
+position = Vector2(358, 207)
 
 [node name="Object_LPiece4" parent="Orphanages/Orphanage_Objects" unique_id=1548795902 instance=ExtResource("10_g0q3n")]
-position = Vector2(106, 55)
+position = Vector2(308, 263)
 
 [node name="Object_LPiece5" parent="Orphanages/Orphanage_Objects" unique_id=161019719 instance=ExtResource("10_g0q3n")]
-position = Vector2(94, 130)
+position = Vector2(429, 198)
 
 [node name="Object_LPiece6" parent="Orphanages/Orphanage_Objects" unique_id=1766145007 instance=ExtResource("10_g0q3n")]
 position = Vector2(275, 184)
 
 [node name="Object_LPiece7" parent="Orphanages/Orphanage_Objects" unique_id=1512868195 instance=ExtResource("10_g0q3n")]
-position = Vector2(336, 205)
+position = Vector2(276, 207)
 
 [node name="Object_LPiece8" parent="Orphanages/Orphanage_Objects" unique_id=257616206 instance=ExtResource("10_g0q3n")]
-position = Vector2(399, 194)
+position = Vector2(301, 230)
 
 [node name="Object_LPiece9" parent="Orphanages/Orphanage_Objects" unique_id=1376381874 instance=ExtResource("10_g0q3n")]
-position = Vector2(444, 141)
+position = Vector2(330, 212)
 
 [node name="Object_LPiece10" parent="Orphanages/Orphanage_Objects" unique_id=1115336593 instance=ExtResource("10_g0q3n")]
-position = Vector2(458, 221)
+position = Vector2(319, 223)
 
 [node name="Object_LPiece11" parent="Orphanages/Orphanage_Objects" unique_id=1761805936 instance=ExtResource("10_g0q3n")]
-position = Vector2(313, 274)
+position = Vector2(304, 194)
 
 [node name="Object_LPiece12" parent="Orphanages/Orphanage_Objects" unique_id=1848070393 instance=ExtResource("10_g0q3n")]
 position = Vector2(101, 210)
 
 [node name="Object_LPiece13" parent="Orphanages/Orphanage_Objects" unique_id=1812091669 instance=ExtResource("10_g0q3n")]
-position = Vector2(34, 205)
+position = Vector2(374, 235)
 
 [node name="Object_LPiece14" parent="Orphanages/Orphanage_Objects" unique_id=147551706 instance=ExtResource("10_g0q3n")]
-position = Vector2(454, 62)
+position = Vector2(335, 244)
 
 [node name="Object_LPiece15" parent="Orphanages/Orphanage_Objects" unique_id=968867297 instance=ExtResource("10_g0q3n")]
-position = Vector2(330, 118)
+position = Vector2(254, 184)
 
 [node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
 position = Vector2(194, 188)

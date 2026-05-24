@@ -23,6 +23,8 @@ func obtain_object(object, hotbar_selected):
 		if hotbar_selected.slotted_item.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
 		if interaction.full_hotbar: addto_hand(object, null)
+		if hotbar_selected.slotted_item.is_in_group(group[0]):
+			if object.is_stackable: interaction.revert()
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)
 #Add to Hand
 func addto_hand(object, hotbar_origin):
@@ -40,11 +42,6 @@ func addto_hand(object, hotbar_origin):
 		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
 	else:
 		print("Added [", object.name, "]" , " to Hand from Ground")
-		for slot in interaction.HOTBAR.hotbar_array:
-			if slot.contents.contains(object.get_groups()[0]):
-				interaction.revert()
-				break
-	
 #Drop
 func place(object, hotbar_origin, new_position):
 	var dupe = object.duplicate()
@@ -66,5 +63,5 @@ func cancel(object, hotbar_origin):
 		interaction.ORPHANAGES_OBJECTS.add_child(object)
 		object.global_position = player.marker_drop.global_position
 	interaction.revert()
-	#print("Canceled Holding [", object.name, "]")
+	print("Canceled Holding [", object.name, "]")
 	
