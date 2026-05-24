@@ -16,7 +16,7 @@ func check_slots(object):
 				break #Break Slot Check
 			else: find_slot()
 	interaction.full_hotbar = true if slots_filled == 12 else false
-	#if interaction.full_hotbar: print("#-----FULL HOTBAR-----#")
+	if interaction.full_hotbar: print("#-----FULL HOTBAR-----#")
 #Search for Empty Slot
 func find_slot():
 	var hotbar = interaction.HOTBAR
@@ -33,26 +33,25 @@ func addto_hotbar(object, hotbar_selected):
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
 	hotbar_selected.slotted_item = object_scene
-	#object.queue_free()
 #Trade Slots
 func trade_slots(contents):
 	match(contents):
 		"Empty":
 			print("#---Trading Executed - Slot Empty---#")
 			print("Held Object: ", interaction.current_object.name)
-			print("Slot Origin: ", check_held().name)
+			print("Object Origin: ", check_held().name)
 			print("Slot Destination: ", check_selection().name)
 			addto_hotbar(interaction.current_object, check_selection())
 			check_selection().quantity = check_held().quantity
 			check_held().is_empty = true
 			interaction.revert()
 		"Full":
+			print("#---Trading Executed - Slot Occupied---#")
+			print("Held Object: ", interaction.current_object.name)
+			print("Slot Destination: ", check_selection().name)
+			print("Object Replacing: ", check_selection().slotted_item.name)
 			if check_held() != null:
-				print("#---Trading Executed - Slot Occupied---#")
-				print("Held Object: ", interaction.current_object.name)
 				print("Slot Origin: ", check_held().name)
-				print("Slot Destination: ", check_selection().name)
-				print("Object Replacing: ", check_selection().slotted_item.name)
 				if check_held() == check_selection():
 					interaction.interaction_objects.cancel(
 						interaction.current_object,
@@ -71,16 +70,16 @@ func trade_slots(contents):
 					check_held().slot_held.set_deferred("visible", false)
 					interaction.revert()
 			else: #Trade Item from Ground
+				print("Object Origin: Ground")
+				var trading_object = interaction.current_object
+				var trading_quantity = check_selection().quantity
 				interaction.interaction_objects.addto_hand(
 					check_selection().slotted_item,
 					null
 				)
 				interaction.MAIN.UI_CURSOR.cursor_fsm.object_switch = true
-				#interaction.interaction_objects.place(
-					#check_selection().slotted_item,
-					#null,
-					#interaction.get_node("../..").marker_drop.global_position
-				#)
+				interaction.MAIN.UI_CURSOR.output_quantity.text = str(trading_quantity)
+				addto_hotbar(trading_object, check_selection())
 	print("#---Finished Trading---#")
 #Check for Selection
 func check_selection():

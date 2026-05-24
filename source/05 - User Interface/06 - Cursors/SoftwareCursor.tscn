@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/05 - User Interface/06 - Cursors/SoftwareCursor.gd" id="3_88ndb"]
 [ext_resource type="Texture2D" uid="uid://d3pgk3j8dtuat" path="res://assets/00 - UserInterface/05 - Cursors/cursor_qwest.png" id="4_o8jqr"]
 [ext_resource type="Script" uid="uid://ctgrxk17kldnl" path="res://source/05 - User Interface/06 - Cursors/CursorIcon.gd" id="5_uofne"]
+[ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="7_gwpbj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_moohe"]
 resource_local_to_scene = true
@@ -107,14 +108,12 @@ script = ExtResource("2_to82i")
 [node name="Cursor_Textures" type="Node2D" parent="." unique_id=907076404]
 
 [node name="Cursor" type="Sprite2D" parent="Cursor_Textures" unique_id=1551634240]
-visible = false
 top_level = true
 texture = ExtResource("2_uofne")
 centered = false
 hframes = 4
 
 [node name="CursorIcon" type="Sprite2D" parent="Cursor_Textures" unique_id=420863471]
-visible = false
 material = SubResource("ShaderMaterial_moohe")
 texture = ExtResource("4_o8jqr")
 centered = false
@@ -122,7 +121,6 @@ hframes = 4
 script = ExtResource("5_uofne")
 
 [node name="CursorObject" type="Sprite2D" parent="Cursor_Textures" unique_id=65542564]
-visible = false
 hframes = 4
 
 [node name="AnimationPlayers" type="Node2D" parent="." unique_id=1305518761]
@@ -143,3 +141,27 @@ theme_override_font_sizes/font_size = 8
 text = "State"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="Output_Quantity" type="LineEdit" parent="Outputs" unique_id=281385057]
+visible = false
+offset_left = -4.0
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 24.0
+focus_mode = 0
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_gwpbj")
+theme_override_font_sizes/font_size = 17
+text = "1"
+alignment = 1
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+flat = true
+virtual_keyboard_enabled = false

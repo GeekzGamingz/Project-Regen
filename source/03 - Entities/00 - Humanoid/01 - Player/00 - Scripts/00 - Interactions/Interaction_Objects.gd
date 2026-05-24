@@ -24,17 +24,22 @@ func obtain_object(object, hotbar_selected):
 			if object.is_stackable: hotbar_selected.quantity += 1
 		if interaction.full_hotbar: addto_hand(object, null)
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)
+		interaction.revert()
 #Add to Hand
 func addto_hand(object, hotbar_origin):
+	var cursor = interaction.MAIN.UI_CURSOR
 	interaction.full_hands = true
-	interaction.MAIN.UI_CURSOR.icon_state = "HoldObject"
-	interaction.MAIN.UI_CURSOR.object_held = object
+	cursor.icon_state = "HoldObject"
+	cursor.object_held = object
 	if hotbar_origin != null:
+		if hotbar_origin.quantity > 0:
+			cursor.quantity = hotbar_origin.quantity
+			cursor.output_quantity.set_deferred("visible", true)
 		hotbar_origin.slot_held.set_deferred("visible", true)
 		interaction.hands_origin = hotbar_origin
-		#print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
-	#else:
-		#print("Added [", object.name, "]" , " to Hand from ", hotbar_origin)
+		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
+	else:
+		print("Added [", object.name, "]" , " to Hand from Ground")
 	interaction.current_object = object
 #Drop
 func place(object, hotbar_origin, new_position):
@@ -47,7 +52,7 @@ func place(object, hotbar_origin, new_position):
 	interaction.ORPHANAGES_OBJECTS.add_child(dupe)
 	dupe.global_position = new_position
 	interaction.revert()
-	#print("Dropped [", dupe.name, "] at ", dupe.global_position)
+	print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
 func cancel(object, hotbar_origin):
 	if hotbar_origin != null:
