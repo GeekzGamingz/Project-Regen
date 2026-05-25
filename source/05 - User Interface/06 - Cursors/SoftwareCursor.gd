@@ -23,4 +23,6 @@ var object_held: StaticBody2D = null
 @onready var animation_player: AnimationPlayer = $AnimationPlayers/AnimationPlayer
 #------------------------------------------------------------------------------#
 #Process Functions
-func _process(_delta: float) -> void: global_position = get_global_mouse_position()
+func _process(_delta: float) -> void:
+	global_position = get_global_mouse_position()
+	output_quantity.visible = false if quantity < 2 else true

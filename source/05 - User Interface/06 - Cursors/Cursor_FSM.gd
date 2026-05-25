@@ -57,6 +57,7 @@ func transitions(delta):
 func state_enter(new_state, old_state):
 	match(new_state):
 		states.default:
+			cursor.object_held = null
 			cursor.cursor.visible = false
 			cursor.icon.visible = false
 			cursor.item.visible = false
