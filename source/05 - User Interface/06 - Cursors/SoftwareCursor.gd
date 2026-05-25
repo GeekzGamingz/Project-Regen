@@ -1,7 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
-var quantity = 0
+var quantity = 1
 var object_held: StaticBody2D = null
 #Exported Variables
 #Exported Enumerations

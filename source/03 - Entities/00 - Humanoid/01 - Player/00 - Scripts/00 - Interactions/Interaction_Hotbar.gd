@@ -79,6 +79,7 @@ func trade_slots(contents):
 				)
 				interaction.MAIN.UI_CURSOR.cursor_fsm.object_switch = true
 				interaction.MAIN.UI_CURSOR.output_quantity.set_deferred("visible", true)
+				interaction.MAIN.UI_CURSOR.quantity = trading_quantity
 				interaction.MAIN.UI_CURSOR.output_quantity.text = str(trading_quantity)
 				addto_hotbar(trading_object, check_selection())
 	print("#---Finished Trading---#")

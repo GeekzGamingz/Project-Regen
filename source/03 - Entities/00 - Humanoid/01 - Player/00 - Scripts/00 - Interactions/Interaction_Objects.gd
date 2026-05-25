@@ -34,7 +34,7 @@ func addto_hand(object, hotbar_origin):
 	cursor.object_held = object
 	interaction.current_object = object
 	if hotbar_origin != null:
-		if hotbar_origin.quantity > 0:
+		if hotbar_origin.quantity > 1:
 			cursor.quantity = hotbar_origin.quantity
 			cursor.output_quantity.set_deferred("visible", true)
 		hotbar_origin.slot_held.set_deferred("visible", true)
@@ -44,17 +44,18 @@ func addto_hand(object, hotbar_origin):
 		print("Added [", object.name, "]" , " to Hand from Ground")
 #Drop
 func place(object, hotbar_origin, new_position):
-	var dupe = object.duplicate()
-	if hotbar_origin != null:
-		hotbar_origin.slot_held.set_deferred("visible", false)
-		if object.is_stackable && hotbar_origin.quantity > 1:
-			hotbar_origin.quantity -= 1
-		else: hotbar_origin.is_empty = true
-	interaction.ORPHANAGES_OBJECTS.add_child(dupe)
-	dupe.global_position = new_position
-	dupe.name = object.name
-	interaction.revert()
-	print("Dropped [", dupe.name, "] at ", dupe.global_position)
+	for i in interaction.MAIN.UI_CURSOR.quantity:
+		var dupe = object.duplicate()
+		if hotbar_origin != null:
+			hotbar_origin.slot_held.set_deferred("visible", false)
+			if object.is_stackable && hotbar_origin.quantity > 1:
+				hotbar_origin.quantity -= 1
+			else: hotbar_origin.is_empty = true
+		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
+		dupe.global_position = new_position
+		dupe.name = object.name
+		interaction.revert()
+		print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
 func cancel(object, hotbar_origin):
 	if hotbar_origin != null:

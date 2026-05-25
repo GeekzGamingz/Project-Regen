@@ -42,6 +42,7 @@ func _input(event: InputEvent) -> void:
 func revert():
 	MAIN.UI_CURSOR.icon_state = "Default"
 	MAIN.UI_CURSOR.object_held = null
+	MAIN.UI_CURSOR.quantity = 1
 	full_hands = false
 	current_object = null
 	hands_origin = null
