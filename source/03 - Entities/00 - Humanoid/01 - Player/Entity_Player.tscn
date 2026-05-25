@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://3q3a3f7pgm14" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Interaction_Backpack.gd" id="8_gi8ry"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="12_25kxp"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gi8ry"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25kxp"]
 resource_local_to_scene = true
 shader = ExtResource("4_4ncaf")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
@@ -42,7 +42,7 @@ shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x8m0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gi8ry"]
 resource_local_to_scene = true
 shader = ExtResource("4_4ncaf")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
@@ -70,7 +70,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="Shader" id="Shader_jafee"]
+[sub_resource type="Shader" id="Shader_4x8m0"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 const float EPSILON = 0.0001;
@@ -169,9 +169,9 @@ void fragment() {
     }
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyvce"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jafee"]
 resource_local_to_scene = true
-shader = SubResource("Shader_jafee")
+shader = SubResource("Shader_4x8m0")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -197,7 +197,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="Shader" id="Shader_u00o7"]
+[sub_resource type="Shader" id="Shader_qyvce"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 const float EPSILON = 0.0001;
@@ -296,9 +296,37 @@ void fragment() {
     }
 }"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u00o7"]
+resource_local_to_scene = true
+shader = SubResource("Shader_qyvce")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_phqai"]
 resource_local_to_scene = true
-shader = SubResource("Shader_u00o7")
+shader = SubResource("Shader_qyvce")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -326,34 +354,6 @@ shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wkh20"]
 resource_local_to_scene = true
-shader = SubResource("Shader_u00o7")
-shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/old_outline3 = Color(0, 0, 0, 1)
-shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/old_base3 = Color(0, 0, 0, 1)
-shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
-shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
-shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
-shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
-shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
-shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
-shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
-shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
-shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
-shader_parameter/new_outline3 = Color(0, 0, 0, 1)
-shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
-shader_parameter/new_base3 = Color(0, 0, 0, 1)
-shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7o1ub"]
-resource_local_to_scene = true
 shader = ExtResource("4_4ncaf")
 shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
 shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
@@ -380,7 +380,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="Shader" id="Shader_mfqqf"]
+[sub_resource type="Shader" id="Shader_7o1ub"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 const float EPSILON = 0.0001;
@@ -479,9 +479,9 @@ void fragment() {
     }
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_22rhd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfqqf"]
 resource_local_to_scene = true
-shader = SubResource("Shader_mfqqf")
+shader = SubResource("Shader_7o1ub")
 shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
 shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
 shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
@@ -507,7 +507,7 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx1lv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22rhd"]
 resource_local_to_scene = true
 shader = ExtResource("4_4ncaf")
 shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
@@ -571,28 +571,28 @@ script = ExtResource("5_gl5bk")
 script = ExtResource("6_dbfy1")
 
 [node name="Sprite_Base" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="0" unique_id=511965580]
-material = SubResource("ShaderMaterial_gi8ry")
+material = SubResource("ShaderMaterial_25kxp")
 
 [node name="Sprite_ArmRight" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="1" unique_id=708651417]
-material = SubResource("ShaderMaterial_4x8m0")
+material = SubResource("ShaderMaterial_gi8ry")
 
 [node name="Sprite_ArmLeft" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="2" unique_id=1696417493]
-material = SubResource("ShaderMaterial_qyvce")
+material = SubResource("ShaderMaterial_jafee")
 
 [node name="Sprite_LegRight" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="3" unique_id=1817722614]
-material = SubResource("ShaderMaterial_phqai")
+material = SubResource("ShaderMaterial_u00o7")
 
 [node name="Sprite_LegLeft" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="4" unique_id=1095566541]
-material = SubResource("ShaderMaterial_wkh20")
+material = SubResource("ShaderMaterial_phqai")
 
 [node name="Sprite_Hair" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="5" unique_id=843470542]
-material = SubResource("ShaderMaterial_7o1ub")
+material = SubResource("ShaderMaterial_wkh20")
 
 [node name="Sprite_Ears" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="6" unique_id=248255888]
-material = SubResource("ShaderMaterial_22rhd")
+material = SubResource("ShaderMaterial_mfqqf")
 
 [node name="Sprite_Beard" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="7" unique_id=569887477]
-material = SubResource("ShaderMaterial_gx1lv")
+material = SubResource("ShaderMaterial_22rhd")
 
 [node name="AnimationTree" parent="AnimationPlayers" parent_id_path=PackedInt32Array(1078540465) index="2" unique_id=1018992307]
 active = true
@@ -616,6 +616,9 @@ script = ExtResource("8_dbfy1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path_HuckArc" index="0" unique_id=1747620377]
 rotation = -0.4636476
+
+[node name="AudioListener2D" type="AudioListener2D" parent="AudioPlayers" parent_id_path=PackedInt32Array(2130145815) index="1" unique_id=684382429]
+current = true
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_velocity_computed"]
