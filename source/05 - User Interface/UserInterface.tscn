@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0f0uvs8gipny"]
+[gd_scene format=3 uid="uid://c0f0uvs8gipny"]
 
 [ext_resource type="PackedScene" uid="uid://6daofborubcg" path="res://source/05 - User Interface/02 - Tool Menu/Menu_Tools.tscn" id="1_nbbpt"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_s1jx5"]
@@ -38,10 +38,10 @@ shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
 shader_parameter/new_base3 = Color(1, 1, 1, 1)
 shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
 
-[node name="UserInterface" type="CanvasLayer"]
+[node name="UserInterface" type="CanvasLayer" unique_id=1151898999]
 follow_viewport_enabled = true
 
-[node name="UI_FullRect" type="Control" parent="."]
+[node name="UI_FullRect" type="Control" parent="." unique_id=1521110173]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,14 +51,14 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_s1jx5")
 
-[node name="Menu_Tools" parent="UI_FullRect" instance=ExtResource("1_nbbpt")]
+[node name="Menu_Tools" parent="UI_FullRect" unique_id=1019053473 instance=ExtResource("1_nbbpt")]
 layout_mode = 1
 
-[node name="UI_Time" parent="UI_FullRect" instance=ExtResource("2_s1jx5")]
+[node name="UI_Time" parent="UI_FullRect" unique_id=1709833937 instance=ExtResource("2_s1jx5")]
 layout_mode = 1
 offset_left = -212.0
 
-[node name="UI_Network" parent="UI_FullRect" instance=ExtResource("4_rb18f")]
+[node name="UI_Network" parent="UI_FullRect" unique_id=1211367483 instance=ExtResource("4_rb18f")]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -68,10 +68,10 @@ offset_right = 202.0
 offset_bottom = 0.0
 grow_vertical = 0
 
-[node name="SplashScreen" parent="UI_FullRect" instance=ExtResource("10_moohe")]
+[node name="SplashScreen" parent="UI_FullRect" unique_id=1021041359 instance=ExtResource("10_moohe")]
 layout_mode = 1
 
-[node name="UI_Customization" parent="UI_FullRect" instance=ExtResource("7_dl5ef")]
+[node name="UI_Customization" parent="UI_FullRect" unique_id=121153356 instance=ExtResource("7_dl5ef")]
 visible = false
 layout_mode = 1
 anchors_preset = 6
@@ -86,8 +86,8 @@ offset_bottom = 123.5
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Inventory" parent="UI_FullRect" instance=ExtResource("7_a0e1u")]
+[node name="Inventory" parent="UI_FullRect" unique_id=1355513620 instance=ExtResource("7_a0e1u")]
 layout_mode = 1
 
-[node name="SoftwareCursor" parent="." instance=ExtResource("8_wwe8j")]
+[node name="SoftwareCursor" parent="." unique_id=2072808113 instance=ExtResource("8_wwe8j")]
 material = SubResource("ShaderMaterial_to1rn")
