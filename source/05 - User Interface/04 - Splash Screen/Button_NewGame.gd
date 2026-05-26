@@ -40,5 +40,5 @@ func send_single_player(username):
 		$"../../../MainMenu/Button_SinglePlayer".set_deferred("visible", false)
 		$"../../../MainMenu/Button_Multiplayer".set_deferred("visible", false)
 		$"../..".set_deferred("visible", false)
-		$"../../../../PopUpContainer".set_deferred("visible", false)
+		$"../../../../PopUpContainer/TabContainer/CharacterContainer".set_deferred("visible", true)
 	else: emit_signal("error_name")

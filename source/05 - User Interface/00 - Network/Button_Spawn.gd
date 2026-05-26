@@ -22,4 +22,4 @@ func hide_splash():
 	$"../../../../../HBoxContainer/SubMenus".set_deferred("visible", false)
 	$"../../../../../HBoxContainer/MainMenu/Button_SinglePlayer".set_deferred("visible", false)
 	$"../../../../../HBoxContainer/MainMenu/Button_Multiplayer".set_deferred("visible", false)
-	$"../../../..".set_deferred("visible", false)
+	$"../../..".set_deferred("visible", false)
