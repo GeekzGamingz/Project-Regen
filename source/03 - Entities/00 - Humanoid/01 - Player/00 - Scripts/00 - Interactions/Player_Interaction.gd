@@ -11,6 +11,7 @@ var full_hands: bool = false
 @onready var ORPHANAGES_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
 @onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
 #Local Nodes
+@onready var player: CharacterBody2D = $"../.."
 @onready var input: Node2D = $"../Player_Input"
 @onready var interaction_objects: Node2D = $Interaction_Objects
 @onready var interaction_hotbar: Node2D = $Interaction_Hotbar
@@ -29,13 +30,14 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_context"):
 		if current_object != null: interaction_objects.cancel(current_object, hands_origin)
 	if event.is_action_pressed("hotbar_drop"):
-		var selected_slot = interaction_hotbar.check_selection()
-		if selected_slot.slotted_item != null:
-			interaction_objects.place(
-				selected_slot.slotted_item,
-				selected_slot,
-				get_node("../..").marker_drop.global_position
-			)
+		if player.is_multiplayer_authority():
+			var selected_slot = interaction_hotbar.check_selection()
+			if selected_slot.slotted_item != null && !full_hands:
+				interaction_objects.place(
+					selected_slot.slotted_item,
+					selected_slot,
+					get_node("../..").marker_drop.global_position
+				)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Revert Hotbar

@@ -599,6 +599,7 @@ active = true
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Output_State" parent="Outputs" parent_id_path=PackedInt32Array(1939262163) index="0" unique_id=1182138654]
+visible = false
 theme_override_font_sizes/font_size = 8
 
 [node name="Output_Name" parent="Outputs" parent_id_path=PackedInt32Array(1939262163) index="1" unique_id=721045188]

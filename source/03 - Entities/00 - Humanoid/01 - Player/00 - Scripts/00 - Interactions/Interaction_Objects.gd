@@ -42,7 +42,7 @@ func addto_hand(object, hotbar_origin):
 		print("Added [", object.name, "]" , " to Hand from ", hotbar_origin.name)
 	else:
 		print("Added [", object.name, "]" , " to Hand from Ground")
-#Drop
+#Place
 func place(object, hotbar_origin, new_position):
 	for i in interaction.MAIN.UI_CURSOR.quantity:
 		var dupe = object.duplicate()

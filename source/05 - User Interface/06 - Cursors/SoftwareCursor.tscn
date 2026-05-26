@@ -133,6 +133,7 @@ autoplay = &"idle"
 [node name="Outputs" type="Node2D" parent="." unique_id=50428879]
 
 [node name="Output_State" type="Label" parent="Outputs" unique_id=321839487]
+visible = false
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0

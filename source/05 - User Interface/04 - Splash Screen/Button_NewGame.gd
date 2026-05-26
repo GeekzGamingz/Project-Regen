@@ -36,4 +36,9 @@ func send_single_player(username):
 		emit_signal("server_create", username, "")
 		splash_screen.set_deferred("visible", false)
 		NETWORK.single_player = true
+		#Disable New Game Buttons (Temporary Fix)
+		$"../../../MainMenu/Button_SinglePlayer".set_deferred("visible", false)
+		$"../../../MainMenu/Button_Multiplayer".set_deferred("visible", false)
+		$"../..".set_deferred("visible", false)
+		$"../../../../PopUpContainer".set_deferred("visible", false)
 	else: emit_signal("error_name")
