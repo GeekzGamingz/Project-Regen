@@ -38,11 +38,8 @@ func addto_hand(amount, object, hotbar_origin):
 			"All": cursor.quantity = hotbar_origin.quantity
 			"Half":
 				var half = floor(hotbar_origin.quantity / 2)
-				hotbar_origin.quantity -= half
 				cursor.quantity += half
-			"One":
-				cursor.quantity += 1
-				hotbar_origin.quantity -= 1
+			"One": cursor.quantity += 1
 		hotbar_origin.slot_held.set_deferred("visible", true)
 		interaction.hands_origin = hotbar_origin
 		print("Added [", cursor.quantity, " x ", object.name, "]" , " to Hand from ", hotbar_origin.name)
@@ -57,11 +54,9 @@ func place(object, hotbar_origin, new_position):
 		stack.global_position = new_position
 		stack.name = object.name
 		interaction.MAIN.UI_CURSOR.quantity -= 1
-		if interaction.MAIN.UI_CURSOR.quantity == 0:
-			interaction.current_object = null
-		#Possibly create a "phantom quantity" for items dropped while holding
-		#Then subtract phantom quantity upon cancel
-		#hotbar_origin.quantity -= 1
+		if interaction.MAIN.UI_CURSOR.quantity == 0: #Fully Clear Hand and Held Slot
+			hotbar_origin.slot_held.set_deferred("visible", false)
+		hotbar_origin.quantity -= 1
 		if hotbar_origin.quantity == 0:
 			interaction.revert()
 			hotbar_origin.slotted_item = null
