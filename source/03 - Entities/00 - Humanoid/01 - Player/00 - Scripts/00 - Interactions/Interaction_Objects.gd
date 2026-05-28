@@ -59,7 +59,9 @@ func place(object, hotbar_origin, new_position):
 		interaction.MAIN.UI_CURSOR.quantity -= 1
 		if interaction.MAIN.UI_CURSOR.quantity == 0:
 			interaction.current_object = null
-		hotbar_origin.quantity -= 1
+		#Possibly create a "phantom quantity" for items dropped while holding
+		#Then subtract phantom quantity upon cancel
+		#hotbar_origin.quantity -= 1
 		if hotbar_origin.quantity == 0:
 			interaction.revert()
 			hotbar_origin.slotted_item = null
