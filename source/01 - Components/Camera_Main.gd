@@ -17,6 +17,6 @@ func _input(event: InputEvent) -> void:
 		is_panning = false
 		if !G.IS_BUILDING: Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else: Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
-	#Basic Zoom
+	#Basic Zoom (Shift to Three States)
 	if event.is_action_pressed("zoom_in"): if zoom >= Vector2(0.3, 0.3): zoom -= Vector2(0.2, 0.2)
 	if event.is_action_pressed("zoom_out"): if zoom <= Vector2(3, 3): zoom += Vector2(0.2, 0.2)

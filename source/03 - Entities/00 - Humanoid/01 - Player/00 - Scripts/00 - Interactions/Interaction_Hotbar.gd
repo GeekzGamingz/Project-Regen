@@ -29,7 +29,7 @@ func find_slot():
 			else: hotbar.scroll_hotbar("Next")
 #Add to Hotbar
 func addto_hotbar(object, hotbar_selected):
-	hotbar_selected.is_empty = false
+	hotbar_selected.slotted_item = null
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
 	hotbar_selected.slotted_item = object_scene
@@ -43,7 +43,7 @@ func trade_slots(contents):
 			print("Slot Destination: ", check_selection().name)
 			addto_hotbar(interaction.current_object, check_selection())
 			check_selection().quantity = check_held().quantity
-			check_held().is_empty = true
+			check_held().slotted_item = null
 			interaction.revert()
 		"Full":
 			print("#---Trading Executed - Slot Occupied---#")
@@ -73,16 +73,16 @@ func trade_slots(contents):
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object
 				var trading_quantity = check_selection().quantity
+				var cursor = interaction.MAIN.UI_CURSOR
 				interaction.interaction_objects.addto_hand(
+					"All",
 					check_selection().slotted_item,
 					null
 				)
-				interaction.MAIN.UI_CURSOR.cursor_fsm.object_switch = true
-				#interaction.MAIN.UI_CURSOR.output_quantity.set_deferred("visible", true)
-				check_selection().quantity = interaction.MAIN.UI_CURSOR.quantity
-				interaction.MAIN.UI_CURSOR.quantity = trading_quantity
-				if interaction.MAIN.UI_CURSOR.quantity < 1: interaction.MAIN.UI_CURSOR.quantity = 1
-				interaction.MAIN.UI_CURSOR.output_quantity.text = str(trading_quantity)
+				cursor.cursor_fsm.object_switch = true
+				check_selection().quantity = cursor.quantity
+				cursor.quantity = trading_quantity
+				if cursor.quantity < 1: cursor.quantity = 1
 				addto_hotbar(trading_object, check_selection())
 	print("#---Finished Trading---#")
 #Check for Selection

@@ -1,7 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
-var quantity = 1
+var quantity = 0
 var object_held: StaticBody2D = null
 #Exported Variables
 #Exported Enumerations
@@ -23,6 +23,4 @@ var object_held: StaticBody2D = null
 @onready var animation_player: AnimationPlayer = $AnimationPlayers/AnimationPlayer
 #------------------------------------------------------------------------------#
 #Process Functions
-func _process(_delta: float) -> void:
-	global_position = get_global_mouse_position()
-	output_quantity.visible = false if quantity < 2 else true
+func _process(_delta: float) -> void: global_position = get_global_mouse_position()

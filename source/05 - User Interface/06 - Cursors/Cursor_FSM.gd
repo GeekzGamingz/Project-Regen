@@ -14,6 +14,7 @@ func _ready() -> void:
 	state_add("hand_open")
 	state_add("hand_grab")
 	state_add("hold_object")
+	state_add("hold_stack")
 	state_add("new_object")
 	call_deferred("state_set", states.default)
 #------------------------------------------------------------------------------#
@@ -25,6 +26,7 @@ func _process(_delta: float) -> void: state_label.text = str(states.keys()[state
 func state_logic(_delta):
 	match(state):
 		states.default: pass
+		states.hold_stack: cursor.output_quantity.text = str(cursor.quantity)
 #State Transitions
 @warning_ignore("unused_parameter")
 func transitions(delta):
@@ -49,6 +51,12 @@ func transitions(delta):
 		#Hold Object
 		states.hold_object:
 			if cursor.object_held == null: return states.default
+			if cursor.object_held.is_stackable == true: return states.hold_stack
+			if object_switch == true: return states.new_object
+		states.hold_stack:
+			#if cursor.quantity == 0: return states.default
+			if cursor.object_held == null: return states.default
+			if cursor.object_held.is_stackable == false: return states.hold_object
 			if object_switch == true: return states.new_object
 		states.new_object: return states.hold_object
 	return null
@@ -75,6 +83,7 @@ func state_enter(new_state, old_state):
 			cursor.item.texture = cursor.object_held.sprite_preview.texture
 			cursor.item.visible = true
 			cursor.remove_child(cursor.object_held)
+		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
 		states.new_object:
 			object_switch = false
 #Exit State
@@ -82,3 +91,4 @@ func state_enter(new_state, old_state):
 func state_exit(old_state, new_state):
 	match(old_state):
 		states.default: Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		states.hold_stack:cursor.output_quantity.set_deferred("visible", false)

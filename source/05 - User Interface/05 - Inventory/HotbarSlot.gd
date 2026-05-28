@@ -6,7 +6,6 @@ const HOTBAR_SLOT = preload("res://assets/00 - UserInterface/04 - Inventory/00 -
 #Integers
 var quantity: int = 0
 #Booleans
-var is_empty: bool = true
 var mouse_hovering: bool = false
 #Strings
 var contents: String
@@ -28,21 +27,29 @@ var slotted_item: Object = null
 func _process(_delta: float) -> void: update_slot()
 #GUI Input
 func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		hotbar.scroll_hotbar(name)
+	if event is InputEventMouseMotion: hotbar.scroll_hotbar(name)
 	if event is InputEventMouseButton:
-		if event.is_action_pressed("action_confirm"):
-			var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-			if is_empty == false:
+		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
+		if slotted_item != null:
+			if event.is_action_pressed("hotbar_grabone"):
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				else: interaction.interaction_objects.addto_hand(slotted_item, self)
-			elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
-			if slotted_item != null:
-				print(name, " Contains: ", slotted_item.name, "(", quantity,")")
+				else: interaction.interaction_objects.addto_hand("One", slotted_item, self)
+				print("Grabbed One")
+			elif event.is_action_pressed("hotbar_grabhalf"):
+				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
+				else: interaction.interaction_objects.addto_hand("Half", slotted_item, self)
+				print("Grabbed Half")
+			elif event.is_action_pressed("action_confirm"):
+				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
+				else: interaction.interaction_objects.addto_hand("All", slotted_item, self)
+				print("Grabbed All")
+		elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
+		if slotted_item != null:
+			print(name, " Contains: ", slotted_item.name, "(", quantity,")")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func update_slot():
-	if is_empty == true:
+	if slotted_item == null:
 		contents = "Empty"
 		slotted_item = null
 		quantity = 0
