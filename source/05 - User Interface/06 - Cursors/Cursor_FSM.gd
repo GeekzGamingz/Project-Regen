@@ -54,7 +54,7 @@ func transitions(delta):
 			if cursor.object_held.is_stackable == true: return states.hold_stack
 			if object_switch == true: return states.new_object
 		states.hold_stack:
-			#if cursor.quantity == 0: return states.default
+			if cursor.quantity == 0: return states.default
 			if cursor.object_held == null: return states.default
 			if cursor.object_held.is_stackable == false: return states.hold_object
 			if object_switch == true: return states.new_object

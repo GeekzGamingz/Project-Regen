@@ -54,7 +54,10 @@ func place(object, hotbar_origin, new_position):
 		stack.global_position = new_position
 		stack.name = object.name
 		interaction.MAIN.UI_CURSOR.quantity -= 1
-		if interaction.MAIN.UI_CURSOR.quantity == 0: #Fully Clear Hand and Held Slot
+		if interaction.MAIN.UI_CURSOR.quantity == 0: #Fully Clear Hand and Held Slot <--- DO THIS DAVE
+			interaction.current_object = null
+			interaction.full_hands = false
+			interaction.MAIN.UI_CURSOR.icon_state = "Default"
 			hotbar_origin.slot_held.set_deferred("visible", false)
 		hotbar_origin.quantity -= 1
 		if hotbar_origin.quantity == 0:
