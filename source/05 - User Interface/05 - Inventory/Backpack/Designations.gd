@@ -23,19 +23,19 @@ func check_designation():
 	backpack.slot_b3.texture = null
 	match(designation):
 		null: backpack.set_deferred("visible", false)
-		0: backpack.backpack_front.set_deferred("visible", true)
-		1: backpack.container_base.set_deferred("visible", true)
-		2: 
+		0: backpack.backpack_front.set_deferred("visible", true) #Mark I
+		1: backpack.container_base.set_deferred("visible", true) #Mark II
+		2: #Mark III
 			backpack.container_base.set_deferred("visible", true)
 			backpack.backpack_front.set_deferred("visible", true)
-		3:
+		3: #Mark IV
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
 			backpack.slot_a1.texture = BACKPACK_SLOT_AVAILABLE
 			backpack.slot_a2.texture = BACKPACK_SLOT_AVAILABLE
 			backpack.slot_a3.texture = BACKPACK_SLOT_AVAILABLE
-		4:
+		4: #Mark V
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
