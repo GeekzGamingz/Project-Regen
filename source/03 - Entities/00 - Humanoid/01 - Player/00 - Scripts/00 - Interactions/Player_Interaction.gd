@@ -20,16 +20,16 @@ var full_hands: bool = false
 #Functions
 #Input
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_confirm"):
+	if event.is_action_pressed("action_confirm"): # Left Click
 		if current_object != null:
 			if !HOTBAR.mouse_hovering: interaction_objects.place(
 				current_object,
 				hands_origin,
 				get_global_mouse_position()
 			)
-	if event.is_action_pressed("action_context"):
+	if event.is_action_pressed("action_context"): # Right Click
 		if current_object != null: interaction_objects.cancel(current_object, hands_origin)
-	if event.is_action_pressed("hotbar_drop"):
+	if event.is_action_pressed("hotbar_drop"): # Q Key
 		if player.is_multiplayer_authority():
 			var selected_slot = interaction_hotbar.check_selection()
 			if selected_slot.slotted_item != null && !full_hands:
@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Revert Hotbar
-func revert():
+func revert(): # Revert Settings to Default
 	MAIN.UI_CURSOR.icon_state = "Default"
 	MAIN.UI_CURSOR.object_held = null
 	MAIN.UI_CURSOR.quantity = 0

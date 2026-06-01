@@ -34,36 +34,41 @@ func addto_hand(amount, object, hotbar_origin):
 	cursor.object_held = object
 	interaction.current_object = object
 	if hotbar_origin != null:
-		if hotbar_origin.quantity > 1: match(amount):
+		if hotbar_origin.quantity > 0: match(amount):
 			"All": cursor.quantity = hotbar_origin.quantity
 			"Half":
-				var half = floor(hotbar_origin.quantity / 2)
-				cursor.quantity += half
+				if hotbar_origin.quantity == 1: cursor.quantity = 1
+				else:
+					var half = floor(hotbar_origin.quantity / 2)
+					cursor.quantity += half
 			"One": cursor.quantity += 1
 		hotbar_origin.slot_held.set_deferred("visible", true)
 		interaction.hands_origin = hotbar_origin
 		print("Added [", cursor.quantity, " x ", object.name, "]" , " to Hand from ", hotbar_origin.name)
 	else:
+		cursor.quantity = 1
 		print("Added [", object.name, "]" , " to Hand from Ground")
 #Place
 func place(object, hotbar_origin, new_position):
 	var dupe = object.duplicate()
 	if dupe.is_stackable:
 		var stack = dupe.duplicate()
+		var cursor = interaction.MAIN.UI_CURSOR
 		interaction.ORPHANAGES_OBJECTS.add_child(stack)
 		stack.global_position = new_position
 		stack.name = object.name
-		interaction.MAIN.UI_CURSOR.quantity -= 1
-		if interaction.MAIN.UI_CURSOR.quantity == 0: #Fully Clear Hand and Held Slot <--- DO THIS DAVE
+		if cursor.object_held != null: cursor.quantity -= 1 #Drop Contingency
+		if cursor.quantity == 0: #Reset Hand and Slot Held Only
 			interaction.current_object = null
 			interaction.full_hands = false
-			interaction.MAIN.UI_CURSOR.icon_state = "Default"
-			hotbar_origin.slot_held.set_deferred("visible", false)
-		hotbar_origin.quantity -= 1
-		if hotbar_origin.quantity == 0:
-			interaction.revert()
-			hotbar_origin.slotted_item = null
-			interaction.full_hands = false
+			cursor.icon_state = "Default"
+			if hotbar_origin != null: hotbar_origin.slot_held.set_deferred("visible", false)
+		if hotbar_origin != null:
+			hotbar_origin.quantity -= 1
+			if hotbar_origin.quantity == 0:
+				interaction.revert()
+				hotbar_origin.slotted_item = null
+				interaction.full_hands = false
 	else:
 		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
 		if hotbar_origin != null: hotbar_origin.slotted_item = null

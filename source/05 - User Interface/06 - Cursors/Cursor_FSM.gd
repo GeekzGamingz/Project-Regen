@@ -79,10 +79,11 @@ func state_enter(new_state, old_state):
 		states.hold_object:
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_GRAB_RIGHT
 			cursor.icon.visible = true
-			cursor.add_child(cursor.object_held)
-			cursor.item.texture = cursor.object_held.sprite_preview.texture
-			cursor.item.visible = true
-			cursor.remove_child(cursor.object_held)
+			if cursor.object_held != null:
+				cursor.add_child(cursor.object_held)
+				cursor.item.texture = cursor.object_held.sprite_preview.texture
+				cursor.item.visible = true
+				cursor.remove_child(cursor.object_held)
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
 		states.new_object:
 			object_switch = false

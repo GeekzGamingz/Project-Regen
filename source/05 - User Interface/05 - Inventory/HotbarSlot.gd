@@ -31,18 +31,15 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
 		if slotted_item != null:
-			if event.is_action_pressed("hotbar_grabone"):
+			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("One", slotted_item, self)
-				print("Grabbed One")
-			elif event.is_action_pressed("hotbar_grabhalf"):
+			elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("Half", slotted_item, self)
-				print("Grabbed Half")
-			elif event.is_action_pressed("action_confirm"):
+			elif event.is_action_pressed("action_confirm"): # Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("All", slotted_item, self)
-				print("Grabbed All")
 		elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
 		if slotted_item != null:
 			print(name, " Contains: ", slotted_item.name, "(", quantity,")")
