@@ -8,9 +8,6 @@ size = Vector2(16, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_crrwx"]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukouj"]
-size = Vector2(16, 16)
-
 [node name="Object_Template" type="StaticBody2D" unique_id=969433499]
 collision_layer = 16
 collision_mask = 0
@@ -34,12 +31,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection" unique_id=1935672935]
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_crrwx")
-
-[node name="Area_Hotbar" type="Area2D" parent="Areas" unique_id=2038350193]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Hotbar" unique_id=402751471]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ukouj")
 
 [node name="Area_Pack" type="Area2D" parent="Areas" unique_id=2009702789]
 

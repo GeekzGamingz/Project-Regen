@@ -114,7 +114,14 @@ centered = false
 hframes = 4
 
 [node name="CursorObject" type="Sprite2D" parent="Cursor_Textures" unique_id=65542564]
-hframes = 4
+centered = false
+
+[node name="Area_Backpack" type="Area2D" parent="Cursor_Textures/CursorObject" unique_id=1681113334]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cursor_Textures/CursorObject/Area_Backpack" unique_id=2102298528]
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 16, 16, 16, 16, 48, 0, 48)
 
 [node name="CursorIcon" type="Sprite2D" parent="Cursor_Textures" unique_id=420863471]
 material = SubResource("ShaderMaterial_moohe")

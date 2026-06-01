@@ -57,3 +57,7 @@ func update_slot():
 		contents = slotted_item.name
 		line_quantity.set_deferred("visible", slotted_item.is_stackable)
 		line_quantity.text = str(quantity)
+
+
+func _on_slot_entered() -> void:
+	pass # Replace with function body.

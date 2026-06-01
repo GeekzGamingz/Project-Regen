@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="2_t2jr1"]
-[ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/Hotbar.gd" id="2_tqc1x"]
+[ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/Hotbar/Hotbar.gd" id="2_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="3_xvjuj"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_1y7b7"]
-[ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/HotbarSlot.gd" id="4_b7gmf"]
+[ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/Hotbar/HotbarSlot.gd" id="4_b7gmf"]
 [ext_resource type="Texture2D" uid="uid://hnk6y0w2jkaw" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_side.png" id="4_h3qip"]
 [ext_resource type="Texture2D" uid="uid://cdpe1s7puh6mr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base.png" id="5_1y7b7"]
 [ext_resource type="FontFile" uid="uid://dm5s8rduon2rw" path="res://assets/00 - UserInterface/03 - Fonts/m3x6.ttf" id="5_3c4lk"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="6_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="7_tqc1x"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="8_56x63"]
-[ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack.gd" id="8_b7gmf"]
+[ext_resource type="Script" uid="uid://cdnjpi4jgfvbn" path="res://source/05 - User Interface/05 - Inventory/Backpack/Backpack.gd" id="8_b7gmf"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="9_gr4rj"]
+[ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack/Designations.gd" id="10_56x63"]
+[ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Backpack/BackpackSlot.gd" id="16_sde5j"]
 
 [node name="Inventory" type="Control" unique_id=1594867749]
 layout_mode = 3
@@ -1057,16 +1059,15 @@ patch_margin_bottom = 6
 [node name="Backpack" type="PanelContainer" parent="." unique_id=1391082331]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -39.0
+offset_left = -78.0
 offset_top = -50.0
-offset_right = 39.0
 offset_bottom = 50.0
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("8_b7gmf")
@@ -1074,6 +1075,11 @@ script = ExtResource("8_b7gmf")
 [node name="Dragging" type="Control" parent="Backpack" unique_id=481074463]
 layout_mode = 2
 script = ExtResource("9_gr4rj")
+
+[node name="Designations" type="Control" parent="Backpack" unique_id=864837562]
+layout_mode = 2
+script = ExtResource("10_56x63")
+designation = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Backpack" unique_id=1859955870]
 layout_mode = 2
@@ -1132,10 +1138,12 @@ theme_override_constants/margin_bottom = 8
 [node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=150445767]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2008764338]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2000146156]
 layout_mode = 2
@@ -1154,10 +1162,12 @@ theme_override_constants/margin_bottom = 8
 [node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1229555929]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1343000569]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=799155998]
 layout_mode = 2
@@ -1176,10 +1186,12 @@ theme_override_constants/margin_bottom = 8
 [node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1542707645]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1569794202]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=359384007]
 layout_mode = 2
@@ -1278,10 +1290,12 @@ theme_override_constants/margin_bottom = 8
 [node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1226404095]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=167722725]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="MarginContainer9" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1532829636]
 layout_mode = 2
@@ -1307,18 +1321,22 @@ theme_override_constants/margin_bottom = 8
 [node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=238446146]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1417805900]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=390663840]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1704505475]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="MarginContainer12" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=273000214]
 layout_mode = 2
@@ -1329,77 +1347,97 @@ theme_override_constants/margin_bottom = 8
 
 [node name="SlotA1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=789571387]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="Slot7" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=400797936]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot8" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=360361786]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot9" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=505175886]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot10" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=846981574]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="SlotB1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=289966963]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="SlotA2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1085169243]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="Slot11" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=946572032]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot12" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1700965888]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot13" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1623960048]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot14" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1830851695]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="SlotB2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1287315658]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="SlotA3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1642067627]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="Slot15" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=54841819]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot16" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=487239785]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot17" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2027001045]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="Slot18" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1799232470]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
+script = ExtResource("16_sde5j")
 
 [node name="SlotB3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=916921027]
 layout_mode = 2
+script = ExtResource("16_sde5j")
 
 [node name="ContainerRight" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase" unique_id=1087687372]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 alignment = 2
 
 [node name="Backpack_SideB" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/ContainerRight" unique_id=335720747]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_h3qip")
 stretch_mode = 2
 flip_h = true
@@ -1414,4 +1452,64 @@ texture_pressed = ExtResource("7_tqc1x")
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_entered"]
 [connection signal="mouse_exited" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_exited"]
 [connection signal="gui_input" from="Backpack" to="Backpack/Dragging" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" method="_on_slot_exited"]
+[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" method="_on_slot_entered"]
+[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" method="_on_slot_exited"]
 [connection signal="button_up" from="Backpack/CloseButton" to="Backpack" method="_on_close_button_up"]

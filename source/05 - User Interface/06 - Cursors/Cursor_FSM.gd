@@ -82,6 +82,7 @@ func state_enter(new_state, old_state):
 			if cursor.object_held != null:
 				cursor.add_child(cursor.object_held)
 				cursor.item.texture = cursor.object_held.sprite_preview.texture
+				cursor.item_area.polygon = cursor.object_held.area_pack.polygon
 				cursor.item.visible = true
 				cursor.remove_child(cursor.object_held)
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)

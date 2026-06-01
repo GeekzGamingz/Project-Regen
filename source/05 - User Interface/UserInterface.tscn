@@ -90,4 +90,5 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="SoftwareCursor" parent="." unique_id=2072808113 instance=ExtResource("8_wwe8j")]
+z_index = 1
 material = SubResource("ShaderMaterial_to1rn")
