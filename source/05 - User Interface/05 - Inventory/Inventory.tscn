@@ -1140,10 +1140,34 @@ layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" unique_id=1268516753]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2008764338]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" unique_id=168542826]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2000146156]
 layout_mode = 2
@@ -1164,10 +1188,34 @@ layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" unique_id=116875119]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1343000569]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" unique_id=1848546238]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=799155998]
 layout_mode = 2
@@ -1188,10 +1236,34 @@ layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" unique_id=982372092]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1569794202]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" unique_id=993789360]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=359384007]
 layout_mode = 2
@@ -1292,10 +1364,34 @@ layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" unique_id=168320848]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=167722725]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" unique_id=936529747]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="MarginContainer9" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1532829636]
 layout_mode = 2
@@ -1323,20 +1419,68 @@ layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" unique_id=458143437]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1417805900]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" unique_id=681073807]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=390663840]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" unique_id=395771373]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1704505475]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" unique_id=531813115]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="MarginContainer12" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=273000214]
 layout_mode = 2
@@ -1349,85 +1493,301 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" unique_id=1412352935]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot7" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=400797936]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" unique_id=508122901]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot8" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=360361786]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" unique_id=97459111]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot9" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=505175886]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" unique_id=1733170110]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot10" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=846981574]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" unique_id=1046169805]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="SlotB1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=289966963]
 layout_mode = 2
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" unique_id=1609386480]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="SlotA2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1085169243]
 layout_mode = 2
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" unique_id=1059567662]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot11" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=946572032]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" unique_id=1053857004]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot12" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1700965888]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" unique_id=1580225707]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot13" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1623960048]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" unique_id=1420878959]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot14" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1830851695]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" unique_id=663533840]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="SlotB2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1287315658]
 layout_mode = 2
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" unique_id=385412540]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="SlotA3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1642067627]
 layout_mode = 2
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" unique_id=1471382834]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot15" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=54841819]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" unique_id=1269613703]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot16" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=487239785]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" unique_id=930578611]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="Slot17" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2027001045]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" unique_id=1642669594]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="Slot18" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1799232470]
 layout_mode = 2
 texture = ExtResource("3_xvjuj")
 script = ExtResource("16_sde5j")
 
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" unique_id=2078186410]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
 [node name="SlotB3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=916921027]
 layout_mode = 2
 script = ExtResource("16_sde5j")
+
+[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" unique_id=1999728018]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("8_56x63")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 
 [node name="ContainerRight" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase" unique_id=1087687372]
 visible = false

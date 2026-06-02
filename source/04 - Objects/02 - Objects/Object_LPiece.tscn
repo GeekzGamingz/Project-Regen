@@ -4,19 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ba5vv5bggdwjr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/00 - Placeholders/item_2x3_a.png" id="2_kp2yx"]
 [ext_resource type="Texture2D" uid="uid://bqtanhxofxsx2" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/00 - Placeholders/item_2x3_a_icon.png" id="3_kp2yx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kp2yx"]
-radius = 24.0
-height = 64.0
-
 [node name="Object_LPiece" unique_id=1548795902 instance=ExtResource("1_lr7cs")]
 is_obtainable = true
 
 [node name="Area_Build" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="0" unique_id=340049298]
 visible = false
-
-[node name="CollisionShape2D" parent="Areas/Area_Detection" parent_id_path=PackedInt32Array(1198460473) index="0" unique_id=1935672935]
-position = Vector2(16, 24)
-shape = SubResource("CapsuleShape2D_kp2yx")
 
 [node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
 visible = false
@@ -37,6 +29,3 @@ texture = ExtResource("3_kp2yx")
 
 [node name="Sprite_Pack" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="3" unique_id=1472507649]
 texture = ExtResource("2_kp2yx")
-
-[node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
-polygon = PackedVector2Array(0, 0, 32, 0, 32, 16, 16, 16, 16, 48, 0, 48)
