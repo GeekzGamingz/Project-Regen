@@ -117,24 +117,27 @@ texture = ExtResource("2_uofne")
 centered = false
 hframes = 4
 
-[node name="CursorObject" type="Sprite2D" parent="Cursor_Textures" unique_id=65542564]
+[node name="CursorAxis" type="Node2D" parent="Cursor_Textures" unique_id=483503577]
+
+[node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564]
+position = Vector2(-8, -8)
 centered = false
 
-[node name="Area_Backpack" type="Area2D" parent="Cursor_Textures/CursorObject" unique_id=1681113334]
+[node name="Area_Backpack" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=1681113334]
 collision_layer = 32
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cursor_Textures/CursorObject/Area_Backpack" unique_id=2102298528]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cursor_Textures/CursorAxis/CursorObject/Area_Backpack" unique_id=2102298528]
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
-[node name="GridContainer" type="GridContainer" parent="Cursor_Textures/CursorObject" unique_id=319382674]
+[node name="GridContainer" type="GridContainer" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=319382674]
 offset_right = 32.0
 offset_bottom = 48.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 2
 
-[node name="NPR_Selection" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=534972727]
+[node name="NPR_Selection" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=534972727]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -144,15 +147,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection" unique_id=480806724]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection" unique_id=480806724]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection/Area_CursorSlot" unique_id=450808052]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection/Area_CursorSlot" unique_id=450808052]
 shape = SubResource("CircleShape2D_lp6el")
 
-[node name="NPR_Selection2" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=1324840030]
+[node name="NPR_Selection2" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=1324840030]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -162,15 +165,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection2" unique_id=368218954]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection2" unique_id=368218954]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection2/Area_CursorSlot" unique_id=1205358587]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection2/Area_CursorSlot" unique_id=1205358587]
 shape = SubResource("CircleShape2D_lp6el")
 
-[node name="NPR_Selection3" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=2072217074]
+[node name="NPR_Selection3" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=2072217074]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -180,15 +183,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection3" unique_id=972188516]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection3" unique_id=972188516]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection3/Area_CursorSlot" unique_id=1760163317]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection3/Area_CursorSlot" unique_id=1760163317]
 shape = SubResource("CircleShape2D_lp6el")
 
-[node name="NPR_Selection4" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=2140701060]
+[node name="NPR_Selection4" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=2140701060]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -198,15 +201,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection4" unique_id=442096879]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection4" unique_id=442096879]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection4/Area_CursorSlot" unique_id=1226049400]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection4/Area_CursorSlot" unique_id=1226049400]
 shape = SubResource("CircleShape2D_lp6el")
 
-[node name="NPR_Selection5" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=1221101010]
+[node name="NPR_Selection5" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=1221101010]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -216,15 +219,15 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection5" unique_id=239148108]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection5" unique_id=239148108]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection5/Area_CursorSlot" unique_id=2077785216]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection5/Area_CursorSlot" unique_id=2077785216]
 shape = SubResource("CircleShape2D_lp6el")
 
-[node name="NPR_Selection6" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=343925165]
+[node name="NPR_Selection6" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=343925165]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("4_lp6el")
@@ -234,12 +237,12 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection6" unique_id=625057290]
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection6" unique_id=625057290]
 position = Vector2(8, 8)
 collision_layer = 32
 collision_mask = 32
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection6/Area_CursorSlot" unique_id=1889413723]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection6/Area_CursorSlot" unique_id=1889413723]
 shape = SubResource("CircleShape2D_lp6el")
 
 [node name="CursorIcon" type="Sprite2D" parent="Cursor_Textures" unique_id=420863471]
