@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="1_tvb03"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="2_t2jr1"]
 [ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/Hotbar/Hotbar.gd" id="2_tqc1x"]
-[ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="3_xvjuj"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_1y7b7"]
 [ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/Hotbar/HotbarSlot.gd" id="4_b7gmf"]
 [ext_resource type="Texture2D" uid="uid://hnk6y0w2jkaw" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_side.png" id="4_h3qip"]
@@ -17,7 +16,7 @@
 [ext_resource type="Script" uid="uid://cdnjpi4jgfvbn" path="res://source/05 - User Interface/05 - Inventory/Backpack/Backpack.gd" id="8_b7gmf"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="9_gr4rj"]
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Backpack/Designations.gd" id="10_56x63"]
-[ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Backpack/BackpackSlot.gd" id="16_sde5j"]
+[ext_resource type="PackedScene" uid="uid://blghfndx8gky8" path="res://source/05 - User Interface/05 - Inventory/Backpack/BackpackSlot.tscn" id="13_d2p8x"]
 
 [node name="Inventory" type="Control" unique_id=1594867749]
 layout_mode = 3
@@ -1135,39 +1134,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=150445767]
+[node name="Slot1" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1766660710 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" unique_id=1268516753]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2008764338]
+[node name="Slot2" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1025577304 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" unique_id=168542826]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="MarginContainer6" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=2000146156]
 layout_mode = 2
@@ -1183,39 +1154,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1229555929]
+[node name="Slot3" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=365057651 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" unique_id=116875119]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1343000569]
+[node name="Slot4" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=441913281 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" unique_id=1848546238]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="MarginContainer7" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=799155998]
 layout_mode = 2
@@ -1231,39 +1174,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1542707645]
+[node name="Slot5" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=559706458 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" unique_id=982372092]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1569794202]
+[node name="Slot6" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=1271733756 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" unique_id=993789360]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="MarginContainer8" type="MarginContainer" parent="Backpack/VBoxContainer/Backpack_Front/GridContainer" unique_id=359384007]
 layout_mode = 2
@@ -1359,39 +1274,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1226404095]
+[node name="Slot1" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=799149975 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" unique_id=168320848]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=167722725]
+[node name="Slot2" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1538649687 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" unique_id=936529747]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="MarginContainer9" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1532829636]
 layout_mode = 2
@@ -1414,73 +1301,17 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=238446146]
+[node name="Slot3" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1618653612 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" unique_id=458143437]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot4" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1417805900]
+[node name="Slot4" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1966636863 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" unique_id=681073807]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot5" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=390663840]
+[node name="Slot5" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=171770348 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" unique_id=395771373]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot6" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1704505475]
+[node name="Slot6" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=842430990 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" unique_id=531813115]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="MarginContainer12" type="MarginContainer" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=273000214]
 layout_mode = 2
@@ -1489,305 +1320,59 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SlotA1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=789571387]
+[node name="SlotA1" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2020360478 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" unique_id=1412352935]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot7" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=400797936]
+[node name="Slot7" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=513599095 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" unique_id=508122901]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot8" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=360361786]
+[node name="Slot8" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=174484771 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" unique_id=97459111]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot9" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=505175886]
+[node name="Slot9" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=241788972 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" unique_id=1733170110]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot10" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=846981574]
+[node name="Slot10" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1401846842 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" unique_id=1046169805]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="SlotB1" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=289966963]
+[node name="SlotB1" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1138694820 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" unique_id=1609386480]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="SlotA2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1085169243]
+[node name="SlotA2" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1053701738 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" unique_id=1059567662]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot11" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=946572032]
+[node name="Slot11" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1827254480 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" unique_id=1053857004]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot12" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1700965888]
+[node name="Slot12" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1180714129 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" unique_id=1580225707]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot13" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1623960048]
+[node name="Slot13" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=338482554 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" unique_id=1420878959]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot14" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1830851695]
+[node name="Slot14" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2034199361 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" unique_id=663533840]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="SlotB2" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1287315658]
+[node name="SlotB2" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=463977738 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" unique_id=385412540]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="SlotA3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1642067627]
+[node name="SlotA3" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2000866362 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" unique_id=1471382834]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot15" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=54841819]
+[node name="Slot15" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=600661345 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" unique_id=1269613703]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot16" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=487239785]
+[node name="Slot16" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=208398269 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" unique_id=930578611]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot17" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2027001045]
+[node name="Slot17" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=155579568 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" unique_id=1642669594]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="Slot18" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1799232470]
+[node name="Slot18" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1996961898 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-texture = ExtResource("3_xvjuj")
-script = ExtResource("16_sde5j")
 
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" unique_id=2078186410]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="SlotB3" type="TextureRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=916921027]
+[node name="SlotB3" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1726293428 instance=ExtResource("13_d2p8x")]
 layout_mode = 2
-script = ExtResource("16_sde5j")
-
-[node name="NPR_Held" type="NinePatchRect" parent="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" unique_id=1999728018]
-visible = false
-layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
-texture = ExtResource("8_56x63")
-draw_center = false
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
 
 [node name="ContainerRight" type="VBoxContainer" parent="Backpack/VBoxContainer/ContainerBase" unique_id=1087687372]
 visible = false
@@ -1812,64 +1397,4 @@ texture_pressed = ExtResource("7_tqc1x")
 [connection signal="mouse_entered" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_entered"]
 [connection signal="mouse_exited" from="Hotbar/SlotContainer_Hotbar" to="Hotbar" method="_on_slot_container_exited"]
 [connection signal="gui_input" from="Backpack" to="Backpack/Dragging" method="_on_gui_input"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot1" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot2" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot3" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot4" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot5" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" to="Backpack/VBoxContainer/Backpack_Front/GridContainer/Slot6" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot1" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot2" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot3" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot4" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot5" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot6" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot7" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot8" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot9" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot10" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot11" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot12" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot13" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot14" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot15" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot16" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot17" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/Slot18" method="_on_slot_exited"]
-[connection signal="mouse_entered" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" method="_on_slot_entered"]
-[connection signal="mouse_exited" from="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" to="Backpack/VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3" method="_on_slot_exited"]
 [connection signal="button_up" from="Backpack/CloseButton" to="Backpack" method="_on_close_button_up"]

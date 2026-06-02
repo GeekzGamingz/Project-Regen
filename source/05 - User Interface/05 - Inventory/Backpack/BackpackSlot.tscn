@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://blghfndx8gky8"]
+
+[ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="1_tt3jp"]
+[ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Backpack/BackpackSlot.gd" id="2_0w4np"]
+[ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_ytxlj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
+size = Vector2(12, 12)
+
+[node name="Slot1" type="TextureRect" unique_id=1766660710]
+texture = ExtResource("1_tt3jp")
+script = ExtResource("2_0w4np")
+
+[node name="Texture_Object" type="TextureRect" parent="." unique_id=1116779748]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NPR_Held" type="NinePatchRect" parent="." unique_id=222875012]
+visible = false
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("3_ytxlj")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Area_Slot" type="Area2D" parent="." unique_id=1563872643]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Slot" unique_id=1491257469]
+shape = SubResource("RectangleShape2D_tt3jp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_slot_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_slot_exited"]

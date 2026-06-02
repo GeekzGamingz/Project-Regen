@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://ctgrxk17kldnl" path="res://source/05 - User Interface/06 - Cursors/CursorIcon.gd" id="5_uofne"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="7_gwpbj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lp6el"]
+radius = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_moohe"]
 resource_local_to_scene = true
 shader = ExtResource("1_ic7qn")
@@ -141,6 +144,14 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection" unique_id=480806724]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection/Area_CursorSlot" unique_id=450808052]
+shape = SubResource("CircleShape2D_lp6el")
+
 [node name="NPR_Selection2" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=1324840030]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -150,6 +161,14 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection2" unique_id=368218954]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection2/Area_CursorSlot" unique_id=1205358587]
+shape = SubResource("CircleShape2D_lp6el")
 
 [node name="NPR_Selection3" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=2072217074]
 custom_minimum_size = Vector2(16, 16)
@@ -161,6 +180,14 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection3" unique_id=972188516]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection3/Area_CursorSlot" unique_id=1760163317]
+shape = SubResource("CircleShape2D_lp6el")
+
 [node name="NPR_Selection4" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=2140701060]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -170,6 +197,14 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection4" unique_id=442096879]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection4/Area_CursorSlot" unique_id=1226049400]
+shape = SubResource("CircleShape2D_lp6el")
 
 [node name="NPR_Selection5" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=1221101010]
 custom_minimum_size = Vector2(16, 16)
@@ -181,6 +216,14 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection5" unique_id=239148108]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection5/Area_CursorSlot" unique_id=2077785216]
+shape = SubResource("CircleShape2D_lp6el")
+
 [node name="NPR_Selection6" type="NinePatchRect" parent="Cursor_Textures/CursorObject/GridContainer" unique_id=343925165]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -190,6 +233,14 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="Area_CursorSlot" type="Area2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection6" unique_id=625057290]
+position = Vector2(8, 8)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cursor_Textures/CursorObject/GridContainer/NPR_Selection6/Area_CursorSlot" unique_id=1889413723]
+shape = SubResource("CircleShape2D_lp6el")
 
 [node name="CursorIcon" type="Sprite2D" parent="Cursor_Textures" unique_id=420863471]
 material = SubResource("ShaderMaterial_moohe")
