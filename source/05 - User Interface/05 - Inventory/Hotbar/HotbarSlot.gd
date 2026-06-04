@@ -10,7 +10,7 @@ var mouse_hovering: bool = false
 #Strings
 var contents: String
 #Resources
-var slotted_item: Object = null
+var slotted_object: Object = null
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
@@ -30,32 +30,32 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion: hotbar.scroll_hotbar(name)
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-		if slotted_item != null:
+		if slotted_object != null:
 			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				else: interaction.interaction_objects.addto_hand("One", slotted_item, self)
+				else: interaction.interaction_objects.addto_hand("One", slotted_object, self)
 			elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				else: interaction.interaction_objects.addto_hand("Half", slotted_item, self)
+				else: interaction.interaction_objects.addto_hand("Half", slotted_object, self)
 			elif event.is_action_pressed("action_confirm"): # Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				else: interaction.interaction_objects.addto_hand("All", slotted_item, self)
+				else: interaction.interaction_objects.addto_hand("All", slotted_object, self)
 		elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
-		if slotted_item != null:
-			print(name, " Contains: ", slotted_item.name, "(", quantity,")")
+		if slotted_object != null:
+			print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func update_slot():
-	if slotted_item == null:
+	if slotted_object == null:
 		contents = "Empty"
-		slotted_item = null
+		slotted_object = null
 		quantity = 0
 		texture_object.texture = HOTBAR_SLOT
 		slot_held.set_deferred("visible", false)
 		line_quantity.set_deferred("visible", false)
 	else:
-		contents = slotted_item.name
-		line_quantity.set_deferred("visible", slotted_item.is_stackable)
+		contents = slotted_object.name
+		line_quantity.set_deferred("visible", slotted_object.is_stackable)
 		line_quantity.text = str(quantity)
 
 

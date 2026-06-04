@@ -19,11 +19,11 @@ func interact_object() -> void:
 func obtain_object(object, hotbar_selected):
 	var group = object.get_groups()
 	if interaction.full_hands == false:
-		if hotbar_selected.slotted_item == null: interaction.interaction_hotbar.addto_hotbar(object, hotbar_selected)
-		if hotbar_selected.slotted_item.is_in_group(group[0]):
+		if hotbar_selected.slotted_object == null: interaction.interaction_hotbar.addto_hotbar(object, hotbar_selected)
+		if hotbar_selected.slotted_object.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
 		if interaction.full_hotbar: addto_hand("All", object, null)
-		if hotbar_selected.slotted_item.is_in_group(group[0]):
+		if hotbar_selected.slotted_object.is_in_group(group[0]):
 			if object.is_stackable: interaction.revert()
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)
 #Add to Hand
@@ -67,11 +67,11 @@ func place(object, hotbar_origin, new_position):
 			hotbar_origin.quantity -= 1
 			if hotbar_origin.quantity == 0:
 				interaction.revert()
-				hotbar_origin.slotted_item = null
+				hotbar_origin.slotted_object = null
 				interaction.full_hands = false
 	else:
 		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
-		if hotbar_origin != null: hotbar_origin.slotted_item = null
+		if hotbar_origin != null: hotbar_origin.slotted_object = null
 		interaction.revert()
 		dupe.global_position = new_position
 		dupe.name = object.name

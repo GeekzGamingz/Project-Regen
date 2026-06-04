@@ -68,7 +68,7 @@ func state_enter(new_state, old_state):
 			cursor.object_held = null
 			cursor.cursor.visible = false
 			cursor.icon.visible = false
-			cursor.item.visible = false
+			cursor.object.visible = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		states.hand_open:
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_OPEN_RIGHT
@@ -81,9 +81,10 @@ func state_enter(new_state, old_state):
 			cursor.icon.visible = true
 			if cursor.object_held != null:
 				cursor.add_child(cursor.object_held)
-				cursor.item.texture = cursor.object_held.sprite_preview.texture
-				cursor.item_area.polygon = cursor.object_held.area_pack.polygon
-				cursor.item.visible = true
+				cursor.object.texture = cursor.object_held.sprite_preview.texture
+				cursor.object_area.polygon = cursor.object_held.area_pack.polygon
+				cursor.object.visible = true
+				cursor.object.check_grid()
 				cursor.remove_child(cursor.object_held)
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
 		states.new_object:

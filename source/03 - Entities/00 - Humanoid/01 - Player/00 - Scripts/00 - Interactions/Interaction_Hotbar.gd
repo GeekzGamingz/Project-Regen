@@ -5,7 +5,7 @@ extends Node2D
 @onready var interaction: Node2D = $".."
 #------------------------------------------------------------------------------#
 #Custom Functions
-#Check Duplicate Item
+#Check Duplicate object
 func check_slots(object):
 	var slots_filled = 0
 	for slot in interaction.HOTBAR.hotbar_array:
@@ -29,10 +29,10 @@ func find_slot():
 			else: hotbar.scroll_hotbar("Next")
 #Add to Hotbar
 func addto_hotbar(object, hotbar_selected):
-	hotbar_selected.slotted_item = null
+	hotbar_selected.slotted_object = null
 	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
-	hotbar_selected.slotted_item = object_scene
+	hotbar_selected.slotted_object = object_scene
 #Trade Slots
 func trade_slots(contents):
 	match(contents):
@@ -43,13 +43,13 @@ func trade_slots(contents):
 			print("Slot Destination: ", check_selection().name)
 			addto_hotbar(interaction.current_object, check_selection())
 			check_selection().quantity = check_held().quantity
-			check_held().slotted_item = null
+			check_held().slotted_object = null
 			interaction.revert()
 		"Full":
 			print("#---Trading Executed - Slot Occupied---#")
 			print("Held Object: ", interaction.current_object.name)
 			print("Slot Destination: ", check_selection().name)
-			print("Object Replacing: ", check_selection().slotted_item.name)
+			print("Object Replacing: ", check_selection().slotted_object.name)
 			if check_held() != null:
 				print("Slot Origin: ", check_held().name)
 				if check_held() == check_selection():
@@ -57,26 +57,26 @@ func trade_slots(contents):
 						interaction.current_object,
 						check_held()
 					) #Cancel if Selections Match
-				else: #Trade Hotbar Item
-					var trading_object = check_selection().slotted_item
+				else: #Trade Hotbar object
+					var trading_object = check_selection().slotted_object
 					var trading_texture = check_selection().texture_object.texture
 					var trading_quantity = check_selection().quantity
-					check_selection().slotted_item = check_held().slotted_item
+					check_selection().slotted_object = check_held().slotted_object
 					check_selection().texture_object.texture = check_held().texture_object.texture
 					check_selection().quantity = check_held().quantity
-					check_held().slotted_item = trading_object
+					check_held().slotted_object = trading_object
 					check_held().texture_object.texture = trading_texture
 					check_held().quantity = trading_quantity
 					check_held().slot_held.set_deferred("visible", false)
 					interaction.revert()
-			else: #Trade Item from Ground
+			else: #Trade object from Ground
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object
 				var trading_quantity = check_selection().quantity
 				var cursor = interaction.MAIN.UI_CURSOR
 				interaction.interaction_objects.addto_hand(
 					"All",
-					check_selection().slotted_item,
+					check_selection().slotted_object,
 					null
 				)
 				cursor.cursor_fsm.object_switch = true
@@ -89,7 +89,7 @@ func trade_slots(contents):
 func check_selection():
 	for slot in interaction.HOTBAR.get_node("SlotContainer_Hotbar").get_children():
 		if slot.slot_selected.visible == true: return slot
-#Check for Held Item
+#Check for Held object
 func check_held(): 
 	for slot in interaction.HOTBAR.get_node("SlotContainer_Hotbar").get_children():
 		if slot.slot_held.visible == true: return slot

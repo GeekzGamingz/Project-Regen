@@ -32,9 +32,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("hotbar_drop"): # Q Key
 		if player.is_multiplayer_authority():
 			var selected_slot = interaction_hotbar.check_selection()
-			if selected_slot.slotted_item != null && !full_hands:
+			if selected_slot.slotted_object != null && !full_hands:
 				interaction_objects.place(
-					selected_slot.slotted_item,
+					selected_slot.slotted_object,
 					selected_slot,
 					get_node("../..").marker_drop.global_position
 				)

@@ -12,7 +12,7 @@ var mouse_is_hovering: bool = false
 @export var is_obtainable: bool = false
 @export var is_stackable: bool = false
 #Exported Enumerations
-#Item Type
+#object Type
 @export_enum(
 	"Building",
 	"Consumable",
@@ -21,8 +21,8 @@ var mouse_is_hovering: bool = false
 	"Ingredient",
 	"Junk",
 	"Material"
-) var item_type: String
-#Item Material
+) var object_type: String
+#object Material
 @export_enum(
 	"Fabric",
 	"Metal",
@@ -30,9 +30,9 @@ var mouse_is_hovering: bool = false
 	"Plastic",
 	"Stone",
 	"Wood"
-) var item_material: String
+) var object_material: String
 #Exported Dictionaries
-@export var item_components: Dictionary = {
+@export var object_components: Dictionary = {
 	"Bone": int(0),
 	"Fabric": int(0),
 	"Metal": int(0),
