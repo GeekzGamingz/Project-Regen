@@ -84,11 +84,10 @@ func state_enter(new_state, old_state):
 				cursor.object.texture = cursor.object_held.sprite_preview.texture
 				cursor.object_area.polygon = cursor.object_held.area_pack.polygon
 				cursor.object.visible = true
-				cursor.object.check_grid()
 				cursor.remove_child(cursor.object_held)
+				cursor.object.check_grid() #Executes on Next Frame
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
-		states.new_object:
-			object_switch = false
+		states.new_object: object_switch = false
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):

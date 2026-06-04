@@ -123,8 +123,8 @@ centered = false
 script = ExtResource("4_1xpm5")
 
 [node name="Area_Backpack" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=1681113334]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cursor_Textures/CursorAxis/CursorObject/Area_Backpack" unique_id=2102298528]
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
