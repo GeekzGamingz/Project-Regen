@@ -2,12 +2,23 @@ extends Sprite2D
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables
+@onready var axis: Node2D = $".."
+@onready var cursor_fsm: Node2D = $"../../../Cursor_StateMachine"
 @onready var area_containers: Area2D = $Area_Containers
 @onready var area_poly: CollisionPolygon2D = $Area_Containers/CollisionPolygon2D
 @onready var grid_container: GridContainer = $GridContainer
 #------------------------------------------------------------------------------#
 #Functions
+#Input
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("action_rotate"):
+		var states = cursor_fsm.states
+		if [states.hold_object, states.hold_stack].has(cursor_fsm.state): rotate_hand()
+#------------------------------------------------------------------------------#
 #Custom Functions
+#Hand Rotation
+func rotate_hand(): print("Rotating Hand")
+#Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon
 	await get_tree().process_frame
