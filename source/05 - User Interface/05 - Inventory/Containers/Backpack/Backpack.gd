@@ -1,5 +1,7 @@
 extends PanelContainer
 #------------------------------------------------------------------------------#
+#Variables
+var mouse_hovering: bool = false
 #OnReady Variables
 #Local Nodes
 @onready var backpack_front: TextureRect = $"VBoxContainer/Backpack_Front"
@@ -28,4 +30,8 @@ func _input(event: InputEvent) -> void:
 			designations.check_designation()
 #------------------------------------------------------------------------------#
 #Signaled Functions
+#Close Button
 func _on_close_button_up() -> void: set_deferred("visible", false)
+#Mouse Detection
+func _on_mouse_entered() -> void: mouse_hovering = true
+func _on_mouse_exited() -> void: mouse_hovering = false

@@ -21,3 +21,6 @@ layout_mode = 1
 [node name="Backpack" parent="." unique_id=734962224 instance=ExtResource("3_bjdmq")]
 layout_mode = 1
 theme = ExtResource("1_t2jr1")
+
+[connection signal="mouse_entered" from="Backpack" to="Backpack" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Backpack" to="Backpack" method="_on_mouse_exited"]

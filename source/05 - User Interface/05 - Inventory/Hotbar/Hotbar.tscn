@@ -1035,5 +1035,5 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[connection signal="mouse_entered" from="SlotContainer_Hotbar" to="." method="_on_slot_container_entered"]
-[connection signal="mouse_exited" from="SlotContainer_Hotbar" to="." method="_on_slot_container_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

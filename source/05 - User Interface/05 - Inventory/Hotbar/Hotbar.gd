@@ -21,8 +21,8 @@ func _input(event: InputEvent) -> void:
 		if !event.is_action_pressed("zoom_in"): scroll_hotbar("Previous")
 #------------------------------------------------------------------------------#
 #Signaled Functions
-func _on_slot_container_entered() -> void: mouse_hovering = true
-func _on_slot_container_exited() -> void: mouse_hovering = false
+func _on_mouse_entered() -> void: mouse_hovering = true
+func _on_mouse_exited() -> void: mouse_hovering = false
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Generate Hotbar

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="1_pi8wo"]
 [ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Containers/ContainerSlot.gd" id="2_x6m45"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_0egyr"]
+[ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_rehhu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
 size = Vector2(12, 12)
@@ -27,6 +28,29 @@ patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
+
+[node name="LineEdit_Quantity" type="LineEdit" parent="." unique_id=493159546]
+visible = false
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 22.0
+focus_mode = 0
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_rehhu")
+theme_override_font_sizes/font_size = 17
+text = "1"
+alignment = 1
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+flat = true
+virtual_keyboard_enabled = false
 
 [node name="Area_Slot" type="Area2D" parent="." unique_id=1563872643]
 position = Vector2(8, 8)

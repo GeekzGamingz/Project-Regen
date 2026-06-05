@@ -20,11 +20,12 @@ func _input(event: InputEvent) -> void:
 func rotate_hand():
 	print("Rotating Hand")
 	axis.rotation_degrees += 90
-	if axis.rotation_degrees >= 360: axis.rotation_degrees = 0
+	if axis.rotation_degrees >= 360: axis.rotation = 0
 #Revert Hand
 func revert_hand():
-	print("Reverting Hand")
-	axis.rotation = 0
+	for selection in grid_container.get_children():
+		var ray = selection.get_node("RayCast2D")
+		ray.enabled = false
 #Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon

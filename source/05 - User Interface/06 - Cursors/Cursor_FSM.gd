@@ -69,6 +69,7 @@ func state_enter(new_state, old_state):
 			cursor.cursor.visible = false
 			cursor.icon.visible = false
 			cursor.object.visible = false
+			cursor.object.revert_hand()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		states.hand_open:
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_OPEN_RIGHT
