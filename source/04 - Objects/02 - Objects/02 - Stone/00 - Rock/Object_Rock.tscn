@@ -12,21 +12,9 @@ size = Vector2(16, 16)
 script = ExtResource("2_u3oro")
 is_obtainable = true
 is_stackable = true
-item_type = "Material"
-item_material = "Stone"
-item_components = {
-"Fabric": 0,
-"Metal": 0,
-"Plastic": 0,
-"Stone": 1,
-"Wood": 0
-}
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
 shape = SubResource("RectangleShape2D_u3oro")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas/Area_Pack" parent_id_path=PackedInt32Array(2009702789) index="0" unique_id=1804642658]
-polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
 texture = ExtResource("3_pu1d6")

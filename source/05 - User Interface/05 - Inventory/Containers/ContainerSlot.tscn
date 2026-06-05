@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://blghfndx8gky8"]
 
-[ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="1_tt3jp"]
-[ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Backpack/BackpackSlot.gd" id="2_0w4np"]
-[ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_ytxlj"]
+[ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="1_pi8wo"]
+[ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Containers/ContainerSlot.gd" id="2_x6m45"]
+[ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_0egyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
 size = Vector2(12, 12)
 
 [node name="Slot1" type="TextureRect" unique_id=1766660710]
-texture = ExtResource("1_tt3jp")
-script = ExtResource("2_0w4np")
+texture = ExtResource("1_pi8wo")
+script = ExtResource("2_x6m45")
 
 [node name="Texture_Object" type="TextureRect" parent="." unique_id=1116779748]
 layout_mode = 0
@@ -21,7 +21,7 @@ visible = false
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-texture = ExtResource("3_ytxlj")
+texture = ExtResource("3_0egyr")
 draw_center = false
 patch_margin_left = 6
 patch_margin_top = 6

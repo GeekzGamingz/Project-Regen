@@ -19,17 +19,19 @@ properties/0/replication_mode = 2
 script = ExtResource("2_2ug13")
 grass_array = []
 is_active = false
-item_type = "Flora"
-item_material = "Organic"
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
 position = Vector2(48, 48)
 shape = SubResource("RectangleShape2D_2ug13")
 
 [node name="CollisionShape2D" parent="Areas/Area_Detection" parent_id_path=PackedInt32Array(1198460473) index="0" unique_id=1935672935]
-position = Vector2(48, 88)
+position = Vector2(48, 85)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas/Area_Pack" parent_id_path=PackedInt32Array(2009702789) index="0" unique_id=1066821995]
+[node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
+position = Vector2(48, 85)
+
+[node name="CollisionPolygon2D" parent="Areas/Area_Pack" index="0" unique_id=1424705020]
+position = Vector2(-8, -8)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
 texture = SubResource("CompressedTexture2D_o2m8g")

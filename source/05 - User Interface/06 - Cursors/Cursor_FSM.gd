@@ -85,7 +85,7 @@ func state_enter(new_state, old_state):
 				cursor.object_area.polygon = cursor.object_held.area_pack.polygon
 				cursor.object.visible = true
 				cursor.remove_child(cursor.object_held)
-				cursor.object.check_grid() #Executes on Next Frame
+				cursor.object.shape_grid() #Executes on Next Frame
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
 		states.new_object: object_switch = false
 #Exit State

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpwjet11md283"
-path="res://.godot/imported/cursor_hand_open_right.png-0275bd7244db841f81250dd15544bb21.ctex"
+uid="uid://b664ktlg5mxwg"
+path="res://.godot/imported/item_2x3_d.png-8a499727c38e1836ea84e0c4cbfa9838.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/05 - Cursors/cursor_hand_open_right.png"
-dest_files=["res://.godot/imported/cursor_hand_open_right.png-0275bd7244db841f81250dd15544bb21.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/00 - Placeholders/item_2x3_d.png"
+dest_files=["res://.godot/imported/item_2x3_d.png-8a499727c38e1836ea84e0c4cbfa9838.ctex"]
 
 [params]
 
