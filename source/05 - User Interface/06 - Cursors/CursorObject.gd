@@ -17,7 +17,14 @@ func _input(event: InputEvent) -> void:
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Hand Rotation
-func rotate_hand(): print("Rotating Hand")
+func rotate_hand():
+	print("Rotating Hand")
+	axis.rotation_degrees += 90
+	if axis.rotation_degrees >= 360: axis.rotation_degrees = 0
+#Revert Hand
+func revert_hand():
+	print("Reverting Hand")
+	axis.rotation = 0
 #Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon
