@@ -14,10 +14,16 @@ func addto_backpack(object, slot):
 	print("Added ", object.name, " to Backpack")
 #Trade Slots
 func trade_slots(contents):
-	var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")
-	for selection in cursor_grid.get_children():
-		var ray = selection.get_node("RayCast2D")
-		if ray.is_colliding(): print(ray.get_collider())
+	print(check_grid())
 	match(contents):
 		"Empty": pass
 		"Full": pass
+#Check Cursor Grid
+func check_grid() -> bool:
+	var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")
+	var container_count: int = 0
+	for selection in cursor_grid.get_children():
+		var ray = selection.get_node("RayCast2D")
+		if ray.is_colliding(): container_count += 1
+	if container_count == cursor_grid.get_node("..").held_slots: return true
+	else: return false
