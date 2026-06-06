@@ -47,6 +47,7 @@ var mouse_is_hovering: bool = false
 #Local Nodes
 @onready var sprite_hotbar: Sprite2D = $Sprites/Sprite_Hotbar
 @onready var sprite_preview: Sprite2D = $Sprites/Sprite_Preview
+@onready var sprite_container: Sprite2D = $Sprites/Sprite_Container
 @onready var area_pack: CollisionPolygon2D = $Areas/Area_Pack/CollisionPolygon2D
 #------------------------------------------------------------------------------#
 #Input Function

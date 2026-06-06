@@ -16,7 +16,7 @@ var full_hands: bool = false
 @onready var input: Node2D = $"../Player_Input"
 @onready var interaction_objects: Node2D = $Interaction_Objects
 @onready var interaction_hotbar: Node2D = $Interaction_Hotbar
-@onready var interaction_backpack: Node2D = $Interaction_Backpack
+@onready var interaction_containers: Node2D = $Interaction_Containers
 #------------------------------------------------------------------------------#
 #Functions
 #Input

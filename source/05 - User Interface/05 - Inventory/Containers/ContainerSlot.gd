@@ -1,9 +1,13 @@
 extends TextureRect
 #------------------------------------------------------------------------------#
 #Variables
+#Integers
+var quantity: int = 0
 #Bools
 var mouse_hovering: bool = false
 var slot_occupied: bool = false
+#Resources
+var slotted_object: Object = null
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
@@ -15,12 +19,32 @@ var slot_occupied: bool = false
 func _process(_delta: float) -> void: update_slot()
 #GUI Input
 func _gui_input(event: InputEvent) -> void:
-	if mouse_hovering:
-		if event.is_action_pressed("action_confirm"):
-			var cursor_grid = MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")
-			for selection in cursor_grid.get_children():
-				var ray = selection.get_node("RayCast2D")
-				if ray.is_colliding(): print(ray.get_collider())
+	if event is InputEventMouseButton:
+		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
+		if slotted_object != null: pass
+		elif interaction.current_object != null:
+			if event.is_action_pressed("action_confirm"): interaction.interaction_containers.trade_slots("Empty")
+
+
+#COPIED FROM HOTBAR
+#GUI Input
+#func _gui_input(event: InputEvent) -> void:
+	#if event is InputEventMouseMotion: hotbar.scroll_hotbar(name)
+	#if event is InputEventMouseButton:
+		#var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
+		#if slotted_object != null:
+			#if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
+				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
+				#else: interaction.interaction_objects.addto_hand("One", slotted_object, self)
+			#elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
+				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
+				#else: interaction.interaction_objects.addto_hand("Half", slotted_object, self)
+			#elif event.is_action_pressed("action_confirm"): # Left Click
+				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
+				#else: interaction.interaction_objects.addto_hand("All", slotted_object, self)
+		#elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
+		#if slotted_object != null:
+			#print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Slot Entered

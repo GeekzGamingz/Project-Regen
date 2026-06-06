@@ -40,7 +40,8 @@ func _gui_input(event: InputEvent) -> void:
 			elif event.is_action_pressed("action_confirm"): # Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("All", slotted_object, self)
-		elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
+		elif interaction.current_object != null:
+			if event.is_action_pressed("action_confirm"): interaction.interaction_hotbar.trade_slots("Empty")
 		if slotted_object != null:
 			print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 #------------------------------------------------------------------------------#

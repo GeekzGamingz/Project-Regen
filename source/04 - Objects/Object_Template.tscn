@@ -50,7 +50,7 @@ centered = false
 visible = false
 centered = false
 
-[node name="Sprite_Pack" type="Sprite2D" parent="Sprites" unique_id=1472507649]
+[node name="Sprite_Container" type="Sprite2D" parent="Sprites" unique_id=1472507649]
 visible = false
 centered = false
 

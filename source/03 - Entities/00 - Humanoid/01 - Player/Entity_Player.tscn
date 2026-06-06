@@ -561,7 +561,7 @@ script = ExtResource("5_yccay")
 [node name="Interaction_Hotbar" type="Node2D" parent="Scripts/Player_Interaction" index="1" unique_id=1710594552]
 script = ExtResource("7_25kxp")
 
-[node name="Interaction_Backpack" type="Node2D" parent="Scripts/Player_Interaction" index="2" unique_id=1925317707]
+[node name="Interaction_Containers" type="Node2D" parent="Scripts/Player_Interaction" index="2" unique_id=1925317707]
 script = ExtResource("8_gi8ry")
 
 [node name="Entity_Customization" parent="Scripts" parent_id_path=PackedInt32Array(1965266343) index="4" unique_id=365027404]

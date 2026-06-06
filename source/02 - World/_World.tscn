@@ -32,26 +32,26 @@ script = ExtResource("5_ylk6r")
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 
-[node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
-position = Vector2(194, 188)
-
-[node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" unique_id=1890428332 instance=ExtResource("8_d03ws")]
-position = Vector2(156, 184)
-
-[node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" unique_id=1748508467 instance=ExtResource("8_d03ws")]
-position = Vector2(165, 230)
-
-[node name="Object_Rock4" parent="Orphanages/Orphanage_Objects" unique_id=1619642892 instance=ExtResource("8_d03ws")]
-position = Vector2(231, 246)
-
-[node name="Object_Rock5" parent="Orphanages/Orphanage_Objects" unique_id=481822888 instance=ExtResource("8_d03ws")]
-position = Vector2(223, 149)
-
-[node name="Object_Rock6" parent="Orphanages/Orphanage_Objects" unique_id=1658508795 instance=ExtResource("8_d03ws")]
-position = Vector2(269, 218)
-
 [node name="Object_LPiece" parent="Orphanages/Orphanage_Objects" unique_id=1548795902 instance=ExtResource("10_g0q3n")]
 position = Vector2(333, 190)
+
+[node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
+position = Vector2(165, 148)
+
+[node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" unique_id=1713310362 instance=ExtResource("8_d03ws")]
+position = Vector2(224, 145)
+
+[node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" unique_id=1419711260 instance=ExtResource("8_d03ws")]
+position = Vector2(103, 124)
+
+[node name="Object_Rock4" parent="Orphanages/Orphanage_Objects" unique_id=1023017728 instance=ExtResource("8_d03ws")]
+position = Vector2(174, 112)
+
+[node name="Object_Rock5" parent="Orphanages/Orphanage_Objects" unique_id=912877670 instance=ExtResource("8_d03ws")]
+position = Vector2(194, 174)
+
+[node name="Object_Rock6" parent="Orphanages/Orphanage_Objects" unique_id=1284667327 instance=ExtResource("8_d03ws")]
+position = Vector2(134, 156)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 
