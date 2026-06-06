@@ -12,10 +12,12 @@ func addto_backpack(object, slot):
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
 	print("Added ", object.name, " to Backpack")
-	
 #Trade Slots
 func trade_slots(contents):
 	var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")
 	for selection in cursor_grid.get_children():
 		var ray = selection.get_node("RayCast2D")
 		if ray.is_colliding(): print(ray.get_collider())
+	match(contents):
+		"Empty": pass
+		"Full": pass

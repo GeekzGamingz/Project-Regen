@@ -1,6 +1,7 @@
 extends Sprite2D
 #------------------------------------------------------------------------------#
 #Variables
+var held_slots: int = 0
 #OnReady Variables
 @onready var axis: Node2D = $".."
 @onready var cursor_fsm: Node2D = $"../../../Cursor_StateMachine"
@@ -18,7 +19,7 @@ func _input(event: InputEvent) -> void:
 #Custom Functions
 #Hand Rotation
 func rotate_hand():
-	print("Rotating Hand")
+	print("Rotating Hand [", held_slots, " Slots]")
 	axis.rotation_degrees += 90
 	if axis.rotation_degrees >= 360: axis.rotation = 0
 #Revert Hand
@@ -26,6 +27,7 @@ func revert_hand():
 	for selection in grid_container.get_children():
 		var ray = selection.get_node("RayCast2D")
 		ray.enabled = false
+	held_slots = 0
 #Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon
@@ -38,5 +40,7 @@ func shape_grid():
 		if !ray.is_colliding():
 			selection.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 			ray.set_deferred("enabled", false)
-		else: selection.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		else:
+			selection.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+			held_slots += 1
 	area_poly.set_deferred("disabled", true)
