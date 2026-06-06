@@ -14,10 +14,10 @@ func addto_backpack(object, slot):
 	print("Added ", object.name, " to Backpack")
 #Trade Slots
 func trade_slots(contents):
-	print(check_grid())
-	match(contents):
-		"Empty": pass
-		"Full": pass
+	if check_grid():
+		match(contents):
+			"Empty": print("Empty")
+			"Full": print("Full")
 #Check Cursor Grid
 func check_grid() -> bool:
 	var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")

@@ -13,6 +13,7 @@ var slotted_object: Object = null
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
 @onready var selection_held: NinePatchRect = $NPR_Held
+@onready var area: Area2D = $Area_Slot
 #------------------------------------------------------------------------------#
 #Functions
 #Process

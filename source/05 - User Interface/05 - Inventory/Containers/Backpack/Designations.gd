@@ -11,16 +11,15 @@ const BACKPACK_SLOT_AVAILABLE = preload("res://assets/00 - UserInterface/04 - In
 #------------------------------------------------------------------------------#
 #Custom Functions
 func check_designation():
+	#Arrays
+	var sidepouch_a: Array = [backpack.slot_a1, backpack.slot_a2, backpack.slot_a3]
+	var sidepouch_b: Array = [backpack.slot_b1, backpack.slot_b2, backpack.slot_b3]
 	backpack.backpack_front.set_deferred("visible", false)
 	backpack.container_base.set_deferred("visible", false)
 	backpack.container_left.set_deferred("visible", false)
 	backpack.container_right.set_deferred("visible", false)
-	backpack.slot_a1.texture = null
-	backpack.slot_a2.texture = null
-	backpack.slot_a3.texture = null
-	backpack.slot_b1.texture = null
-	backpack.slot_b2.texture = null
-	backpack.slot_b3.texture = null
+	show_slot(sidepouch_a, false)
+	show_slot(sidepouch_b, false)
 	match(designation):
 		null: backpack.set_deferred("visible", false)
 		0: backpack.backpack_front.set_deferred("visible", true) #Mark I
@@ -32,17 +31,30 @@ func check_designation():
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
-			backpack.slot_a1.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_a2.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_a3.texture = BACKPACK_SLOT_AVAILABLE
+			show_slot(sidepouch_a, true)
+			#for slot in sidepouch_a:
+				#slot.texture = BACKPACK_SLOT_AVAILABLE
+				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
+				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
 		4: #Mark V
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
 			backpack.container_right.set_deferred("visible", true)
-			backpack.slot_a1.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_a2.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_a3.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_b1.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_b2.texture = BACKPACK_SLOT_AVAILABLE
-			backpack.slot_b3.texture = BACKPACK_SLOT_AVAILABLE
+			show_slot(sidepouch_a, true)
+			show_slot(sidepouch_b, true)
+			#for slot in sidepouch_a:
+				#slot.texture = BACKPACK_SLOT_AVAILABLE
+				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
+				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			#for slot in sidepouch_b:
+				#slot.texture = BACKPACK_SLOT_AVAILABLE
+				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
+				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+func show_slot(container, shown):
+	var value = 1.0 if shown else 0.0
+	for slot in container:
+		slot.modulate = Color(1.0, 1.0, 1.0, value)
+		slot.texture = BACKPACK_SLOT_AVAILABLE if shown else null
+		slot.area.get_node("CollisionShape2D").set_deferred("disabled", !shown)
