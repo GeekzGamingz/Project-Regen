@@ -32,10 +32,6 @@ func check_designation():
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
 			show_slot(sidepouch_a, true)
-			#for slot in sidepouch_a:
-				#slot.texture = BACKPACK_SLOT_AVAILABLE
-				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
-				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
 		4: #Mark V
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
@@ -43,15 +39,7 @@ func check_designation():
 			backpack.container_right.set_deferred("visible", true)
 			show_slot(sidepouch_a, true)
 			show_slot(sidepouch_b, true)
-			#for slot in sidepouch_a:
-				#slot.texture = BACKPACK_SLOT_AVAILABLE
-				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
-				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
-			#for slot in sidepouch_b:
-				#slot.texture = BACKPACK_SLOT_AVAILABLE
-				#slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
-				#slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
-
+#Slot Toggle
 func show_slot(container, shown):
 	var value = 1.0 if shown else 0.0
 	for slot in container:

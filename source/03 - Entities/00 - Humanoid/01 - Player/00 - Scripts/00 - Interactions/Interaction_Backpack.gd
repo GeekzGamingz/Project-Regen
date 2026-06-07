@@ -18,6 +18,7 @@ func trade_slots(contents):
 		match(contents):
 			"Empty": print("Empty")
 			"Full": print("Full")
+	else: print("Not Enough Space")
 #Check Cursor Grid
 func check_grid() -> bool:
 	var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")

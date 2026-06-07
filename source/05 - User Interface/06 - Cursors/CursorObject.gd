@@ -12,9 +12,11 @@ var held_slots: int = 0
 #Functions
 #Input
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_rotate"):
+	if event is InputEventKey:
 		var states = cursor_fsm.states
-		if [states.hold_object, states.hold_stack].has(cursor_fsm.state): rotate_hand()
+		if [states.hold_object, states.hold_stack].has(cursor_fsm.state):
+			if event.is_action_pressed("action_rotate"): rotate_hand()
+			if event.is_action_pressed("action_flip"): flip_hand()
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Hand Rotation
@@ -22,6 +24,10 @@ func rotate_hand():
 	print("Rotating Hand [", held_slots, " Slots]")
 	axis.rotation_degrees += 90
 	if axis.rotation_degrees >= 360: axis.rotation = 0
+#Hand Flip
+func flip_hand():
+	print("Flipping Hand [", held_slots, " Slots]")
+	axis.scale.x *= -1
 #Revert Hand
 func revert_hand():
 	for selection in grid_container.get_children():
