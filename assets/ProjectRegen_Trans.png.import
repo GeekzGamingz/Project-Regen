@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lwvyjwug45qo"
-path="res://.godot/imported/ProjectRegen_Trans.png-d975defed77e2e08c9c5ef0680f14fa8.ctex"
+path="res://.godot/imported/ProjectRegen_Trans.png-c6231d2d71fb3ee7089707a0c1b11634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ProjectRegen_Trans.png"
-dest_files=["res://.godot/imported/ProjectRegen_Trans.png-d975defed77e2e08c9c5ef0680f14fa8.ctex"]
+source_file="res://assets/ProjectRegen_Trans.png"
+dest_files=["res://.godot/imported/ProjectRegen_Trans.png-c6231d2d71fb3ee7089707a0c1b11634.ctex"]
 
 [params]
 

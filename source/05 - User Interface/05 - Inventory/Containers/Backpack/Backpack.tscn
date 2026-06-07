@@ -32,7 +32,7 @@ script = ExtResource("2_l8top")
 [node name="Designations" type="Control" parent="." unique_id=1125543300]
 layout_mode = 2
 script = ExtResource("3_tx6ga")
-designation = 1
+designation = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=51077466]
 layout_mode = 2

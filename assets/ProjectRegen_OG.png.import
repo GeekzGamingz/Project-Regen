@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6iprlbs6wgt2"
-path="res://.godot/imported/RegenLogo.png-88559fb8961e078fb89f8ee5e7713e17.ctex"
+uid="uid://dycpp260qjccd"
+path="res://.godot/imported/ProjectRegen_OG.png-763b66cab6955b49737dac4683257fe4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RegenLogo.png"
-dest_files=["res://.godot/imported/RegenLogo.png-88559fb8961e078fb89f8ee5e7713e17.ctex"]
+source_file="res://assets/ProjectRegen_OG.png"
+dest_files=["res://.godot/imported/ProjectRegen_OG.png-763b66cab6955b49737dac4683257fe4.ctex"]
 
 [params]
 

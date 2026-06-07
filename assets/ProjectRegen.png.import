@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dycpp260qjccd"
-path="res://.godot/imported/ProjectRegen_OG.png-69139cba78461c6098a4992a13377e93.ctex"
+uid="uid://cqfurbc6bws38"
+path="res://.godot/imported/ProjectRegen.png-58aeffb4f69cc852c9084a98b95ceb40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ProjectRegen_OG.png"
-dest_files=["res://.godot/imported/ProjectRegen_OG.png-69139cba78461c6098a4992a13377e93.ctex"]
+source_file="res://assets/ProjectRegen.png"
+dest_files=["res://.godot/imported/ProjectRegen.png-58aeffb4f69cc852c9084a98b95ceb40.ctex"]
 
 [params]
 

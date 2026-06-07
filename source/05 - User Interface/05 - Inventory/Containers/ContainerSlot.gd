@@ -24,7 +24,8 @@ func _gui_input(event: InputEvent) -> void:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
 		if slotted_object != null: pass
 		elif interaction.current_object != null:
-			if event.is_action_pressed("action_confirm"): interaction.interaction_containers.trade_slots("Empty")
+			if event.is_action_pressed("action_confirm"):
+				interaction.interaction_containers.trade_slots("Empty")
 
 
 #COPIED FROM HOTBAR

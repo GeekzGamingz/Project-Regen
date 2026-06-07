@@ -13,9 +13,8 @@ texture = ExtResource("1_pi8wo")
 script = ExtResource("2_x6m45")
 
 [node name="Texture_Object" type="TextureRect" parent="." unique_id=1116779748]
+z_index = 1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="NPR_Held" type="NinePatchRect" parent="." unique_id=222875012]
 visible = false

@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
 [ext_resource type="Script" uid="uid://dpblgk58gasv6" path="res://source/05 - User Interface/04 - Splash Screen/SplashScreen.gd" id="2_6u25l"]
-[ext_resource type="Texture2D" uid="uid://6iprlbs6wgt2" path="res://RegenLogo.png" id="4_2wy1a"]
+[ext_resource type="Texture2D" uid="uid://6iprlbs6wgt2" path="res://assets/RegenLogo.png" id="4_2wy1a"]
 [ext_resource type="Script" uid="uid://decw3ajbc7vhy" path="res://source/05 - User Interface/04 - Splash Screen/Button_NewGame.gd" id="4_o3q5j"]
 [ext_resource type="Script" uid="uid://dkwi7cjx6mn8t" path="res://source/05 - User Interface/04 - Splash Screen/Button_HostGame.gd" id="5_65kkx"]
 [ext_resource type="Script" uid="uid://ds41uw7r1s4ag" path="res://source/05 - User Interface/04 - Splash Screen/Button_JoinGame.gd" id="6_hyep0"]
@@ -1647,11 +1647,18 @@ grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TitleContainer" unique_id=1541591997]
 layout_mode = 2
-theme_override_constants/margin_top = 8
+theme_override_constants/margin_top = 40
 
-[node name="Title" type="TextureRect" parent="TitleContainer" unique_id=928099185]
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleContainer" unique_id=907290255]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="TitleContainer/HBoxContainer" unique_id=928099185]
 layout_mode = 2
 texture = ExtResource("4_2wy1a")
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleContainer/HBoxContainer" unique_id=1635662642]
+layout_mode = 2
+theme_override_constants/margin_right = 40
 
 [node name="MenuContainer" type="HBoxContainer" parent="." unique_id=191954989]
 layout_mode = 1
