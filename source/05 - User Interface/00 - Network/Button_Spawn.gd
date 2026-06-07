@@ -19,7 +19,7 @@ func _on_button_up() -> void:
 func hide_splash():
 	splash_screen.set_deferred("visible", false)
 	#Disable New Game Buttons (Temporary Fix)
-	$"../../../../../HBoxContainer/SubMenus".set_deferred("visible", false)
-	$"../../../../../HBoxContainer/MainMenu/Button_SinglePlayer".set_deferred("visible", false)
-	$"../../../../../HBoxContainer/MainMenu/Button_Multiplayer".set_deferred("visible", false)
+	$"../../../../../MenuContainer/SubMenus".set_deferred("visible", false)
+	$"../../../../../MenuContainer/MainMenu/Button_SinglePlayer".set_deferred("visible", false)
+	$"../../../../../MenuContainer/MainMenu/Button_Multiplayer".set_deferred("visible", false)
 	$"../../..".set_deferred("visible", false)

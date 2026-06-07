@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_k4l3q"]
 [ext_resource type="Texture2D" uid="uid://dnlutk6wlkm2g" path="res://assets/05 - Backgrounds/splash.png" id="1_r0h6i"]
 [ext_resource type="Script" uid="uid://dpblgk58gasv6" path="res://source/05 - User Interface/04 - Splash Screen/SplashScreen.gd" id="2_6u25l"]
+[ext_resource type="Texture2D" uid="uid://6iprlbs6wgt2" path="res://RegenLogo.png" id="4_2wy1a"]
 [ext_resource type="Script" uid="uid://decw3ajbc7vhy" path="res://source/05 - User Interface/04 - Splash Screen/Button_NewGame.gd" id="4_o3q5j"]
 [ext_resource type="Script" uid="uid://dkwi7cjx6mn8t" path="res://source/05 - User Interface/04 - Splash Screen/Button_HostGame.gd" id="5_65kkx"]
 [ext_resource type="Script" uid="uid://ds41uw7r1s4ag" path="res://source/05 - User Interface/04 - Splash Screen/Button_JoinGame.gd" id="6_hyep0"]
@@ -1628,13 +1629,31 @@ grow_vertical = 2
 theme = ExtResource("1_k4l3q")
 script = ExtResource("2_6u25l")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=424644482]
+[node name="Background" type="TextureRect" parent="." unique_id=424644482]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_r0h6i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=191954989]
+[node name="TitleContainer" type="VBoxContainer" parent="." unique_id=1080770315]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.5
+offset_right = 81.5
+offset_bottom = 96.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleContainer" unique_id=1541591997]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="Title" type="TextureRect" parent="TitleContainer" unique_id=928099185]
+layout_mode = 2
+texture = ExtResource("4_2wy1a")
+
+[node name="MenuContainer" type="HBoxContainer" parent="." unique_id=191954989]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1644,93 +1663,93 @@ offset_right = 88.0
 offset_bottom = 95.5
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=172713068]
+[node name="MarginContainer" type="MarginContainer" parent="MenuContainer" unique_id=172713068]
 layout_mode = 2
 theme_override_constants/margin_right = 8
 
-[node name="MainMenu" type="VBoxContainer" parent="HBoxContainer" unique_id=29582682]
+[node name="MainMenu" type="VBoxContainer" parent="MenuContainer" unique_id=29582682]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/MainMenu" unique_id=759941655]
+[node name="Label" type="Label" parent="MenuContainer/MainMenu" unique_id=759941655]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Project: Regen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_SinglePlayer" type="Button" parent="HBoxContainer/MainMenu" unique_id=1936393503]
+[node name="Button_SinglePlayer" type="Button" parent="MenuContainer/MainMenu" unique_id=1936393503]
 layout_mode = 2
 text = "Single Player"
 
-[node name="Button_Multiplayer" type="Button" parent="HBoxContainer/MainMenu" unique_id=396410423]
+[node name="Button_Multiplayer" type="Button" parent="MenuContainer/MainMenu" unique_id=396410423]
 layout_mode = 2
 text = "Multiplayer"
 
-[node name="Button_Character" type="Button" parent="HBoxContainer/MainMenu" unique_id=205026741]
+[node name="Button_Character" type="Button" parent="MenuContainer/MainMenu" unique_id=205026741]
 layout_mode = 2
 text = "Character"
 
-[node name="Button4" type="Button" parent="HBoxContainer/MainMenu" unique_id=783518047]
+[node name="Button4" type="Button" parent="MenuContainer/MainMenu" unique_id=783518047]
 layout_mode = 2
 text = "Encyclopedia"
 
-[node name="Button5" type="Button" parent="HBoxContainer/MainMenu" unique_id=392564594]
+[node name="Button5" type="Button" parent="MenuContainer/MainMenu" unique_id=392564594]
 layout_mode = 2
 text = "Cheats"
 
-[node name="Button6" type="Button" parent="HBoxContainer/MainMenu" unique_id=670461197]
+[node name="Button6" type="Button" parent="MenuContainer/MainMenu" unique_id=670461197]
 layout_mode = 2
 text = "Settings"
 
-[node name="Button_Quit" type="Button" parent="HBoxContainer/MainMenu" unique_id=917137881]
+[node name="Button_Quit" type="Button" parent="MenuContainer/MainMenu" unique_id=917137881]
 layout_mode = 2
 text = "Quit"
 
-[node name="SubMenus" type="TabContainer" parent="HBoxContainer" unique_id=1750956221]
+[node name="SubMenus" type="TabContainer" parent="MenuContainer" unique_id=1750956221]
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_k4l3q")
 current_tab = 1
 tabs_visible = false
 
-[node name="SinglePlayer" type="VBoxContainer" parent="HBoxContainer/SubMenus" unique_id=1273091311]
+[node name="SinglePlayer" type="VBoxContainer" parent="MenuContainer/SubMenus" unique_id=1273091311]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Label_SinglePlayer" type="Label" parent="HBoxContainer/SubMenus/SinglePlayer" unique_id=1245953111]
+[node name="Label_SinglePlayer" type="Label" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1245953111]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Single Player"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_NewGame" type="Button" parent="HBoxContainer/SubMenus/SinglePlayer" unique_id=1624305777]
+[node name="Button_NewGame" type="Button" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1624305777]
 layout_mode = 2
 text = "New Game"
 script = ExtResource("4_o3q5j")
 
-[node name="Button_LoadGame" type="Button" parent="HBoxContainer/SubMenus/SinglePlayer" unique_id=1900495989]
+[node name="Button_LoadGame" type="Button" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1900495989]
 layout_mode = 2
 text = "Load Game"
 
-[node name="Multiplayer" type="VBoxContainer" parent="HBoxContainer/SubMenus" unique_id=1145083524]
+[node name="Multiplayer" type="VBoxContainer" parent="MenuContainer/SubMenus" unique_id=1145083524]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Label_Multiplayer" type="Label" parent="HBoxContainer/SubMenus/Multiplayer" unique_id=1921288335]
+[node name="Label_Multiplayer" type="Label" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1921288335]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "Multiplayer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_HostGame" type="Button" parent="HBoxContainer/SubMenus/Multiplayer" unique_id=1185164991]
+[node name="Button_HostGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1185164991]
 layout_mode = 2
 text = "Host Game"
 script = ExtResource("5_65kkx")
 
-[node name="Button_JoinGame" type="Button" parent="HBoxContainer/SubMenus/Multiplayer" unique_id=1841705858]
+[node name="Button_JoinGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1841705858]
 layout_mode = 2
 text = "Join Game"
 script = ExtResource("6_hyep0")
@@ -2160,21 +2179,21 @@ custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Decline"
 
-[connection signal="button_up" from="HBoxContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
-[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
-[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Character" to="." method="_on_button_character_button_up"]
-[connection signal="button_up" from="HBoxContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]
-[connection signal="button_up" from="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_up"]
-[connection signal="button_up" from="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_up"]
-[connection signal="button_up" from="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_up"]
-[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_line_username_text_submitted"]
-[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_line_username_text_submitted"]
-[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_username_text_submitted"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName" to="HBoxContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_send_singleplayer_name_button_up"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName" to="HBoxContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_send_host_name_button_up"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_send_client_name_button_up"]
-[connection signal="text_submitted" from="PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
-[connection signal="button_up" from="PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="HBoxContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
+[connection signal="button_up" from="MenuContainer/MainMenu/Button_SinglePlayer" to="." method="_on_button_single_player_button_up"]
+[connection signal="button_up" from="MenuContainer/MainMenu/Button_Multiplayer" to="." method="_on_button_multiplayer_button_up"]
+[connection signal="button_up" from="MenuContainer/MainMenu/Button_Character" to="." method="_on_button_character_button_up"]
+[connection signal="button_up" from="MenuContainer/MainMenu/Button_Quit" to="." method="_on_button_quit_button_up"]
+[connection signal="button_up" from="MenuContainer/SubMenus/SinglePlayer/Button_NewGame" to="MenuContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_up"]
+[connection signal="button_up" from="MenuContainer/SubMenus/Multiplayer/Button_HostGame" to="MenuContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_up"]
+[connection signal="button_up" from="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" to="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_up"]
+[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName" to="MenuContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_line_username_text_submitted"]
+[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_HostName" to="MenuContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_line_username_text_submitted"]
+[connection signal="text_submitted" from="PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_ClientName" to="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_username_text_submitted"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_SPName" to="MenuContainer/SubMenus/SinglePlayer/Button_NewGame" method="_on_button_send_singleplayer_name_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_HostName" to="MenuContainer/SubMenus/Multiplayer/Button_HostGame" method="_on_button_send_host_name_button_up"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/UsernameContainer/HBoxContainer/ButtonContainer/Button_ClientName" to="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_send_client_name_button_up"]
+[connection signal="text_submitted" from="PopUpContainer/TabContainer/IPAddressContainer/LineEdit_IPAddress" to="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_line_edit_ip_address_text_submitted"]
+[connection signal="button_up" from="PopUpContainer/TabContainer/IPAddressContainer/HBoxContainer/Button_IPAddress" to="MenuContainer/SubMenus/Multiplayer/Button_JoinGame" method="_on_button_ip_address_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" to="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn" method="_on_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Previous_Character" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character" method="_on_previous_character_button_up"]
 [connection signal="button_up" from="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Next_Character" to="PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character" method="_on_next_character_button_up"]

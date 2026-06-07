@@ -15,9 +15,9 @@ var connected_peer: String
 @onready var previous_character: TextureButton = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Previous_Character
 @onready var next_character: TextureButton = $PopUpContainer/TabContainer/CharacterContainer/VBoxContainer/Selection_Character/Next_Character
 #Tabs
-@onready var sub_menus: TabContainer = $HBoxContainer/SubMenus
-@onready var tab_singleplayer: VBoxContainer = $HBoxContainer/SubMenus/SinglePlayer
-@onready var tab_multiplayer: VBoxContainer = $HBoxContainer/SubMenus/Multiplayer
+@onready var sub_menus: TabContainer = $MenuContainer/SubMenus
+@onready var tab_singleplayer: VBoxContainer = $MenuContainer/SubMenus/SinglePlayer
+@onready var tab_multiplayer: VBoxContainer = $MenuContainer/SubMenus/Multiplayer
 @onready var tab_container: TabContainer = $PopUpContainer/TabContainer
 @onready var error_container: VBoxContainer = $PopUpContainer/TabContainer/ErrorContainer
 @onready var character_container: CenterContainer = $PopUpContainer/TabContainer/CharacterContainer
