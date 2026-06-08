@@ -6,13 +6,17 @@ var quantity: int = 0
 #Bools
 var mouse_hovering: bool = false
 var slot_occupied: bool = false
+#Arrays
+var slot_array: Array = []
 #Resources
 var slotted_object: Object = null
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
+@onready var texture_object: TextureRect = $Texture_Object
 @onready var selection_held: NinePatchRect = $NPR_Held
+@onready var line_quantity: LineEdit = $LineEdit_Quantity
 @onready var area: Area2D = $Area_Slot
 #------------------------------------------------------------------------------#
 #Functions

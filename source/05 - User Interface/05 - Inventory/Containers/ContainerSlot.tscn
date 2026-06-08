@@ -18,6 +18,7 @@ layout_mode = 0
 
 [node name="NPR_Held" type="NinePatchRect" parent="." unique_id=222875012]
 visible = false
+z_index = 1
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
