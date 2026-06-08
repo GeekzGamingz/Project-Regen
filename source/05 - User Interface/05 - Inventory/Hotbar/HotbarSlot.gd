@@ -34,16 +34,17 @@ func _gui_input(event: InputEvent) -> void:
 			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("One", slotted_object, self)
+				print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 			elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("Half", slotted_object, self)
+				print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 			elif event.is_action_pressed("action_confirm"): # Left Click
 				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
 				else: interaction.interaction_objects.addto_hand("All", slotted_object, self)
+				print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 		elif interaction.current_object != null:
 			if event.is_action_pressed("action_confirm"): interaction.interaction_hotbar.trade_slots("Empty")
-		if slotted_object != null:
-			print(name, " Contains: ", slotted_object.name, "(", quantity,")")
 #------------------------------------------------------------------------------#
 #Custom Functions
 func update_slot():

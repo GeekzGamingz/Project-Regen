@@ -36,6 +36,7 @@ func trade_slots(contents):
 					slot.slotted_object = object
 					slot.slot_array = slot_array
 					slot.slot_occupied = true
+				slot_array = [] # Clears Array for Future Use
 				interaction.interaction_hotbar.check_held().slotted_object = null
 				interaction.revert()
 			"Full":

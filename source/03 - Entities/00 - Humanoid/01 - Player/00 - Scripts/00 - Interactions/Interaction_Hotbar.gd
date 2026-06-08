@@ -39,11 +39,13 @@ func trade_slots(contents):
 		"Empty":
 			print("#---Trading Executed - Slot Empty---#")
 			print("Held Object: ", interaction.current_object.name)
-			print("Object Origin: ", check_held().name)
+			if check_held() != null:
+				print("Object Origin: ", check_held().name)
+				check_selection().quantity = check_held().quantity
+				check_held().slotted_object = null
+			else: print("Object Origin: Container")
 			print("Slot Destination: ", check_selection().name)
 			addto_hotbar(interaction.current_object, check_selection())
-			check_selection().quantity = check_held().quantity
-			check_held().slotted_object = null
 			interaction.revert()
 		"Full":
 			print("#---Trading Executed - Slot Occupied---#")
