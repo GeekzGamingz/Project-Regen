@@ -118,6 +118,7 @@ hframes = 4
 [node name="CursorAxis" type="Node2D" parent="Cursor_Textures" unique_id=483503577]
 
 [node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564]
+z_index = 1
 position = Vector2(-8, -8)
 centered = false
 script = ExtResource("4_1xpm5")

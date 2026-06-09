@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 				)
 #------------------------------------------------------------------------------#
 #Custom Functions
-#Revert Hotbar
+#Revert Hand
 func revert(): # Revert Settings to Default
 	MAIN.UI_CURSOR.icon_state = "Default"
 	MAIN.UI_CURSOR.object_held = null

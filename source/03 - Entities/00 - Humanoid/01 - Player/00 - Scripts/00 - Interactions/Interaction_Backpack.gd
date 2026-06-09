@@ -17,7 +17,8 @@ func addto_backpack(object, slot):
 func trade_slots(contents):
 	if check_grid():
 		var object = interaction.current_object
-		var cursor_grid = interaction.MAIN.UI_CURSOR_OBJECT.get_node("GridContainer")
+		var cursor_object = interaction.MAIN.UI_CURSOR_OBJECT
+		var cursor_grid = cursor_object.get_node("GridContainer")
 		var ray_primary = cursor_grid.get_node("NPR_Selection/RayCast2D")
 		var slot_primary = ray_primary.get_collider().get_node("..")
 		for selection in cursor_grid.get_children():
@@ -29,15 +30,18 @@ func trade_slots(contents):
 				print("Primary Raycast: ", ray_primary)
 				print("Primary Slot: ", slot_primary)
 				print("Held Object: ", object.name)
-				print("Object Origin: ", interaction.interaction_hotbar.check_held().name)
 				print("Slot Array: ", slot_array)
+				if interaction.interaction_hotbar.check_held() != null:
+					interaction.interaction_hotbar.check_held().slotted_object = null
+					print("Object Origin: ", interaction.interaction_hotbar.check_held().name)
 				addto_backpack(object, slot_primary)
 				for slot in slot_array:
 					slot.slotted_object = object
 					slot.slot_array = slot_array
 					slot.slot_occupied = true
 				slot_array = [] # Clears Array for Future Use
-				interaction.interaction_hotbar.check_held().slotted_object = null
+				
+				cursor_object.revert_hand()
 				interaction.revert()
 			"Full":
 				print("#---Container Trade Executed - Slot Occupied---#")

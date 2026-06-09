@@ -43,7 +43,11 @@ func trade_slots(contents):
 				print("Object Origin: ", check_held().name)
 				check_selection().quantity = check_held().quantity
 				check_held().slotted_object = null
-			else: print("Object Origin: Container")
+			else:
+				print("Object Origin: Container")
+				for slot in interaction.BACKPACK.grid.get_children():
+					if slot is TextureRect: if slot.slot_held.visible == true:
+						slot.slotted_object = null
 			print("Slot Destination: ", check_selection().name)
 			addto_hotbar(interaction.current_object, check_selection())
 			interaction.revert()

@@ -28,41 +28,19 @@ func _process(_delta: float) -> void: update_slot()
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-		if slotted_object != null:
-			print("#---[", self.name, "] Contains---#")
-			print("Held Object: ", slotted_object.name)
-			print("Associated Slots: ", slot_array)
-			print("Quantity: ", quantity)
-			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
-				if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				else:
-					object_highlight(true)
-					interaction.interaction_objects.addto_hand("One", slotted_object, self)
-					slot_exlcusion()
-		elif interaction.current_object != null:
-			if event.is_action_pressed("action_confirm"):
-				interaction.interaction_containers.trade_slots("Empty")
-
-
-#COPIED FROM HOTBAR
-#GUI Input
-#func _gui_input(event: InputEvent) -> void:
-	#if event is InputEventMouseMotion: hotbar.scroll_hotbar(name)
-	#if event is InputEventMouseButton:
-		#var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-		#if slotted_object != null:
-			#if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
-				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				#else: interaction.interaction_objects.addto_hand("One", slotted_object, self)
-			#elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
-				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				#else: interaction.interaction_objects.addto_hand("Half", slotted_object, self)
-			#elif event.is_action_pressed("action_confirm"): # Left Click
-				#if interaction.full_hands: interaction.interaction_hotbar.trade_slots("Full")
-				#else: interaction.interaction_objects.addto_hand("All", slotted_object, self)
-		#elif interaction.current_object != null: interaction.interaction_hotbar.trade_slots("Empty")
-		#if slotted_object != null:
-			#print(name, " Contains: ", slotted_object.name, "(", quantity,")")
+		if event.is_action_pressed("action_confirm"): # Left-Click
+			if interaction.current_object != null:
+				if slotted_object == null: interaction.interaction_containers.trade_slots(contents)
+			elif slotted_object != null:
+				print("#---[", self.name, "] Contains---#")
+				print("Held Object: ", slotted_object.name)
+				print("Associated Slots: ", slot_array)
+				print("Quantity: ", quantity)
+				object_highlight(true)
+				slot_exclusion(true)
+				interaction.interaction_objects.addto_hand("All", slotted_object, self)
+				await get_tree().process_frame
+				slot_exclusion(false)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Slot Entered
@@ -76,11 +54,10 @@ func object_highlight(shown):
 	slot_held.set_deferred("visible", shown)
 	for slot in slot_array: slot.slot_held.set_deferred("visible", shown)
 #Slot Exlcusion
-func slot_exlcusion(): # Used for Shape Grid
-	for slot in get_parent().get_children():
+func slot_exclusion(excluded): # Used for Shape Grid
+	if excluded: for slot in get_parent().get_children():
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", true)
-	await MAIN.UI_CURSOR.object.shape_grid() # Coroutine
-	for slot in get_parent().get_children():
+	if !excluded: for slot in get_parent().get_children():
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
 #Update Slot
 func update_slot():
@@ -96,6 +73,7 @@ func update_slot():
 			slot.slot_held.set_deferred("visible", false)
 			slot.line_quantity.set_deferred("visible", false)
 			slot.slot_array = []
+		else: if !slot_array.has(self): slot_array.append(self)
 	else:
 		contents = slotted_object.name
 		line_quantity.set_deferred("visible", slotted_object.is_stackable)
