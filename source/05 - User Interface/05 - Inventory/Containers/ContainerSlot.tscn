@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/Containers/ContainerSlot.gd" id="2_x6m45"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_0egyr"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_rehhu"]
+[ext_resource type="Script" uid="uid://bj2ngpal4cxcc" path="res://source/05 - User Interface/05 - Inventory/Containers/SlotFSM.gd" id="5_8b3k1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
 size = Vector2(12, 12)
@@ -59,6 +60,16 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Slot" unique_id=1491257469]
 shape = SubResource("RectangleShape2D_tt3jp")
+
+[node name="StateMachine" type="Node2D" parent="." unique_id=1520545932]
+script = ExtResource("5_8b3k1")
+
+[node name="Output_State" type="Label" parent="." unique_id=1650546792]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_slot_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_slot_exited"]

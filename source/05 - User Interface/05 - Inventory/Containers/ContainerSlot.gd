@@ -7,7 +7,7 @@ var quantity: int = 0
 var mouse_hovering: bool = false
 var slot_occupied: bool = false
 #Strings
-var contents: String
+var contents: String = "Empty"
 #Arrays
 var slot_array: Array = []
 #Resources
@@ -22,8 +22,6 @@ var slotted_object: Object = null
 @onready var area: Area2D = $Area_Slot
 #------------------------------------------------------------------------------#
 #Functions
-#Process
-func _process(_delta: float) -> void: update_slot()
 #GUI Input
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -36,7 +34,6 @@ func _gui_input(event: InputEvent) -> void:
 				print("Held Object: ", slotted_object.name)
 				print("Associated Slots: ", slot_array)
 				print("Quantity: ", quantity)
-				object_highlight(true)
 				slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("All", slotted_object, self)
 				await get_tree().process_frame
@@ -59,22 +56,20 @@ func slot_exclusion(excluded): # Used for Shape Grid
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", true)
 	if !excluded: for slot in get_parent().get_children():
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
+#Clear Slot
+func clear_slot():
+	quantity = 0
+	contents = "Empty"
+	slot_occupied = false
+	slotted_object = null
+	texture_object.texture = null
+	slot_array = [self]
+	slot_held.set_deferred("visible", false)
+	line_quantity.set_deferred("visible", false)
+	slot_held.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
 #Update Slot
 func update_slot():
-	if !slot_occupied: slot_held.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
-	else: slot_held.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
-	if slotted_object == null:
-		if slot_array != []: for slot in slot_array:
-			slot.contents = "Empty"
-			slot.slotted_object = null
-			slot.slot_occupied = false
-			slot.quantity = 0
-			slot.texture_object.texture = null
-			slot.slot_held.set_deferred("visible", false)
-			slot.line_quantity.set_deferred("visible", false)
-			slot.slot_array = []
-		else: if !slot_array.has(self): slot_array.append(self)
-	else:
-		contents = slotted_object.name
-		line_quantity.set_deferred("visible", slotted_object.is_stackable)
-		line_quantity.text = str(quantity)
+	contents = "Full"
+	line_quantity.text = str(quantity)
+	line_quantity.set_deferred("visible", slotted_object.is_stackable)
+	slot_held.self_modulate = Color(1.0, 0.0, 0.0, 1.0)

@@ -45,7 +45,7 @@ func trade_slots(contents):
 				check_held().slotted_object = null
 			else:
 				print("Object Origin: Container")
-				for slot in interaction.BACKPACK.grid.get_children():
+				for slot in interaction.BACKPACK.base_grid.get_children():
 					if slot is TextureRect: if slot.slot_held.visible == true:
 						slot.slotted_object = null
 			print("Slot Destination: ", check_selection().name)

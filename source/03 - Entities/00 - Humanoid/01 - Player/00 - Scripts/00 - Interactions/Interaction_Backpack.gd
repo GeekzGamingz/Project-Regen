@@ -34,13 +34,13 @@ func trade_slots(contents):
 				if interaction.interaction_hotbar.check_held() != null:
 					interaction.interaction_hotbar.check_held().slotted_object = null
 					print("Object Origin: ", interaction.interaction_hotbar.check_held().name)
+				clear_held()
 				addto_backpack(object, slot_primary)
 				for slot in slot_array:
 					slot.slotted_object = object
 					slot.slot_array = slot_array
 					slot.slot_occupied = true
 				slot_array = [] # Clears Array for Future Use
-				
 				cursor_object.revert_hand()
 				interaction.revert()
 			"Full":
@@ -56,3 +56,11 @@ func check_grid() -> bool:
 		if ray.is_colliding(): container_count += 1
 	if container_count == cursor_grid.get_node("..").held_slots: return true
 	else: return false
+#Check Held Container
+func clear_held():
+	var front_grid = interaction.BACKPACK.front_grid
+	var base_grid = interaction.BACKPACK.base_grid
+	for slot in front_grid.get_children(): if slot is TextureRect:
+		if slot.slot_held.visible: slot.slotted_object = null
+	for slot in base_grid.get_children(): if slot is TextureRect:
+		if slot.slot_held.visible: slot.slotted_object = null

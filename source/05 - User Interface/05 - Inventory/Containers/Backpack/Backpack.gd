@@ -10,7 +10,8 @@ var mouse_hovering: bool = false
 @onready var container_right: VBoxContainer = $"VBoxContainer/ContainerBase/ContainerRight"
 @onready var designations: Control = $Designations
 #Slots
-@onready var grid: GridContainer = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer"
+@onready var front_grid: GridContainer = $VBoxContainer/Backpack_Front/GridContainer
+@onready var base_grid: GridContainer = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer"
 @onready var slot_a1: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1"
 @onready var slot_b1: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1"
 @onready var slot_a2: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2"
