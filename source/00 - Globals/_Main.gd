@@ -10,6 +10,7 @@ extends Node2D
 @onready var UI_NETWORK: HBoxContainer = $UserInterface/UI_FullRect/UI_Network
 @onready var UI_CHAT: VBoxContainer = $UserInterface/UI_FullRect/UI_Network/VBoxContainer/UI_Chat
 @onready var UI_CURSOR: Node2D = $UserInterface/SoftwareCursor
+@onready var UI_CURSOR_FSM: Node2D = $UserInterface/SoftwareCursor/Cursor_StateMachine
 @onready var UI_CURSOR_ICON: Sprite2D = $UserInterface/SoftwareCursor/Cursor_Textures/CursorIcon
 @onready var UI_CURSOR_OBJECT: Sprite2D = $UserInterface/SoftwareCursor/Cursor_Textures/CursorAxis/CursorObject
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools

@@ -1,6 +1,9 @@
 #Inherits StateMachine Code
 extends StateMachine
 #------------------------------------------------------------------------------#
+#Signals
+signal holding_object(holding)
+#------------------------------------------------------------------------------#
 #Variables
 var object_switch: bool = false
 #OnReady Variables
@@ -65,6 +68,7 @@ func transitions(delta):
 func state_enter(new_state, old_state):
 	match(new_state):
 		states.default:
+			emit_signal("holding_object", false)
 			cursor.object_held = null
 			cursor.cursor.visible = false
 			cursor.icon.visible = false
@@ -78,6 +82,7 @@ func state_enter(new_state, old_state):
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_GRAB_RIGHT
 			cursor.icon.visible = true
 		states.hold_object:
+			emit_signal("holding_object", true)
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_GRAB_RIGHT
 			cursor.icon.visible = true
 			if cursor.object_held != null:

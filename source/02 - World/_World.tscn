@@ -53,6 +53,9 @@ position = Vector2(194, 174)
 [node name="Object_Rock6" parent="Orphanages/Orphanage_Objects" unique_id=1284667327 instance=ExtResource("8_d03ws")]
 position = Vector2(134, 156)
 
+[node name="Object_LPiece2" parent="Orphanages/Orphanage_Objects" unique_id=780042165 instance=ExtResource("10_g0q3n")]
+position = Vector2(278, 195)
+
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 
 [node name="Flora_RegenTree" parent="Orphanages/Orphanage_Flora" unique_id=972159684 instance=ExtResource("6_m43ww")]

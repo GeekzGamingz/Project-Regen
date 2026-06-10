@@ -6,10 +6,11 @@ var quantity: int = 0
 #Bools
 var mouse_hovering: bool = false
 var slot_occupied: bool = false
+var slot_blocked: bool = false
 #Strings
 var contents: String = "Empty"
 #Arrays
-var slot_array: Array = []
+var slot_array: Array = [self]
 #Resources
 var slotted_object: Object = null
 #OnReady Variables
@@ -22,6 +23,10 @@ var slotted_object: Object = null
 @onready var area: Area2D = $Area_Slot
 #------------------------------------------------------------------------------#
 #Functions
+#Ready
+func _ready() -> void: 
+	await get_tree().process_frame
+	MAIN.UI_CURSOR_FSM.connect("holding_object", slot_blocking)
 #GUI Input
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -56,11 +61,18 @@ func slot_exclusion(excluded): # Used for Shape Grid
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", true)
 	if !excluded: for slot in get_parent().get_children():
 		if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", false)
+#Slot Blocking
+func slot_blocking(blocking):
+	for slot in get_parent().get_children(): if slot is TextureRect:
+		if blocking && slot.contents == "Full": slot.slot_blocked = blocking
+		else: slot.slot_blocked = blocking
+	print("Blocking: ", blocking)
 #Clear Slot
 func clear_slot():
 	quantity = 0
 	contents = "Empty"
 	slot_occupied = false
+	slot_blocked = false
 	slotted_object = null
 	texture_object.texture = null
 	slot_array = [self]
