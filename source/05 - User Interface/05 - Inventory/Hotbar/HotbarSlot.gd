@@ -47,15 +47,18 @@ func _gui_input(event: InputEvent) -> void:
 			if event.is_action_pressed("action_confirm"): interaction.interaction_hotbar.trade_slots("Empty")
 #------------------------------------------------------------------------------#
 #Custom Functions
+#Update Slot
 func update_slot():
-	if slotted_object == null:
-		contents = "Empty"
-		slotted_object = null
-		quantity = 0
-		texture_object.texture = HOTBAR_SLOT
-		slot_held.set_deferred("visible", false)
-		line_quantity.set_deferred("visible", false)
+	if slotted_object == null: clear_slot()
 	else:
 		contents = slotted_object.name
 		line_quantity.set_deferred("visible", slotted_object.is_stackable)
 		line_quantity.text = str(quantity)
+#Clear Slot
+func clear_slot():
+	contents = "Empty"
+	slotted_object = null
+	quantity = 0
+	texture_object.texture = HOTBAR_SLOT
+	slot_held.set_deferred("visible", false)
+	line_quantity.set_deferred("visible", false)

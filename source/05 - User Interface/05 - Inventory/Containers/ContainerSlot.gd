@@ -66,22 +66,22 @@ func slot_blocking(blocking):
 	for slot in get_parent().get_children(): if slot is TextureRect:
 		if blocking && slot.contents == "Full": slot.slot_blocked = blocking
 		else: slot.slot_blocked = blocking
-	print("Blocking: ", blocking)
-#Clear Slot
-func clear_slot():
-	quantity = 0
-	contents = "Empty"
-	slot_occupied = false
-	slot_blocked = false
-	slotted_object = null
-	texture_object.texture = null
-	slot_array = [self]
-	slot_held.set_deferred("visible", false)
-	line_quantity.set_deferred("visible", false)
-	slot_held.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
 #Update Slot
 func update_slot():
 	contents = "Full"
 	line_quantity.text = str(quantity)
 	line_quantity.set_deferred("visible", slotted_object.is_stackable)
 	slot_held.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
+#Clear Slot
+func clear_slot():
+	for slot in slot_array:
+		slot.quantity = 0
+		slot.contents = "Empty"
+		slot.slot_occupied = false
+		slot.slot_blocked = false
+		slot.slotted_object = null
+		slot.texture_object.texture = null
+		slot.slot_held.set_deferred("visible", false)
+		slot.line_quantity.set_deferred("visible", false)
+		slot.slot_held.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
+		slot.slot_array = [self]

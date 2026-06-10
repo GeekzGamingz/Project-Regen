@@ -50,7 +50,7 @@ func addto_hand(amount, object, origin):
 		cursor.quantity = 1
 		print("Added [", object.name, "]" , " to Hand from Ground")
 #Place
-func place(object, hotbar_origin, new_position):
+func place(object, origin, new_position):
 	var dupe = object.duplicate()
 	if dupe.is_stackable:
 		var stack = dupe.duplicate()
@@ -63,16 +63,16 @@ func place(object, hotbar_origin, new_position):
 			interaction.current_object = null
 			interaction.full_hands = false
 			cursor.icon_state = "Default"
-			if hotbar_origin != null: hotbar_origin.slot_held.set_deferred("visible", false)
-		if hotbar_origin != null:
-			hotbar_origin.quantity -= 1
-			if hotbar_origin.quantity == 0:
+			if origin != null: origin.slot_held.set_deferred("visible", false)
+		if origin != null:
+			origin.quantity -= 1
+			if origin.quantity == 0:
 				interaction.revert()
-				hotbar_origin.slotted_object = null
+				origin.slotted_object = null
 				interaction.full_hands = false
 	else:
 		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
-		if hotbar_origin != null: hotbar_origin.slotted_object = null
+		if origin != null: origin.clear_slot()
 		interaction.revert()
 		dupe.global_position = new_position
 		dupe.name = object.name
