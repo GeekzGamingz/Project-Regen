@@ -35,7 +35,9 @@ func transitions(delta):
 			if s.slot_held.visible: return states.selected
 			if s.slot_blocked == true: return states.blocking
 		#Selected
-		states.selected: if s.slotted_object == null: return states.empty
+		states.selected:
+			if s.slotted_object == null: return states.empty
+			if !s.slot_held.visible: return states.full
 		states.blocking:
 			if s.slot_held.visible: return states.selected
 			if s.slot_blocked == false: return states.full

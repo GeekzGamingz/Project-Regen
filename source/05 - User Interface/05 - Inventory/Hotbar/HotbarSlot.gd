@@ -47,6 +47,8 @@ func _gui_input(event: InputEvent) -> void:
 			if event.is_action_pressed("action_confirm"): interaction.interaction_hotbar.trade_slots("Empty")
 #------------------------------------------------------------------------------#
 #Custom Functions
+#Object Highlight
+func object_highlight(shown): slot_held.set_deferred("visible", shown)
 #Update Slot
 func update_slot():
 	if slotted_object == null: clear_slot()

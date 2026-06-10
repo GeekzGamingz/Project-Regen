@@ -78,13 +78,12 @@ func place(object, origin, new_position):
 		dupe.name = object.name
 	print("Dropped [", dupe.name, "] at ", dupe.global_position)
 #Cancel
-func cancel(object, hotbar_origin):
-	if hotbar_origin != null:
-		hotbar_origin.slot_held.set_deferred("visible", false)
+func cancel(object, origin):
+	if origin != null:
+		origin.object_highlight(false)
 	else:
 		var player = interaction.get_node("../..")
 		interaction.ORPHANAGES_OBJECTS.add_child(object)
 		object.global_position = player.marker_drop.global_position
 	interaction.revert()
 	print("Canceled Holding [", object.name, "]")
-	

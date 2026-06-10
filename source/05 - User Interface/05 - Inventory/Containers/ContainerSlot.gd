@@ -52,9 +52,7 @@ func _on_slot_exited() -> void: mouse_hovering = false
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Highlight Object
-func object_highlight(shown):
-	slot_held.set_deferred("visible", shown)
-	for slot in slot_array: slot.slot_held.set_deferred("visible", shown)
+func object_highlight(shown): for slot in slot_array: slot.slot_held.set_deferred("visible", shown)
 #Slot Exlcusion
 func slot_exclusion(excluded): # Used for Shape Grid
 	if excluded: for slot in get_parent().get_children():
