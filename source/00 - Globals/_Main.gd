@@ -13,6 +13,7 @@ extends Node2D
 @onready var UI_CURSOR_FSM: Node2D = $UserInterface/SoftwareCursor/Cursor_StateMachine
 @onready var UI_CURSOR_ICON: Sprite2D = $UserInterface/SoftwareCursor/Cursor_Textures/CursorIcon
 @onready var UI_CURSOR_OBJECT: Sprite2D = $UserInterface/SoftwareCursor/Cursor_Textures/CursorAxis/CursorObject
+@onready var UI_BACKPACK: PanelContainer = $UserInterface/UI_FullRect/Inventory/Backpack
 @onready var MENU_TOOLS: HBoxContainer = $UserInterface/UI_FullRect/Menu_Tools
 @onready var MENU_BUILDINGS: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Build/Menu_Buildings
 @onready var MENU_FLORA: VBoxContainer = $UserInterface/UI_FullRect/Menu_Tools/VBoxContainer/Menu_Sow/Menu_Flora

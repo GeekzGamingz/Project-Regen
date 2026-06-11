@@ -23,15 +23,21 @@ func check_designation():
 	match(designation):
 		null: backpack.set_deferred("visible", false)
 		0: backpack.backpack_front.set_deferred("visible", true) #Mark I
-		1: backpack.container_base.set_deferred("visible", true) #Mark II
+		1: #Mark II
+			backpack.container_base.set_deferred("visible", true) 
+			show_slot(sidepouch_a, false)
+			show_slot(sidepouch_b, false)
 		2: #Mark III
 			backpack.container_base.set_deferred("visible", true)
 			backpack.backpack_front.set_deferred("visible", true)
+			show_slot(sidepouch_a, false)
+			show_slot(sidepouch_b, false)
 		3: #Mark IV
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)
 			backpack.container_left.set_deferred("visible", true)
 			show_slot(sidepouch_a, true)
+			show_slot(sidepouch_b, false)
 		4: #Mark V
 			backpack.backpack_front.set_deferred("visible", true)
 			backpack.container_base.set_deferred("visible", true)

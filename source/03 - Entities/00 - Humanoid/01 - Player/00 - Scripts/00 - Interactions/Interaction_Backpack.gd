@@ -17,6 +17,7 @@ func addto_backpack(object, slot):
 func trade_slots(contents):
 	if check_grid():
 		var object = interaction.current_object
+		var cursor = interaction.MAIN.UI_CURSOR
 		var cursor_object = interaction.MAIN.UI_CURSOR_OBJECT
 		var cursor_grid = cursor_object.get_node("GridContainer")
 		var ray_primary = cursor_grid.get_node("NPR_Selection/RayCast2D")
@@ -40,11 +41,12 @@ func trade_slots(contents):
 					slot.slotted_object = object
 					slot.slot_array = slot_array
 					slot.slot_occupied = true
+				slot_primary.quantity = cursor.quantity
 				slot_array = [] # Clears Array for Future Use
 				cursor_object.revert_hand()
 				interaction.revert()
 			"Full":
-				print("#---Container Trade Executed - Slot Occupied---#")
+				print("#---Container Trade Executed - Slot Occupied---#") #Currently Prevented
 	else: print("#---Container Trade Attempted - Not Enough Space---#")
 	print("#---Finished Container Trade---#")
 #Check Cursor Grid
