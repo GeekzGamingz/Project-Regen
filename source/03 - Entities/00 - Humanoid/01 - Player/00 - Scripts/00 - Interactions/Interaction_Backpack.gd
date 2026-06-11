@@ -7,16 +7,19 @@ var slot_array: Array = []
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Add to Backpack
-func addto_backpack(object, slot):
+func addto_backpack(object, slot, origin):
 	slot.slotted_object = null
+	slot.quantity -= interaction.MAIN.UI_CURSOR.quantity
 	slot.texture_object.texture = object.sprite_container.texture
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
+	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Backpack")
 #Trade Slots
 func trade_slots(contents):
 	if check_grid():
 		var object = interaction.current_object
+		var origin = interaction.interaction_hotbar.check_held()
 		var cursor = interaction.MAIN.UI_CURSOR
 		var cursor_object = interaction.MAIN.UI_CURSOR_OBJECT
 		var cursor_grid = cursor_object.get_node("GridContainer")
@@ -32,11 +35,12 @@ func trade_slots(contents):
 				print("Primary Slot: ", slot_primary)
 				print("Held Object: ", object.name)
 				print("Slot Array: ", slot_array)
-				if interaction.interaction_hotbar.check_held() != null:
-					interaction.interaction_hotbar.check_held().slotted_object = null
-					print("Object Origin: ", interaction.interaction_hotbar.check_held().name)
+				if origin != null:
+					origin.quantity -= cursor.quantity
+					if origin.quantity <= 0: origin.slotted_object = null
+					print("Object Origin: ", origin.name)
 				clear_held()
-				addto_backpack(object, slot_primary)
+				addto_backpack(object, slot_primary, origin)
 				for slot in slot_array:
 					slot.slotted_object = object
 					slot.slot_array = slot_array
