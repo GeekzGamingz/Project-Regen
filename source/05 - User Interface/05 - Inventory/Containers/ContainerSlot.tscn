@@ -31,10 +31,12 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="LineEdit_Quantity" type="LineEdit" parent="." unique_id=493159546]
-visible = false
+z_index = 1
 layout_mode = 0
-offset_right = 24.0
-offset_bottom = 22.0
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 17.0
+offset_bottom = 10.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0

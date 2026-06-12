@@ -102,6 +102,7 @@ _data = {
 }
 
 [node name="SoftwareCursor" type="Node2D" unique_id=1447515074]
+z_index = 10
 script = ExtResource("3_88ndb")
 
 [node name="Cursor_StateMachine" type="Node2D" parent="." unique_id=146726932]
@@ -111,6 +112,7 @@ script = ExtResource("2_to82i")
 
 [node name="Cursor" type="Sprite2D" parent="Cursor_Textures" unique_id=1551634240]
 top_level = true
+z_index = 10
 texture = ExtResource("2_uofne")
 centered = false
 hframes = 4
@@ -118,7 +120,6 @@ hframes = 4
 [node name="CursorAxis" type="Node2D" parent="Cursor_Textures" unique_id=483503577]
 
 [node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564]
-z_index = 1
 position = Vector2(-8, -8)
 centered = false
 script = ExtResource("4_1xpm5")
@@ -274,10 +275,10 @@ uppercase = true
 
 [node name="Output_Quantity" type="LineEdit" parent="Outputs" unique_id=281385057]
 visible = false
-offset_left = -4.0
-offset_top = 2.0
-offset_right = 20.0
-offset_bottom = 24.0
+z_index = 1
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 18.0
 focus_mode = 0
 mouse_filter = 2
 mouse_default_cursor_shape = 0
