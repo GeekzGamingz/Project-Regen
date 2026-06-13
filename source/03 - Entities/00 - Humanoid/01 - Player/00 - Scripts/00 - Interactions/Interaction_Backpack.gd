@@ -14,7 +14,32 @@ func addto_backpack(object, slot, origin):
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
 	if origin != null: origin.slot_held.set_deferred("visible", false)
-	print("Added ", object.name, " to Backpack")
+	combine_slots(object, slot)
+	print("Added ", object.name, " to Container")
+#Combine Container Items
+func combine_slots(object, slot):
+	print("#---Combing Slots---#")
+	print("Current Object: ", object)
+	print("Current Container Slot: ", slot)
+	var stack_origin = null
+	var stack_quantity = 0
+	for s in slot.get_parent().get_children(): # Grabs Container
+		if s is TextureRect: if s.contents == "Full": # Skips Margins/Empty Slots
+			if s.slot_primary == s: if s.slotted_object != null: # Returns Matching Primaries
+				if object.is_stackable && s.slotted_object.is_stackable: # Ignores Unstackables
+					if s.slotted_object.get_groups()[0].contains(object.get_groups()[0]): # Matches Groups
+						stack_origin = s
+						stack_quantity = s.quantity
+	await get_tree().process_frame
+	if stack_origin != null:
+		print("Found Match: ", stack_origin)
+		print("Match Quantity: ", stack_quantity)
+		print("Current Slot Quantity: ", slot.quantity)
+		slot.quantity += stack_quantity
+		slot.update_slot()
+		stack_origin.slotted_object = null
+		stack_origin.update_slot()
+	print("#---Finished Combining---#")
 #Trade Slots
 func trade_slots(contents):
 	if check_grid():
@@ -45,7 +70,9 @@ func trade_slots(contents):
 					slot.slotted_object = object
 					slot.slot_array = slot_array
 					slot.slot_occupied = true
+					slot.slot_primary = slot_primary
 				slot_primary.quantity = cursor.quantity
+				for slot in slot_array: slot.quantity = slot.slot_primary.quantity
 				slot_array = [] # Clears Array for Future Use
 				cursor_object.revert_hand()
 				interaction.revert()

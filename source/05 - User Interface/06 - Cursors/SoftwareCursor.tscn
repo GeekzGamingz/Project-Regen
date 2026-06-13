@@ -102,7 +102,6 @@ _data = {
 }
 
 [node name="SoftwareCursor" type="Node2D" unique_id=1447515074]
-z_index = 10
 script = ExtResource("3_88ndb")
 
 [node name="Cursor_StateMachine" type="Node2D" parent="." unique_id=146726932]

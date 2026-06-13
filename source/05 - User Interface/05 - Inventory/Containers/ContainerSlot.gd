@@ -12,6 +12,7 @@ var contents: String = "Empty"
 #Arrays
 var slot_array: Array = [self]
 #Resources
+var slot_primary: Object = null
 var slotted_object: Object = null
 #OnReady Variables
 #Main Nodes
@@ -22,7 +23,7 @@ var slotted_object: Object = null
 @onready var line_quantity: LineEdit = $LineEdit_Quantity
 @onready var area: Area2D = $Area_Slot
 #------------------------------------------------------------------------------#
-#Functions
+func _process(_delta: float) -> void: line_quantity.text = str(quantity)
 #Ready
 func _ready() -> void: 
 	await get_tree().process_frame
@@ -37,6 +38,7 @@ func _gui_input(event: InputEvent) -> void:
 			elif slotted_object != null:
 				print("#---[", self.name, "] Contains---#")
 				print("Held Object: ", slotted_object.name)
+				print("Primary Slot: ", slot_primary)
 				print("Associated Slots: ", slot_array)
 				print("Quantity: ", quantity)
 				slot_exclusion(true)
@@ -67,8 +69,9 @@ func slot_blocking(blocking):
 #Update Slot
 func update_slot():
 	contents = "Full"
-	line_quantity.text = str(quantity)
-	line_quantity.set_deferred("visible", slotted_object.is_stackable)
+	for slot in slot_array: slot.line_quantity.text = str(quantity)
+	if slotted_object != null: if slot_primary == self:
+		line_quantity.set_deferred("visible", slotted_object.is_stackable)
 	slot_held.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
 #Clear Slot
 func clear_slot():
@@ -77,6 +80,7 @@ func clear_slot():
 		slot.contents = "Empty"
 		slot.slot_occupied = false
 		slot.slot_blocked = false
+		slot.slot_primary = null
 		slot.slotted_object = null
 		slot.texture_object.texture = null
 		slot.slot_held.set_deferred("visible", false)

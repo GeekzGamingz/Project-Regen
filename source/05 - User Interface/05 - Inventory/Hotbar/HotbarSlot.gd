@@ -9,7 +9,10 @@ var quantity: int = 0
 var mouse_hovering: bool = false
 #Strings
 var contents: String
+#Arrays
+var slot_array: Array = [] #Exists for Container Code Only
 #Resources
+var slot_primary: Object = null #Exists for Container Code Only
 var slotted_object: Object = null
 #OnReady Variables
 #Main Nodes
