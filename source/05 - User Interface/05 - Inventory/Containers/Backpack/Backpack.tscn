@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="9_ap3yb"]
 
 [node name="Backpack" type="PanelContainer" unique_id=734962224]
-visible = false
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -29,23 +28,29 @@ script = ExtResource("1_1w1ig")
 layout_mode = 2
 script = ExtResource("2_l8top")
 
-[node name="Designations" type="Control" parent="." unique_id=1125543300]
+[node name="Designation" type="Control" parent="." unique_id=1125543300]
 layout_mode = 2
 script = ExtResource("3_tx6ga")
 designation = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=51077466]
+[node name="ContainerCompartment" type="VBoxContainer" parent="." unique_id=51077466]
 layout_mode = 2
 theme_override_constants/separation = -17
 alignment = 1
 
-[node name="Backpack_Front" type="TextureRect" parent="VBoxContainer" unique_id=241136500]
+[node name="ContainerFront" type="HBoxContainer" parent="ContainerCompartment" unique_id=412793425]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="ContainerCompartment/ContainerFront" unique_id=241136500]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("4_apql8")
 stretch_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Backpack_Front" unique_id=826544836]
+[node name="GridContainer" type="GridContainer" parent="ContainerCompartment/ContainerFront/TextureRect" unique_id=826544836]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -53,117 +58,117 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="MarginContainer1" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1334027684]
+[node name="MarginContainer1" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1334027684]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1511261484]
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1511261484]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1237886096]
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1237886096]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1151997272]
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1151997272]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1429337665]
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1429337665]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1766660710 instance=ExtResource("5_3bmuj")]
+[node name="Slot1" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1766660710 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot2" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1566516160 instance=ExtResource("5_3bmuj")]
+[node name="Slot2" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1566516160 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=392477584]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=656505874]
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=392477584]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1597083053 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="Slot4" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1607662696 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=625523989]
+[node name="MarginContainer11" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=656505874]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=659643510]
+[node name="Slot3" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1597083053 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="Slot4" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1607662696 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=625523989]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot5" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1845012082 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="Slot6" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=875770223 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/Backpack_Front/GridContainer" unique_id=1968258279]
+[node name="MarginContainer10" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=659643510]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ContainerBase" type="HBoxContainer" parent="VBoxContainer" unique_id=252802096]
+[node name="Slot5" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1845012082 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="Slot6" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=875770223 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="MarginContainer8" type="MarginContainer" parent="ContainerCompartment/ContainerFront/TextureRect/GridContainer" unique_id=1968258279]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ContainerBase" type="HBoxContainer" parent="ContainerCompartment" unique_id=252802096]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = -16
 alignment = 1
 
-[node name="ContainerLeft" type="VBoxContainer" parent="VBoxContainer/ContainerBase" unique_id=1299210341]
+[node name="ContainerLeft" type="VBoxContainer" parent="ContainerCompartment/ContainerBase" unique_id=1299210341]
 visible = false
 layout_mode = 2
 alignment = 2
 
-[node name="Backpack_SideA" type="TextureRect" parent="VBoxContainer/ContainerBase/ContainerLeft" unique_id=1708533657]
+[node name="Backpack_SideA" type="TextureRect" parent="ContainerCompartment/ContainerBase/ContainerLeft" unique_id=1708533657]
 z_index = 1
 layout_mode = 2
 texture = ExtResource("6_i40xn")
 stretch_mode = 2
 
-[node name="Backpack_Base" type="TextureRect" parent="VBoxContainer/ContainerBase" unique_id=1881131785]
+[node name="TextureRect" type="TextureRect" parent="ContainerCompartment/ContainerBase" unique_id=1881131785]
 layout_mode = 2
 texture = ExtResource("7_xgu7d")
 stretch_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ContainerBase/Backpack_Base" unique_id=120625642]
+[node name="GridContainer" type="GridContainer" parent="ContainerCompartment/ContainerBase/TextureRect" unique_id=120625642]
 z_index = 1
 layout_mode = 0
 offset_right = 96.0
@@ -172,169 +177,169 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
 
-[node name="MarginContainer1" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1609600287]
+[node name="MarginContainer1" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1609600287]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=605964389]
+[node name="MarginContainer2" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=605964389]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1243323087]
+[node name="MarginContainer3" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1243323087]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1110298148]
+[node name="MarginContainer4" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1110298148]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1559172727]
+[node name="MarginContainer5" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1559172727]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=813390996]
+[node name="MarginContainer6" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=813390996]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1182027483]
+[node name="MarginContainer7" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1182027483]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=744907605]
+[node name="MarginContainer8" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=744907605]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1084044889 instance=ExtResource("5_3bmuj")]
+[node name="Slot1" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1084044889 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot2" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=423053747 instance=ExtResource("5_3bmuj")]
+[node name="Slot2" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=423053747 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1810782739]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1016219974]
+[node name="MarginContainer9" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1810782739]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=396749290]
+[node name="MarginContainer10" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1016219974]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=9381868 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="Slot4" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1710928074 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="Slot5" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1748081691 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="Slot6" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=972098517 instance=ExtResource("5_3bmuj")]
-layout_mode = 2
-
-[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=77383150]
+[node name="MarginContainer11" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=396749290]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SlotA1" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1400535937 instance=ExtResource("5_3bmuj")]
+[node name="Slot3" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=9381868 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot7" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=606230038 instance=ExtResource("5_3bmuj")]
+[node name="Slot4" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1710928074 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot8" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1096427932 instance=ExtResource("5_3bmuj")]
+[node name="Slot5" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1748081691 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot9" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1701092850 instance=ExtResource("5_3bmuj")]
+[node name="Slot6" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=972098517 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot10" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1203699979 instance=ExtResource("5_3bmuj")]
+[node name="MarginContainer12" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=77383150]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SlotA1" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1400535937 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="SlotB1" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1298821494 instance=ExtResource("5_3bmuj")]
+[node name="Slot7" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=606230038 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="SlotA2" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1740555709 instance=ExtResource("5_3bmuj")]
+[node name="Slot8" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1096427932 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot11" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1242185943 instance=ExtResource("5_3bmuj")]
+[node name="Slot9" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1701092850 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot12" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2081569775 instance=ExtResource("5_3bmuj")]
+[node name="Slot10" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1203699979 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot13" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1446897239 instance=ExtResource("5_3bmuj")]
+[node name="SlotB1" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1298821494 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot14" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=12347435 instance=ExtResource("5_3bmuj")]
+[node name="SlotA2" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1740555709 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="SlotB2" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=810535567 instance=ExtResource("5_3bmuj")]
+[node name="Slot11" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1242185943 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="SlotA3" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1442394876 instance=ExtResource("5_3bmuj")]
+[node name="Slot12" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=2081569775 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot15" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=2113085059 instance=ExtResource("5_3bmuj")]
+[node name="Slot13" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1446897239 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot16" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=896993633 instance=ExtResource("5_3bmuj")]
+[node name="Slot14" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=12347435 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot17" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1320871682 instance=ExtResource("5_3bmuj")]
+[node name="SlotB2" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=810535567 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="Slot18" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=830037775 instance=ExtResource("5_3bmuj")]
+[node name="SlotA3" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1442394876 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="SlotB3" parent="VBoxContainer/ContainerBase/Backpack_Base/GridContainer" unique_id=1761701218 instance=ExtResource("5_3bmuj")]
+[node name="Slot15" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=2113085059 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 
-[node name="ContainerRight" type="VBoxContainer" parent="VBoxContainer/ContainerBase" unique_id=396250447]
+[node name="Slot16" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=896993633 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="Slot17" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1320871682 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="Slot18" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=830037775 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="SlotB3" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=1761701218 instance=ExtResource("5_3bmuj")]
+layout_mode = 2
+
+[node name="ContainerRight" type="VBoxContainer" parent="ContainerCompartment/ContainerBase" unique_id=396250447]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 alignment = 2
 
-[node name="Backpack_SideB" type="TextureRect" parent="VBoxContainer/ContainerBase/ContainerRight" unique_id=1162094202]
+[node name="Backpack_SideB" type="TextureRect" parent="ContainerCompartment/ContainerBase/ContainerRight" unique_id=1162094202]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("6_i40xn")

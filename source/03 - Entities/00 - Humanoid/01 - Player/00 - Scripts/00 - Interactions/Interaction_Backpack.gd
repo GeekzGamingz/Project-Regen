@@ -15,32 +15,7 @@ func addto_backpack(object, slot, origin):
 	slot.slotted_object = object_scene
 	if origin != null:
 		origin.slot_held.set_deferred("visible", false)
-	#combine_slots(object, slot)
 	print("Added ", object.name, " to Container")
-#Combine Container Items
-#func combine_slots(object, slot):
-	#print("#---Combing Slots---#")
-	#print("Current Object: ", object)
-	#print("Current Container Slot: ", slot)
-	#var stack_origin = null
-	#var stack_quantity = 0
-	#for s in slot.get_parent().get_children(): # Grabs Container
-		#if s is TextureRect: if s.contents == "Full": # Skips Margins/Empty Slots
-			#if s.slot_primary == s: if s.slotted_object != null: # Returns Matching Primaries
-				#if object.is_stackable && s.slotted_object.is_stackable: # Ignores Unstackables
-					#if s.slotted_object.get_groups()[0].contains(object.get_groups()[0]): # Matches Groups
-						#stack_origin = s
-						#stack_quantity = s.quantity
-	#await get_tree().process_frame
-	#if stack_origin != null:
-		#print("Found Match: ", stack_origin)
-		#print("Match Quantity: ", stack_quantity)
-		#print("Current Slot Quantity: ", slot.quantity)
-		#slot.quantity += stack_quantity
-		#slot.update_slot()
-		#stack_origin.slotted_object = null
-		#stack_origin.update_slot()
-	#print("#---Finished Combining---#")
 #Trade Slots
 func trade_slots(contents):
 	if check_grid():
@@ -97,9 +72,11 @@ func check_grid() -> bool:
 	else: return false
 #Get Held Slot
 func get_held(slot):
-	var container = slot.get_parent()
-	for s in container.get_children():
-		if s is TextureRect: if s.slot_held.visible: return s.slot_primary
+	var inventory = slot.main_container.get_parent()
+	for container in inventory.get_children(): if container.name != "Hotbar":
+		for compartment in container.compartments.get_children():
+			for s in compartment.get_node("TextureRect/GridContainer").get_children():
+				if s is TextureRect: if s.slot_held.visible: return s.slot_primary
 #Check Held Container
 func clear_held():
 	var front_grid = interaction.BACKPACK.front_grid

@@ -18,6 +18,7 @@ var slotted_object: Object = null
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
+@onready var main_container: Control = $"../../../../.."
 @onready var texture_object: TextureRect = $Texture_Object
 @onready var slot_held: NinePatchRect = $NPR_Held
 @onready var line_quantity: LineEdit = $LineEdit_Quantity

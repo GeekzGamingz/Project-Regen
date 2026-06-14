@@ -19,6 +19,7 @@ visible = false
 layout_mode = 1
 
 [node name="Backpack" parent="." unique_id=734962224 instance=ExtResource("3_bjdmq")]
+visible = false
 layout_mode = 1
 theme = ExtResource("1_t2jr1")
 

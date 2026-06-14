@@ -4,31 +4,32 @@ extends PanelContainer
 var mouse_hovering: bool = false
 #OnReady Variables
 #Local Nodes
-@onready var backpack_front: TextureRect = $"VBoxContainer/Backpack_Front"
-@onready var container_base: HBoxContainer = $"VBoxContainer/ContainerBase"
-@onready var container_left: VBoxContainer = $"VBoxContainer/ContainerBase/ContainerLeft"
-@onready var container_right: VBoxContainer = $"VBoxContainer/ContainerBase/ContainerRight"
-@onready var designations: Control = $Designations
+@onready var compartments: VBoxContainer = $ContainerCompartment
+@onready var backpack_front: TextureRect = $"ContainerCompartment/ContainerFront/TextureRect"
+@onready var container_base: HBoxContainer = $"ContainerCompartment/ContainerBase"
+@onready var container_left: VBoxContainer = $"ContainerCompartment/ContainerBase/ContainerLeft"
+@onready var container_right: VBoxContainer = $"ContainerCompartment/ContainerBase/ContainerRight"
+@onready var designation: Control = $Designation
 #Slots
-@onready var front_grid: GridContainer = $VBoxContainer/Backpack_Front/GridContainer
-@onready var base_grid: GridContainer = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer"
-@onready var slot_a1: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA1"
-@onready var slot_b1: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB1"
-@onready var slot_a2: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA2"
-@onready var slot_b2: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB2"
-@onready var slot_a3: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotA3"
-@onready var slot_b3: TextureRect = $"VBoxContainer/ContainerBase/Backpack_Base/GridContainer/SlotB3"
+@onready var front_grid: GridContainer = $ContainerCompartment/ContainerFront/TextureRect/GridContainer
+@onready var base_grid: GridContainer = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer"
+@onready var slot_a1: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotA1"
+@onready var slot_b1: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotB1"
+@onready var slot_a2: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotA2"
+@onready var slot_b2: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotB2"
+@onready var slot_a3: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotA3"
+@onready var slot_b3: TextureRect = $"ContainerCompartment/ContainerBase/TextureRect/GridContainer/SlotB3"
 #------------------------------------------------------------------------------#
 #Functions
 #Ready
-func _ready(): designations.check_designation()
+func _ready(): designation.check_designation()
 #------------------------------------------------------------------------------#
 #Input
 func _input(event: InputEvent) -> void:
-	if designations.designation != null:
+	if designation.designation != null:
 		if event.is_action_pressed("menu_backpack"):
 			visible = !visible
-			designations.check_designation()
+			designation.check_designation()
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Close Button
