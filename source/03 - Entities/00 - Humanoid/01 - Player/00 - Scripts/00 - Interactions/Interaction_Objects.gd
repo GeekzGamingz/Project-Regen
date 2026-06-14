@@ -65,13 +65,11 @@ func place(object, origin, new_position):
 			cursor.icon_state = "Default"
 			if origin != null: origin.slot_held.set_deferred("visible", false)
 		if origin != null:
-			if origin.slot_array != []: for slot in origin.slot_array: slot.quantity -= 1
-			else: origin.quantity -= 1
+			origin.quantity -= 1
 			if origin.quantity == 0:
 				interaction.revert()
 				origin.slotted_object = null
 				interaction.full_hands = false
-			origin.update_slot()
 	else:
 		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
 		if origin != null: origin.clear_slot()
