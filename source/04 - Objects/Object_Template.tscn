@@ -33,6 +33,7 @@ position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_crrwx")
 
 [node name="Area_Pack" type="Area2D" parent="Areas" unique_id=2009702789]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas/Area_Pack" unique_id=1424705020]
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
