@@ -33,7 +33,7 @@ func _ready() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-		if slotted_object != null:
+		if slotted_object != null && !interaction.full_hands:
 			print("#---[", self.name, "] Contains---#")
 			print("Held Object: ", slotted_object.name)
 			print("Primary Slot: ", slot_primary)

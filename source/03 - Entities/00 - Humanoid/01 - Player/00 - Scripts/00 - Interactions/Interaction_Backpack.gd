@@ -8,8 +8,6 @@ var slot_array: Array = []
 #Custom Functions
 #Add to Backpack
 func addto_backpack(object, slot, origin):
-	#slot.slotted_object = null
-	#slot.quantity -= interaction.MAIN.UI_CURSOR.quantity
 	slot.texture_object.texture = object.sprite_container.texture
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
