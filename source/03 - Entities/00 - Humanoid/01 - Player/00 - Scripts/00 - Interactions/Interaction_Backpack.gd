@@ -14,15 +14,15 @@ func addto_backpack(object, slot, origin):
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
 	if origin != null: origin.slot_held.set_deferred("visible", false)
-	combine_slots(object, slot)
+	combine_slots(object, slot, origin)
 	print("Added ", object.name, " to Container")
 #Combine Container Items
-func combine_slots(object, slot):
+func combine_slots(object, slot, origin):
 	print("#---Combing Slots---#")
 	print("Current Object: ", object)
 	print("Current Container Slot: ", slot)
-	var stack_origin = null
-	var stack_quantity = 0
+	var stack_origin = origin
+	var stack_quantity = origin.quantity
 	for s in slot.get_parent().get_children(): # Grabs Container
 		if s is TextureRect: if s.contents == "Full": # Skips Margins/Empty Slots
 			if s.slot_primary == s: if s.slotted_object != null: # Returns Matching Primaries
@@ -39,17 +39,19 @@ func combine_slots(object, slot):
 		slot.update_slot()
 		stack_origin.slotted_object = null
 		stack_origin.update_slot()
+	else: print("stack is null")
 	print("#---Finished Combining---#")
 #Trade Slots
 func trade_slots(contents):
 	if check_grid():
 		var object = interaction.current_object
-		var origin = interaction.interaction_hotbar.check_held()
 		var cursor = interaction.MAIN.UI_CURSOR
 		var cursor_object = interaction.MAIN.UI_CURSOR_OBJECT
 		var cursor_grid = cursor_object.get_node("GridContainer")
 		var ray_primary = cursor_grid.get_node("NPR_Selection/RayCast2D")
 		var slot_primary = ray_primary.get_collider().get_node("..")
+		var hotbar_origin = interaction.interaction_hotbar.check_held()
+		var container_origin = get_held(slot_primary)
 		for selection in cursor_grid.get_children():
 			if selection.get_node("RayCast2D").enabled:
 				slot_array.append(selection.get_node("RayCast2D").get_collider().get_node(".."))
@@ -60,10 +62,11 @@ func trade_slots(contents):
 				print("Primary Slot: ", slot_primary)
 				print("Held Object: ", object.name)
 				print("Slot Array: ", slot_array)
-				if origin != null:
-					origin.quantity -= cursor.quantity
-					if origin.quantity <= 0: origin.slotted_object = null
-					print("Object Origin: ", origin.name)
+				var origin
+				if hotbar_origin != null: origin = hotbar_origin
+				elif container_origin != null: origin = container_origin
+				origin.quantity -= cursor.quantity
+				if origin.quantity <= 0: origin.slotted_object = null
 				clear_held()
 				addto_backpack(object, slot_primary, origin)
 				for slot in slot_array:
@@ -89,7 +92,11 @@ func check_grid() -> bool:
 		if ray.is_colliding(): container_count += 1
 	if container_count == cursor_grid.get_node("..").held_slots: return true
 	else: return false
-#Check Held Container
+#Get Held Container
+func get_held(slot):
+	for s in slot.get_parent().get_children(): if s is TextureRect:
+		if s.slot_held.visible: return s.slot_primary
+#Clear Held Container
 func clear_held():
 	var front_grid = interaction.BACKPACK.front_grid
 	var base_grid = interaction.BACKPACK.base_grid

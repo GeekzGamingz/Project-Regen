@@ -32,19 +32,29 @@ func _ready() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
-		if event.is_action_pressed("action_confirm"): # Left-Click
-			if interaction.current_object != null:
-				if slotted_object == null: interaction.interaction_containers.trade_slots(contents)
-			elif slotted_object != null:
-				print("#---[", self.name, "] Contains---#")
-				print("Held Object: ", slotted_object.name)
-				print("Primary Slot: ", slot_primary)
-				print("Associated Slots: ", slot_array)
-				print("Quantity: ", quantity)
+		if slotted_object != null:
+			print("#---[", self.name, "] Contains---#")
+			print("Held Object: ", slotted_object.name)
+			print("Primary Slot: ", slot_primary)
+			print("Associated Slots: ", slot_array)
+			print("Quantity: ", quantity)
+			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
+				slot_exclusion(true)
+				interaction.interaction_objects.addto_hand("One", slotted_object, self)
+				await get_tree().process_frame
+				slot_exclusion(false)
+			elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
+				slot_exclusion(true)
+				interaction.interaction_objects.addto_hand("Half", slotted_object, self)
+				await get_tree().process_frame
+				slot_exclusion(false)
+			elif event.is_action_pressed("action_confirm"): # Left-Click
 				slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("All", slotted_object, self)
 				await get_tree().process_frame
 				slot_exclusion(false)
+		elif slotted_object == null: if interaction.current_object != null:
+			interaction.interaction_containers.trade_slots(contents)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Slot Entered
