@@ -24,7 +24,7 @@ func trade_slots(contents):
 		var ray_primary = cursor_grid.get_node("NPR_Selection/RayCast2D")
 		var slot_primary = ray_primary.get_collider().get_node("..")
 		var hotbar_origin = interaction.interaction_hotbar.check_held()
-		var container_origin = get_held(slot_primary)
+		var container_origin = get_held()
 		for selection in cursor_grid.get_children():
 			if selection.get_node("RayCast2D").enabled:
 				slot_array.append(selection.get_node("RayCast2D").get_collider().get_node(".."))
@@ -69,8 +69,8 @@ func check_grid() -> bool:
 	if container_count == cursor_grid.get_node("..").held_slots: return true
 	else: return false
 #Get Held Slot
-func get_held(slot):
-	var inventory = slot.main_container.get_parent()
+func get_held():
+	var inventory = interaction.MAIN.UI_INVENTORY
 	for container in inventory.get_children(): if container.name != "Hotbar":
 		for compartment in container.compartments.get_children():
 			for s in compartment.get_node("TextureRect/GridContainer").get_children():

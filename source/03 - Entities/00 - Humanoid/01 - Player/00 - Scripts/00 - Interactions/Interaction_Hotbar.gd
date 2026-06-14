@@ -69,13 +69,12 @@ func trade_slots(contents):
 				held_slot.slotted_object = null
 			else:
 				var cursor  = interaction.MAIN.UI_CURSOR
-				print("Object Origin: Container")
+				var container_origin = interaction.interaction_containers.get_held()
+				print("Object Origin: Container [", container_origin, "]")
 				selected_slot.quantity = cursor.quantity
-				#for slot in interaction.HOTBAR.slots_hotbar.get_children():
-					
-				for slot in interaction.BACKPACK.base_grid.get_children():
-					if slot is TextureRect: if slot.slot_held.visible == true:
-						slot.slotted_object = null
+				container_origin.slot_primary.quantity -= cursor.quantity
+				if container_origin.slot_primary.quantity <= 0: container_origin.slotted_object = null
+				else: container_origin.object_highlight(false)
 			print("Slot Destination: ", selected_slot.name)
 			addto_hotbar(interaction.current_object, selected_slot)
 			interaction.revert()
