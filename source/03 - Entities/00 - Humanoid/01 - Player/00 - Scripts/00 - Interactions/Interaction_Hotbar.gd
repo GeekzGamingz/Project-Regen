@@ -62,6 +62,7 @@ func trade_slots(contents):
 	var selected_slot = check_selection()
 	var container_origin = interaction.interaction_containers.get_held()
 	var cursor = interaction.MAIN.UI_CURSOR
+	var held_quantity = cursor.quantity
 	match(contents):
 		"Empty":
 			print("#---Trading Executed - Slot Empty---#")
@@ -70,14 +71,16 @@ func trade_slots(contents):
 				print("Object Origin: ", held_slot.name)
 				selected_slot.quantity = held_slot.quantity
 				held_slot.slotted_object = null
-			else:
+			elif container_origin != null:
 				print("Object Origin: Container [", container_origin, "]")
-				#selected_slot.quantity = cursor.quantity
 				if container_origin != null:
 					container_origin.slot_primary.quantity -= cursor.quantity
-					selected_slot.quantity += cursor.quantity
 					if container_origin.slot_primary.quantity <= 0: container_origin.slotted_object = null
 					container_origin.object_highlight(false)
+				selected_slot.quantity = held_quantity
+			else:
+				print("Object Origin: Ground")
+				selected_slot.quantity = held_quantity
 			print("Slot Destination: ", selected_slot.name)
 			addto_hotbar(interaction.current_object, selected_slot)
 			interaction.revert()
@@ -108,19 +111,19 @@ func trade_slots(contents):
 			elif container_origin != null: #Trade Object from Container
 				print("Object Origin: Container [", container_origin, "]")
 				var trading_object = container_origin.slotted_object
-				var trading_quantity = cursor.quantity
+				var slot_quantity = selected_slot.quantity
 				interaction.interaction_objects.addto_hand(
 					"All",
 					selected_slot.slotted_object,
 					null
 				)
 				container_origin.object_highlight(false)
-				#await get_tree().process_frame
 				cursor.cursor_fsm.object_switch = true
 				addto_hotbar(trading_object, selected_slot)
 				await get_tree().process_frame
-				selected_slot.quantity += trading_quantity
-				container_origin.quantity -= trading_quantity
+				selected_slot.quantity += held_quantity
+				container_origin.quantity -= held_quantity
+				cursor.quantity = slot_quantity
 				if container_origin.quantity <= 0: container_origin.slotted_object = null
 			else: #Trade Object from Ground
 				print("Object Origin: Ground")
@@ -132,9 +135,9 @@ func trade_slots(contents):
 					null
 				)
 				cursor.cursor_fsm.object_switch = true
-				selected_slot.quantity = cursor.quantity
+				selected_slot.quantity = held_quantity
 				cursor.quantity = trading_quantity
-				if cursor.quantity < 1: cursor.quantity = 1
+				if cursor.quantity <= 1: cursor.quantity = 1
 				addto_hotbar(trading_object, selected_slot)
 	print("#---Finished Trading---#")
 #Check for Selection
