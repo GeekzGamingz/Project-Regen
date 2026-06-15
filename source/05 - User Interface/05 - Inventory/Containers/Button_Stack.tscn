@@ -35,3 +35,5 @@ texture_pressed = ExtResource("2_koq8b")
 texture_hover = SubResource("AnimatedTexture_m3g6x")
 script = ExtResource("8_kabkw")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

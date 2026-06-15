@@ -1,6 +1,7 @@
 extends Node2D
 #------------------------------------------------------------------------------#
 #Variables
+#Array
 var slot_array: Array = []
 #OnReady Variables
 @onready var interaction: Node2D = $".."
@@ -72,14 +73,14 @@ func check_grid() -> bool:
 func get_held():
 	var inventory = interaction.MAIN.UI_INVENTORY
 	for container in inventory.get_children(): if container.name != "Hotbar":
-		for compartment in container.compartments.get_children():
+		for compartment in container.compartment_array:
 			for s in compartment.get_node("TextureRect/GridContainer").get_children():
 				if s is TextureRect: if s.slot_held.visible: return s.slot_primary
 #Check Held Container
 func clear_held():
-	var front_grid = interaction.BACKPACK.front_grid
-	var base_grid = interaction.BACKPACK.base_grid
-	for slot in front_grid.get_children(): if slot is TextureRect:
+	var grid_fLeft = interaction.BACKPACK.grid_fLeft
+	var grid_base = interaction.BACKPACK.grid_base
+	for slot in grid_fLeft.get_children(): if slot is TextureRect:
 		if slot.slot_held.visible: slot.slotted_object = null
-	for slot in base_grid.get_children(): if slot is TextureRect:
+	for slot in grid_base.get_children(): if slot is TextureRect:
 		if slot.slot_held.visible: slot.slotted_object = null
