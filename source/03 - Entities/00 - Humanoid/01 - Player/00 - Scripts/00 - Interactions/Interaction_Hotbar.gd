@@ -139,6 +139,7 @@ func trade_slots(contents):
 				cursor.quantity = trading_quantity
 				if cursor.quantity <= 1: cursor.quantity = 1
 				addto_hotbar(trading_object, selected_slot)
+	if !selected_slot.slotted_object.is_stackable: selected_slot.quantity = 0
 	print("#---Finished Trading---#")
 #Check for Selection
 func check_selection():
