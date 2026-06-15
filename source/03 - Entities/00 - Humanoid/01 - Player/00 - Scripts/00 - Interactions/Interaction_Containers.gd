@@ -42,7 +42,7 @@ func trade_slots(contents):
 					hotbar_origin.quantity -= cursor.quantity
 					if hotbar_origin.quantity <= 0: hotbar_origin.slotted_object = null
 					print("Object Origin: ", hotbar_origin.name)
-				clear_held()
+				clear_held(container_origin)
 				addto_backpack(object, slot_primary, hotbar_origin)
 				for slot in slot_array:
 					slot.slotted_object = object
@@ -77,10 +77,6 @@ func get_held():
 			for s in compartment.get_node("TextureRect/GridContainer").get_children():
 				if s is TextureRect: if s.slot_held.visible: return s.slot_primary
 #Check Held Container
-func clear_held():
-	var grid_fLeft = interaction.BACKPACK.grid_fLeft
-	var grid_base = interaction.BACKPACK.grid_base
-	for slot in grid_fLeft.get_children(): if slot is TextureRect:
-		if slot.slot_held.visible: slot.slotted_object = null
-	for slot in grid_base.get_children(): if slot is TextureRect:
-		if slot.slot_held.visible: slot.slotted_object = null
+func clear_held(origin):
+	if origin != null:
+		if origin.slot_held.visible: origin.slotted_object = null

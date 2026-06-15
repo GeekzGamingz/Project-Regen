@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://mjfu2tdf2wfj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Colors.gd" id="6_dbfy1"]
 [ext_resource type="Script" uid="uid://bnmhj2mvo2wsb" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Interaction_Hotbar.gd" id="7_25kxp"]
 [ext_resource type="Script" uid="uid://c6y5sx7imntcr" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_HuckArc.gd" id="8_dbfy1"]
-[ext_resource type="Script" uid="uid://3q3a3f7pgm14" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Interaction_Backpack.gd" id="8_gi8ry"]
+[ext_resource type="Script" uid="uid://3q3a3f7pgm14" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Interaction_Containers.gd" id="8_gi8ry"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="12_25kxp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_25kxp"]
