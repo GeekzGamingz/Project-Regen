@@ -36,7 +36,7 @@ func combine_slots(object, hotbar_selected):
 	for slot in hotbar.hotbar_array:
 		var slotted_object = slot.slotted_object
 		var selected_object = hotbar_selected.slotted_object
-		if slotted_object != null && slotted_object.is_stackable:
+		if slotted_object != null && slotted_object.is_stackable && selected_object.is_stackable:
 			print("Slotted Object Group: ", slotted_object.get_groups()[0])
 			print("Selected Object Group: ", selected_object.get_groups()[0])
 			if slotted_object.get_groups()[0].contains(selected_object.get_groups()[0]):
@@ -47,18 +47,21 @@ func combine_slots(object, hotbar_selected):
 						hotbar_selected.quantity += slot.quantity
 						slot.slotted_object = null
 					else: print("Slot Matched - Skipping Quantity Increase")
+		slot.update_slot()
 	print("#---Finished Combining---#")
 #Add to Hotbar
-func addto_hotbar(object, hotbar_selected):
-	hotbar_selected.slotted_object = null
-	hotbar_selected.texture_object.texture = object.sprite_hotbar.texture
+func addto_hotbar(object, origin):
+	origin.slotted_object = null
+	origin.texture_object.texture = object.sprite_hotbar.texture
 	var object_scene = object.duplicate()
-	hotbar_selected.slotted_object = object_scene
-	combine_slots(object, hotbar_selected)
+	origin.slotted_object = object_scene
+	combine_slots(object, origin)
 #Trade Slots
 func trade_slots(contents):
 	var held_slot = check_held()
 	var selected_slot = check_selection()
+	var container_origin = interaction.interaction_containers.get_held()
+	var cursor = interaction.MAIN.UI_CURSOR
 	match(contents):
 		"Empty":
 			print("#---Trading Executed - Slot Empty---#")
@@ -68,13 +71,13 @@ func trade_slots(contents):
 				selected_slot.quantity = held_slot.quantity
 				held_slot.slotted_object = null
 			else:
-				var cursor  = interaction.MAIN.UI_CURSOR
-				var container_origin = interaction.interaction_containers.get_held()
 				print("Object Origin: Container [", container_origin, "]")
-				selected_slot.quantity = cursor.quantity
-				container_origin.slot_primary.quantity -= cursor.quantity
-				if container_origin.slot_primary.quantity <= 0: container_origin.slotted_object = null
-				else: container_origin.object_highlight(false)
+				#selected_slot.quantity = cursor.quantity
+				if container_origin != null:
+					container_origin.slot_primary.quantity -= cursor.quantity
+					selected_slot.quantity += cursor.quantity
+					if container_origin.slot_primary.quantity <= 0: container_origin.slotted_object = null
+					container_origin.object_highlight(false)
 			print("Slot Destination: ", selected_slot.name)
 			addto_hotbar(interaction.current_object, selected_slot)
 			interaction.revert()
@@ -90,23 +93,39 @@ func trade_slots(contents):
 						interaction.current_object,
 						held_slot
 					) #Cancel if Selections Match
-				else: #Trade Hotbar object
+				else: #Trade Hotbar Object
 					var trading_object = selected_slot.slotted_object
 					var trading_texture = selected_slot.texture_object.texture
 					var trading_quantity = selected_slot.quantity
 					selected_slot.slotted_object = held_slot.slotted_object
-					selected_slot.texture_object.texture =held_slot.texture_object.texture
+					selected_slot.texture_object.texture = held_slot.texture_object.texture
 					selected_slot.quantity = held_slot.quantity
 					held_slot.slotted_object = trading_object
 					held_slot.texture_object.texture = trading_texture
 					held_slot.quantity = trading_quantity
 					held_slot.slot_held.set_deferred("visible", false)
 					interaction.revert()
-			else: #Trade object from Ground
+			elif container_origin != null: #Trade Object from Container
+				print("Object Origin: Container [", container_origin, "]")
+				var trading_object = container_origin.slotted_object
+				var trading_quantity = cursor.quantity
+				interaction.interaction_objects.addto_hand(
+					"All",
+					selected_slot.slotted_object,
+					null
+				)
+				container_origin.object_highlight(false)
+				#await get_tree().process_frame
+				cursor.cursor_fsm.object_switch = true
+				addto_hotbar(trading_object, selected_slot)
+				await get_tree().process_frame
+				selected_slot.quantity += trading_quantity
+				container_origin.quantity -= trading_quantity
+				if container_origin.quantity <= 0: container_origin.slotted_object = null
+			else: #Trade Object from Ground
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object
 				var trading_quantity = selected_slot.quantity
-				var cursor = interaction.MAIN.UI_CURSOR
 				interaction.interaction_objects.addto_hand(
 					"All",
 					selected_slot.slotted_object,

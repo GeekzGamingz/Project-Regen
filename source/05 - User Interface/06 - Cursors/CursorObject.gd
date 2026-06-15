@@ -49,5 +49,4 @@ func shape_grid():
 		else:
 			selection.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 			held_slots += 1
-			print("Collider: ", ray.get_collider())
 	area_poly.set_deferred("disabled", true)

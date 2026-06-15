@@ -54,7 +54,43 @@ position = Vector2(194, 174)
 position = Vector2(134, 156)
 
 [node name="Object_LPiece2" parent="Orphanages/Orphanage_Objects" unique_id=780042165 instance=ExtResource("10_g0q3n")]
-position = Vector2(278, 195)
+position = Vector2(312, 250)
+
+[node name="Object_LPiece12" parent="Orphanages/Orphanage_Objects" unique_id=803456814 instance=ExtResource("10_g0q3n")]
+position = Vector2(365, 225)
+
+[node name="Object_LPiece13" parent="Orphanages/Orphanage_Objects" unique_id=388254695 instance=ExtResource("10_g0q3n")]
+position = Vector2(209, 243)
+
+[node name="Object_LPiece14" parent="Orphanages/Orphanage_Objects" unique_id=968590671 instance=ExtResource("10_g0q3n")]
+position = Vector2(202, 217)
+
+[node name="Object_LPiece9" parent="Orphanages/Orphanage_Objects" unique_id=252704363 instance=ExtResource("10_g0q3n")]
+position = Vector2(276, 256)
+
+[node name="Object_LPiece10" parent="Orphanages/Orphanage_Objects" unique_id=1486161092 instance=ExtResource("10_g0q3n")]
+position = Vector2(344, 244)
+
+[node name="Object_LPiece11" parent="Orphanages/Orphanage_Objects" unique_id=1949997704 instance=ExtResource("10_g0q3n")]
+position = Vector2(333, 221)
+
+[node name="Object_LPiece3" parent="Orphanages/Orphanage_Objects" unique_id=1473210755 instance=ExtResource("10_g0q3n")]
+position = Vector2(249, 237)
+
+[node name="Object_LPiece4" parent="Orphanages/Orphanage_Objects" unique_id=2133888496 instance=ExtResource("10_g0q3n")]
+position = Vector2(308, 199)
+
+[node name="Object_LPiece5" parent="Orphanages/Orphanage_Objects" unique_id=2120063133 instance=ExtResource("10_g0q3n")]
+position = Vector2(299, 220)
+
+[node name="Object_LPiece6" parent="Orphanages/Orphanage_Objects" unique_id=1299923065 instance=ExtResource("10_g0q3n")]
+position = Vector2(281, 227)
+
+[node name="Object_LPiece7" parent="Orphanages/Orphanage_Objects" unique_id=1858151899 instance=ExtResource("10_g0q3n")]
+position = Vector2(257, 216)
+
+[node name="Object_LPiece8" parent="Orphanages/Orphanage_Objects" unique_id=364773294 instance=ExtResource("10_g0q3n")]
+position = Vector2(240, 200)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 
