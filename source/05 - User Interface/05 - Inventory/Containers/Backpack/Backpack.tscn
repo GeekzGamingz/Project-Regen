@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://b2eokmwu2euxu"]
 
 [ext_resource type="Script" uid="uid://cdnjpi4jgfvbn" path="res://source/05 - User Interface/05 - Inventory/Containers/Backpack/Backpack.gd" id="1_1w1ig"]
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_tx6ga"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="2_l8top"]
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Containers/Backpack/Designations.gd" id="3_tx6ga"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="4_apql8"]
 [ext_resource type="PackedScene" uid="uid://blghfndx8gky8" path="res://source/05 - User Interface/05 - Inventory/Containers/ContainerSlot.tscn" id="5_3bmuj"]
 [ext_resource type="Texture2D" uid="uid://hnk6y0w2jkaw" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_side.png" id="6_i40xn"]
+[ext_resource type="PackedScene" uid="uid://r0e0hutr1ffe" path="res://source/05 - User Interface/05 - Inventory/Containers/Button_Sort.tscn" id="7_apql8"]
 [ext_resource type="Texture2D" uid="uid://cdpe1s7puh6mr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base.png" id="7_xgu7d"]
-[ext_resource type="Texture2D" uid="uid://0kprb55ltq84" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_unpressed.png" id="8_babqf"]
-[ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/button_exit_pressed.png" id="9_ap3yb"]
+[ext_resource type="Texture2D" uid="uid://0kprb55ltq84" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/00 - Exit/button_exit_unpressed.png" id="8_babqf"]
+[ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/00 - Exit/button_exit_pressed.png" id="9_ap3yb"]
 
 [node name="Backpack" type="PanelContainer" unique_id=734962224]
 anchors_preset = 6
@@ -22,6 +24,7 @@ offset_bottom = 50.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_tx6ga")
 script = ExtResource("1_1w1ig")
 
 [node name="Dragging" type="Control" parent="." unique_id=578806276]
@@ -147,24 +150,38 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="ContainerBase" type="HBoxContainer" parent="ContainerCompartment" unique_id=252802096]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = -16
 alignment = 1
 
 [node name="ContainerLeft" type="VBoxContainer" parent="ContainerCompartment/ContainerBase" unique_id=1299210341]
-visible = false
 layout_mode = 2
+theme_override_constants/separation = -11
 alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContainerCompartment/ContainerBase/ContainerLeft" unique_id=450796091]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ContainerCompartment/ContainerBase/ContainerLeft/HBoxContainer" unique_id=1245605010]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+
+[node name="Button_Sort" parent="ContainerCompartment/ContainerBase/ContainerLeft/HBoxContainer" unique_id=67847230 node_paths=PackedStringArray("grid") instance=ExtResource("7_apql8")]
+layout_mode = 2
+grid = NodePath("../../../TextureRect/GridContainer")
 
 [node name="Backpack_SideA" type="TextureRect" parent="ContainerCompartment/ContainerBase/ContainerLeft" unique_id=1708533657]
 z_index = 1
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("6_i40xn")
 stretch_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ContainerCompartment/ContainerBase" unique_id=1881131785]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_xgu7d")
 stretch_mode = 2
 
@@ -173,6 +190,7 @@ z_index = 1
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 96.0
+mouse_filter = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 6
@@ -255,6 +273,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="MarginContainer11" type="MarginContainer" parent="ContainerCompartment/ContainerBase/TextureRect/GridContainer" unique_id=396749290]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -334,7 +353,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ContainerRight" type="VBoxContainer" parent="ContainerCompartment/ContainerBase" unique_id=396250447]
-visible = false
 layout_mode = 2
 mouse_filter = 2
 alignment = 2

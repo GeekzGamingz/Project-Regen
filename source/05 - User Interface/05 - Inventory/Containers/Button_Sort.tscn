@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://r0e0hutr1ffe"]
+
+[ext_resource type="Texture2D" uid="uid://ytep14p3b00y" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack.png" id="1_bus08"]
+[ext_resource type="Texture2D" uid="uid://4c0ny26vt6tu" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_pressed.png" id="2_jmasx"]
+[ext_resource type="Texture2D" uid="uid://d2r6uhaj5o0pc" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover1.png" id="3_42k10"]
+[ext_resource type="Texture2D" uid="uid://bncvcq0isrchb" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover2.png" id="4_jlhnw"]
+[ext_resource type="Texture2D" uid="uid://bj8ayohtcxm3b" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover3.png" id="5_uvwbi"]
+[ext_resource type="Texture2D" uid="uid://dvobx1x0vuoyh" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover4.png" id="6_kilji"]
+[ext_resource type="Texture2D" uid="uid://d0xk3apkypju6" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover5.png" id="7_rrgem"]
+[ext_resource type="Script" uid="uid://dxd1iistlfckm" path="res://source/05 - User Interface/05 - Inventory/Containers/Button_Sort.gd" id="8_jmasx"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_m3g6x"]
+frames = 5
+frame_0/texture = ExtResource("3_42k10")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_jlhnw")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("5_uvwbi")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("6_kilji")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("7_rrgem")
+frame_4/duration = 0.1
+
+[node name="Button_Sort" type="TextureButton" unique_id=67847230]
+anchors_preset = -1
+anchor_right = 0.01875
+anchor_bottom = 0.027777778
+offset_right = -12.0
+offset_bottom = -10.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_bus08")
+texture_pressed = ExtResource("2_jmasx")
+texture_hover = SubResource("AnimatedTexture_m3g6x")
+script = ExtResource("8_jmasx")
+metadata/_edit_use_anchors_ = true
