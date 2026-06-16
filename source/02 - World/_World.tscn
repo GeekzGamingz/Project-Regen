@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c4vnsqevw5lyv" path="res://source/01 - Components/01 - Building/01 - Building Grid/BuildingGrid.tscn" id="4_vbrh1"]
 [ext_resource type="Script" uid="uid://ddae0oc3i1y8a" path="res://source/04 - Objects/Orphanages.gd" id="5_ylk6r"]
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
+[ext_resource type="PackedScene" uid="uid://djnu8whsvg8lu" path="res://source/04 - Objects/00 - Buildings/01 - Chest/Building_Chest.tscn" id="7_g0q3n"]
 [ext_resource type="PackedScene" uid="uid://dh6gewsgyclei" path="res://source/04 - Objects/02 - Objects/02 - Stone/00 - Rock/Object_Rock.tscn" id="8_d03ws"]
 [ext_resource type="PackedScene" uid="uid://cqx4jwt27rt6m" path="res://source/04 - Objects/02 - Objects/Object_LPiece.tscn" id="10_g0q3n"]
 
@@ -29,6 +30,9 @@ metadata/_edit_horizontal_guides_ = [360.0, 540.0, 556.0, 180.0]
 script = ExtResource("5_ylk6r")
 
 [node name="Orphanage_Buildings" type="Node2D" parent="Orphanages" unique_id=1589439109]
+
+[node name="Building_Chest" parent="Orphanages/Orphanage_Buildings" unique_id=969433499 instance=ExtResource("7_g0q3n")]
+position = Vector2(184, 42)
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 

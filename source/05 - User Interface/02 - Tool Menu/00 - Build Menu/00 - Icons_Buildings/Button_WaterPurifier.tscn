@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://df0dyu5soma2o" path="res://assets/00 - UserInterface/02 - Buttons/03 - Build/build_icon_water.png" id="1_dbakb"]
 [ext_resource type="PackedScene" uid="uid://bqujrdkjjrbu6" path="res://source/05 - User Interface/02 - Tool Menu/00 - Build Menu/Button_Template.tscn" id="1_vc53g"]
-[ext_resource type="PackedScene" uid="uid://dfq8vsxubmfhp" path="res://source/04 - Objects/00 - Buildings/01 - Water Purifier/Building_WaterPurifier.tscn" id="3_dbakb"]
+[ext_resource type="PackedScene" uid="uid://dfq8vsxubmfhp" path="res://source/04 - Objects/00 - Buildings/00 - Water Purifier/Building_WaterPurifier.tscn" id="3_dbakb"]
 
 [node name="Button_WaterPurifier" unique_id=265039426 instance=ExtResource("1_vc53g")]
 texture_normal = ExtResource("1_dbakb")

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b2eokmwu2euxu"]
 
-[ext_resource type="Script" uid="uid://cdnjpi4jgfvbn" path="res://source/05 - User Interface/05 - Inventory/Containers/Backpack/Backpack.gd" id="1_1w1ig"]
+[ext_resource type="Script" uid="uid://cdnjpi4jgfvbn" path="res://source/05 - User Interface/05 - Inventory/Containers/00 - Backpack/Backpack.gd" id="1_1w1ig"]
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_tx6ga"]
 [ext_resource type="Script" uid="uid://l7k1whwbqh1q" path="res://source/05 - User Interface/05 - Inventory/Dragging.gd" id="2_l8top"]
-[ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Containers/Backpack/BackpackDesignations.gd" id="3_tx6ga"]
+[ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/Containers/00 - Backpack/BackpackDesignations.gd" id="3_tx6ga"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="4_apql8"]
 [ext_resource type="PackedScene" uid="uid://blghfndx8gky8" path="res://source/05 - User Interface/05 - Inventory/Containers/ContainerSlot.tscn" id="5_3bmuj"]
 [ext_resource type="Texture2D" uid="uid://hnk6y0w2jkaw" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_side.png" id="6_i40xn"]

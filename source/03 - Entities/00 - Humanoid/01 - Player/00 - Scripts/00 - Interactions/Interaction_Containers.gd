@@ -8,12 +8,11 @@ var slot_array: Array = []
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Add to Backpack
-func addto_backpack(object, slot, origin):
+func addto_container(object, slot, origin):
 	slot.texture_object.texture = object.sprite_container.texture
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
-	if origin != null:
-		origin.slot_held.set_deferred("visible", false)
+	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Container")
 #Trade Slots
 func trade_slots(contents):
@@ -43,7 +42,7 @@ func trade_slots(contents):
 					if hotbar_origin.quantity <= 0: hotbar_origin.slotted_object = null
 					print("Object Origin: ", hotbar_origin.name)
 				clear_held(container_origin)
-				addto_backpack(object, slot_primary, hotbar_origin)
+				addto_container(object, slot_primary, hotbar_origin)
 				for slot in slot_array:
 					slot.slotted_object = object
 					slot.slot_array = slot_array
