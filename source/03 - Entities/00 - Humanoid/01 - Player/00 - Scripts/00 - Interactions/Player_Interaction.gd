@@ -9,6 +9,7 @@ var full_hands: bool = false
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var ORPHANAGES_OBJECTS: Node2D = MAIN.get_node("World/Orphanages/Orphanage_Objects")
+@onready var INVENTORY: Control = MAIN.get_node("UserInterface/UI_FullRect/Inventory")
 @onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
 @onready var BACKPACK: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Backpack")
 #Local Nodes
@@ -22,13 +23,12 @@ var full_hands: bool = false
 #Input
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"): # Left Click
-		if current_object != null:
-			if !HOTBAR.mouse_hovering && !BACKPACK.mouse_hovering:
-				interaction_objects.place(
-					current_object,
-					hands_origin,
-					get_global_mouse_position()
-				)
+		if current_object != null: if !check_hovering():
+			interaction_objects.place(
+				current_object,
+				hands_origin,
+				get_global_mouse_position()
+			)
 	if event.is_action_pressed("action_context"): # Right Click
 		if current_object != null: interaction_objects.cancel(current_object, hands_origin)
 	if event.is_action_pressed("hotbar_drop"): # Q Key
@@ -50,3 +50,9 @@ func revert(): # Revert Settings to Default
 	full_hands = false
 	current_object = null
 	hands_origin = null
+#Check Hovering Over Containers
+func check_hovering():
+	for container in INVENTORY.get_children():
+		if container.mouse_hovering: return true
+		else: continue
+	return false

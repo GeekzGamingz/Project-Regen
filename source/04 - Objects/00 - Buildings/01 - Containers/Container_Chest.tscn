@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://djnu8whsvg8lu"]
 
-[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_r722q"]
-[ext_resource type="Script" uid="uid://dyus62orqtvjs" path="res://source/04 - Objects/00 - Buildings/01 - Chest/Building_Chest.gd" id="2_6mxso"]
-[ext_resource type="Texture2D" uid="uid://bpvjlh0mjxq77" path="res://assets/02 - Objects/00 - Buildings/03 - Containers/00 - Chest/treasure-static.png" id="2_28wg8"]
+[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_4mivw"]
+[ext_resource type="Script" uid="uid://dyus62orqtvjs" path="res://source/04 - Objects/00 - Buildings/01 - Containers/Building_Containers.gd" id="2_xxawr"]
+[ext_resource type="Texture2D" uid="uid://bpvjlh0mjxq77" path="res://assets/02 - Objects/00 - Buildings/03 - Containers/00 - Chest/treasure-static.png" id="3_vmeu4"]
+[ext_resource type="PackedScene" uid="uid://c8ov8afg6vvhk" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/01 - Chest/Container_ChestUI.tscn" id="3_xxawr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax4wk"]
 size = Vector2(32, 32)
 
-[node name="Building_Chest" unique_id=969433499 instance=ExtResource("1_r722q")]
-script = ExtResource("2_6mxso")
+[node name="Building_Chest" unique_id=969433499 instance=ExtResource("1_4mivw")]
+script = ExtResource("2_xxawr")
+container_interface = ExtResource("3_xxawr")
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
 position = Vector2(0, 0)
@@ -19,13 +21,15 @@ position = Vector2(0, 0)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
 position = Vector2(-12, -17)
-texture = ExtResource("2_28wg8")
+texture = ExtResource("3_vmeu4")
 
 [node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
 visible = true
 position = Vector2(-12, -17)
-texture = ExtResource("2_28wg8")
+texture = ExtResource("3_vmeu4")
 
 [node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
 position = Vector2(-8, -9)
 polygon = PackedVector2Array(0, 8, 17, 8, 17, 16, 0, 16)
+
+[connection signal="body_exited" from="Areas/Area_Detection" to="." method="_on_detection_body_exited"]

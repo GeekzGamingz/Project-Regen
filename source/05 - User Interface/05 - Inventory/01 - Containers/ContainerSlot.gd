@@ -54,8 +54,8 @@ func _gui_input(event: InputEvent) -> void:
 				interaction.interaction_objects.addto_hand("All", slotted_object, self)
 				await get_tree().process_frame
 				slot_exclusion(false)
-		elif slotted_object == null: if interaction.current_object != null:
-			interaction.interaction_containers.trade_slots(contents)
+		elif slotted_object == null:
+			if interaction.current_object != null: interaction.interaction_containers.trade_slots(contents)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Slot Entered

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bj8ayohtcxm3b" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover3.png" id="5_h3kgi"]
 [ext_resource type="Texture2D" uid="uid://dvobx1x0vuoyh" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover4.png" id="6_exyne"]
 [ext_resource type="Texture2D" uid="uid://d0xk3apkypju6" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/01 - Stack/button_stack_hover5.png" id="7_ir1nt"]
-[ext_resource type="Script" uid="uid://dxd1iistlfckm" path="res://source/05 - User Interface/05 - Inventory/Containers/Button_Stack.gd" id="8_kabkw"]
+[ext_resource type="Script" uid="uid://dxd1iistlfckm" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/Button_Stack.gd" id="8_kabkw"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_m3g6x"]
 frames = 5

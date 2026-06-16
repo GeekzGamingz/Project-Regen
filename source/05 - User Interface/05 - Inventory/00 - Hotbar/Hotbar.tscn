@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://w24wmvmru5ew"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_0bnl2"]
-[ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/Hotbar/Hotbar.gd" id="1_plhix"]
+[ext_resource type="Script" uid="uid://bxykfl30x4vtk" path="res://source/05 - User Interface/05 - Inventory/00 - Hotbar/Hotbar.gd" id="1_plhix"]
 [ext_resource type="Texture2D" uid="uid://bq2rltmel2cpw" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/hotbar_slot.png" id="2_0bnl2"]
-[ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/Hotbar/HotbarSlot.gd" id="3_c7vic"]
+[ext_resource type="Script" uid="uid://cm8v5f7b8rg38" path="res://source/05 - User Interface/05 - Inventory/00 - Hotbar/HotbarSlot.gd" id="3_c7vic"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_45k6x"]
 [ext_resource type="FontFile" uid="uid://dm5s8rduon2rw" path="res://assets/00 - UserInterface/03 - Fonts/m3x6.ttf" id="5_t0h76"]
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="6_odguu"]
