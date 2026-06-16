@@ -608,6 +608,7 @@ visible = false
 [node name="Marker_Drop" type="Marker2D" parent="." index="9" unique_id=646574662]
 
 [node name="DropZone_Visualizer" type="Sprite2D" parent="Marker_Drop" index="0" unique_id=1969249217]
+visible = false
 texture = ExtResource("12_25kxp")
 
 [node name="Path_HuckArc" type="Path2D" parent="." index="10" unique_id=1867999697]

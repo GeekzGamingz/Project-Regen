@@ -32,7 +32,7 @@ script = ExtResource("5_ylk6r")
 [node name="Orphanage_Buildings" type="Node2D" parent="Orphanages" unique_id=1589439109]
 
 [node name="Building_Chest" parent="Orphanages/Orphanage_Buildings" unique_id=969433499 instance=ExtResource("7_g0q3n")]
-position = Vector2(184, 42)
+position = Vector2(265, 174)
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 
