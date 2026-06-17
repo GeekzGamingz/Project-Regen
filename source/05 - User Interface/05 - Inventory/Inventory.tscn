@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2b6a8vu2yf8k"]
 
 [ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_t2jr1"]
+[ext_resource type="Script" uid="uid://djh3y7ic804aq" path="res://source/05 - User Interface/05 - Inventory/Inventory.gd" id="2_bjdmq"]
 [ext_resource type="PackedScene" uid="uid://w24wmvmru5ew" path="res://source/05 - User Interface/05 - Inventory/00 - Hotbar/Hotbar.tscn" id="2_cijvd"]
 [ext_resource type="PackedScene" uid="uid://b2eokmwu2euxu" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/00 - Backpack/Backpack.tscn" id="3_bjdmq"]
 
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_t2jr1")
+script = ExtResource("2_bjdmq")
 
 [node name="Hotbar" parent="." unique_id=932239622 instance=ExtResource("2_cijvd")]
 visible = false

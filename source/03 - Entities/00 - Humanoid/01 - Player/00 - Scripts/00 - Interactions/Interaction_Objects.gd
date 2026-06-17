@@ -23,7 +23,11 @@ func obtain_object(object, hotbar_selected):
 			interaction.interaction_hotbar.addto_hotbar(object, hotbar_selected)
 		if hotbar_selected.slotted_object.is_in_group(group[0]):
 			if object.is_stackable: hotbar_selected.quantity += 1
-		if interaction.full_hotbar: addto_hand("All", object, null)
+		if interaction.full_hotbar:
+			interaction.MAIN.UI_INVENTORY.slot_exclusion(true)
+			addto_hand("All", object, null)
+			await get_tree().process_frame
+			interaction.MAIN.UI_INVENTORY.slot_exclusion(false)
 		if hotbar_selected.slotted_object.is_in_group(group[0]):
 			if object.is_stackable: interaction.revert()
 		interaction.ORPHANAGES_OBJECTS.remove_child(object)

@@ -86,11 +86,11 @@ func state_enter(new_state, old_state):
 			cursor.icon.texture = cursor.icon.CURSOR_HAND_GRAB_RIGHT
 			cursor.icon.visible = true
 			if cursor.object_held != null:
-				cursor.add_child(cursor.object_held)
+				if cursor.object_held.get_parent() == null: cursor.add_child(cursor.object_held)
 				cursor.object.texture = cursor.object_held.sprite_preview.texture
 				cursor.object_area.polygon = cursor.object_held.area_pack.polygon
 				cursor.object.visible = true
-				cursor.remove_child(cursor.object_held)
+				if cursor.object_held.get_parent() == cursor: cursor.remove_child(cursor.object_held)
 				cursor.object.revert_hand()
 				cursor.object.shape_grid() #Executes on Next Frame
 		states.hold_stack: cursor.output_quantity.set_deferred("visible", true)
