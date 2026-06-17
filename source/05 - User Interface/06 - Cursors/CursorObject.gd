@@ -3,6 +3,7 @@ extends Sprite2D
 #Variables
 var held_slots: int = 0
 #OnReady Variables
+#Local Nodes
 @onready var axis: Node2D = $".."
 @onready var cursor_fsm: Node2D = $"../../../Cursor_StateMachine"
 @onready var area_containers: Area2D = $Area_Containers

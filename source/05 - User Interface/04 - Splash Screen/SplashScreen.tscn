@@ -1774,10 +1774,11 @@ mouse_filter = 2
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hyep0")
-current_tab = 0
+current_tab = 4
 tabs_visible = false
 
 [node name="UsernameContainer" type="VBoxContainer" parent="PopUpContainer/TabContainer" unique_id=1466002196]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -1924,7 +1925,6 @@ editable = false
 expand_to_text_length = true
 
 [node name="CharacterContainer" type="CenterContainer" parent="PopUpContainer/TabContainer" unique_id=1445271360]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 

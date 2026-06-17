@@ -40,20 +40,20 @@ func _gui_input(event: InputEvent) -> void:
 			print("Associated Slots: ", slot_array)
 			print("Quantity: ", quantity)
 			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
-				slot_exclusion(true)
+				#slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("One", slotted_object, self)
-				await get_tree().process_frame
-				slot_exclusion(false)
+				#await get_tree().process_frame
+				#slot_exclusion(false)
 			elif event.is_action_pressed("hotbar_grabhalf"): # Shft + Left Click
-				slot_exclusion(true)
+				#slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("Half", slotted_object, self)
-				await get_tree().process_frame
-				slot_exclusion(false)
+				#await get_tree().process_frame
+				#slot_exclusion(false)
 			elif event.is_action_pressed("action_confirm"): # Left-Click
-				slot_exclusion(true)
+				#slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("All", slotted_object, self)
-				await get_tree().process_frame
-				slot_exclusion(false)
+				#await get_tree().process_frame
+				#slot_exclusion(false)
 		elif slotted_object == null:
 			if interaction.current_object != null: interaction.interaction_containers.trade_slots(contents)
 #------------------------------------------------------------------------------#
