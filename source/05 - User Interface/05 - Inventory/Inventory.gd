@@ -7,3 +7,4 @@ func slot_exclusion(excluded): # Used for Shape Grid
 		for compartment in container.compartment_array:
 			for slot in compartment.get_node("TextureRect/GridContainer").get_children():
 				if slot is TextureRect: slot.area.get_node("CollisionShape2D").set_deferred("disabled", excluded)
+	print("#-Finished Slot Exclusion [", excluded, "]-#")

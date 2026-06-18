@@ -30,18 +30,12 @@ func _process(_delta: float) -> void: line_quantity.text = str(quantity)
 func _ready() -> void: 
 	await get_tree().process_frame
 	MAIN.UI_CURSOR_FSM.connect("holding_object", slot_blocking)
+	MAIN.UI_CURSOR.object.connect("grid_shaped", orient_held)
 #GUI Input
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var interaction = MAIN.ORPHANAGE_PLAYERS.get_child(0).interaction
 		if slotted_object != null && !interaction.full_hands:
-			print("#---[", self.name, "] Contains---#")
-			print("Held Object: ", slotted_object.name)
-			print("Primary Slot: ", slot_primary)
-			print("Associated Slots: ", slot_array)
-			print("Orientation: ", axis.rotation_degrees, "°")
-			print("Flipped: ")
-			print("Quantity: ", quantity)
 			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
 				MAIN.UI_INVENTORY.slot_exclusion(true)
 				interaction.interaction_objects.addto_hand("One", slotted_object, self)
@@ -57,6 +51,14 @@ func _gui_input(event: InputEvent) -> void:
 				interaction.interaction_objects.addto_hand("All", slotted_object, self)
 				await get_tree().process_frame
 				MAIN.UI_INVENTORY.slot_exclusion(false)
+			elif event.is_action_pressed("action_context"):
+				print("#---[", self.name, "] Contains---#")
+				print("Held Object: ", slotted_object.name)
+				print("Primary Slot: ", slot_primary)
+				print("Associated Slots: ", slot_array)
+				print("Orientation: ", axis.rotation_degrees, "°")
+				print("Flipped: ")
+				print("Quantity: ", quantity)
 		elif slotted_object == null:
 			if interaction.current_object != null: interaction.interaction_containers.trade_slots(contents)
 #------------------------------------------------------------------------------#
@@ -95,3 +97,14 @@ func clear_slot():
 		slot.line_quantity.set_deferred("visible", false)
 		slot.slot_held.self_modulate = Color(0.0, 1.0, 0.0, 1.0)
 		slot.slot_array = [self]
+#------------------------------------------------------------------------------#
+#Custom Signaled Functions
+func orient_held(): 
+	var cursor = MAIN.UI_CURSOR
+	if slot_held.visible: 
+		print("#-Signal Received: Grid Shaped-#")
+		print("Slot Receiving: ", self.name)
+		print("Slot Rotation: " , axis.rotation_degrees, "°")
+		print("Cursor Rotation: ", cursor.axis.rotation_degrees, "°")
+		cursor.axis.rotation_degrees = axis.rotation_degrees
+		print("#-!Cursor Oriented!-#")

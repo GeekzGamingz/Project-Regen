@@ -1,5 +1,8 @@
 extends Sprite2D
 #------------------------------------------------------------------------------#
+#Signals
+signal grid_shaped
+#------------------------------------------------------------------------------#
 #Variables
 var held_slots: int = 0
 #OnReady Variables
@@ -35,6 +38,7 @@ func revert_hand():
 		var ray = selection.get_node("RayCast2D")
 		ray.enabled = false
 	held_slots = 0
+	axis.rotation_degrees = 0
 #Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon
@@ -51,4 +55,5 @@ func shape_grid():
 			selection.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 			held_slots += 1
 	area_poly.set_deferred("disabled", true)
-	print("#-Finishing Shaping Grid-#")
+	print("#-Finished Shaping Grid-#")
+	emit_signal("grid_shaped")
