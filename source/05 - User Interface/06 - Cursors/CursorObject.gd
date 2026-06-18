@@ -31,7 +31,7 @@ func rotate_hand():
 #Hand Flip
 func flip_hand():
 	print("Flipping Hand [", held_slots, " Slots]")
-	#axis.scale.x *= -1
+	axis.scale.x *= -1
 #Revert Hand
 func revert_hand():
 	for selection in grid_container.get_children():
@@ -39,6 +39,7 @@ func revert_hand():
 		ray.enabled = false
 	held_slots = 0
 	axis.rotation_degrees = 0
+	axis.scale.x = 1
 #Shape Grid
 func shape_grid():
 	area_poly.disabled = false #Reset Polygon

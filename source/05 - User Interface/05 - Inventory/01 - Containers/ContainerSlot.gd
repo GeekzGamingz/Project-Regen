@@ -56,8 +56,8 @@ func _gui_input(event: InputEvent) -> void:
 				print("Held Object: ", slotted_object.name)
 				print("Primary Slot: ", slot_primary)
 				print("Associated Slots: ", slot_array)
-				print("Orientation: ", axis.rotation_degrees, "°")
-				print("Flipped: ")
+				print("Rotation: ", axis.rotation_degrees, "°")
+				print("Scale: ", axis.scale)
 				print("Quantity: ", quantity)
 		elif slotted_object == null:
 			if interaction.current_object != null: interaction.interaction_containers.trade_slots(contents)
@@ -105,6 +105,9 @@ func orient_held():
 		print("#-Signal Received: Grid Shaped-#")
 		print("Slot Receiving: ", self.name)
 		print("Slot Rotation: " , axis.rotation_degrees, "°")
+		print("Slot Scale: ", axis.scale)
 		print("Cursor Rotation: ", cursor.axis.rotation_degrees, "°")
+		print("Cursor Scale: ", cursor.axis.scale)
 		cursor.axis.rotation_degrees = axis.rotation_degrees
+		cursor.axis.scale = axis.scale
 		print("#-!Cursor Oriented!-#")
