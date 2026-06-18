@@ -28,7 +28,7 @@ func rotate_hand():
 #Hand Flip
 func flip_hand():
 	print("Flipping Hand [", held_slots, " Slots]")
-	axis.scale.x *= -1
+	#axis.scale.x *= -1
 #Revert Hand
 func revert_hand():
 	for selection in grid_container.get_children():
@@ -51,3 +51,4 @@ func shape_grid():
 			selection.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 			held_slots += 1
 	area_poly.set_deferred("disabled", true)
+	print("#-Finishing Shaping Grid-#")

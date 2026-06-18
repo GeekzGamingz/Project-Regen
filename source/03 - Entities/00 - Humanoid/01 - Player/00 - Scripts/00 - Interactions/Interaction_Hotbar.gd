@@ -125,6 +125,7 @@ func trade_slots(contents):
 				container_origin.quantity -= held_quantity
 				cursor.quantity = slot_quantity
 				if container_origin.quantity <= 0: container_origin.slotted_object = null
+				#cursor.object.match_orientation(container_origin)
 			else: #Trade Object from Ground
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object

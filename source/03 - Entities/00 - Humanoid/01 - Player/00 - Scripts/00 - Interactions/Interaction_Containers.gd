@@ -9,6 +9,7 @@ var slot_array: Array = []
 #Custom Functions
 #Add to Backpack
 func addto_container(object, slot, origin):
+	slot_orientation()
 	slot.texture_object.texture = object.sprite_container.texture
 	var object_scene = object.duplicate()
 	slot.slotted_object = object_scene
@@ -79,3 +80,8 @@ func get_held():
 func clear_held(origin):
 	if origin != null:
 		if origin.slot_held.visible: origin.slotted_object = null
+#Slot Orientation
+func slot_orientation():
+	var cursor = interaction.MAIN.UI_CURSOR
+	for slot in slot_array:
+		slot.axis.rotation_degrees = cursor.axis.rotation_degrees

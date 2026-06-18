@@ -19,7 +19,8 @@ var slotted_object: Object = null
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
 @onready var main_container: Control = $"../../../../.."
-@onready var texture_object: TextureRect = $Texture_Object
+@onready var axis: Node2D = $Axis
+@onready var texture_object: TextureRect = $Axis/Texture_Object
 @onready var slot_held: NinePatchRect = $NPR_Held
 @onready var line_quantity: LineEdit = $LineEdit_Quantity
 @onready var area: Area2D = $Area_Slot
@@ -38,6 +39,8 @@ func _gui_input(event: InputEvent) -> void:
 			print("Held Object: ", slotted_object.name)
 			print("Primary Slot: ", slot_primary)
 			print("Associated Slots: ", slot_array)
+			print("Orientation: ", axis.rotation_degrees, "°")
+			print("Flipped: ")
 			print("Quantity: ", quantity)
 			if event.is_action_pressed("hotbar_grabone"): # Crtl + Left Click
 				MAIN.UI_INVENTORY.slot_exclusion(true)
