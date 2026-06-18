@@ -25,6 +25,7 @@ offset_right = 24.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("3_jcki8")
+stretch_mode = 2
 
 [node name="NPR_Held" type="NinePatchRect" parent="." unique_id=222875012]
 visible = false
