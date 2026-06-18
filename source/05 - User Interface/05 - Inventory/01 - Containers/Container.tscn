@@ -59,7 +59,6 @@ mouse_filter = 2
 texture = ExtResource("3_nokuc")
 
 [node name="GridContainer" type="GridContainer" parent="Compartments/BaseCompartment/TextureRect" unique_id=2107708206]
-z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

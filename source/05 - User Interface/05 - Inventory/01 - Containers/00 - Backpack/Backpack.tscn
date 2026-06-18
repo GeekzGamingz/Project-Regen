@@ -6,13 +6,13 @@
 [ext_resource type="Script" uid="uid://stcone1gbnxx" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/00 - Backpack/BackpackDesignations.gd" id="3_tx6ga"]
 [ext_resource type="Texture2D" uid="uid://02b5fo1x3kxo" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_front.png" id="4_apql8"]
 [ext_resource type="PackedScene" uid="uid://blghfndx8gky8" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/ContainerSlot.tscn" id="5_3bmuj"]
-[ext_resource type="Texture2D" uid="uid://hnk6y0w2jkaw" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_side.png" id="6_i40xn"]
 [ext_resource type="PackedScene" uid="uid://r0e0hutr1ffe" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/Button_Stack.tscn" id="7_apql8"]
-[ext_resource type="Texture2D" uid="uid://cdpe1s7puh6mr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base.png" id="7_xgu7d"]
 [ext_resource type="Texture2D" uid="uid://0kprb55ltq84" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/00 - Exit/button_exit_unpressed.png" id="8_babqf"]
+[ext_resource type="Texture2D" uid="uid://345c4aiok8ha" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base_upgrade.png" id="8_e78ui"]
 [ext_resource type="Texture2D" uid="uid://dblywlnwxbhnn" path="res://assets/00 - UserInterface/02 - Buttons/01 - Menu/00 - Exit/button_exit_pressed.png" id="9_ap3yb"]
 
 [node name="Backpack" type="PanelContainer" unique_id=734962224 node_paths=PackedStringArray("compartment_array")]
+y_sort_enabled = true
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -27,6 +27,7 @@ mouse_filter = 1
 theme = ExtResource("1_tx6ga")
 script = ExtResource("1_1w1ig")
 compartment_array = [NodePath("Compartments/FrontCompartments/FrontLeft"), NodePath("Compartments/FrontCompartments/FrontRight"), NodePath("Compartments/BaseCompartment")]
+metadata/_edit_vertical_guides_ = [626.0, 522.0, 634.0]
 
 [node name="Dragging" type="Control" parent="." unique_id=578806276]
 layout_mode = 2
@@ -331,45 +332,41 @@ theme_override_constants/margin_left = 12
 
 [node name="BaseCompartment" type="HBoxContainer" parent="Compartments" unique_id=252802096]
 layout_mode = 2
-theme_override_constants/separation = -16
+theme_override_constants/separation = -22
 alignment = 1
 
-[node name="BaseLeft" type="VBoxContainer" parent="Compartments/BaseCompartment" unique_id=1299210341]
+[node name="MarginContainer" type="MarginContainer" parent="Compartments/BaseCompartment" unique_id=787715442]
 layout_mode = 2
-theme_override_constants/separation = -11
-alignment = 2
+theme_override_constants/margin_left = 32
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Compartments/BaseCompartment/BaseLeft" unique_id=450796091]
+[node name="VBoxContainer" type="VBoxContainer" parent="Compartments/BaseCompartment" unique_id=63594597]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="Compartments/BaseCompartment/BaseLeft/HBoxContainer" unique_id=1245605010]
+[node name="Button_Stack" parent="Compartments/BaseCompartment/VBoxContainer" unique_id=534618154 node_paths=PackedStringArray("grid") instance=ExtResource("7_apql8")]
 layout_mode = 2
-theme_override_constants/margin_left = 1
+size_flags_horizontal = 8
+grid = NodePath("../../TextureRect/GridContainer")
 
-[node name="Button_Stack" parent="Compartments/BaseCompartment/BaseLeft/HBoxContainer" unique_id=534618154 node_paths=PackedStringArray("grid") instance=ExtResource("7_apql8")]
+[node name="MarginContainer" type="MarginContainer" parent="Compartments/BaseCompartment/VBoxContainer" unique_id=1347489591]
 layout_mode = 2
-grid = NodePath("../../../TextureRect/GridContainer")
-
-[node name="Backpack_SideA" type="TextureRect" parent="Compartments/BaseCompartment/BaseLeft" unique_id=1708533657]
-z_index = 1
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("6_i40xn")
-stretch_mode = 2
+theme_override_constants/margin_top = 60
 
 [node name="TextureRect" type="TextureRect" parent="Compartments/BaseCompartment" unique_id=1881131785]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("7_xgu7d")
+texture = ExtResource("8_e78ui")
 stretch_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="Compartments/BaseCompartment/TextureRect" unique_id=120625642]
-z_index = 1
-layout_mode = 0
-offset_right = 96.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 48.0
 offset_bottom = 96.0
+grow_horizontal = 2
 mouse_filter = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
@@ -531,18 +528,6 @@ layout_mode = 2
 
 [node name="SlotB3" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1761701218 instance=ExtResource("5_3bmuj")]
 layout_mode = 2
-
-[node name="BaseRight" type="VBoxContainer" parent="Compartments/BaseCompartment" unique_id=396250447]
-layout_mode = 2
-mouse_filter = 2
-alignment = 2
-
-[node name="Backpack_SideB" type="TextureRect" parent="Compartments/BaseCompartment/BaseRight" unique_id=1162094202]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("6_i40xn")
-stretch_mode = 2
-flip_h = true
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=646290821]
 layout_mode = 2

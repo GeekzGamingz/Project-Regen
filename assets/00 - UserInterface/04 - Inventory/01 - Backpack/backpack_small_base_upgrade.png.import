@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdpe1s7puh6mr"
-path="res://.godot/imported/backpack_small_base.png-326eade3dfb1f68b3a42eefac657cc69.ctex"
+uid="uid://345c4aiok8ha"
+path="res://.godot/imported/backpack_small_base_upgrade.png-c3a63175ff0e60172ce1d56f9ed0d4c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base.png"
-dest_files=["res://.godot/imported/backpack_small_base.png-326eade3dfb1f68b3a42eefac657cc69.ctex"]
+source_file="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_small_base_upgrade.png"
+dest_files=["res://.godot/imported/backpack_small_base_upgrade.png-c3a63175ff0e60172ce1d56f9ed0d4c0.ctex"]
 
 [params]
 

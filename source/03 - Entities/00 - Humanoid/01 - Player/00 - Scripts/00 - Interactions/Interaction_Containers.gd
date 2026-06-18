@@ -83,6 +83,7 @@ func clear_held(origin):
 #Slot Orientation
 func slot_orientation():
 	var cursor = interaction.MAIN.UI_CURSOR
-	for slot in slot_array:
-		slot.axis.rotation_degrees = cursor.axis.rotation_degrees
-		slot.axis.scale.x = cursor.axis.scale.x
+	if slot_array != []:
+		for slot in slot_array:
+			slot.axis.rotation_degrees = cursor.axis.rotation_degrees
+			slot.axis.scale.x = cursor.axis.scale.x

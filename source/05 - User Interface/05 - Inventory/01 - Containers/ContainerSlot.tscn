@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dmhtgtbval8te" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/backpack_slot_available.png" id="1_pi8wo"]
 [ext_resource type="Script" uid="uid://dw0ytcypsjaar" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/ContainerSlot.gd" id="2_x6m45"]
 [ext_resource type="Texture2D" uid="uid://0fmnhfsp2ia5" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Held.tres" id="3_0egyr"]
-[ext_resource type="Texture2D" uid="uid://ba5vv5bggdwjr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/00 - Placeholders/item_2x3_a.png" id="3_jcki8"]
 [ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="4_rehhu"]
 [ext_resource type="Script" uid="uid://bj2ngpal4cxcc" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/SlotFSM.gd" id="5_8b3k1"]
 
@@ -24,7 +23,6 @@ offset_top = -8.0
 offset_right = 24.0
 offset_bottom = 40.0
 mouse_filter = 2
-texture = ExtResource("3_jcki8")
 stretch_mode = 2
 
 [node name="NPR_Held" type="NinePatchRect" parent="." unique_id=222875012]
@@ -77,6 +75,7 @@ shape = SubResource("RectangleShape2D_tt3jp")
 script = ExtResource("5_8b3k1")
 
 [node name="Output_State" type="Label" parent="." unique_id=1650546792]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_right = 40.0

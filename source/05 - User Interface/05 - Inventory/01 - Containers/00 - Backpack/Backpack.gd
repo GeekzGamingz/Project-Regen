@@ -18,10 +18,7 @@ var mouse_hovering: bool = false
 @onready var grid_fRight: GridContainer = $Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer
 #Base Compartment
 @onready var base: HBoxContainer = $Compartments/BaseCompartment
-@onready var base_left: VBoxContainer = $Compartments/BaseCompartment/BaseLeft
-@onready var base_right: VBoxContainer = $Compartments/BaseCompartment/BaseRight
-@onready var base_lSprite: TextureRect = $Compartments/BaseCompartment/BaseLeft/Backpack_SideA
-@onready var base_rSprite: TextureRect = $Compartments/BaseCompartment/BaseRight/Backpack_SideB
+@onready var base_texture: TextureRect = $Compartments/BaseCompartment/TextureRect
 @onready var grid_base: GridContainer = $Compartments/BaseCompartment/TextureRect/GridContainer
 #Slots
 @onready var slot_a1: TextureRect = $Compartments/BaseCompartment/TextureRect/GridContainer/SlotA1
