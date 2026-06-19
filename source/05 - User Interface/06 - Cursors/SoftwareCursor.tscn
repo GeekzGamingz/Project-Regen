@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bamerqjjismb1"]
 
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="1_ic7qn"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="1_ic7qn"]
 [ext_resource type="Script" uid="uid://b1pyspx73bd3x" path="res://source/05 - User Interface/06 - Cursors/Cursor_FSM.gd" id="2_to82i"]
 [ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_uofne"]
 [ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/05 - User Interface/06 - Cursors/SoftwareCursor.gd" id="3_88ndb"]

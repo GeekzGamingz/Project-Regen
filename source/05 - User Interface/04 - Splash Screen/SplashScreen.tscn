@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://b7e7w0jxnxmhg" path="res://source/05 - User Interface/00 - Network/Button_Spawn.gd" id="9_bmipb"]
 [ext_resource type="Script" uid="uid://b268m2vf2s3g8" path="res://source/05 - User Interface/04 - Splash Screen/00 - Character/Selection_Character.gd" id="10_bukj7"]
 [ext_resource type="Texture2D" uid="uid://ppxjcuancwvd" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_unpressed.png" id="10_ttxp8"]
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="11_1rbu0"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="11_1rbu0"]
 [ext_resource type="Texture2D" uid="uid://cs37i2q38csqb" path="res://assets/00 - UserInterface/02 - Buttons/02 - Arrows/arrow_pressed.png" id="11_l5w5a"]
 [ext_resource type="Texture2D" uid="uid://7mfo6e67k68q" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/00 - Average/torso_average_average_nw.png" id="12_bux6d"]
 [ext_resource type="Script" uid="uid://ddn5c0m0q3cl4" path="res://source/05 - User Interface/04 - Splash Screen/00 - Character/00 - Sprites/Sprites_Character.gd" id="12_jbo3k"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r47eiw2k2umj" path="res://source/05 - User Interface/00 - Network/UI_Network.tscn" id="4_rb18f"]
 [ext_resource type="PackedScene" uid="uid://b2b6a8vu2yf8k" path="res://source/05 - User Interface/05 - Inventory/Inventory.tscn" id="7_a0e1u"]
 [ext_resource type="PackedScene" uid="uid://dr2y6f6qexgxt" path="res://source/05 - User Interface/03 - Customization/UI_Customization.tscn" id="7_dl5ef"]
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="8_c7gxw"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="8_c7gxw"]
 [ext_resource type="PackedScene" uid="uid://bamerqjjismb1" path="res://source/05 - User Interface/06 - Cursors/SoftwareCursor.tscn" id="8_wwe8j"]
 [ext_resource type="PackedScene" uid="uid://dw72o8ebu5cjp" path="res://source/05 - User Interface/04 - Splash Screen/SplashScreen.tscn" id="10_moohe"]
 

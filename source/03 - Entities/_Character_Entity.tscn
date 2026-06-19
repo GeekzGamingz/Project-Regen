@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw5ct5u5wknqj" path="res://source/03 - Entities/Entity.gd" id="1_pcmld"]
 [ext_resource type="Script" uid="uid://bvgrlnecek7v4" path="res://source/03 - Entities/Entity_FSM.gd" id="2_itw66"]
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_dpogu"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="4_dpogu"]
 [ext_resource type="Script" uid="uid://cielb144eexqu" path="res://source/03 - Entities/Sprites_Body.gd" id="5_v25io"]
 [ext_resource type="Texture2D" uid="uid://7mfo6e67k68q" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/01 - Average/00 - Average/torso_average_average_nw.png" id="8_n86k3"]
 [ext_resource type="Texture2D" uid="uid://dsdcq3rn83ofh" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/01 - Average/00 - Average/arm_left_average_average_nw.png" id="10_kevt7"]

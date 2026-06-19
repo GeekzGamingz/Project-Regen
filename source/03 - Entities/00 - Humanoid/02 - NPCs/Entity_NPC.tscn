@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfij3mk2ns64j"]
+[gd_scene format=3 uid="uid://cfij3mk2ns64j"]
 
 [ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/_Character_Entity.tscn" id="1_rciku"]
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="2_8oxrm"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="2_8oxrm"]
 [ext_resource type="Script" uid="uid://bvis06c6pnl0b" path="res://source/03 - Entities/00 - Humanoid/02 - NPCs/NPC_Customization.gd" id="2_13gc4"]
 [ext_resource type="Texture2D" uid="uid://bvji36e44qksd" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/02 - Tall/01 - Chub/torso_tall_chub_nw.png" id="4_dkvws"]
 [ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub_nw.png" id="5_xhkox"]

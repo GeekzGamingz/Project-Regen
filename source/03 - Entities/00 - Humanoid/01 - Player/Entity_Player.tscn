@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bhmlewdav633s" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.gd" id="2_g6jbf"]
 [ext_resource type="Script" uid="uid://bxcm8vntpy238" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Input.gd" id="2_x2jc6"]
 [ext_resource type="Script" uid="uid://3tcac5a1yosj" path="res://source/03 - Entities/00 - Humanoid/01 - Player/Player_ServerInfo.gd" id="4_0p84g"]
-[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader-ColorSwap.gdshader" id="4_4ncaf"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="4_4ncaf"]
 [ext_resource type="Script" uid="uid://dcvsjya3qorb6" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/Player_Customization.gd" id="5_gl5bk"]
 [ext_resource type="Script" uid="uid://l6a4pt8pvc0f" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Player_Interaction.gd" id="5_j4c14"]
 [ext_resource type="Script" uid="uid://boi185kfqdisi" path="res://source/03 - Entities/00 - Humanoid/01 - Player/00 - Scripts/00 - Interactions/Interaction_Objects.gd" id="5_yccay"]
@@ -542,6 +542,8 @@ _data = {
 point_count = 2
 
 [node name="Entity_Player" unique_id=2034766984 instance=ExtResource("1_g6jbf")]
+y_sort_enabled = true
+position = Vector2(0, 5)
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("2_g6jbf")
