@@ -56,12 +56,14 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 [node name="Sprites" type="Node2D" parent="." unique_id=695416246]
 
 [node name="Sprite_Shadow" type="Sprite2D" parent="Sprites" unique_id=1728888642]
+visible = false
 self_modulate = Color(1, 1, 1, 0.5882353)
 position = Vector2(0, 6)
 texture = ExtResource("2_15w7v")
 centered = false
 
 [node name="Sprite_Object" type="Sprite2D" parent="Sprites" unique_id=1671756147]
+visible = false
 material = SubResource("ShaderMaterial_tvokc")
 centered = false
 

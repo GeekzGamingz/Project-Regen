@@ -50,6 +50,13 @@ var mouse_is_hovering: bool = false
 @onready var sprite_container: Sprite2D = $Sprites/Sprite_Container
 @onready var area_pack: CollisionPolygon2D = $Areas/Area_Pack/CollisionPolygon2D
 #------------------------------------------------------------------------------#
+#Functions
+#Ready Function
+func _ready() -> void:
+	if is_obtainable:
+		$Sprites/Sprite_Shadow.set_deferred("visible", true)
+		$Sprites/Sprite_Object.set_deferred("visible", true)
+#------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"):
