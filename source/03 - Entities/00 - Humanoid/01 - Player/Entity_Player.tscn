@@ -542,8 +542,6 @@ _data = {
 point_count = 2
 
 [node name="Entity_Player" unique_id=2034766984 instance=ExtResource("1_g6jbf")]
-y_sort_enabled = true
-position = Vector2(0, 5)
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("2_g6jbf")

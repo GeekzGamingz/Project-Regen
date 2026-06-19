@@ -23,7 +23,6 @@ position = Vector2(0, 0)
 position = Vector2(-7, -9)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=1671756147]
-visible = false
 position = Vector2(-12, -17)
 texture = ExtResource("3_vmeu4")
 
