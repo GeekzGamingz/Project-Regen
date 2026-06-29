@@ -38,7 +38,7 @@ func _input(event: InputEvent) -> void:
 				interaction_objects.place(
 					selected_slot.slotted_object,
 					selected_slot,
-					get_node("../..").marker_drop.global_position
+					player.marker_drop.global_position
 				)
 #------------------------------------------------------------------------------#
 #Custom Functions
