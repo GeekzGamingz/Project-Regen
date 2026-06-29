@@ -49,8 +49,8 @@ func blueprint_visibility(toggle: bool):
 #Change Selection Dimensions
 func change_selection(dimensions): 
 	var texture_size: Vector2 = Vector2.ZERO
-	var dimension_key: String = dimensions.find_key(true)
-	var dimension_split: Array = dimension_key.split("x")
+	var dimensions_key: String = dimensions.find_key(true)
+	var dimension_split: Array = dimensions_key.split("x")
 	texture_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
 	blueprint_zone.texture = T.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
 	blueprint_selection.size = texture_size

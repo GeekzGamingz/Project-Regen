@@ -5,10 +5,11 @@ signal grid_shaped
 #------------------------------------------------------------------------------#
 #Variables
 var held_slots: int = 0
+#Exported Variables
+@export var axis: Node2D
+@export var cursor_fsm: Node2D
 #OnReady Variables
 #Local Nodes
-@onready var axis: Node2D = $".."
-@onready var cursor_fsm: Node2D = $"../../../Cursor_StateMachine"
 @onready var area_containers: Area2D = $Area_Containers
 @onready var area_poly: CollisionPolygon2D = $Area_Containers/CollisionPolygon2D
 @onready var grid_container: GridContainer = $GridContainer

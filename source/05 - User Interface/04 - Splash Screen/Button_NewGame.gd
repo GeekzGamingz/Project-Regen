@@ -4,12 +4,13 @@ extends Button
 signal server_create
 #------------------------------------------------------------------------------#
 #Variables
+#Exported Variables
+@export var splash_screen: Control
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 @onready var NETWORK: Node2D = MAIN.get_node("Network")
 #Local Nodes
-@onready var splash_screen: Control = $"../../../.."
 @onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")
 @onready var username_container: VBoxContainer = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer")
 @onready var line_username: LineEdit = splash_screen.get_node("PopUpContainer/TabContainer/UsernameContainer/LineEdit_Container/LineEdit_SinglePlayerName")

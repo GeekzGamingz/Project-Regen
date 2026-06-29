@@ -4,8 +4,9 @@ extends Button
 signal server_create
 #------------------------------------------------------------------------------#
 #Variables
+#Exported Variables
+@export var splash_screen: Control
 #OnReady Variables
-@onready var splash_screen: Control = $"../../../.."
 #Tabs
 #Username Container
 @onready var tab_container: TabContainer = splash_screen.get_node("PopUpContainer/TabContainer")

@@ -1731,10 +1731,11 @@ text = "Single Player"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_NewGame" type="Button" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1624305777]
+[node name="Button_NewGame" type="Button" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1624305777 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 2
 text = "New Game"
 script = ExtResource("4_o3q5j")
+splash_screen = NodePath("../../../..")
 
 [node name="Button_LoadGame" type="Button" parent="MenuContainer/SubMenus/SinglePlayer" unique_id=1900495989]
 layout_mode = 2
@@ -1751,15 +1752,17 @@ text = "Multiplayer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_HostGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1185164991]
+[node name="Button_HostGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1185164991 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 2
 text = "Host Game"
 script = ExtResource("5_65kkx")
+splash_screen = NodePath("../../../..")
 
-[node name="Button_JoinGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1841705858]
+[node name="Button_JoinGame" type="Button" parent="MenuContainer/SubMenus/Multiplayer" unique_id=1841705858 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 2
 text = "Join Game"
 script = ExtResource("6_hyep0")
+splash_screen = NodePath("../../../..")
 
 [node name="PopUpContainer" type="CenterContainer" parent="." unique_id=259993550]
 layout_mode = 1
@@ -1902,11 +1905,12 @@ layout_mode = 2
 text = "Spawn"
 horizontal_alignment = 2
 
-[node name="Button_Spawn" type="TextureButton" parent="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer" unique_id=683577964]
+[node name="Button_Spawn" type="TextureButton" parent="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer" unique_id=683577964 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 2
 texture_normal = ExtResource("7_skjf1")
 texture_pressed = ExtResource("8_8kquk")
 script = ExtResource("9_bmipb")
+splash_screen = NodePath("../../../../..")
 
 [node name="Label_Players" type="Label" parent="PopUpContainer/TabContainer/WaitingContainer/SpawnContainer" unique_id=1481593267]
 layout_mode = 2

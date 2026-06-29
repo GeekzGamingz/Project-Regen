@@ -118,10 +118,12 @@ hframes = 4
 
 [node name="CursorAxis" type="Node2D" parent="Cursor_Textures" unique_id=483503577]
 
-[node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564]
+[node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564 node_paths=PackedStringArray("axis", "cursor_fsm")]
 position = Vector2(-8, -8)
 centered = false
 script = ExtResource("4_1xpm5")
+axis = NodePath("..")
+cursor_fsm = NodePath("../../../Cursor_StateMachine")
 
 [node name="Area_Containers" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=1681113334]
 collision_layer = 32

@@ -52,7 +52,7 @@ func set_timer(time):
 	timer.start()
 #Resize Cursor
 func resize_cursor(cursor):
-	var window_size = get_window().size
+	var window_size = get_window().size * 2
 	var scale = min(
 		snapped(window_size.x / window_size_base.x, 0.01),
 		snapped(window_size.y / window_size_base.y, 0.01)

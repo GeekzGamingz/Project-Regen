@@ -19,10 +19,8 @@ extends Node2D
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
-	for object in ORPHANAGE_OBJECTS.get_children():
-		object.connect("object_clicked", make_path)
-	for flora in ORPHANAGE_FLORA.get_children():
-		flora.connect("object_clicked", make_path)
+	for object in ORPHANAGE_OBJECTS.get_children(): object.connect("object_clicked", make_path)
+	for flora in ORPHANAGE_FLORA.get_children(): flora.connect("object_clicked", make_path)
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
