@@ -49,60 +49,15 @@ func blueprint_visibility(toggle: bool):
 #Change Selection Dimensions
 func change_selection(dimensions): 
 	var texture_size: Vector2 = Vector2.ZERO
-	blueprint_visibility(true)
-	match(dimensions.find_key(true)):
-		"16x16":
-			texture_size = Vector2(16, 16)
-			blueprint_zone.texture = T.ZONE["ZONE_16x16"]
-		"16x32":
-			texture_size = Vector2(16, 32)
-			blueprint_zone.texture = T.ZONE["ZONE_16x32"]
-		"16x48":
-			texture_size = Vector2(16, 48)
-			blueprint_zone.texture = T.ZONE["ZONE_16x48"]
-		"16x64":
-			texture_size = Vector2(16, 64)
-			blueprint_zone.texture = T.ZONE["ZONE_16x64"]
-		"32x16":
-			texture_size = Vector2(32, 16)
-			blueprint_zone.texture = T.ZONE["ZONE_32x16"]
-		"32x32":
-			texture_size = Vector2(32, 32)
-			blueprint_zone.texture = T.ZONE["ZONE_32x32"]
-		"32x48":
-			texture_size = Vector2(32, 48)
-			blueprint_zone.texture = T.ZONE["ZONE_32x48"]
-		"32x64":
-			texture_size = Vector2(32, 64)
-			blueprint_zone.texture = T.ZONE["ZONE_32x64"]
-		"48x16":
-			texture_size = Vector2(48, 16)
-			blueprint_zone.texture = T.ZONE["ZONE_48x16"]
-		"48x32":
-			texture_size = Vector2(48, 32)
-			blueprint_zone.texture = T.ZONE["ZONE_48x32"]
-		"48x48":
-			texture_size = Vector2(48, 48)
-			blueprint_zone.texture = T.ZONE["ZONE_48x48"]
-		"48x64":
-			texture_size = Vector2(48, 64)
-			blueprint_zone.texture = T.ZONE["ZONE_48x64"]
-		"64x16":
-			texture_size = Vector2(64, 16)
-			blueprint_zone.texture = T.ZONE["ZONE_64x16"]
-		"64x32":
-			texture_size = Vector2(64, 32)
-			blueprint_zone.texture = T.ZONE["ZONE_64x32"]
-		"64x48":
-			texture_size = Vector2(64, 48)
-			blueprint_zone.texture = T.ZONE["ZONE_64x48"]
-		"64x64":
-			texture_size = Vector2(64, 64)
-			blueprint_zone.texture = T.ZONE["ZONE_64x64"]
+	var dimension_key: String = dimensions.find_key(true)
+	var dimension_split: Array = dimension_key.split("x")
+	texture_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
+	blueprint_zone.texture = T.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
 	blueprint_selection.size = texture_size
 	for ray in blueprint_selection.get_children():
 		ray.target_position.y = (texture_size.x + texture_size.y) * 0.5
 		ray.position = Vector2(texture_size.x * 0.5, texture_size.y * 0.5)
+	blueprint_visibility(true)
 #Exit Build Mode
 func exit_build_mode():
 	G.IS_BUILDING = false
