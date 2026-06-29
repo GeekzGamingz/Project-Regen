@@ -22,9 +22,9 @@ func _ready() -> void:
 @rpc("any_peer", "call_local")
 func spawn_requested():
 	for id in NETWORK.players:
-		var player_scene = preload("res://source/03 - Entities/00 - Humanoid/01 - Player/Entity_Player.tscn")
+		var player_scene = preload("uid://dfakdncbf8w6a") # Entity Player
 		var player = player_scene.instantiate()
 		player.name = str(id)
 		if id == 1: player.global_position = starting_position
-		else: player.global_position = starting_position #Change to Different Spawn Locations
+		else: player.global_position = starting_position # Change to Different Spawn Locations
 		orphanage_players.call_deferred("add_child", player)

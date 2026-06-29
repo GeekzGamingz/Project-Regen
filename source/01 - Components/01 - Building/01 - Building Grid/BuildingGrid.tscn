@@ -1,17 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4vnsqevw5lyv"]
+[gd_scene format=3 uid="uid://c4vnsqevw5lyv"]
 
 [ext_resource type="Script" uid="uid://bhdhcfbivtr6" path="res://source/01 - Components/01 - Building/01 - Building Grid/BuildingGrid.gd" id="1_h0nsw"]
 [ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="4_4fpdq"]
-[ext_resource type="Texture2D" uid="uid://6fm6smrfqfpm" path="res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16.png" id="8_7b5y7"]
+[ext_resource type="Texture2D" uid="uid://6fm6smrfqfpm" path="res://assets/02 - Objects/00 - Buildings/00 - Templates/Template-16x16.png" id="8_7b5y7"]
 [ext_resource type="Texture2D" uid="uid://bvppqnu84gwcm" path="res://assets/00 - UserInterface/02 - Buttons/00 - Placeholders/16.png" id="8_urqfs"]
 
 [sub_resource type="TileSet" id="TileSet_urqfs"]
 
-[node name="BuildingGrid" type="TileMapLayer"]
+[node name="BuildingGrid" type="TileMapLayer" unique_id=377475240]
 tile_set = SubResource("TileSet_urqfs")
 script = ExtResource("1_h0nsw")
 
-[node name="Blueprint_Control" type="Control" parent="."]
+[node name="Blueprint_Control" type="Control" parent="." unique_id=1366325839]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -28,21 +28,21 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Blueprint_Zone" type="TextureRect" parent="Blueprint_Control"]
+[node name="Blueprint_Zone" type="TextureRect" parent="Blueprint_Control" unique_id=341592784]
 self_modulate = Color(1, 1, 1, 0.196078)
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("8_7b5y7")
 
-[node name="Blueprint_Preview" type="TextureRect" parent="Blueprint_Control"]
+[node name="Blueprint_Preview" type="TextureRect" parent="Blueprint_Control" unique_id=1742636757]
 modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 texture = ExtResource("8_urqfs")
 
-[node name="Blueprint_Selection" type="NinePatchRect" parent="Blueprint_Control"]
+[node name="Blueprint_Selection" type="NinePatchRect" parent="Blueprint_Control" unique_id=1473511228]
 layout_mode = 1
 anchors_preset = -1
 offset_right = 16.0
@@ -55,7 +55,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="SafeBuild_1" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+[node name="SafeBuild_1" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection" unique_id=1518360048]
 position = Vector2(8, 8)
 rotation = 2.35619
 target_position = Vector2(0, 11.25)
@@ -64,7 +64,7 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="SafeBuild_2" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+[node name="SafeBuild_2" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection" unique_id=1715553776]
 position = Vector2(8, 8)
 rotation = -2.35619
 target_position = Vector2(0, 13)
@@ -73,7 +73,7 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="SafeBuild_3" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+[node name="SafeBuild_3" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection" unique_id=707203127]
 position = Vector2(8, 8)
 rotation = -0.785398
 target_position = Vector2(0, 13)
@@ -82,7 +82,7 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="SafeBuild_4" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection"]
+[node name="SafeBuild_4" type="RayCast2D" parent="Blueprint_Control/Blueprint_Selection" unique_id=1006294675]
 position = Vector2(8, 8)
 rotation = 0.785398
 target_position = Vector2(0, 13)
