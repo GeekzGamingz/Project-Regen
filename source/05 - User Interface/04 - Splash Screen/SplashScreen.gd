@@ -18,6 +18,7 @@ var connected_peer: String
 @onready var sub_menus: TabContainer = $MenuContainer/SubMenus
 @onready var tab_singleplayer: VBoxContainer = $MenuContainer/SubMenus/SinglePlayer
 @onready var tab_multiplayer: VBoxContainer = $MenuContainer/SubMenus/Multiplayer
+@onready var tab_steam: Control = $MenuContainer/SubMenus/SteamLobbyManager
 @onready var tab_container: TabContainer = $PopUpContainer/TabContainer
 @onready var error_container: VBoxContainer = $PopUpContainer/TabContainer/ErrorContainer
 @onready var character_container: CenterContainer = $PopUpContainer/TabContainer/CharacterContainer
@@ -46,7 +47,8 @@ func _on_button_multiplayer_button_up() -> void:
 	visibility_reset()
 	selection_character.check_character()
 	sub_menus.set_deferred("visible", true)
-	tab_multiplayer.set_deferred("visible", true)
+	if Steam.isSteamRunning(): tab_steam.set_deferred("visible", true)
+	else: tab_multiplayer.set_deferred("visible", true)
 	NETWORK.single_player = false
 #Character
 func _on_button_character_button_up() -> void:

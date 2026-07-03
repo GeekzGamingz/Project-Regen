@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cyjki2kcfa34b"]
+
+[ext_resource type="Script" uid="uid://cdn2ih3mnicvt" path="res://addons/godotsteamkit/starters/lobbies/lobby_host.gd" id="1_1cq27"]
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_bw15d"]
+
+[node name="SteamLobbyHost" type="Control" unique_id=1095709009]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("1_bw15d")
+script = ExtResource("1_1cq27")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1350667862]
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 142.0
+
+[node name="VFrame" type="VBoxContainer" parent="PanelContainer" unique_id=2031580543]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VFrame" unique_id=2030359316]
+layout_mode = 2
+text = "Host Lobby"
+horizontal_alignment = 1
+
+[node name="VFrame" type="VBoxContainer" parent="PanelContainer/VFrame" unique_id=1326698023]
+layout_mode = 2
+
+[node name="LobbyMaxPlayers" type="HBoxContainer" parent="PanelContainer/VFrame/VFrame" unique_id=1214049695]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VFrame/VFrame/LobbyMaxPlayers" unique_id=639445640]
+layout_mode = 2
+text = "Max Players"
+vertical_alignment = 1
+
+[node name="MaxPlayers" type="SpinBox" parent="PanelContainer/VFrame/VFrame/LobbyMaxPlayers" unique_id=2044867354]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = 1.0
+max_value = 4.0
+value = 4.0
+rounded = true
+
+[node name="LobbyVisibility" type="HBoxContainer" parent="PanelContainer/VFrame/VFrame" unique_id=566487212]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VFrame/VFrame/LobbyVisibility" unique_id=706135511]
+layout_mode = 2
+text = "Lobby Visibility"
+vertical_alignment = 1
+
+[node name="Visibility" type="OptionButton" parent="PanelContainer/VFrame/VFrame/LobbyVisibility" unique_id=816507945]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 2
+item_count = 4
+popup/item_0/text = "Private"
+popup/item_0/id = 0
+popup/item_1/text = "Friends Only"
+popup/item_1/id = 1
+popup/item_2/text = "Public"
+popup/item_2/id = 2
+popup/item_3/text = "Invisible"
+popup/item_3/id = 3
+
+[node name="LobbyDataList" type="HBoxContainer" parent="PanelContainer/VFrame/VFrame" unique_id=1753637868]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VFrame/VFrame/LobbyDataList" unique_id=1395190589]
+layout_mode = 2
+text = "Lobby Data"
+vertical_alignment = 1
+
+[node name="LobbyData" type="LineEdit" parent="PanelContainer/VFrame/VFrame/LobbyDataList" unique_id=1286283631]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+placeholder_text = "Enter lobby data as key1:value1, key2:value2, etc."
+
+[node name="Controls" type="HBoxContainer" parent="PanelContainer/VFrame" unique_id=514001590]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Create" type="Button" parent="PanelContainer/VFrame/Controls" unique_id=1086653260]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Create"
+
+[node name="Close" type="Button" parent="PanelContainer/VFrame/Controls" unique_id=2095277390]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Close"

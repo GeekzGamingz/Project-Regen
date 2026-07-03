@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ctbj3ttu6tq0x"]
+
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_u6ycp"]
+[ext_resource type="Script" uid="uid://lbv78gd5dx2m" path="res://addons/godotsteamkit/starters/lobbies/lobby_manager.gd" id="1_vcaep"]
+
+[node name="SteamLobbyManager" type="Control" unique_id=1080078957]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_u6ycp")
+script = ExtResource("1_vcaep")
+
+[node name="Scene" type="Control" parent="." unique_id=265134178]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 80.0
+
+[node name="VFrame" type="VBoxContainer" parent="." unique_id=1258985622]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 75.0
+
+[node name="Label_Multiplayer" type="Label" parent="VFrame" unique_id=1911870626]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Multiplayer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="Button" parent="VFrame" unique_id=195622566]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="VFrame" unique_id=54185939]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Join"

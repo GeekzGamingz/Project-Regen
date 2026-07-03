@@ -26,6 +26,7 @@ buses/default_bus_layout="res://AudioBus.tres"
 
 [autoload]
 
+Steamworks="*uid://dwij3vaphebc3"
 G="*res://source/00 - Globals/_Globals.gd"
 T="*res://source/00 - Globals/_Textures.gd"
 C="*res://source/05 - User Interface/06 - Cursors/_Cursor.gd"
@@ -39,6 +40,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg", "res://addons/godotsteamkit/plugin.cfg")
 
 [input]
 
@@ -187,3 +192,14 @@ zoom_out={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[steam]
+
+initialization/app_data/app_type=0
+initialization/app_data/app_id=480
+initialization/app_data/demo_id=0
+initialization/app_data/playtest_id=0
+initialization/app_data/tool_id=0
+initialization/processes/initialize_on_startup=false
+initialization/processes/embed_callbacks=false
+multiplayer_peer/max_channels=4
