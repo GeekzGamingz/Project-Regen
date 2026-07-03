@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cdga755rdyun2" path="res://addons/godotsteamkit/ui/custom/Portrait_Frame.png" id="5_gfso0"]
 [ext_resource type="Texture2D" uid="uid://n2vqolws4ty5" path="res://addons/godotsteamkit/ui/custom/Host_Crown.png" id="6_84v7i"]
 [ext_resource type="Script" uid="uid://bycdbw7o5na3f" path="res://addons/godotsteamkit/custom_nodes/usernames/steam_username.gd" id="6_c21t5"]
-[ext_resource type="Texture2D" uid="uid://ciwo627b0udwb" path="res://addons/godotsteamkit/ui/custom/Button_Blank.png" id="8_yfmpe"]
+[ext_resource type="Texture2D" uid="uid://b6maj132ybxs0" path="res://addons/godotsteamkit/ui/custom/Button_Profile.png" id="8_c21t5"]
+[ext_resource type="Texture2D" uid="uid://4h7pgnpkog3q" path="res://addons/godotsteamkit/ui/custom/Button_Achievments.png" id="9_r15dl"]
+[ext_resource type="Texture2D" uid="uid://c8stb6s2fqo1y" path="res://addons/godotsteamkit/ui/custom/Button_Promote.png" id="10_c21t5"]
+[ext_resource type="Texture2D" uid="uid://8x8i638431r" path="res://addons/godotsteamkit/ui/custom/Button_Kick.png" id="11_cl3hq"]
+[ext_resource type="Texture2D" uid="uid://nueij8y42dsa" path="res://addons/godotsteamkit/ui/custom/Button_Options.png" id="12_xvoi3"]
 
 [node name="SteamLobbyPlayer" type="PanelContainer" unique_id=1957305369]
 anchors_preset = 10
@@ -69,32 +73,38 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 2
 alignment = 1
 
 [node name="Profile" type="TextureButton" parent="HFrame/OptionList" unique_id=771708833]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("8_yfmpe")
+tooltip_text = "Profile"
+texture_normal = ExtResource("8_c21t5")
 
 [node name="Achievements" type="TextureButton" parent="HFrame/OptionList" unique_id=1016232402]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("8_yfmpe")
+tooltip_text = "Achievements"
+texture_normal = ExtResource("9_r15dl")
 
 [node name="Promote" type="TextureButton" parent="HFrame/OptionList" unique_id=1356270619]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("8_yfmpe")
+tooltip_text = "Promote"
+texture_normal = ExtResource("10_c21t5")
 
 [node name="Kick" type="TextureButton" parent="HFrame/OptionList" unique_id=1376146096]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("8_yfmpe")
+tooltip_text = "Kick"
+texture_normal = ExtResource("11_cl3hq")
 
-[node name="Options" type="Button" parent="HFrame" unique_id=446856299]
+[node name="Options" type="TextureButton" parent="HFrame" unique_id=638205913]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
+tooltip_text = "Options"
 toggle_mode = true
-text = "Options"
+texture_normal = ExtResource("12_xvoi3")

@@ -15,7 +15,7 @@ var steam_id: int = 0 : set = set_steam_id
 @onready var _avatar: SteamAvatarRect = %Avatar
 @onready var _host: TextureRect = %Host
 @onready var _kick: TextureButton = %Kick
-@onready var _options: Button = %Options
+@onready var _options: TextureButton = %Options
 @onready var _options_list: HBoxContainer = %OptionList
 @onready var _profile: TextureButton = %Profile
 @onready var _promote: TextureButton = %Promote
