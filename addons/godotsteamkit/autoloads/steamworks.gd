@@ -70,7 +70,7 @@ func initialize_steam() -> void:
 		return
 
 	if not Steam.isSteamRunning():
-		printerr("Steam is not Running; Switching to Local")
+		print("Steam Not Running; Switching to Local")
 		steamworks_error.emit("Steam is not running, canceling initialization.")
 		return
 		
