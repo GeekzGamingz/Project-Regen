@@ -79,6 +79,15 @@ func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: int, response: 
 		var new_lobby := LOBBY.instantiate()
 		new_lobby.close_panel.connect(_on_close_panel.bind(new_lobby))
 		_scene.call_deferred("add_child", new_lobby)
+		
+		
+		if Steamworks.steam_id != Steam.getLobbyOwner(lobby_id):
+			var NETWORK = get_tree().get_root().get_node("Main/Network")
+			var peer = SteamMultiplayerPeer.new()
+			peer.server_relay = true
+			peer.create_client(Steam.getLobbyOwner(lobby_id))
+			multiplayer.multiplayer_peer = peer
+		
 	else:
 		match response:
 			Steam.ChatRoomEnterResponse.CHAT_ROOM_ENTER_RESPONSE_DOESNT_EXIST:

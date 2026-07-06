@@ -64,6 +64,15 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 				if not Steam.setLobbyData(Steamworks.lobby_id, data_key_value[0], data_key_value[1]):
 					printerr("Failed to set lobby %s data [%s : %s]" % [Steamworks.lobby_id, data_key_value[0], data_key_value[1]])
 		_on_close_pressed()
+		
+		var NETWORK = get_tree().get_root().get_node("Main/Network")
+		var peer = SteamMultiplayerPeer.new()
+		peer.server_relay = true
+		peer.create_host(0)
+		multiplayer.multiplayer_peer = peer
+		NETWORK.server_joined(Steamworks.username)
+		
+		
 	else:
 		printerr("Failed to create a lobby: %s" % connect_status)
 		create.disabled = false

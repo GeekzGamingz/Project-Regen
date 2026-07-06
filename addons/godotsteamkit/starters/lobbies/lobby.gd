@@ -33,7 +33,7 @@ func _ready() -> void:
 	_connect_steam_signals()
 	_get_lobby_name()
 	_get_lobby_members()
-
+	
 
 func _get_lobby_members() -> void:
 	print("Getting lobby members for lobby %s" % Steamworks.lobby_id)

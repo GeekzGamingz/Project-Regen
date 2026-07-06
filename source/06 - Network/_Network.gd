@@ -64,6 +64,9 @@ func register_player(new_player_info):
 	players[new_player_id] = new_player_info
 	peer_connected.emit(new_player_id, new_player_info)
 	rpc_id(new_player_id, "player_update", +1)
+	var username = players[new_player_id].get("profile")
+	players[new_player_id].set("name", username)
+	players[new_player_id].set("id", new_player_id)
 #Update Players Online
 @rpc("any_peer", "call_local")
 func player_update(value): players_online += value
@@ -71,6 +74,7 @@ func player_update(value): players_online += value
 #Signaled Functions
 #Player Connected/Disconnected
 func _on_peer_connected(id):
+	print("Peer [%s] Connected!" % id)
 	register_player.rpc_id(id,
 		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true))
 func _on_peer_disconnected(id):
@@ -81,7 +85,10 @@ func _on_peer_disconnected(id):
 	players.erase(id)
 	peer_disconnected.emit(id)
 #Connection Successful/Unsuccessful
-func _on_connection_successful(): emit_signal("message_join")
+func _on_connection_successful():
+	emit_signal("message_join")
+	print("Connection Successful!!")
+	print("Connected Peers: ", multiplayer.get_peers())
 func _on_connection_unsuccessful(): multiplayer.multiplayer_peer = null
 #Server Disconnected
 func _on_server_disconnected():
