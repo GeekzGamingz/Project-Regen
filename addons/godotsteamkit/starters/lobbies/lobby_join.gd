@@ -112,11 +112,11 @@ func _on_lobby_match_list(these_lobbies: Array) -> void:
 		return
 
 	for this_lobby in these_lobbies:
-		var lobby_object  := LOBBY_ENTRY.instantiate()
-		lobby_object.name = "Lobby%s" % this_lobby
-		lobby_object.set_lobby_id(this_lobby)
-		lobby_object.joining_lobby.connect(_on_joining_lobby)
-		_lobby_list.call_deferred("add_child", lobby_object)
+			var lobby_object  := LOBBY_ENTRY.instantiate()
+			lobby_object.name = "Lobby%s" % this_lobby
+			lobby_object.set_lobby_id(this_lobby)
+			lobby_object.joining_lobby.connect(_on_joining_lobby)
+			_lobby_list.call_deferred("add_child", lobby_object)
 
 
 func _steam_callback_wrapper(this_signal: String, this_function: String) -> void:

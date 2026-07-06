@@ -92,7 +92,7 @@ func _on_lobby_chat_update(lobby_id: int, _changed_id: int, _making_change_id: i
 
 
 func _on_lobby_data_update(success: int, lobby_id: int, member_id: int) -> void:
-	print("Lobby update: %s" % lobby_id)
+	print("Lobby [%s] Updated" % lobby_id)
 	if Steamworks.lobby_id != lobby_id:
 		return
 	_get_lobby_members()

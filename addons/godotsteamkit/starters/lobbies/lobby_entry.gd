@@ -45,3 +45,4 @@ func set_lobby_name(new_name: String) -> void:
 	lobby_name = new_name
 	if not is_node_ready(): await ready
 	name_label.text = "Lobby %s" % lobby_id if lobby_name.is_empty() else lobby_name
+	if lobby_name.is_empty(): queue_free()
