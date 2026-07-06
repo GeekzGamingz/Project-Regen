@@ -104,4 +104,3 @@ func client_create(username, ip):
 	peer.create_client(ip, port)
 	multiplayer.multiplayer_peer = peer
 	server_joined(username)
-	
