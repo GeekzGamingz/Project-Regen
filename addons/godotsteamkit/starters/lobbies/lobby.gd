@@ -21,6 +21,10 @@ const LOBBY_PLAYER = preload("uid://b4fv03nfg6q4a")
 @onready var _start: Button = %Start
 @onready var _title: Label = %Title
 
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var BUTTON_SPAWN: TextureButton = MAIN.UI_SPLASH.get_node(
+	"PopUpContainer/TabContainer/WaitingContainer/SpawnContainer/Button_Spawn"
+)
 
 func _ready() -> void:
 	if not Engine.has_singleton("Steam"):
@@ -69,13 +73,12 @@ func _on_leave_pressed() -> void:
 	Steam.leaveLobby(Steamworks.lobby_id)
 	Steamworks.lobby_id = 0
 	close_panel.emit()
+	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
 
 
 # This should start your match or game.  Depending on if you are using
 # persistent lobbies or not, you can close the lobby connections here.
-func _on_start_pressed() -> void:
-	# Insert code to start match / game with all players
-	pass
+func _on_start_pressed() -> void: BUTTON_SPAWN._on_button_up()
 #endregion
 
 

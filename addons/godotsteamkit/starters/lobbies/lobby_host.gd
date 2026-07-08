@@ -68,9 +68,10 @@ func _on_lobby_created(connect_status: Steam.Result, lobby_id: int) -> void:
 		var NETWORK = get_tree().get_root().get_node("Main/Network")
 		var peer = SteamMultiplayerPeer.new()
 		peer.server_relay = true
-		peer.create_host(0)
-		multiplayer.multiplayer_peer = peer
-		NETWORK.server_joined(Steamworks.username)
+		var error = peer.create_host(0)
+		if error == OK:
+			multiplayer.multiplayer_peer = peer
+			NETWORK.server_joined(Steamworks.username)
 		
 		
 	else:

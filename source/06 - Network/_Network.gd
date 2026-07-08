@@ -13,8 +13,8 @@ signal server_disconnected
 #Booleans
 var single_player: bool = false
 #Dictionaries
-var old_players: Dictionary = {}
 var players: Dictionary = {}
+var old_players: Dictionary = {}
 var players_online: int = 1
 #Exported Variables
 @export var port: int = 42069
@@ -34,7 +34,11 @@ var players_online: int = 1
 @onready var SPRITES_DICTIONARY: Node2D = SPRITES_CHARACTER.get_node("Sprites_Dictionary")
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void:
+func _ready() -> void: connect_signals()
+#------------------------------------------------------------------------------#
+#Custom Functions
+#Signal Connections
+func connect_signals():
 	BUTTON_NEWGAME.connect("server_create", server_create)
 	BUTTON_HOSTGAME.connect("server_create", server_create)
 	BUTTON_JOINGAME.connect("client_create", client_create)
@@ -43,15 +47,19 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(_on_connection_successful)
 	multiplayer.connection_failed.connect(_on_connection_unsuccessful)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
-#------------------------------------------------------------------------------#
-#Custom Functions
+#Update Dictionary
+@rpc("any_peer", "call_local", "reliable")
+func update_dictionary():
+	var unique_peer = multiplayer.get_unique_id()
+	var sprite_paths = SPRITES_DICTIONARY.sprite_paths
+	var sprite_info = SPRITES_DICTIONARY.sprite_info
+	players[unique_peer] = sprite_paths.merged(sprite_info, true)
+	players[unique_peer].set("id", unique_peer)
+	var username = players[unique_peer].get("profile")
+	players[unique_peer].set("name", username)
+#Server Joined
 func server_joined(username):
-	players[multiplayer.get_unique_id()] =\
-		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true)
-	players[multiplayer.get_unique_id()].set("name", username)
-	players[multiplayer.get_unique_id()].set("id", multiplayer.get_unique_id())
-	peer_connected.emit(multiplayer.get_unique_id(),
-		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true))
+	update_dictionary()
 	emit_signal("server_found", username)
 	if single_player:
 		multiplayer.multiplayer_peer.set_refuse_new_connections(true)
@@ -60,39 +68,42 @@ func server_joined(username):
 #Register Player
 @rpc("any_peer", "reliable")
 func register_player(new_player_info):
-	var new_player_id = multiplayer.get_remote_sender_id()
-	players[new_player_id] = new_player_info
-	peer_connected.emit(new_player_id, new_player_info)
-	rpc_id(new_player_id, "player_update", +1)
-	var username = players[new_player_id].get("profile")
-	players[new_player_id].set("name", username)
-	players[new_player_id].set("id", new_player_id)
-#Update Players Online
-@rpc("any_peer", "call_local")
-func player_update(value): players_online += value
+	var joining_player = multiplayer.get_remote_sender_id()
+	players[joining_player] = new_player_info
+	peer_connected.emit(joining_player, new_player_info)
+	players_online += 1
+	rpc("update_dictionary")
+#Clear Player
+@rpc("any_peer", "call_local", "reliable")
+func remove_player(id):
+	if id != 1: emit_signal("message_leave", id)
+	players_online -= 1
+	peer_disconnected.emit(id)
+	for player in MAIN.ORPHANAGE_PLAYERS.get_children():
+		if player.name == str(id): player.queue_free()
+	print("Removing Peer [%s] from Game...")
+	players.erase(id)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Player Connected/Disconnected
 func _on_peer_connected(id):
+	var sprite_paths = SPRITES_DICTIONARY.sprite_paths
+	var sprite_info = SPRITES_DICTIONARY.sprite_info
 	print("Peer [%s] Connected!" % id)
-	register_player.rpc_id(id,
-		SPRITES_DICTIONARY.sprite_paths.merged(SPRITES_DICTIONARY.sprite_info, true))
+	register_player.rpc_id(id, sprite_paths.merged(sprite_info, true))
 func _on_peer_disconnected(id):
-	if id != 1: emit_signal("message_leave", id)
-	rpc("player_update", -1)
-	for player in MAIN.ORPHANAGE_PLAYERS.get_children():
-		if player.name == str(id): player.queue_free()
-	players.erase(id)
-	peer_disconnected.emit(id)
+	print("Peer [%s Disconnected!]" % id)
+	rpc("remove_player", id)
 #Connection Successful/Unsuccessful
 func _on_connection_successful():
 	emit_signal("message_join")
 	print("Connection Successful!!")
 	print("Connected Peers: ", multiplayer.get_peers())
-func _on_connection_unsuccessful(): multiplayer.multiplayer_peer = null
+func _on_connection_unsuccessful():
+	printerr("Connection Unsuccessful!!")
 #Server Disconnected
 func _on_server_disconnected():
-	multiplayer.multiplayer_peer = null
+	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
 	players.clear()
 	server_disconnected.emit()
 	UI_SPLASH.set_deferred("visible", true)
@@ -101,13 +112,17 @@ func _on_server_disconnected():
 #Custom Signaled Functions
 #Create New Server
 func server_create(username, _ip):
-	var peer = ENetMultiplayerPeer.new()
-	peer.create_server(port, max_players)
-	multiplayer.multiplayer_peer = peer
+	if !Engine.has_singleton("Steam"):
+		var peer = ENetMultiplayerPeer.new()
+		var error = peer.create_server(port, max_players)
+		if error == OK:
+			multiplayer.multiplayer_peer = peer
 	server_joined(username)
 #Create Client Connection
 func client_create(username, ip):
-	var peer = ENetMultiplayerPeer.new()
-	peer.create_client(ip, port)
-	multiplayer.multiplayer_peer = peer
+	if !Engine.has_singleton("Steam"):
+		var peer = ENetMultiplayerPeer.new()
+		var error = peer.create_client(ip, port)
+		if error == OK:
+			multiplayer.multiplayer_peer = peer
 	server_joined(username)

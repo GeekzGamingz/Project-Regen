@@ -26,14 +26,14 @@ func _on_button_up() -> void:
 	button_send_username.set_deferred("visible", true)
 #Username Text Submitted
 func _on_line_username_text_submitted(new_text: String) -> void:
-	if new_text != "": send_host(new_text)
+	if new_text != "": start_game(new_text)
 #Send Button Up
 func _on_button_send_host_name_button_up() -> void:
-	if line_username.text != "": send_host(line_username.text)
+	if line_username.text != "": start_game(line_username.text)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Send Host Information
-func send_host(username):
+func start_game(username):
 	if username != "":
 		waiting_container.set_deferred("visible", true)
 		spawn_container.set_deferred("visible", true)

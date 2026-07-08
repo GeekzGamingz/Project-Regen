@@ -62,6 +62,11 @@ func _on_kick_pressed() -> void:
 		print("Sending kick command for %s" % steam_id)
 		if not Steam.sendLobbyChatMsg(Steamworks.lobby_id, "/kick %s" % steam_id):
 			printerr("Failed to send kick command for %s" % steam_id)
+		rpc_id(steam_id, "kick_player")
+
+@rpc("any_peer", "reliable")
+func kick_player(): multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+		
 
 
 func _on_add_friend_pressed() -> void:
