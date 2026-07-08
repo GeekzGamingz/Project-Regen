@@ -70,6 +70,6 @@ func check_heights(height, custom):
 	])
 	for sprite in custom.adjustables:
 		match(height):
-			0: sprite.offset.y = -14.0
-			1: sprite.offset.y = -16.0
-			2: sprite.offset.y = -18.0
+			0: sprite.offset.y = 2.0
+			1: sprite.offset.y = 0.0
+			2: sprite.offset.y = -2.0

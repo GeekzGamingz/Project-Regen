@@ -32,13 +32,13 @@ func buttons_connect():
 func object_add():
 	G.CAN_BUILD = true
 	buttons_connect()
-	for ray in MAIN.BLUEPRINT.get_node("Blueprint_Selection").get_children():
+	var blueprint = MAIN.BLUEPRINT
+	for ray in blueprint.get_node("Blueprint_Selection").get_children():
 		if ray.is_colliding(): G.CAN_BUILD = false
-	if object_current != null && G.IS_BUILDING:
-		if G.CAN_BUILD:
-			var object_position = MAIN.BLUEPRINT.global_position
-			var object = object_current
-			rpc("object_spawn", object, object_position)
+	if object_current != null && G.IS_BUILDING && G.CAN_BUILD:
+		var object_position = blueprint.global_position + (blueprint.get_parent().blueprint_size * 0.5)
+		var object = object_current
+		rpc("object_spawn", object, object_position)
 #Multiplayer Spawning
 @rpc("any_peer", "call_local", "reliable")
 func object_spawn(object, object_position):

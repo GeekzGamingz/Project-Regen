@@ -53,9 +53,7 @@ var mouse_is_hovering: bool = false
 #Functions
 #Ready Function
 func _ready() -> void:
-	if is_obtainable:
-		$Sprites/Sprite_Shadow.set_deferred("visible", true)
-		$Sprites/Sprite_Object.set_deferred("visible", true)
+	if is_obtainable: $Sprites/Sprite_Object.set_deferred("visible", true)
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:

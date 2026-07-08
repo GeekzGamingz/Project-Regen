@@ -36,7 +36,6 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build" unique_id=379011557]
-position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_p6eq0")
 
 [node name="Area_Detection" type="Area2D" parent="Areas" unique_id=1198460473]
@@ -44,51 +43,47 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection" unique_id=1935672935]
-position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_crrwx")
 
 [node name="Area_Pack" type="Area2D" parent="Areas" unique_id=2009702789]
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas/Area_Pack" unique_id=1424705020]
+position = Vector2(-8, -8)
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
 [node name="Sprites" type="Node2D" parent="." unique_id=695416246]
-
-[node name="Sprite_Shadow" type="Sprite2D" parent="Sprites" unique_id=1728888642]
-visible = false
-self_modulate = Color(1, 1, 1, 0.5882353)
-position = Vector2(0, 6)
-texture = ExtResource("2_15w7v")
-centered = false
+y_sort_enabled = true
 
 [node name="Sprite_Object" type="Sprite2D" parent="Sprites" unique_id=1671756147]
 visible = false
 material = SubResource("ShaderMaterial_tvokc")
-centered = false
+position = Vector2(0, -10)
 
 [node name="Sprite_Bubble" type="Sprite2D" parent="Sprites/Sprite_Object" unique_id=238781367]
 self_modulate = Color(1, 1, 1, 0.39215687)
 material = SubResource("ShaderMaterial_u7iat")
-position = Vector2(-3, -3)
 texture = ExtResource("3_15w7v")
-centered = false
+
+[node name="Sprite_Shadow" type="Sprite2D" parent="Sprites/Sprite_Object" unique_id=1728888642]
+self_modulate = Color(1, 1, 1, 0.5882353)
+show_behind_parent = true
+position = Vector2(0, 6)
+texture = ExtResource("2_15w7v")
 
 [node name="Sprite_Preview" type="Sprite2D" parent="Sprites" unique_id=980131381]
 visible = false
-centered = false
 
 [node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites" unique_id=1288548770]
 visible = false
-centered = false
 
 [node name="Sprite_Container" type="Sprite2D" parent="Sprites" unique_id=1472507649]
 visible = false
-centered = false
 
 [node name="Timers" type="Node2D" parent="." unique_id=121542081]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=853829453]
+position = Vector2(-8, -8)
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

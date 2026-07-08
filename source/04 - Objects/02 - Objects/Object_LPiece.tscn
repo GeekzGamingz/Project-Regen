@@ -14,14 +14,15 @@ is_obtainable = true
 shape = SubResource("RectangleShape2D_p6eq0")
 
 [node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
-visible = false
 collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionPolygon2D" parent="Areas/Area_Pack" index="0" unique_id=1424705020]
+visible = false
 polygon = PackedVector2Array(0, 0, 32, 0, 32, 16, 16, 16, 16, 48, 0, 48)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
+visible = true
 texture = ExtResource("3_kp2yx")
 
 [node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
@@ -32,3 +33,6 @@ texture = ExtResource("3_kp2yx")
 
 [node name="Sprite_Container" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="3" unique_id=1472507649]
 texture = ExtResource("2_kp2yx")
+
+[node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
+visible = false

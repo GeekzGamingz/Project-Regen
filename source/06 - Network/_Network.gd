@@ -81,7 +81,7 @@ func remove_player(id):
 	peer_disconnected.emit(id)
 	for player in MAIN.ORPHANAGE_PLAYERS.get_children():
 		if player.name == str(id): player.queue_free()
-	print("Removing Peer [%s] from Game...")
+	print("Removing Peer [%s] from Game..." % id)
 	players.erase(id)
 #------------------------------------------------------------------------------#
 #Signaled Functions
@@ -92,7 +92,7 @@ func _on_peer_connected(id):
 	print("Peer [%s] Connected!" % id)
 	register_player.rpc_id(id, sprite_paths.merged(sprite_info, true))
 func _on_peer_disconnected(id):
-	print("Peer [%s Disconnected!]" % id)
+	print("Peer [%s] Disconnected!" % id)
 	rpc("remove_player", id)
 #Connection Successful/Unsuccessful
 func _on_connection_successful():

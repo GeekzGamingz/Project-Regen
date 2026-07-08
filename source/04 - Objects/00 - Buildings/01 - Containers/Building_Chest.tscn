@@ -9,30 +9,23 @@
 size = Vector2(32, 32)
 
 [node name="Building_Chest" unique_id=969433499 instance=ExtResource("1_4mivw")]
+collision_layer = 17
 script = ExtResource("2_xxawr")
 container_interface = ExtResource("3_xxawr")
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
-position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_ax4wk")
 
-[node name="CollisionShape2D" parent="Areas/Area_Detection" parent_id_path=PackedInt32Array(1198460473) index="0" unique_id=1935672935]
-position = Vector2(0, 0)
-
-[node name="Sprite_Shadow" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1728888642]
-position = Vector2(-7, -9)
-
-[node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=1671756147]
-position = Vector2(-12, -17)
+[node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
 texture = ExtResource("3_vmeu4")
 
-[node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="2" unique_id=980131381]
+[node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
 visible = true
-position = Vector2(-12, -17)
+position = Vector2(0, -8)
 texture = ExtResource("3_vmeu4")
 
 [node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
-position = Vector2(-8, -9)
+position = Vector2(-8, -12)
 polygon = PackedVector2Array(0, 8, 17, 8, 17, 16, 0, 16)
 
 [connection signal="body_exited" from="Areas/Area_Detection" to="." method="_on_detection_body_exited"]

@@ -14,26 +14,18 @@ load_path = "res://.godot/imported/waterpurifier.png-6f151a069a13b7f9b5b3098a22a
 [node name="Building_WaterPurifier" unique_id=1244450594 groups=["Buildings"] instance=ExtResource("1_rx06g")]
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
-position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_y7dv5")
 
-[node name="Area_Detection" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="1" unique_id=1198460473]
-position = Vector2(24, 24)
+[node name="Sprites" parent="." index="1" unique_id=695416246]
+position = Vector2(0, 6)
 
-[node name="CollisionShape2D" parent="Areas/Area_Detection" index="0" unique_id=1935672935]
-position = Vector2(0, 0)
-
-[node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
-position = Vector2(24, 24)
-
-[node name="CollisionPolygon2D" parent="Areas/Area_Pack" index="0" unique_id=1424705020]
-position = Vector2(-8, -8)
-
-[node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
+[node name="Sprite_Object" parent="Sprites" index="0" unique_id=1671756147]
 texture = SubResource("CompressedTexture2D_rx06g")
 
-[node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
+[node name="Sprite_Preview" parent="Sprites" index="1" unique_id=980131381]
+visible = true
 texture = SubResource("CompressedTexture2D_u0gtc")
 
 [node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
-position = Vector2(16, 16)
+position = Vector2(-8, -2)
+polygon = PackedVector2Array(-3, 0, 19, 0, 19, 18, -3, 18)

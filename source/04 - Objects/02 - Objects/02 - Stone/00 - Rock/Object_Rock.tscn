@@ -17,9 +17,11 @@ is_stackable = true
 shape = SubResource("RectangleShape2D_u3oro")
 
 [node name="CollisionPolygon2D" parent="Areas/Area_Pack" parent_id_path=PackedInt32Array(2009702789) index="0" unique_id=1424705020]
+visible = false
 polygon = PackedVector2Array(0, 0, 32, 0, 32, 32, 0, 32)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
+visible = true
 texture = ExtResource("5_nfetg")
 
 [node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
@@ -30,3 +32,6 @@ texture = ExtResource("5_nfetg")
 
 [node name="Sprite_Container" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="3" unique_id=1472507649]
 texture = ExtResource("6_1ws6l")
+
+[node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
+visible = false

@@ -1271,15 +1271,19 @@ animation = &"idle_right"
 animation = &"idle_up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_01a5d"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_yu20t")
 blend_point_0/pos = Vector2(-1, 0)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_7i3x6")
 blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_kjtp0")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_so8uh")
 blend_point_3/pos = Vector2(0, -1)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_01a5d"]
 animation = &"walk_down"
@@ -1294,15 +1298,19 @@ animation = &"walk_up"
 animation = &"walk_left"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_k5llr"]
+blend_mode = 1
 blend_point_0/node = SubResource("AnimationNodeAnimation_01a5d")
 blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_ai6v3")
 blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_ftlax")
 blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_x2cbb")
 blend_point_3/pos = Vector2(-1, 0)
-blend_mode = 1
+blend_point_3/name = &"3"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yu20t"]
 
@@ -1336,7 +1344,7 @@ properties/1/replication_mode = 1
 
 [node name="Entity" type="CharacterBody2D" unique_id=1454591577]
 collision_layer = 0
-collision_mask = 93
+collision_mask = 77
 script = ExtResource("1_pcmld")
 
 [node name="Scripts" type="Node2D" parent="." unique_id=1965266343]
@@ -1353,14 +1361,16 @@ script = ExtResource("2_itw66")
 [node name="Equipment_Colors" type="Node2D" parent="Scripts/Entity_Equipment" unique_id=234698427]
 
 [node name="Sprites" type="Node2D" parent="." unique_id=1884354534]
+y_sort_enabled = true
 
 [node name="Sprites_Body" type="Node2D" parent="Sprites" unique_id=76908128]
+y_sort_enabled = true
+position = Vector2(0, -13)
 script = ExtResource("5_v25io")
 
 [node name="Sprite_Base" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=511965580]
 material = SubResource("ShaderMaterial_l6i5u")
 texture = ExtResource("8_n86k3")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1368,7 +1378,6 @@ frame = 12
 [node name="Sprite_ArmRight" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=708651417]
 material = SubResource("ShaderMaterial_f2ycm")
 texture = ExtResource("31_qi55k")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1376,7 +1385,6 @@ frame = 12
 [node name="Sprite_ArmLeft" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=1696417493]
 material = SubResource("ShaderMaterial_k2nwu")
 texture = ExtResource("10_kevt7")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1384,7 +1392,6 @@ frame = 12
 [node name="Sprite_LegRight" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=1817722614]
 material = SubResource("ShaderMaterial_k2nwu")
 texture = ExtResource("33_rt581")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1392,7 +1399,6 @@ frame = 12
 [node name="Sprite_LegLeft" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=1095566541]
 material = SubResource("ShaderMaterial_uv8vn")
 texture = ExtResource("32_4h5xq")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1400,7 +1406,6 @@ frame = 12
 [node name="Sprite_Hair" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=843470542]
 material = SubResource("ShaderMaterial_n86k3")
 texture = ExtResource("16_f2ycm")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1408,7 +1413,6 @@ frame = 12
 [node name="Sprite_Ears" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=248255888]
 material = SubResource("ShaderMaterial_v25io")
 texture = ExtResource("35_24lc3")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 8
@@ -1416,7 +1420,6 @@ frame = 8
 [node name="Sprite_Beard" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=569887477]
 material = SubResource("ShaderMaterial_dpogu")
 texture = ExtResource("21_s7rcf")
-offset = Vector2(0, -16)
 hframes = 4
 vframes = 4
 frame = 12
@@ -1424,7 +1427,6 @@ frame = 12
 [node name="Sprite_Bangs" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=989308548]
 
 [node name="Raycasts" type="Node2D" parent="." unique_id=1481383238]
-position = Vector2(0, -8)
 
 [node name="Rays_ObjectDetection" type="Node2D" parent="Raycasts" unique_id=291148904]
 

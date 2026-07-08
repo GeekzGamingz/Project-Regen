@@ -1,6 +1,7 @@
 extends TileMapLayer
 #------------------------------------------------------------------------------#
 #Variables
+var blueprint_size: Vector2 = Vector2.ZERO
 #Exported Variables
 @export var buildings: Array[PackedScene]
 #OnReady Variables
@@ -48,15 +49,17 @@ func blueprint_visibility(toggle: bool):
 #Custom Signaled Functions
 #Change Selection Dimensions
 func change_selection(dimensions): 
-	var texture_size: Vector2 = Vector2.ZERO
 	var dimensions_key: String = dimensions.find_key(true)
 	var dimension_split: Array = dimensions_key.split("x")
-	texture_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
+	blueprint_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
 	blueprint_zone.texture = T.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
-	blueprint_selection.size = texture_size
+	blueprint_selection.size = blueprint_size
+	var ray_normalization = blueprint_size.normalized()
+	print("Ray Normalization: ", ray_normalization)
+	print("Blueprint Size: ", blueprint_size)
 	for ray in blueprint_selection.get_children():
-		ray.target_position.y = (texture_size.x + texture_size.y) * 0.5
-		ray.position = Vector2(texture_size.x * 0.5, texture_size.y * 0.5)
+		ray.target_position.y = (blueprint_size.x * ray_normalization.x) - 1.0
+		ray.position = Vector2(blueprint_size.x * 0.5, blueprint_size.y * 0.5)
 	blueprint_visibility(true)
 #Exit Build Mode
 func exit_build_mode():

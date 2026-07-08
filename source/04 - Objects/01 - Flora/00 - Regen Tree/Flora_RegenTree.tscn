@@ -16,34 +16,27 @@ properties/0/spawn = false
 properties/0/replication_mode = 2
 
 [node name="Flora_RegenTree" unique_id=972159684 instance=ExtResource("1_cqd1s")]
+collision_layer = 17
 script = ExtResource("2_2ug13")
 grass_array = []
 is_active = false
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
-position = Vector2(48, 48)
 shape = SubResource("RectangleShape2D_2ug13")
-
-[node name="CollisionShape2D" parent="Areas/Area_Detection" parent_id_path=PackedInt32Array(1198460473) index="0" unique_id=1935672935]
-position = Vector2(48, 85)
-
-[node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
-position = Vector2(48, 85)
-
-[node name="CollisionPolygon2D" parent="Areas/Area_Pack" index="0" unique_id=1424705020]
-position = Vector2(-8, -8)
 
 [node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
 texture = SubResource("CompressedTexture2D_o2m8g")
 
 [node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
+visible = true
+position = Vector2(0, -39)
 texture = ExtResource("2_o2m8g")
 
 [node name="Timer_Growth" type="Timer" parent="Timers" parent_id_path=PackedInt32Array(121542081) index="0" unique_id=722191672]
 one_shot = true
 
 [node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
-position = Vector2(40, 77)
+polygon = PackedVector2Array(3, 8, 5, 7, 11, 7, 13, 8, 13, 11, 11, 12, 5, 12, 3, 11)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4" unique_id=1791069184]
 replication_config = SubResource("SceneReplicationConfig_2ug13")

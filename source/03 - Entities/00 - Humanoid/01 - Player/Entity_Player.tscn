@@ -543,7 +543,7 @@ point_count = 2
 
 [node name="Entity_Player" unique_id=2034766984 instance=ExtResource("1_g6jbf")]
 collision_layer = 2
-collision_mask = 29
+collision_mask = 13
 script = ExtResource("2_g6jbf")
 
 [node name="Player_Input" type="Node2D" parent="Scripts" parent_id_path=PackedInt32Array(1965266343) index="0" unique_id=959656967]
@@ -604,6 +604,9 @@ theme_override_font_sizes/font_size = 8
 
 [node name="Output_Name" parent="Outputs" parent_id_path=PackedInt32Array(1939262163) index="1" unique_id=721045188]
 visible = false
+
+[node name="CollisionShape2D" parent="." index="6" unique_id=88786690]
+visible = true
 
 [node name="Marker_Drop" type="Marker2D" parent="." index="9" unique_id=646574662]
 
