@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_p6eq0")
 
 [node name="Area_Detection" type="Area2D" parent="Areas" unique_id=1198460473]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection" unique_id=1935672935]
 shape = SubResource("CircleShape2D_crrwx")

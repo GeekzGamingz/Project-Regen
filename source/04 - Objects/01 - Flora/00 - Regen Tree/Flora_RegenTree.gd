@@ -38,7 +38,10 @@ func day_elapsed(_day): map_grass.set_cells_terrain_connect(grass_array, 0, 0, t
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Interact
-func interact():
+func interact(): rpc("activate_grass")
+#Activate
+@rpc("any_peer", "call_local")
+func activate_grass():
 	if !is_active:
 		is_active = true
 		MAIN.TIME.connect("tick_elapsed", tick_elapsed)

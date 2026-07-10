@@ -24,11 +24,12 @@ func _ready() -> void:
 #------------------------------------------------------------------------------#
 #Input Function
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action_interact"): object_interaction.interact_object()
-	if event.is_action_pressed("move_click"): make_path()
-	if Input.get_vector(
-		"move_left", "move_right", "move_up", "move_down"
-	) != Vector2.ZERO: is_pathing = false
+	if e.is_multiplayer_authority():
+		if event.is_action_pressed("action_interact"): object_interaction.interact_object()
+		if event.is_action_pressed("move_click"): make_path()
+		if Input.get_vector(
+			"move_left", "move_right", "move_up", "move_down"
+		) != Vector2.ZERO: is_pathing = false
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #Pathing Velocity
@@ -47,12 +48,12 @@ func make_path() -> void:
 #Handle Movement Provided By Player
 #WASD Controls
 func handle_movement() -> void:
-	if is_controllable: if e.is_multiplayer_authority():
+	if e.is_multiplayer_authority(): if is_controllable: 
 		e.direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if e.direction != Vector2.ZERO: MAIN.CAMERA_MAIN.position = e.position
 #Click-to-Move
 func handle_pathing() -> void:
-	if is_controllable: if e.is_multiplayer_authority():
+	if e.is_multiplayer_authority(): if is_controllable: 
 		var navi_position = global_position
 		var next_position = navi.get_next_path_position()
 		var new_velocity = navi_position.direction_to(next_position) * e.max_speed

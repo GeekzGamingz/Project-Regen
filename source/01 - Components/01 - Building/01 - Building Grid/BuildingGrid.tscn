@@ -12,6 +12,7 @@ tile_set = SubResource("TileSet_urqfs")
 script = ExtResource("1_h0nsw")
 
 [node name="Blueprint_Control" type="Control" parent="." unique_id=1366325839]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

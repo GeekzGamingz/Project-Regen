@@ -12,7 +12,7 @@ func interact_object() -> void:
 			var object = o.get_collider().get_node("../..")
 			interaction.interaction_hotbar.check_slots(object)
 			var hotbar_selected = interaction.HOTBAR.hotbar_array[interaction.HOTBAR.hotbar_selection]
-			object.rpc("interact")
+			object.interact()
 			if object.is_obtainable: obtain_object(object, hotbar_selected)
 			break #Break Raycast Loop
 #Obtain Object
