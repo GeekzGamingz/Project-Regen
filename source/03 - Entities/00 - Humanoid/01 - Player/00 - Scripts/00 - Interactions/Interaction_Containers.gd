@@ -9,12 +9,35 @@ var slot_array: Array = []
 #Custom Functions
 #Add to Backpack
 func addto_container(object, slot, origin):
+	var held_index = object.index_name
+	var container_index = slot.get_node("../../../../..").name
+	var slot_index = str("Slot " + slot.name.substr(4, -1))
+	var native_slot = Items.CONTAINERS[container_index].get("Slot " + slot.name.substr(4, -1))
+	print("Container Index: ", container_index)
+	print("Native Slot: ", "Slot", slot.name.substr(4, -1), " [%s]" % native_slot)
+	print("Container Slots: ", Items.CONTAINERS[container_index])
+	rpc("update_server_containers", held_index, container_index, slot_index)
 	slot_orientation()
-	slot.texture_object.texture = object.sprite_container.texture
-	var object_scene = object.duplicate()
-	slot.slotted_object = object_scene
 	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Container")
+	
+	
+
+#Update Server Containers
+@rpc("any_peer", "call_local")
+func update_server_containers(held_index, container_index, slot_index):
+	var object_scene = Items.SCENES.get(held_index).instantiate()
+	var native_slot = Items.CONTAINERS[container_index].get(slot_index)
+	add_child(object_scene)
+	native_slot.texture_object.texture = object_scene.sprite_container.texture
+	native_slot.slotted_object = object_scene
+	native_slot.slot_primary = native_slot
+	
+	#await get_tree().process_frame
+	remove_child(object_scene)
+	
+	
+	
 #Trade Slots
 func trade_slots(contents):
 	if check_grid():

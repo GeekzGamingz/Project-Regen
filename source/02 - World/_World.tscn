@@ -35,7 +35,10 @@ script = ExtResource("5_ylk6r")
 y_sort_enabled = true
 
 [node name="Building_Chest" parent="Orphanages/Orphanage_Buildings" unique_id=969433499 instance=ExtResource("7_g0q3n")]
-position = Vector2(242, 158)
+position = Vector2(232, 162)
+
+[node name="Building_Chest2" parent="Orphanages/Orphanage_Buildings" unique_id=1486953836 instance=ExtResource("7_g0q3n")]
+position = Vector2(389, 204)
 
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 y_sort_enabled = true

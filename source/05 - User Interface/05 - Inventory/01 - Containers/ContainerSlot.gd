@@ -1,19 +1,21 @@
 extends TextureRect
 #------------------------------------------------------------------------------#
 #Variables
-#Integers
-var quantity: int = 0
 #Bools
 var mouse_hovering: bool = false
-var slot_occupied: bool = false
-var slot_blocked: bool = false
-#Strings
-var contents: String = "Empty"
-#Arrays
-var slot_array: Array = [self]
 #Resources
 var slot_primary: Object = null
 var slotted_object: Object = null
+#Exported Variables
+#Integers
+@export var quantity: int = 0
+#Bools
+@export var slot_occupied: bool = false
+@export var slot_blocked: bool = false
+#Strings
+@export var contents: String = "Empty"
+#Arrays
+@export var slot_array: Array = [self]
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")

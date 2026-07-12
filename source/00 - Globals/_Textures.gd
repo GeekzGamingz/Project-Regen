@@ -1,5 +1,5 @@
+extends Node
 class_name SpriteTextures
-extends Node2D
 #------------------------------------------------------------------------------#
 #Global Dictionaries
 #Zone Textures

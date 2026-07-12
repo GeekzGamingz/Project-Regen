@@ -10,8 +10,11 @@ size = Vector2(16, 16)
 
 [node name="Object_Rock" unique_id=1639938997 groups=["Rock"] instance=ExtResource("1_jf7w0")]
 script = ExtResource("2_u3oro")
+index_name = "Rock"
 is_obtainable = true
 is_stackable = true
+object_type = "Material"
+object_material = "Stone"
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
 shape = SubResource("RectangleShape2D_u3oro")

@@ -30,6 +30,7 @@ Steamworks="*uid://dwij3vaphebc3"
 Globals="*res://source/00 - Globals/_Globals.gd"
 Textures="*res://source/00 - Globals/_Textures.gd"
 Cursor="*res://source/05 - User Interface/06 - Cursors/_Cursor.gd"
+Items="*uid://2d5r8jx2hgn3"
 
 [display]
 

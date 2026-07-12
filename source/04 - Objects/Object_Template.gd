@@ -8,6 +8,7 @@ signal object_clicked
 #Booleans
 var mouse_is_hovering: bool = false
 #Exported Variables
+@export var index_name: String = "Not Set"
 #Exported Booleans
 @export var is_obtainable: bool = false
 @export var is_stackable: bool = false
