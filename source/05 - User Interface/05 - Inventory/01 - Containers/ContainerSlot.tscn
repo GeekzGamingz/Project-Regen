@@ -9,23 +9,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
 size = Vector2(12, 12)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ckwuj"]
-properties/0/path = NodePath(".:quantity")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:slot_occupied")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath(".:slot_blocked")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath(".:contents")
-properties/3/spawn = true
-properties/3/replication_mode = 1
-properties/4/path = NodePath(".:slot_array")
-properties/4/spawn = true
-properties/4/replication_mode = 1
-
 [node name="Slot1" type="TextureRect" unique_id=1766660710]
 texture = ExtResource("1_pi8wo")
 script = ExtResource("2_x6m45")
@@ -97,9 +80,6 @@ z_index = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=893530442]
-replication_config = SubResource("SceneReplicationConfig_ckwuj")
 
 [connection signal="mouse_entered" from="." to="." method="_on_slot_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_slot_exited"]
