@@ -13,7 +13,7 @@ var buttons_connected: bool = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("action_confirm"):
 		if !buttons_connected: buttons_connect()
-		if G.IS_BUILDING: object_add()
+		if Globals.IS_BUILDING: object_add()
 	if event.is_action_released("action_context"):
 		object_current = null
 		emit_signal("exit_build_mode")
@@ -30,12 +30,12 @@ func buttons_connect():
 			button.connect("send_object", send_object)
 #Instantiate Building
 func object_add():
-	G.CAN_BUILD = true
+	Globals.CAN_BUILD = true
 	buttons_connect()
 	var blueprint = MAIN.BLUEPRINT
 	for ray in blueprint.get_node("Blueprint_Selection").get_children():
-		if ray.is_colliding(): G.CAN_BUILD = false
-	if object_current != null && G.IS_BUILDING && G.CAN_BUILD:
+		if ray.is_colliding(): Globals.CAN_BUILD = false
+	if object_current != null && Globals.IS_BUILDING && Globals.CAN_BUILD:
 		var object_position = blueprint.global_position + (blueprint.get_parent().blueprint_size * 0.5)
 		var object = object_current
 		rpc("object_spawn", object, object_position)

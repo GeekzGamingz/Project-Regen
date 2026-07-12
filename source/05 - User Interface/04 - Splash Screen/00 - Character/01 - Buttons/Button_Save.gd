@@ -14,7 +14,7 @@ var profiles = []
 @onready var overwrite_container: HBoxContainer = $"../../../ConfirmationContainer/TabContainer/OverwriteContainer"
 #------------------------------------------------------------------------------#
 #Ready Function
-func _ready() -> void: load_profiles(G.PATH_PROFILES)
+func _ready() -> void: load_profiles(Globals.PATH_PROFILES)
 #------------------------------------------------------------------------------#
 #Input Functions
 func _input(event: InputEvent) -> void:
@@ -56,7 +56,7 @@ func save_character(new_text: String):
 		for character in profiles:
 			if character.get("profile") == new_text: profiles.erase(character)
 		profiles.push_back(sprites_dictionary.sprite_info.duplicate())
-		G.SAVE(G.PATH_PROFILES, profiles)
+		Globals.SAVE(Globals.PATH_PROFILES, profiles)
 		selection_character.character_counter = profiles.size() - 1
 		selection_character.check_character()
 		clear_line()
@@ -66,4 +66,4 @@ func clear_line():
 	line_profile.set_deferred("visible", false)
 	line_profile.text = ""
 #Load Profiles
-func load_profiles(path): if FileAccess.file_exists(path): profiles = G.LOAD(path)
+func load_profiles(path): if FileAccess.file_exists(path): profiles = Globals.LOAD(path)

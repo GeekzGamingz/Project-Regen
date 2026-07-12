@@ -57,7 +57,7 @@ func _on_button_character_button_up() -> void:
 	tab_container.set_deferred("visible", true)
 	character_container.set_deferred("visible", true)
 	sprites_colors.check_colors()
-	if !FileAccess.file_exists(G.PATH_PROFILES):
+	if !FileAccess.file_exists(Globals.PATH_PROFILES):
 		customization.set_deferred("visible", true)
 #Quit
 func _on_button_quit_button_up() -> void: get_tree().quit()

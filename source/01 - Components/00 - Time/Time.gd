@@ -97,7 +97,7 @@ func _on_timer_ticks_timeout() -> void:
 #Custom Functions
 #Check Cycle
 func check_cycles():
-	G.CURRENT_TICK = ticks
+	Globals.CURRENT_TICK = ticks
 	if day == DAYS_WEEKLY: day = 0
 	if week == WEEKS_MONTHLY: week = 0
 	if month == MONTHS_ANNUALLY: month = 0

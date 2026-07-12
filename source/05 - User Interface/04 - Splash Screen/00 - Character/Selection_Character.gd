@@ -41,7 +41,7 @@ func _on_next_character_button_up() -> void:
 #Custom Functions
 #Check Character
 func check_character():
-	if FileAccess.file_exists(G.PATH_PROFILES):
+	if FileAccess.file_exists(Globals.PATH_PROFILES):
 		loaded_buttons(true)
 		UI_CUSTOMIZATION.set_deferred("visible", false)
 		if character_counter < 0: character_counter = save_container.button_save.profiles.size() - 1

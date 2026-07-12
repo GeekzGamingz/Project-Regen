@@ -18,10 +18,10 @@ func _on_button_up() -> void:
 	menu.set_deferred("visible", !menu.visible)
 #Mouse Entered
 func _on_mouse_entered() -> void:
-	if G.CAN_BUILD: G.CAN_BUILD = false
+	if Globals.CAN_BUILD: Globals.CAN_BUILD = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 #Mouse Exited
 func _on_mouse_exited() -> void:
-	if !G.CAN_BUILD: G.CAN_BUILD = true
-	else: G.CAN_BUILD = false
-	if G.IS_BUILDING: Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	if !Globals.CAN_BUILD: Globals.CAN_BUILD = true
+	else: Globals.CAN_BUILD = false
+	if Globals.IS_BUILDING: Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

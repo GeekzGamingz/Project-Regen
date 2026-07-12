@@ -16,9 +16,9 @@ var start_tile: Vector2i
 @onready var timer_growth: Timer = $Timers/Timer_Growth
 #Offsets
 @warning_ignore("integer_division")
-@onready var world_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(G.TILE_SIZE)
+@onready var world_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(Globals.TILE_SIZE)
 @warning_ignore("integer_division")
-@onready var grass_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(G.GRASS_SIZE)
+@onready var grass_offset = Vector2i($CollisionPolygon2D.position) / Vector2i(Globals.GRASS_SIZE)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 func _on_timer_growth_timeout() -> void:
@@ -73,7 +73,7 @@ func spawn_grass():
 		randomize()
 		var random_tile = grass_array.pick_random()
 		for cell in map_grass.get_surrounding_cells(random_tile):
-			var cell_position = map_grass.to_global(cell) * Vector2(G.GRASS_SIZE)
+			var cell_position = map_grass.to_global(cell) * Vector2(Globals.GRASS_SIZE)
 			var world_position = map_world.local_to_map(cell_position)
 			var world_data = map_world.get_cell_tile_data(world_position)
 			if world_data != null:

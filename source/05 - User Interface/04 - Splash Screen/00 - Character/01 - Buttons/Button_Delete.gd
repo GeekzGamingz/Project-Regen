@@ -31,7 +31,7 @@ func _on_button_confirm_button_up() -> void:
 	if button_save.profiles.size() != 1:
 		sprites_dictionary.update_dictionary("Delete")
 		selection_character._on_next_character_button_up()
-		G.SAVE(G.PATH_PROFILES, button_save.profiles)
+		Globals.SAVE(Globals.PATH_PROFILES, button_save.profiles)
 		confirmation_container.set_deferred("visible", false)
 #On Decline Up
 func _on_button_decline_button_up() -> void:

@@ -44,7 +44,6 @@ func trade_slots(contents):
 					print("Object Origin: ", hotbar_origin.name)
 				clear_held(container_origin)
 				addto_container(object, slot_primary, hotbar_origin)
-				#addto_container(object, slot_primary, hotbar_origin)
 				for slot in slot_array:
 					slot.slotted_object = object
 					slot.slot_array = slot_array

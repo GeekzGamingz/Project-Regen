@@ -14,7 +14,7 @@ var direction_previous: Vector2 = Vector2.ZERO
 #Exported Vectors
 @export var direction: Vector2 = Vector2.ZERO
 #OnReady Variables
-@onready var walk_speed: float = speed * G.TILE_SIZE.x
+@onready var walk_speed: float = speed * Globals.TILE_SIZE.x
 @onready var run_speed: float = walk_speed * 2
 @onready var max_speed: float = walk_speed
 #Local Nodes

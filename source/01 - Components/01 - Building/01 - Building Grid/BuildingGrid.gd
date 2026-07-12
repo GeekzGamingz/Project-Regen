@@ -33,10 +33,10 @@ func check_cell() -> void:
 	var mouse_tile = get_global_mouse_position() #Position of Mouse
 	var map_position = local_to_map(mouse_tile) #Convert to Map
 	var cell_position = map_to_local(map_position) #Convert to Local Coordinates
-	BLUEPRINT.position = to_global(cell_position) - (G.TILE_SIZE * 0.5)
+	BLUEPRINT.position = to_global(cell_position) - (Globals.TILE_SIZE * 0.5)
 #Zone Color
 func check_zone() -> void:
-	if G.IS_BUILDING:
+	if Globals.IS_BUILDING:
 		blueprint_zone.self_modulate = Color(Color.WHITE)
 		for ray in blueprint_selection.get_children():
 			if ray.is_colliding(): blueprint_zone.self_modulate = Color(Color.RED)
@@ -52,7 +52,7 @@ func change_selection(dimensions):
 	var dimensions_key: String = dimensions.find_key(true)
 	var dimension_split: Array = dimensions_key.split("x")
 	blueprint_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
-	blueprint_zone.texture = T.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
+	blueprint_zone.texture = Textures.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
 	blueprint_selection.size = blueprint_size
 	var ray_normalization = blueprint_size.normalized()
 	print("Ray Normalization: ", ray_normalization)
@@ -63,7 +63,7 @@ func change_selection(dimensions):
 	blueprint_visibility(true)
 #Exit Build Mode
 func exit_build_mode():
-	G.IS_BUILDING = false
+	Globals.IS_BUILDING = false
 	blueprint_visibility(false)
 	MENU_BUILDINGS.set_deferred("visible", false)
 	MENU_FLORA.set_deferred("visible", false)

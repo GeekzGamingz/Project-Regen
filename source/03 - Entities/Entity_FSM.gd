@@ -66,16 +66,16 @@ func state_enter(new_state, old_state):
 		states.idle_down: e.playback.travel("Idle")
 		states.walk_left:
 			e.playback.travel("Walk")
-			e.marker_drop.global_position = e.global_position + Vector2(G.TILE_SIZE.x, 0) * 1.5
+			e.marker_drop.global_position = e.global_position + Vector2(Globals.TILE_SIZE.x, 0) * 1.5
 		states.walk_right:
 			e.playback.travel("Walk")
-			e.marker_drop.global_position = e.global_position + Vector2(-G.TILE_SIZE.x, 0) * 1.5
+			e.marker_drop.global_position = e.global_position + Vector2(-Globals.TILE_SIZE.x, 0) * 1.5
 		states.walk_up:
 			e.playback.travel("Walk")
-			e.marker_drop.global_position = e.global_position + Vector2(0, G.TILE_SIZE.y)
+			e.marker_drop.global_position = e.global_position + Vector2(0, Globals.TILE_SIZE.y)
 		states.walk_down:
 			e.playback.travel("Walk")
-			e.marker_drop.global_position = e.global_position + Vector2(0, -G.TILE_SIZE.y) * 2
+			e.marker_drop.global_position = e.global_position + Vector2(0, -Globals.TILE_SIZE.y) * 2
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):

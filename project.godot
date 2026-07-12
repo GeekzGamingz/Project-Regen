@@ -27,9 +27,9 @@ buses/default_bus_layout="res://AudioBus.tres"
 [autoload]
 
 Steamworks="*uid://dwij3vaphebc3"
-G="*res://source/00 - Globals/_Globals.gd"
-T="*res://source/00 - Globals/_Textures.gd"
-C="*res://source/05 - User Interface/06 - Cursors/_Cursor.gd"
+Globals="*res://source/00 - Globals/_Globals.gd"
+Textures="*res://source/00 - Globals/_Textures.gd"
+Cursor="*res://source/05 - User Interface/06 - Cursors/_Cursor.gd"
 
 [display]
 

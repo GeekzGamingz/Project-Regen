@@ -9,6 +9,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3jp"]
 size = Vector2(12, 12)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ckwuj"]
+
 [node name="Slot1" type="TextureRect" unique_id=1766660710]
 texture = ExtResource("1_pi8wo")
 script = ExtResource("2_x6m45")
@@ -80,6 +82,9 @@ z_index = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=82740595]
+replication_config = SubResource("SceneReplicationConfig_ckwuj")
 
 [connection signal="mouse_entered" from="." to="." method="_on_slot_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_slot_exited"]

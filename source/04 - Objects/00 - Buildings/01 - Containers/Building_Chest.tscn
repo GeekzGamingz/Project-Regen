@@ -8,10 +8,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax4wk"]
 size = Vector2(32, 32)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sr2ci"]
+
 [node name="Building_Chest" unique_id=969433499 instance=ExtResource("1_4mivw")]
 collision_layer = 17
 script = ExtResource("2_xxawr")
 container_interface = ExtResource("3_xxawr")
+object_type = "Building"
+object_material = "Wood"
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
 shape = SubResource("RectangleShape2D_ax4wk")
@@ -27,5 +31,8 @@ texture = ExtResource("3_vmeu4")
 [node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
 position = Vector2(-8, -12)
 polygon = PackedVector2Array(0, 8, 17, 8, 17, 16, 0, 16)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4" unique_id=1675785346]
+replication_config = SubResource("SceneReplicationConfig_sr2ci")
 
 [connection signal="body_exited" from="Areas/Area_Detection" to="." method="_on_detection_body_exited"]
