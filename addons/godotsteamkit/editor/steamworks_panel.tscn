@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c08edo2nkhf2l"]
+
+[ext_resource type="Script" uid="uid://csoy63ewy0uf4" path="res://addons/godotsteamkit/editor/steamworks_panel.gd" id="1_uo4d7"]
+[ext_resource type="PackedScene" uid="uid://mvsuwhd4mg2y" path="res://addons/godotsteamkit/editor/updates/updater_component.tscn" id="2_75hmw"]
+
+[node name="Steamworks" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uo4d7")
+metadata/_edit_lock_ = true
+
+[node name="Scroller" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="DockFrame" type="TabContainer" parent="Scroller"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+current_tab = 0
+metadata/_edit_lock_ = true
+
+[node name="Updates" type="MarginContainer" parent="Scroller/DockFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+metadata/_edit_lock_ = true
+
+[node name="VFrame" type="VBoxContainer" parent="Scroller/DockFrame/Updates"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="UpdaterComponent" parent="Scroller/DockFrame/Updates/VFrame" instance=ExtResource("2_75hmw")]
+layout_mode = 2

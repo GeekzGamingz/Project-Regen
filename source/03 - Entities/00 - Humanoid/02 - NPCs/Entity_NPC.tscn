@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://cfij3mk2ns64j"]
+
+[ext_resource type="PackedScene" uid="uid://ctnbblculty6f" path="res://source/03 - Entities/_Character_Entity.tscn" id="1_rciku"]
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="2_8oxrm"]
+[ext_resource type="Script" uid="uid://bvis06c6pnl0b" path="res://source/03 - Entities/00 - Humanoid/02 - NPCs/NPC_Customization.gd" id="2_13gc4"]
+[ext_resource type="Texture2D" uid="uid://bvji36e44qksd" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/00 - Torso/02 - Tall/01 - Chub/torso_tall_chub_nw.png" id="4_dkvws"]
+[ext_resource type="Texture2D" uid="uid://c33rjkxahm88k" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/02 - ArmRight/02 - Tall/01 - Chub/arm_right_tall_chub_nw.png" id="5_xhkox"]
+[ext_resource type="Texture2D" uid="uid://c1p33tekveo7p" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/01 - ArmLeft/02 - Tall/01 - Chub/arm_left_tall_chub_nw.png" id="6_m04bj"]
+[ext_resource type="Texture2D" uid="uid://c0djubi4aj813" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/04 - LegRight/02 - Tall/01 - Chub/leg_right_tall_chub_nw.png" id="7_lx13h"]
+[ext_resource type="Texture2D" uid="uid://d01v0xtgk2c2i" path="res://assets/03 - Entities/00 - Humanoid/00 - Body/03 - LegLeft/02 - Tall/01 - Chub/leg_left_tall_chub_nw.png" id="8_04chl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13gc4"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/old_base2 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/old_base3 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/new_base2 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/new_base3 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swyh1"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xplmg"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5per"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkvws"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhkox"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow2 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base2 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight2 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m04bj"]
+resource_local_to_scene = true
+shader = ExtResource("2_8oxrm")
+shader_parameter/old_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/old_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/old_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/old_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/old_base2 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/old_base3 = Color(0, 0, 0, 1)
+shader_parameter/old_highlight3 = Color(0, 0, 0, 1)
+shader_parameter/new_outline1 = Color(0.411765, 0.2, 0.305882, 1)
+shader_parameter/new_shadow1 = Color(0.521569, 0.227451, 0.298039, 1)
+shader_parameter/new_base1 = Color(0.639216, 0.270588, 0.270588, 1)
+shader_parameter/new_highlight1 = Color(0.741176, 0.309804, 0.278431, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0, 0, 0, 1)
+shader_parameter/new_base2 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight2 = Color(0, 0, 0, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
+shader_parameter/new_base3 = Color(0, 0, 0, 1)
+shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
+
+[node name="Entity_NPC" instance=ExtResource("1_rciku")]
+
+[node name="Entity_Customization" parent="Scripts" index="1"]
+script = ExtResource("2_13gc4")
+height = "Tall"
+is_chub = true
+
+[node name="Sprite_Base" parent="Sprites/Sprites_Body" index="0"]
+material = SubResource("ShaderMaterial_13gc4")
+texture = ExtResource("4_dkvws")
+
+[node name="Sprite_ArmRight" parent="Sprites/Sprites_Body" index="1"]
+material = SubResource("ShaderMaterial_swyh1")
+texture = ExtResource("5_xhkox")
+
+[node name="Sprite_ArmLeft" parent="Sprites/Sprites_Body" index="2"]
+material = SubResource("ShaderMaterial_xplmg")
+texture = ExtResource("6_m04bj")
+
+[node name="Sprite_LegRight" parent="Sprites/Sprites_Body" index="3"]
+material = SubResource("ShaderMaterial_xplmg")
+texture = ExtResource("7_lx13h")
+
+[node name="Sprite_LegLeft" parent="Sprites/Sprites_Body" index="4"]
+material = SubResource("ShaderMaterial_f5per")
+texture = ExtResource("8_04chl")
+
+[node name="Sprite_Hair" parent="Sprites/Sprites_Body" index="5"]
+material = SubResource("ShaderMaterial_dkvws")
+offset = Vector2(0, -18)
+
+[node name="Sprite_Ears" parent="Sprites/Sprites_Body" index="6"]
+material = SubResource("ShaderMaterial_xhkox")
+offset = Vector2(0, -18)
+
+[node name="Sprite_Beard" parent="Sprites/Sprites_Body" index="7"]
+material = SubResource("ShaderMaterial_m04bj")
+offset = Vector2(0, -18)
+
+[node name="Sprite_Bangs" parent="Sprites/Sprites_Body" index="8"]
+offset = Vector2(0, -18)

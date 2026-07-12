@@ -1,49 +1,90 @@
-[gd_scene load_steps=5 format=3 uid="uid://xxysto50vjtq"]
+[gd_scene format=3 uid="uid://xxysto50vjtq"]
 
 [ext_resource type="Script" uid="uid://rnkyan66xlrm" path="res://source/04 - Objects/Object_Template.gd" id="1_ukouj"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukouj"]
-radius = 4.0
-height = 18.0
+[ext_resource type="Texture2D" uid="uid://dv12haqxwmwny" path="res://assets/02 - Objects/shadow.png" id="2_15w7v"]
+[ext_resource type="Shader" uid="uid://cre4j6ior4hoo" path="res://assets/04 - Shaders/Shader_Obtainable.gdshader" id="2_jnoui"]
+[ext_resource type="Texture2D" uid="uid://dre4xqrpdatmu" path="res://assets/02 - Objects/bubble.png" id="3_15w7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
-size = Vector2(64, 64)
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_crrwx"]
+radius = 16.0
 
-[node name="Object_Template" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvokc"]
+shader = ExtResource("2_jnoui")
+shader_parameter/do_abs = false
+shader_parameter/sine_amplitude = Vector2(0, 1)
+shader_parameter/sine_speed = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7iat"]
+shader = ExtResource("2_jnoui")
+shader_parameter/do_abs = false
+shader_parameter/sine_amplitude = Vector2(0, 1)
+shader_parameter/sine_speed = Vector2(0, 1)
+
+[node name="Object_Template" type="StaticBody2D" unique_id=969433499]
 collision_layer = 16
 collision_mask = 0
+input_pickable = true
 script = ExtResource("1_ukouj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 32)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ukouj")
+[node name="Areas" type="Node2D" parent="." unique_id=2071631996]
 
-[node name="Sprites" type="Node2D" parent="."]
-
-[node name="Sprite_Object" type="Sprite2D" parent="Sprites"]
-centered = false
-
-[node name="Sprite_Preview" type="Sprite2D" parent="Sprites"]
-visible = false
-centered = false
-
-[node name="Areas" type="Node2D" parent="."]
-
-[node name="Area_Build" type="Area2D" parent="Areas"]
+[node name="Area_Build" type="Area2D" parent="Areas" unique_id=340049298]
 collision_layer = 128
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build"]
-position = Vector2(32, 32)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Build" unique_id=379011557]
 shape = SubResource("RectangleShape2D_p6eq0")
 
-[node name="Area_Detection" type="Area2D" parent="Areas"]
+[node name="Area_Detection" type="Area2D" parent="Areas" unique_id=1198460473]
+collision_layer = 16
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection"]
-position = Vector2(32, 32)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_Detection" unique_id=1935672935]
 shape = SubResource("CircleShape2D_crrwx")
 
-[node name="Timers" type="Node2D" parent="."]
+[node name="Area_Pack" type="Area2D" parent="Areas" unique_id=2009702789]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Areas/Area_Pack" unique_id=1424705020]
+position = Vector2(-8, -8)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
+
+[node name="Sprites" type="Node2D" parent="." unique_id=695416246]
+y_sort_enabled = true
+
+[node name="Sprite_Object" type="Sprite2D" parent="Sprites" unique_id=1671756147]
+visible = false
+material = SubResource("ShaderMaterial_tvokc")
+position = Vector2(0, -10)
+
+[node name="Sprite_Bubble" type="Sprite2D" parent="Sprites/Sprite_Object" unique_id=238781367]
+self_modulate = Color(1, 1, 1, 0.39215687)
+material = SubResource("ShaderMaterial_u7iat")
+texture = ExtResource("3_15w7v")
+
+[node name="Sprite_Shadow" type="Sprite2D" parent="Sprites/Sprite_Object" unique_id=1728888642]
+self_modulate = Color(1, 1, 1, 0.5882353)
+show_behind_parent = true
+position = Vector2(0, 6)
+texture = ExtResource("2_15w7v")
+
+[node name="Sprite_Preview" type="Sprite2D" parent="Sprites" unique_id=980131381]
+visible = false
+
+[node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites" unique_id=1288548770]
+visible = false
+
+[node name="Sprite_Container" type="Sprite2D" parent="Sprites" unique_id=1472507649]
+visible = false
+
+[node name="Timers" type="Node2D" parent="." unique_id=121542081]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=853829453]
+position = Vector2(-8, -8)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

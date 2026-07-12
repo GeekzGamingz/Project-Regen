@@ -2,13 +2,19 @@ extends Entity
 #------------------------------------------------------------------------------#
 #Variables
 #OnReady Variables
+#Main Nodes
+@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
+@onready var HOTBAR: PanelContainer = MAIN.get_node("UserInterface/UI_FullRect/Inventory/Hotbar")
+#Local Nodes
 @onready var player_serverinfo: Node2D = $Scripts/Player_ServerInfo
 @onready var output_name: Label = $Outputs/Output_Name
+@onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var interaction: Node2D = $Scripts/Player_Interaction
+@onready var marker_drop: Marker2D = $Marker_Drop
 #------------------------------------------------------------------------------#
-#Ready Function
-func _ready() -> void: pass
-	#UI_NETWORK.connect("server_create", update_name)
-	#UI_NETWORK.connect("client_create", update_name)
+#Functions
+#Ready
+func _ready() -> void: HOTBAR.set_deferred("visible", true)
 #------------------------------------------------------------------------------#
 #Signaled Functions
 #On Tree Entered

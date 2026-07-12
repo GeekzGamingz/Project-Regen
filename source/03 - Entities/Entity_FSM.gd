@@ -4,7 +4,7 @@ extends StateMachine
 #Variables
 #OnReady Variables
 @onready var e: Entity = get_parent().get_parent()
-@onready var p_move: Node2D = get_parent().get_node("Player_Input")
+@onready var p_input: Node2D = get_parent().get_node("Player_Input")
 @onready var state_label: Label = e.get_node("Outputs/Output_State")
 #------------------------------------------------------------------------------#
 #Ready Method
@@ -28,7 +28,8 @@ func _process(_delta: float) -> void:
 #State Machine
 #State Logistics
 func state_logic(_delta):
-	p_move.handle_movement()
+	if !p_input.is_pathing: p_input.handle_movement()
+	else: p_input.handle_pathing()
 	e.apply_movement()
 	match(state):
 		states.idle_down: pass
@@ -60,22 +61,21 @@ func transitions(delta):
 func state_enter(new_state, old_state):
 	match(new_state):
 		states.idle_right: e.playback.travel("Idle")
-		states.idle_left:
-			e.playback.travel("Idle")
+		states.idle_left: e.playback.travel("Idle")
 		states.idle_up: e.playback.travel("Idle")
 		states.idle_down: e.playback.travel("Idle")
 		states.walk_left:
 			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(-G.TILE_SIZE.x, 0)
+			e.marker_drop.global_position = e.global_position + Vector2(G.TILE_SIZE.x, 0) * 1.5
 		states.walk_right:
 			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(G.TILE_SIZE.x, 0)
+			e.marker_drop.global_position = e.global_position + Vector2(-G.TILE_SIZE.x, 0) * 1.5
 		states.walk_up:
 			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(0, -G.TILE_SIZE.x)
+			e.marker_drop.global_position = e.global_position + Vector2(0, G.TILE_SIZE.y)
 		states.walk_down:
 			e.playback.travel("Walk")
-			e.object_detection.target_position = Vector2(0, G.TILE_SIZE.x)
+			e.marker_drop.global_position = e.global_position + Vector2(0, -G.TILE_SIZE.y) * 2
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):

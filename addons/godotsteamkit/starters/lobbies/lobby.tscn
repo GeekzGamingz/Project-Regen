@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b3i138wxixo4y"]
+
+[ext_resource type="Theme" uid="uid://dtlsw7xa8huqy" path="res://assets/00 - UserInterface/Base_Theme.tres" id="1_jguau"]
+[ext_resource type="Script" uid="uid://cyi6rm83md3vt" path="res://addons/godotsteamkit/starters/lobbies/lobby.gd" id="1_xwpdc"]
+[ext_resource type="PackedScene" uid="uid://dpxo2bxbgchmu" path="res://addons/godotsteamkit/starters/chat/chat.tscn" id="4_fk37b"]
+
+[node name="SteamLobby" type="Control" unique_id=1786295115]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 6.0
+offset_right = 420.0
+offset_bottom = 256.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("1_jguau")
+script = ExtResource("1_xwpdc")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1021218649]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VFrame" type="VBoxContainer" parent="Panel" unique_id=255035325]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/VFrame" unique_id=1891489984]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Empty Lobby"
+horizontal_alignment = 1
+
+[node name="HFrame" type="HBoxContainer" parent="Panel/VFrame" unique_id=1361940418]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Chat" parent="Panel/VFrame/HFrame" unique_id=1934784354 instance=ExtResource("4_fk37b")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Players" type="VBoxContainer" parent="Panel/VFrame/HFrame" unique_id=1068065613]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Scroller" type="ScrollContainer" parent="Panel/VFrame/HFrame/Players" unique_id=963760945]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin" type="MarginContainer" parent="Panel/VFrame/HFrame/Players/Scroller" unique_id=1826921481]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PlayerList" type="VBoxContainer" parent="Panel/VFrame/HFrame/Players/Scroller/Margin" unique_id=1990601750]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = -12
+
+[node name="Controls" type="HBoxContainer" parent="Panel/VFrame" unique_id=402255840]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Panel/VFrame/Controls" unique_id=1822591844]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start"
+
+[node name="Invite" type="Button" parent="Panel/VFrame/Controls" unique_id=318853631]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Invite"
+
+[node name="Leave" type="Button" parent="Panel/VFrame/Controls" unique_id=2034524976]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Leave"

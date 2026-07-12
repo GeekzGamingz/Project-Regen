@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl5bh77msypdb"]
+[gd_scene load_steps=10 format=3 uid="uid://dl5bh77msypdb"]
 
 [ext_resource type="Texture2D" uid="uid://bpa4lrej66jbx" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_face.png" id="1_yifu0"]
 [ext_resource type="Texture2D" uid="uid://b1lwnmrs3mi27" path="res://assets/00 - UserInterface/01 - Icons/00 - Clock/clock_hand.png" id="2_c3uge"]
@@ -15,6 +15,20 @@ outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.588235)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eejdj"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8qqcs"]
+properties/0/path = NodePath("Clock_DayNight:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath("Clock_Hand:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath("Clock_Labels/Label_Time:text")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath("Clock_Labels/Label_Meridiem:text")
+properties/3/spawn = true
+properties/3/replication_mode = 2
 
 [node name="UI_Clock" type="TextureRect"]
 texture = ExtResource("1_yifu0")
@@ -71,3 +85,6 @@ label_settings = SubResource("LabelSettings_lmvck")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8qqcs")

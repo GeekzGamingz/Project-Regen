@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://c8ov8afg6vvhk"]
+
+[ext_resource type="PackedScene" uid="uid://ei76yasy1q2i" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/Container.tscn" id="1_figy8"]
+[ext_resource type="PackedScene" uid="uid://blghfndx8gky8" path="res://source/05 - User Interface/05 - Inventory/01 - Containers/ContainerSlot.tscn" id="3_soq4i"]
+[ext_resource type="Texture2D" uid="uid://dn0l04vuu322w" path="res://assets/00 - UserInterface/04 - Inventory/02 - Chest/container_chest_slot_available.png" id="4_tklec"]
+
+[node name="Container_Chest" unique_id=300336453 instance=ExtResource("1_figy8")]
+visible = false
+
+[node name="GridContainer" parent="Compartments/BaseCompartment/TextureRect" parent_id_path=PackedInt32Array(1320586534) index="0" unique_id=2107708206]
+offset_left = -64.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 40.0
+
+[node name="Slot2" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="2" unique_id=1766660710 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot3" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="3" unique_id=596210522 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot4" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="4" unique_id=1751070424 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot5" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="5" unique_id=1376048790 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot6" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="6" unique_id=1979424289 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="7" unique_id=764768155]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Slot7" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="8" unique_id=896794572 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot8" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="9" unique_id=168810907 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot9" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="10" unique_id=211588235 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot10" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="11" unique_id=558713283 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot11" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="12" unique_id=1417241183 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot12" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="13" unique_id=753651161 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot13" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="14" unique_id=759144262 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot14" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="15" unique_id=1275084167 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot15" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="16" unique_id=2014554961 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot16" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="17" unique_id=806194694 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot17" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="18" unique_id=1543947020 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot18" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="19" unique_id=575184875 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot19" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="20" unique_id=476113557 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot20" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="21" unique_id=1411845355 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot21" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="22" unique_id=1422916374 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot22" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="23" unique_id=925181454 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot23" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="24" unique_id=1226646679 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot24" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="25" unique_id=1411244212 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot25" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="26" unique_id=221901924 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot26" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="27" unique_id=10864722 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot27" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="28" unique_id=1952866643 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot28" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="29" unique_id=587044680 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot29" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="30" unique_id=147521573 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot30" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="31" unique_id=174114989 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot31" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="32" unique_id=405582528 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot32" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="33" unique_id=1520090590 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot33" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="34" unique_id=201556400 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot34" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="35" unique_id=1877624201 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot35" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="36" unique_id=440187007 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot36" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="37" unique_id=643081582 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot37" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="38" unique_id=1889174399 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[node name="Slot38" parent="Compartments/BaseCompartment/TextureRect/GridContainer" index="39" unique_id=673625542 instance=ExtResource("3_soq4i")]
+layout_mode = 2
+texture = ExtResource("4_tklec")
+
+[connection signal="gui_input" from="." to="Dragging" method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="button_up" from="CloseButton" to="." method="_on_close_button_up"]

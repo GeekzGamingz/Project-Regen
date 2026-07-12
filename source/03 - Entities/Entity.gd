@@ -2,29 +2,26 @@ extends CharacterBody2D
 class_name Entity
 #------------------------------------------------------------------------------#
 #Variables
-#Bools
+#Booleans
 var is_grounded: bool = false
 #Vectors
 var facing: Vector2 = Vector2.ONE
 var inversion: Vector2 = Vector2.ONE
-var direction: Vector2 = Vector2.ZERO
 var direction_previous: Vector2 = Vector2.ZERO
 #Exported Variables
-#Floats
+#Exported Floats
 @export var speed: float = 2.5
-#Bools
+#Exported Vectors
+@export var direction: Vector2 = Vector2.ZERO
 #OnReady Variables
 @onready var walk_speed: float = speed * G.TILE_SIZE.x
 @onready var run_speed: float = walk_speed * 2
 @onready var max_speed: float = walk_speed
-#Main Nodes
-@onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var NETWORK: Node2D = MAIN.get_node("Network")
-@onready var UI_NETWORK: HBoxContainer = MAIN.get_node("UserInterface/UI_FullRect/UI_Network")
 #Local Nodes
+@onready var entity_fsm: Node2D = $Scripts/Entity_StateMachine
 @onready var entity_colors: Node2D = $Scripts/Entity_Customization/Entity_Colors
 #RayCasts
-@onready var object_detection: RayCast2D = $Raycasts/Ray_ObjectDetection
+@onready var object_detection: Node2D = $Raycasts/Rays_ObjectDetection
 #Animation Nodes
 @onready var sprite_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Sprite
 @onready var fx_player: AnimationPlayer = $AnimationPlayers/AnimPlayer_Effects

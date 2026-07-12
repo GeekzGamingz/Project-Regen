@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cqx4jwt27rt6m"]
+
+[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_lr7cs"]
+[ext_resource type="Texture2D" uid="uid://ba5vv5bggdwjr" path="res://assets/00 - UserInterface/04 - Inventory/01 - Backpack/00 - Placeholders/item_2x3_a.png" id="2_kp2yx"]
+[ext_resource type="Texture2D" uid="uid://bqtanhxofxsx2" path="res://assets/00 - UserInterface/04 - Inventory/00 - Hotbar/00 - Placeholders/item_2x3_a_icon.png" id="3_kp2yx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6eq0"]
+size = Vector2(16, 16)
+
+[node name="Object_LPiece" unique_id=1548795902 instance=ExtResource("1_lr7cs")]
+is_obtainable = true
+
+[node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
+shape = SubResource("RectangleShape2D_p6eq0")
+
+[node name="Area_Pack" parent="Areas" parent_id_path=PackedInt32Array(2071631996) index="2" unique_id=2009702789]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionPolygon2D" parent="Areas/Area_Pack" index="0" unique_id=1424705020]
+visible = false
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 16, 16, 16, 16, 48, 0, 48)
+
+[node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
+visible = true
+texture = ExtResource("3_kp2yx")
+
+[node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
+texture = ExtResource("2_kp2yx")
+
+[node name="Sprite_Hotbar" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="2" unique_id=1288548770]
+texture = ExtResource("3_kp2yx")
+
+[node name="Sprite_Container" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="3" unique_id=1472507649]
+texture = ExtResource("2_kp2yx")
+
+[node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
+visible = false

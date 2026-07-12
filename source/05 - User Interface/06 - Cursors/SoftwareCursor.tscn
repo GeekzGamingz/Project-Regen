@@ -1,0 +1,299 @@
+[gd_scene format=3 uid="uid://bamerqjjismb1"]
+
+[ext_resource type="Shader" uid="uid://c2cixivxs800u" path="res://assets/04 - Shaders/Shader_ColorSwap.gdshader" id="1_ic7qn"]
+[ext_resource type="Script" uid="uid://b1pyspx73bd3x" path="res://source/05 - User Interface/06 - Cursors/Cursor_FSM.gd" id="2_to82i"]
+[ext_resource type="Texture2D" uid="uid://dor4p61itooyb" path="res://assets/00 - UserInterface/05 - Cursors/cursor_default.png" id="2_uofne"]
+[ext_resource type="Script" uid="uid://53mp52ux0xlu" path="res://source/05 - User Interface/06 - Cursors/SoftwareCursor.gd" id="3_88ndb"]
+[ext_resource type="Script" uid="uid://docprky63nwm4" path="res://source/05 - User Interface/06 - Cursors/CursorObject.gd" id="4_1xpm5"]
+[ext_resource type="Texture2D" uid="uid://b5inys1maliu0" path="res://assets/00 - UserInterface/00 - Selection/AnimSprite_Select.tres" id="4_lp6el"]
+[ext_resource type="Texture2D" uid="uid://d3pgk3j8dtuat" path="res://assets/00 - UserInterface/05 - Cursors/cursor_qwest.png" id="4_o8jqr"]
+[ext_resource type="Script" uid="uid://ctgrxk17kldnl" path="res://source/05 - User Interface/06 - Cursors/CursorIcon.gd" id="5_uofne"]
+[ext_resource type="FontFile" uid="uid://dflxlvdvo4kwx" path="res://assets/00 - UserInterface/03 - Fonts/zxSpectrumStrictCondensed.ttf" id="7_gwpbj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_moohe"]
+resource_local_to_scene = true
+shader = ExtResource("1_ic7qn")
+shader_parameter/old_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/old_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/old_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/old_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/old_outline2 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/old_base2 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/old_outline3 = Color(0, 0, 0, 1)
+shader_parameter/old_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/old_base3 = Color(1, 1, 1, 1)
+shader_parameter/old_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+shader_parameter/new_outline1 = Color(0.121569, 0.0862745, 0.211765, 1)
+shader_parameter/new_shadow1 = Color(0.211765, 0.203922, 0.356863, 1)
+shader_parameter/new_base1 = Color(0.298039, 0.317647, 0.501961, 1)
+shader_parameter/new_highlight1 = Color(0.439216, 0.454902, 0.607843, 1)
+shader_parameter/new_outline2 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow2 = Color(0.156863, 0.298039, 0.247059, 1)
+shader_parameter/new_base2 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight2 = Color(0.298039, 0.501961, 0.407843, 1)
+shader_parameter/new_outline3 = Color(0, 0, 0, 1)
+shader_parameter/new_shadow3 = Color(0.298039, 0.156863, 0.156863, 1)
+shader_parameter/new_base3 = Color(1, 1, 1, 1)
+shader_parameter/new_highlight3 = Color(0.501961, 0.298039, 0.298039, 1)
+
+[sub_resource type="Animation" id="Animation_lwlqb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CursorIcon:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tuwh3"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CursorIcon:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.9, 1, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkhsk"]
+_data = {
+&"RESET": SubResource("Animation_lwlqb"),
+&"idle": SubResource("Animation_tuwh3")
+}
+
+[node name="SoftwareCursor" type="Node2D" unique_id=1447515074]
+script = ExtResource("3_88ndb")
+
+[node name="Cursor_StateMachine" type="Node2D" parent="." unique_id=146726932]
+script = ExtResource("2_to82i")
+
+[node name="Cursor_Textures" type="Node2D" parent="." unique_id=907076404]
+
+[node name="Cursor" type="Sprite2D" parent="Cursor_Textures" unique_id=1551634240]
+top_level = true
+z_index = 10
+texture = ExtResource("2_uofne")
+centered = false
+hframes = 4
+
+[node name="CursorAxis" type="Node2D" parent="Cursor_Textures" unique_id=483503577]
+
+[node name="CursorObject" type="Sprite2D" parent="Cursor_Textures/CursorAxis" unique_id=65542564 node_paths=PackedStringArray("axis", "cursor_fsm")]
+position = Vector2(-8, -8)
+centered = false
+script = ExtResource("4_1xpm5")
+axis = NodePath("..")
+cursor_fsm = NodePath("../../../Cursor_StateMachine")
+
+[node name="Area_Containers" type="Area2D" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=1681113334]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cursor_Textures/CursorAxis/CursorObject/Area_Containers" unique_id=2102298528]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 0, 16)
+
+[node name="GridContainer" type="GridContainer" parent="Cursor_Textures/CursorAxis/CursorObject" unique_id=319382674]
+offset_right = 32.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="NPR_Selection" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=534972727]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection" unique_id=441458887]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NPR_Selection2" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=1324840030]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection2" unique_id=2101640161]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NPR_Selection3" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=2072217074]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection3" unique_id=1098618009]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NPR_Selection4" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=2140701060]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection4" unique_id=1155389901]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NPR_Selection5" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=1221101010]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection5" unique_id=750430018]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NPR_Selection6" type="NinePatchRect" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer" unique_id=343925165]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("4_lp6el")
+draw_center = false
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="RayCast2D" type="RayCast2D" parent="Cursor_Textures/CursorAxis/CursorObject/GridContainer/NPR_Selection6" unique_id=1360733934]
+position = Vector2(8, 8)
+target_position = Vector2(0, 1)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CursorIcon" type="Sprite2D" parent="Cursor_Textures" unique_id=420863471]
+material = SubResource("ShaderMaterial_moohe")
+texture = ExtResource("4_o8jqr")
+centered = false
+hframes = 4
+script = ExtResource("5_uofne")
+
+[node name="AnimationPlayers" type="Node2D" parent="." unique_id=1305518761]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayers" unique_id=2014713854]
+root_node = NodePath("../../Cursor_Textures/Cursor")
+libraries/ = SubResource("AnimationLibrary_qkhsk")
+autoplay = &"idle"
+
+[node name="Outputs" type="Node2D" parent="." unique_id=50428879]
+
+[node name="Output_State" type="Label" parent="Outputs" unique_id=321839487]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 3.0
+theme_override_font_sizes/font_size = 8
+text = "State"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Output_Quantity" type="LineEdit" parent="Outputs" unique_id=281385057]
+visible = false
+z_index = 1
+offset_top = -4.0
+offset_right = 24.0
+offset_bottom = 18.0
+focus_mode = 0
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_gwpbj")
+theme_override_font_sizes/font_size = 17
+text = "1"
+alignment = 1
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+flat = true
+virtual_keyboard_enabled = false

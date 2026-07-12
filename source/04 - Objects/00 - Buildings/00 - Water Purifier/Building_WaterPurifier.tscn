@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dfq8vsxubmfhp"]
+
+[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_rx06g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7dv5"]
+size = Vector2(48, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rx06g"]
+load_path = "res://.godot/imported/waterpurifier.png-6f151a069a13b7f9b5b3098a22a17adb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0gtc"]
+load_path = "res://.godot/imported/waterpurifier.png-6f151a069a13b7f9b5b3098a22a17adb.ctex"
+
+[node name="Building_WaterPurifier" unique_id=1244450594 groups=["Buildings"] instance=ExtResource("1_rx06g")]
+
+[node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]
+shape = SubResource("RectangleShape2D_y7dv5")
+
+[node name="Sprites" parent="." index="1" unique_id=695416246]
+position = Vector2(0, 6)
+
+[node name="Sprite_Object" parent="Sprites" index="0" unique_id=1671756147]
+texture = SubResource("CompressedTexture2D_rx06g")
+
+[node name="Sprite_Preview" parent="Sprites" index="1" unique_id=980131381]
+visible = true
+texture = SubResource("CompressedTexture2D_u0gtc")
+
+[node name="CollisionPolygon2D" parent="." index="3" unique_id=853829453]
+position = Vector2(-8, -2)
+polygon = PackedVector2Array(-3, 0, 19, 0, 19, 18, -3, 18)

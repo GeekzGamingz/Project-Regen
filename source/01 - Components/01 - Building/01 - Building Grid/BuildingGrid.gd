@@ -1,6 +1,7 @@
 extends TileMapLayer
 #------------------------------------------------------------------------------#
 #Variables
+var blueprint_size: Vector2 = Vector2.ZERO
 #Exported Variables
 @export var buildings: Array[PackedScene]
 #OnReady Variables
@@ -48,61 +49,18 @@ func blueprint_visibility(toggle: bool):
 #Custom Signaled Functions
 #Change Selection Dimensions
 func change_selection(dimensions): 
-	var texture_size: Vector2 = Vector2.ZERO
-	blueprint_visibility(true)
-	match(dimensions.find_key(true)):
-		"16x16":
-			texture_size = Vector2(16, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x16"]
-		"16x32":
-			texture_size = Vector2(16, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x32"]
-		"16x48":
-			texture_size = Vector2(16, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x48"]
-		"16x64":
-			texture_size = Vector2(16, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_16x64"]
-		"32x16":
-			texture_size = Vector2(32, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x16"]
-		"32x32":
-			texture_size = Vector2(32, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x32"]
-		"32x48":
-			texture_size = Vector2(32, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x48"]
-		"32x64":
-			texture_size = Vector2(32, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_32x64"]
-		"48x16":
-			texture_size = Vector2(48, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x16"]
-		"48x32":
-			texture_size = Vector2(48, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x32"]
-		"48x48":
-			texture_size = Vector2(48, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x48"]
-		"48x64":
-			texture_size = Vector2(48, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_48x64"]
-		"64x16":
-			texture_size = Vector2(64, 16)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x16"]
-		"64x32":
-			texture_size = Vector2(64, 32)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x32"]
-		"64x48":
-			texture_size = Vector2(64, 48)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x48"]
-		"64x64":
-			texture_size = Vector2(64, 64)
-			blueprint_zone.texture = G.ZONE_TEXTURES["ZONE_64x64"]
-	blueprint_selection.size = texture_size
+	var dimensions_key: String = dimensions.find_key(true)
+	var dimension_split: Array = dimensions_key.split("x")
+	blueprint_size = Vector2(int(dimension_split[0]), int(dimension_split[1]))
+	blueprint_zone.texture = T.ZONE[str("ZONE_", dimension_split[0], "x", dimension_split[1])]
+	blueprint_selection.size = blueprint_size
+	var ray_normalization = blueprint_size.normalized()
+	print("Ray Normalization: ", ray_normalization)
+	print("Blueprint Size: ", blueprint_size)
 	for ray in blueprint_selection.get_children():
-		ray.target_position.y = (texture_size.x + texture_size.y) * 0.5
-		ray.position = Vector2(texture_size.x * 0.5, texture_size.y * 0.5)
+		ray.target_position.y = (blueprint_size.x * ray_normalization.x) - 1.0
+		ray.position = Vector2(blueprint_size.x * 0.5, blueprint_size.y * 0.5)
+	blueprint_visibility(true)
 #Exit Build Mode
 func exit_build_mode():
 	G.IS_BUILDING = false

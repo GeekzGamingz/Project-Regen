@@ -7,7 +7,7 @@ var meridiem_switch = false
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
-@onready var TIME: Node2D = MAIN.get_node("World/Time")
+#Local Nodes
 #Sprites
 @onready var clock_daynight: TextureRect = $Clock_DayNight
 @onready var clock_hand: TextureRect = $Clock_Hand
@@ -17,19 +17,20 @@ var meridiem_switch = false
 #------------------------------------------------------------------------------#
 #Ready Function
 func _ready() -> void:
-	TIME.connect("tick_elapsed", tick_elapsed)
+	await get_tree().process_frame
+	MAIN.TIME.connect("tick_elapsed", tick_elapsed)
 	update_labels()
 #------------------------------------------------------------------------------#
 #Custom Signaled Functions
 #Ticks Elapsed
 func tick_elapsed(_ticks):
-	clock_hand.rotation_degrees += 360.0 / (TIME.day_length * 0.5)
-	clock_daynight.rotation_degrees -= 360.0 / (TIME.day_length)
+	clock_hand.rotation_degrees += 360.0 / (MAIN.TIME.day_length * 0.5)
+	clock_daynight.rotation_degrees -= 360.0 / (MAIN.TIME.day_length)
 	hour += 1
 	update_labels()
 #Update TIME Labels
 func update_labels() -> void:
-	if hour == (TIME.day_length * 0.5) + 1:
+	if hour == (MAIN.TIME.day_length * 0.5) + 1:
 		hour = 1
 		meridiem_switch = !meridiem_switch
 		match(meridiem_switch):
