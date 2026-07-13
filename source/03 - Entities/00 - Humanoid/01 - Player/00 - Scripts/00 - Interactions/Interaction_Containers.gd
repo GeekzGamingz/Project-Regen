@@ -10,20 +10,34 @@ var slot_array: Array = []
 #Add to Backpack
 func addto_container(object, slot, origin, array):
 	var held_index = object.index_name
-	var container_index = slot.get_node("../../../../..").name
+	var container_index = slot.main_container.name
 	var slot_index = str("Slot " + slot.name.substr(4, -1))
 	var index_array = []
+	var cursor = interaction.MAIN.UI_CURSOR
+	var quantity: int
+	var native_origin: String
+	if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
+	elif origin.name.begins_with("Slot"): native_origin = "Container"
+	else: native_origin = "Ground"
+	match(native_origin):
+		"Container": quantity = origin.quantity
+		_: quantity = cursor.quantity
+	#var quantity = origin.quantity if origin.name.begins_with("Hotbar") else cursor.quantity
+	#if container_origin != null:
+		#slot_primary.quantity = container_origin.quantity
+	#else: slot_primary.quantity = cursor.quantity
 	for i in array:
 		var index = str("Slot " + i.name.substr(4, -1))
 		index_array.append(index)
 	print("Container Index: ", container_index)
-	rpc("update_server_containers", held_index, container_index, slot_index, index_array)
+	print("Origin: ", origin)
+	rpc("update_server_containers", held_index, container_index, slot_index, index_array, quantity)
 	slot_orientation()
 	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Container")
 #Update Server Containers
 @rpc("any_peer", "call_local")
-func update_server_containers(held_index, container_index, slot_index, index_array):
+func update_server_containers(held_index, container_index, slot_index, index_array, quantity):
 	var object_scene = Items.SCENES.get(held_index).instantiate()
 	var native_slot = Items.CONTAINERS[container_index].get(slot_index)
 	var native_array = []
@@ -32,11 +46,16 @@ func update_server_containers(held_index, container_index, slot_index, index_arr
 		native_array.append(slot)
 	add_child(object_scene)
 	native_slot.texture_object.texture = object_scene.sprite_container.texture
+	#if container_origin != null:
+		#slot_primary.quantity = container_origin.quantity
+	#else: slot_primary.quantity = cursor.quantity
+
 	for slot in native_array:
 		slot.slot_occupied = true
 		slot.slot_array = native_array
 		slot.slot_primary = native_slot
 		slot.slotted_object = object_scene
+		slot.quantity = quantity
 	remove_child(object_scene)
 #Trade Slots
 func trade_slots(contents):
@@ -66,16 +85,17 @@ func trade_slots(contents):
 					if hotbar_origin.quantity <= 0: hotbar_origin.slotted_object = null
 					print("Object Origin: ", hotbar_origin.name)
 				clear_held(container_origin)
-				addto_container(object, slot_primary, hotbar_origin, slot_array)
+				var origin = hotbar_origin if hotbar_origin != null else container_origin
+				addto_container(object, slot_primary, origin, slot_array)
 				#for slot in slot_array:
 					#slot.slotted_object = object
 					#slot.slot_array = slot_array
 					#slot.slot_occupied = true
 					#slot.slot_primary = slot_primary
-				if container_origin != null:
-					slot_primary.quantity = container_origin.quantity
-				else: slot_primary.quantity = cursor.quantity
-				for slot in slot_array: slot.quantity = slot.slot_primary.quantity
+				#if container_origin != null:
+					#slot_primary.quantity = container_origin.quantity
+				#else: slot_primary.quantity = cursor.quantity
+				#for slot in slot_array: slot.quantity = slot.slot_primary.quantity
 				slot_array = [] # Clears Array for Future Use
 				cursor_object.revert_hand()
 				interaction.revert()

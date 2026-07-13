@@ -46,7 +46,9 @@ func transitions(delta):
 @warning_ignore("unused_parameter")
 func state_enter(new_state, old_state):
 	match(new_state):
-		states.empty: s.clear_slot()
+		states.empty: 
+			if s.main_container.name != "Backpack": s.clear_slot.rpc()
+			else: s.clear_slot()
 		states.full: s.update_slot()
 		states.selected:
 			s.object_highlight(true)

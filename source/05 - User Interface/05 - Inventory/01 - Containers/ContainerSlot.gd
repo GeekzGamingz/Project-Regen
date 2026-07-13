@@ -16,11 +16,12 @@ var slotted_object: Object = null
 @export var contents: String = "Empty"
 #Arrays
 @export var slot_array: Array = [self]
+#Nodes
+@export var main_container: PanelContainer
 #OnReady Variables
 #Main Nodes
 @onready var MAIN: Node2D = get_tree().get_root().get_node("Main")
 #Local Nodes
-@onready var main_container: Control = $"../../../../.."
 @onready var axis: Node2D = $Axis
 @onready var texture_object: TextureRect = $Axis/Texture_Object
 @onready var slot_held: NinePatchRect = $NPR_Held
@@ -86,8 +87,15 @@ func update_slot():
 		line_quantity.set_deferred("visible", slotted_object.is_stackable)
 	slot_held.self_modulate = Color(1.0, 0.0, 0.0, 1.0)
 #Clear Slot
+@rpc("any_peer", "call_local")
 func clear_slot():
-	for slot in slot_array:
+	var array: Array = []
+	if main_container.name == "Backpack": array = slot_array
+	else:
+		var slot_index: String = str("Slot " + name.substr(4, -1))
+		var server_array = Items.CONTAINERS[main_container.name].get(slot_index).slot_array
+		array = server_array
+	for slot in array:
 		slot.quantity = 0
 		slot.contents = "Empty"
 		slot.slot_occupied = false

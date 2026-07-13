@@ -76,6 +76,7 @@ func place(object, origin, new_position):
 				interaction.full_hands = false
 	else:
 		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
+		print("Origin to Clear: ", origin)
 		if origin != null: origin.clear_slot()
 		interaction.revert()
 		dupe.global_position = new_position

@@ -47,7 +47,16 @@ y_sort_enabled = true
 position = Vector2(184, 126)
 
 [node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
-position = Vector2(199, 193)
+position = Vector2(194, 198)
+
+[node name="Object_Rock2" parent="Orphanages/Orphanage_Objects" unique_id=687457778 instance=ExtResource("8_d03ws")]
+position = Vector2(213, 256)
+
+[node name="Object_Rock3" parent="Orphanages/Orphanage_Objects" unique_id=2088745981 instance=ExtResource("8_d03ws")]
+position = Vector2(147, 205)
+
+[node name="Object_Rock4" parent="Orphanages/Orphanage_Objects" unique_id=834003830 instance=ExtResource("8_d03ws")]
+position = Vector2(161, 259)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 y_sort_enabled = true
