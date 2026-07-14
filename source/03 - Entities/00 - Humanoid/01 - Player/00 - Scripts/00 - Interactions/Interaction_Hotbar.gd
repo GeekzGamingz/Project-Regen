@@ -160,6 +160,8 @@ func check_held():
 @rpc("any_peer", "call_local")
 func update_container_quantity(container_index, slot_index, quantity):
 	var native_slot = Items.CONTAINERS[container_index].get(slot_index)
-	for slot in native_slot.slot_array: native_slot.quantity = quantity
-	if native_slot.quantity <= 0: native_slot.slotted_object = null
+	for slot in native_slot.slot_array:
+		slot.quantity = quantity
+		print("Native Slot: ", slot, " Quantity: ", slot.quantity)
+		if slot.quantity <= 0: native_slot.slotted_object = null
 	print("Native Slot Array: ", native_slot.slot_array)

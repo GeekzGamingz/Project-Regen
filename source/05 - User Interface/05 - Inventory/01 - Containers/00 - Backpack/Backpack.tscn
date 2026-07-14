@@ -260,11 +260,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1314389913 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot7" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1314389913 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
-[node name="Slot2" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1187492104 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot8" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1187492104 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
@@ -284,11 +284,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1183925068 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot9" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1183925068 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
-[node name="Slot4" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=2094994929 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot10" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=2094994929 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
@@ -308,11 +308,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot5" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1835742470 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot11" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1835742470 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
-[node name="Slot6" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1432428721 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot12" parent="Compartments/FrontCompartments/FrontRight/TextureRect/GridContainer" unique_id=1432428721 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../../..")
 
@@ -440,11 +440,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot1" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1084044889 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot13" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1084044889 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot2" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=423053747 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot14" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=423053747 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
@@ -470,19 +470,19 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Slot3" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=9381868 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot15" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=9381868 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot4" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1710928074 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot16" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1710928074 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot5" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1748081691 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot17" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1748081691 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot6" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=972098517 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot18" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=972098517 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
@@ -493,75 +493,75 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="SlotA1" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1400535937 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot19" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1400535937 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot7" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=606230038 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot20" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=606230038 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot8" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1096427932 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot21" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1096427932 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot9" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1701092850 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot22" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1701092850 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot10" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1203699979 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot23" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1203699979 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="SlotB1" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1298821494 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot24" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1298821494 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="SlotA2" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1740555709 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot25" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1740555709 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot11" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1242185943 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot26" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1242185943 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot12" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=2081569775 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot27" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=2081569775 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot13" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1446897239 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot28" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1446897239 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot14" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=12347435 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot29" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=12347435 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="SlotB2" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=810535567 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot30" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=810535567 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="SlotA3" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1442394876 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot31" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1442394876 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot15" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=2113085059 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot32" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=2113085059 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot16" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=896993633 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot33" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=896993633 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot17" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1320871682 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot34" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1320871682 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="Slot18" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=830037775 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot35" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=830037775 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
-[node name="SlotB3" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1761701218 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
+[node name="Slot36" parent="Compartments/BaseCompartment/TextureRect/GridContainer" unique_id=1761701218 node_paths=PackedStringArray("main_container") instance=ExtResource("5_3bmuj")]
 layout_mode = 2
 main_container = NodePath("../../../../..")
 
