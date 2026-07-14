@@ -73,10 +73,8 @@ func trade_slots(contents):
 				held_slot.slotted_object = null
 			elif container_origin != null:
 				print("Object Origin: Container [", container_origin, "]")
-				if container_origin != null:
-					container_origin.slot_primary.quantity -= cursor.quantity
-					if container_origin.slot_primary.quantity <= 0: container_origin.slotted_object = null
-					container_origin.object_highlight(false)
+				container_origin.slot_primary.quantity -= cursor.quantity
+				container_origin.object_highlight(false)
 				selected_slot.quantity = held_quantity
 				var new_quantity = container_origin.quantity
 				var container_index = container_origin.main_container.name
@@ -129,7 +127,11 @@ func trade_slots(contents):
 				container_origin.quantity -= held_quantity
 				cursor.quantity = slot_quantity
 				if container_origin.quantity <= 0: container_origin.slotted_object = null
-				#NEXT RPC
+				interaction.revert()
+				var new_quantity = container_origin.quantity
+				var container_index = container_origin.main_container.name
+				var slot_index = str("Slot " + container_origin.name.substr(4, -1))
+				rpc("update_container_quantity", container_index, slot_index, new_quantity)
 			else: #Trade Object from Ground
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object
@@ -159,3 +161,5 @@ func check_held():
 func update_container_quantity(container_index, slot_index, quantity):
 	var native_slot = Items.CONTAINERS[container_index].get(slot_index)
 	for slot in native_slot.slot_array: native_slot.quantity = quantity
+	if native_slot.quantity <= 0: native_slot.slotted_object = null
+	print("Native Slot Array: ", native_slot.slot_array)
