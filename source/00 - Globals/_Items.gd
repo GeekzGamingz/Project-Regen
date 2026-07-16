@@ -7,4 +7,5 @@ var SCENES: Dictionary = {
 	"LPiece": preload("uid://cqx4jwt27rt6m")
 }
 var CONTAINERS: Dictionary = {}
+var CONTAINER_COUNT: int = 0
 var SLOTS: Dictionary = {}

@@ -18,12 +18,15 @@ func _on_mouse_entered() -> void: mouse_hovering = true
 func _on_mouse_exited() -> void: mouse_hovering = false
 #------------------------------------------------------------------------------#
 func addto_dictionary():
+	var new_name = str("Container", Items.CONTAINER_COUNT)
+	name = new_name
+	var slot_count = 0
 	for compartment in compartment_array:
-		var slot_count = 0
 		for slot in compartment.get_node("TextureRect/GridContainer").get_children():
 			if slot is TextureRect:
 				slot_count += 1
 				Items.SLOTS.set("Slot %s" % slot_count, slot)
-		Items.CONTAINERS.set(name, Items.SLOTS.duplicate())
-		Items.SLOTS.clear()
+	Items.CONTAINERS.set(new_name, Items.SLOTS.duplicate())
+	Items.CONTAINER_COUNT += 1
+	Items.SLOTS.clear()
 	
