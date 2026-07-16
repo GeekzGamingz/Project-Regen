@@ -1330,9 +1330,8 @@ states/Walk/position = Vector2(448, 214)
 transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_yu20t"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_7i3x6"), "Idle", "End", SubResource("AnimationNodeStateMachineTransition_kjtp0"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_so8uh")]
 graph_offset = Vector2(-145, 4)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kik4i"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_riee2"]
 radius = 2.0
-height = 6.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_riee2"]
 properties/0/path = NodePath(".:position")
@@ -1426,6 +1425,8 @@ frame = 12
 
 [node name="Sprite_Bangs" type="Sprite2D" parent="Sprites/Sprites_Body" unique_id=989308548]
 
+[node name="Areas" type="Node2D" parent="." unique_id=1614556488]
+
 [node name="Raycasts" type="Node2D" parent="." unique_id=1481383238]
 
 [node name="Rays_ObjectDetection" type="Node2D" parent="Raycasts" unique_id=291148904]
@@ -1486,6 +1487,8 @@ hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="Timers" type="Node2D" parent="." unique_id=1843456279]
+
 [node name="AnimationPlayers" type="Node2D" parent="." unique_id=1078540465]
 
 [node name="AnimPlayer_Sprite" type="AnimationPlayer" parent="AnimationPlayers" unique_id=155414633]
@@ -1500,6 +1503,12 @@ tree_root = SubResource("AnimationNodeStateMachine_7yhcf")
 anim_player = NodePath("../AnimPlayer_Sprite")
 parameters/Idle/blend_position = Vector2(-0.00258398, -0.00223708)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="AudioPlayers" type="Node2D" parent="." unique_id=2130145815]
+
+[node name="FeetSFX" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1675400796]
+volume_db = -20.0
+script = ExtResource("13_riee2")
 
 [node name="Outputs" type="Node2D" parent="." unique_id=1939262163]
 
@@ -1538,13 +1547,9 @@ text = "NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timers" type="Node2D" parent="." unique_id=1843456279]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=88786690]
-visible = false
-position = Vector2(0, -2)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_kik4i")
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_riee2")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1862691246]
 replication_config = SubResource("SceneReplicationConfig_riee2")
@@ -1555,11 +1560,5 @@ target_desired_distance = 16.0
 path_postprocessing = 1
 simplify_path = true
 avoidance_enabled = true
-
-[node name="AudioPlayers" type="Node2D" parent="." unique_id=2130145815]
-
-[node name="FeetSFX" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=1675400796]
-volume_db = -20.0
-script = ExtResource("13_riee2")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

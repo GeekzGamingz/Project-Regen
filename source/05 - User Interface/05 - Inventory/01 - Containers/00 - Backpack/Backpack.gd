@@ -55,6 +55,6 @@ func addto_dictionary():
 		for slot in compartment.get_node("TextureRect/GridContainer").get_children():
 			if slot is TextureRect:
 				slot_count += 1
-				Items.SLOTS.set("Slot %s" % slot_count, slot)
+				Items.SLOTS.set("Slot%s" % slot_count, slot)
 	Items.CONTAINERS.set(name, Items.SLOTS.duplicate())
 	Items.SLOTS.clear()

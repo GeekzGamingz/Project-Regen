@@ -66,9 +66,8 @@ func _gui_input(event: InputEvent) -> void:
 			if interaction.current_object != null: interaction.interaction_containers.trade_slots(contents)
 #------------------------------------------------------------------------------#
 #Signaled Functions
-#Slot Entered
+#Slot Entered/Exited
 func _on_slot_entered() -> void: mouse_hovering = true
-#Slot Exited
 func _on_slot_exited() -> void: mouse_hovering = false
 #------------------------------------------------------------------------------#
 #Custom Functions
@@ -77,8 +76,7 @@ func object_highlight(shown): for slot in slot_array: slot.slot_held.set_deferre
 #Slot Blocking
 func slot_blocking(blocking):
 	for slot in get_parent().get_children(): if slot is TextureRect:
-		if blocking && slot.contents == "Full": slot.slot_blocked = blocking
-		else: slot.slot_blocked = blocking
+		slot.slot_blocked = blocking
 #Update Slot
 func update_slot():
 	contents = "Full"
@@ -92,7 +90,7 @@ func clear_slot():
 	var array: Array = []
 	if main_container.name == "Backpack": array = slot_array
 	else:
-		var slot_index: String = str("Slot " + name.substr(4, -1))
+		var slot_index: String = str(name)
 		var server_array = Items.CONTAINERS[main_container.name].get(slot_index).slot_array
 		array = server_array
 	for slot in array:

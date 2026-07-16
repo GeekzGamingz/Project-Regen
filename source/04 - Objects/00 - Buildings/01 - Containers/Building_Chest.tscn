@@ -12,6 +12,7 @@ size = Vector2(32, 32)
 
 [node name="Building_Chest" unique_id=969433499 instance=ExtResource("1_4mivw")]
 collision_layer = 17
+collision_mask = 2
 script = ExtResource("2_xxawr")
 container_interface = ExtResource("3_xxawr")
 object_type = "Building"
@@ -35,4 +36,4 @@ polygon = PackedVector2Array(0, 8, 17, 8, 17, 16, 0, 16)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4" unique_id=1675785346]
 replication_config = SubResource("SceneReplicationConfig_sr2ci")
 
-[connection signal="body_exited" from="Areas/Area_Detection" to="." method="_on_detection_body_exited"]
+[connection signal="area_exited" from="Areas/Area_Detection" to="." method="_on_detection_area_exited"]

@@ -535,6 +535,9 @@ shader_parameter/new_shadow3 = Color(0, 0, 0, 1)
 shader_parameter/new_base3 = Color(0, 0, 0, 1)
 shader_parameter/new_highlight3 = Color(0, 0, 0, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1j8a"]
+radius = 18.027756
+
 [sub_resource type="Curve2D" id="Curve2D_gl5bk"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, -5, 0, 0, -5, 25, -10)
@@ -594,9 +597,19 @@ material = SubResource("ShaderMaterial_mfqqf")
 [node name="Sprite_Beard" parent="Sprites/Sprites_Body" parent_id_path=PackedInt32Array(76908128) index="7" unique_id=569887477]
 material = SubResource("ShaderMaterial_22rhd")
 
+[node name="Area_AreaDetection" type="Area2D" parent="Areas" parent_id_path=PackedInt32Array(1614556488) index="0" unique_id=1579255189]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area_AreaDetection" index="0" unique_id=1996277288]
+shape = SubResource("CircleShape2D_a1j8a")
+
 [node name="AnimationTree" parent="AnimationPlayers" parent_id_path=PackedInt32Array(1078540465) index="2" unique_id=1018992307]
 active = true
 parameters/Idle/blend_position = Vector2(0, 0)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="AudioPlayers" parent_id_path=PackedInt32Array(2130145815) index="1" unique_id=684382429]
+current = true
 
 [node name="Output_State" parent="Outputs" parent_id_path=PackedInt32Array(1939262163) index="0" unique_id=1182138654]
 visible = false
@@ -605,25 +618,19 @@ theme_override_font_sizes/font_size = 8
 [node name="Output_Name" parent="Outputs" parent_id_path=PackedInt32Array(1939262163) index="1" unique_id=721045188]
 visible = false
 
-[node name="CollisionShape2D" parent="." index="6" unique_id=88786690]
-visible = true
-
-[node name="Marker_Drop" type="Marker2D" parent="." index="9" unique_id=646574662]
+[node name="Marker_Drop" type="Marker2D" parent="." index="10" unique_id=646574662]
 
 [node name="DropZone_Visualizer" type="Sprite2D" parent="Marker_Drop" index="0" unique_id=1969249217]
 visible = false
 texture = ExtResource("12_25kxp")
 
-[node name="Path_HuckArc" type="Path2D" parent="." index="10" unique_id=1867999697]
+[node name="Path_HuckArc" type="Path2D" parent="." index="11" unique_id=1867999697]
 position = Vector2(0, -35)
 curve = SubResource("Curve2D_gl5bk")
 script = ExtResource("8_dbfy1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path_HuckArc" index="0" unique_id=1747620377]
 rotation = -0.4636476
-
-[node name="AudioListener2D" type="AudioListener2D" parent="AudioPlayers" parent_id_path=PackedInt32Array(2130145815) index="1" unique_id=684382429]
-current = true
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="Scripts/Player_Input" method="_on_navi_velocity_computed"]

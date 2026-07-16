@@ -8,6 +8,7 @@
 size = Vector2(16, 16)
 
 [node name="Object_LPiece" unique_id=1548795902 instance=ExtResource("1_lr7cs")]
+index_name = "LPiece"
 is_obtainable = true
 
 [node name="CollisionShape2D" parent="Areas/Area_Build" parent_id_path=PackedInt32Array(340049298) index="0" unique_id=379011557]

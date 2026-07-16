@@ -11,7 +11,7 @@ var slot_array: Array = []
 func addto_container(object, slot, origin, array):
 	var held_index = object.index_name
 	var container_index = slot.main_container.name
-	var slot_index = str("Slot " + slot.name.substr(4, -1))
+	var slot_index = str(slot.name)
 	var index_array = []
 	var cursor = interaction.MAIN.UI_CURSOR
 	var quantity: int
@@ -22,12 +22,8 @@ func addto_container(object, slot, origin, array):
 	match(native_origin):
 		"Container": quantity = origin.quantity
 		_: quantity = cursor.quantity
-	#var quantity = origin.quantity if origin.name.begins_with("Hotbar") else cursor.quantity
-	#if container_origin != null:
-		#slot_primary.quantity = container_origin.quantity
-	#else: slot_primary.quantity = cursor.quantity
 	for i in array:
-		var index = str("Slot " + i.name.substr(4, -1))
+		var index = str(i.name)
 		index_array.append(index)
 	print("Container Index: ", container_index)
 	print("Origin: ", origin)
@@ -46,10 +42,6 @@ func update_server_containers(held_index, container_index, slot_index, index_arr
 		native_array.append(slot)
 	add_child(object_scene)
 	native_slot.texture_object.texture = object_scene.sprite_container.texture
-	#if container_origin != null:
-		#slot_primary.quantity = container_origin.quantity
-	#else: slot_primary.quantity = cursor.quantity
-
 	for slot in native_array:
 		slot.slot_occupied = true
 		slot.slot_array = native_array
@@ -87,15 +79,6 @@ func trade_slots(contents):
 				clear_held(container_origin)
 				var origin = hotbar_origin if hotbar_origin != null else container_origin
 				addto_container(object, slot_primary, origin, slot_array)
-				#for slot in slot_array:
-					#slot.slotted_object = object
-					#slot.slot_array = slot_array
-					#slot.slot_occupied = true
-					#slot.slot_primary = slot_primary
-				#if container_origin != null:
-					#slot_primary.quantity = container_origin.quantity
-				#else: slot_primary.quantity = cursor.quantity
-				#for slot in slot_array: slot.quantity = slot.slot_primary.quantity
 				slot_array = [] # Clears Array for Future Use
 				cursor_object.revert_hand()
 				interaction.revert()
@@ -110,6 +93,7 @@ func check_grid() -> bool:
 	for selection in cursor_grid.get_children():
 		var ray = selection.get_node("RayCast2D")
 		if ray.is_colliding(): container_count += 1
+		print(ray.get_collider())
 	if container_count == cursor_grid.get_node("..").held_slots: return true
 	else: return false
 #Get Held Slot

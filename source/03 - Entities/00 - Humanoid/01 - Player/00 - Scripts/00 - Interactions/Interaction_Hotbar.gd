@@ -78,7 +78,7 @@ func trade_slots(contents):
 				selected_slot.quantity = held_quantity
 				var new_quantity = container_origin.quantity
 				var container_index = container_origin.main_container.name
-				var slot_index = str("Slot " + container_origin.name.substr(4, -1))
+				var slot_index = str(container_origin.name)
 				rpc("update_container_quantity", container_index, slot_index, new_quantity)
 			else:
 				print("Object Origin: Ground")
@@ -130,7 +130,7 @@ func trade_slots(contents):
 				interaction.revert()
 				var new_quantity = container_origin.quantity
 				var container_index = container_origin.main_container.name
-				var slot_index = str("Slot " + container_origin.name.substr(4, -1))
+				var slot_index = str(container_origin.name)
 				rpc("update_container_quantity", container_index, slot_index, new_quantity)
 			else: #Trade Object from Ground
 				print("Object Origin: Ground")

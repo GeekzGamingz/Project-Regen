@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dn0l04vuu322w" path="res://assets/00 - UserInterface/04 - Inventory/02 - Chest/container_chest_slot_available.png" id="4_tklec"]
 
 [node name="Container_Chest" unique_id=300336453 instance=ExtResource("1_figy8")]
+visible = false
 
 [node name="GridContainer" parent="Compartments/BaseCompartment/TextureRect" parent_id_path=PackedInt32Array(1320586534) index="0" unique_id=2107708206]
 offset_left = -64.0

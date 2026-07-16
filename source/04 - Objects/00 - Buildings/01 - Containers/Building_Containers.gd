@@ -16,8 +16,8 @@ func _input(event: InputEvent) -> void:
 		if menu != null && backpack.visible: menu.set_deferred("visible", false)
 #Signaled Functions
 #On Detection Exited
-func _on_detection_body_exited(body: Node2D) -> void:
-	if body.name == str(multiplayer.get_unique_id()) && menu != null: toggle_opened(false)
+func _on_detection_area_exited(area: Area2D) -> void:
+	if area.get_node("../..").name == str(multiplayer.get_unique_id()) && menu != null: toggle_opened(false)
 #------------------------------------------------------------------------------#
 #Custom Functions
 #Interact

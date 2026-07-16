@@ -13,6 +13,9 @@ size = Vector2(12, 12)
 texture = ExtResource("1_pi8wo")
 script = ExtResource("2_x6m45")
 
+[node name="StateMachine" type="Node2D" parent="." unique_id=1520545932]
+script = ExtResource("5_8b3k1")
+
 [node name="Axis" type="Node2D" parent="." unique_id=685402303]
 position = Vector2(8, 8)
 
@@ -70,9 +73,6 @@ collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Slot" unique_id=1491257469]
 shape = SubResource("RectangleShape2D_tt3jp")
-
-[node name="StateMachine" type="Node2D" parent="." unique_id=1520545932]
-script = ExtResource("5_8b3k1")
 
 [node name="Output_State" type="Label" parent="." unique_id=1650546792]
 visible = false
