@@ -42,7 +42,9 @@ func addto_container(object, slot, origin, array):
 		index_array,
 		quantity
 		)
-	slot_orientation()
+	var new_rotation = cursor.axis.rotation_degrees
+	var new_scale = cursor.axis.scale.x
+	rpc("slot_orientation", container_index, index_array, new_rotation, new_scale)
 	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Container")
 #Update Server Containers
@@ -122,9 +124,13 @@ func clear_held(origin):
 	if origin != null:
 		if origin.slot_held.visible: origin.slotted_object = null
 #Slot Orientation
-func slot_orientation():
-	var cursor = interaction.MAIN.UI_CURSOR
-	if slot_array != []:
-		for slot in slot_array:
-			slot.axis.rotation_degrees = cursor.axis.rotation_degrees
-			slot.axis.scale.x = cursor.axis.scale.x
+@rpc("any_peer", "call_local")
+func slot_orientation(container_index, index_array, new_rotation, new_scale):
+	var native_array = []
+	for index in index_array:
+		var new_slot = Items.CONTAINERS[container_index].get(index)
+		native_array.append(new_slot)
+	if native_array != []:
+		for s in native_array:
+			s.axis.rotation_degrees = new_rotation
+			s.axis.scale.x = new_scale
