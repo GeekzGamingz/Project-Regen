@@ -30,7 +30,11 @@ func obtain_object(object, hotbar_selected):
 			interaction.MAIN.UI_INVENTORY.slot_exclusion(false)
 		if hotbar_selected.slotted_object.is_in_group(group[0]):
 			if object.is_stackable: interaction.revert()
-		interaction.ORPHANAGES_OBJECTS.remove_child(object)
+		var object_path = NodePath(object.name)
+		rpc("remove_placement", object_path)
+#Remove from World
+@rpc("any_peer", "call_local")
+func remove_placement(object_path): interaction.ORPHANAGES_OBJECTS.get_node(object_path).queue_free()
 #Add to Hand
 func addto_hand(amount, object, origin):
 	var cursor = interaction.MAIN.UI_CURSOR
@@ -55,33 +59,41 @@ func addto_hand(amount, object, origin):
 		print("Added [", object.name, "]" , " to Hand from Ground")
 #Place
 func place(object, origin, new_position):
-	var dupe = object.duplicate()
-	if dupe.is_stackable:
-		var stack = dupe.duplicate()
-		var cursor = interaction.MAIN.UI_CURSOR
-		interaction.ORPHANAGES_OBJECTS.add_child(stack)
-		stack.global_position = new_position
-		stack.name = object.name
-		if cursor.object_held != null: cursor.quantity -= 1 #Drop Contingency
-		if cursor.quantity == 0: #Reset Hand and Slot Held Only
-			interaction.current_object = null
-			interaction.full_hands = false
-			cursor.icon_state = "Default"
-			if origin != null: origin.slot_held.set_deferred("visible", false)
-		if origin != null:
-			origin.quantity -= 1
-			if origin.quantity == 0:
-				interaction.revert()
-				origin.slotted_object = null
-				interaction.full_hands = false
-	else:
-		interaction.ORPHANAGES_OBJECTS.add_child(dupe)
-		print("Origin to Clear: ", origin)
-		if origin != null: origin.clear_slot()
+	var held_index = object.index_name
+	print("Place Origin: ", origin)
+	var native_origin: String
+	var container_index: String
+	var slot_index: String
+	if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
+	elif origin.name.begins_with("Slot"):
+		native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
+	else: native_origin = "Ground"
+	match(native_origin):
+		"Hotbar": origin.quantity -= 1
+		"Backpack": for slot in origin.slot_array: slot.quantity -= 1
+		"Container":
+			container_index = origin.main_container.name
+			slot_index = origin.name
+		"Ground": print("Do Ground Stuff")
+	rpc("update_placement", held_index, container_index, slot_index, new_position)
+	if origin.quantity <= 0:
 		interaction.revert()
-		dupe.global_position = new_position
-		dupe.name = object.name
-	print("Dropped [", dupe.name, "] at ", dupe.global_position)
+		origin.slotted_object = null
+		interaction.full_hands = false
+#Update World Placement
+@rpc("any_peer", "call_local")
+func update_placement(held_index, container_index, slot_index, new_position):
+	var object = Items.SCENES[held_index].instantiate()
+	interaction.ORPHANAGES_OBJECTS.add_child(object)
+	object.global_position = new_position
+	if container_index != "":
+		var native_slot = Items.CONTAINERS[container_index].get(slot_index)
+		for slot in native_slot.slot_array:
+			slot.quantity -= 1
+		if native_slot.quantity <= 0:
+			native_slot.slotted_object = null
+	object.name = str("Object_", held_index)
+	print("Dropped [", object.name, "] at ", object.global_position)
 #Cancel
 func cancel(object, origin):
 	if origin != null:

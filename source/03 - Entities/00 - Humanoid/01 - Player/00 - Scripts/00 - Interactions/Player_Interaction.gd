@@ -24,8 +24,7 @@ var full_hands: bool = false
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("action_confirm"): # Left Click
 		if current_object != null: if !check_hovering():
-			interaction_objects.rpc(
-				"place",
+			interaction_objects.place(
 				current_object,
 				hands_origin,
 				get_global_mouse_position()
@@ -36,8 +35,7 @@ func _input(event: InputEvent) -> void:
 		if player.is_multiplayer_authority():
 			var selected_slot = interaction_hotbar.check_selection()
 			if selected_slot.slotted_object != null && !full_hands:
-				interaction_objects.rpc(
-					"place",
+				interaction_objects.place(
 					selected_slot.slotted_object,
 					selected_slot,
 					player.marker_drop.global_position

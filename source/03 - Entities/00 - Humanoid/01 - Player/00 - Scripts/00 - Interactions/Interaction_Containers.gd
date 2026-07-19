@@ -17,17 +17,31 @@ func addto_container(object, slot, origin, array):
 	var quantity: int
 	var native_origin: String
 	if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
-	elif origin.name.begins_with("Slot"): native_origin = "Container"
+	elif origin.name.begins_with("Slot"):
+		native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
 	else: native_origin = "Ground"
 	match(native_origin):
-		"Container": quantity = origin.quantity
+		"Container", "Backpack": quantity = origin.quantity
 		_: quantity = cursor.quantity
 	for i in array:
 		var index = str(i.name)
 		index_array.append(index)
 	print("Container Index: ", container_index)
 	print("Origin: ", origin)
-	rpc("update_server_containers", held_index, container_index, slot_index, index_array, quantity)
+	if slot.main_container.name == "Backpack": update_server_containers(
+			held_index,
+			container_index,
+			slot_index,
+			index_array,
+			quantity
+		)
+	else: rpc("update_server_containers",
+		held_index,
+		container_index,
+		slot_index,
+		index_array,
+		quantity
+		)
 	slot_orientation()
 	if origin != null: origin.slot_held.set_deferred("visible", false)
 	print("Added ", object.name, " to Container")

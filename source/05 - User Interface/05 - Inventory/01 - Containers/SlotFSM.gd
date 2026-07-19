@@ -56,9 +56,7 @@ func state_enter(new_state, old_state):
 		states.selected:
 			s.object_highlight(true)
 			s.area.get_node("CollisionShape2D").set_deferred("disabled", true)
-		states.blocking:
-			s.area.get_node("CollisionShape2D").set_deferred("disabled", true)
-			print(s.name, " Blocked!")
+		states.blocking: s.area.get_node("CollisionShape2D").set_deferred("disabled", true)
 #Exit State
 @warning_ignore("unused_parameter")
 func state_exit(old_state, new_state):
@@ -67,6 +65,4 @@ func state_exit(old_state, new_state):
 		states.selected:
 			s.object_highlight(false)
 			s.area.get_node("CollisionShape2D").set_deferred("disabled", false)
-		states.blocking:
-			s.area.get_node("CollisionShape2D").set_deferred("disabled", false)
-			print(s.name, " Unblocked!")
+		states.blocking: s.area.get_node("CollisionShape2D").set_deferred("disabled", false)
