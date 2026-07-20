@@ -136,6 +136,7 @@ func trade_slots(contents):
 				print("Object Origin: Ground")
 				var trading_object = interaction.current_object
 				var trading_quantity = selected_slot.quantity
+				print("Trading Object: ", trading_object)
 				interaction.interaction_objects.addto_hand(
 					"All",
 					selected_slot.slotted_object,

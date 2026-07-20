@@ -26,7 +26,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if e.is_multiplayer_authority():
 		if event.is_action_pressed("action_interact"): object_interaction.interact_object()
-		if event.is_action_pressed("move_click"): make_path()
+		#if event.is_action_pressed("move_click"): make_path()
 		if Input.get_vector(
 			"move_left", "move_right", "move_up", "move_down"
 		) != Vector2.ZERO: is_pathing = false

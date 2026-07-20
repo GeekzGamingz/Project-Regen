@@ -16,9 +16,10 @@ func addto_container(object, slot, origin, array):
 	var cursor = interaction.MAIN.UI_CURSOR
 	var quantity: int
 	var native_origin: String
-	if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
-	elif origin.name.begins_with("Slot"):
-		native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
+	if origin != null:
+		if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
+		elif origin.name.begins_with("Slot"):
+			native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
 	else: native_origin = "Ground"
 	match(native_origin):
 		"Container", "Backpack": quantity = origin.quantity

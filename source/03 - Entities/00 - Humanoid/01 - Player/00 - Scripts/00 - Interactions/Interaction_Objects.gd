@@ -37,11 +37,13 @@ func obtain_object(object, hotbar_selected):
 func remove_placement(object_path): interaction.ORPHANAGES_OBJECTS.get_node(object_path).queue_free()
 #Add to Hand
 func addto_hand(amount, object, origin):
+	var object_index = object.index_name
+	var native_object = Items.SCENES[object_index].instantiate()
 	var cursor = interaction.MAIN.UI_CURSOR
 	interaction.full_hands = true
 	cursor.icon_state = "HoldObject"
-	cursor.object_held = object
-	interaction.current_object = object
+	cursor.object_held = native_object
+	interaction.current_object = native_object
 	if origin != null:
 		if origin.quantity > 0: match(amount):
 			"All": cursor.quantity = origin.quantity
@@ -56,7 +58,7 @@ func addto_hand(amount, object, origin):
 		print("Added [", cursor.quantity, " x ", object.name, "]" , " to Hand from ", origin.name)
 	else:
 		cursor.quantity = 1
-		print("Added [", object.name, "]" , " to Hand from Ground")
+		print("Added [", native_object.name, "]" , " to Hand from Ground")
 #Place
 func place(object, origin, new_position):
 	var held_index = object.index_name
@@ -64,9 +66,10 @@ func place(object, origin, new_position):
 	var native_origin: String
 	var container_index: String
 	var slot_index: String
-	if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
-	elif origin.name.begins_with("Slot"):
-		native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
+	if origin != null:
+		if origin.name.begins_with("Hotbar"): native_origin = "Hotbar"
+		elif origin.name.begins_with("Slot"):
+			native_origin = "Container" if origin.main_container.name != "Backpack" else "Backpack"
 	else: native_origin = "Ground"
 	match(native_origin):
 		"Hotbar": origin.quantity -= 1
@@ -76,9 +79,13 @@ func place(object, origin, new_position):
 			slot_index = origin.name
 		"Ground": print("Do Ground Stuff")
 	rpc("update_placement", held_index, container_index, slot_index, new_position)
-	if origin.quantity <= 0:
+	if origin != null:
+		if origin.quantity <= 0:
+			interaction.revert()
+			origin.slotted_object = null
+			interaction.full_hands = false
+	else: 
 		interaction.revert()
-		origin.slotted_object = null
 		interaction.full_hands = false
 #Update World Placement
 @rpc("any_peer", "call_local")
