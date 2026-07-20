@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bc2i3bktyslkw"]
+
+[ext_resource type="PackedScene" uid="uid://xxysto50vjtq" path="res://source/04 - Objects/Object_Template.tscn" id="1_vmeqv"]
+[ext_resource type="Script" uid="uid://cgmt17tfcbcue" path="res://source/04 - Objects/02 - Objects/03 - Wood/00 - Branch/Object_Branch.gd" id="2_r47wh"]
+[ext_resource type="Texture2D" uid="uid://bsccvm5w155b8" path="res://assets/02 - Objects/05 - Wood/item_branch_icon.png" id="3_iiw6d"]
+[ext_resource type="Texture2D" uid="uid://u35bqsvluw0i" path="res://assets/02 - Objects/05 - Wood/item_branch.png" id="4_wevdq"]
+
+[node name="Object_Branch" unique_id=969433499 groups=["Branch"] instance=ExtResource("1_vmeqv")]
+script = ExtResource("2_r47wh")
+index_name = "Branch"
+is_obtainable = true
+is_stackable = true
+object_type = "Material"
+object_material = "Wood"
+
+[node name="CollisionPolygon2D" parent="Areas/Area_Pack" parent_id_path=PackedInt32Array(2009702789) index="0" unique_id=1424705020]
+position = Vector2(-16, -24)
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 16, 32, 16, 32, 32, 16, 32, 16, 48, 0, 48)
+
+[node name="Sprite_Object" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="0" unique_id=1671756147]
+visible = true
+texture = ExtResource("3_iiw6d")
+
+[node name="Sprite_Preview" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="1" unique_id=980131381]
+texture = ExtResource("4_wevdq")
+
+[node name="Sprite_Hotbar" parent="Sprites" parent_id_path=PackedInt32Array(695416246) index="2" unique_id=1288548770]
+texture = ExtResource("3_iiw6d")

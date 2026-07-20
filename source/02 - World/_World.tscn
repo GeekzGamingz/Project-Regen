@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dk6yobriqni2k" path="res://source/04 - Objects/01 - Flora/00 - Regen Tree/Flora_RegenTree.tscn" id="6_m43ww"]
 [ext_resource type="PackedScene" uid="uid://djnu8whsvg8lu" path="res://source/04 - Objects/00 - Buildings/01 - Containers/Building_Chest.tscn" id="7_g0q3n"]
 [ext_resource type="PackedScene" uid="uid://dh6gewsgyclei" path="res://source/04 - Objects/02 - Objects/02 - Stone/00 - Rock/Object_Rock.tscn" id="8_d03ws"]
-[ext_resource type="PackedScene" uid="uid://cqx4jwt27rt6m" path="res://source/04 - Objects/02 - Objects/Object_LPiece.tscn" id="10_g0q3n"]
+[ext_resource type="PackedScene" uid="uid://d0hsfwe3rp3vv" path="res://source/04 - Objects/01 - Flora/02 - Grass/Object_Grass.tscn" id="9_g0q3n"]
+[ext_resource type="PackedScene" uid="uid://bc2i3bktyslkw" path="res://source/04 - Objects/02 - Objects/03 - Wood/00 - Branch/Object_Branch.tscn" id="10_mrcoe"]
+[ext_resource type="PackedScene" uid="uid://dgy3l4y4ib3gu" path="res://source/04 - Objects/02 - Objects/01 - Metal/00 - Pipe/Object_Pipe.tscn" id="11_iitc8"]
 
 [node name="World" type="Node2D" unique_id=457131869]
 script = ExtResource("1_020tg")
@@ -43,45 +45,6 @@ position = Vector2(389, 204)
 [node name="Orphanage_Objects" type="Node2D" parent="Orphanages" unique_id=801904942]
 y_sort_enabled = true
 
-[node name="Object_LPiece" parent="Orphanages/Orphanage_Objects" unique_id=1548795902 instance=ExtResource("10_g0q3n")]
-position = Vector2(372, 251)
-
-[node name="Object_LPiece2" parent="Orphanages/Orphanage_Objects" unique_id=896586255 instance=ExtResource("10_g0q3n")]
-position = Vector2(299, 252)
-
-[node name="Object_LPiece3" parent="Orphanages/Orphanage_Objects" unique_id=135557118 instance=ExtResource("10_g0q3n")]
-position = Vector2(346, 274)
-
-[node name="Object_LPiece4" parent="Orphanages/Orphanage_Objects" unique_id=703913050 instance=ExtResource("10_g0q3n")]
-position = Vector2(316, 274)
-
-[node name="Object_LPiece5" parent="Orphanages/Orphanage_Objects" unique_id=1283223195 instance=ExtResource("10_g0q3n")]
-position = Vector2(397, 261)
-
-[node name="Object_LPiece6" parent="Orphanages/Orphanage_Objects" unique_id=1207778912 instance=ExtResource("10_g0q3n")]
-position = Vector2(374, 284)
-
-[node name="Object_LPiece7" parent="Orphanages/Orphanage_Objects" unique_id=679383096 instance=ExtResource("10_g0q3n")]
-position = Vector2(284, 278)
-
-[node name="Object_LPiece8" parent="Orphanages/Orphanage_Objects" unique_id=452500877 instance=ExtResource("10_g0q3n")]
-position = Vector2(350, 301)
-
-[node name="Object_LPiece9" parent="Orphanages/Orphanage_Objects" unique_id=1932884572 instance=ExtResource("10_g0q3n")]
-position = Vector2(276, 229)
-
-[node name="Object_LPiece10" parent="Orphanages/Orphanage_Objects" unique_id=1475606973 instance=ExtResource("10_g0q3n")]
-position = Vector2(419, 237)
-
-[node name="Object_LPiece11" parent="Orphanages/Orphanage_Objects" unique_id=385451456 instance=ExtResource("10_g0q3n")]
-position = Vector2(428, 273)
-
-[node name="Object_LPiece12" parent="Orphanages/Orphanage_Objects" unique_id=736380583 instance=ExtResource("10_g0q3n")]
-position = Vector2(261, 254)
-
-[node name="Object_LPiece13" parent="Orphanages/Orphanage_Objects" unique_id=1381963798 instance=ExtResource("10_g0q3n")]
-position = Vector2(319, 302)
-
 [node name="Object_Rock" parent="Orphanages/Orphanage_Objects" unique_id=1639938997 instance=ExtResource("8_d03ws")]
 position = Vector2(194, 198)
 
@@ -93,6 +56,42 @@ position = Vector2(147, 205)
 
 [node name="Object_Rock4" parent="Orphanages/Orphanage_Objects" unique_id=834003830 instance=ExtResource("8_d03ws")]
 position = Vector2(161, 259)
+
+[node name="Object_Grass" parent="Orphanages/Orphanage_Objects" unique_id=1096646479 instance=ExtResource("9_g0q3n")]
+position = Vector2(290, 239)
+
+[node name="Object_Grass2" parent="Orphanages/Orphanage_Objects" unique_id=76478610 instance=ExtResource("9_g0q3n")]
+position = Vector2(331, 311)
+
+[node name="Object_Grass3" parent="Orphanages/Orphanage_Objects" unique_id=1824978064 instance=ExtResource("9_g0q3n")]
+position = Vector2(278, 276)
+
+[node name="Object_Grass4" parent="Orphanages/Orphanage_Objects" unique_id=705727628 instance=ExtResource("9_g0q3n")]
+position = Vector2(347, 267)
+
+[node name="Object_Branch" parent="Orphanages/Orphanage_Objects" unique_id=1195899602 instance=ExtResource("10_mrcoe")]
+position = Vector2(416, 265)
+
+[node name="Object_Branch2" parent="Orphanages/Orphanage_Objects" unique_id=2042674919 instance=ExtResource("10_mrcoe")]
+position = Vector2(427, 310)
+
+[node name="Object_Branch3" parent="Orphanages/Orphanage_Objects" unique_id=1729196961 instance=ExtResource("10_mrcoe")]
+position = Vector2(453, 278)
+
+[node name="Object_Branch4" parent="Orphanages/Orphanage_Objects" unique_id=1095519652 instance=ExtResource("10_mrcoe")]
+position = Vector2(463, 244)
+
+[node name="Object_Pipe" parent="Orphanages/Orphanage_Objects" unique_id=2108553773 instance=ExtResource("11_iitc8")]
+position = Vector2(466, 183)
+
+[node name="Object_Pipe2" parent="Orphanages/Orphanage_Objects" unique_id=1417737814 instance=ExtResource("11_iitc8")]
+position = Vector2(515, 221)
+
+[node name="Object_Pipe3" parent="Orphanages/Orphanage_Objects" unique_id=1463659641 instance=ExtResource("11_iitc8")]
+position = Vector2(490, 154)
+
+[node name="Object_Pipe4" parent="Orphanages/Orphanage_Objects" unique_id=1464519297 instance=ExtResource("11_iitc8")]
+position = Vector2(504, 184)
 
 [node name="Orphanage_Flora" type="Node2D" parent="Orphanages" unique_id=240024970]
 y_sort_enabled = true
