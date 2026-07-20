@@ -119,6 +119,7 @@ func trade_slots(contents):
 					selected_slot.slotted_object,
 					null
 				)
+				print("Slotted Object: ", selected_slot.slotted_object)
 				container_origin.object_highlight(false)
 				cursor.cursor_fsm.object_switch = true
 				addto_hotbar(trading_object, selected_slot)
@@ -127,7 +128,7 @@ func trade_slots(contents):
 				container_origin.quantity -= held_quantity
 				cursor.quantity = slot_quantity
 				if container_origin.quantity <= 0: container_origin.slotted_object = null
-				interaction.revert()
+				#interaction.revert()
 				var new_quantity = container_origin.quantity
 				var container_index = container_origin.main_container.name
 				var slot_index = str(container_origin.name)
