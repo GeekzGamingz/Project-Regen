@@ -77,9 +77,6 @@ visible = false
 [node name="Sprite_Hotbar" type="Sprite2D" parent="Sprites" unique_id=1288548770]
 visible = false
 
-[node name="Sprite_Container" type="Sprite2D" parent="Sprites" unique_id=1472507649]
-visible = false
-
 [node name="Timers" type="Node2D" parent="." unique_id=121542081]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=853829453]

@@ -58,7 +58,7 @@ func update_server_containers(held_index, container_index, slot_index, index_arr
 		var slot = Items.CONTAINERS[container_index].get(index)
 		native_array.append(slot)
 	add_child(object_scene)
-	native_slot.texture_object.texture = object_scene.sprite_container.texture
+	native_slot.texture_object.texture = object_scene.sprite_preview.texture
 	for slot in native_array:
 		slot.slot_occupied = true
 		slot.slot_array = native_array
