@@ -53,16 +53,19 @@ func addto_container(object, slot, origin, array):
 func update_server_containers(held_index, container_index, slot_index, index_array, quantity):
 	var object_scene = Items.SCENES.get(held_index).instantiate()
 	var native_slot = Items.CONTAINERS[container_index].get(slot_index)
+	var native_primary = native_slot
 	var native_array = []
 	for index in index_array:
 		var slot = Items.CONTAINERS[container_index].get(index)
+		if slot.name.substr(4, -1).to_int() < native_primary.name.substr(4, -1).to_int():
+			native_primary = slot
 		native_array.append(slot)
 	add_child(object_scene)
 	native_slot.texture_object.texture = object_scene.sprite_preview.texture
 	for slot in native_array:
 		slot.slot_occupied = true
 		slot.slot_array = native_array
-		slot.slot_primary = native_slot
+		slot.slot_primary = native_primary
 		slot.slotted_object = object_scene
 		slot.quantity = quantity
 	remove_child(object_scene)
