@@ -33,13 +33,13 @@ func update_sprites():
 	match(is_chub):
 		false: match(height):
 			"Short":
-				sprite_string = "S_A_NW" #Short Average No Wheelchair
+				sprite_string = "S_S_NW" #Short Average No Wheelchair
 				offset = -14.0
 			"Average":
-				sprite_string = "A_A_NW" #Average Average No Wheelchair
+				sprite_string = "A_S_NW" #Average Average No Wheelchair
 				offset = -16.0
 			"Tall":
-				sprite_string = "T_A_NW" #Tall Average No Wheelchair
+				sprite_string = "T_S_NW" #Tall Average No Wheelchair
 				offset = -18.0
 		true: match(height):
 			"Short":

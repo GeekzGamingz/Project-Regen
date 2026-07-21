@@ -43,6 +43,7 @@ var customize_type: String
 func _ready() -> void:
 	#Connections
 	ui_customization.connect("uic_chub_change", uic_chub_change)
+	ui_customization.connect("uic_wheels_change", uic_wheels_change)
 	ui_customization.connect("uic_height_change", check_sprites)
 	ui_customization.connect("uic_arm_left_change", check_sprites)
 	ui_customization.connect("uic_arm_right_change", check_sprites)
@@ -91,6 +92,10 @@ func uic_chub_change(toggled_on):
 	is_chub = toggled_on
 	sprites_dictionary.sprite_info["chub"] = toggled_on
 	check_sprites(is_chub)
+#Change Wheels
+func uic_wheels_change(toggled_on):
+	is_wheels = toggled_on
+	sprites_dictionary.sprite_info["wheelchair"] = toggled_on
 #Change Animation
 func uic_animation_change(scroll):
 	match(scroll):

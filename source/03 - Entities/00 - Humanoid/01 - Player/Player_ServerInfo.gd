@@ -14,6 +14,7 @@ func update_info(id, customize_type, new_info):
 		"LegLeft": e.NETWORK.players[id].set("leg_left", new_info)
 		"LegRight": e.NETWORK.players[id].set("leg_right", new_info)
 		"Chub": e.NETWORK.players[id].set("chub", new_info)
+		"Wheelchair": e.NETWORK.players[id].set("wheelchair", new_info)
 		"Animation": e.NETWORK.players[id].set("animation", new_info)
 		"Beard": e.NETWORK.players[id].set("beard", new_info)
 		"BeardColor": e.NETWORK.players[id].set("beard_color", new_info)

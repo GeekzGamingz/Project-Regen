@@ -10,6 +10,7 @@ signal uic_arm_right_change(scroll)
 signal uic_leg_left_change(scroll)
 signal uic_leg_right_change(scroll)
 signal uic_chub_change(toggle)
+signal uic_wheels_change(toggle)
 signal uic_animation_change(scroll)
 signal update_sprites
 #------------------------------------------------------------------------------#
@@ -107,6 +108,10 @@ func _on_next_leg_r_button_up() -> void:
 #ChubBox
 func _on_check_box_chub_toggled(toggled_on: bool) -> void:
 	emit_signal("uic_chub_change", toggled_on)
+	emit_signal("update_sprites")
+#WheelsBox
+func _on_check_box_wheels_toggled(toggled_on: bool) -> void:
+	emit_signal("uic_wheels_change", toggled_on)
 	emit_signal("update_sprites")
 #Link Hair Colors
 func _on_check_box_top_toggled(toggled_on: bool) -> void:
